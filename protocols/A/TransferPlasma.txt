@@ -1,0 +1,7 @@
+0: Pickup tips from A column 1
+1: Move to Sample Rack tray A with 1000 uL tips
+2: Aspirate 1000 uL with 1000 uL tips at High pressure 1 time
+3: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 10000 with the drip plate
+4: Dispense 1000 uL with 1000 uL tips at High pressure 1 time
+5: Delay for 3 seconds
+6: Dispense 200 uL with 1000 uL tips at High pressure 1 time
