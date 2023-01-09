@@ -1,8 +1,8 @@
 #!/usr/bin/env python3.8
 
-from controllers.controller import Controller
-from models.model import Model
-from views.view import View
+from gui.controllers.controller import Controller
+from gui.models.model import Model
+from gui.views.view import View
 
 def main() -> None:
 	model = Model()

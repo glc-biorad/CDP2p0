@@ -3,14 +3,14 @@ Model represents the data for the GUI
 """
 import sqlite3
 
-from models.thermocycle_model import ThermocycleModel
-from models.build_protocol_model import BuildProtocolModel
-from models.optimize_model import OptimizeModel
+from gui.models.thermocycle_model import ThermocycleModel
+from gui.models.build_protocol_model import BuildProtocolModel
+from gui.models.optimize_model import OptimizeModel
 
 DB_NAME = 'cdp2p0_gui.db'
 
-from models.tip_use_model import TipUseModel
-from models.state_model import StateModel
+from gui.models.tip_use_model import TipUseModel
+from gui.models.state_model import StateModel
 
 class Model:
 	# Models
@@ -19,6 +19,15 @@ class Model:
 	def __init__(self) -> None:
 		self.connection = sqlite3.connect(DB_NAME)
 		self.cursor = self.connection.cursor()
+		#t = BuildProtocolModel(DB_NAME, self.cursor, self.connection)
+		#t.create_table()
+		#t = ThermocycleModel(DB_NAME, self.cursor, self.connection)
+		#t.drop_table()
+		#t.create_table()
+		#t.insert(1,'A',40,84,50,84,3,40,30,1,1,1)
+		#t.insert(2,'B',40,84,50,84,3,40,30,1,1,1)
+		#t.insert(3,'C',40,84,50,84,3,40,30,0,1,1)
+		#t.insert(4,'D',40,84,50,84,3,40,30,1,1,1)
 		#m = TipUseModel(DB_NAME, self.cursor, self.connection)
 		mm = StateModel(DB_NAME, self.cursor, self.connection)
 		mm.drop_table()

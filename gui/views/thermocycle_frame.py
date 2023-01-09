@@ -12,11 +12,11 @@ from matplotlib.figure import Figure
 
 
 # Import the Controller for the Thermocycle View
-from controllers.thermocycle_controller import ThermocycleController
+from gui.controllers.thermocycle_controller import ThermocycleController
 
 # Import the Model for the Thermocycle View
-from models.model import Model
-from models.thermocycle_model import ThermocycleModel
+from gui.models.model import Model
+from gui.models.thermocycle_model import ThermocycleModel
 
 # Constants
 TRAY_N_STEPS=50
@@ -181,6 +181,16 @@ IDS = {
 	'D': 4,
 }
 
+# Addresses:
+ADDRESSES = {
+	'AB': 6,
+	'CD': 7,
+	'A': 8,
+	'B': 9,
+	'C': 10,
+	'D': 11,
+}
+
 # Button Titles
 BUTTON_TITLES = [
 	'Start',
@@ -191,13 +201,13 @@ BUTTON_TITLES = [
 
 # Image Paths
 IMAGE_PATHS = {
-	'thermocyclers': './images/thermocyclers.png',
-	'thermocycler_rails': './images/thermocycler_rails.png',
-	'thermocycler_block_raised': './images/thermocycler_block_raised.png',
-	'thermocycler_block_lowered': './images/thermocycler_block_lowered.png',
-	'thermocycler_tray': './images/thermocycler_tray.png',
-	'thermometer': './images/thermometer.png', # Credit goes to author (Freepik)
-	'clock': './images/clock.png', # Credit goes to author (Freepik)
+	'thermocyclers': 'gui/images/thermocyclers.png',
+	'thermocycler_rails': 'gui/images/thermocycler_rails.png',
+	'thermocycler_block_raised': 'gui/images/thermocycler_block_raised.png',
+	'thermocycler_block_lowered': 'gui/images/thermocycler_block_lowered.png',
+	'thermocycler_tray': 'gui/images/thermocycler_tray.png',
+	'thermometer': 'gui/images/thermometer.png', # Credit goes to author (Freepik)
+	'clock': 'gui/images/clock.png', # Credit goes to author (Freepik)
 }
 
 class ThermocycleFrame(ctk.CTkFrame):
@@ -212,6 +222,13 @@ class ThermocycleFrame(ctk.CTkFrame):
 		self.posy = posy
 		self.controller = ThermocycleController(Model().get_thermocycle_model(), self)
 		self.buttons = {}
+		try:
+			from api.interfaces.fast_api_interface import FastAPIInterface
+			self.fast_api_interface = FastAPIInterface()
+		except Exception as e:
+			print(e)
+			self.fast_api_interface = None
+			print(f"FastAPIInterface could not be used for the ThermocycleFrame")
 		super().__init__(
 			master=self.master,
 			width=self.width,
@@ -609,6 +626,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 			thread = threading.Thread(
 				target=self.move_tray, 
 				args=(
+					ADDRESSES['AB'],
 					self.image_thermocycler_tray_ab, 
 					x0,
 					x,
@@ -634,6 +652,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 			thread = threading.Thread(
 				target=self.move_tray, 
 				args=(
+					ADDRESSES['CD'],
 					self.image_thermocycler_tray_cd, 
 					x0,
 					x,
@@ -653,6 +672,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 				thread = threading.Thread(
 					target=self.move_tray, 
 					args=(
+						ADDRESSES['AB'],
 						self.image_thermocycler_tray_ab, 
 						TRAY_CLOSED_POSX, 
 						IMAGE_THERMOCYCLER_TRAY_AB_POSX,
@@ -666,6 +686,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 				thread = threading.Thread(
 					target=self.move_tray, 
 					args=(
+						ADDRESSES['CD'],
 						self.image_thermocycler_tray_cd, 
 						TRAY_CLOSED_POSX, 
 						IMAGE_THERMOCYCLER_TRAY_CD_POSX,
@@ -749,7 +770,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 			self.controller.set_clamp(4,1)
 		self.image_thermocycler_block_d.configure(image=self.photoimage_thermocycler_block_d)
 
-	def move_tray(self, image_tray: ctk.CTkLabel, x0:int , x:int , seconds:int=7, n_steps:int=TRAY_N_STEPS) -> None:
+	def move_tray(self, address: int, image_tray: ctk.CTkLabel, x0:int , x:int , seconds:int=7, n_steps:int=TRAY_N_STEPS) -> None:
 		""" Movement animation for a given tray between an initial position x0 and final x with a given
 		number of frames (n_steps)
 
@@ -766,8 +787,19 @@ class ThermocycleFrame(ctk.CTkFrame):
 		n_steps : int, optional
 			Number of steps / frames for the animation
 		"""
+		# Import the 
+		# Get the animation steps
 		dx = (x-x0)/n_steps
 		dt = seconds/n_steps
+		# Determine the direction to move the tray (open or closed)
+		if dx < 0:
+			# Close the tray (dx is based on position of the tray widget in its parent frame)
+			self.fast_api_interface.reader.axis.move('reader', address, 0, 200000, False, True)
+			self.fast_api_interface.reader.axis.home('reader', address, False, True)
+		else:
+			# Open the tray
+			self.fast_api_interface.reader.axis.move('reader', address, -790000, 200000, False, True)
+		# Animate the tray while the actual tray moves
 		for i in range(n_steps):
 			image_tray.place(x=x0)
 			x0 = x0 + dx

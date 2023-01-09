@@ -1,8 +1,8 @@
 import threading
 
 # Import the model and view for this controller
-from models.optimize_model import OptimizeModel
-from views.optimize_frame import OptimizeFrame
+from gui.models.optimize_model import OptimizeModel
+from gui.views.optimize_frame import OptimizeFrame
 
 # Constants
 NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Assay Strip", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]

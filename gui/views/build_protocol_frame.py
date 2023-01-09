@@ -5,8 +5,8 @@ import customtkinter as ctk
 import tkinter as tk
 
 # Import the BuildProtocolModel
-from models.model import Model
-from models.build_protocol_model import BuildProtocolModel
+from gui.models.model import Model
+from gui.models.build_protocol_model import BuildProtocolModel
 
 # Constants
 FONT = "Segoe UI"
@@ -226,7 +226,7 @@ COUNT_OPTION_VALUES = [f'{i}' for i in range(1,11)]
 
 # Image Paths
 IMAGE_PATHS = {
-	'check': './images/check.png'
+	'check': 'gui/images/check.png'
 }
 
 class BuildProtocolFrame(ctk.CTkFrame):
@@ -290,7 +290,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.button_start = ctk.CTkButton(
 			master=self, 
 			text='Start', 
-			corner_radius=5, 
+			corner_radius=2, 
 			font=(FONT,-16),
 			fg_color=BUTTON_START_COLOR,
 			width=BUTTON_START_WIDTH
@@ -299,7 +299,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.button_load = ctk.CTkButton(
 			master=self, 
 			text='Load', 
-			corner_radius=5, 
+			corner_radius=2, 
 			font=(FONT,-16),
 			width=BUTTON_LOAD_WIDTH
 		)
@@ -307,7 +307,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.button_save = ctk.CTkButton(
 			master=self, 
 			text='Save', 
-			corner_radius=5, 
+			corner_radius=2, 
 			font=(FONT,-16),
 			width=BUTTON_SAVE_WIDTH
 		)
@@ -315,7 +315,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.button_delete = ctk.CTkButton(
 			master=self, 
 			text='Delete', 
-			corner_radius=5, 
+			corner_radius=2, 
 			font=(FONT,-16),
 			fg_color=BUTTON_DELETE_COLOR,
 			width=BUTTON_DELETE_WIDTH
@@ -359,7 +359,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.tips_tray_sv.trace('w', self.callback_tips_tray)
 		self.optionmenu_tips_tray = ctk.CTkOptionMenu(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			variable=self.tips_tray_sv,
 			values=('A', 'B', 'C', 'D', "Tip Transfer Tray", ''),
 			font=(FONT, -14),
@@ -372,7 +372,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.tips_column_sv.trace('w', self.callback_tips_column)
 		self.optionmenu_tips_column = ctk.CTkOptionMenu(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			variable=self.tips_column_sv,
 			values=(''),
 			font=(FONT, -14),
@@ -384,7 +384,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.tips_action_sv.set('Eject')
 		self.optionmenu_tips_action = ctk.CTkOptionMenu(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			variable=self.tips_action_sv,
 			values=('Eject',),
 			font=(FONT, -14),
@@ -395,7 +395,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.button_tips_add = ctk.CTkButton(
 			master=self,
 			text='',
-			corner_radius=5,
+			corner_radius=2,
 			#image=self.photoimage_check,
 			fg_color=BUTTON_ADD_COLOR,
 			width=BUTTON_TIPS_ADD_WIDTH
@@ -435,7 +435,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.motion_consumable_sv.trace('w', self.callback_motion_consumable)
 		self.optionmenu_motion_comsumable = ctk.CTkOptionMenu(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			variable=self.motion_consumable_sv,
 			values=CONSUMABLES_OPTION_VALUES,
 			font=(FONT, -12),
@@ -448,7 +448,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.motion_tray_sv.trace('w', self.callback_motion_tray)
 		self.optionmenu_motion_tray = ctk.CTkOptionMenu(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			variable=self.motion_tray_sv,
 			values=('',),
 			font=(FONT, -14),
@@ -460,7 +460,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.motion_column_sv.set('')
 		self.optionmenu_motion_column = ctk.CTkOptionMenu(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			variable=self.motion_column_sv,
 			values=('',),
 			font=(FONT, -14),
@@ -472,7 +472,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.motion_tip_sv.set('')
 		self.optionmenu_motion_tip = ctk.CTkOptionMenu(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			variable=self.motion_tip_sv,
 			values=('',),
 			font=(FONT, -14),
@@ -488,7 +488,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			variable=self.motion_drip_plate_iv,
 			onvalue=1,
 			offvalue=0,
-			corner_radius=5,
+			corner_radius=2,
 		)
 		# Create the dx, dy, dz label and entry
 		self.label_motion_dxdydz = ctk.CTkLabel(master=self, text='dx,dy,dz', font=(FONT, -16))
@@ -496,7 +496,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.motion_dxdydz_sv.set('0,0,0')
 		self.entry_motion_dxdydz = ctk.CTkEntry(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			textvariable=self.motion_dxdydz_sv,
 			font=(FONT,-12),
 			width=ENTRY_MOTION_DXDYDZ_WIDTH
@@ -505,7 +505,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.label_motion_add = ctk.CTkLabel(master=self, text='Add', font=(FONT, -14))
 		self.button_motion_add = ctk.CTkButton(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			text='',
 			#image=self.photoimage_check,
 			fg_color=BUTTON_ADD_COLOR,
@@ -560,7 +560,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.pipettor_volume_sv.set('')
 		self.entry_pipettor_volume = ctk.CTkEntry(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			textvariable=self.pipettor_volume_sv, 
 			width=ENTRY_PIPETTOR_VOLUME_WIDTH
 		)
@@ -570,7 +570,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.pipettor_tip_sv.set('')
 		self.optionmenu_pipettor_tip = ctk.CTkOptionMenu(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			variable=self.pipettor_tip_sv,
 			values=('1000', '50', '200',),
 			width=OPTIONMENU_PIPETTOR_TIP_WIDTH
@@ -581,7 +581,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.pipettor_action_sv.set('Aspirate')
 		self.optionmenu_pipettor_action = ctk.CTkOptionMenu(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			variable=self.pipettor_action_sv,
 			values=('Aspirate', 'Dispense', 'Mix'),
 			width=OPTIONMENU_PIPETTOR_ACTION_WIDTH
@@ -595,7 +595,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			variable=self.pipettor_count_sv,
 			values=COUNT_OPTION_VALUES,
 			font=(FONT,-14),
-			corner_radius=5,
+			corner_radius=2,
 			width=OPTIONMENU_PIPETTOR_COUNT_WIDTH
 		)
 		# Create the pressure label and optionmenu
@@ -604,7 +604,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.pipettor_pressure_sv.set('High')
 		self.optionmenu_pipettor_pressure = ctk.CTkOptionMenu(
                         master=self,
-			corner_radius=5,
+			corner_radius=2,
 			variable=self.pipettor_pressure_sv,
 			values=('High', 'Low',),
 			width=OPTIONMENU_PIPETTOR_PRESSURE_WIDTH
@@ -613,7 +613,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.label_pipettor_add = ctk.CTkLabel(master=self, text='Add', font=(FONT, -14))
 		self.button_pipettor_add = ctk.CTkButton(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			text='',
 			#image=self.photoimage_check,
 			fg_color=BUTTON_ADD_COLOR,
@@ -655,7 +655,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.time_delay_sv.set('')
 		self.entry_time_delay = ctk.CTkEntry(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			textvariable=self.time_delay_sv, 
 			width=ENTRY_TIME_DELAY_WIDTH
 		)
@@ -665,7 +665,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.time_units_sv.set('seconds')
 		self.optionmenu_time_units = ctk.CTkOptionMenu(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			variable=self.time_units_sv,
 			values=('seconds', 'minutes'),
 			width=OPTIONMENU_TIME_UNITS_WIDTH
@@ -706,7 +706,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.other_option_sv.set("Home pipettor")
 		self.optionmenu_other_option = ctk.CTkOptionMenu(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			variable=self.other_option_sv,
 			values=OTHER_OPTION_VALUES,
 			width=OPTIONMENU_OTHER_OPTION_WIDTH
@@ -715,7 +715,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.label_other_add = ctk.CTkLabel(master=self, text='Add', font=(FONT, -14))
 		self.button_other_add = ctk.CTkButton(
 			master=self,
-			corner_radius=5,
+			corner_radius=2,
 			text='',
 			fg_color=BUTTON_ADD_COLOR,
 			width=BUTTON_OTHER_ADD_WIDTH

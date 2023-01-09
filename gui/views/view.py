@@ -5,14 +5,14 @@ Main Graphical representation of the GUI
 import customtkinter as ctk
 import tkinter as tk
 
-from models.model import Model
+from gui.models.model import Model
 
-from views.menu_frame import MenuFrame
+from gui.views.menu_frame import MenuFrame
 
-from views.image_frame import ImageFrame
-from views.thermocycle_frame import ThermocycleFrame
-from views.build_protocol_frame import BuildProtocolFrame
-from views.optimize_frame import OptimizeFrame
+from gui.views.image_frame import ImageFrame
+from gui.views.thermocycle_frame import ThermocycleFrame
+from gui.views.build_protocol_frame import BuildProtocolFrame
+from gui.views.optimize_frame import OptimizeFrame
 
 # Constants
 TITLE = "CDP 2.0 Development GUI"

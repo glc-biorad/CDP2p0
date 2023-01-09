@@ -2,9 +2,9 @@ import customtkinter as ctk
 
 import time
 
-from views.image_frame import ImageFrame
-from views.thermocycle_frame import ThermocycleFrame
-from views.build_protocol_frame import BuildProtocolFrame
+from gui.views.image_frame import ImageFrame
+from gui.views.thermocycle_frame import ThermocycleFrame
+from gui.views.build_protocol_frame import BuildProtocolFrame
 
 # Constants
 X = 10

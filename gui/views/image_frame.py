@@ -1,9 +1,9 @@
 import types
 import customtkinter as ctk
 
-from controllers.image_controller import ImageController
+from gui.controllers.image_controller import ImageController
 
-from models.image_model import ImageModel
+from gui.models.image_model import ImageModel
 
 # Constants
 IMAGER_VIEW_POSX = 10

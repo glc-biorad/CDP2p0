@@ -9,11 +9,12 @@ class ThermocycleModel:
 		self.db_name = db_name
 		self.cursor = cursor
 		self.connection = connection
+		self.drop_table()
 		self.create_table()
-		#self.insert(1,'A',40,84,50,84,3,40,30,1,1,1)
-		#self.insert(2,'B',40,84,50,84,3,40,30,1,1,1)
-		#self.insert(3,'C',40,84,50,84,3,40,30,0,1,1)
-		#self.insert(4,'D',40,84,50,84,3,40,30,1,1,1)
+		self.insert(1,'A',40,84,50,84,3,40,30,1,1,1)
+		self.insert(2,'B',40,84,50,84,3,40,30,1,1,1)
+		self.insert(3,'C',40,84,50,84,3,40,30,0,1,1)
+		self.insert(4,'D',40,84,50,84,3,40,30,1,1,1)
 		
 		# Default String and Int Variables
 		self.thermocycler_sv = tk.StringVar()
@@ -67,6 +68,10 @@ class ThermocycleModel:
 		TRAY INT NOT NULL
 		);
 		"""
+		self.cursor.execute(query)
+
+	def drop_table(self) -> None:
+		query = f"DROP TABLE {TABLE_NAME}"
 		self.cursor.execute(query)
 
 	def select(self, ID: int) -> dict:
