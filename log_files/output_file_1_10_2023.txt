@@ -1,0 +1,742 @@
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:12:41
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:12:42
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.4733603000640869 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:12:42]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:14:27
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:14:27
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.43225908279418945 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:14:27]
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,384d,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,d917,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,803b,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,8b5e,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 1.1563811302185059 seconds.
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:15:26
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:15:27
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.42495059967041016 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:15:27]
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,e82c,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,c057,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e53d,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,bc5,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.9724941253662109 seconds.
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:15:50
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:15:51
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.46109509468078613 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:15:51]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,54cd,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,23f5,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6471,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,f35c,0,0
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:16:27
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:16:28
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.447002649307251 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:16:28]
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,610c,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,4598,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,2f81,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,c688,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.9638206958770752 seconds.
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:17:06
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:17:06
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.4196333885192871 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:17:06]
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,cf55,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,a53e,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6081,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,4b11,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.972238302230835 seconds.
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,c08a,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,2025,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f02e,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,a29e,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.9289169311523438 seconds.
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:19:44
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:19:44
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.44499897956848145 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:19:44]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:31:19
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:31:19
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.5589118003845215 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:31:19]
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,a0b7,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,3fea,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,148b,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,cd66,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.9861862659454346 seconds.
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:33:35
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:33:36
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.4242408275604248 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:33:36]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:34:44
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:34:44
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.45028138160705566 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:34:44]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:36:00
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:36:01
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.43795228004455566 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:36:01]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:32:14
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:32:15
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.5611741542816162 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:32:15]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:11:05
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:11:06
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.5870351791381836 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:11:06]
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,a6c4,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,4721,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,bbb7,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,9bae,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 1.022127628326416 seconds.
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,b5f5,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,cdb3,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,ae83,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,ddb9,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.9098811149597168 seconds.
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:14:00
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:14:00
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.4282193183898926 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:14:00]
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,7c0d,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,da3e,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,184e,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,ba41,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.9585435390472412 seconds.
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:16:47
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:16:47
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.4524540901184082 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:16:47]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:20:29
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:20:30
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.42530059814453125 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:20:30]
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,47,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,b818,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,51cc,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,bcc1,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.9653275012969971 seconds.
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:22:34
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:22:34
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.4573531150817871 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:22:34]
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,4a30,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,b61d,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e9ef,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,ef01,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.9743669033050537 seconds.
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,384f,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,57ea,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,af7,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,ff6a,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.9386489391326904 seconds.
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:33:08
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:33:08
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.5931572914123535 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:33:08]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:45:21
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:45:22
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.5479118824005127 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:45:22]
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,de05,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,4a24,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5609,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,1fdf,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.978147029876709 seconds.
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,b4b,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,a824,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,cec4,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,6e26,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.9124267101287842 seconds.
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,27e7,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,1a5f,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5428,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,6e7b,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.8989789485931396 seconds.
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,6d5e,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,b58c,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,c1ee,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,952c,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.9333724975585938 seconds.
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,7e54,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,b539,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4a34,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,c818,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.9084911346435547 seconds.
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,8e15,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,e0fa,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d5b0,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,6581,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position]: 0.9266343116760254 seconds.
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,a838,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,3544,0,0
+	- Message: Already at the 0 along the axis 6
+	- Current Time: 12:49:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,dde9,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/6
+		- Message (RECEIVED): Status Code: OK

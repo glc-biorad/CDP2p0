@@ -1,5 +1,10 @@
 #!/usr/bin/env python3.8
 
+import pythonnet
+from pythonnet import load
+
+load("coreclr")
+
 from gui.controllers.controller import Controller
 from gui.models.model import Model
 from gui.views.view import View
