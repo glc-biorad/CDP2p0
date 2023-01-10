@@ -4,13 +4,20 @@ import threading
 from gui.models.optimize_model import OptimizeModel
 from gui.views.optimize_frame import OptimizeFrame
 
+# Import the coordinates model
+from gui.models.coordinates_model import CoordinatesModel
+
+# Import the upper gantry api
+from api.upper_gantry.upper_gantry import UpperGantry
+
 # Constants
 NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Assay Strip", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
 NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
-TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
-EIGHT_COLUMN_CONSUMABLES = ["Tip Transfer Tray", "Assay Strip", "Tip Tray"]
+TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge", "DG8"]
+NINE_COLUMN_CONSUMABLES = ["Tip Transfer Tray"]
+EIGHT_COLUMN_CONSUMABLES = ["Assay Strip", "Tip Tray"]
 FOUR_COLUMN_CONSUMABLES = ["Heater/Shaker"]
-THREE_COLUMN_CONSUMABLES = ["DG8"]
+THREE_COLUMN_CONSUMABLES = [""]
 SPECIAL_CONSUMABLES = ["DG8", "Chip"]
 
 class OptimizeController:
@@ -24,6 +31,15 @@ class OptimizeController:
 		# Set the model and view for the controller
 		self.model = model
 		self.view = view
+
+		# Setup the coordinates model
+		self.coordinates_model = CoordinatesModel(self.model.db_name, self.model.cursor, self.model.connection)
+
+		# Initialize the upper gantry
+		self.upper_gantry = UpperGantry()
+
+		# Get the unit
+		print("Optimize Frame needs to know what unit we are using! (all set to A hardcoded for now)")
 
 	def setup_bindings(self):
 		# Setup the bindings between the view and the controller
@@ -39,8 +55,21 @@ class OptimizeController:
 	def print(self, event=None) -> None:
 		"""Deals with the on click event for the print button
 		"""
-		# Determine the position
-		print(f"x, y, z, drip plate")
+		# Determine the position (coordinate in database and current position)
+		# Get the current position
+		position = self.upper_gantry.get_position()
+		print(f"Position: {position}")
+		if self.view.consumable_sv.get() != '':
+			# Get the coordinate for this location from the coordinates model table
+			consumable = self.view.consumable_sv.get()
+			tray = self.view.tray_sv.get()
+			column = int(self.view.column_sv.get())
+			coordinate = self.coordinates_model.select("Unit A Upper Gantry Coordinates", consumable, tray, column)
+			x = coordinate[0][4]
+			y = coordinate[0][5]
+			z1 = coordinate[0][6]
+			z2 = coordinate[0][7]
+			print(f"Coordinate for {consumable} {tray} {column}: [{x}, {y}, {z1}, {z2}]")
 
 	def home(self, event=None) -> None:
 		""" Deals with the on click event for the home button
@@ -111,6 +140,9 @@ class OptimizeController:
 		elif consumable in EIGHT_COLUMN_CONSUMABLES:
 			self.model.column_sv.set('')
 			self.view.optionmenu_column.configure(values=('1','2','3','4','5','6','7','8',))
+		elif consumable in NINE_COLUMN_CONSUMABLES:
+			self.model.column_sv.set('')
+			self.view.optionmenu_column.configure(values=('1','2','3','4','5','6','7','8','9',))
 		elif consumable in TWELVE_COLUMN_CONSUMABLES:
 			self.model.column_sv.set('')
 			self.view.optionmenu_column.configure(values=('1','2','3','4','5','6','7','8','9','10','11','12',))

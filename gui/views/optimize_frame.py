@@ -179,10 +179,10 @@ CONSUMABLES = (
 )
 NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Assay Strip", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
 NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
-TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
+TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge", "DG8"]
 EIGHT_COLUMN_CONSUMABLES = ["Tip Transfer Tray", "Assay Strip", "Tip Tray"]
 FOUR_COLUMN_CONSUMABLES = ["Heater/Shaker"]
-THREE_COLUMN_CONSUMABLES = ["DG8"]
+THREE_COLUMN_CONSUMABLES = [""]
 SPECIAL_CONSUMABLES = ["DG8", "Chip"]
 
 # Image Paths
@@ -200,7 +200,9 @@ class OptimizeFrame(ctk.CTkFrame):
 		posx: int,
 		posy: int
 	) -> None:
-		self.model = Model().get_optimize_model()
+		model = Model()
+		self.model = model.get_optimize_model()
+		self.coordinates_model = model.get_coordinates_model('A')
 		self.master = master
 		self.width = width
 		self.height = height
@@ -465,26 +467,186 @@ class OptimizeFrame(ctk.CTkFrame):
 			elif x >= 556 and x <= BOUNDS['tip_box']['x_max']:
 				self.column_sv.set('12')
 			# Set the tray
+			if y >= BOUNDS['tip_box']['y_min'] and y <= 170:
+				self.tray_sv.set('A')
+			elif y >= 175 and y <= 258:
+				self.tray_sv.set('B')
+			elif y >= 266 and y <= 346:
+				self.tray_sv.set('C')
+			elif y >= 353 and y <= 435:
+				self.tray_sv.set('D')
 		elif x >= BOUNDS['reagent_cartridge']['x_min'] and x <= BOUNDS['reagent_cartridge']['x_max'] and y >= BOUNDS['reagent_cartridge']['y_min'] and y <= BOUNDS['reagent_cartridge']['y_max']:
 			self.consumable_sv.set("Reagent Cartridge")
+			# Determine the column
+			if x >= BOUNDS['reagent_cartridge']['x_min'] and x <= 338:
+				self.column_sv.set('1')
+			elif x >= 339 and x <= 348:
+				self.column_sv.set('2')
+			elif x >= 349 and x <= 359:
+				self.column_sv.set('3')
+			elif x >= 360 and x <= 369:
+				self.column_sv.set('4')
+			elif x >= 370 and x <= 379:
+				self.column_sv.set('5')
+			elif x >= 380 and x <= 390:
+				self.column_sv.set('6')
+			elif x >= 391 and x <= 401:
+				self.column_sv.set('7')
+			elif x >= 402 and x <= 411:
+				self.column_sv.set('8')
+			elif x >= 412 and x <= 422:
+				self.column_sv.set('9')
+			elif x >= 423 and x <= 433:
+				self.column_sv.set('10')
+			elif x >= 434 and x <= 443:
+				self.column_sv.set('11')
+			elif x >= 444 and x <= BOUNDS['reagent_cartridge']['x_max']:
+				self.column_sv.set('12')
+			# Determine the tray
+			if y >= BOUNDS['reagent_cartridge']['y_min'] and y <= 170:
+				self.tray_sv.set('A')
+			elif y >= 171 and y <= 259:
+				self.tray_sv.set('B')
+			elif y >= 263 and y <= 348:
+				self.tray_sv.set('C')
+			elif y >= 350 and y <= 435:
+				self.tray_sv.set('D')
 		elif x >= BOUNDS['dg8']['x_min'] and x <= BOUNDS['dg8']['x_max'] and y >= BOUNDS['dg8']['y_min'] and y <= BOUNDS['dg8']['y_max']:
 			self.consumable_sv.set("DG8")
+			self.tray_sv.set('')
+			# Determine the column
+			if x >= BOUNDS['dg8']['x_min'] and x <= 344:
+				self.column_sv.set('1')
+			elif x >= 345 and x <= 353:
+				self.column_sv.set('2')
+			elif x >= 354 and x <= 362:
+				self.column_sv.set('3')
+			elif x >= 363 and x <= 373:
+				self.column_sv.set('4')
+			elif x >= 374 and x <= 383:
+				self.column_sv.set('5')
+			elif x >= 384 and x <= 391:
+				self.column_sv.set('6')
+			elif x >= 392 and x <= 401:
+				self.column_sv.set('7')
+			elif x >= 402 and x <= 410:
+				self.column_sv.set('8')
+			elif x >= 411 and x <= 420:
+				self.column_sv.set('9')
+			elif x >= 421 and x <= 431:
+				self.column_sv.set('10')
+			elif x >= 432 and x <= 439:
+				self.column_sv.set('11')
+			elif x >= 440 and x <= BOUNDS['dg8']['x_max']:
+				self.column_sv.set('12')
 		elif x >= BOUNDS['sample_rack']['x_min'] and x <= BOUNDS['sample_rack']['x_max'] and y >= BOUNDS['sample_rack']['y_min'] and y <= BOUNDS['sample_rack']['y_max']:
 			self.consumable_sv.set("Sample Rack")
+			self.column_sv.set('')
+			# Get the tray
+			if y >= BOUNDS['sample_rack']['y_min'] and y <= 170:
+				self.tray_sv.set('A')
+			elif y >= 178 and y <= 259:
+				self.tray_sv.set('B')
+			elif y >= 264 and y <= 348:
+				self.tray_sv.set('C')
+			elif y >= 352 and y <= 435:
+				self.tray_sv.set('D')
 		elif x >= BOUNDS['aux_heater']['x_min'] and x <= BOUNDS['aux_heater']['x_max'] and y >= BOUNDS['aux_heater']['y_min'] and y <= BOUNDS['aux_heater']['y_max']:
 			self.consumable_sv.set("Aux Heater")
 		elif x >= BOUNDS['heater_shaker']['x_min'] and x <= BOUNDS['heater_shaker']['x_max'] and y >= BOUNDS['heater_shaker']['y_min'] and y <= BOUNDS['heater_shaker']['y_max']:
 			self.consumable_sv.set("Heater/Shaker")
+			self.tray_sv.set('')
+			# Get the column
+			if x >= BOUNDS['aux_heater']['x_min'] and x <= 148:
+				self.column_sv.set('1')
+			elif x >= 149 and x <= 180:
+				self.column_sv.set('2')
+			elif x >= 181 and x <= 210:
+				self.column_sv.set('3')
+			elif x >= 211 and x <= BOUNDS['aux_heater']['x_max']:
+				self.column_sv.set('4')
 		elif x >= BOUNDS['mag_separator']['x_min'] and x <= BOUNDS['mag_separator']['x_max'] and y >= BOUNDS['mag_separator']['y_min'] and y <= BOUNDS['mag_separator']['y_max']:
 			self.consumable_sv.set("Mag Separator")
+			self.tray_sv.set('')
+			# Set the column
+			if x >= BOUNDS['mag_separator']['x_min'] and x <= 127:
+				self.column_sv.set('1')
+			elif x >= 128 and x <= 137:
+				self.column_sv.set('2')
+			elif x >= 138 and x <= 147:
+				self.column_sv.set('3')
+			elif x >= 148 and x <= 156:
+				self.column_sv.set('4')
+			elif x >= 157 and x <= 167:
+				self.column_sv.set('5')
+			elif x >= 168 and x <= 177:
+				self.column_sv.set('6')
+			elif x >= 178 and x <= 187:
+				self.column_sv.set('7')
+			elif x >= 188 and x <= 197:
+				self.column_sv.set('8')
+			elif x >= 198 and x <= 207:
+				self.column_sv.set('9')
+			elif x >= 208 and x <= 217:
+				self.column_sv.set('10')
+			elif x >= 218 and x <= 228:
+				self.column_sv.set('11')
+			elif x >= 229 and x <= BOUNDS['mag_separator']['x_max']:
+				self.column_sv.set('12')
 		elif x >= BOUNDS['chiller']['x_min'] and x <= BOUNDS['chiller']['x_max'] and y >= BOUNDS['chiller']['y_min'] and y <= BOUNDS['chiller']['y_max']:
 			self.consumable_sv.set("Chiller")
 		elif x >= BOUNDS['pre_amp_thermocycler']['x_min'] and x <= BOUNDS['pre_amp_thermocycler']['x_max'] and y >= BOUNDS['pre_amp_thermocycler']['y_min'] and y <= BOUNDS['pre_amp_thermocycler']['y_max']:
 			self.consumable_sv.set("Pre-Amp Thermocycler")
+			self.tray_sv.set('')
+			# Determine the column
+			if x >= BOUNDS['pre_amp_thermocycler']['x_min'] and x <= 51:
+				self.column_sv.set('1')
+			elif x >= 52 and x <= 61:
+				self.column_sv.set('2')
+			elif x >= 62 and x <= 71:
+				self.column_sv.set('3')
+			elif x >= 72 and x <= 81:
+				self.column_sv.set('4')
+			elif x >= 82 and x <= 91:
+				self.column_sv.set('5')
+			elif x >= 92 and x <= 101:
+				self.column_sv.set('6')
+			elif x >= 102 and x <= 113:
+				self.column_sv.set('7')
+			elif x >= 114 and x <= 123:
+				self.column_sv.set('8')
+			elif x >= 124 and x <= 133:
+				self.column_sv.set('9')
+			elif x >= 134 and x <= 143:
+				self.column_sv.set('10')
+			elif x >= 144 and x <= 154:
+				self.column_sv.set('11')
+			elif x >= 155 and x <= BOUNDS['pre_amp_thermocycler']['x_max']:
+				self.column_sv.set('12')
 		elif x >= BOUNDS['lid_tray']['x_min'] and x <= BOUNDS['lid_tray']['x_max'] and y >= BOUNDS['lid_tray']['y_min'] and y <= BOUNDS['lid_tray']['y_max']:
 			self.consumable_sv.set("Lid Tray")
 		elif x >= BOUNDS['tip_transfer_tray']['x_min'] and x <= BOUNDS['tip_transfer_tray']['x_max'] and y >= BOUNDS['tip_transfer_tray']['y_min'] and y <= BOUNDS['tip_transfer_tray']['y_max']:
 			self.consumable_sv.set("Tip Transfer Tray")
+			self.tray_sv.set('')
+			# Set the column
+			if x >= 11 and x <= 25:
+				self.column_sv.set('1')
+			elif x >= 26 and x <= 35:
+				self.column_sv.set('2')
+			elif x >= 36 and x <= 47:
+				self.column_sv.set('3')
+			elif x >= 48 and x <= 55:
+				self.column_sv.set('4')
+			elif x >= 56 and x <= 65:
+				self.column_sv.set('5')
+			elif x >= 66 and x <= 74:
+				self.column_sv.set('6')
+			elif x >= 75 and x <= 82:
+				self.column_sv.set('7')
+			elif x >= 83 and x <= 92:
+				self.column_sv.set('8')
+			elif x >= 93 and x <= 105:
+				self.column_sv.set('9')
 		elif x >= BOUNDS['asay_strip']['x_min'] and x <= BOUNDS['asay_strip']['x_max'] and y >= BOUNDS['asay_strip']['y_min'] and y <= BOUNDS['asay_strip']['y_max']:
 			self.consumable_sv.set("Assay Strip")
 

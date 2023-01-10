@@ -97,6 +97,18 @@ class CoordinatesModel:
 			query = f"SELECT * FROM '{table_name}'"
 			self.cursor.execute(query)
 			return self.cursor.fetchall()
+		if tray == '':
+			query = f"""SELECT * FROM '{table_name}'
+			WHERE CONSUMABLE = '{consumable}' AND COLUMN = {column};
+			"""
+			self.cursor.execute(query)
+			return self.cursor.fetchall()
+		if column == '':
+			query = f"""SELECT * FROM '{table_name}'
+			WHERE CONSUMABLE = '{consumable}' AND TRAY = '{tray}';
+				"""
+			self.cursor.execute(query)
+			return self.cursor.fetchall()
 		query = f"""SELECT * FROM '{table_name}'
 		WHERE CONSUMABLE = '{consumable}' AND TRAY = '{tray}' AND COLUMN = {column};
 		"""
