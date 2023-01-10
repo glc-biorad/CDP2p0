@@ -8,7 +8,7 @@ from PIL import Image
 from typing import Any, Callable
 
 # Import the Optimze Model
-from models.model import Model
+from gui.models.model import Model
 
 # Constants
 FONT = "Segoe UI"
@@ -104,58 +104,58 @@ BOUNDS = {
 		'y_max': 84,
 	},
 	'sample_rack': {
-		'x_min': 0,
-		'x_max': 0,
-		'y_min': 0,
-		'y_max': 0,
+		'x_min': 283,
+		'x_max': 317,
+		'y_min': 87,
+		'y_max': 434,
 	},
 	'aux_heater': {
-		'x_min': 0,
-		'x_max': 0,
-		'y_min': 0,
-		'y_max': 0,
+		'x_min': 247,
+		'x_max': 275,
+		'y_min': 89,
+		'y_max': 434,
 	},
 	'heater_shaker': {
-		'x_min': 0,
-		'x_max': 0,
-		'y_min': 0,
-		'y_max': 0,
+		'x_min': 117,
+		'x_max': 238,
+		'y_min': 176,
+		'y_max': 257,
 	},
 	'mag_separator': {
-		'x_min': 0,
-		'x_max': 0,
-		'y_min': 0,
-		'y_max': 0,
+		'x_min': 116,
+		'x_max': 238,
+		'y_min': 265,
+		'y_max': 342,
 	},
 	'chiller': {
-		'x_min': 0,
-		'x_max': 0,
-		'y_min': 0,
-		'y_max': 0,
+		'x_min': 114,
+		'x_max': 237,
+		'y_min': 350,
+		'y_max': 428,
 	},
 	'pre_amp_thermocycler': {
-		'x_min': 0,
-		'x_max': 0,
-		'y_min': 0,
-		'y_max': 0,
+		'x_min': 38,
+		'x_max': 166,
+		'y_min': 60,
+		'y_max': 143,
 	},
 	'lid_tray': {
-		'x_min': 0,
-		'x_max': 0,
-		'y_min': 0,
-		'y_max': 0,
+		'x_min': 5,
+		'x_max': 109,
+		'y_min': 174,
+		'y_max': 256,
 	},
 	'tip_transfer_tray': {
-		'x_min': 0,
-		'x_max': 0,
-		'y_min': 0,
-		'y_max': 0,
+		'x_min': 6,
+		'x_max': 108,
+		'y_min': 262,
+		'y_max': 344,
 	},
 	'asay_strip': {
-		'x_min': 0,
-		'x_max': 0,
-		'y_min': 0,
-		'y_max': 0,
+		'x_min': 3,
+		'x_max': 102,
+		'y_min': 353,
+		'y_max': 433,
 	},
 }
 
@@ -187,7 +187,7 @@ SPECIAL_CONSUMABLES = ["DG8", "Chip"]
 
 # Image Paths
 IMAGE_PATHS = {
-	'deck_plate': './images/deck_plate.png',
+	'deck_plate': 'gui/images/deck_plate.png',
 }
 
 class OptimizeFrame(ctk.CTkFrame):
@@ -421,17 +421,72 @@ class OptimizeFrame(ctk.CTkFrame):
 		# Get the coordinates
 		x, y = event.x, event.y
 		print(f"{x}, {y}")
+		self.tray_sv.set('')
+		self.column_sv.set('')
 		# Determine where one the deck plate was clicked
 		if x >= BOUNDS['quant_strip']['x_min'] and x <= BOUNDS['quant_strip']['x_max'] and y >= BOUNDS['quant_strip']['y_min'] and y <= BOUNDS['quant_strip']['y_max']:
+			# Set the consumable
 			self.consumable_sv.set("Quant Strip")
+			# Determine the tray
+			if y >= BOUNDS['quant_strip']['y_min'] and y <= 169:
+				self.tray_sv.set('A')
+			elif y >= 175 and y <= 260:
+				self.tray_sv.set('B')
+			elif y >= 266 and y <= 348:
+				self.tray_sv.set('C')
+			elif y >= 350 and y <= BOUNDS['quant_strip']['y_max']:
+				self.tray_sv.set('D')
 		elif x >= BOUNDS['tip_box']['x_min'] and x <= BOUNDS['tip_box']['x_max'] and y >= BOUNDS['tip_box']['y_min'] and y <= BOUNDS['tip_box']['y_max']:
+			# Set the consumable
 			self.consumable_sv.set("Tip Box")
+			# Set the column
+			if x >= BOUNDS['tip_box']['x_min'] and x <= 472:
+				self.column_sv.set('1')
+			elif x >= 473 and x <= 480:
+				self.column_sv.set('2')
+			elif x >= 481 and x <= 488:
+				self.column_sv.set('3')
+			elif x >= 489 and x <= 497:
+				self.column_sv.set('4')
+			elif x >= 498 and x <= 506:
+				self.column_sv.set('5')
+			elif x >= 507 and x <= 513:
+				self.column_sv.set('6')
+			elif x >= 514 and x <= 521:
+				self.column_sv.set('7')
+			elif x >= 522 and x <= 530:
+				self.column_sv.set('8')
+			elif x >= 531 and x <= 539:
+				self.column_sv.set('9')
+			elif x >= 540 and x <= 547:
+				self.column_sv.set('10')
+			elif x >= 548 and x <= 555:
+				self.column_sv.set('11')
+			elif x >= 556 and x <= BOUNDS['tip_box']['x_max']:
+				self.column_sv.set('12')
+			# Set the tray
 		elif x >= BOUNDS['reagent_cartridge']['x_min'] and x <= BOUNDS['reagent_cartridge']['x_max'] and y >= BOUNDS['reagent_cartridge']['y_min'] and y <= BOUNDS['reagent_cartridge']['y_max']:
 			self.consumable_sv.set("Reagent Cartridge")
 		elif x >= BOUNDS['dg8']['x_min'] and x <= BOUNDS['dg8']['x_max'] and y >= BOUNDS['dg8']['y_min'] and y <= BOUNDS['dg8']['y_max']:
 			self.consumable_sv.set("DG8")
-		elif x >= BOUNDS['']['x_min'] and x <= BOUNDS['']['x_max'] and y >= BOUNDS['']['y_min'] and y <= BOUNDS['']['y_max']:
-			self.consumable_sv.set("")
+		elif x >= BOUNDS['sample_rack']['x_min'] and x <= BOUNDS['sample_rack']['x_max'] and y >= BOUNDS['sample_rack']['y_min'] and y <= BOUNDS['sample_rack']['y_max']:
+			self.consumable_sv.set("Sample Rack")
+		elif x >= BOUNDS['aux_heater']['x_min'] and x <= BOUNDS['aux_heater']['x_max'] and y >= BOUNDS['aux_heater']['y_min'] and y <= BOUNDS['aux_heater']['y_max']:
+			self.consumable_sv.set("Aux Heater")
+		elif x >= BOUNDS['heater_shaker']['x_min'] and x <= BOUNDS['heater_shaker']['x_max'] and y >= BOUNDS['heater_shaker']['y_min'] and y <= BOUNDS['heater_shaker']['y_max']:
+			self.consumable_sv.set("Heater/Shaker")
+		elif x >= BOUNDS['mag_separator']['x_min'] and x <= BOUNDS['mag_separator']['x_max'] and y >= BOUNDS['mag_separator']['y_min'] and y <= BOUNDS['mag_separator']['y_max']:
+			self.consumable_sv.set("Mag Separator")
+		elif x >= BOUNDS['chiller']['x_min'] and x <= BOUNDS['chiller']['x_max'] and y >= BOUNDS['chiller']['y_min'] and y <= BOUNDS['chiller']['y_max']:
+			self.consumable_sv.set("Chiller")
+		elif x >= BOUNDS['pre_amp_thermocycler']['x_min'] and x <= BOUNDS['pre_amp_thermocycler']['x_max'] and y >= BOUNDS['pre_amp_thermocycler']['y_min'] and y <= BOUNDS['pre_amp_thermocycler']['y_max']:
+			self.consumable_sv.set("Pre-Amp Thermocycler")
+		elif x >= BOUNDS['lid_tray']['x_min'] and x <= BOUNDS['lid_tray']['x_max'] and y >= BOUNDS['lid_tray']['y_min'] and y <= BOUNDS['lid_tray']['y_max']:
+			self.consumable_sv.set("Lid Tray")
+		elif x >= BOUNDS['tip_transfer_tray']['x_min'] and x <= BOUNDS['tip_transfer_tray']['x_max'] and y >= BOUNDS['tip_transfer_tray']['y_min'] and y <= BOUNDS['tip_transfer_tray']['y_max']:
+			self.consumable_sv.set("Tip Transfer Tray")
+		elif x >= BOUNDS['asay_strip']['x_min'] and x <= BOUNDS['asay_strip']['x_max'] and y >= BOUNDS['asay_strip']['y_min'] and y <= BOUNDS['asay_strip']['y_max']:
+			self.consumable_sv.set("Assay Strip")
 
 	def bind_button_print(self, callback: Callable[[tk.Event], None]) -> None:
 		try:

@@ -2,15 +2,15 @@ import time
 import threading
 from tkinter import StringVar
 
-from util.browse_files import browse_files 
-from util.next_action_allowed import next_action_allowed
+from gui.util.browse_files import browse_files 
+from gui.util.next_action_allowed import next_action_allowed
 
 # Import the model and view for this controller
-from models.build_protocol_model import BuildProtocolModel
-from views.build_protocol_frame import BuildProtocolFrame
+from gui.models.build_protocol_model import BuildProtocolModel
+from gui.views.build_protocol_frame import BuildProtocolFrame
 
 # Import the state model to keep track of tips and volumes
-from models.state_model import StateModel
+from gui.models.state_model import StateModel
 
 # Constants
 INITIAL_PROTOCOL_FILENAME = 'protocol.txt'
