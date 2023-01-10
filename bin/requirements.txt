@@ -8,5 +8,5 @@ clr
 pythonnet
 fastapi
 uvicorn
-tkinter
+tk
 customtkinter
