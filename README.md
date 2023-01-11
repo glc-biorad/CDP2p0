@@ -11,4 +11,4 @@ To-Do List:
 - add unit b, c, and d coordinates to a table in the database
 - test coordinate updating with the table
 - add api functionality to the gui 
-- setup protocols directory structure for each unit (test, demo, extraction, pre_amp, enrichment, quant, thermocycling)
+- setup protocols directory structure for each unit (test, demo, extraction, pre_amp, enrichment, quant, thermocycling
