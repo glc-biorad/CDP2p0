@@ -97,6 +97,18 @@ class CoordinatesModel:
 			query = f"SELECT * FROM '{table_name}'"
 			self.cursor.execute(query)
 			return self.cursor.fetchall()
+		if tray == '':
+			query = f"""SELECT * FROM '{table_name}'
+			WHERE CONSUMABLE = '{consumable}' AND COLUMN = {column};
+			"""
+			self.cursor.execute(query)
+			return self.cursor.fetchall()
+		if column == '':
+			query = f"""SELECT * FROM '{table_name}'
+			WHERE CONSUMABLE = '{consumable}' AND TRAY = '{tray}';
+				"""
+			self.cursor.execute(query)
+			return self.cursor.fetchall()
 		query = f"""SELECT * FROM '{table_name}'
 		WHERE CONSUMABLE = '{consumable}' AND TRAY = '{tray}' AND COLUMN = {column};
 		"""
@@ -185,13 +197,52 @@ class CoordinatesModel:
 		z1: int,
 		z2: int
 	) -> None:
-		query = f"""UPDATE '{table_name}'
-		SET 
-		X = {x},
-		Y = {y},
-		Z1 = {z1},
-		Z2 = {z2}
-		WHERE CONSUMABLE = '{consumable}' AND TRAY = '{tray}' AND COLUMN = {column};
-		"""
+		if column == '':
+			query = f"""UPDATE '{table_name}'
+			SET 
+			X = {x},
+			Y = {y},
+			Z1 = {z1},
+			Z2 = {z2}
+			WHERE CONSUMABLE = '{consumable}' AND TRAY = '{tray}'
+			"""
+		else:
+			query = f"""UPDATE '{table_name}'
+			SET 
+			X = {x},
+			Y = {y},
+			Z1 = {z1},
+			Z2 = {z2}
+			WHERE CONSUMABLE = '{consumable}' AND TRAY = '{tray}' AND COLUMN = {column}
+			"""
+		print(query)
 		self.cursor.execute(query)
 		self.connection.commit()
+
+	def check_location_exists(self, table_name: str, consumable: str, tray: str, column: str) -> None:
+		""" Check if a consumable is in the database
+		"""
+		if tray == '':
+			query = f"""SELECT EXISTS (
+			SELECT 1 FROM '{table_name}' WHERE CONSUMABLE = '{consumable}' AND COLUMN = {column}
+			);
+			"""
+			self.cursor.execute(query)
+			return self.cursor.fetchall()[0][0]
+		if column == '':
+			query = f"""SELECT EXISTS (
+			SELECT 1 FROM '{table_name}' WHERE CONSUMABLE = '{consumable}' AND TRAY = '{tray}'
+			);
+			"""
+			self.cursor.execute(query)
+			return self.cursor.fetchall()[0][0]
+		if (column == '' and tray == '') or (consumable == ''):
+			return False
+		query = f"""SELECT EXISTS (
+		SELECT 1 FROM '{table_name}' WHERE CONSUMABLE = '{consumable}' AND TRAY = '{tray}' AND COLUMN = {column}
+		);
+		"""
+		self.cursor.execute(query)
+		#print(self.cursor.fetchall()[0])
+		#print(self.cursor.fetchall()[0][0])
+		return self.cursor.fetchall()[0][0]

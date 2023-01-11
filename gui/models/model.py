@@ -31,9 +31,7 @@ class Model:
 		#t.insert(4,'D',40,84,50,84,3,40,30,1,1,1)
 		#m = TipUseModel(DB_NAME, self.cursor, self.connection)
 		self.setup_state_table()
-		self.setup_coordinates_table('A')
-		#print(mm.select())
-		#print(m.select())
+		#self.setup_coordinates_table('A')
 
 	def get_thermocycle_model(self) -> ThermocycleModel:
 		self.thermocycle_model = ThermocycleModel(DB_NAME, self.cursor, self.connection)
@@ -53,6 +51,16 @@ class Model:
 		model = StateModel(DB_NAME, self.cursor, self.connection)
 		model.drop_table()
 		model.create_table()
+
+	def get_coordinates_model(self, unit: str) -> None:
+		""" Get the coordinate model for the unit of interest
+
+		Parameters:
+		unit : str
+			Unit of interest
+		"""
+		self.coordinates_model = CoordinatesModel(DB_NAME, self.cursor, self.connection)
+		return self.coordinates_model
 
 	def setup_coordinates_table(self, unit: str) -> None:
 		""" Helper for setting up a coordinates table from scratch for a unit
@@ -96,4 +104,4 @@ class Model:
 			model.insert(table_name, ID, consumable, tray, column, x, y, z1, z2, tip)
 			
 		# Check it worked
-		print(model.select(table_name))
+		#print(model.select(table_name))
