@@ -1,6 +1,5 @@
 numpy
 pandas
-torch
 pillow
 pyserial
 matplotlib
@@ -10,3 +9,5 @@ fastapi
 uvicorn
 tk
 customtkinter
+tifffile
+aioserial

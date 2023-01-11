@@ -515,6 +515,61 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
                 location_name = location_name + word + ' '
         return location_name[:-1]
 
+    def move(
+        self,
+        x: int,
+        y: int,
+        z: int,
+        drip_plate: int,
+        use_z: bool = True,
+        slow_z: bool = False,
+        use_drip_plate: bool = False,
+        tip: int = None,
+        relative_moves: list = [0,0,0,0],
+        max_drip_plate: int = 1198000
+       ) -> None:
+        """ Moves the pipettor head based on the coordinates
+
+        Parameters
+        ----------
+        x: int
+        y: int
+        z: int
+        drip_plate: int
+        use_z: bool
+        slow_z: bool
+        use_drip_plate: bool
+        tip: int
+        """
+        # Modify the coordinate based on the relative moves
+        x = x + relative_moves[0]
+        y = y + relative_moves[1]
+        z = z + relative_moves[2]
+        drip_plate = drip_plate + relative_moves[3]
+        # Offset z and the drip plate for the tip
+        if tip == 50 or tip == 200:
+            z = z - 305000
+        elif tip == None:
+            z = 0
+        # Home Z and the drip plate
+        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, 0, 800000, True, True)
+        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, 0, 2500000, True, True)
+        # Check if the user wants to use the drip plate
+        if use_drip_plate:
+            # Move the drip plate
+            self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, max_drip_plate, 2500000, True, True)
+        # Move to the Y and X coordiantes
+        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 2, y, 3200000, False, True)
+        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 1, x, 300000, True, True)
+        # Check if the user wants to use the drip plate
+        if use_drip_plate:
+            # Move the drip plate
+            self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, drip_plate, 2500000, True, True)
+        # Move to the Z height
+        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, z, 800000, True, True)
+
+
+
     def move_pipettor_new(self, 
                           consumable:str, tray=None, row=None, 
                           use_z=True, use_drip_plate=True,
@@ -1024,7 +1079,7 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         timer = Timer(logger)
         timer.start(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.get_position_from_axis.__name__))
         assert type(axis) == str
-        position = self.__FAST_API_INTERFACE.pipettor_gantry.axis.get_position('pipettor_gantry', self.__ID[axis.upper()])
+        position = self.__FAST_API_INTERFACE.pipettor_gantry.axis.get_position('pipettor_gantry', self.__ID[axis.title()])
         timer.stop(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.get_position_from_axis.__name__))
         return position
 
