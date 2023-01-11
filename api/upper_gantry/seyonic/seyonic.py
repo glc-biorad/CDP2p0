@@ -10,8 +10,8 @@ import time
 # import numpy as np
 
 # pythonnet
-import pythonnet
-from pythonnet import load
+#import pythonnet
+#from pythonnet import load
 
 from api.util.logger import Logger
 

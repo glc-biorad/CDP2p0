@@ -1,0 +1,194 @@
+consumable,tray,column,x,y,z1,z2,tip
+Quant Strip,A,1,0,0,0,0,1000
+Quant Strip,B,1,0,0,0,0,1000
+Quant Strip,C,1,0,0,0,0,1000
+Quant Strip,D,1,0,0,0,0,1000
+Tip Box,A,1,0,0,0,0,1000
+Tip Box,A,2,0,0,0,0,1000
+Tip Box,A,3,0,0,0,0,1000
+Tip Box,A,4,0,0,0,0,1000
+Tip Box,A,5,0,0,0,0,1000
+Tip Box,A,6,0,0,0,0,1000
+Tip Box,A,7,0,0,0,0,1000
+Tip Box,A,8,0,0,0,0,1000
+Tip Box,A,9,0,0,0,0,1000
+Tip Box,A,10,0,0,0,0,1000
+Tip Box,A,11,0,0,0,0,1000
+Tip Box,A,12,0,0,0,0,1000
+Tip Box,B,1,0,0,0,0,1000
+Tip Box,B,2,0,0,0,0,1000
+Tip Box,B,3,0,0,0,0,1000
+Tip Box,B,4,0,0,0,0,1000
+Tip Box,B,5,0,0,0,0,1000
+Tip Box,B,6,0,0,0,0,1000
+Tip Box,B,7,0,0,0,0,1000
+Tip Box,B,8,0,0,0,0,1000
+Tip Box,B,9,0,0,0,0,1000
+Tip Box,B,10,0,0,0,0,1000
+Tip Box,B,11,0,0,0,0,1000
+Tip Box,B,12,0,0,0,0,1000
+Tip Box,C,1,0,0,0,0,1000
+Tip Box,C,2,0,0,0,0,1000
+Tip Box,C,3,0,0,0,0,1000
+Tip Box,C,4,0,0,0,0,1000
+Tip Box,C,5,0,0,0,0,1000
+Tip Box,C,6,0,0,0,0,1000
+Tip Box,C,7,0,0,0,0,1000
+Tip Box,C,8,0,0,0,0,1000
+Tip Box,C,9,0,0,0,0,1000
+Tip Box,C,10,-127500,-1465000,-1479000,0,1000
+Tip Box,C,11,-122000,-1465000,-1479000,0,1000
+Tip Box,C,12,-116500,-1465000,-1479000,0,1000
+Tip Box,D,1,0,0,0,0,1000
+Tip Box,D,2,0,0,0,0,1000
+Tip Box,D,3,0,0,0,0,1000
+Tip Box,D,4,0,0,0,0,1000
+Tip Box,D,5,0,0,0,0,1000
+Tip Box,D,6,0,0,0,0,1000
+Tip Box,D,7,0,0,0,0,1000
+Tip Box,D,8,0,0,0,0,1000
+Tip Box,D,9,0,0,0,0,1000
+Tip Box,D,10,0,0,0,0,1000
+Tip Box,D,11,0,0,0,0,1000
+Tip Box,D,12,0,0,0,0,1000
+Reagent Cartridge,A,1,-259500,-630000,-947000,0,1000
+Reagent Cartridge,A,2,-251500,-630000,-947000,0,1000
+Reagent Cartridge,A,3,-245000,-630000,-847000,0,1000
+Reagent Cartridge,A,4,-240800,-630000,-745500,0,1000
+Reagent Cartridge,A,5,-235600,-630000,-761500,0,1000
+Reagent Cartridge,A,6,-230700,-630000,-745500,0,1000
+Reagent Cartridge,A,7,-225300,-630000,-745500,0,1000
+Reagent Cartridge,A,8,-219900,-630000,-745500,0,1000
+Reagent Cartridge,A,9,-214500,-630000,-745500,0,1000
+Reagent Cartridge,A,10,-208600,-630000,-847000,0,1000
+Reagent Cartridge,A,11,-201500,-630000,-947000,0,1000
+Reagent Cartridge,A,12,-195000,-630000,-947000,0,1000
+Reagent Cartridge,B,1,-25800,-1045000,-950000,-550000,1000
+Reagent Cartridge,B,2,-251500,-1045000,-950000,-550000,1000
+Reagent Cartridge,B,3,0,0,0,0,1000
+Reagent Cartridge,B,4,0,0,0,0,1000
+Reagent Cartridge,B,5,0,0,0,0,1000
+Reagent Cartridge,B,6,0,0,0,0,1000
+Reagent Cartridge,B,7,0,0,0,0,1000
+Reagent Cartridge,B,8,0,0,0,0,1000
+Reagent Cartridge,B,9,0,0,0,0,1000
+Reagent Cartridge,B,10,0,0,0,0,1000
+Reagent Cartridge,B,11,0,0,0,0,1000
+Reagent Cartridge,B,12,0,0,0,0,1000
+Reagent Cartridge,C,1,-258000,-1460000,-950000,-550000,1000
+Reagent Cartridge,C,2,-251500,-1460000,-950000,-550000,1000
+Reagent Cartridge,C,3,-245000,-1460000,-850000,0,1000
+Reagent Cartridge,C,4,-241000,-1460000,-755000,0,1000
+Reagent Cartridge,C,5,-235600,-1460000,-755000,0,1000
+Reagent Cartridge,C,6,-230200,-1460000,-755000,0,1000
+Reagent Cartridge,C,7,-224800,-1460000,-755000,0,1000
+Reagent Cartridge,C,8,-219400,-1460000,-755000,0,1000
+Reagent Cartridge,C,9,-214000,-1460000,-755000,0,1000
+Reagent Cartridge,C,10,-208600,-1460000,-850000,0,1000
+Reagent Cartridge,C,11,0,0,0,0,1000
+Reagent Cartridge,C,12,-195000,-1460000,-950000,-550000,1000
+Reagent Cartridge,D,1,0,0,0,0,1000
+Reagent Cartridge,D,2,0,0,0,0,1000
+Reagent Cartridge,D,3,0,0,0,0,1000
+Reagent Cartridge,D,4,0,0,0,0,1000
+Reagent Cartridge,D,5,0,0,0,0,1000
+Reagent Cartridge,D,6,0,0,0,0,1000
+Reagent Cartridge,D,7,0,0,0,0,1000
+Reagent Cartridge,D,8,0,0,0,0,1000
+Reagent Cartridge,D,9,0,0,0,0,1000
+Reagent Cartridge,D,10,0,0,0,0,1000
+Reagent Cartridge,D,11,0,0,0,0,1000
+Reagent Cartridge,D,12,0,0,0,0,1000
+Sample Rack,A,1,-278000,-680000,-1100000,-400000,1000
+Sample Rack,B,1,-278000,-1075000,-1100000,-400000,1000
+Sample Rack,C,1,-278000,-1485000,-1100000,-400000,1000
+Sample Rack,D,1,0,0,0,0,1000
+Aux Heater,A,1,0,0,0,0,1000
+Aux Heater,B,1,0,0,0,0,1000
+Aux Heater,C,1,0,0,0,0,1000
+Aux Heater,D,1,0,0,0,0,1000
+Heater/Shaker,,1,-396300,-943000,-631000,-490000,1000
+Heater/Shaker,,2,-379300,-943000,-631000,-490000,1000
+Heater/Shaker,,3,-360300,-943000,-631000,-490000,1000
+Heater/Shaker,,4,-343300,-943000,-631000,-490000,1000
+Mag Separator,,1,-398900,-1420000,-795000,0,1000
+Mag Separator,,2,-393500,-1420000,-775000,0,1000
+Mag Separator,,3,-388100,-1420000,-775000,0,1000
+Mag Separator,,4,-382700,-1420000,-775000,0,1000
+Mag Separator,,5,-377300,-1420000,-775000,0,1000
+Mag Separator,,6,-371900,-1420000,-775000,0,1000
+Mag Separator,,7,-366500,-1420000,-775000,0,1000
+Mag Separator,,8,-361100,-1420000,-775000,0,1000
+Mag Separator,,9,-355700,-1420000,-775000,0,1000
+Mag Separator,,10,-350300,-1420000,-775000,0,1000
+Mag Separator,,11,-344900,-1420000,-775000,0,1000
+Mag Separator,,12,-339500,-1420000,-775000,0,1000
+Chiller,,1,0,0,0,0,1000
+Chiller,,2,0,0,0,0,1000
+Chiller,,3,0,0,0,0,1000
+Chiller,,4,0,0,0,0,1000
+Chiller,,5,0,0,0,0,1000
+Chiller,,6,0,0,0,0,1000
+Chiller,,7,0,0,0,0,1000
+Chiller,,8,0,0,0,0,1000
+Chiller,,9,0,0,0,0,1000
+Chiller,,10,0,0,0,0,1000
+Chiller,,11,0,0,0,0,1000
+Chiller,,12,0,0,0,0,1000
+Pre-Amp Thermocycler,,1,-452300,-330000,-890000,-400000,1000
+Pre-Amp Thermocycler,,2,-446800,-330000,-890000,-400000,1000
+Pre-Amp Thermocycler,,3,-441300,-330000,-890000,-400000,1000
+Pre-Amp Thermocycler,,4,-435800,-330000,-890000,-400000,1000
+Pre-Amp Thermocycler,,5,-430300,-330000,-890000,-400000,1000
+Pre-Amp Thermocycler,,6,-424800,-330000,-890000,-400000,1000
+Pre-Amp Thermocycler,,7,-419300,-330000,-890000,-400000,1000
+Pre-Amp Thermocycler,,8,-413800,-330000,-890000,-400000,1000
+Pre-Amp Thermocycler,,9,-408300,-330000,-890000,-400000,1000
+Pre-Amp Thermocycler,,10,-402800,-330000,-890000,-400000,1000
+Pre-Amp Thermocycler,,11,-397300,-330000,-890000,-400000,1000
+Pre-Amp Thermocycler,,12,-393000,-330000,-890000,-400000,1000
+Lid Tray,,1,-435300,-970000,-235000,-1198000,1000
+Lid Tray,,2,-435300,-970000,-265000,-1198000,1000
+Lid Tray,,3,-435300,-970000,-295000,-1198000,1000
+Lid Tray,,4,-435300,-970000,-328000,-1198000,1000
+Tip Transfer Tray,,1,-473000,-1437000,-1280000,0,1000
+Tip Transfer Tray,,2,-467600,-1437000,-1280000,0,1000
+Tip Transfer Tray,,3,-462200,-1437000,-1280000,0,1000
+Tip Transfer Tray,,4,-456800,-1437000,-1280000,0,1000
+Tip Transfer Tray,,5,-451400,-1437000,-1280000,0,1000
+Tip Transfer Tray,,6,-446000,-1437000,-1280000,0,1000
+Tip Transfer Tray,,7,-440600,-1437000,-1280000,0,1000
+Tip Transfer Tray,,8,-435200,-1437000,-1280000,0,1000
+Tip Transfer Tray,,9,0,0,0,0,1000
+Assay Strip,A,1,-477750,-1887000,-702000,0,1000
+Assay Strip,A,2,0,0,0,0,1000
+Assay Strip,B,3,0,0,0,0,1000
+Assay Strip,B,4,0,0,0,0,1000
+Assay Strip,C,5,0,0,0,0,1000
+Assay Strip,C,6,0,0,0,0,1000
+Assay Strip,D,7,0,0,0,0,1000
+Assay Strip,D,8,0,0,0,0,1000
+Tray,A,1,0,0,0,0,1000
+Tray,A,2,0,0,0,0,1000
+Tray,A,3,0,0,0,0,1000
+Tray,B,1,0,0,0,0,1000
+Tray,B,2,0,0,0,0,1000
+Tray,B,3,0,0,0,0,1000
+Tray,C,1,0,0,0,0,1000
+Tray,C,2,0,0,0,0,1000
+Tray,C,3,0,0,0,0,1000
+Tray,D,1,0,0,0,0,1000
+Tray,D,2,0,0,0,0,1000
+Tray,D,3,0,0,0,0,1000
+DG8,A,1,-259900,-200000,-1076000,0,1000
+DG8,A,2,-255400,-200000,-1095000,0,1000
+DG8,A,3,-250900,-200000,-1096000,0,1000
+DG8,B,1,0,0,0,0,1000
+DG8,B,2,0,0,0,0,1000
+DG8,B,3,0,0,0,0,1000
+DG8,C,1,0,0,0,0,1000
+DG8,C,2,0,0,0,0,1000
+DG8,C,3,0,0,0,0,1000
+DG8,D,1,0,0,0,0,1000
+DG8,D,2,0,0,0,0,1000
+DG8,D,3,0,0,0,0,1000
