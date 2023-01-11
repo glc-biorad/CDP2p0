@@ -1,3 +1,4 @@
+from typing_extensions import Self
 import customtkinter as ctk
 import tkinter as tk
 
@@ -33,28 +34,28 @@ OPTIONMENU_COLUMN_POSY = 10
 OPTIONMENU_COLUMN_WIDTH = 90
 BUTTON_PRINT_POSX = 5
 BUTTON_PRINT_POSY = 485
-BUTTON_PRINT_WIDTH = 57
+BUTTON_PRINT_WIDTH = 30
 BUTTON_PRINT_COLOR = '#10adfe'
-BUTTON_HOME_Z_POSX = 65
+BUTTON_HOME_Z_POSX = 45
 BUTTON_HOME_Z_POSY = 485
-BUTTON_HOME_Z_WIDTH = 70
-BUTTON_HOME_Y_POSX = 140
+BUTTON_HOME_Z_WIDTH = 55
+BUTTON_HOME_Y_POSX = 105
 BUTTON_HOME_Y_POSY = 485
-BUTTON_HOME_Y_WIDTH = 70
-BUTTON_HOME_X_POSX = 215
+BUTTON_HOME_Y_WIDTH = 55
+BUTTON_HOME_X_POSX = 165
 BUTTON_HOME_X_POSY = 485
-BUTTON_HOME_X_WIDTH = 70
-LABEL_X_POSX = 295
+BUTTON_HOME_X_WIDTH = 55
+LABEL_X_POSX = 300
 LABEL_X_POSY = 485
-ENTRY_X_POSX = 315
+ENTRY_X_POSX = 320
 ENTRY_X_POSY = 485
 ENTRY_X_WIDTH = 75
-LABEL_Y_POSX = 395
+LABEL_Y_POSX = 400
 LABEL_Y_POSY = 485
-ENTRY_Y_POSX = 414
+ENTRY_Y_POSX = 419
 ENTRY_Y_POSY = 485
 ENTRY_Y_WIDTH = 75
-LABEL_Z_POSX = 495
+LABEL_Z_POSX = 500
 LABEL_Z_POSY = 485
 ENTRY_Z_POSX = 515
 ENTRY_Z_POSY = 485
@@ -76,6 +77,9 @@ BUTTON_UPDATE_COLOR = '#10adfe'
 BUTTON_DRIP_PLATE_POSX = 215
 BUTTON_DRIP_PLATE_POSY = 45
 BUTTON_DRIP_PLATE_WIDTH = 70
+OPTIONMENU_TIP_POSX = 225
+OPTIONMENU_TIP_POSY = 485
+OPTIONMENU_TIP_WIDTH = 70
 
 # Deck Plate Coordinate Bounds
 BOUNDS = {
@@ -215,6 +219,10 @@ class OptimizeFrame(ctk.CTkFrame):
 			corner_radius=0,
 		)
 		self.create_ui()
+		self.bind('<Up>', self.up)
+
+	def up(self, event):
+		print('here')
 
 	def create_ui(self) -> None:
 		"""Deals with the creation of the UI
@@ -306,26 +314,26 @@ class OptimizeFrame(ctk.CTkFrame):
 			master=self,
 			text='Print',
 			width=BUTTON_PRINT_WIDTH,
-			font=(FONT, -16),
+			font=(FONT, -12),
 			fg_color=BUTTON_PRINT_COLOR,
 		)
 		self.button_home_z = ctk.CTkButton(
                         master=self,
                         text='Home Z',
 			width=BUTTON_HOME_Z_WIDTH,
-			font=(FONT,-16),
+			font=(FONT,-12),
 		)
 		self.button_home_y = ctk.CTkButton(
                         master=self,
                         text='Home Y',
 			width=BUTTON_HOME_Y_WIDTH,
-			font=(FONT,-16),
+			font=(FONT,-12),
 		)
 		self.button_home_x = ctk.CTkButton(
                         master=self,
                         text='Home X',
 			width=BUTTON_HOME_X_WIDTH,
-			font=(FONT,-16),
+			font=(FONT,-12),
 		)
 		# Create the dx, dy, and dz labels and entries
 		self.label_x = ctk.CTkLabel(master=self, text='X', font=(FONT, -16))
@@ -356,6 +364,16 @@ class OptimizeFrame(ctk.CTkFrame):
 			width=ENTRY_Z_WIDTH,
 		)
 		# Create the tip label and optionmenu
+		self.tip_sv = StringVar()
+		self.tip_sv.set('')
+		self.optionmenu_tip = ctk.CTkOptionMenu(
+			master=self,
+			variable=self.tip_sv,
+			values=('1000', '50', '200', ''),
+			font=(FONT,-14),
+			width=OPTIONMENU_TIP_WIDTH,
+			corner_radius=5,
+		)
 
 	def place_ui(self) -> None:
 		"""Place the UI
@@ -391,6 +409,7 @@ class OptimizeFrame(ctk.CTkFrame):
 		self.label_z.place(x=LABEL_Z_POSX, y=LABEL_Z_POSY)
 		self.entry_z.place(x=ENTRY_Z_POSX, y=ENTRY_Z_POSY)
 		# Place the tip label and optionmenu
+		self.optionmenu_tip.place(x=OPTIONMENU_TIP_POSX, y=OPTIONMENU_TIP_POSY)
 
 	def create_deck_plate_ui(self) -> None:
 		""" Create the deck plate UI
@@ -417,12 +436,37 @@ class OptimizeFrame(ctk.CTkFrame):
 		except:
 			pass
 
+	def trace_entry_x(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with tracing the x StringVar for the X entry
+		"""
+		try:
+			self.x_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_entry_y(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with tracing the x StringVar for the X entry
+		"""
+		try:
+			self.y_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_entry_z(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with tracing the x StringVar for the X entry
+		"""
+		try:
+			self.z_sv.trace('w', callback)
+		except:
+			pass
+
 	def on_click_deck_plate(self, event) -> None:
 		"""On click event handler for the deck plate image
 		"""
 		# Get the coordinates
 		x, y = event.x, event.y
 		print(f"{x}, {y}")
+		self.consumable_sv.set('')
 		self.tray_sv.set('')
 		self.column_sv.set('')
 		# Determine where one the deck plate was clicked
@@ -652,7 +696,7 @@ class OptimizeFrame(ctk.CTkFrame):
 
 	def bind_button_print(self, callback: Callable[[tk.Event], None]) -> None:
 		try:
-                        self.button_print.bind('<Button-1>', callback)
+			self.button_print.bind('<Button-1>', callback)
 		except:
 			pass
 
