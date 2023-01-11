@@ -30,23 +30,29 @@ class BuildProtocolModel:
 		self.db_name = db_name
 		self.cursor = cursor
 		self.connection = connection
-		self.drop_table()
+		try:
+			self.drop_table()
+		except:
+			pass
 		self.create_table()
 		# Initialize the optionmenu and entry variables
-		self.tips_tray_sv = StringVar()
-		self.tips_column_sv = StringVar()
-		self.tips_action_sv = StringVar()
-		self.motion_consumable_sv = StringVar()
-		self.motion_tray_sv = StringVar()
-		self.motion_column_sv = StringVar()
-		self.motion_tip_sv = StringVar()
-		self.pipettor_volume_sv = StringVar()
-		self.pipettor_tip_sv = StringVar()
-		self.pipettor_action_sv = StringVar()
-		self.pipettor_pressure_sv = StringVar()
-		self.time_delay_sv = StringVar()
-		self.time_units_sv = StringVar()
-		self.other_option_sv = StringVar()
+		try:
+			self.tips_tray_sv = StringVar()
+			self.tips_column_sv = StringVar()
+			self.tips_action_sv = StringVar()
+			self.motion_consumable_sv = StringVar()
+			self.motion_tray_sv = StringVar()
+			self.motion_column_sv = StringVar()
+			self.motion_tip_sv = StringVar()
+			self.pipettor_volume_sv = StringVar()
+			self.pipettor_tip_sv = StringVar()
+			self.pipettor_action_sv = StringVar()
+			self.pipettor_pressure_sv = StringVar()
+			self.time_delay_sv = StringVar()
+			self.time_units_sv = StringVar()
+			self.other_option_sv = StringVar()
+		except:
+			pass
 		# Initialize the action list
 		self.actions = []
 

@@ -1,4 +1,3 @@
-from typing_extensions import Self
 import customtkinter as ctk
 import tkinter as tk
 
@@ -32,17 +31,17 @@ LABEL_COLUMN_POSY = 10
 OPTIONMENU_COLUMN_POSX = 475
 OPTIONMENU_COLUMN_POSY = 10
 OPTIONMENU_COLUMN_WIDTH = 90
-BUTTON_PRINT_POSX = 5
-BUTTON_PRINT_POSY = 485
-BUTTON_PRINT_WIDTH = 30
+BUTTON_PRINT_POSX = 200
+BUTTON_PRINT_POSY = 45
+BUTTON_PRINT_WIDTH = 40
 BUTTON_PRINT_COLOR = '#10adfe'
-BUTTON_HOME_Z_POSX = 45
+BUTTON_HOME_Z_POSX = 0
 BUTTON_HOME_Z_POSY = 485
 BUTTON_HOME_Z_WIDTH = 55
-BUTTON_HOME_Y_POSX = 105
+BUTTON_HOME_Y_POSX = 60
 BUTTON_HOME_Y_POSY = 485
 BUTTON_HOME_Y_WIDTH = 55
-BUTTON_HOME_X_POSX = 165
+BUTTON_HOME_X_POSX = 120
 BUTTON_HOME_X_POSY = 485
 BUTTON_HOME_X_WIDTH = 55
 LABEL_X_POSX = 300
@@ -64,19 +63,19 @@ CHECKBOX_USE_Z_POSX = 230
 CHECKBOX_USE_Z_POSY = 80
 CHECKBOX_SLOW_Z_POSX = 230
 CHECKBOX_SLOW_Z_POSY = 105
-BUTTON_HOME_POSX = 10 #215
+BUTTON_HOME_POSX = 0 #215
 BUTTON_HOME_POSY = 45 #40
-BUTTON_HOME_WIDTH = 60
-BUTTON_MOVE_POSX = 75
+BUTTON_HOME_WIDTH = 40
+BUTTON_MOVE_POSX = 60
 BUTTON_MOVE_POSY = 45
-BUTTON_MOVE_WIDTH = 60
-BUTTON_UPDATE_POSX = 140
+BUTTON_MOVE_WIDTH = 40
+BUTTON_UPDATE_POSX = 250
 BUTTON_UPDATE_POSY = 45
-BUTTON_UPDATE_WIDTH = 60
+BUTTON_UPDATE_WIDTH = 50
 BUTTON_UPDATE_COLOR = '#10adfe'
-BUTTON_DRIP_PLATE_POSX = 215
+BUTTON_DRIP_PLATE_POSX = 115
 BUTTON_DRIP_PLATE_POSY = 45
-BUTTON_DRIP_PLATE_WIDTH = 70
+BUTTON_DRIP_PLATE_WIDTH = 60
 OPTIONMENU_TIP_POSX = 225
 OPTIONMENU_TIP_POSY = 485
 OPTIONMENU_TIP_WIDTH = 70
@@ -314,7 +313,7 @@ class OptimizeFrame(ctk.CTkFrame):
 			master=self,
 			text='Print',
 			width=BUTTON_PRINT_WIDTH,
-			font=(FONT, -12),
+			font=(FONT, -16),
 			fg_color=BUTTON_PRINT_COLOR,
 		)
 		self.button_home_z = ctk.CTkButton(
@@ -601,13 +600,13 @@ class OptimizeFrame(ctk.CTkFrame):
 			self.consumable_sv.set("Heater/Shaker")
 			self.tray_sv.set('')
 			# Get the column
-			if x >= BOUNDS['aux_heater']['x_min'] and x <= 148:
+			if x >= BOUNDS['heater_shaker']['x_min'] and x <= 148:
 				self.column_sv.set('1')
 			elif x >= 149 and x <= 180:
 				self.column_sv.set('2')
 			elif x >= 181 and x <= 210:
 				self.column_sv.set('3')
-			elif x >= 211 and x <= BOUNDS['aux_heater']['x_max']:
+			elif x >= 211 and x <= BOUNDS['heater_shaker']['x_max']:
 				self.column_sv.set('4')
 		elif x >= BOUNDS['mag_separator']['x_min'] and x <= BOUNDS['mag_separator']['x_max'] and y >= BOUNDS['mag_separator']['y_min'] and y <= BOUNDS['mag_separator']['y_max']:
 			self.consumable_sv.set("Mag Separator")

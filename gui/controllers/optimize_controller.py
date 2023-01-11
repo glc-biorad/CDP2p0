@@ -9,7 +9,10 @@ from gui.views.optimize_frame import OptimizeFrame
 from gui.models.coordinates_model import CoordinatesModel
 
 # Import the upper gantry api
-from api.upper_gantry.upper_gantry import UpperGantry
+try:
+	from api.upper_gantry.upper_gantry import UpperGantry
+except:
+	print("Cannot import upper gantry to the optimize controller")
 
 # Constants
 NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Assay Strip", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
@@ -32,6 +35,7 @@ class OptimizeController:
 		# Set the model and view for the controller
 		self.model = model
 		self.view = view
+		self.unit = self.model.db_name.replace('.db','')[-1]
 
 		# Setup the coordinates model
 		self.coordinates_model = CoordinatesModel(self.model.db_name, self.model.cursor, self.model.connection)
@@ -64,14 +68,17 @@ class OptimizeController:
 		"""
 		# Determine the position (coordinate in database and current position)
 		# Get the current position
-		position = self.upper_gantry.get_position()
-		print(f"Position: {position}")
+		try:
+			position = self.upper_gantry.get_position()
+			print(f"Position: {position}")
+		except:
+			print("Upper Gantry not connected so no position for the pipettor at this moment")
 		if self.view.consumable_sv.get() != '':
 			# Get the coordinate for this location from the coordinates model table
 			consumable = self.view.consumable_sv.get()
 			tray = self.view.tray_sv.get()
 			column = int(self.view.column_sv.get())
-			coordinate = self.coordinates_model.select("Unit A Upper Gantry Coordinates", consumable, tray, column)
+			coordinate = self.coordinates_model.select(f"Unit {self.unit} Upper Gantry Coordinates", consumable, tray, column)
 			x = coordinate[0][4]
 			y = coordinate[0][5]
 			z1 = coordinate[0][6]
@@ -139,7 +146,7 @@ class OptimizeController:
 		use_z = self.view.use_z_iv.get()
 		slow_z = self.view.slow_z_iv.get()
 		use_drip_plate=False
-		coordinate = self.coordinates_model.select("Unit A Upper Gantry Coordinates", consumable, tray, column)
+		coordinate = self.coordinates_model.select(f"Unit {self.unit} Upper Gantry Coordinates", consumable, tray, column)
 		x = coordinate[0][4]
 		y = coordinate[0][5]
 		z = coordinate[0][6]
@@ -158,7 +165,7 @@ class OptimizeController:
 		column = self.view.column_sv.get()
 		# Generate a warning message
 		message = ''
-		if self.coordinates_model.check_location_exists('Unit A Upper Gantry Coordinates', consumable, tray, column):
+		if self.coordinates_model.check_location_exists(f'Unit {self.unit} Upper Gantry Coordinates', consumable, tray, column):
 			if tray != '' and column != '':
 				message = f"You are about to update the coordinate for {consumable} Tray {tray} Column {column}, proceed?"
 			elif tray == '' and column != '':
@@ -170,7 +177,7 @@ class OptimizeController:
 				# Get the X, Y, Z, and Drip Plate coordinates from the current position of the pipettor
 				x, y, z1, z2 = self.upper_gantry.get_position()
 				# Get the table name for this unit
-				table_name = "Unit A Upper Gantry Coordinates"
+				table_name = f"Unit {self.unit} Upper Gantry Coordinates"
 				# Update the model
 				self.coordinates_model.update(table_name, consumable, tray, column, x, y, z1, z2)
 				print(self.coordinates_model.select(table_name, consumable, tray, column))
