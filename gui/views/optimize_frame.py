@@ -1,4 +1,3 @@
-from typing_extensions import Self
 import customtkinter as ctk
 import tkinter as tk
 
@@ -32,27 +31,27 @@ LABEL_COLUMN_POSY = 10
 OPTIONMENU_COLUMN_POSX = 475
 OPTIONMENU_COLUMN_POSY = 10
 OPTIONMENU_COLUMN_WIDTH = 90
-BUTTON_PRINT_POSX = 5
-BUTTON_PRINT_POSY = 485
-BUTTON_PRINT_WIDTH = 30
+BUTTON_PRINT_POSX = 207
+BUTTON_PRINT_POSY = 45
+BUTTON_PRINT_WIDTH = 40
 BUTTON_PRINT_COLOR = '#10adfe'
-BUTTON_HOME_Z_POSX = 45
+BUTTON_HOME_Z_POSX = 0
 BUTTON_HOME_Z_POSY = 485
 BUTTON_HOME_Z_WIDTH = 55
-BUTTON_HOME_Y_POSX = 105
+BUTTON_HOME_Y_POSX = 60
 BUTTON_HOME_Y_POSY = 485
 BUTTON_HOME_Y_WIDTH = 55
-BUTTON_HOME_X_POSX = 165
+BUTTON_HOME_X_POSX = 120
 BUTTON_HOME_X_POSY = 485
 BUTTON_HOME_X_WIDTH = 55
-LABEL_X_POSX = 300
+LABEL_X_POSX = 307
 LABEL_X_POSY = 485
-ENTRY_X_POSX = 320
+ENTRY_X_POSX = 327
 ENTRY_X_POSY = 485
 ENTRY_X_WIDTH = 75
-LABEL_Y_POSX = 400
+LABEL_Y_POSX = 405
 LABEL_Y_POSY = 485
-ENTRY_Y_POSX = 419
+ENTRY_Y_POSX = 423
 ENTRY_Y_POSY = 485
 ENTRY_Y_WIDTH = 75
 LABEL_Z_POSX = 500
@@ -64,19 +63,21 @@ CHECKBOX_USE_Z_POSX = 230
 CHECKBOX_USE_Z_POSY = 80
 CHECKBOX_SLOW_Z_POSX = 230
 CHECKBOX_SLOW_Z_POSY = 105
-BUTTON_HOME_POSX = 10 #215
+BUTTON_HOME_POSX = 0 #215
 BUTTON_HOME_POSY = 45 #40
-BUTTON_HOME_WIDTH = 60
-BUTTON_MOVE_POSX = 75
+BUTTON_HOME_WIDTH = 40
+BUTTON_MOVE_POSX = 62
 BUTTON_MOVE_POSY = 45
-BUTTON_MOVE_WIDTH = 60
-BUTTON_UPDATE_POSX = 140
+BUTTON_MOVE_WIDTH = 40
+BUTTON_UPDATE_POSX = 257
 BUTTON_UPDATE_POSY = 45
-BUTTON_UPDATE_WIDTH = 60
+BUTTON_UPDATE_WIDTH = 50
 BUTTON_UPDATE_COLOR = '#10adfe'
-BUTTON_DRIP_PLATE_POSX = 215
+BUTTON_DRIP_PLATE_POSX = 120
 BUTTON_DRIP_PLATE_POSY = 45
-BUTTON_DRIP_PLATE_WIDTH = 70
+BUTTON_DRIP_PLATE_WIDTH = 60
+LABEL_TIP_POSX = 195
+LABEL_TIP_POSY = 485
 OPTIONMENU_TIP_POSX = 225
 OPTIONMENU_TIP_POSY = 485
 OPTIONMENU_TIP_WIDTH = 70
@@ -314,7 +315,7 @@ class OptimizeFrame(ctk.CTkFrame):
 			master=self,
 			text='Print',
 			width=BUTTON_PRINT_WIDTH,
-			font=(FONT, -12),
+			font=(FONT, -16),
 			fg_color=BUTTON_PRINT_COLOR,
 		)
 		self.button_home_z = ctk.CTkButton(
@@ -364,6 +365,7 @@ class OptimizeFrame(ctk.CTkFrame):
 			width=ENTRY_Z_WIDTH,
 		)
 		# Create the tip label and optionmenu
+		self.label_tip = ctk.CTkLabel(master=self, text='Tip', font=(FONT,-16))
 		self.tip_sv = StringVar()
 		self.tip_sv.set('')
 		self.optionmenu_tip = ctk.CTkOptionMenu(
@@ -409,6 +411,7 @@ class OptimizeFrame(ctk.CTkFrame):
 		self.label_z.place(x=LABEL_Z_POSX, y=LABEL_Z_POSY)
 		self.entry_z.place(x=ENTRY_Z_POSX, y=ENTRY_Z_POSY)
 		# Place the tip label and optionmenu
+		self.label_tip.place(x=LABEL_TIP_POSX, y=LABEL_TIP_POSY)	
 		self.optionmenu_tip.place(x=OPTIONMENU_TIP_POSX, y=OPTIONMENU_TIP_POSY)
 
 	def create_deck_plate_ui(self) -> None:
@@ -597,17 +600,27 @@ class OptimizeFrame(ctk.CTkFrame):
 				self.tray_sv.set('D')
 		elif x >= BOUNDS['aux_heater']['x_min'] and x <= BOUNDS['aux_heater']['x_max'] and y >= BOUNDS['aux_heater']['y_min'] and y <= BOUNDS['aux_heater']['y_max']:
 			self.consumable_sv.set("Aux Heater")
+			self.column_sv.set('')
+			# Get the tray
+			if y >= BOUNDS['aux_heater']['y_min'] and y <= 170:
+				self.tray_sv.set('A')
+			elif y >= 178 and y <= 259:
+				self.tray_sv.set('B')
+			elif y >= 264 and y <= 348:
+				self.tray_sv.set('C')
+			elif y >= 352 and y <= 435:
+				self.tray_sv.set('D')
 		elif x >= BOUNDS['heater_shaker']['x_min'] and x <= BOUNDS['heater_shaker']['x_max'] and y >= BOUNDS['heater_shaker']['y_min'] and y <= BOUNDS['heater_shaker']['y_max']:
 			self.consumable_sv.set("Heater/Shaker")
 			self.tray_sv.set('')
 			# Get the column
-			if x >= BOUNDS['aux_heater']['x_min'] and x <= 148:
+			if x >= BOUNDS['heater_shaker']['x_min'] and x <= 148:
 				self.column_sv.set('1')
 			elif x >= 149 and x <= 180:
 				self.column_sv.set('2')
 			elif x >= 181 and x <= 210:
 				self.column_sv.set('3')
-			elif x >= 211 and x <= BOUNDS['aux_heater']['x_max']:
+			elif x >= 211 and x <= BOUNDS['heater_shaker']['x_max']:
 				self.column_sv.set('4')
 		elif x >= BOUNDS['mag_separator']['x_min'] and x <= BOUNDS['mag_separator']['x_max'] and y >= BOUNDS['mag_separator']['y_min'] and y <= BOUNDS['mag_separator']['y_max']:
 			self.consumable_sv.set("Mag Separator")
@@ -639,6 +652,32 @@ class OptimizeFrame(ctk.CTkFrame):
 				self.column_sv.set('12')
 		elif x >= BOUNDS['chiller']['x_min'] and x <= BOUNDS['chiller']['x_max'] and y >= BOUNDS['chiller']['y_min'] and y <= BOUNDS['chiller']['y_max']:
 			self.consumable_sv.set("Chiller")
+			self.tray_sv.set('')
+			# Set the column
+			if x >= BOUNDS['chiller']['x_min'] and x <= 127:
+				self.column_sv.set('1')
+			elif x >= 128 and x <= 137:
+				self.column_sv.set('2')
+			elif x >= 138 and x <= 147:
+				self.column_sv.set('3')
+			elif x >= 148 and x <= 156:
+				self.column_sv.set('4')
+			elif x >= 157 and x <= 167:
+				self.column_sv.set('5')
+			elif x >= 168 and x <= 177:
+				self.column_sv.set('6')
+			elif x >= 178 and x <= 187:
+				self.column_sv.set('7')
+			elif x >= 188 and x <= 197:
+				self.column_sv.set('8')
+			elif x >= 198 and x <= 207:
+				self.column_sv.set('9')
+			elif x >= 208 and x <= 217:
+				self.column_sv.set('10')
+			elif x >= 218 and x <= 228:
+				self.column_sv.set('11')
+			elif x >= 229 and x <= BOUNDS['chiller']['x_max']:
+				self.column_sv.set('12')
 		elif x >= BOUNDS['pre_amp_thermocycler']['x_min'] and x <= BOUNDS['pre_amp_thermocycler']['x_max'] and y >= BOUNDS['pre_amp_thermocycler']['y_min'] and y <= BOUNDS['pre_amp_thermocycler']['y_max']:
 			self.consumable_sv.set("Pre-Amp Thermocycler")
 			self.tray_sv.set('')

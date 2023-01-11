@@ -9,7 +9,10 @@ class ThermocycleModel:
 		self.db_name = db_name
 		self.cursor = cursor
 		self.connection = connection
-		self.drop_table()
+		try:
+			self.drop_table()
+		except:
+			pass
 		self.create_table()
 		self.insert(1,'A',40,84,50,84,3,40,30,1,1,1)
 		self.insert(2,'B',40,84,50,84,3,40,30,1,1,1)
@@ -17,22 +20,25 @@ class ThermocycleModel:
 		self.insert(4,'D',40,84,50,84,3,40,30,1,1,1)
 		
 		# Default String and Int Variables
-		self.thermocycler_sv = tk.StringVar()
-		self.cycles_sv = tk.StringVar()
-		self.use_a_iv = tk.IntVar()
-		self.use_b_iv = tk.IntVar()
-		self.use_c_iv = tk.IntVar()
-		self.use_d_iv = tk.IntVar()
-		self.first_denature_temperature_sv = tk.StringVar()
-		self.anneal_temperature_sv = tk.StringVar()
-		self.second_denature_temperature_sv = tk.StringVar()
-		self.first_denature_time_sv = tk.StringVar()
-		self.anneal_time_sv = tk.StringVar()
-		self.second_denature_time_sv = tk.StringVar()
-		self.clamp_a_iv = tk.IntVar()
-		self.clamp_b_iv = tk.IntVar()
-		self.clamp_c_iv = tk.IntVar()
-		self.clamp_d_iv = tk.IntVar()
+		try:
+			self.thermocycler_sv = tk.StringVar()
+			self.cycles_sv = tk.StringVar()
+			self.use_a_iv = tk.IntVar()
+			self.use_b_iv = tk.IntVar()
+			self.use_c_iv = tk.IntVar()
+			self.use_d_iv = tk.IntVar()
+			self.first_denature_temperature_sv = tk.StringVar()
+			self.anneal_temperature_sv = tk.StringVar()
+			self.second_denature_temperature_sv = tk.StringVar()
+			self.first_denature_time_sv = tk.StringVar()
+			self.anneal_time_sv = tk.StringVar()
+			self.second_denature_time_sv = tk.StringVar()
+			self.clamp_a_iv = tk.IntVar()
+			self.clamp_b_iv = tk.IntVar()
+			self.clamp_c_iv = tk.IntVar()
+			self.clamp_d_iv = tk.IntVar()
+		except:
+			pass
 
 	def setup_defaults(self, ID: int = 1) -> None:
 		"""
