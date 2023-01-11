@@ -1,8 +1,10 @@
+import os
 import threading
 import tkinter as tk
 
 # Import the model and view for this controller
 from gui.models.optimize_model import OptimizeModel
+from gui.util.coordinates_list_to_csv import coordinates_list_to_csv
 from gui.views.optimize_frame import OptimizeFrame
 
 # Import the coordinates model
@@ -13,6 +15,9 @@ try:
 	from api.upper_gantry.upper_gantry import UpperGantry
 except:
 	print("Cannot import upper gantry to the optimize controller")
+
+# Import utilities
+from gui.util.coordinates_list_to_csv import coordinates_list_to_csv
 
 # Constants
 NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Assay Strip", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
@@ -106,11 +111,15 @@ class OptimizeController:
 {consumable} Tray {tray} Column {column}: 
 [{x}, {y}, {z1}, {z2}]
 				"""
-			# Show a popup to the user
-			tk.messagebox.showinfo(
-				title="Pipettor Position and Coordinate for Selected Consumable",
-				message = message
-			)
+		else:
+			message = f"""Pipettor Position: 
+{position}
+			"""
+		# Show a popup to the user
+		tk.messagebox.showinfo(
+			title="Pipettor Position and Coordinate for Consumable",
+			message = message
+		)
 
 	def home(self, event=None) -> None:
 		""" Deals with the on click event for the home button
@@ -199,6 +208,8 @@ class OptimizeController:
 				message = f"You are about to update the coordinate for {consumable} Column {column}, proceed?"
 			elif tray != '' and column == '':
 				message = f"You are about to update the coordinate for {consumable} Tray {tray}, proceed?"
+			file_name = r'AppData\unit_{0}_upper_gantry_coordinates'.format(self.unit.upper())
+			message = message + f"\n\nPre-update Coordinates will be backed up in {file_name}.bak \n Post-update will be in {file_name}.csv"
 			# Create a messagebox warning
 			if tk.messagebox.askokcancel(title="Coordinate Update", message=message):
 				# Get the X, Y, Z, and Drip Plate coordinates from the current position of the pipettor
@@ -207,7 +218,12 @@ class OptimizeController:
 				table_name = f"Unit {self.unit} Upper Gantry Coordinates"
 				# Update the model
 				self.coordinates_model.update(table_name, consumable, tray, column, x, y, z1, z2)
-				print(self.coordinates_model.select(table_name, consumable, tray, column))
+				# Overwrite the units coordinates csv file 
+				cmd = r"ren {0}.csv {1}.bak".format(file_name, file_name[8:])
+				os.system(cmd)
+				table_name = f"Unit {self.unit.upper()} Upper Gantry Coordinates"
+				coordinates = self.coordinates_model.select(table_name)
+				coordinates_list_to_csv(coordinates, file_name)
 			else:
 				return
 
