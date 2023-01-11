@@ -8,7 +8,7 @@ from gui.models.build_protocol_model import BuildProtocolModel
 from gui.models.optimize_model import OptimizeModel
 from gui.models.coordinates_model import CoordinatesModel
 
-DB_NAME = 'unit_'
+DB_NAME = 'AppData/unit_'
 
 from gui.models.tip_use_model import TipUseModel
 from gui.models.state_model import StateModel

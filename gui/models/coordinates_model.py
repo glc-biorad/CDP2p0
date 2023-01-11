@@ -197,25 +197,8 @@ class CoordinatesModel:
 		z1: int,
 		z2: int
 	) -> None:
-		if column == '':
-			query = f"""UPDATE '{table_name}'
-			SET 
-			X = {x},
-			Y = {y},
-			Z1 = {z1},
-			Z2 = {z2}
-			WHERE CONSUMABLE = '{consumable}' AND TRAY = '{tray}'
-			"""
-		else:
-			query = f"""UPDATE '{table_name}'
-			SET 
-			X = {x},
-			Y = {y},
-			Z1 = {z1},
-			Z2 = {z2}
-			WHERE CONSUMABLE = '{consumable}' AND TRAY = '{tray}' AND COLUMN = {column}
-			"""
-		print(query)
+		ID = int(self.select(table_name, consumable, tray, column)[0][0])
+		query = f"UPDATE '{table_name}' SET X = {x}, Y = {y}, Z1 = {z1}, Z2 = {z2} WHERE ID = {ID};"
 		self.cursor.execute(query)
 		self.connection.commit()
 
