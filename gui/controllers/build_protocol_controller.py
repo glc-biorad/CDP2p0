@@ -166,8 +166,22 @@ class BuildProtocolController:
 		if next_action_allowed(self.state, action):
 			# Update the state mode
 			self.state.insert(tip, self.volume, action.lower())
-			# Inset action into the action list
-			self.model.insert(len(self.model.actions), action_message)
+			if selected_row != None:
+				ID = int(selected_row)
+				# Store the actions
+				actions = self.model.select()
+				# Delete all actions after ID
+				for i in range(ID+1, len(actions)):
+					self.model.delete(i)
+				# Insert the action
+				self.model.insert(ID, action_message)
+				# Insert all actions after ID with an index shifted by 1
+				for i in range(ID+1, len(actions)):
+					self.model.insert(i, actions[i][0])
+			else:
+				ID = len(self.model.select())
+				# Insert action into the action list
+				self.model.insert(ID, action_message)
 			# Update the view
 			self.view.update_treeview()
 		else:
