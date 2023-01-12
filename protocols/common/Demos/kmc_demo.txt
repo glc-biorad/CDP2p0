@@ -37,5 +37,5 @@
 36: Move to DG8 tray A column 1 with 1000 uL tips with the drip plate
 37: Dispense 20 uLs with 50 uL tips at High pressure 1 time
 38: Eject tips in A column 5
-39: Move to DG8 tray A column 3 without tips moving down by 345000
+39: Move to DG8 tray A column 3 without tips moving down by 359000
 40: Generate demo droplets

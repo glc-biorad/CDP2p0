@@ -17,6 +17,7 @@ from System.Net import WebRequest
 from System.IO import StreamReader
 from System.Text import ASCIIEncoding
 
+import ast
 import os
 import time
 
@@ -41,7 +42,7 @@ FAST_API_URL_PATHS = {
                     },
                 },
             'utils' :{}
-            },
+        },
         'pipettor_gantry': {
             'axis': {
                 '': {
@@ -74,7 +75,7 @@ FAST_API_URL_PATHS = {
                     'url': 'pipettor_gantry/air_valve_off/{chan}'
                     },
                 },
-            },
+        },
         'prep_deck': {
             'axis': {
                 '': {
@@ -92,7 +93,7 @@ FAST_API_URL_PATHS = {
                 },
             'meerstetter': {},
             'heater': {},
-            },
+        },
         'reader': {
             'axis': {
                 '': {
@@ -122,7 +123,15 @@ FAST_API_URL_PATHS = {
                     'url': 'reader/led/{id}/off'
                     }
                 }
-            }   
+        },
+        'prep_deck' : {
+            'chiller-heater-shaker_raw_command' : {
+                '': {
+                    'method': 'GET',
+                    'url': 'prep_deck/chiller-heater-shaker_raw_command/{id,command}'
+                    }
+            }
+        }
     }
 
 def add_fast_api_parameters(url, parameters_dict):
@@ -626,6 +635,105 @@ class Relay():
         response_str = reader.ReadToEnd()
         logger.log('RECEIVED', response_str)
 
+class HeaterShaker:
+    def __init__(self, ID: int = 2) -> None:
+        """ Initialize the Heater/Shaker """
+        self.ID = 2
+     
+    def shake_on(self):
+        """ Start shaking with the current mixing speed """
+        command = 'son'
+        # Generate the URL.
+        url = FAST_API_URL_BASE + FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['url'] + f'?id={self.ID}&command={command}'
+        logger = Logger(__file__, __name__)
+        logger.log('SEND', url)
+        # Generate the request.
+        request = WebRequest.Create(url)
+        method = FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['method']
+        request.Method = method
+        response = request.GetResponse()
+        status_code = response.StatusCode
+        logger.log('RECEIVED', "Status Code: {0}".format(status_code))
+        if str(status_code) != 'OK':
+            __retry(url, method)
+        # Read the response.
+        encoding = ASCIIEncoding.ASCII
+        reader = StreamReader(response.GetResponseStream(), encoding)
+        response_str = reader.ReadToEnd()
+        print(response_str)
+        logger.log('RECEIVED', response_str)
+
+    def shake_off(self):
+        """ Stop shaking """
+        command = 'soff'
+        # Generate the URL.
+        url = FAST_API_URL_BASE + FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['url'] + f'?id={self.ID}&command={command}'
+        logger = Logger(__file__, __name__)
+        logger.log('SEND', url)
+        # Generate the request.
+        request = WebRequest.Create(url)
+        method = FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['method']
+        request.Method = method
+        response = request.GetResponse()
+        status_code = response.StatusCode
+        logger.log('RECEIVED', "Status Code: {0}".format(status_code))
+        if str(status_code) != 'OK':
+            __retry(url, method)
+        # Read the response.
+        encoding = ASCIIEncoding.ASCII
+        reader = StreamReader(response.GetResponseStream(), encoding)
+        response_str = reader.ReadToEnd()
+        print(response_str)
+        logger.log('RECEIVED', response_str)
+
+    def set_shake_target_speed(self, rpm: float) -> None:
+        """ Set the shaking speed (rpm) """
+        command = f'ssts{rpm}'
+        # Generate the URL.
+        url = FAST_API_URL_BASE + FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['url'] + f'?id={self.ID}&command={command}'
+        logger = Logger(__file__, __name__)
+        logger.log('SEND', url)
+        # Generate the request.
+        request = WebRequest.Create(url)
+        method = FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['method']
+        request.Method = method
+        response = request.GetResponse()
+        status_code = response.StatusCode
+        logger.log('RECEIVED', "Status Code: {0}".format(status_code))
+        if str(status_code) != 'OK':
+            __retry(url, method)
+        # Read the response.
+        encoding = ASCIIEncoding.ASCII
+        reader = StreamReader(response.GetResponseStream(), encoding)
+        response_str = reader.ReadToEnd()
+        logger.log('RECEIVED', response_str)
+
+    def get_shake_target_speed(self) -> float:
+        """ Deals with getting the Heater/Shaker speed in rpm """
+        command = 'gsts'
+        # Generate the URL.
+        url = FAST_API_URL_BASE + FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['url'] + f'?id={self.ID}&command={command}'
+        print(url)
+        logger = Logger(__file__, __name__)
+        logger.log('SEND', url)
+        # Generate the request.
+        request = WebRequest.Create(url)
+        method = FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['method']
+        request.Method = method
+        response = request.GetResponse()
+        status_code = response.StatusCode
+        logger.log('RECEIVED', "Status Code: {0}".format(status_code))
+        if str(status_code) != 'OK':
+            __retry(url, method)
+        # Read the response.
+        encoding = ASCIIEncoding.ASCII
+        reader = StreamReader(response.GetResponseStream(), encoding)
+        response_str = reader.ReadToEnd()
+        response_dict = ast.literal_eval(response_str)
+        rpm = response_dict['response'].rstrip('\r').rstrip('\n')
+        logger.log('RECEIVED', response_str)
+        return float(rpm)
+
 class PrepDeck():
     # Public variables.
     axis = Axis()
@@ -634,6 +742,7 @@ class PrepDeck():
     # Constructor.
     def __init__(self):
         self.axis = Axis()
+        self.heater = HeaterShaker()
 
 class PipettorGantry():
     # Public variables.

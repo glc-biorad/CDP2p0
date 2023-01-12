@@ -165,11 +165,13 @@ BUTTON_DELETE_WIDTH = 130
 BUTTON_DELETE_COLOR = '#fc0303'
 
 # Constants Deck Plate 
-NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Assay Strip", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
+NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
 NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
 TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
 EIGHT_COLUMN_CONSUMABLES = ["Tip Transfer Tray", "Assay Strip", "Tip Tray"]
 FOUR_COLUMN_CONSUMABLES = ["Heater/Shaker"]
+THREE_COLUMN_CONSUMABLES = ["DG8"]
+TWO_COLUMN_CONSUMABLES = ["Assay Strip"]
 SPECIAL_CONSUMABLES = ["DG8", "Chip"]
 
 # Constant Other Option Values
@@ -219,7 +221,23 @@ OTHER_OPTION_VALUES = [
 	"Shake off",
 	"Engage magnet",
 	"Disengage magnet",
-	"Pre-Amp Thermocycle",
+	"Open Tray AB",
+	"Open Tray CD",
+	"Close Tray AB",
+	"Close Tray CD",
+	"Lower Thermocycler A",
+	"Lower Thermocycler B",
+	"Lower Thermocycler D",
+	"Lower Thermocycler C",
+	"Raise Thermocycler A",
+	"Raise Thermocycler B",
+	"Raise Thermocycler C",
+	"Raise Thermocycler D",
+	"Thermocycle on Thermocycler A",
+	"Thermocycle on Thermocycler B",
+	"Thermocycle on Thermocycler C",
+	"Thermocycle on Thermocycler D",
+	"Thermocycle on the Pre-Amp Thermocycler",
 	"Move lid A",
 	"Move lid B",
 	"Move lid C",
@@ -228,6 +246,10 @@ OTHER_OPTION_VALUES = [
 	"Move chip B",
 	"Move chip C",
 	"Move chip D",
+	"Scan A",
+	"Scan B",
+	"Scan C",
+	"Scan D",
 ]
 COUNT_OPTION_VALUES = [f'{i}' for i in range(1,11)]
 
@@ -870,6 +892,10 @@ class BuildProtocolFrame(ctk.CTkFrame):
 				self.optionmenu_motion_column.configure(values=('1','2','3','4','5','6','7','8',))
 			elif consumable in FOUR_COLUMN_CONSUMABLES:
 				self.optionmenu_motion_column.configure(values=('1','2','3','4',))
+			elif consumable in THREE_COLUMN_CONSUMABLES:
+				self.optionmenu_motion_column.configure(values=('1','2','3',))
+			elif consumable in TWO_COLUMN_CONSUMABLES:
+				self.optionmenu_motion_column.configure(values=('1','2',))
 			else:
 				self.optionmenu_motion_column.configure(values=('',))
 		else:

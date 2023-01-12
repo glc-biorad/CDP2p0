@@ -20,13 +20,14 @@ except:
 from gui.util.coordinates_list_to_csv import coordinates_list_to_csv
 
 # Constants
-NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Assay Strip", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
+NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
 NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
-TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge", "DG8"]
+TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
 NINE_COLUMN_CONSUMABLES = ["Tip Transfer Tray"]
-EIGHT_COLUMN_CONSUMABLES = ["Assay Strip", "Tip Tray"]
+EIGHT_COLUMN_CONSUMABLES = ["Tip Tray"]
 FOUR_COLUMN_CONSUMABLES = ["Heater/Shaker"]
-THREE_COLUMN_CONSUMABLES = [""]
+THREE_COLUMN_CONSUMABLES = ["DG8"]
+TWO_COLUMN_CONSUMABLES = ["Assay Strip"]
 SPECIAL_CONSUMABLES = ["DG8", "Chip"]
 
 class OptimizeController:
@@ -83,7 +84,10 @@ class OptimizeController:
 			# Get the coordinate for this location from the coordinates model table
 			consumable = self.view.consumable_sv.get()
 			tray = self.view.tray_sv.get()
-			column = int(self.view.column_sv.get())
+			try:
+				column = int(self.view.column_sv.get())
+			except ValueError:
+				column = 1
 			coordinate = self.coordinates_model.select(f"Unit {self.unit} Upper Gantry Coordinates", consumable, tray, column)
 			x = coordinate[0][4]
 			y = coordinate[0][5]
@@ -256,6 +260,9 @@ class OptimizeController:
 		if consumable in NO_COLUMN_CONSUMABLES:
 			self.model.column_sv.set('')
 			self.view.optionmenu_column.configure(values=('',))
+		elif consumable in TWO_COLUMN_CONSUMABLES:
+			self.model.column_sv.set('')
+			self.view.optionmenu_column.configure(values=('1','2',))
 		elif consumable in THREE_COLUMN_CONSUMABLES:
 			self.model.column_sv.set('')
 			self.view.optionmenu_column.configure(values=('1','2','3',))

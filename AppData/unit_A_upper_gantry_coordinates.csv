@@ -162,12 +162,12 @@ Tip Transfer Tray,nan,8,-435200,-1437000,-1280000,0,1000
 Tip Transfer Tray,nan,9,0,0,0,0,1000
 Assay Strip,A,1,-477750,-1887000,-702000,0,1000
 Assay Strip,A,2,0,0,0,0,1000
-Assay Strip,B,3,0,0,0,0,1000
-Assay Strip,B,4,0,0,0,0,1000
-Assay Strip,C,5,0,0,0,0,1000
-Assay Strip,C,6,0,0,0,0,1000
-Assay Strip,D,7,0,0,0,0,1000
-Assay Strip,D,8,0,0,0,0,1000
+Assay Strip,B,1,0,0,0,0,1000
+Assay Strip,B,2,0,0,0,0,1000
+Assay Strip,C,1,0,0,0,0,1000
+Assay Strip,C,2,0,0,0,0,1000
+Assay Strip,D,1,0,0,0,0,1000
+Assay Strip,D,2,0,0,0,0,1000
 Tray,A,1,0,0,0,0,1000
 Tray,A,2,0,0,0,0,1000
 Tray,A,3,0,0,0,0,1000

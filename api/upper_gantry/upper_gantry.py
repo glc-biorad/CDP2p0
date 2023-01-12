@@ -1401,7 +1401,23 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         print("Shake Go Home:\n")
         bs3000T.shakeGoHome()
 
-    def turn_on_shake(self, rpm, shake_time=None, time_units=None):
+    def turn_on_shake(self, rpm: int, shake_time: int = None, time_units: str = None) -> None:
+        """ Turns on the heater shaker shaking """
+        if shake_time == None:
+            self.get_fast_api_interface().prep_deck.heater.set_shake_target_speed(rpm)
+            self.get_fast_api_interface().prep_deck.heater.shake_on()
+        else:
+            self.get_fast_api_interface().prep_deck.heater.set_shake_target_speed(rpm)
+            self.get_fast_api_interface().prep_deck.heater.shake_on()
+            delay(shake_time, time_units)
+            self.get_fast_api_interface().prep_deck.heater.shake_off()
+            self.get_fast_api_interface().prep_deck.heater.shake_go_home()
+
+    def turn_off_shake(self) -> None:
+        """ Turns off the heater shaker shaking """
+        self.get_fast_api_interface().prep_deck.heater.shake_off()
+
+    def _turn_on_shake(self, rpm, shake_time=None, time_units=None):
         logger = Logger(__file__, __name__)
         if shake_time == None and time_units == None:
             a = 1
@@ -1415,7 +1431,7 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
             self.__heater_shaker.shakeGoHome()
         logger.log('LOG-END', "Heater/Shaker done shaking.")
 
-    def turn_off_shake(self):
+    def _turn_off_shake(self):
         logger = Logger(__file__, __name__)
         logger.log('LOG-START', "Stopping the Heater/Shaker from shaking and homing it.")
         self.__heater_shaker.shakeOff()

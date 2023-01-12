@@ -56,6 +56,7 @@ class BuildProtocolModel:
 			pass
 		# Initialize the action list
 		self.actions = []
+		# Initialize the clipboard
 
 	def create_table(self):
 		query = f"""CREATE TABLE IF NOT EXISTS {TABLE_NAME}(

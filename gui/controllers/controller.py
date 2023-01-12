@@ -7,6 +7,9 @@ from gui.views.view import View
 from gui.controllers.build_protocol_controller import BuildProtocolController
 from gui.controllers.optimize_controller import OptimizeController
 
+# Import utilities
+from gui.util.insert_at_selected_row import insert_at_selected_row
+
 class Controller:
 	def __init__(self, model: Model, view: View) -> None:
 		self.model = model
@@ -31,6 +34,9 @@ class Controller:
 		self.view.bind('<Right>', self.right)
 		self.view.bind('<Shift Up>', self.up)
 		self.view.bind('<Shift Down>', self.down)
+		self.view.bind('<Control-c>', self.copy)
+		self.view.bind('<Control-v>', self.paste)
+		self.view.bind('<Control-x>', self.cut)
 		self.view.mainloop()
 
 	def backwards(self, event):
@@ -116,4 +122,55 @@ class Controller:
 			# Get the Z value for the relative move backwards
 			z = int(self.optimize_controller.view.z_sv.get())
 			upper_gantry.move_relative('down', z, velocity='slow')
+
+	def copy(self, event) -> None:
+		""" Deals with copy functionality """
+		# Look for a selected row
+		try:
+			selected_rows = self.build_protocol_controller.view.treeview.selection()
+		except:
+			selected_rows = []
+		# Iterate through the selected rows
+		self.build_protocol_controller.model.clipboard = []
+		for selected_row in selected_rows:
+			# Get the action message
+			action_message = self.build_protocol_controller.view.treeview.item(selected_row)['values'][0]
+			# Add the action to a clipboard
+			self.build_protocol_controller.model.clipboard.append(action_message)
+
+	def cut(self, event) -> None:
+		""" Deals with cut functionality """
+		# Look for a selected row
+		try:
+			selected_rows = self.build_protocol_controller.view.treeview.selection()
+		except:
+			selected_rows = []
+		# Iterate through the selected rows
+		self.build_protocol_controller.model.clipboard = []
+		for selected_row in selected_rows:
+			# Get the action message
+			action_message = self.build_protocol_controller.view.treeview.item(selected_row)['values'][0]
+			# Add the action to a clipboard
+			self.build_protocol_controller.model.clipboard.append(action_message)
+			# Remove these actions from the treeview
+			self.build_protocol_controller.model.delete(int(selected_row))
+		# Update the view
+		self.build_protocol_controller.view.update_treeview()
+
+	def paste(self, event) -> None:
+		""" Deals with the paste functionality """
+		# Look for a selected row
+		try:
+			selected_row = self.build_protocol_controller.view.treeview.selection()[0]
+			# Iterate through the build protocol models clipboard
+			action_messages = self.build_protocol_controller.model.clipboard
+			action_messages.reverse()
+			for action_message in action_messages:
+				# Insert below the selected row or at the end of the action treeview
+				insert_at_selected_row(action_message, selected_row, self.build_protocol_controller.model)
+				# Update the view
+				self.build_protocol_controller.view.update_treeview()
+		except:
+			return None
+
 

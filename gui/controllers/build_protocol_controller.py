@@ -22,13 +22,19 @@ try:
 except:
 	print("Couldn't import upper gantry for BuildProtocolCOntroller")
 
+# Import the reader api
+try:
+	from api.reader.reader import Reader
+except:
+	print("Couldn't import reader for BuildProtocolController")
+
 # Import the utilities needed
 from api.util.utils import delay
 from gui.util.insert_at_selected_row import insert_at_selected_row
 
 # Constants
 INITIAL_PROTOCOL_FILENAME = 'protocol.txt'
-NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Assay Strip", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
+NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
 NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
 MAIN_ACTION_KEY_WORDS = [
 	'Eject',
@@ -53,6 +59,12 @@ MAIN_ACTION_KEY_WORDS = [
 	'Assay',
 	'Disengage',
 	'Engage',
+	'Shake',
+	'Thermocycle',
+	'Close',
+	'Open',
+	'Lower',
+	'Raise',
 ]
 
 class BuildProtocolController:
@@ -81,6 +93,13 @@ class BuildProtocolController:
 		except:
 			print("No Upper Gantry for BuildProtocolController")
 			self.upper_gantry = None
+
+		# Initialize the reader
+		try:
+			self.reader = Reader()
+		except:
+			print("No Reader for BuildProtocolController")
+			self.reader = None
 	
 		# Variable for keeping track of the volume in the pipettor tips
 		self.volume = 0
@@ -367,7 +386,7 @@ class BuildProtocolController:
 		# Show a small bit of progress
 		n_actions = len(self.model.select())
 		if n_actions != 0:
-			progress = 100 * 0.5 / n_actions
+			progress = 0.5 / n_actions
 		else:
 			progress = 0
 		self.view.progressbar.set(progress)
@@ -570,15 +589,29 @@ class BuildProtocolController:
 				# Get the mode
 				mode = split[1]
 				if mode.lower() == 'on':
-					print("Shake On")
+					self.upper_gantry.turn_on_shake(rpm=1300)
 				elif mode.lower() == 'off':
-					print("Shake off")
+					self.upper_gantry.turn_off_shake()
 			elif split[0] == 'Engage':
 				self.upper_gantry.engage_magnet()
 			elif split[0] == 'Disengage':
 				self.upper_gantry.disengage_magnet()
+			elif split[0] == 'Thermocycle':
+				print('Thermocycle')
+			elif split[0] == 'Open':
+				# Open the tray
+				self.reader.open_tray(split[2])
+			elif split[0] == 'Close':
+				# Close the tray
+				self.reader.close_thermocycler_tray(split[2], -780000)
+			elif split[0] == 'Lower':
+				# Lower the thermocycler
+				self.reader.lower_heater(split[2])
+			elif split[0] == 'Raise':
+				# Raise the thermocycler
+				self.reader.raise_heater(split[2])
 			# Update the progress bar
-			progress = 100 * (int(i) + 1 ) / n_actions
+			progress = (int(i) + 1 ) / n_actions
 			self.view.progressbar.set(progress)
 			print(self.state.select())
 
