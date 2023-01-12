@@ -20,7 +20,7 @@ class Model:
 	def __init__(self, unit: str = 'A') -> None:
 		self.unit = unit
 		self.db_name = f'{DB_NAME}{unit.upper()}.db'
-		self.connection = sqlite3.connect(self.db_name)
+		self.connection = sqlite3.connect(self.db_name, check_same_thread=False)
 		self.cursor = self.connection.cursor()
 		self.setup_thermocycle_table()
 		self.setup_build_protocol_table()

@@ -1,4 +1,5 @@
 import time
+import sqlite3
 import threading
 from tkinter import StringVar
 
@@ -61,6 +62,8 @@ class BuildProtocolController:
 		# Set the model and view for the controller
 		self.model = model
 		self.view = view
+		self.db_name = self.model.db_name
+		self.unit = self.db_name[-4]
 
 		# Initialize the Coordinates Model
 		self.coordinates_model = CoordinatesModel(self.model.db_name, self.model.cursor, self.model.connection)
@@ -108,7 +111,7 @@ class BuildProtocolController:
 		try:
 			selected_row = self.view.treeview.selection()[0]
 		except:
-			pass
+			selected_row = None
 		# Make sure there is an action
 		if action == '':
 			print(f"Tip action must be specified")
@@ -306,6 +309,16 @@ class BuildProtocolController:
 		other = self.view.other_option_sv.get()
 		# Generate the action message
 		action_message = other
+		# Check if the action message is a relative move
+		if 'relative' in action_message.split():
+			amounts = self.view.motion_dxdydz_sv.get().split(',')
+			if action_message.split()[2].lower() in ['up', 'down']:
+				amount = abs(int(amounts[2]))
+			elif action_message.split()[2].lower() in ['left', 'right']:
+				amount = abs(int(amounts[0]))
+			elif action_message.split()[2].lower() in ['backwards', 'forwards']:
+				amount = abs(int(amounts[1]))
+			action_message = action_message + f" by {amount}"
 		# Inset action into the action list
 		self.model.insert(len(self.model.actions), action_message)
 		# Update the view
@@ -314,18 +327,20 @@ class BuildProtocolController:
 	def start(self, event=None) -> None:
 		"""Deals with starting the protocol
 		"""
+		# Start the protocol
+		thread = threading.Thread(target=self.start_protocol)
+		thread.start()
+
+
+	
+	def start_protocol(self):
+		"""Process for starting the protocol
+		"""
 		# Set the progress bar to 0
 		self.view.progressbar.set(0)
 		# Set the action progress label to 0 of N actions
 		n_actions = len(self.model.select())
 		self.view.label_action_progress.configure(text=f"Action Progress: 0 of {n_actions}")
-		# Start the protocol
-		thread = threading.Thread(target=self.start_protocol)
-		thread.run()
-
-	def start_protocol(self):
-		"""Process for starting the protocol
-		"""
 		# Show a small bit of progress
 		n_actions = len(self.model.select())
 		if n_actions != 0:
@@ -384,8 +399,9 @@ class BuildProtocolController:
 			elif split[0] == 'Move':
 				# Check if this is just a relative move
 				if split[1] == 'relative':
-					a = 1
-					return None
+					amount = int(split[-1])
+					direction = split[2]
+					self.upper_gantry.move_relative(direction, amount, velocity='fast')
 				# Or a chip move
 				elif split[1] == 'chip':
 					a = 1
@@ -547,7 +563,7 @@ class BuildProtocolController:
 		"""Deals with the loading of a protocol into the action treeview
 		"""
 		# Browse the file system to open a protocol
-		file = browse_files('r', "Load Protocol", INITIAL_PROTOCOL_FILENAME, '../protocols/A')
+		file = browse_files('r', "Load Protocol", INITIAL_PROTOCOL_FILENAME, r'protocols\{0}'.format(self.model.unit.upper()))
 		# Read line by line through the file
 		lines = [line.rstrip('n') for line in file]
 		# Get the starting ID
@@ -566,7 +582,7 @@ class BuildProtocolController:
 		"""Deals with saving the action treeview to a protocol file
 		"""
 		# Browse the file system to save the protocol
-		file = browse_files('w', "Save Protocol", INITIAL_PROTOCOL_FILENAME, '../protocols/A')
+		file = browse_files('w', "Save Protocol", INITIAL_PROTOCOL_FILENAME, r'protocols\{0}'.format(self.model.unit.upper()))
 		# Iterate through the actions in the treeview
 		for i in self.view.treeview.get_children():
 			# Get the action message

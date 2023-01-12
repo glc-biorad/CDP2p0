@@ -1072,8 +1072,18 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         # Set pressure.
         self.__pipettor.set_pressure(pressure=0, direction=1)
 
+    def mix(self, asp_vol: int, disp_vol: int, tip: int, pressure: str, count: int = 1):
+        """ Mixes the solution where it is at with an aspirate then dispense """
+        aspirate_vol = microliters_to_seyonic(asp_vol)
+        dispense_vol = microliters_to_seyonic(disp_vol)
+        for cycle in range(count):
+            # Trigger pipettor action
+            self.aspirate(aspirate_vol, pipette_tip_type=tip, pressure=pressure)
+            # Trigger pipettor action
+            self.dispense(dispense_vol, pressure=pressure)
+
     # Mix Method
-    def mix(self, aspirate_vol, dispense_vol, cycles=1):
+    def old_mix(self, aspirate_vol, dispense_vol, cycles=1):
         # Convert from microliters to seyonic units
         aspirate_vol = microliters_to_seyonic(aspirate_vol)
         dispense_vol = microliters_to_seyonic(dispense_vol)
