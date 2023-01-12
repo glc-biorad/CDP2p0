@@ -100,7 +100,7 @@ class Controller:
 		# Determine which tab we are on based on the position of a single widget
 		if x_optimize != 0:
 			# Get the Z value for the relative move backwards
-			z = int(self.optimize_controller.view.y_sv.get())
+			z = int(self.optimize_controller.view.z_sv.get())
 			upper_gantry.move_relative('up', z, velocity='slow')
 
 	def down(self, event):

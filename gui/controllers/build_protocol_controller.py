@@ -12,6 +12,15 @@ from gui.views.build_protocol_frame import BuildProtocolFrame
 # Import the state model to keep track of tips and volumes
 from gui.models.state_model import StateModel
 
+# Import the coordinates model
+from gui.models.coordinates_model import CoordinatesModel
+
+# Import the upper gantry api
+from api.upper_gantry.upper_gantry import UpperGantry
+
+# Import the utilities needed
+from api.util.utils import delay
+
 # Constants
 INITIAL_PROTOCOL_FILENAME = 'protocol.txt'
 NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Assay Strip", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
@@ -37,6 +46,8 @@ MAIN_ACTION_KEY_WORDS = [
 	'Enrichment',
 	'Pre-Amp',
 	'Assay',
+	'Disengage',
+	'Engage',
 ]
 
 class BuildProtocolController:
@@ -51,8 +62,14 @@ class BuildProtocolController:
 		self.model = model
 		self.view = view
 
+		# Initialize the Coordinates Model
+		self.coordinates_model = CoordinatesModel(self.model.db_name, self.model.cursor, self.model.connection)
+
 		# Get the state model
 		self.state = StateModel(self.model.db_name, self.model.cursor, self.model.connection)
+
+		# Initialize the upper gantry
+		self.upper_gantry = UpperGantry()
 	
 		# Variable for keeping track of the volume in the pipettor tips
 		self.volume = 0
@@ -329,15 +346,39 @@ class BuildProtocolController:
 			assert split[0] in MAIN_ACTION_KEY_WORDS
 			# Analyze the action message
 			if split[0] == 'Eject':
+				print(split)
 				# Eject tips
 				if 'column' not in split:
-					a = 1
+					self.upper_gantry.tip_eject()
 				# Eject tips in {tray} column {column}
 				else:
-					a = 1
+					tray = split[3]
+					column = int(split[5])
+					print(split)
+					# Get the coordinate
+					unit = self.model.db_name[-4]
+					table_name = f"Unit {unit} Upper Gantry Coordinates"
+					coordinate = self.coordinates_model.select(table_name, "Tip Box", tray, column)
+					x = int(coordinate[0][4])
+					y = int(coordinate[0][5])
+					z = int(coordinate[0][6])
+					self.upper_gantry.tip_eject_new(x, y, z)
 			elif split[0] == 'Pickup':
+				tray = split[3]
+				column = int(split[5])
+				if column in [1,2,3,4]:
+					tip = 1000
+				else:
+					tip = 50
+				# Get the coordinate
+				unit = self.model.db_name[-4]
+				table_name = f"Unit {unit} Upper Gantry Coordinates"
+				coordinate = self.coordinates_model.select(table_name, "Tip Box", tray, column)
+				x = coordinate[0][4]
+				y = coordinate[0][5]
+				z = coordinate[0][6]
 				# Pickup tips in {tray} column {column}
-				time.sleep(1)
+				self.upper_gantry.tip_pickup_new(x,y,z, tip)
 			elif split[0] == 'Tip-press':
 				time.sleep(1)
 			elif split[0] == 'Move':
@@ -351,8 +392,28 @@ class BuildProtocolController:
 					return None
 				# Or a lid move
 				elif split[1] == 'lid':
-					return None
-				# Get the consumable
+					tray = ''
+					column = split[2]
+					if column == 'A':
+						column = 4
+					elif column == 'B':
+						column = 3
+					elif column == 'C':
+						column = 2
+					elif column == 'D':
+						column = 1
+					# Get the coordinates for the lid and tray
+					unit = self.model.db_name[-4]
+					table_name = f"Unit {unit} Upper Gantry Coordinates"
+					coordinate = self.coordinates_model.select(table_name, "Lid Tray", tray, column)
+					lid_xyz = [coordinate[0][4], coordinate[0][5], coordinate[0][6]]
+					if column == 1:
+						tray_xyz = [-18500, -1781750, -552000]
+					else:
+						print("Only Lid D works right now")
+					# Move the lid
+					self.upper_gantry.move_lid_new(lid_xyz, tray_xyz)
+					continue
 				i0 = 2
 				try:
 					# Use the tray to get where the consumable words end
@@ -361,18 +422,22 @@ class BuildProtocolController:
 					# Use the column to get where the consumable words end
 					i1 = split.index('column')
 				consumable = " ".join(split[i0:i1])
+				if consumable in ["Tip Box", "DG8"]:
+					ignore_tips = True
+				else:
+					ignore_tips = False
 				# Get the tray
 				try:
 					tray = split[split.index('tray') + 1]
 				except ValueError:
-					tray = None
+					tray = ''
 				# Get the column
 				try:
 					column = split[split.index('column') + 1]
 				except ValueError:
-					column = None
+					column = ''
 				# Get the tip size
-				tip = split[split.index('tips') - 2]
+				tip = int(split[split.index('tips') - 2])
 				# Get the relative moves
 				try:
 					dx = -int(split[split.index('left') + 2])
@@ -401,8 +466,27 @@ class BuildProtocolController:
 					drip_plate = True
 				except ValueError:
 					drip_plate = False
+				# Get the x,y,z1,z2 for this consumable
+				model = self.coordinates_model
+				unit = self.model.db_name[-4]
+				table_name = f"Unit {unit} Upper Gantry Coordinates"
+				coordinate = model.select(table_name, consumable, tray, column)
+				x = coordinate[0][4]
+				y = coordinate[0][5]
+				z1 = coordinate[0][6]
+				z2 = coordinate[0][7]
 				# Setup the command
-				a = 1
+				self.upper_gantry.move(
+					x=x,
+					y=y,
+					z=z1,
+					drip_plate=z2,
+					use_drip_plate=drip_plate,
+					tip=tip,
+					relative_moves=[dx,dy,dz,0],
+					ignore_tips=ignore_tips
+				)
+				print(dz)
 			elif split[0] in ['Aspirate', 'Dispense', 'Mix']:
 				# Get the action
 				action = split[0]
@@ -417,25 +501,30 @@ class BuildProtocolController:
 				# Setup the command and do it count times
 				for i in range(count):
 					if action == 'Aspirate':
-						print(f"Aspirate: {volume}, {tip}, {pressure}")
+						for i in range(count):
+							self.upper_gantry.aspirate(volume, pipette_tip_type=tip, pressure=pressure)
 					if action == 'Dispense':
-						print(f"Dispense: {volume}, {tip}, {pressure}")
+						for i in range(count):
+							self.upper_gantry.dispense(volume, pressure=pressure)
 					if action == 'Mix':
-						print(f"Aspirate: {volume}, {tip}, {pressure}")
-						print(f"Dispense: {volume}, {tip}, {pressure}")
+						for i in range(count):
+							print(f'Mix Count: {i+1}/{count}')
+							self.upper_gantry.aspirate(volume, pipette_tip_type=tip, pressure=pressure)
+							self.upper_gantry.dispense(volume, pressure=pressure)
 			elif split[0] == 'Delay':
 				# Get the time
 				value = int(split[2])
 				# Get the units
 				units = split[3]
 				# Setup the command
-				print(f"{value}, {units}")
+				delay(value, units)
 			elif split[0] == 'Home':
-				a = 1
+				self.upper_gantry.home_pipettor()
 			elif split[0] == 'Generate':
 				# Get the droplet type
 				droplet_type = split[1]
-				a = 1
+				# Generate the droplets
+				self.upper_gantry.generate_droplets(droplet_type)
 			elif split[0] == 'Pre-Amp':
 				a = 1
 			elif split[0] == 'Shake':
@@ -446,9 +535,9 @@ class BuildProtocolController:
 				elif mode.lower() == 'off':
 					print("Shake off")
 			elif split[0] == 'Engage':
-				print(action_message)
+				self.upper_gantry.engage_magnet()
 			elif split[0] == 'Disengage':
-				print(action_message)
+				self.upper_gantry.disengage_magnet()
 			# Update the progress bar
 			progress = 100 * (int(i) + 1 ) / n_actions
 			self.view.progressbar.set(progress)

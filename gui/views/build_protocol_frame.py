@@ -203,6 +203,7 @@ OTHER_OPTION_VALUES = [
 	"Move relative backwards",
 	"Generate standard droplets",
 	"Generate pico droplets",
+	"Generate demo droplets",
 	"Extraction",
 	"Transfer plasma",
 	"Binding",
@@ -219,8 +220,14 @@ OTHER_OPTION_VALUES = [
 	"Engage magnet",
 	"Disengage magnet",
 	"Pre-Amp Thermocycle",
-	"Move lid",
-	"Move chip",
+	"Move lid A",
+	"Move lid B",
+	"Move lid C",
+	"Move lid D",
+	"Move chip A",
+	"Move chip B",
+	"Move chip C",
+	"Move chip D",
 ]
 COUNT_OPTION_VALUES = [f'{i}' for i in range(1,11)]
 

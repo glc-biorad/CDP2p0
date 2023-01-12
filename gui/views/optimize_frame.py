@@ -207,7 +207,7 @@ class OptimizeFrame(ctk.CTkFrame):
 	) -> None:
 		model = Model()
 		self.model = model.get_optimize_model()
-		self.coordinates_model = model.get_coordinates_model('A')
+		self.coordinates_model = model.get_coordinates_model()
 		self.master = master
 		self.width = width
 		self.height = height

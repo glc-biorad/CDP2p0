@@ -265,6 +265,18 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         logger_xlsx.log("Home the Seyonic Pipettor", '{0}.{1}()'.format(__name__, self.home_pipettor.__name__), timer.get_current_elapsed_time())
         timer.stop(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.home_pipettor.__name__))
         logger.log('LOG-END', "Pipettor has been homed.")
+
+    # Tip Pickup Method
+    def tip_pickup_new(self, x: int, y: int, z: int, tip: int = None) -> None:
+        """ Picks up tips based on a coordinate (Needed for using the coordinates model datatable)"""
+        self.move(x=x, y=y, z=z, drip_plate=0, tip=tip, ignore_tips=True)
+        self.move_relative('up', z, velocity='fast')
+
+    # Tip Eject Method
+    def tip_eject_new(self, x: int, y: int, z:int) -> None:
+        """ Ejects tips based on a coordinate """
+        self.move(x=x, y=y, z=z, drip_plate=0, relative_moves=[0,0,290000,0], tip=1000)
+        self.__eject_tips_now()
         
     # Tip Pickup Method
     def tip_pickup(self, tray, row, pipette_tip_type=None, slow_z=False):
@@ -526,7 +538,8 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         use_drip_plate: bool = False,
         tip: int = None,
         relative_moves: list = [0,0,0,0],
-        max_drip_plate: int = 1198000
+        max_drip_plate: int = -1198000,
+        ignore_tips: bool = False
        ) -> None:
         """ Moves the pipettor head based on the coordinates
 
@@ -542,22 +555,29 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         tip: int
         """
         # Modify the coordinate based on the relative moves
+        print(f"z: {z} -> {z + relative_moves[2]}")
         x = x + relative_moves[0]
         y = y + relative_moves[1]
         z = z + relative_moves[2]
         drip_plate = drip_plate + relative_moves[3]
+        if drip_plate < max_drip_plate:
+            drip_plate = max_drip_plate
         # Offset z and the drip plate for the tip
-        if tip == 50 or tip == 200:
-            z = z - 305000
-        elif tip == None:
-            z = 0
+        if ignore_tips == True:
+            z = z
+        else:
+            if tip == 50 or tip == 200:
+                z = z - 305000
+            elif tip == None:
+                z = 0
         # Home Z and the drip plate
         self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, 0, 800000, True, True)
-        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, 0, 2500000, True, True)
         # Check if the user wants to use the drip plate
         if use_drip_plate:
             # Move the drip plate
             self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, max_drip_plate, 2500000, True, True)
+        else:
+            self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, 0, 2500000, True, True)
         # Move to the Y and X coordiantes
         self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 2, y, 3200000, False, True)
         self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 1, x, 300000, True, True)
@@ -1003,7 +1023,7 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         timer.stop(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.dispense.__name__))
 
     def generate_droplets(self, droplet_type='standard'):
-        droplet_types = ['standard', 'small', 'standard_universal_oil', 'demo', 'st' , 'sm', 'un', 'de']
+        droplet_types = ['standard', 'pico', 'small', 'standard_universal_oil', 'demo', 'st' , 'sm', 'un', 'de', 'pe']
         assert type(droplet_type) == str 
         assert droplet_type.lower()[0:2] in droplet_types
         # Turn on the pump and let it equalize.
@@ -1023,7 +1043,7 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
             max_time = 64
             max_push_out_time = 13.5
             max_flow_rate = 99999
-        elif droplet_type.lower()[0:2] == 'sm':
+        elif droplet_type.lower()[0:2] == 'sm' or droplet_type.lower()[0:2] == 'pe':
             max_time = 166
             max_push_out_time = 23
             max_flow_rate = 99999
@@ -1315,6 +1335,17 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         self.turn_off_suction_cups()
         timer.stop(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.move_chip.__name__))
         logger.log('LOG-END', "Chip {0}/4 has been moved to {1}".format(chip_id, tray_out_location_letter))
+
+    def move_lid_new(self, lid_xyz: list, tray_xyz: list) -> None:
+        """ Moves a lid from the lid tray to a tray """
+        # Move the pipettor to lid_xyz with the drip tray
+        self.move(x=lid_xyz[0], y=lid_xyz[1], z=lid_xyz[2], drip_plate=-3000000, use_drip_plate=True, tip=1000)
+        # Turn on suction cup
+        self.turn_on_suction_cups()
+        # Move to tray_xyz with drip plate
+        self.move(x=tray_xyz[0], y=tray_xyz[1], z=tray_xyz[2], drip_plate=-3000000, use_drip_plate=True, tip=1000)
+        # Turn off suction cup
+        self.turn_off_suction_cups()
 
     def move_lid(self, lid_id, tray_out_location_letter):
         logger = Logger(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.move_lid.__name__))

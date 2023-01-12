@@ -64,7 +64,7 @@ class Model:
 			pass
 		model.create_table()
 
-	def get_coordinates_model(self, unit: str) -> None:
+	def get_coordinates_model(self) -> None:
 		""" Get the coordinate model for the unit of interest
 
 		Parameters:
