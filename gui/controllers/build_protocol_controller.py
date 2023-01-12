@@ -17,10 +17,14 @@ from gui.models.state_model import StateModel
 from gui.models.coordinates_model import CoordinatesModel
 
 # Import the upper gantry api
-from api.upper_gantry.upper_gantry import UpperGantry
+try:
+	from api.upper_gantry.upper_gantry import UpperGantry
+except:
+	print("Couldn't import upper gantry for BuildProtocolCOntroller")
 
 # Import the utilities needed
 from api.util.utils import delay
+from gui.util.insert_at_selected_row import insert_at_selected_row
 
 # Constants
 INITIAL_PROTOCOL_FILENAME = 'protocol.txt'
@@ -72,7 +76,11 @@ class BuildProtocolController:
 		self.state = StateModel(self.model.db_name, self.model.cursor, self.model.connection)
 
 		# Initialize the upper gantry
-		self.upper_gantry = UpperGantry()
+		try:
+			self.upper_gantry = UpperGantry()
+		except:
+			print("No Upper Gantry for BuildProtocolController")
+			self.upper_gantry = None
 	
 		# Variable for keeping track of the volume in the pipettor tips
 		self.volume = 0
@@ -166,22 +174,8 @@ class BuildProtocolController:
 		if next_action_allowed(self.state, action):
 			# Update the state mode
 			self.state.insert(tip, self.volume, action.lower())
-			if selected_row != None:
-				ID = int(selected_row)
-				# Store the actions
-				actions = self.model.select()
-				# Delete all actions after ID
-				for i in range(ID+1, len(actions)):
-					self.model.delete(i)
-				# Insert the action
-				self.model.insert(ID, action_message)
-				# Insert all actions after ID with an index shifted by 1
-				for i in range(ID+1, len(actions)):
-					self.model.insert(i, actions[i][0])
-			else:
-				ID = len(self.model.select())
-				# Insert action into the action list
-				self.model.insert(ID, action_message)
+			# Insert below the selected row or at the end of the action treeview
+			insert_at_selected_row(action_message, selected_row, self.model)
 			# Update the view
 			self.view.update_treeview()
 		else:
@@ -201,7 +195,7 @@ class BuildProtocolController:
 		try:
 			selected_row = self.view.treeview.selection()[0]
 		except:
-			pass
+			selected_row = None
 		# Make sure consumable is not missing
 		if consumable != '':
 			# Generate the action message
@@ -255,8 +249,8 @@ class BuildProtocolController:
 		else:
 			print("Motion Consumable Option was not selected")
 			return None
-		# Inset action into the action list
-		self.model.insert(len(self.model.actions), action_message)
+		# Insert below the selected row or at the end of the action treeview
+		insert_at_selected_row(action_message, selected_row, self.model)
 		# Update the view
 		self.view.update_treeview()
 
@@ -279,14 +273,19 @@ class BuildProtocolController:
 		assert volume <= tip
 		action = self.view.pipettor_action_sv.get()
 		pressure = self.view.pipettor_pressure_sv.get()
+		# Determine which if any row of the treeview is selected
+		try:
+			selected_row = self.view.treeview.selection()[0]
+		except:
+			selected_row = None
 		# Generate the action message
 		action_message = f"{action.title()} {volume} uLs with {tip} uL tips at {pressure} pressure {count} {times}"
 		# Check if this action is allowed
 		if next_action_allowed(self.state, action):
 			# Update the state model
 			self.state.insert(tip, self.volume, action.lower())
-			# Insert action into the action list
-			self.model.insert(len(self.model.actions), action_message)
+			# Insert below the selected row or at the end of the action treeview
+			insert_at_selected_row(action_message, selected_row, self.model)
 			if action == 'Aspirate':
 				self.volume = self.volume + volume 
 			elif action == 'Dispense':
@@ -309,10 +308,15 @@ class BuildProtocolController:
 		# Check units plurality
 		if time_ == 1:
 			units = units[:-1]
+		# Determine which if any row of the treeview is selected
+		try:
+			selected_row = self.view.treeview.selection()[0]
+		except:
+			selected_row = None
 		# Generate the action message
 		action_message = f"Delay for {time_} {units}"
 		# Inset action into the action list
-		self.model.insert(len(self.model.actions), action_message)
+		insert_at_selected_row(action_message, selected_row, self.model)
 		# Update the view
 		self.view.update_treeview()
 
@@ -333,8 +337,13 @@ class BuildProtocolController:
 			elif action_message.split()[2].lower() in ['backwards', 'forwards']:
 				amount = abs(int(amounts[1]))
 			action_message = action_message + f" by {amount}"
+		# Determine which if any row of the treeview is selected
+		try:
+			selected_row = self.view.treeview.selection()[0]
+		except:
+			selected_row = None
 		# Inset action into the action list
-		self.model.insert(len(self.model.actions), action_message)
+		insert_at_selected_row(action_message, selected_row, self.model)
 		# Update the view
 		self.view.update_treeview()
 
