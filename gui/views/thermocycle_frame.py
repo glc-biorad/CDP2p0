@@ -1,9 +1,11 @@
 import types
+import tkinter as tk
 import customtkinter as ctk
 
 import threading
 import time
 from PIL import Image
+from typing import Any, Callable
 import matplotlib
 import numpy as np
 matplotlib.use('TkAgg')
@@ -348,7 +350,6 @@ class ThermocycleFrame(ctk.CTkFrame):
 		self.button_start = ctk.CTkButton(
 			master=self,
 			text='Start',
-			command=self.on_start,
 			fg_color='#4C7BD3',
 			width=BUTTON_START_WIDTH,
 			corner_radius=5,
@@ -1014,3 +1015,66 @@ class ThermocycleFrame(ctk.CTkFrame):
 		self.label_first_denature.place(x=LABEL_FIRST_DENATURE_POSX, y=LABEL_FIRST_DENATURE_POSY)
 		self.label_anneal.place(x=LABEL_ANNEAL_POSX, y=LABEL_ANNEAL_POSY)
 		self.label_second_denature.place(x=LABEL_SECOND_DENATURE_POSX, y=LABEL_SECOND_DENATURE_POSY)
+
+	def trace_cycles_sv(self, callback: Callable[[tk.Event], None]) -> None: 
+		""" Deals with the changing of cycles_sv """
+		try:
+			self.controller.get_cycles_sv().trace('w', callback)
+		except:
+			pass
+		
+	def trace_first_denature_time_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the first denature time """
+		try:
+			self.controller.get_first_denature_time_sv().trace('w', callback)
+		except:
+			pass
+
+	def trace_anneal_time_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the anneal time """
+		try:
+			self.controller.get_anneal_time_sv().trace('w', callback)
+		except:
+			pass
+
+	def trace_second_denature_time_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the second denature time """
+		try:
+			self.controller.get_second_denature_time_sv().trace('w', callback)
+		except:
+			pass
+
+	def trace_use_a_iv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the use checkbox """
+		try:
+			self.controller.get_use_a_iv().trace('w', callback)
+		except:
+			pass
+
+	def trace_use_b_iv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the use checkbox """
+		try:
+			self.controller.get_use_b_iv().trace('w', callback)
+		except:
+			pass
+
+	def trace_use_c_iv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the use checkbox """
+		try:
+			self.controller.get_use_c_iv().trace('w', callback)
+		except:
+			pass
+
+	def trace_use_d_iv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the use checkbox """
+		try:
+			self.controller.get_use_d_iv().trace('w', callback)
+		except:
+			pass
+
+	def bind_button_start(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Binds the start button to the controller """
+		try:
+			self.button_start.bind('<Button-1>', callback)
+		except:
+			pass

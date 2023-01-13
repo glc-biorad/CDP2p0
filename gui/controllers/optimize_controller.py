@@ -51,7 +51,7 @@ class OptimizeController:
 			self.upper_gantry = UpperGantry()
 		except:
 			print("No upper gantry control for optimize controller")
-			pass
+			self.upper_gantry = None
 
 		# Get the unit
 		print("Optimize Frame needs to know what unit we are using! (all set to A hardcoded for now)")
@@ -199,6 +199,12 @@ class OptimizeController:
 	def update(self, event=None) -> None:
 		""" Deals with the on click event for the update button
 		"""
+		# Make sure the upper gantry was initialized successfully
+		if self.upper_gantry == None:
+			tk.messagebox.showwarning(
+				title="Update Coordinate",
+				message="Upper Gantry was not initialized, can't update the coordinate!"
+			)
 		# Make sure that we are about to update an actual coordinate 
 		consumable = self.view.consumable_sv.get()
 		tray = self.view.tray_sv.get()
