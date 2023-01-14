@@ -12,3 +12,4 @@ To-Do List:
 - add fastapi code to this repo
 - add heating control to heater/shaker GUI
 - add the pre-amp thermocycler to the thermocycle portion of the gui
+- allow users to start from selected row in action treeview with a yesno messagebox popup on start
