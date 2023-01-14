@@ -11,3 +11,4 @@ To-Do List:
 - test why reader can't connect for unit C
 - add fastapi code to this repo
 - add heating control to heater/shaker GUI
+- add the pre-amp thermocycler to the thermocycle portion of the gui
