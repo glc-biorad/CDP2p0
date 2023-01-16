@@ -41,9 +41,9 @@ class View(ctk.CTk):
 		self.title(TITLE)
 		self.geometry(f"{WIDTH}x{HEIGHT}")
 		# Initialize the Frames
-		self.optimize_frame = OptimizeFrame(self, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
-		self.build_protocol_frame = BuildProtocolFrame(self, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
-		self.thermocycle_frame = ThermocycleFrame(self, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
+		self.optimize_frame = OptimizeFrame(self, model,RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
+		self.build_protocol_frame = BuildProtocolFrame(self, model, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
+		self.thermocycle_frame = ThermocycleFrame(self, model, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
 		frames = {
 			'Home': None,
 			'Image': None,

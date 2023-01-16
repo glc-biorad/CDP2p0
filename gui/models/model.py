@@ -17,7 +17,7 @@ class Model:
 	# Models
 	thermocycle_model: ThermocycleModel = None
 
-	def __init__(self, unit: str = 'A') -> None:
+	def __init__(self, unit: str) -> None:
 		self.unit = unit
 		self.db_name = f'{DB_NAME}{unit.upper()}.db'
 		self.connection = sqlite3.connect(self.db_name, check_same_thread=False)

@@ -13,7 +13,7 @@ from gui.models.model import Model
 from gui.views.view import View
 
 def main() -> None:
-	unit = 'A'
+	unit = 'C'
 	print(f"Unit: {unit}")
 	model = Model(unit=unit)
 	view = View(model)

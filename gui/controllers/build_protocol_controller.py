@@ -1,7 +1,10 @@
+import os
 import time
 import sqlite3
 import threading
 from tkinter import StringVar
+import tkinter as tk
+import customtkinter as ctk
 
 from gui.util.browse_files import browse_files 
 from gui.util.next_action_allowed import next_action_allowed
@@ -34,6 +37,8 @@ from gui.util.insert_at_selected_row import insert_at_selected_row
 
 # Constants
 INITIAL_PROTOCOL_FILENAME = 'protocol.txt'
+INITIAL_EXTRACTION_FILENAME = 'extraction.txt'
+INITIAL_TRANSFER_PLASMA_FILENAME = 'transfer_plasma.txt'
 NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
 NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
 MAIN_ACTION_KEY_WORDS = [
@@ -66,6 +71,44 @@ MAIN_ACTION_KEY_WORDS = [
 	'Lower',
 	'Raise',
 ]
+TOPLEVEL_PRE_AMP_WIDTH = 400
+TOPLEVEL_PRE_AMP_HEIGHT = 230
+TOPLEVEL_LABEL_FIRST_DENATURE_TEMP_POSX = 35
+TOPLEVEL_LABEL_FIRST_DENATURE_TEMP_POSY = 10
+TOPLEVEL_ENTRY_FIRST_DENATURE_TEMP_POSX = 280
+TOPLEVEL_ENTRY_FIRST_DENATURE_TEMP_POSY = 10
+TOPLEVEL_ENTRY_FIRST_DENATURE_TEMP_WIDTH = 100
+TOPLEVEL_LABEL_FIRST_DENATURE_TIME_POSX = 75
+TOPLEVEL_LABEL_FIRST_DENATURE_TIME_POSY = 40
+TOPLEVEL_ENTRY_FIRST_DENATURE_TIME_POSX = 280
+TOPLEVEL_ENTRY_FIRST_DENATURE_TIME_POSY = 40
+TOPLEVEL_ENTRY_FIRST_DENATURE_TIME_WIDTH = 100
+TOPLEVEL_LABEL_CYCLES_POSX = 210
+TOPLEVEL_LABEL_CYCLES_POSY = 70
+TOPLEVEL_ENTRY_CYCLES_POSX = 280
+TOPLEVEL_ENTRY_CYCLES_POSY = 70
+TOPLEVEL_ENTRY_CYCLES_WIDTH = 100
+TOPLEVEL_LABEL_ANNEAL_TEMP_POSX = 90
+TOPLEVEL_LABEL_ANNEAL_TEMP_POSY = 100
+TOPLEVEL_ENTRY_ANNEAL_TEMP_POSX = 280 
+TOPLEVEL_ENTRY_ANNEAL_TEMP_POSY = 100
+TOPLEVEL_ENTRY_ANNEAL_TEMP_WIDTH = 100
+TOPLEVEL_LABEL_ANNEAL_TIME_POSX = 130
+TOPLEVEL_LABEL_ANNEAL_TIME_POSY = 130
+TOPLEVEL_ENTRY_ANNEAL_TIME_POSX = 280
+TOPLEVEL_ENTRY_ANNEAL_TIME_POSY = 130
+TOPLEVEL_ENTRY_ANNEAL_TIME_WIDTH = 100
+TOPLEVEL_LABEL_SECOND_DENATURE_TEMP_POSX = 15
+TOPLEVEL_LABEL_SECOND_DENATURE_TEMP_POSY = 160
+TOPLEVEL_ENTRY_SECOND_DENATURE_TEMP_POSX = 280
+TOPLEVEL_ENTRY_SECOND_DENATURE_TEMP_POSY = 160
+TOPLEVEL_ENTRY_SECOND_DENATURE_TEMP_WIDTH = 100
+TOPLEVEL_LABEL_SECOND_DENATURE_TIME_POSX = 45
+TOPLEVEL_LABEL_SECOND_DENATURE_TIME_POSY = 190
+TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_POSX = 280
+TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_POSY = 190
+TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_WIDTH = 100
+FONT = "Sergio UI"
 
 class BuildProtocolController:
 	"""System for passing data from the Build Protocol Frame view to the Build Protocol Model
@@ -103,6 +146,15 @@ class BuildProtocolController:
 	
 		# Variable for keeping track of the volume in the pipettor tips
 		self.volume = 0
+
+		# Variables for toplevel access
+		self.first_denature_temp_sv = StringVar()
+		self.first_denature_time_sv = StringVar()
+		self.cycles_sv = StringVar()
+		self.anneal_temp_sv = StringVar()
+		self.anneal_time_sv = StringVar()
+		self.second_denature_temp_sv = StringVar()
+		self.second_denature_time_sv = StringVar()
 
 	def setup_bindings(self):
 		# Set bindings between the view and the controller
@@ -356,6 +408,41 @@ class BuildProtocolController:
 			elif action_message.split()[2].lower() in ['backwards', 'forwards']:
 				amount = abs(int(amounts[1]))
 			action_message = action_message + f" by {amount}"
+		elif 'Extraction' in action_message.split():
+			# Open the file browser to load the extraction protocol
+			file = browse_files(
+				'r',
+				"Load Extraction Protocol",
+				INITIAL_EXTRACTION_FILENAME,
+				r'protocols\\common\\extraction\\'
+			)
+			file_path = file.name
+			action_message = action_message + f" ({file_path})"
+		elif 'Transfer' in action_message.split():
+			# Open the file browser to load the protocol
+			file = browse_files(
+				'r',
+				"Load Transfer Plasma Protocol",
+				INITIAL_TRANSFER_PLASMA_FILENAME,
+				r'protocols\\common\\extraction\\'
+			)
+			file_path = file.name
+			action_message = action_message + f" ({file_path})"
+		elif 'Thermocycle' in action_message.split():
+			if 'Protocol' in  action_message.split():
+				# Open the file browser to load a file to get the name of the protocol file
+				print('load protocol')
+				file = browse_files(
+					'r', 
+					"Load Protocol", 
+					INITIAL_PROTOCOL_FILENAME, 
+					r'protocols\{0}'.format(self.model.unit.upper())
+				)
+				file_path = file.name
+				action_message = action_message + f" ({file_path})"
+			elif 'Pre-Amp' in action_message.split():
+				# 
+				self.create_toplevel_pre_amp()
 		# Determine which if any row of the treeview is selected
 		try:
 			selected_row = self.view.treeview.selection()[0]
@@ -372,8 +459,6 @@ class BuildProtocolController:
 		# Start the protocol
 		thread = threading.Thread(target=self.start_protocol)
 		thread.start()
-
-
 	
 	def start_protocol(self):
 		"""Process for starting the protocol
@@ -598,6 +683,17 @@ class BuildProtocolController:
 				self.upper_gantry.disengage_magnet()
 			elif split[0] == 'Thermocycle':
 				print('Thermocycle')
+				if 'Pre-Amp' in split:
+					protocol = f"""
+					first denature temp: {self.first_denature_temp_sv.get()},
+					first denature time: {self.first_denature_time_sv.get()},
+					cycles: {self.cycles_sv.get()},
+					anneal temp: {self.anneal_temp_sv.get()},
+					anneal time: {self.anneal_time_sv.get()},
+					second denature temp: {self.second_denature_temp_sv.get()},
+					second denature time: {self.second_denature_time_sv.get()}
+					"""
+					print(protocol)
 			elif split[0] == 'Open':
 				# Open the tray
 				self.reader.open_tray(split[2])
@@ -656,3 +752,132 @@ class BuildProtocolController:
 			self.model.delete(int(selected_row))
 		# Update the view
 		self.view.update_treeview()
+
+	def create_toplevel_pre_amp(self):
+		""" Creates a Toplevel for the Pre-Amp """
+		toplevel_pre_amp = ctk.CTkToplevel(self.view.master)
+		toplevel_pre_amp.geometry(f'{TOPLEVEL_PRE_AMP_WIDTH}x{TOPLEVEL_PRE_AMP_HEIGHT}')
+		# Set the ID for the Pre-Amp Thermocycler (Should be found in ThermocycleController, View, and Model)
+		ID = 5 
+		model = self.view.master_model.get_thermocycle_model()
+		# Create and place the title label
+		toplevel_pre_amp.title("Pre-Amp Thermocycling Protocol")
+		# Create an place the first denature temperature label and entry
+		toplevel_label_first_denature_temp = ctk.CTkLabel(
+			master=toplevel_pre_amp,
+			text="First Denature Temperature (C):",
+			font=(FONT,-16),
+		)
+		toplevel_label_first_denature_temp.place(x=TOPLEVEL_LABEL_FIRST_DENATURE_TEMP_POSX,y=TOPLEVEL_LABEL_FIRST_DENATURE_TEMP_POSY)
+		self.first_denature_temp_sv.set(model.select(ID)['first_denature_temperature'])
+		toplevel_entry_first_denature_temp = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.first_denature_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_FIRST_DENATURE_TEMP_WIDTH,
+		)
+		toplevel_entry_first_denature_temp.place(x=TOPLEVEL_ENTRY_FIRST_DENATURE_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_FIRST_DENATURE_TEMP_POSY)
+		# Create and place th label and entry for the first denature time
+		toplevel_label_first_denature_time = ctk.CTkLabel(master=toplevel_pre_amp,
+			text="First Denature Time (min):",
+			font=(FONT,-16),
+		)
+		toplevel_label_first_denature_time.place(x=TOPLEVEL_LABEL_FIRST_DENATURE_TIME_POSX,
+			y=TOPLEVEL_LABEL_FIRST_DENATURE_TIME_POSY)
+		self.first_denature_time_sv.set(model.select(ID)['first_denature_time'])
+		toplevel_entry_first_denature_time = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.first_denature_time_sv,
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_FIRST_DENATURE_TIME_WIDTH,
+		)
+		toplevel_entry_first_denature_time.place(x=TOPLEVEL_ENTRY_FIRST_DENATURE_TIME_POSX,
+			y=TOPLEVEL_ENTRY_FIRST_DENATURE_TIME_POSY)
+		# Create and place the cycles label and entry
+		toplevel_label_cycles = ctk.CTkLabel(master=toplevel_pre_amp, text='Cycles:', font=(FONT,-16))
+		toplevel_label_cycles.place(x=TOPLEVEL_LABEL_CYCLES_POSX,
+			y=TOPLEVEL_LABEL_CYCLES_POSY)
+		self.cycles_sv.set(model.select(ID)['cycles'])
+		toplevel_entry_cycles = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.cycles_sv,
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_CYCLES_WIDTH,
+		)
+		toplevel_entry_cycles.place(x=TOPLEVEL_ENTRY_CYCLES_POSX,
+			y=TOPLEVEL_ENTRY_CYCLES_POSY)
+		# Create and place the anneal temperature label and entry
+		toplevel_label_anneal_temp = ctk.CTkLabel(
+			master=toplevel_pre_amp,
+			text="Anneal Temperature (C):",
+			font=(FONT,-16)
+		)
+		toplevel_label_anneal_temp.place(x=TOPLEVEL_LABEL_ANNEAL_TEMP_POSX,
+			y=TOPLEVEL_LABEL_ANNEAL_TEMP_POSY)
+		self.anneal_temp_sv.set(model.select(ID)['anneal_temperature'])
+		toplevel_entry_anneal_temp = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.anneal_temp_sv,
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_ANNEAL_TEMP_WIDTH,
+		)
+		toplevel_entry_anneal_temp.place(x=TOPLEVEL_ENTRY_ANNEAL_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_ANNEAL_TEMP_POSY)
+		toplevel_label_anneal_time = ctk.CTkLabel(
+			master=toplevel_pre_amp,
+			text="Anneal Time (sec):",
+			font=(FONT,-16)
+		)
+		toplevel_label_anneal_time.place(x=TOPLEVEL_LABEL_ANNEAL_TIME_POSX,	
+			y=TOPLEVEL_LABEL_ANNEAL_TIME_POSY)
+		self.anneal_time_sv.set(model.select(ID)['anneal_time'])
+		toplevel_entry_anneal_time = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.anneal_time_sv,
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_ANNEAL_TIME_WIDTH,
+		)
+		toplevel_entry_anneal_time.place(x=TOPLEVEL_ENTRY_ANNEAL_TIME_POSX,
+			y=TOPLEVEL_ENTRY_ANNEAL_TIME_POSY)
+		# Create and place the second temperature label and entry
+		toplevel_label_second_denature_temp = ctk.CTkLabel(
+			master=toplevel_pre_amp,
+			text="Second Denature Temperature (C):",
+			font=(FONT,-16)
+		)
+		toplevel_label_second_denature_temp.place(x=TOPLEVEL_LABEL_SECOND_DENATURE_TEMP_POSX,
+			y=TOPLEVEL_LABEL_SECOND_DENATURE_TEMP_POSY)
+		self.second_denature_temp_sv.set(model.select(ID)['second_denature_temperature'])
+		toplevel_entry_second_denature_temp = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.second_denature_temp_sv,
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_SECOND_DENATURE_TEMP_WIDTH
+		)
+		toplevel_entry_second_denature_temp.place(x=TOPLEVEL_ENTRY_SECOND_DENATURE_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_SECOND_DENATURE_TEMP_POSY)
+		# Create and place the second denature time label and entry
+		toplevel_label_second_denature_time = ctk.CTkLabel(
+			master=toplevel_pre_amp,
+			text="Second Denature Time (sec):",
+			font=(FONT,-16)
+		)
+		toplevel_label_second_denature_time.place(x=TOPLEVEL_LABEL_SECOND_DENATURE_TIME_POSX,
+			y=TOPLEVEL_LABEL_SECOND_DENATURE_TIME_POSY)
+		self.second_denature_time_sv.set(model.select(ID)['second_denature_time'])
+		toplevel_entry_second_denature_time = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.second_denature_time_sv,
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_WIDTH,
+		)
+		toplevel_entry_second_denature_time.place(x=TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_POSX,
+			y=TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_POSY)

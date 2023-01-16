@@ -1,9 +1,91 @@
+import os
 import threading
 import tkinter as tk
+import customtkinter as ctk
+from PIL import Image
 
 # Import utility
 from api.util.utils import delay
+from gui.util.browse_files import browse_files
 
+# Import the fast api interface
+try:
+	from api.interfaces.fast_api_interface import FastAPIInterface
+except:
+	print("Can't import FastAPIInterface for the ThermocycleController")
+
+# Constants
+INITIAL_PROTOCOL_FILENAME = 'protocol.txt'
+THERMOCYCLERS = ['A', 'B', 'C', 'D']
+THERMOCYCLER_IDS = {
+	'A': 1,
+	'B': 2,
+	'C': 3,
+	'D': 4,
+}
+ADDRESSES = {
+	'A': 8,
+	'B': 9,
+	'C': 10,
+	'D': 11,
+	'AB': 6,
+	'CD': 7,
+}
+FONT = "Sergio UI"
+TOPLEVEL_SETTINGS_WIDTH = 265
+TOPLEVEL_SETTINGS_HEIGHT = 270
+TOPLEVEL_LABEL_CLAMPS_POSX = 110
+TOPLEVEL_LABEL_CLAMPS_POSY = 10
+TOPLEVEL_LABEL_A_POSX = 20 
+TOPLEVEL_LABEL_A_POSY = 40
+TOPLEVEL_ENTRY_CLAMP_A_POSX = 50
+TOPLEVEL_ENTRY_CLAMP_A_POSY = 40
+TOPLEVEL_ENTRY_CLAMP_A_WIDTH = 150
+TOPLEVEL_BUTTON_A_POSX = 205
+TOPLEVEL_BUTTON_A_POSY = 40
+TOPLEVEL_BUTTON_A_WIDTH = 35
+TOPLEVEL_LABEL_B_POSX = 20 
+TOPLEVEL_LABEL_B_POSY = 70
+TOPLEVEL_ENTRY_CLAMP_B_POSX = 50
+TOPLEVEL_ENTRY_CLAMP_B_POSY = 70
+TOPLEVEL_ENTRY_CLAMP_B_WIDTH = 150
+TOPLEVEL_BUTTON_B_POSX = 205
+TOPLEVEL_BUTTON_B_POSY = 70
+TOPLEVEL_BUTTON_B_WIDTH = 35
+TOPLEVEL_LABEL_C_POSX = 20 
+TOPLEVEL_LABEL_C_POSY = 100
+TOPLEVEL_ENTRY_CLAMP_C_POSX = 50
+TOPLEVEL_ENTRY_CLAMP_C_POSY = 100
+TOPLEVEL_ENTRY_CLAMP_C_WIDTH = 150
+TOPLEVEL_BUTTON_C_POSX = 205
+TOPLEVEL_BUTTON_C_POSY = 100
+TOPLEVEL_BUTTON_C_WIDTH = 35
+TOPLEVEL_LABEL_D_POSX = 20 
+TOPLEVEL_LABEL_D_POSY = 130
+TOPLEVEL_ENTRY_CLAMP_D_POSX = 50
+TOPLEVEL_ENTRY_CLAMP_D_POSY = 130
+TOPLEVEL_ENTRY_CLAMP_D_WIDTH = 150
+TOPLEVEL_BUTTON_D_POSX = 205
+TOPLEVEL_BUTTON_D_POSY = 130
+TOPLEVEL_BUTTON_D_WIDTH = 35
+TOPLEVEL_LABEL_TRAYS_POSX = 120
+TOPLEVEL_LABEL_TRAYS_POSY = 170
+TOPLEVEL_LABEL_TRAY_AB_POSX = 15
+TOPLEVEL_LABEL_TRAY_AB_POSY = 200
+TOPLEVEL_ENTRY_TRAY_AB_POSX = 50
+TOPLEVEL_ENTRY_TRAY_AB_POSY = 200
+TOPLEVEL_ENTRY_TRAY_AB_WIDTH = 150
+TOPLEVEL_BUTTON_AB_POSX = 205
+TOPLEVEL_BUTTON_AB_POSY = 200
+TOPLEVEL_BUTTON_AB_WIDTH = 35
+TOPLEVEL_LABEL_TRAY_CD_POSX = 15
+TOPLEVEL_LABEL_TRAY_CD_POSY = 230
+TOPLEVEL_ENTRY_TRAY_CD_POSX = 50
+TOPLEVEL_ENTRY_TRAY_CD_POSY = 230
+TOPLEVEL_ENTRY_TRAY_CD_WIDTH = 150
+TOPLEVEL_BUTTON_CD_POSX = 205
+TOPLEVEL_BUTTON_CD_POSY = 230
+TOPLEVEL_BUTTON_CD_WIDTH = 35
 
 class ThermocycleController:
 	"""
@@ -16,6 +98,12 @@ class ThermocycleController:
 		# Setup the defaults for the loaded view
 		self.model.setup_defaults()
 
+		# Initialize the FastAPI interface for controlling the trays and thermocycler clamps
+		try:
+			self.fast_api_interface = FastAPIInterface()
+		except:
+			print("Couldn't connect to the FastAPI interface with the ThermocyclerController!")
+
 	def setup_bindings(self):
 		""" Setup the binding between this controller and its view """
 		self.view.trace_cycles_sv(self.trace_cycles)
@@ -27,6 +115,10 @@ class ThermocycleController:
 		self.view.trace_use_c_iv(self.trace_use_c)
 		self.view.trace_use_d_iv(self.trace_use_d)
 		self.view.bind_button_start(self.start)
+		self.view.bind_button_save(self.save)
+		self.view.bind_button_load(self.load)
+		self.view.bind_button_home(self.home)
+		self.view.bind_button_settings(self.settings)
 
 	def get_thermocycler_sv(self, id: int = None) -> tk.StringVar:
 		return self.model.thermocycler_sv
@@ -411,3 +503,465 @@ class ThermocycleController:
 			self.model.update(ID=4, use=use)
 		except:
 			pass
+
+	def load(self, event=None) -> None:
+		""" Open a file browser to select a file to load """
+		# Open the file browser
+		file = browse_files('r', "Load Protocol", INITIAL_PROTOCOL_FILENAME, r'protocols\{0}'.format(self.model.unit.upper()))
+		# Read line by line through the file
+		try:
+			lines = [line.rstrip('n') for line in file]
+			for line in lines:
+				line = line.split(',')
+				thermocycler = line[0]
+				# Make sure the first column is a valid unit
+				if thermocycler in THERMOCYCLERS:
+					print(line)
+					# Get the data
+					cycles = line[1]
+					first_denature_temperature = line[2]
+					first_denature_time = line[3]
+					anneal_temperature = line[4]
+					anneal_time = line[5]
+					second_denature_temperature = line[6]
+					second_denature_time = line[7]
+					# Store the data
+					self.model.update(
+						ID = THERMOCYCLER_IDS[thermocycler],
+						first_denature_temperature=first_denature_temperature,
+						first_denature_time=first_denature_time,
+						anneal_temperature=anneal_temperature,
+						anneal_time=anneal_time,
+						second_denature_temperature=second_denature_temperature,
+						second_denature_time=second_denature_time
+					)
+			# Update the string vars for current selected thermocyclers entries
+			ID = THERMOCYCLER_IDS[self.view.thermocycler_sv.get()]
+			self.view.entry_cycles.delete(0, tk.END)
+			self.view.entry_cycles.insert(0, cycles)
+			self.view.entry_first_denature_temp.delete(0, tk.END)
+			self.view.entry_first_denature_temp.insert(0, self.model.select(ID)['first_denature_temperature'])
+			self.view.entry_first_denature_time.delete(0, tk.END)
+			self.view.entry_first_denature_time.insert(0, self.model.select(ID)['first_denature_time'])
+			self.view.entry_anneal_temp.delete(0, tk.END)
+			self.view.entry_anneal_temp.insert(0, self.model.select(ID)['anneal_temperature'])
+			self.view.entry_anneal_time.delete(0, tk.END)
+			self.view.entry_anneal_time.insert(0, self.model.select(ID)['anneal_time'])
+			self.view.entry_second_denature_temp.delete(0, tk.END)
+			self.view.entry_second_denature_temp.insert(0, self.model.select(ID)['second_denature_temperature'])
+			self.view.entry_second_denature_time.delete(0, tk.END)
+			self.view.entry_second_denature_time.insert(0, self.model.select(ID)['second_denature_time'])
+			# Close the file
+			file.close()
+		except Exception as e:
+			print(e)
+			print("Could not open file for loading the thermocycling protocols")
+			pass
+
+	def home(self, event=None) -> None:
+		return None
+
+	def save(self, event=None) -> None:
+		""" Save the checked protocols """
+		# Open a file browser to save the file (creates a file for each checked file_unit.csv)
+		file = browse_files('w', "Save Protocol", INITIAL_PROTOCOL_FILENAME, r'protocols\{0}'.format(self.model.unit.upper()))
+		file.write('unit,cycles,first denature temperature, first denature time, anneal temperature, anneal time, second denature temperature, second denature time,\n')
+		# Save the protocol for each thermocycler
+		for thermocycler in THERMOCYCLERS:
+			# Get the ID
+			ID = THERMOCYCLER_IDS[thermocycler]
+			# Get the data for this thermocycler
+			cycles = self.model.select(ID)['cycles']
+			use = self.model.select(ID)['use']
+			first_denature_temperature = self.model.select(ID)['first_denature_temperature']
+			first_denature_time = self.model.select(ID)['first_denature_time']
+			anneal_temperature = self.model.select(ID)['anneal_temperature']
+			anneal_time = self.model.select(ID)['anneal_time']
+			second_denature_temperature = self.model.select(ID)['second_denature_temperature']
+			second_denature_time = self.model.select(ID)['second_denature_time']
+			data = f'{thermocycler},{cycles},{first_denature_temperature},{first_denature_time},{anneal_temperature},{anneal_time},{second_denature_temperature},{second_denature_time},\n'
+			file.write(data)
+		# Close the file
+		file.close()
+
+	def settings(self, event=None) -> None:
+		""" Create a Toplevel window to set the settings """
+		self.create_settings_toplevel()
+
+	def create_settings_toplevel(self) -> None:
+		""" Create a Toplevel window for the settings """
+		self.toplevel_settings = ctk.CTkToplevel(self.view.master)
+		self.toplevel_settings.geometry(f'{TOPLEVEL_SETTINGS_WIDTH}x{TOPLEVEL_SETTINGS_HEIGHT}')
+		self.toplevel_settings.title("Settings")
+		# Create and place Clamps label
+		self.toplevel_label_clamps = ctk.CTkLabel(master=self.toplevel_settings, text='Clamps', font=(FONT,-16))
+		self.toplevel_label_clamps.place(x=TOPLEVEL_LABEL_CLAMPS_POSX, y=TOPLEVEL_LABEL_CLAMPS_POSY)
+		# Create and place the Clamp Settings for Thermocycler A
+		self.toplevel_label_a = ctk.CTkLabel(master=self.toplevel_settings, text='A', font=(FONT,-16))
+		self.toplevel_label_a.place(x=TOPLEVEL_LABEL_A_POSX, y=TOPLEVEL_LABEL_A_POSY)
+		self.clamp_a_sv = tk.StringVar()
+		self.clamp_a_sv.set('-400000')
+		self.toplevel_entry_clamp_a = ctk.CTkEntry(
+			master=self.toplevel_settings,
+			textvariable=self.clamp_a_sv,
+			font=(FONT,-14),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_CLAMP_A_WIDTH,
+		)
+		self.toplevel_entry_clamp_a.place(x=TOPLEVEL_ENTRY_CLAMP_A_POSX, y=TOPLEVEL_ENTRY_CLAMP_A_POSY)
+		self.toplevel_button_a = ctk.CTkButton(
+			master=self.toplevel_settings,
+			text='Move',
+			font=(FONT,-14),
+			width=TOPLEVEL_BUTTON_A_WIDTH,
+			command=self.move_a,
+		)
+		self.toplevel_button_a.place(x=TOPLEVEL_BUTTON_A_POSX, y=TOPLEVEL_BUTTON_A_POSY)
+		# Create and place the Clamp Settings for Thermocycler B
+		self.toplevel_label_b = ctk.CTkLabel(master=self.toplevel_settings, text='B', font=(FONT,-16))
+		self.toplevel_label_b.place(x=TOPLEVEL_LABEL_B_POSX, y=TOPLEVEL_LABEL_B_POSY)
+		self.clamp_b_sv = tk.StringVar()
+		self.clamp_b_sv.set('-400000')
+		self.toplevel_entry_clamp_b = ctk.CTkEntry(
+			master=self.toplevel_settings,
+			textvariable=self.clamp_b_sv,
+			font=(FONT,-14),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_CLAMP_B_WIDTH,
+		)
+		self.toplevel_entry_clamp_b.place(x=TOPLEVEL_ENTRY_CLAMP_B_POSX, y=TOPLEVEL_ENTRY_CLAMP_B_POSY)
+		self.toplevel_button_b = ctk.CTkButton(
+			master=self.toplevel_settings,
+			text='Move',
+			font=(FONT,-14),
+			width=TOPLEVEL_BUTTON_B_WIDTH,
+			command=self.move_b,
+		)
+		self.toplevel_button_b.place(x=TOPLEVEL_BUTTON_B_POSX, y=TOPLEVEL_BUTTON_B_POSY)
+		# Create and place the clamp settings for thermocycler C
+		self.toplevel_label_c = ctk.CTkLabel(master=self.toplevel_settings, text='C', font=(FONT,-16))
+		self.toplevel_label_c.place(x=TOPLEVEL_LABEL_C_POSX, y=TOPLEVEL_LABEL_C_POSY)
+		self.clamp_c_sv = tk.StringVar()
+		self.clamp_c_sv.set('-400000')
+		self.toplevel_entry_clamp_c = ctk.CTkEntry(
+			master=self.toplevel_settings,
+			textvariable=self.clamp_c_sv,
+			font=(FONT,-14),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_CLAMP_C_WIDTH,
+		)
+		self.toplevel_entry_clamp_c.place(x=TOPLEVEL_ENTRY_CLAMP_C_POSX, y=TOPLEVEL_ENTRY_CLAMP_C_POSY)
+		self.toplevel_button_c = ctk.CTkButton(
+			master=self.toplevel_settings,
+			text='Move',
+			font=(FONT,-14),
+			width=TOPLEVEL_BUTTON_C_WIDTH,
+			command=self.move_c,
+		)
+		self.toplevel_button_c.place(x=TOPLEVEL_BUTTON_C_POSX, y=TOPLEVEL_BUTTON_C_POSY)
+		# Create and place the clamp settings for thermocycler D
+		self.toplevel_label_d = ctk.CTkLabel(master=self.toplevel_settings, text='D', font=(FONT,-16))
+		self.toplevel_label_d.place(x=TOPLEVEL_LABEL_D_POSX, y=TOPLEVEL_LABEL_D_POSY)
+		self.clamp_d_sv = tk.StringVar()
+		self.clamp_d_sv.set('-400000')
+		self.toplevel_entry_clamp_d = ctk.CTkEntry(
+			master=self.toplevel_settings,
+			textvariable=self.clamp_d_sv,
+			font=(FONT,-14),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_CLAMP_D_WIDTH,
+		)
+		self.toplevel_entry_clamp_d.place(x=TOPLEVEL_ENTRY_CLAMP_D_POSX, y=TOPLEVEL_ENTRY_CLAMP_D_POSY)
+		self.toplevel_button_d = ctk.CTkButton(
+			master=self.toplevel_settings,
+			text='Move',
+			font=(FONT,-14),
+			width=TOPLEVEL_BUTTON_D_WIDTH,
+			command=self.move_d,
+		)
+		self.toplevel_button_d.place(x=TOPLEVEL_BUTTON_D_POSX, y=TOPLEVEL_BUTTON_D_POSY)
+		# Create and place trays label
+		self.toplevel_label_tray = ctk.CTkLabel(master=self.toplevel_settings, text='Trays', font=(FONT,-16))
+		self.toplevel_label_tray.place(x=TOPLEVEL_LABEL_TRAYS_POSX, y=TOPLEVEL_LABEL_TRAYS_POSY)
+		# Create and place tray settings for tray ab
+		self.toplevel_label_ab = ctk.CTkLabel(master=self.toplevel_settings, text='AB', font=(FONT,-16))
+		self.toplevel_label_ab.place(x=TOPLEVEL_LABEL_TRAY_AB_POSX, y=TOPLEVEL_LABEL_TRAY_AB_POSY)
+		self.tray_ab_sv = tk.StringVar()
+		self.tray_ab_sv.set('-790000')
+		self.toplevel_entry_tray_ab = ctk.CTkEntry(
+			master=self.toplevel_settings,
+			textvariable=self.tray_ab_sv,
+			font=(FONT,-14),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_TRAY_AB_WIDTH,
+		)
+		self.toplevel_entry_tray_ab.place(x=TOPLEVEL_ENTRY_TRAY_AB_POSX, y=TOPLEVEL_ENTRY_TRAY_AB_POSY)
+		self.toplevel_button_ab = ctk.CTkButton(
+			master=self.toplevel_settings,
+			text='Move',
+			font=(FONT,-14),
+			width=TOPLEVEL_BUTTON_AB_WIDTH,
+			command=self.move_tray_ab,
+		)
+		self.toplevel_button_ab.place(x=TOPLEVEL_BUTTON_AB_POSX, y=TOPLEVEL_BUTTON_AB_POSY)
+		# Create and place tray settings for tray cd
+		self.toplevel_label_cd = ctk.CTkLabel(master=self.toplevel_settings, text='CD', font=(FONT,-16))
+		self.toplevel_label_cd.place(x=TOPLEVEL_LABEL_TRAY_CD_POSX, y=TOPLEVEL_LABEL_TRAY_CD_POSY)
+		self.tray_cd_sv = tk.StringVar()
+		self.tray_cd_sv.set('-790000')
+		self.toplevel_entry_tray_cd = ctk.CTkEntry(
+			master=self.toplevel_settings,
+			textvariable=self.tray_cd_sv,
+			font=(FONT,-14),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_TRAY_CD_WIDTH,
+		)
+		self.toplevel_entry_tray_cd.place(x=TOPLEVEL_ENTRY_TRAY_CD_POSX, y=TOPLEVEL_ENTRY_TRAY_CD_POSY)
+		self.toplevel_button_cd = ctk.CTkButton(
+			master=self.toplevel_settings,
+			text='Move',
+			font=(FONT,-14),
+			width=TOPLEVEL_BUTTON_CD_WIDTH,
+			command=self.move_tray_cd,
+		)
+		self.toplevel_button_cd.place(x=TOPLEVEL_BUTTON_CD_POSX, y=TOPLEVEL_BUTTON_CD_POSY)
+
+	def move_a(self, event=None) -> None:
+		""" Move clamp A from the settings toplevel window """
+		thread = threading.Thread(target=self.thread_move_a)
+		thread.start()
+	def thread_move_a(self) -> None:
+		""" Move clamp A on a thread """
+		# Get the value to move to
+		val = int(self.clamp_a_sv.get())
+		# If val is 0 raise the heater
+		if abs(val) == 0:
+			try:
+				self.view.photoimage_thermocycler_block_a = ctk.CTkImage(
+					dark_image=Image.open(self.view.IMAGE_PATHS['thermocycler_block_raised']),
+					size=(self.view.IMAGE_THERMOCYCLER_BLOCK_A_WIDTH, self.view.IMAGE_THERMOCYCLER_BLOCK_A_HEIGHT),
+				)
+				self.set_clamp(1, 0)
+				self.view.image_thermocycler_block_a.configure(image=self.view.photoimage_thermocycler_block_a)
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['A'], 0, 80000, True)
+				self.fast_api_interface.reader.axis.home('reader', ADDRESSES['A'])
+			except Exception as e:
+				pass
+		else:
+			val = -abs(val)
+			try:
+				self.view.photoimage_thermocycler_block_a = ctk.CTkImage(
+					dark_image=Image.open(self.view.IMAGE_PATHS['thermocycler_block_lowered']),
+					size=(self.view.IMAGE_THERMOCYCLER_BLOCK_A_WIDTH, self.view.IMAGE_THERMOCYCLER_BLOCK_A_HEIGHT),
+				)
+				self.set_clamp(1, 0)
+				self.view.image_thermocycler_block_a.configure(image=self.view.photoimage_thermocycler_block_a)
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['A'], val, 80000, False)
+			except Exception as e:
+				pass
+
+	def move_b(self, event=None) -> None:
+		""" Move clamp A from the settings toplevel window """
+		thread = threading.Thread(target=self.thread_move_b)
+		thread.start()
+	def thread_move_b(self) -> None:
+		""" Move clamp B on a thread """
+		# Get the value to move to
+		val = int(self.clamp_b_sv.get())
+		# If val is 0 raise the heater
+		if abs(val) == 0:
+			try:
+				self.view.photoimage_thermocycler_block_b = ctk.CTkImage(
+					dark_image=Image.open(self.view.IMAGE_PATHS['thermocycler_block_raised']),
+					size=(self.view.IMAGE_THERMOCYCLER_BLOCK_B_WIDTH, self.view.IMAGE_THERMOCYCLER_BLOCK_B_HEIGHT),
+				)
+				self.set_clamp(2, 0)
+				self.view.image_thermocycler_block_b.configure(image=self.view.photoimage_thermocycler_block_b)
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['B'], 0, 80000, True)
+				self.fast_api_interface.reader.axis.home('reader', ADDRESSES['B'])
+			except Exception as e:
+				pass
+		else:
+			val = -abs(val)
+			try:
+				self.view.photoimage_thermocycler_block_b = ctk.CTkImage(
+					dark_image=Image.open(self.view.IMAGE_PATHS['thermocycler_block_lowered']),
+					size=(self.view.IMAGE_THERMOCYCLER_BLOCK_B_WIDTH, self.view.IMAGE_THERMOCYCLER_BLOCK_B_HEIGHT),
+				)
+				self.set_clamp(2, 0)
+				self.view.image_thermocycler_block_b.configure(image=self.view.photoimage_thermocycler_block_b)
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['B'], val, 80000, False)
+			except Exception as e:
+				pass
+
+	def move_c(self, event=None) -> None:
+		""" Move clamp C from the settings toplevel window """
+		thread = threading.Thread(target=self.thread_move_c)
+		thread.start()
+	def thread_move_c(self) -> None:
+		""" Move clamp C on a thread """
+		# Get the value to move to
+		val = int(self.clamp_c_sv.get())
+		# If val is 0 raise the heater
+		if abs(val) == 0:
+			try:
+				self.view.photoimage_thermocycler_block_c = ctk.CTkImage(
+					dark_image=Image.open(self.view.IMAGE_PATHS['thermocycler_block_raised']),
+					size=(self.view.IMAGE_THERMOCYCLER_BLOCK_C_WIDTH, self.view.IMAGE_THERMOCYCLER_BLOCK_C_HEIGHT),
+				)
+				self.set_clamp(3, 0)
+				self.view.image_thermocycler_block_c.configure(image=self.view.photoimage_thermocycler_block_c)
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['C'], 0, 80000, True)
+				self.fast_api_interface.reader.axis.home('reader', ADDRESSES['C'])
+			except Exception as e:
+				pass
+		else:
+			val = -abs(val)
+			try:
+				self.view.photoimage_thermocycler_block_c = ctk.CTkImage(
+					dark_image=Image.open(self.view.IMAGE_PATHS['thermocycler_block_lowered']),
+					size=(self.view.IMAGE_THERMOCYCLER_BLOCK_C_WIDTH, self.view.IMAGE_THERMOCYCLER_BLOCK_C_HEIGHT),
+				)
+				self.set_clamp(3, 0)
+				self.view.image_thermocycler_block_c.configure(image=self.view.photoimage_thermocycler_block_c)
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['C'], val, 80000, False)
+			except Exception as e:
+				pass
+
+	def move_d(self, event=None) -> None:
+		""" Move clamp D from the settings toplevel window """
+		thread = threading.Thread(target=self.thread_move_d)
+		thread.start()
+	def thread_move_d(self) -> None:
+		""" Move clamp D on a thread """
+		# Get the value to move to
+		val = int(self.clamp_d_sv.get())
+		# If val is 0 raise the heater
+		if abs(val) == 0:
+			try:
+				self.view.photoimage_thermocycler_block_d = ctk.CTkImage(
+					dark_image=Image.open(self.view.IMAGE_PATHS['thermocycler_block_raised']),
+					size=(self.view.IMAGE_THERMOCYCLER_BLOCK_D_WIDTH, self.view.IMAGE_THERMOCYCLER_BLOCK_D_HEIGHT),
+				)
+				self.set_clamp(4, 0)
+				self.view.image_thermocycler_block_d.configure(image=self.view.photoimage_thermocycler_block_d)
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['D'], 0, 80000, True)
+				self.fast_api_interface.reader.axis.home('reader', ADDRESSES['D'])
+			except Exception as e:
+				pass
+		else:
+			val = -abs(val)
+			try:
+				self.view.photoimage_thermocycler_block_d = ctk.CTkImage(
+					dark_image=Image.open(self.view.IMAGE_PATHS['thermocycler_block_lowered']),
+					size=(self.view.IMAGE_THERMOCYCLER_BLOCK_D_WIDTH, self.view.IMAGE_THERMOCYCLER_BLOCK_D_HEIGHT),
+				)
+				self.set_clamp(4, 0)
+				self.view.image_thermocycler_block_d.configure(image=self.view.photoimage_thermocycler_block_d)
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['D'], val, 80000, False)
+			except Exception as e:
+				pass
+
+	def move_tray_ab(self, event=None) -> None:
+		""" Move tray ab """
+		thread = threading.Thread(target=self.thread_move_tray_ab)
+		thread.start()
+	def thread_move_tray_ab(self) -> None:
+		""" Move Tray AB using a thread """
+		# Get the tray position value
+		val = int(self.tray_ab_sv.get())
+		# If trying to home go fast then force a home
+		if abs(val) == 0:
+			try:
+				# Get the current posx
+				posx = int(self.view.image_thermocycler_tray_ab.place_info()['x'])
+				if (posx == self.view.IMAGE_THERMOCYCLER_TRAY_AB_POSX):
+					return None
+				# Make sure the tray is allowed to close
+				if True:
+					self.view.move_tray(ADDRESSES['AB'],
+						self.view.image_thermocycler_tray_ab, 
+						posx,
+						self.view.IMAGE_THERMOCYCLER_TRAY_AB_POSX,
+						use_fast_api=False,
+					)
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], 0, 200000, True)
+				self.fast_api_interface.reader.axis.home('reader', ADDRESSES['AB'], False)
+			except Exception as e:
+				pass
+		else:
+			val = -abs(val)
+			try:
+				# Get the current posx
+				posx = int(self.view.image_thermocycler_tray_ab.place_info()['x'])
+				# Compute the new posx based on the real space value given in the tray entry
+				posx_diff = abs(self.view.IMAGE_THERMOCYCLER_TRAY_AB_POSX - self.view.TRAY_CLOSED_POSX)
+				fully_closed = -790000
+				real_ratio = val/fully_closed
+				x = int(self.view.IMAGE_THERMOCYCLER_TRAY_AB_POSX + posx_diff * real_ratio)
+				if (posx == x):
+					return None
+				# Make sure the tray is allowed to close
+				if True:
+					self.view.move_tray(ADDRESSES['AB'],
+						self.view.image_thermocycler_tray_ab, 
+						posx,
+						x,
+						use_fast_api=False,
+					)
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], val, 200000, False)
+			except Exception as e:
+				pass
+
+	def move_tray_cd(self, event=None) -> None:
+		""" Move tray cd """
+		thread = threading.Thread(target=self.thread_move_tray_cd)
+		thread.start()
+	def thread_move_tray_cd(self) -> None:
+		""" Move Tray CD using a thread """
+		# Get the tray position value
+		val = int(self.tray_cd_sv.get())
+		# If trying to home go fast then force a home
+		if abs(val) == 0:
+			try:
+				# Get the current posx
+				posx = int(self.view.image_thermocycler_tray_CD.place_info()['x'])
+				if (posx == self.view.IMAGE_THERMOCYCLER_TRAY_CD_POSX):
+					return None
+				# Make sure the tray is allowed to close
+				if True:
+					self.view.move_tray(ADDRESSES['CD'],
+						self.view.image_thermocycler_tray_cd, 
+						posx,
+						self.view.IMAGE_THERMOCYCLER_TRAY_CD_POSX,
+						use_fast_api=False,
+					)
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['CD'], 0, 200000, True)
+				self.fast_api_interface.reader.axis.home('reader', ADDRESSES['CD'], False)
+			except Exception as e:
+				print(e)
+				pass
+		else:
+			val = -abs(val)
+			try:
+				# Get the current posx
+				posx = int(self.view.image_thermocycler_tray_cd.place_info()['x'])
+				# Compute the new posx based on the real space value given in the tray entry
+				posx_diff = abs(self.view.IMAGE_THERMOCYCLER_TRAY_CD_POSX - self.view.TRAY_CLOSED_POSX)
+				fully_closed = -790000
+				real_ratio = val/fully_closed
+				x = int(self.view.IMAGE_THERMOCYCLER_TRAY_CD_POSX + posx_diff * real_ratio)
+				if (posx == x):
+					return None
+				# Make sure the tray is allowed to close
+				if True:
+					self.view.move_tray(ADDRESSES['CD'],
+						self.view.image_thermocycler_tray_cd, 
+						posx,
+						x,
+						use_fast_api=False,
+					)
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['CD'], val, 200000, False)
+			except Exception as e:
+				print(e)
+				pass

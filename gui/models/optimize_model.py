@@ -18,6 +18,7 @@ class OptimizeModel:
 	"""
 	def __init__(self, db_name, cursor, connection) -> None:
 		# Setup the database connection
+		self.unit = db_name[-4]
 		self.db_name = db_name
 		self.cursor = cursor
 		self.connection = connection

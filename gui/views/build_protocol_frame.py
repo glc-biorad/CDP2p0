@@ -233,11 +233,8 @@ OTHER_OPTION_VALUES = [
 	"Raise Thermocycler B",
 	"Raise Thermocycler C",
 	"Raise Thermocycler D",
-	"Thermocycle on Thermocycler A",
-	"Thermocycle on Thermocycler B",
-	"Thermocycle on Thermocycler C",
-	"Thermocycle on Thermocycler D",
-	"Thermocycle on the Pre-Amp Thermocycler",
+	"Thermocycle Protocol",
+	"Thermocycle Pre-Amp",
 	"Move lid A",
 	"Move lid B",
 	"Move lid C",
@@ -262,7 +259,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 	"""
 	BuildProtocolFrame for creating the Build Protocol UI View
 	"""
-	def __init__(self, master: ctk.CTk, width: int, height: int, posx: int, posy: int) -> None:
+	def __init__(self, master: ctk.CTk, model: Model, width: int, height: int, posx: int, posy: int) -> None:
 		"""Constructs the BuildProtocolFrame
 	
 		Parameters
@@ -279,7 +276,8 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			The y position relative to the root origin
 		"""
 		#self.model = BuildProtocolModel()
-		self.model = Model().get_build_protocol_model()
+		self.master_model = model
+		self.model = self.master_model.get_build_protocol_model()
 		self.master = master
 		self.width = width
 		self.height = height
@@ -740,6 +738,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			values=OTHER_OPTION_VALUES,
 			width=OPTIONMENU_OTHER_OPTION_WIDTH
 		)
+		self.optionmenu_other_option.configure(width=OPTIONMENU_OTHER_OPTION_WIDTH)
 		# Create the add label and button
 		self.label_other_add = ctk.CTkLabel(master=self, text='Add', font=(FONT, -14))
 		self.button_other_add = ctk.CTkButton(
@@ -760,7 +759,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.optionmenu_other_option.place(x=OPTIONMENU_OTHER_OPTION_POSX, y=OPTIONMENU_OTHER_OPTION_POSY)
 		# Place the add label and button
 		self.label_other_add.place(x=LABEL_OTHER_ADD_POSX, y=LABEL_OTHER_ADD_POSY)
-		self.button_other_add.place(x=BUTTON_OTHER_ADD_POSX, y=BUTTON_OTHER_ADD_POSY)
+		self.button_other_add.place(x=BUTTON_OTHER_ADD_POSX, y=BUTTON_OTHER_ADD_POSY, width=OPTIONMENU_OTHER_OPTION_WIDTH)
 
 	def create_progress_ui(self) -> None:
 		"""Creates the UI for the progress portion
@@ -1006,6 +1005,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		# Update the action progress label
 		self.label_action_progress.configure(text=f"Action Progress: 0 of {n_actions}")
 		actions = self.model.select()
+		print(actions)
 		# Delete all actions so the IDs can be reassigned
 		self.model.delete_all()
 		# Add the actions back to the treeview

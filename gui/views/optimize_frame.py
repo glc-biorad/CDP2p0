@@ -201,12 +201,12 @@ class OptimizeFrame(ctk.CTkFrame):
 	"""
 	def __init__(self,
 		master: ctk.CTk,
+		model: Model,
 		width: int,
 		height: int,
 		posx: int,
 		posy: int
 	) -> None:
-		model = Model()
 		self.model = model.get_optimize_model()
 		self.coordinates_model = model.get_coordinates_model()
 		self.master = master
