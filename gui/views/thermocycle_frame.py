@@ -247,9 +247,6 @@ class ThermocycleFrame(ctk.CTkFrame):
 		self.IMAGE_THERMOCYCLER_BLOCK_C_HEIGHT = IMAGE_THERMOCYCLER_BLOCK_C_HEIGHT
 		self.IMAGE_THERMOCYCLER_BLOCK_D_WIDTH = IMAGE_THERMOCYCLER_BLOCK_D_WIDTH
 		self.IMAGE_THERMOCYCLER_BLOCK_D_HEIGHT = IMAGE_THERMOCYCLER_BLOCK_D_HEIGHT
-		self.IMAGE_THERMOCYCLER_TRAY_AB_POSX = IMAGE_THERMOCYCLER_TRAY_AB_POSX
-		self.IMAGE_THERMOCYCLER_TRAY_CD_POSX = IMAGE_THERMOCYCLER_TRAY_CD_POSX
-		self.TRAY_CLOSED_POSX = TRAY_CLOSED_POSX
 		try:
 			from api.interfaces.fast_api_interface import FastAPIInterface
 			self.fast_api_interface = FastAPIInterface()
@@ -807,7 +804,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 			self.controller.set_clamp(4,1)
 		self.image_thermocycler_block_d.configure(image=self.photoimage_thermocycler_block_d)
 
-	def move_tray(self, address: int, image_tray: ctk.CTkLabel, x0:int , x:int , seconds:int=7, n_steps:int=TRAY_N_STEPS, use_fast_api: bool = True) -> None:
+	def move_tray(self, address: int, image_tray: ctk.CTkLabel, x0:int , x:int , seconds:int=7, n_steps:int=TRAY_N_STEPS) -> None:
 		""" Movement animation for a given tray between an initial position x0 and final x with a given
 		number of frames (n_steps)
 
@@ -829,17 +826,16 @@ class ThermocycleFrame(ctk.CTkFrame):
 		dx = (x-x0)/n_steps
 		dt = seconds/n_steps
 		# Determine the direction to move the tray (open or closed)
-		if use_fast_api:
-			try:
-				if dx < 0:
-					# Close the tray (dx is based on position of the tray widget in its parent frame)
-					self.fast_api_interface.reader.axis.move('reader', address, 0, 200000, False, True)
-					self.fast_api_interface.reader.axis.home('reader', address, False, True)
-				else:
-					# Open the tray
-					self.fast_api_interface.reader.axis.move('reader', address, -790000, 200000, False, True)
-			except:
-				pass
+		try:
+			if dx < 0:
+				# Close the tray (dx is based on position of the tray widget in its parent frame)
+				self.fast_api_interface.reader.axis.move('reader', address, 0, 200000, False, True)
+				self.fast_api_interface.reader.axis.home('reader', address, False, True)
+			else:
+				# Open the tray
+				self.fast_api_interface.reader.axis.move('reader', address, -790000, 200000, False, True)
+		except:
+			pass
 		# Animate the tray while the actual tray moves
 		for i in range(n_steps):
 			image_tray.place(x=x0)

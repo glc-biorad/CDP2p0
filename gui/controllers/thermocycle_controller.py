@@ -701,7 +701,6 @@ class ThermocycleController:
 			text='Move',
 			font=(FONT,-14),
 			width=TOPLEVEL_BUTTON_AB_WIDTH,
-			command=self.move_tray_ab,
 		)
 		self.toplevel_button_ab.place(x=TOPLEVEL_BUTTON_AB_POSX, y=TOPLEVEL_BUTTON_AB_POSY)
 		# Create and place tray settings for tray cd
@@ -722,7 +721,6 @@ class ThermocycleController:
 			text='Move',
 			font=(FONT,-14),
 			width=TOPLEVEL_BUTTON_CD_WIDTH,
-			command=self.move_tray_cd,
 		)
 		self.toplevel_button_cd.place(x=TOPLEVEL_BUTTON_CD_POSX, y=TOPLEVEL_BUTTON_CD_POSY)
 
@@ -860,108 +858,4 @@ class ThermocycleController:
 				self.view.image_thermocycler_block_d.configure(image=self.view.photoimage_thermocycler_block_d)
 				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['D'], val, 80000, False)
 			except Exception as e:
-				pass
-
-	def move_tray_ab(self, event=None) -> None:
-		""" Move tray ab """
-		thread = threading.Thread(target=self.thread_move_tray_ab)
-		thread.start()
-	def thread_move_tray_ab(self) -> None:
-		""" Move Tray AB using a thread """
-		# Get the tray position value
-		val = int(self.tray_ab_sv.get())
-		# If trying to home go fast then force a home
-		if abs(val) == 0:
-			try:
-				# Get the current posx
-				posx = int(self.view.image_thermocycler_tray_ab.place_info()['x'])
-				if (posx == self.view.IMAGE_THERMOCYCLER_TRAY_AB_POSX):
-					return None
-				# Make sure the tray is allowed to close
-				if True:
-					self.view.move_tray(ADDRESSES['AB'],
-						self.view.image_thermocycler_tray_ab, 
-						posx,
-						self.view.IMAGE_THERMOCYCLER_TRAY_AB_POSX,
-						use_fast_api=False,
-					)
-				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], 0, 200000, True)
-				self.fast_api_interface.reader.axis.home('reader', ADDRESSES['AB'], False)
-			except Exception as e:
-				pass
-		else:
-			val = -abs(val)
-			try:
-				# Get the current posx
-				posx = int(self.view.image_thermocycler_tray_ab.place_info()['x'])
-				# Compute the new posx based on the real space value given in the tray entry
-				posx_diff = abs(self.view.IMAGE_THERMOCYCLER_TRAY_AB_POSX - self.view.TRAY_CLOSED_POSX)
-				fully_closed = -790000
-				real_ratio = val/fully_closed
-				x = int(self.view.IMAGE_THERMOCYCLER_TRAY_AB_POSX + posx_diff * real_ratio)
-				if (posx == x):
-					return None
-				# Make sure the tray is allowed to close
-				if True:
-					self.view.move_tray(ADDRESSES['AB'],
-						self.view.image_thermocycler_tray_ab, 
-						posx,
-						x,
-						use_fast_api=False,
-					)
-				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], val, 200000, False)
-			except Exception as e:
-				pass
-
-	def move_tray_cd(self, event=None) -> None:
-		""" Move tray cd """
-		thread = threading.Thread(target=self.thread_move_tray_cd)
-		thread.start()
-	def thread_move_tray_cd(self) -> None:
-		""" Move Tray CD using a thread """
-		# Get the tray position value
-		val = int(self.tray_cd_sv.get())
-		# If trying to home go fast then force a home
-		if abs(val) == 0:
-			try:
-				# Get the current posx
-				posx = int(self.view.image_thermocycler_tray_CD.place_info()['x'])
-				if (posx == self.view.IMAGE_THERMOCYCLER_TRAY_CD_POSX):
-					return None
-				# Make sure the tray is allowed to close
-				if True:
-					self.view.move_tray(ADDRESSES['CD'],
-						self.view.image_thermocycler_tray_cd, 
-						posx,
-						self.view.IMAGE_THERMOCYCLER_TRAY_CD_POSX,
-						use_fast_api=False,
-					)
-				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['CD'], 0, 200000, True)
-				self.fast_api_interface.reader.axis.home('reader', ADDRESSES['CD'], False)
-			except Exception as e:
-				print(e)
-				pass
-		else:
-			val = -abs(val)
-			try:
-				# Get the current posx
-				posx = int(self.view.image_thermocycler_tray_cd.place_info()['x'])
-				# Compute the new posx based on the real space value given in the tray entry
-				posx_diff = abs(self.view.IMAGE_THERMOCYCLER_TRAY_CD_POSX - self.view.TRAY_CLOSED_POSX)
-				fully_closed = -790000
-				real_ratio = val/fully_closed
-				x = int(self.view.IMAGE_THERMOCYCLER_TRAY_CD_POSX + posx_diff * real_ratio)
-				if (posx == x):
-					return None
-				# Make sure the tray is allowed to close
-				if True:
-					self.view.move_tray(ADDRESSES['CD'],
-						self.view.image_thermocycler_tray_cd, 
-						posx,
-						x,
-						use_fast_api=False,
-					)
-				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['CD'], val, 200000, False)
-			except Exception as e:
-				print(e)
 				pass
