@@ -151,14 +151,6 @@ class BuildProtocolController:
 		except:
 			print("No Reader for BuildProtocolController")
 			self.reader = None
-
-		# Initialize the Meerstetter
-		try:
-			self.meerstetter = Meerstetter()
-		except Exception as e:
-			print(e)
-			print("No Meerstetter for BuildProtocolController")
-			self.meerstetter = None
 	
 		# Variable for keeping track of the volume in the pipettor tips
 		self.volume = 0
@@ -698,6 +690,13 @@ class BuildProtocolController:
 			elif split[0] == 'Disengage':
 				self.upper_gantry.disengage_magnet()
 			elif split[0] == 'Thermocycle':
+				# Initialize the Meerstetter
+				try:
+					self.meerstetter = Meerstetter()
+				except Exception as e:
+					print(e)
+					print("No Meerstetter for BuildProtocolController")
+					self.meerstetter = None
 				print('Thermocycle')
 				if 'Pre-Amp' in split:
 					address = 9
@@ -784,6 +783,7 @@ class BuildProtocolController:
 								print(f" - D: {protocol['D']['anneal_temperature']} C for {protocol['D']['anneal_time']} sec")
 								self.meerstetter.change_temperature(4, int(protocol['D']['anneal_temperature']), block=False)
 							delay(int(protocol['A']['anneal_time']), 'seconds')
+				self.meerstetter.close()
 			elif split[0] == 'Open':
 				# Open the tray
 				self.reader.open_tray(split[2])

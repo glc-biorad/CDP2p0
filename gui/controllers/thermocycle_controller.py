@@ -110,12 +110,6 @@ class ThermocycleController:
 		except:
 			print("Couldn't connect to the FastAPI interface with the ThermocyclerController!")
 
-		# Initialize the Meerstetter
-		try:
-			self.meerstetter = Meerstetter()
-		except:
-			print("Coulnd't connect to the Meerstetter with the ThermocycleController!")
-
 	def setup_bindings(self):
 		""" Setup the binding between this controller and its view """
 		self.view.trace_cycles_sv(self.trace_cycles)
@@ -345,6 +339,11 @@ class ThermocycleController:
 
 	def thread_start(self) -> None:
 		""" Starts the thermocyclers with multithreading """
+		# Initialize the Meerstetter
+		try:
+			self.meerstetter = Meerstetter()
+		except:
+			print("Coulnd't connect to the Meerstetter with the ThermocycleController!")
 		# Get the thermocycler data
 		n_cycles = {
 			'A': self.get_cycles(1),
