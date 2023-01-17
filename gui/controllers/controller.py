@@ -11,6 +11,12 @@ from gui.controllers.optimize_controller import OptimizeController
 # Import utilities
 from gui.util.insert_at_selected_row import insert_at_selected_row
 
+# Import the upper gantry
+try:
+	from api.upper_gantry.upper_gantry import UpperGantry
+except:
+	print("Upper gantry could not be imported for the Controller")
+
 class Controller:
 	def __init__(self, model: Model, view: View) -> None:
 		self.model = model
@@ -27,6 +33,10 @@ class Controller:
 			model=self.model.get_optimize_model(),
 			view=self.view.optimize_frame
 		)
+		try:
+			self.upper_gantry = UpperGantry()
+		except:
+			self.upper_gantry = None
 
 	def setup_bindings(self) -> None:
 		self.thermocycle_controller.setup_bindings()
@@ -48,86 +58,69 @@ class Controller:
 	def backwards(self, event):
 		""" Deals with moving relative moves
 		"""
-		# Import the upper gantry for the relative move command
-		from api.upper_gantry.upper_gantry import UpperGantry
-		upper_gantry = UpperGantry()
 		# Get the x value of labels on the tabs we are interested to check which tab is open relative to the parent
 		x_optimize = self.optimize_controller.view.label_consumable.winfo_x()
 		# Determine which tab we are on based on the position of a single widget
 		if x_optimize != 0:
 			# Get the Y value for the relative move backwards
 			y = int(self.optimize_controller.view.y_sv.get())
-			upper_gantry.move_relative('backwards', y, velocity='slow')
+			self.upper_gantry.move_relative('backwards', y, velocity='slow')
 
 	def forwards(self, event):
 		""" Deals with moving relative moves
 		"""
-		# Import the upper gantry for the relative move command
-		from api.upper_gantry.upper_gantry import UpperGantry
-		upper_gantry = UpperGantry()
 		# Get the x value of labels on the tabs we are interested to check which tab is open relative to the parent
 		x_optimize = self.optimize_controller.view.label_consumable.winfo_x()
 		# Determine which tab we are on based on the position of a single widget
 		if x_optimize != 0:
 			# Get the Y value for the relative move backwards
 			y = int(self.optimize_controller.view.y_sv.get())
-			upper_gantry.move_relative('forwards', y, velocity='slow')
+			self.upper_gantry.move_relative('forwards', y, velocity='slow')
 
 	def left(self, event):
 		""" Deals with moving relative moves
 		"""
-		# Import the upper gantry for the relative move command
-		from api.upper_gantry.upper_gantry import UpperGantry
-		upper_gantry = UpperGantry()
 		# Get the x value of labels on the tabs we are interested to check which tab is open relative to the parent
 		x_optimize = self.optimize_controller.view.label_consumable.winfo_x()
 		# Determine which tab we are on based on the position of a single widget
 		if x_optimize != 0:
 			# Get the X value for the relative move backwards
 			x = int(self.optimize_controller.view.x_sv.get())
-			upper_gantry.move_relative('left', x, velocity='slow')
+			self.upper_gantry.move_relative('left', x, velocity='slow')
 
 	def right(self, event):
 		""" Deals with moving relative moves
 		"""
-		# Import the upper gantry for the relative move command
-		from api.upper_gantry.upper_gantry import UpperGantry
-		upper_gantry = UpperGantry()
 		# Get the x value of labels on the tabs we are interested to check which tab is open relative to the parent
 		x_optimize = self.optimize_controller.view.label_consumable.winfo_x()
 		# Determine which tab we are on based on the position of a single widget
 		if x_optimize != 0:
 			# Get the X value for the relative move backwards
 			x = int(self.optimize_controller.view.x_sv.get())
-			upper_gantry.move_relative('right', x, velocity='slow')
+			self.upper_gantry.move_relative('right', x, velocity='slow')
 
 	def up(self, event):
 		""" Deals with moving relative moves
 		"""
-		# Import the upper gantry for the relative move command
-		from api.upper_gantry.upper_gantry import UpperGantry
-		upper_gantry = UpperGantry()
 		# Get the x value of labels on the tabs we are interested to check which tab is open relative to the parent
 		x_optimize = self.optimize_controller.view.label_consumable.winfo_x()
 		# Determine which tab we are on based on the position of a single widget
 		if x_optimize != 0:
 			# Get the Z value for the relative move backwards
 			z = int(self.optimize_controller.view.z_sv.get())
-			upper_gantry.move_relative('up', z, velocity='slow')
+			self.upper_gantry.move_relative('up', z, velocity='slow')
 
 	def down(self, event):
 		""" Deals with moving relative moves
 		"""
-		# Import the upper gantry for the relative move command
-		from api.upper_gantry.upper_gantry import UpperGantry
-		upper_gantry = UpperGantry()
 		# Get the x value of labels on the tabs we are interested to check which tab is open relative to the parent
 		x_optimize = self.optimize_controller.view.label_consumable.winfo_x()
 		# Determine which tab we are on based on the position of a single widget
 		if x_optimize != 0:
+			print(x_optimize)
 			# Get the Z value for the relative move backwards
 			z = int(self.optimize_controller.view.z_sv.get())
-			upper_gantry.move_relative('down', z, velocity='slow')
+			self.upper_gantry.move_relative('down', z, velocity='slow')
 
 	def copy(self, event) -> None:
 		""" Deals with copy functionality """
