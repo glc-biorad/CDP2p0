@@ -1,0 +1,72 @@
+0: Pickup tips from A column 1
+1: Move to Sample Rack tray A with 1000 uL tips
+2: Move to Heater/Shaker column 1 with 1000 uL tips
+3: Aspirate 1000 uLs with 1000 uL tips at High pressure 1 time
+4: Move to Heater/Shaker column 1 with 1000 uL tips
+5: Dispense 1000 uLs with 1000 uL tips at High pressure 1 time
+6: Delay for 2 seconds
+7: Dispense 50 uLs with 1000 uL tips at High pressure 1 time
+8: Move to Sample Rack tray A with 1000 uL tips
+9: Aspirate 1000 uLs with 1000 uL tips at High pressure 1 time
+10: Move to Heater/Shaker column 1 with 1000 uL tips
+11: Dispense 1000 uLs with 1000 uL tips at High pressure 1 time
+12: Delay for 2 seconds
+13: Dispense 50 uLs with 1000 uL tips at High pressure 1 time
+14: Move to Sample Rack tray A with 1000 uL tips
+15: Aspirate 1000 uLs with 1000 uL tips at High pressure 1 time
+16: Move to Heater/Shaker column 1 with 1000 uL tips
+17: Dispense 1000 uLs with 1000 uL tips at High pressure 1 time
+18: Delay for 2 seconds
+19: Dispense 50 uLs with 1000 uL tips at High pressure 1 time
+20: Move to Sample Rack tray A with 1000 uL tips
+21: Aspirate 1000 uLs with 1000 uL tips at High pressure 1 time
+22: Move to Heater/Shaker column 1 with 1000 uL tips
+23: Dispense 1000 uLs with 1000 uL tips at High pressure 1 time
+24: Delay for 2 seconds
+25: Dispense 50 uLs with 1000 uL tips at High pressure 1 time
+26: Move to Reagent Cartridge tray A column 4 with 1000 uL tips
+27: Aspirate 160 uLs with 1000 uL tips at High pressure 1 time
+28: Move to Heater/Shaker column 1 with 1000 uL tips
+29: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
+30: Move to Reagent Cartridge tray A column 1 with 1000 uL tips
+31: Shake off
+32: Mix 935 uLs with 1000 uL tips at High pressure 1 time
+33: Aspirate 935 uLs with 1000 uL tips at High pressure 1 time
+34: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 350000
+35: Dispense 935 uLs with 1000 uL tips at High pressure 1 time
+36: Delay for 3 seconds
+37: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
+38: Shake on
+39: Move to Reagent Cartridge tray A column 2 with 1000 uL tips
+40: Shake off
+41: Mix 935 uLs with 1000 uL tips at High pressure 1 time
+42: Aspirate 935 uLs with 1000 uL tips at High pressure 1 time
+43: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 350000
+44: Dispense 935 uLs with 1000 uL tips at High pressure 1 time
+45: Delay for 3 seconds
+46: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
+47: Shake on
+48: Move to Reagent Cartridge tray A column 11 with 1000 uL tips
+49: Shake off
+50: Mix 935 uLs with 1000 uL tips at High pressure 1 time
+51: Aspirate 935 uLs with 1000 uL tips at High pressure 1 time
+52: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 350000
+53: Dispense 935 uLs with 1000 uL tips at High pressure 1 time
+54: Delay for 3 seconds
+55: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
+56: Shake on
+57: Move to Reagent Cartridge tray A column 12 with 1000 uL tips
+58: Shake off
+59: Mix 935 uLs with 1000 uL tips at High pressure 1 time
+60: Aspirate 935 uLs with 1000 uL tips at High pressure 1 time
+61: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 350000
+62: Dispense 935 uLs with 1000 uL tips at High pressure 1 time
+63: Delay for 3 seconds
+64: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
+65: Shake on
+66: Delay for 3 seconds
+67: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
+68: Delay for 15 minutes
+69: Change Heater/Shaker Temperature
+70: Engage magnet
+71: Move to Heater/Shaker column 1 with 1000 uL tips
