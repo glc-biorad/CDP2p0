@@ -1,9 +1,11 @@
 import types
+import tkinter as tk
 import customtkinter as ctk
 
 import threading
 import time
 from PIL import Image
+from typing import Any, Callable
 import matplotlib
 import numpy as np
 matplotlib.use('TkAgg')
@@ -104,22 +106,22 @@ IMAGE_CLOCK_POSX = 15
 IMAGE_CLOCK_POSY = 395
 IMAGE_CLOCK_WIDTH = 24
 IMAGE_CLOCK_HEIGHT = 24
-LABEL_A_POSX = 320
-LABEL_A_POSY = 485
-CHECKBOX_A_POSX = 340
-CHECKBOX_A_POSY = 485
-LABEL_B_POSX = 380
-LABEL_B_POSY = 485
-CHECKBOX_B_POSX = 400
-CHECKBOX_B_POSY = 485
-LABEL_C_POSX = 440
-LABEL_C_POSY = 485
-CHECKBOX_C_POSX = 460
-CHECKBOX_C_POSY = 485
-LABEL_D_POSX = 500
-LABEL_D_POSY = 485
-CHECKBOX_D_POSX = 520
-CHECKBOX_D_POSY = 485
+LABEL_A_POSX = 577
+LABEL_A_POSY = 40
+CHECKBOX_A_POSX = 570
+CHECKBOX_A_POSY = 70
+LABEL_B_POSX = 577
+LABEL_B_POSY = 130
+CHECKBOX_B_POSX = 570
+CHECKBOX_B_POSY = 160
+LABEL_C_POSX = 577
+LABEL_C_POSY = 270
+CHECKBOX_C_POSX = 570
+CHECKBOX_C_POSY = 300
+LABEL_D_POSX = 577
+LABEL_D_POSY = 360
+CHECKBOX_D_POSX = 570
+CHECKBOX_D_POSY = 390
 ENTRY_FIRST_DENATURE_TEMP_POSX = 65
 ENTRY_FIRST_DENATURE_TEMP_POSY = 365
 ENTRY_FIRST_DENATURE_TEMP_WIDTH = 40
@@ -172,6 +174,17 @@ LABEL_ANNEAL_TIME_UNIT_POSX = 187
 LABEL_ANNEAL_TIME_UNIT_POSY = 395
 LABEL_SECOND_DENATURE_TIME_UNIT_POSX = 267
 LABEL_SECOND_DENATURE_TIME_UNIT_POSY = 395
+BUTTON_SETTINGS_WIDTH = 100
+BUTTON_SETTINGS_POSX = 400
+BUTTON_SETTINGS_POSY = 480
+
+# Therocyclers
+THERMOCYCLERS = (
+	'A',
+	'B',
+	'C',
+	'D',
+)
 
 # Thermocycler IDs:
 IDS = {
@@ -179,6 +192,7 @@ IDS = {
 	'B': 2,
 	'C': 3,
 	'D': 4,
+	'Pre-Amp Thermocycler': 4,
 }
 
 # Addresses:
@@ -189,6 +203,7 @@ ADDRESSES = {
 	'B': 9,
 	'C': 10,
 	'D': 11,
+	'Pre-Amp Thermocycler': 9,
 }
 
 # Button Titles
@@ -214,14 +229,27 @@ class ThermocycleFrame(ctk.CTkFrame):
 	"""
 	Thermocycle Frame: UI for the Thermocycle view
 	"""
-	def __init__(self, master: ctk.CTk, width: int, height: int, posx: int, posy: int) -> None:
+	def __init__(self, master: ctk.CTk, model: Model, width: int, height: int, posx: int, posy: int) -> None:
 		self.master = master
 		self.width = width
 		self.height = height
 		self.posx = posx
 		self.posy = posy
-		self.controller = ThermocycleController(Model().get_thermocycle_model(), self)
+		self.model = model.get_thermocycle_model()
+		self.controller = ThermocycleController(model.get_thermocycle_model(), self)
 		self.buttons = {}
+		self.IMAGE_PATHS = IMAGE_PATHS
+		self.IMAGE_THERMOCYCLER_BLOCK_A_WIDTH = IMAGE_THERMOCYCLER_BLOCK_A_WIDTH
+		self.IMAGE_THERMOCYCLER_BLOCK_A_HEIGHT = IMAGE_THERMOCYCLER_BLOCK_A_HEIGHT
+		self.IMAGE_THERMOCYCLER_BLOCK_B_WIDTH = IMAGE_THERMOCYCLER_BLOCK_B_WIDTH
+		self.IMAGE_THERMOCYCLER_BLOCK_B_HEIGHT = IMAGE_THERMOCYCLER_BLOCK_B_HEIGHT
+		self.IMAGE_THERMOCYCLER_BLOCK_C_WIDTH = IMAGE_THERMOCYCLER_BLOCK_C_WIDTH
+		self.IMAGE_THERMOCYCLER_BLOCK_C_HEIGHT = IMAGE_THERMOCYCLER_BLOCK_C_HEIGHT
+		self.IMAGE_THERMOCYCLER_BLOCK_D_WIDTH = IMAGE_THERMOCYCLER_BLOCK_D_WIDTH
+		self.IMAGE_THERMOCYCLER_BLOCK_D_HEIGHT = IMAGE_THERMOCYCLER_BLOCK_D_HEIGHT
+		self.IMAGE_THERMOCYCLER_TRAY_AB_POSX = IMAGE_THERMOCYCLER_TRAY_AB_POSX
+		self.IMAGE_THERMOCYCLER_TRAY_CD_POSX = IMAGE_THERMOCYCLER_TRAY_CD_POSX
+		self.TRAY_CLOSED_POSX = TRAY_CLOSED_POSX
 		try:
 			from api.interfaces.fast_api_interface import FastAPIInterface
 			self.fast_api_interface = FastAPIInterface()
@@ -248,7 +276,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 		self.optionmenu_thermocycler = ctk.CTkOptionMenu(
 			master=self,
 			variable=self.thermocycler_sv,
-			values=('A', 'B', 'C', 'D'),
+			values=THERMOCYCLERS,
 			corner_radius=5,
 		)
 		# Place the Cycles Entry
@@ -348,7 +376,6 @@ class ThermocycleFrame(ctk.CTkFrame):
 		self.button_start = ctk.CTkButton(
 			master=self,
 			text='Start',
-			command=self.on_start,
 			fg_color='#4C7BD3',
 			width=BUTTON_START_WIDTH,
 			corner_radius=5,
@@ -471,7 +498,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 		)
 		self.entry_second_denature_time.bind('<FocusOut>', self.focus_out_time)
 		# Place the A Checkbox
-		self.label_a = ctk.CTkLabel(master=self, text='A', font=(FONT, -12))
+		self.label_a = ctk.CTkLabel(master=self, text='A', font=(FONT, -16))
 		self.use_a_iv = self.controller.get_use_a_iv(1)
 		self.checkbox_a = ctk.CTkCheckBox(
 			master=self,
@@ -482,7 +509,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 			corner_radius=5,
 		)
 		# Place the B Checkbox
-		self.label_b = ctk.CTkLabel(master=self, text='B', font=(FONT, -12))
+		self.label_b = ctk.CTkLabel(master=self, text='B', font=(FONT, -16))
 		self.use_b_iv = self.controller.get_use_b_iv(2)
 		self.checkbox_b = ctk.CTkCheckBox(
 			master=self,
@@ -493,7 +520,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 			corner_radius=5,
 		)
 		# Place the C Checkbox
-		self.label_c = ctk.CTkLabel(master=self, text='C', font=(FONT, -12))
+		self.label_c = ctk.CTkLabel(master=self, text='C', font=(FONT, -16))
 		self.use_c_iv = self.controller.get_use_c_iv(3)
 		self.checkbox_c = ctk.CTkCheckBox(
 			master=self,
@@ -504,7 +531,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 			corner_radius=5,
 		)
 		# Place the D Checkbox
-		self.label_d = ctk.CTkLabel(master=self, text='D', font=(FONT, -12))
+		self.label_d = ctk.CTkLabel(master=self, text='D', font=(FONT, -16))
 		self.use_d_iv = self.controller.get_use_d_iv(4)
 		self.checkbox_d = ctk.CTkCheckBox(
 			master=self,
@@ -513,6 +540,13 @@ class ThermocycleFrame(ctk.CTkFrame):
 			onvalue=1,
 			offvalue=0,
 			corner_radius=5,
+		)
+		# Create a clamp height label and entry
+		self.button_settings = ctk.CTkButton(
+			master=self,
+			text="Settings",
+			corner_radius=2,
+			width=BUTTON_SETTINGS_WIDTH,
 		)
 
 	def place_ui(self) -> None:
@@ -605,6 +639,9 @@ class ThermocycleFrame(ctk.CTkFrame):
 		# Place the D Checkbox
 		self.label_d.place(x=LABEL_D_POSX, y=LABEL_D_POSY)
 		self.checkbox_d.place(x=CHECKBOX_D_POSX, y=CHECKBOX_D_POSY)
+		# Place the clamp settings button
+		self.button_settings.place(x=BUTTON_SETTINGS_POSX, 
+			y=BUTTON_SETTINGS_POSY)
 
 	def on_click(self, event):
 		x, y = event.x, event.y
@@ -770,7 +807,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 			self.controller.set_clamp(4,1)
 		self.image_thermocycler_block_d.configure(image=self.photoimage_thermocycler_block_d)
 
-	def move_tray(self, address: int, image_tray: ctk.CTkLabel, x0:int , x:int , seconds:int=7, n_steps:int=TRAY_N_STEPS) -> None:
+	def move_tray(self, address: int, image_tray: ctk.CTkLabel, x0:int , x:int , steps: int = -790000, seconds:int=7, n_steps:int=TRAY_N_STEPS, use_fast_api: bool = True) -> None:
 		""" Movement animation for a given tray between an initial position x0 and final x with a given
 		number of frames (n_steps)
 
@@ -791,14 +828,21 @@ class ThermocycleFrame(ctk.CTkFrame):
 		# Get the animation steps
 		dx = (x-x0)/n_steps
 		dt = seconds/n_steps
+		if steps != 0:
+			steps = -abs(steps)
 		# Determine the direction to move the tray (open or closed)
-		if dx < 0:
-			# Close the tray (dx is based on position of the tray widget in its parent frame)
-			self.fast_api_interface.reader.axis.move('reader', address, 0, 200000, False, True)
-			self.fast_api_interface.reader.axis.home('reader', address, False, True)
-		else:
-			# Open the tray
-			self.fast_api_interface.reader.axis.move('reader', address, -790000, 200000, False, True)
+		if use_fast_api:
+			try:
+				if dx < 0:
+					# Close the tray (dx is based on position of the tray widget in its parent frame)
+					self.fast_api_interface.reader.axis.move('reader', address, steps, 200000, False, True)
+					if steps == 0:
+						self.fast_api_interface.reader.axis.home('reader', address, False, True)
+				else:
+					# Open the tray
+					self.fast_api_interface.reader.axis.move('reader', address, steps, 200000, False, True)
+			except:
+				pass
 		# Animate the tray while the actual tray moves
 		for i in range(n_steps):
 			image_tray.place(x=x0)
@@ -821,6 +865,8 @@ class ThermocycleFrame(ctk.CTkFrame):
 
 	def callback_thermocycler(self, *args) -> None:
 		"""Deals with changes to the thermocycler option"""
+		for ID in [1,2,3,4,5]:
+			print(self.model.select(ID))
 		# Get the ID for the current thermocycler
 		ID = IDS[self.thermocycler_sv.get()]
 		# Get the protocol data
@@ -1014,3 +1060,95 @@ class ThermocycleFrame(ctk.CTkFrame):
 		self.label_first_denature.place(x=LABEL_FIRST_DENATURE_POSX, y=LABEL_FIRST_DENATURE_POSY)
 		self.label_anneal.place(x=LABEL_ANNEAL_POSX, y=LABEL_ANNEAL_POSY)
 		self.label_second_denature.place(x=LABEL_SECOND_DENATURE_POSX, y=LABEL_SECOND_DENATURE_POSY)
+
+	def trace_cycles_sv(self, callback: Callable[[tk.Event], None]) -> None: 
+		""" Deals with the changing of cycles_sv """
+		try:
+			self.controller.get_cycles_sv().trace('w', callback)
+		except:
+			pass
+		
+	def trace_first_denature_time_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the first denature time """
+		try:
+			self.controller.get_first_denature_time_sv().trace('w', callback)
+		except:
+			pass
+
+	def trace_anneal_time_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the anneal time """
+		try:
+			self.controller.get_anneal_time_sv().trace('w', callback)
+		except:
+			pass
+
+	def trace_second_denature_time_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the second denature time """
+		try:
+			self.controller.get_second_denature_time_sv().trace('w', callback)
+		except:
+			pass
+
+	def trace_use_a_iv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the use checkbox """
+		try:
+			self.controller.get_use_a_iv().trace('w', callback)
+		except:
+			pass
+
+	def trace_use_b_iv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the use checkbox """
+		try:
+			self.controller.get_use_b_iv().trace('w', callback)
+		except:
+			pass
+
+	def trace_use_c_iv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the use checkbox """
+		try:
+			self.controller.get_use_c_iv().trace('w', callback)
+		except:
+			pass
+
+	def trace_use_d_iv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the changing of the use checkbox """
+		try:
+			self.controller.get_use_d_iv().trace('w', callback)
+		except:
+			pass
+
+	def bind_button_start(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Binds the start button to the controller """
+		try:
+			self.button_start.bind('<Button-1>', callback)
+		except:
+			pass
+
+	def bind_button_save(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Binds the save button to the controller """
+		try:
+			self.button_save.bind('<Button-1>', callback)
+		except:
+			pass
+
+	def bind_button_load(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Binds the load button to the controller """
+		try:
+			self.button_load.bind('<Button-1>', callback)
+		except:
+			pass
+
+	def bind_button_home(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Binds the home button to the controller """
+		try:
+			self.button_home.bind('<Button-1>', callback)
+		except:
+			pass
+
+	def bind_button_settings(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Binds the settings button """
+		try:
+			self.button_settings.bind('<Button-1>', callback)
+		except:
+			print('ok')
+			pass

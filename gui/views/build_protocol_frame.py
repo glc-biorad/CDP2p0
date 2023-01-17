@@ -165,11 +165,13 @@ BUTTON_DELETE_WIDTH = 130
 BUTTON_DELETE_COLOR = '#fc0303'
 
 # Constants Deck Plate 
-NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Assay Strip", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
+NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
 NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
 TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
 EIGHT_COLUMN_CONSUMABLES = ["Tip Transfer Tray", "Assay Strip", "Tip Tray"]
 FOUR_COLUMN_CONSUMABLES = ["Heater/Shaker"]
+THREE_COLUMN_CONSUMABLES = ["DG8"]
+TWO_COLUMN_CONSUMABLES = ["Assay Strip"]
 SPECIAL_CONSUMABLES = ["DG8", "Chip"]
 
 # Constant Other Option Values
@@ -195,6 +197,7 @@ CHIP_TRAY_OPTION_VALUES = ['A', 'B', 'C', 'D',]
 CHIP_COLUMN_OPTION_VALUES = ['NIPT','FF','Quant',]
 OTHER_OPTION_VALUES = [
 	"Home pipettor",
+	"Change Heater/Shaker Temperature",
 	"Move relative left",
 	"Move relative right",
 	"Move relative up",
@@ -203,6 +206,7 @@ OTHER_OPTION_VALUES = [
 	"Move relative backwards",
 	"Generate standard droplets",
 	"Generate pico droplets",
+	"Generate demo droplets",
 	"Extraction",
 	"Transfer plasma",
 	"Binding",
@@ -218,9 +222,32 @@ OTHER_OPTION_VALUES = [
 	"Shake off",
 	"Engage magnet",
 	"Disengage magnet",
-	"Pre-Amp Thermocycle",
-	"Move lid",
-	"Move chip",
+	"Open Tray AB",
+	"Open Tray CD",
+	"Close Tray AB",
+	"Close Tray CD",
+	"Lower Thermocycler A",
+	"Lower Thermocycler B",
+	"Lower Thermocycler D",
+	"Lower Thermocycler C",
+	"Raise Thermocycler A",
+	"Raise Thermocycler B",
+	"Raise Thermocycler C",
+	"Raise Thermocycler D",
+	"Thermocycle Protocol",
+	"Thermocycle Pre-Amp",
+	"Move lid A",
+	"Move lid B",
+	"Move lid C",
+	"Move lid D",
+	"Move chip A",
+	"Move chip B",
+	"Move chip C",
+	"Move chip D",
+	"Scan A",
+	"Scan B",
+	"Scan C",
+	"Scan D",
 ]
 COUNT_OPTION_VALUES = [f'{i}' for i in range(1,11)]
 
@@ -233,7 +260,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 	"""
 	BuildProtocolFrame for creating the Build Protocol UI View
 	"""
-	def __init__(self, master: ctk.CTk, width: int, height: int, posx: int, posy: int) -> None:
+	def __init__(self, master: ctk.CTk, model: Model, width: int, height: int, posx: int, posy: int) -> None:
 		"""Constructs the BuildProtocolFrame
 	
 		Parameters
@@ -250,7 +277,8 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			The y position relative to the root origin
 		"""
 		#self.model = BuildProtocolModel()
-		self.model = Model().get_build_protocol_model()
+		self.master_model = model
+		self.model = self.master_model.get_build_protocol_model()
 		self.master = master
 		self.width = width
 		self.height = height
@@ -711,6 +739,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			values=OTHER_OPTION_VALUES,
 			width=OPTIONMENU_OTHER_OPTION_WIDTH
 		)
+		self.optionmenu_other_option.configure(width=OPTIONMENU_OTHER_OPTION_WIDTH)
 		# Create the add label and button
 		self.label_other_add = ctk.CTkLabel(master=self, text='Add', font=(FONT, -14))
 		self.button_other_add = ctk.CTkButton(
@@ -731,7 +760,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.optionmenu_other_option.place(x=OPTIONMENU_OTHER_OPTION_POSX, y=OPTIONMENU_OTHER_OPTION_POSY)
 		# Place the add label and button
 		self.label_other_add.place(x=LABEL_OTHER_ADD_POSX, y=LABEL_OTHER_ADD_POSY)
-		self.button_other_add.place(x=BUTTON_OTHER_ADD_POSX, y=BUTTON_OTHER_ADD_POSY)
+		self.button_other_add.place(x=BUTTON_OTHER_ADD_POSX, y=BUTTON_OTHER_ADD_POSY, width=OPTIONMENU_OTHER_OPTION_WIDTH)
 
 	def create_progress_ui(self) -> None:
 		"""Creates the UI for the progress portion
@@ -863,6 +892,10 @@ class BuildProtocolFrame(ctk.CTkFrame):
 				self.optionmenu_motion_column.configure(values=('1','2','3','4','5','6','7','8',))
 			elif consumable in FOUR_COLUMN_CONSUMABLES:
 				self.optionmenu_motion_column.configure(values=('1','2','3','4',))
+			elif consumable in THREE_COLUMN_CONSUMABLES:
+				self.optionmenu_motion_column.configure(values=('1','2','3',))
+			elif consumable in TWO_COLUMN_CONSUMABLES:
+				self.optionmenu_motion_column.configure(values=('1','2',))
 			else:
 				self.optionmenu_motion_column.configure(values=('',))
 		else:
@@ -973,6 +1006,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		# Update the action progress label
 		self.label_action_progress.configure(text=f"Action Progress: 0 of {n_actions}")
 		actions = self.model.select()
+		print(actions)
 		# Delete all actions so the IDs can be reassigned
 		self.model.delete_all()
 		# Add the actions back to the treeview

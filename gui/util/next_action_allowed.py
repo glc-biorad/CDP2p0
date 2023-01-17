@@ -24,9 +24,11 @@ def next_action_allowed(model: StateModel, new_action: str) -> bool:
 	# Get a list of all previous action mode
 	try:
 		actions = model.select()
+		print(actions)
 	except IndexError:
 		return True
 	# Iterate backwards though the state model
+	print(len(actions))
 	for i in range(len(actions)-1,-1,-1):
 		# Get the mode
 		mode = actions[i][3]

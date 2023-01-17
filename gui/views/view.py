@@ -13,6 +13,7 @@ from gui.views.image_frame import ImageFrame
 from gui.views.thermocycle_frame import ThermocycleFrame
 from gui.views.build_protocol_frame import BuildProtocolFrame
 from gui.views.optimize_frame import OptimizeFrame
+from gui.views.configure_frame import ConfigureFrame
 
 # Constants
 TITLE = "CDP 2.0 Development GUI"
@@ -31,9 +32,11 @@ ctk.set_default_color_theme('green')
 
 class View(ctk.CTk):
 	menu_frame: MenuFrame = None
+	image_frame: ImageFrame = None
 	thermocycle_frame: ThermocycleFrame = None
 	build_protocol_frame: BuildProtocolFrame = None
 	optimize_frame: OptimizeFrame = None
+	configure_frame: ConfigureFrame = None
 	def __init__(self, model: Model) -> None:
 		super().__init__()
 		print("Pass the model to the views!")
@@ -41,18 +44,20 @@ class View(ctk.CTk):
 		self.title(TITLE)
 		self.geometry(f"{WIDTH}x{HEIGHT}")
 		# Initialize the Frames
-		self.optimize_frame = OptimizeFrame(self, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
-		self.build_protocol_frame = BuildProtocolFrame(self, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
-		self.thermocycle_frame = ThermocycleFrame(self, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
+		self.image_frame = ImageFrame(self, model, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
+		self.optimize_frame = OptimizeFrame(self, model,RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
+		self.build_protocol_frame = BuildProtocolFrame(self, model, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
+		self.thermocycle_frame = ThermocycleFrame(self, model, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
+		self.configure_frame = ConfigureFrame(self, model, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
 		frames = {
 			'Home': None,
-			'Image': None,
+			'Image': self.image_frame,
 			'Thermocycle': self.thermocycle_frame,
 			"Build Protocol": self.build_protocol_frame,
 			'Optimize': self.optimize_frame,
 			'Service': None,
 			'Status': None,
-			'Configure': None,
+			'Configure': self.configure_frame,
 		}
 		self.menu_frame = MenuFrame(self, frames, MENU_WIDTH, MENU_HEIGHT, MENU_POSX, MENU_POSY, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT)
 		self.create_ui()

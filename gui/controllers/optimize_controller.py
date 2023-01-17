@@ -20,13 +20,14 @@ except:
 from gui.util.coordinates_list_to_csv import coordinates_list_to_csv
 
 # Constants
-NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Assay Strip", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
+NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
 NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
-TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge", "DG8"]
+TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
 NINE_COLUMN_CONSUMABLES = ["Tip Transfer Tray"]
-EIGHT_COLUMN_CONSUMABLES = ["Assay Strip", "Tip Tray"]
+EIGHT_COLUMN_CONSUMABLES = ["Tip Tray"]
 FOUR_COLUMN_CONSUMABLES = ["Heater/Shaker"]
-THREE_COLUMN_CONSUMABLES = [""]
+THREE_COLUMN_CONSUMABLES = ["DG8"]
+TWO_COLUMN_CONSUMABLES = ["Assay Strip"]
 SPECIAL_CONSUMABLES = ["DG8", "Chip"]
 
 class OptimizeController:
@@ -50,7 +51,7 @@ class OptimizeController:
 			self.upper_gantry = UpperGantry()
 		except:
 			print("No upper gantry control for optimize controller")
-			pass
+			self.upper_gantry = None
 
 		# Get the unit
 		print("Optimize Frame needs to know what unit we are using! (all set to A hardcoded for now)")
@@ -83,7 +84,10 @@ class OptimizeController:
 			# Get the coordinate for this location from the coordinates model table
 			consumable = self.view.consumable_sv.get()
 			tray = self.view.tray_sv.get()
-			column = int(self.view.column_sv.get())
+			try:
+				column = int(self.view.column_sv.get())
+			except ValueError:
+				column = 1
 			coordinate = self.coordinates_model.select(f"Unit {self.unit} Upper Gantry Coordinates", consumable, tray, column)
 			x = coordinate[0][4]
 			y = coordinate[0][5]
@@ -195,6 +199,12 @@ class OptimizeController:
 	def update(self, event=None) -> None:
 		""" Deals with the on click event for the update button
 		"""
+		# Make sure the upper gantry was initialized successfully
+		if self.upper_gantry == None:
+			tk.messagebox.showwarning(
+				title="Update Coordinate",
+				message="Upper Gantry was not initialized, can't update the coordinate!"
+			)
 		# Make sure that we are about to update an actual coordinate 
 		consumable = self.view.consumable_sv.get()
 		tray = self.view.tray_sv.get()
@@ -256,6 +266,9 @@ class OptimizeController:
 		if consumable in NO_COLUMN_CONSUMABLES:
 			self.model.column_sv.set('')
 			self.view.optionmenu_column.configure(values=('',))
+		elif consumable in TWO_COLUMN_CONSUMABLES:
+			self.model.column_sv.set('')
+			self.view.optionmenu_column.configure(values=('1','2',))
 		elif consumable in THREE_COLUMN_CONSUMABLES:
 			self.model.column_sv.set('')
 			self.view.optionmenu_column.configure(values=('1','2','3',))

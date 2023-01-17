@@ -6,6 +6,7 @@ TABLE_NAME = 'thermocycle'
 
 class ThermocycleModel:
 	def __init__(self, db_name, cursor, connection) -> None:
+		self.unit = db_name[-4]
 		self.db_name = db_name
 		self.cursor = cursor
 		self.connection = connection
@@ -18,6 +19,7 @@ class ThermocycleModel:
 		self.insert(2,'B',40,84,50,84,3,40,30,1,1,1)
 		self.insert(3,'C',40,84,50,84,3,40,30,0,1,1)
 		self.insert(4,'D',40,84,50,84,3,40,30,1,1,1)
+		self.insert(5,"Pre-Amp Thermocycler",6,86,55,86,10,240,50,1,1,1)
 		
 		# Default String and Int Variables
 		try:
@@ -82,7 +84,7 @@ class ThermocycleModel:
 
 	def select(self, ID: int) -> dict:
 		# Make sure the ID is valid
-		assert ID in [1,2,3,4]
+		assert ID in [1,2,3,4,5]
 		# Generate the select query based on the ID
 		query = f"SELECT * FROM {TABLE_NAME} WHERE ID = {ID};"
 		# Execute the query
@@ -95,6 +97,7 @@ class ThermocycleModel:
 			self.insert(2,'B',40,84,50,84,3,40,30,1,1,1)
 			self.insert(3,'C',40,84,50,84,3,40,30,0,1,1)
 			self.insert(4,'D',40,84,50,84,3,40,30,1,1,1)
+			self.insert(5,"Pre-Amp Thermocycler",6,88,55,88,10,240,50,1,1,1)
 			arr = self.cursor.fetchall()[0]
 		# Convert to a dictionary to return
 		return {
@@ -128,7 +131,7 @@ class ThermocycleModel:
 		tray: int = None,
 	) -> None:
 		# Make sure the ID is valid
-		assert ID in [1,2,3,4]
+		assert ID in [1,2,3,4,5]
 		# Create the query based on the kwargs provided
 		partial_query = ''
 		if thermocycler != None:
@@ -181,7 +184,7 @@ class ThermocycleModel:
 		tray: int,
 	) -> None:
 		# Make sure the ID is valid
-		assert ID in [1,2,3,4]
+		assert ID in [1,2,3,4,5]
 		query = f"""INSERT INTO {TABLE_NAME} 
 		(
 		ID,

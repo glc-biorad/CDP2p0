@@ -5,6 +5,7 @@ import time
 from gui.views.image_frame import ImageFrame
 from gui.views.thermocycle_frame import ThermocycleFrame
 from gui.views.build_protocol_frame import BuildProtocolFrame
+from gui.views.configure_frame import ConfigureFrame
 
 # Constants
 X = 10

@@ -182,12 +182,13 @@ CONSUMABLES = (
 	"Chip",
 	"",
 )
-NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Assay Strip", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
+NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
 NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
-TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge", "DG8"]
-EIGHT_COLUMN_CONSUMABLES = ["Tip Transfer Tray", "Assay Strip", "Tip Tray"]
+TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
+EIGHT_COLUMN_CONSUMABLES = ["Tip Transfer Tray", "Tip Tray"]
 FOUR_COLUMN_CONSUMABLES = ["Heater/Shaker"]
-THREE_COLUMN_CONSUMABLES = [""]
+THREE_COLUMN_CONSUMABLES = ["DG8"]
+TWO_COLUMN_CONSUMABLES = ["Assay Strip"]
 SPECIAL_CONSUMABLES = ["DG8", "Chip"]
 
 # Image Paths
@@ -200,14 +201,14 @@ class OptimizeFrame(ctk.CTkFrame):
 	"""
 	def __init__(self,
 		master: ctk.CTk,
+		model: Model,
 		width: int,
 		height: int,
 		posx: int,
 		posy: int
 	) -> None:
-		model = Model()
 		self.model = model.get_optimize_model()
-		self.coordinates_model = model.get_coordinates_model('A')
+		self.coordinates_model = model.get_coordinates_model()
 		self.master = master
 		self.width = width
 		self.height = height
@@ -560,7 +561,6 @@ class OptimizeFrame(ctk.CTkFrame):
 				self.tray_sv.set('D')
 		elif x >= BOUNDS['dg8']['x_min'] and x <= BOUNDS['dg8']['x_max'] and y >= BOUNDS['dg8']['y_min'] and y <= BOUNDS['dg8']['y_max']:
 			self.consumable_sv.set("DG8")
-			self.tray_sv.set('')
 			# Determine the column
 			if x >= BOUNDS['dg8']['x_min'] and x <= 344:
 				self.column_sv.set('1')
@@ -569,23 +569,32 @@ class OptimizeFrame(ctk.CTkFrame):
 			elif x >= 354 and x <= 362:
 				self.column_sv.set('3')
 			elif x >= 363 and x <= 373:
-				self.column_sv.set('4')
+				self.column_sv.set('1')
 			elif x >= 374 and x <= 383:
-				self.column_sv.set('5')
+				self.column_sv.set('2')
 			elif x >= 384 and x <= 391:
-				self.column_sv.set('6')
+				self.column_sv.set('3')
 			elif x >= 392 and x <= 401:
-				self.column_sv.set('7')
+				self.column_sv.set('1')
 			elif x >= 402 and x <= 410:
-				self.column_sv.set('8')
+				self.column_sv.set('2')
 			elif x >= 411 and x <= 420:
-				self.column_sv.set('9')
+				self.column_sv.set('3')
 			elif x >= 421 and x <= 431:
-				self.column_sv.set('10')
+				self.column_sv.set('1')
 			elif x >= 432 and x <= 439:
-				self.column_sv.set('11')
+				self.column_sv.set('1')
 			elif x >= 440 and x <= BOUNDS['dg8']['x_max']:
-				self.column_sv.set('12')
+				self.column_sv.set('3')
+			# Determine the tray
+			if x >= BOUNDS['dg8']['x_min'] and x <= 362:
+				self.tray_sv.set('A')
+			elif x >= 363 and x <= 392:
+				self.tray_sv.set('B')
+			elif x >= 393 and x <= 420:
+				self.tray_sv.set('C')
+			elif x >= 421 and x <= BOUNDS['dg8']['x_max']:
+				self.tray_sv.set('D')
 		elif x >= BOUNDS['sample_rack']['x_min'] and x <= BOUNDS['sample_rack']['x_max'] and y >= BOUNDS['sample_rack']['y_min'] and y <= BOUNDS['sample_rack']['y_max']:
 			self.consumable_sv.set("Sample Rack")
 			self.column_sv.set('')
@@ -732,6 +741,35 @@ class OptimizeFrame(ctk.CTkFrame):
 				self.column_sv.set('9')
 		elif x >= BOUNDS['asay_strip']['x_min'] and x <= BOUNDS['asay_strip']['x_max'] and y >= BOUNDS['asay_strip']['y_min'] and y <= BOUNDS['asay_strip']['y_max']:
 			self.consumable_sv.set("Assay Strip")
+			# Get the tray
+			if x >= BOUNDS['asay_strip']['x_min'] and x <= 24:
+				self.tray_sv.set('A')
+				# Get the column
+				if x <= 13:
+					self.column_sv.set('1')
+				else:
+					self.column_sv.set('2')
+			elif x >= 32 and x <= 51:
+				self.tray_sv.set('B')
+				# Get the column
+				if x <= 42:
+					self.column_sv.set('1')
+				else:
+					self.column_sv.set('2')
+			elif x >= 57 and x <= 78:
+				self.tray_sv.set('C')
+				if x <= 67:
+					self.column_sv.set('1')
+				else:
+					self.column_sv.set('2')
+			elif x >= 84 and x <= BOUNDS['asay_strip']['x_max']:
+				self.tray_sv.set('D')
+				# Get the column
+				if x <= 94:
+					self.column_sv.set('1')
+				else:
+					self.column_sv.set('2')
+
 
 	def bind_button_print(self, callback: Callable[[tk.Event], None]) -> None:
 		try:

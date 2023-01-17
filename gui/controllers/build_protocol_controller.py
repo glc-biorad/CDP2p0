@@ -1,6 +1,10 @@
+import os
 import time
+import sqlite3
 import threading
 from tkinter import StringVar
+import tkinter as tk
+import customtkinter as ctk
 
 from gui.util.browse_files import browse_files 
 from gui.util.next_action_allowed import next_action_allowed
@@ -12,9 +16,37 @@ from gui.views.build_protocol_frame import BuildProtocolFrame
 # Import the state model to keep track of tips and volumes
 from gui.models.state_model import StateModel
 
+# Import the coordinates model
+from gui.models.coordinates_model import CoordinatesModel
+
+# Import the upper gantry api
+try:
+	from api.upper_gantry.upper_gantry import UpperGantry
+except:
+	print("Couldn't import upper gantry for BuildProtocolCOntroller")
+
+# Import the reader api
+try:
+	from api.reader.reader import Reader
+except Exception as e:
+	print("Couldn't import reader for BuildProtocolController")
+
+# Import the Meerstetter API
+try:
+	from api.reader.meerstetter.meerstetter import Meerstetter
+except Exception as e:
+	print(e)
+	print("Couldn't import Meerstetter for the BuildProtocolController")
+
+# Import the utilities needed
+from api.util.utils import delay
+from gui.util.insert_at_selected_row import insert_at_selected_row
+
 # Constants
 INITIAL_PROTOCOL_FILENAME = 'protocol.txt'
-NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Assay Strip", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
+INITIAL_EXTRACTION_FILENAME = 'extraction.txt'
+INITIAL_TRANSFER_PLASMA_FILENAME = 'transfer_plasma.txt'
+NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
 NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
 MAIN_ACTION_KEY_WORDS = [
 	'Eject',
@@ -37,7 +69,54 @@ MAIN_ACTION_KEY_WORDS = [
 	'Enrichment',
 	'Pre-Amp',
 	'Assay',
+	'Disengage',
+	'Engage',
+	'Shake',
+	'Thermocycle',
+	'Close',
+	'Open',
+	'Lower',
+	'Raise',
+	'Change',
 ]
+TOPLEVEL_PRE_AMP_WIDTH = 400
+TOPLEVEL_PRE_AMP_HEIGHT = 230
+TOPLEVEL_LABEL_FIRST_DENATURE_TEMP_POSX = 35
+TOPLEVEL_LABEL_FIRST_DENATURE_TEMP_POSY = 10
+TOPLEVEL_ENTRY_FIRST_DENATURE_TEMP_POSX = 280
+TOPLEVEL_ENTRY_FIRST_DENATURE_TEMP_POSY = 10
+TOPLEVEL_ENTRY_FIRST_DENATURE_TEMP_WIDTH = 100
+TOPLEVEL_LABEL_FIRST_DENATURE_TIME_POSX = 75
+TOPLEVEL_LABEL_FIRST_DENATURE_TIME_POSY = 40
+TOPLEVEL_ENTRY_FIRST_DENATURE_TIME_POSX = 280
+TOPLEVEL_ENTRY_FIRST_DENATURE_TIME_POSY = 40
+TOPLEVEL_ENTRY_FIRST_DENATURE_TIME_WIDTH = 100
+TOPLEVEL_LABEL_CYCLES_POSX = 210
+TOPLEVEL_LABEL_CYCLES_POSY = 70
+TOPLEVEL_ENTRY_CYCLES_POSX = 280
+TOPLEVEL_ENTRY_CYCLES_POSY = 70
+TOPLEVEL_ENTRY_CYCLES_WIDTH = 100
+TOPLEVEL_LABEL_ANNEAL_TEMP_POSX = 90
+TOPLEVEL_LABEL_ANNEAL_TEMP_POSY = 100
+TOPLEVEL_ENTRY_ANNEAL_TEMP_POSX = 280 
+TOPLEVEL_ENTRY_ANNEAL_TEMP_POSY = 100
+TOPLEVEL_ENTRY_ANNEAL_TEMP_WIDTH = 100
+TOPLEVEL_LABEL_ANNEAL_TIME_POSX = 130
+TOPLEVEL_LABEL_ANNEAL_TIME_POSY = 130
+TOPLEVEL_ENTRY_ANNEAL_TIME_POSX = 280
+TOPLEVEL_ENTRY_ANNEAL_TIME_POSY = 130
+TOPLEVEL_ENTRY_ANNEAL_TIME_WIDTH = 100
+TOPLEVEL_LABEL_SECOND_DENATURE_TEMP_POSX = 15
+TOPLEVEL_LABEL_SECOND_DENATURE_TEMP_POSY = 160
+TOPLEVEL_ENTRY_SECOND_DENATURE_TEMP_POSX = 280
+TOPLEVEL_ENTRY_SECOND_DENATURE_TEMP_POSY = 160
+TOPLEVEL_ENTRY_SECOND_DENATURE_TEMP_WIDTH = 100
+TOPLEVEL_LABEL_SECOND_DENATURE_TIME_POSX = 45
+TOPLEVEL_LABEL_SECOND_DENATURE_TIME_POSY = 190
+TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_POSX = 280
+TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_POSY = 190
+TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_WIDTH = 100
+FONT = "Sergio UI"
 
 class BuildProtocolController:
 	"""System for passing data from the Build Protocol Frame view to the Build Protocol Model
@@ -50,12 +129,48 @@ class BuildProtocolController:
 		# Set the model and view for the controller
 		self.model = model
 		self.view = view
+		self.db_name = self.model.db_name
+		self.unit = self.db_name[-4]
+
+		# Initialize the Coordinates Model
+		self.coordinates_model = CoordinatesModel(self.model.db_name, self.model.cursor, self.model.connection)
 
 		# Get the state model
 		self.state = StateModel(self.model.db_name, self.model.cursor, self.model.connection)
+
+		# Initialize the upper gantry
+		try:
+			self.upper_gantry = UpperGantry()
+		except:
+			print("No Upper Gantry for BuildProtocolController")
+			self.upper_gantry = None
+
+		# Initialize the reader
+		try:
+			self.reader = Reader()
+		except:
+			print("No Reader for BuildProtocolController")
+			self.reader = None
+
+		# Initialize the Meerstetter
+		try:
+			self.meerstetter = Meerstetter()
+		except Exception as e:
+			print(e)
+			print("No Meerstetter for BuildProtocolController")
+			self.meerstetter = None
 	
 		# Variable for keeping track of the volume in the pipettor tips
 		self.volume = 0
+
+		# Variables for toplevel access
+		self.first_denature_temp_sv = StringVar()
+		self.first_denature_time_sv = StringVar()
+		self.cycles_sv = StringVar()
+		self.anneal_temp_sv = StringVar()
+		self.anneal_time_sv = StringVar()
+		self.second_denature_temp_sv = StringVar()
+		self.second_denature_time_sv = StringVar()
 
 	def setup_bindings(self):
 		# Set bindings between the view and the controller
@@ -91,7 +206,7 @@ class BuildProtocolController:
 		try:
 			selected_row = self.view.treeview.selection()[0]
 		except:
-			pass
+			selected_row = None
 		# Make sure there is an action
 		if action == '':
 			print(f"Tip action must be specified")
@@ -146,8 +261,8 @@ class BuildProtocolController:
 		if next_action_allowed(self.state, action):
 			# Update the state mode
 			self.state.insert(tip, self.volume, action.lower())
-			# Inset action into the action list
-			self.model.insert(len(self.model.actions), action_message)
+			# Insert below the selected row or at the end of the action treeview
+			insert_at_selected_row(action_message, selected_row, self.model)
 			# Update the view
 			self.view.update_treeview()
 		else:
@@ -167,7 +282,7 @@ class BuildProtocolController:
 		try:
 			selected_row = self.view.treeview.selection()[0]
 		except:
-			pass
+			selected_row = None
 		# Make sure consumable is not missing
 		if consumable != '':
 			# Generate the action message
@@ -221,8 +336,8 @@ class BuildProtocolController:
 		else:
 			print("Motion Consumable Option was not selected")
 			return None
-		# Inset action into the action list
-		self.model.insert(len(self.model.actions), action_message)
+		# Insert below the selected row or at the end of the action treeview
+		insert_at_selected_row(action_message, selected_row, self.model)
 		# Update the view
 		self.view.update_treeview()
 
@@ -245,14 +360,19 @@ class BuildProtocolController:
 		assert volume <= tip
 		action = self.view.pipettor_action_sv.get()
 		pressure = self.view.pipettor_pressure_sv.get()
+		# Determine which if any row of the treeview is selected
+		try:
+			selected_row = self.view.treeview.selection()[0]
+		except:
+			selected_row = None
 		# Generate the action message
 		action_message = f"{action.title()} {volume} uLs with {tip} uL tips at {pressure} pressure {count} {times}"
 		# Check if this action is allowed
 		if next_action_allowed(self.state, action):
 			# Update the state model
 			self.state.insert(tip, self.volume, action.lower())
-			# Insert action into the action list
-			self.model.insert(len(self.model.actions), action_message)
+			# Insert below the selected row or at the end of the action treeview
+			insert_at_selected_row(action_message, selected_row, self.model)
 			if action == 'Aspirate':
 				self.volume = self.volume + volume 
 			elif action == 'Dispense':
@@ -275,10 +395,15 @@ class BuildProtocolController:
 		# Check units plurality
 		if time_ == 1:
 			units = units[:-1]
+		# Determine which if any row of the treeview is selected
+		try:
+			selected_row = self.view.treeview.selection()[0]
+		except:
+			selected_row = None
 		# Generate the action message
 		action_message = f"Delay for {time_} {units}"
 		# Inset action into the action list
-		self.model.insert(len(self.model.actions), action_message)
+		insert_at_selected_row(action_message, selected_row, self.model)
 		# Update the view
 		self.view.update_treeview()
 
@@ -289,30 +414,80 @@ class BuildProtocolController:
 		other = self.view.other_option_sv.get()
 		# Generate the action message
 		action_message = other
+		# Check if the action message is a relative move
+		if 'relative' in action_message.split():
+			amounts = self.view.motion_dxdydz_sv.get().split(',')
+			if action_message.split()[2].lower() in ['up', 'down']:
+				amount = abs(int(amounts[2]))
+			elif action_message.split()[2].lower() in ['left', 'right']:
+				amount = abs(int(amounts[0]))
+			elif action_message.split()[2].lower() in ['backwards', 'forwards']:
+				amount = abs(int(amounts[1]))
+			action_message = action_message + f" by {amount}"
+		elif 'Extraction' in action_message.split():
+			# Open the file browser to load the extraction protocol
+			file = browse_files(
+				'r',
+				"Load Extraction Protocol",
+				INITIAL_EXTRACTION_FILENAME,
+				r'protocols\\common\\extraction\\'
+			)
+			file_path = file.name
+			action_message = action_message + f" ({file_path})"
+		elif 'Transfer' in action_message.split():
+			# Open the file browser to load the protocol
+			file = browse_files(
+				'r',
+				"Load Transfer Plasma Protocol",
+				INITIAL_TRANSFER_PLASMA_FILENAME,
+				r'protocols\\common\\extraction\\'
+			)
+			file_path = file.name
+			action_message = action_message + f" ({file_path})"
+		elif 'Thermocycle' in action_message.split():
+			if 'Protocol' in  action_message.split():
+				# Open the file browser to load a file to get the name of the protocol file
+				print('load protocol')
+				file = browse_files(
+					'r', 
+					"Load Protocol", 
+					INITIAL_PROTOCOL_FILENAME, 
+					r'protocols\{0}'.format(self.model.unit.upper())
+				)
+				file_path = file.name
+				action_message = action_message + f" ({file_path})"
+			elif 'Pre-Amp' in action_message.split():
+				# 
+				self.create_toplevel_pre_amp()
+		# Determine which if any row of the treeview is selected
+		try:
+			selected_row = self.view.treeview.selection()[0]
+		except:
+			selected_row = None
 		# Inset action into the action list
-		self.model.insert(len(self.model.actions), action_message)
+		insert_at_selected_row(action_message, selected_row, self.model)
 		# Update the view
 		self.view.update_treeview()
 
 	def start(self, event=None) -> None:
 		"""Deals with starting the protocol
 		"""
+		# Start the protocol
+		thread = threading.Thread(target=self.start_protocol)
+		thread.start()
+	
+	def start_protocol(self):
+		"""Process for starting the protocol
+		"""
 		# Set the progress bar to 0
 		self.view.progressbar.set(0)
 		# Set the action progress label to 0 of N actions
 		n_actions = len(self.model.select())
 		self.view.label_action_progress.configure(text=f"Action Progress: 0 of {n_actions}")
-		# Start the protocol
-		thread = threading.Thread(target=self.start_protocol)
-		thread.run()
-
-	def start_protocol(self):
-		"""Process for starting the protocol
-		"""
 		# Show a small bit of progress
 		n_actions = len(self.model.select())
 		if n_actions != 0:
-			progress = 100 * 0.5 / n_actions
+			progress = 0.5 / n_actions
 		else:
 			progress = 0
 		self.view.progressbar.set(progress)
@@ -329,30 +504,75 @@ class BuildProtocolController:
 			assert split[0] in MAIN_ACTION_KEY_WORDS
 			# Analyze the action message
 			if split[0] == 'Eject':
+				print(split)
 				# Eject tips
 				if 'column' not in split:
-					a = 1
+					self.upper_gantry.tip_eject()
 				# Eject tips in {tray} column {column}
 				else:
-					a = 1
+					tray = split[3]
+					column = int(split[5])
+					print(split)
+					# Get the coordinate
+					unit = self.model.db_name[-4]
+					table_name = f"Unit {unit} Upper Gantry Coordinates"
+					coordinate = self.coordinates_model.select(table_name, "Tip Box", tray, column)
+					x = int(coordinate[0][4])
+					y = int(coordinate[0][5])
+					z = int(coordinate[0][6])
+					self.upper_gantry.tip_eject_new(x, y, z)
 			elif split[0] == 'Pickup':
+				tray = split[3]
+				column = int(split[5])
+				if column in [1,2,3,4]:
+					tip = 1000
+				else:
+					tip = 50
+				# Get the coordinate
+				unit = self.model.db_name[-4]
+				table_name = f"Unit {unit} Upper Gantry Coordinates"
+				coordinate = self.coordinates_model.select(table_name, "Tip Box", tray, column)
+				x = coordinate[0][4]
+				y = coordinate[0][5]
+				z = coordinate[0][6]
 				# Pickup tips in {tray} column {column}
-				time.sleep(1)
+				self.upper_gantry.tip_pickup_new(x,y,z, tip)
 			elif split[0] == 'Tip-press':
 				time.sleep(1)
 			elif split[0] == 'Move':
 				# Check if this is just a relative move
 				if split[1] == 'relative':
-					a = 1
-					return None
+					amount = int(split[-1])
+					direction = split[2]
+					self.upper_gantry.move_relative(direction, amount, velocity='fast')
 				# Or a chip move
 				elif split[1] == 'chip':
 					a = 1
 					return None
 				# Or a lid move
 				elif split[1] == 'lid':
-					return None
-				# Get the consumable
+					tray = ''
+					column = split[2]
+					if column == 'A':
+						column = 4
+					elif column == 'B':
+						column = 3
+					elif column == 'C':
+						column = 2
+					elif column == 'D':
+						column = 1
+					# Get the coordinates for the lid and tray
+					unit = self.model.db_name[-4]
+					table_name = f"Unit {unit} Upper Gantry Coordinates"
+					coordinate = self.coordinates_model.select(table_name, "Lid Tray", tray, column)
+					lid_xyz = [coordinate[0][4], coordinate[0][5], coordinate[0][6]]
+					if column == 1:
+						tray_xyz = [-18500, -1781750, -552000]
+					else:
+						print("Only Lid D works right now")
+					# Move the lid
+					self.upper_gantry.move_lid_new(lid_xyz, tray_xyz)
+					continue
 				i0 = 2
 				try:
 					# Use the tray to get where the consumable words end
@@ -361,18 +581,22 @@ class BuildProtocolController:
 					# Use the column to get where the consumable words end
 					i1 = split.index('column')
 				consumable = " ".join(split[i0:i1])
+				if consumable in ["Tip Box", "DG8"]:
+					ignore_tips = True
+				else:
+					ignore_tips = False
 				# Get the tray
 				try:
 					tray = split[split.index('tray') + 1]
 				except ValueError:
-					tray = None
+					tray = ''
 				# Get the column
 				try:
 					column = split[split.index('column') + 1]
 				except ValueError:
-					column = None
+					column = ''
 				# Get the tip size
-				tip = split[split.index('tips') - 2]
+				tip = int(split[split.index('tips') - 2])
 				# Get the relative moves
 				try:
 					dx = -int(split[split.index('left') + 2])
@@ -401,8 +625,27 @@ class BuildProtocolController:
 					drip_plate = True
 				except ValueError:
 					drip_plate = False
+				# Get the x,y,z1,z2 for this consumable
+				model = self.coordinates_model
+				unit = self.model.db_name[-4]
+				table_name = f"Unit {unit} Upper Gantry Coordinates"
+				coordinate = model.select(table_name, consumable, tray, column)
+				x = coordinate[0][4]
+				y = coordinate[0][5]
+				z1 = coordinate[0][6]
+				z2 = coordinate[0][7]
 				# Setup the command
-				a = 1
+				self.upper_gantry.move(
+					x=x,
+					y=y,
+					z=z1,
+					drip_plate=z2,
+					use_drip_plate=drip_plate,
+					tip=tip,
+					relative_moves=[dx,dy,dz,0],
+					ignore_tips=ignore_tips
+				)
+				print(dz)
 			elif split[0] in ['Aspirate', 'Dispense', 'Mix']:
 				# Get the action
 				action = split[0]
@@ -417,40 +660,147 @@ class BuildProtocolController:
 				# Setup the command and do it count times
 				for i in range(count):
 					if action == 'Aspirate':
-						print(f"Aspirate: {volume}, {tip}, {pressure}")
+						for i in range(count):
+							self.upper_gantry.aspirate(volume, pipette_tip_type=tip, pressure=pressure)
 					if action == 'Dispense':
-						print(f"Dispense: {volume}, {tip}, {pressure}")
+						for i in range(count):
+							self.upper_gantry.dispense(volume, pressure=pressure)
 					if action == 'Mix':
-						print(f"Aspirate: {volume}, {tip}, {pressure}")
-						print(f"Dispense: {volume}, {tip}, {pressure}")
+						for i in range(count):
+							print(f'Mix Count: {i+1}/{count}')
+							self.upper_gantry.aspirate(volume, pipette_tip_type=tip, pressure=pressure)
+							self.upper_gantry.dispense(volume, pressure=pressure)
 			elif split[0] == 'Delay':
 				# Get the time
 				value = int(split[2])
 				# Get the units
 				units = split[3]
 				# Setup the command
-				print(f"{value}, {units}")
+				delay(value, units)
 			elif split[0] == 'Home':
-				a = 1
+				self.upper_gantry.home_pipettor()
 			elif split[0] == 'Generate':
 				# Get the droplet type
 				droplet_type = split[1]
-				a = 1
+				# Generate the droplets
+				self.upper_gantry.generate_droplets(droplet_type)
 			elif split[0] == 'Pre-Amp':
 				a = 1
 			elif split[0] == 'Shake':
 				# Get the mode
 				mode = split[1]
 				if mode.lower() == 'on':
-					print("Shake On")
+					self.upper_gantry.turn_on_shake(rpm=1300)
 				elif mode.lower() == 'off':
-					print("Shake off")
+					self.upper_gantry.turn_off_shake()
 			elif split[0] == 'Engage':
-				print(action_message)
+				self.upper_gantry.engage_magnet()
 			elif split[0] == 'Disengage':
-				print(action_message)
+				self.upper_gantry.disengage_magnet()
+			elif split[0] == 'Thermocycle':
+				print('Thermocycle')
+				if 'Pre-Amp' in split:
+					address = 9
+					protocol = f"""
+					first denature temp: {self.first_denature_temp_sv.get()},
+					first denature time: {self.first_denature_time_sv.get()},
+					cycles: {self.cycles_sv.get()},
+					anneal temp: {self.anneal_temp_sv.get()},
+					anneal time: {self.anneal_time_sv.get()},
+					second denature temp: {self.second_denature_temp_sv.get()},
+					second denature time: {self.second_denature_time_sv.get()}
+					"""
+					# Start the Pre-Amp Thermocycler Protocol
+					self.meerstetter.change_temperature(address, int(self.first_denature_temp_sv.get()), block=False)
+					delay(int(self.first_denature_time_sv.get()), 'minutes')
+					for i in range(int(self.cycles_sv.get())):
+						print(f"Cycle Progress: {i+1}/{self.cycles_sv.get()}")
+						self.meerstetter.change_temperature(address, int(self.second_denature_temp_sv.get()), block=False)
+						delay(int(self.second_denature_time_sv.get()), 'seconds')
+						self.meerstetter.change_temperature(address, int(self.anneal_temp_sv.get()), block=False)
+						delay(int(self.anneal_time_sv.get()), 'seconds')
+					self.meerstetter.change_temperature(address, 30, block=False)
+				elif 'Protocol' == split[1]:
+					# Get the protocol file path
+					file_path = split[-1].replace('(','').replace(')','')
+					# Get protocol info
+					with open(file_path, 'r') as ofile:
+						lines = ofile.readlines()
+						# Read the file line by line
+						protocol = {}
+						for line in lines:
+							line = line.split(',')
+							thermocycler = line[0]
+							protocol[thermocycler] = {
+								'use': line[1],
+								'cycles': line[2],
+								'first_denature_temperature': line[3],
+								'first_denature_time': line[4],
+								'anneal_temperature': line[5],
+								'anneal_time': line[6],
+								'second_denature_temperature': line[7],
+								'second_denature_time': line[8],
+							}
+						# Start the protocol
+						print('First Denature Temperature and Time') 
+						if int(protocol['A']['use']) == True:
+							print(f" - A: {protocol['A']['first_denature_temperature']} C for {protocol['A']['first_denature_time']} min")
+							self.meerstetter.change_temperature(1, int(protocol['A']['first_denature_temperature']), block=False)
+						elif int(protocol['B']['use']) == True:
+							print(f" - B: {protocol['B']['first_denature_temperature']} C for {protocol['B']['first_denature_time']} min")
+							self.meerstetter.change_temperature(2, int(protocol['B']['first_denature_temperature']), block=False)
+						elif int(protocol['C']['use']) == True:
+							print(f" - C: {protocol['C']['first_denature_temperature']} C for {protocol['C']['first_denature_time']} min")
+							self.meerstetter.change_temperature(3, int(protocol['C']['first_denature_temperature']), block=False)
+						elif int(protocol['D']['use']) == True:
+							print(f" - D: {protocol['D']['first_denature_temperature']} C for {protocol['D']['first_denature_time']} min")
+							self.meerstetter.change_temperature(4, int(protocol['D']['first_denature_temperature']), block=False)
+						delay(int(protocol['A']['first_denature_time']), 'minutes')
+						print('Cycles')
+						for i in range(int(protocol['A']['cycles'])):
+							if int(protocol['A']['use']) == True:
+								print(f" - A: {protocol['A']['second_denature_temperature']} C for {protocol['A']['second_denature_time']} sec")
+								self.meerstetter.change_temperature(1, int(protocol['A']['second_denature_temperature']), block=False)
+							elif int(protocol['B']['use']) == True:
+								print(f" - B: {protocol['B']['second_denature_temperature']} C for {protocol['B']['second_denature_time']} sec")
+								self.meerstetter.change_temperature(2, int(protocol['B']['second_denature_temperature']), block=False)
+							elif int(protocol['C']['use']) == True:
+								print(f" - C: {protocol['C']['second_denature_temperature']} C for {protocol['C']['second_denature_time']} sec")
+								self.meerstetter.change_temperature(3, int(protocol['C']['second_denature_temperature']), block=False)
+							elif int(protocol['D']['use']) == True:
+								print(f" - D: {protocol['D']['second_denature_temperature']} C for {protocol['D']['second_denature_time']} sec")
+								self.meerstetter.change_temperature(4, int(protocol['D']['second_denature_temperature']), block=False)
+							delay(int(protocol['A']['second_denature_time']), 'seconds')
+							if int(protocol['A']['use']) == True:
+								print(f" - A: {protocol['A']['anneal_temperature']} C for {protocol['A']['anneal_time']} sec")
+								self.meerstetter.change_temperature(1, int(protocol['A']['anneal_temperature']), block=False)
+							elif int(protocol['B']['use']) == True:
+								print(f" - B: {protocol['B']['anneal_temperature']} C for {protocol['B']['anneal_time']} sec")
+								self.meerstetter.change_temperature(2, int(protocol['B']['anneal_temperature']), block=False)
+							elif int(protocol['C']['use']) == True:
+								print(f" - C: {protocol['C']['anneal_temperature']} C for {protocol['C']['anneal_time']} sec")
+								self.meerstetter.change_temperature(3, int(protocol['C']['anneal_temperature']), block=False)
+							elif int(protocol['D']['use']) == True:
+								print(f" - D: {protocol['D']['anneal_temperature']} C for {protocol['D']['anneal_time']} sec")
+								self.meerstetter.change_temperature(4, int(protocol['D']['anneal_temperature']), block=False)
+							delay(int(protocol['A']['anneal_time']), 'seconds')
+			elif split[0] == 'Open':
+				# Open the tray
+				self.reader.open_tray(split[2])
+			elif split[0] == 'Close':
+				# Close the tray
+				self.reader.close_thermocycler_tray(split[2], -780000)
+			elif split[0] == 'Lower':
+				# Lower the thermocycler
+				self.reader.lower_heater(split[2])
+			elif split[0] == 'Raise':
+				# Raise the thermocycler
+				self.reader.raise_heater(split[2])
+			elif split[0] == 'Change':
+				# Change the Heater/Shaker temperature
+				self.upper_gantry.get_heater_shaker_temp_state()
 			# Update the progress bar
-			progress = 100 * (int(i) + 1 ) / n_actions
+			progress = (int(i) + 1 ) / n_actions
 			self.view.progressbar.set(progress)
 			print(self.state.select())
 
@@ -458,7 +808,7 @@ class BuildProtocolController:
 		"""Deals with the loading of a protocol into the action treeview
 		"""
 		# Browse the file system to open a protocol
-		file = browse_files('r', "Load Protocol", INITIAL_PROTOCOL_FILENAME, '../protocols/A')
+		file = browse_files('r', "Load Protocol", INITIAL_PROTOCOL_FILENAME, r'protocols\{0}'.format(self.model.unit.upper()))
 		# Read line by line through the file
 		lines = [line.rstrip('n') for line in file]
 		# Get the starting ID
@@ -477,7 +827,7 @@ class BuildProtocolController:
 		"""Deals with saving the action treeview to a protocol file
 		"""
 		# Browse the file system to save the protocol
-		file = browse_files('w', "Save Protocol", INITIAL_PROTOCOL_FILENAME, '../protocols/A')
+		file = browse_files('w', "Save Protocol", INITIAL_PROTOCOL_FILENAME, r'protocols\{0}'.format(self.model.unit.upper()))
 		# Iterate through the actions in the treeview
 		for i in self.view.treeview.get_children():
 			# Get the action message
@@ -495,3 +845,132 @@ class BuildProtocolController:
 			self.model.delete(int(selected_row))
 		# Update the view
 		self.view.update_treeview()
+
+	def create_toplevel_pre_amp(self):
+		""" Creates a Toplevel for the Pre-Amp """
+		toplevel_pre_amp = ctk.CTkToplevel(self.view.master)
+		toplevel_pre_amp.geometry(f'{TOPLEVEL_PRE_AMP_WIDTH}x{TOPLEVEL_PRE_AMP_HEIGHT}')
+		# Set the ID for the Pre-Amp Thermocycler (Should be found in ThermocycleController, View, and Model)
+		ID = 5 
+		model = self.view.master_model.get_thermocycle_model()
+		# Create and place the title label
+		toplevel_pre_amp.title("Pre-Amp Thermocycling Protocol")
+		# Create an place the first denature temperature label and entry
+		toplevel_label_first_denature_temp = ctk.CTkLabel(
+			master=toplevel_pre_amp,
+			text="First Denature Temperature (C):",
+			font=(FONT,-16),
+		)
+		toplevel_label_first_denature_temp.place(x=TOPLEVEL_LABEL_FIRST_DENATURE_TEMP_POSX,y=TOPLEVEL_LABEL_FIRST_DENATURE_TEMP_POSY)
+		self.first_denature_temp_sv.set(model.select(ID)['first_denature_temperature'])
+		toplevel_entry_first_denature_temp = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.first_denature_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_FIRST_DENATURE_TEMP_WIDTH,
+		)
+		toplevel_entry_first_denature_temp.place(x=TOPLEVEL_ENTRY_FIRST_DENATURE_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_FIRST_DENATURE_TEMP_POSY)
+		# Create and place th label and entry for the first denature time
+		toplevel_label_first_denature_time = ctk.CTkLabel(master=toplevel_pre_amp,
+			text="First Denature Time (min):",
+			font=(FONT,-16),
+		)
+		toplevel_label_first_denature_time.place(x=TOPLEVEL_LABEL_FIRST_DENATURE_TIME_POSX,
+			y=TOPLEVEL_LABEL_FIRST_DENATURE_TIME_POSY)
+		self.first_denature_time_sv.set(model.select(ID)['first_denature_time'])
+		toplevel_entry_first_denature_time = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.first_denature_time_sv,
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_FIRST_DENATURE_TIME_WIDTH,
+		)
+		toplevel_entry_first_denature_time.place(x=TOPLEVEL_ENTRY_FIRST_DENATURE_TIME_POSX,
+			y=TOPLEVEL_ENTRY_FIRST_DENATURE_TIME_POSY)
+		# Create and place the cycles label and entry
+		toplevel_label_cycles = ctk.CTkLabel(master=toplevel_pre_amp, text='Cycles:', font=(FONT,-16))
+		toplevel_label_cycles.place(x=TOPLEVEL_LABEL_CYCLES_POSX,
+			y=TOPLEVEL_LABEL_CYCLES_POSY)
+		self.cycles_sv.set(model.select(ID)['cycles'])
+		toplevel_entry_cycles = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.cycles_sv,
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_CYCLES_WIDTH,
+		)
+		toplevel_entry_cycles.place(x=TOPLEVEL_ENTRY_CYCLES_POSX,
+			y=TOPLEVEL_ENTRY_CYCLES_POSY)
+		# Create and place the anneal temperature label and entry
+		toplevel_label_anneal_temp = ctk.CTkLabel(
+			master=toplevel_pre_amp,
+			text="Anneal Temperature (C):",
+			font=(FONT,-16)
+		)
+		toplevel_label_anneal_temp.place(x=TOPLEVEL_LABEL_ANNEAL_TEMP_POSX,
+			y=TOPLEVEL_LABEL_ANNEAL_TEMP_POSY)
+		self.anneal_temp_sv.set(model.select(ID)['anneal_temperature'])
+		toplevel_entry_anneal_temp = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.anneal_temp_sv,
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_ANNEAL_TEMP_WIDTH,
+		)
+		toplevel_entry_anneal_temp.place(x=TOPLEVEL_ENTRY_ANNEAL_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_ANNEAL_TEMP_POSY)
+		toplevel_label_anneal_time = ctk.CTkLabel(
+			master=toplevel_pre_amp,
+			text="Anneal Time (sec):",
+			font=(FONT,-16)
+		)
+		toplevel_label_anneal_time.place(x=TOPLEVEL_LABEL_ANNEAL_TIME_POSX,	
+			y=TOPLEVEL_LABEL_ANNEAL_TIME_POSY)
+		self.anneal_time_sv.set(model.select(ID)['anneal_time'])
+		toplevel_entry_anneal_time = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.anneal_time_sv,
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_ANNEAL_TIME_WIDTH,
+		)
+		toplevel_entry_anneal_time.place(x=TOPLEVEL_ENTRY_ANNEAL_TIME_POSX,
+			y=TOPLEVEL_ENTRY_ANNEAL_TIME_POSY)
+		# Create and place the second temperature label and entry
+		toplevel_label_second_denature_temp = ctk.CTkLabel(
+			master=toplevel_pre_amp,
+			text="Second Denature Temperature (C):",
+			font=(FONT,-16)
+		)
+		toplevel_label_second_denature_temp.place(x=TOPLEVEL_LABEL_SECOND_DENATURE_TEMP_POSX,
+			y=TOPLEVEL_LABEL_SECOND_DENATURE_TEMP_POSY)
+		self.second_denature_temp_sv.set(model.select(ID)['second_denature_temperature'])
+		toplevel_entry_second_denature_temp = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.second_denature_temp_sv,
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_SECOND_DENATURE_TEMP_WIDTH
+		)
+		toplevel_entry_second_denature_temp.place(x=TOPLEVEL_ENTRY_SECOND_DENATURE_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_SECOND_DENATURE_TEMP_POSY)
+		# Create and place the second denature time label and entry
+		toplevel_label_second_denature_time = ctk.CTkLabel(
+			master=toplevel_pre_amp,
+			text="Second Denature Time (sec):",
+			font=(FONT,-16)
+		)
+		toplevel_label_second_denature_time.place(x=TOPLEVEL_LABEL_SECOND_DENATURE_TIME_POSX,
+			y=TOPLEVEL_LABEL_SECOND_DENATURE_TIME_POSY)
+		self.second_denature_time_sv.set(model.select(ID)['second_denature_time'])
+		toplevel_entry_second_denature_time = ctk.CTkEntry(
+			master=toplevel_pre_amp,
+			textvariable=self.second_denature_time_sv,
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_WIDTH,
+		)
+		toplevel_entry_second_denature_time.place(x=TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_POSX,
+			y=TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_POSY)

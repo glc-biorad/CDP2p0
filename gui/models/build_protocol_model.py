@@ -28,6 +28,7 @@ class BuildProtocolModel:
 	def __init__(self, db_name, cursor, connection) -> None:
 		# Setup database connection
 		self.db_name = db_name
+		self.unit = self.db_name[-4]
 		self.cursor = cursor
 		self.connection = connection
 		try:
@@ -55,6 +56,7 @@ class BuildProtocolModel:
 			pass
 		# Initialize the action list
 		self.actions = []
+		# Initialize the clipboard
 
 	def create_table(self):
 		query = f"""CREATE TABLE IF NOT EXISTS {TABLE_NAME}(

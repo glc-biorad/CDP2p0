@@ -3,6 +3,7 @@ import customtkinter as ctk
 
 from gui.controllers.image_controller import ImageController
 
+from gui.models.model import Model
 from gui.models.image_model import ImageModel
 
 # Constants
@@ -72,7 +73,7 @@ class ImageFrame(ctk.CTkFrame):
 	"""
 	Image Frame
 	"""
-	def __init__(self, master: ctk.CTk, width: int, height: int, posx: int, posy: int) -> None:
+	def __init__(self, master: ctk.CTk, model: Model, width: int, height: int, posx: int, posy: int) -> None:
 		self.master = master
 		self.width = width
 		self.height = height
@@ -86,10 +87,9 @@ class ImageFrame(ctk.CTkFrame):
 			height=self.height,
 			corner_radius=0,
 		)
+		self.create_ui()
 
 	def create_ui(self) -> None:
-		# Place the Image Frame
-		self.place(x=self.posx, y=self.posy)
 		# Place the Imager View
 		self.textbox_imager_view = ctk.CTkTextbox(
 			master=self,
@@ -98,30 +98,24 @@ class ImageFrame(ctk.CTkFrame):
 			font=("Roboto Medium", -12),
 			state='disabled',
 		)
-		self.textbox_imager_view.place(x=IMAGER_VIEW_POSX, y=IMAGER_VIEW_POSY)
 		# Place the Filter Option Menu
 		self.label_filter = ctk.CTkLabel(master=self, text='Filter', font=("Roboto Medium", -16))
 		sv = self.controller.get_filter_sv(1)
-		self.label_filter.place(x=LABEL_FILTER_POSX, y=LABEL_FILTER_POSY)
 		self.optionmenu_filter = ctk.CTkOptionMenu(
 			master=self,
 			variable=sv,
 			values=('HEX', 'FAM', 'ATTO590', 'ALEXA405', 'CY5', 'CY5.5', 'Home'),
 		)
-		self.optionmenu_filter.place(x=OPTIONMENU_FILTER_POSX, y=OPTIONMENU_FILTER_POSY, width=OPTIONMENU_FILTER_WIDTH)
 		# Place the LED Option Menu
 		self.label_led = ctk.CTkLabel(master=self, text='LED', font=("Roboto Medium", -16))
-		self.label_led.place(x=LABEL_LED_POSX, y=LABEL_LED_POSY)
 		led_sv = self.controller.get_led_sv(1)
 		self.optionmenu_led = ctk.CTkOptionMenu(
 			master=self,
 			variable=led_sv,
 			values=('HEX', 'FAM', 'ATTO590', 'ALEXA405', 'CY5', 'CY5.5', 'Off'),
 		)
-		self.optionmenu_led.place(x=OPTIONMENU_LED_POSX, y=OPTIONMENU_LED_POSY, width=OPTIONMENU_LED_WIDTH)
 		# Place the Option Buttons
 		self.label_options = ctk.CTkLabel(master=self, text='Options', font=("Roboto Medium", -16))
-		self.label_options.place(x=LABEL_OPTIONS_POSX, y=LABEL_OPTIONS_POSY)
 		# Set the initial y position for the buttons
 		y = LABEL_OPTIONS_POSY
 		for button_title in BUTTON_TITLES:
@@ -140,31 +134,22 @@ class ImageFrame(ctk.CTkFrame):
 			)
 			self.buttons[button_title] = button
 			# Place the button
-			button.place(x=OPTIONS_BUTTON_POSX, y=y)
 		# Place the Relative Moves
 		self.label_relative_moves = ctk.CTkLabel(master=self, text="Relative Moves", font=("Roboto Medium", -16))
-		self.label_relative_moves.place(x=LABEL_RELATIVE_MOVES_POSX, y=LABEL_RELATIVE_MOVES_POSY)
 		# Place the Relative Moves (dx)
 		self.label_dx = ctk.CTkLabel(master=self, text='dx', font=("Roboto Medium", -14))
-		self.label_dx.place(x=LABEL_DX_POSX, y=LABEL_DX_POSY)
 		dx_sv = self.controller.get_dx_sv(1)
 		self.entry_dx = ctk.CTkEntry(master=self, textvariable=dx_sv, font=("Roboto Medium", -14), width=ENTRY_DX_WIDTH)
-		self.entry_dx.place(x=ENTRY_DX_POSX, y=ENTRY_DX_POSY)
 		# Place the Relative Moves (dy)
 		self.label_dy = ctk.CTkLabel(master=self, text='dy', font=("Roboto Medium", -14))
-		self.label_dy.place(x=LABEL_DY_POSX, y=LABEL_DY_POSY)
 		dy_sv = self.controller.get_dy_sv(1)
 		self.entry_dy = ctk.CTkEntry(master=self, textvariable=dy_sv, font=("Roboto Medium", -14), width=ENTRY_DY_WIDTH)
-		self.entry_dy.place(x=ENTRY_DY_POSX, y=ENTRY_DY_POSY)
 		# Place the Relative Moves (dz)
 		self.label_dz = ctk.CTkLabel(master=self, text='dz', font=("Roboto Medium", -14))
-		self.label_dz.place(x=LABEL_DZ_POSX, y=LABEL_DZ_POSY)
 		dz_sv = self.controller.get_dz_sv(1)
 		self.entry_dz = ctk.CTkEntry(master=self, textvariable=dz_sv, font=("Roboto Medium", -14), width=ENTRY_DZ_WIDTH)
-		self.entry_dz.place(x=ENTRY_DZ_POSX, y=ENTRY_DZ_POSY)
 		# Place the LED Intensity slider
 		self.label_led_intensity = ctk.CTkLabel(master=self, text="LED Intensity", font=("Roboto Medium", -16))
-		self.label_led_intensity.place(x=LABEL_LED_INTENSITY_POSX, y=LABEL_LED_INTENSITY_POSY)
 		self.slider_led_intensity = ctk.CTkSlider(
 			master=self,
 			from_=0,
@@ -177,6 +162,40 @@ class ImageFrame(ctk.CTkFrame):
 		)
 		self.slider_led_intensity.set(0)
 		self.slider_led_intensity.configure(state='disabled')
+
+	def place_ui(self) -> None:
+		# Place the Image Frame
+		self.place(x=self.posx, y=self.posy)
+		# Place the Imager View
+		self.textbox_imager_view.place(x=IMAGER_VIEW_POSX, y=IMAGER_VIEW_POSY)
+		# Place the Filter Option Menu
+		self.label_filter.place(x=LABEL_FILTER_POSX, y=LABEL_FILTER_POSY)
+		self.optionmenu_filter.place(x=OPTIONMENU_FILTER_POSX, y=OPTIONMENU_FILTER_POSY, width=OPTIONMENU_FILTER_WIDTH)
+		# Place the LED Option Menu
+		self.label_led.place(x=LABEL_LED_POSX, y=LABEL_LED_POSY)
+		self.optionmenu_led.place(x=OPTIONMENU_LED_POSX, y=OPTIONMENU_LED_POSY, width=OPTIONMENU_LED_WIDTH)
+		# Place the Option Buttons
+		self.label_options.place(x=LABEL_OPTIONS_POSX, y=LABEL_OPTIONS_POSY)
+		# Set the initial y position for the buttons
+		y = LABEL_OPTIONS_POSY
+		for button_title in BUTTON_TITLES:
+			# Update the y position of the button
+			y = y + OPTIONS_BUTTON_DY
+			# Place the button
+			self.buttons[button_title].place(x=OPTIONS_BUTTON_POSX, y=y)
+		# Place the Relative Moves
+		self.label_relative_moves.place(x=LABEL_RELATIVE_MOVES_POSX, y=LABEL_RELATIVE_MOVES_POSY)
+		# Place the Relative Moves (dx)
+		self.label_dx.place(x=LABEL_DX_POSX, y=LABEL_DX_POSY)
+		self.entry_dx.place(x=ENTRY_DX_POSX, y=ENTRY_DX_POSY)
+		# Place the Relative Moves (dy)
+		self.label_dy.place(x=LABEL_DY_POSX, y=LABEL_DY_POSY)
+		self.entry_dy.place(x=ENTRY_DY_POSX, y=ENTRY_DY_POSY)
+		# Place the Relative Moves (dz)
+		self.label_dz.place(x=LABEL_DZ_POSX, y=LABEL_DZ_POSY)
+		self.entry_dz.place(x=ENTRY_DZ_POSX, y=ENTRY_DZ_POSY)
+		# Place the LED Intensity slider
+		self.label_led_intensity.place(x=LABEL_LED_INTENSITY_POSX, y=LABEL_LED_INTENSITY_POSY)
 		self.slider_led_intensity.place(x=SLIDER_LED_INTENSITY_POSX, y=SLIDER_LED_INTENSITY_POSY)
 
 	def on_click(self, button_title: str) -> types.MethodType:

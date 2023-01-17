@@ -17,10 +17,10 @@ class Model:
 	# Models
 	thermocycle_model: ThermocycleModel = None
 
-	def __init__(self, unit: str = 'A') -> None:
+	def __init__(self, unit: str) -> None:
 		self.unit = unit
 		self.db_name = f'{DB_NAME}{unit.upper()}.db'
-		self.connection = sqlite3.connect(self.db_name)
+		self.connection = sqlite3.connect(self.db_name, check_same_thread=False)
 		self.cursor = self.connection.cursor()
 		self.setup_thermocycle_table()
 		self.setup_build_protocol_table()
@@ -64,7 +64,7 @@ class Model:
 			pass
 		model.create_table()
 
-	def get_coordinates_model(self, unit: str) -> None:
+	def get_coordinates_model(self) -> None:
 		""" Get the coordinate model for the unit of interest
 
 		Parameters:
