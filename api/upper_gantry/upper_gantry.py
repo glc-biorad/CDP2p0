@@ -1401,6 +1401,13 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         print("Shake Go Home:\n")
         bs3000T.shakeGoHome()
 
+    def get_heater_shaker_temp_state(self):
+        """ Obtains the state of the temperature function for the Heater/Shaker
+            REturns 0 if disabled and 1 if the the temp control is enabled
+        """
+        temp_state = self.get_fast_api_interface().prep_deck.heater.get_temp_state()
+        print(temp_state)
+
     def turn_on_shake(self, rpm: int, shake_time: int = None, time_units: str = None) -> None:
         """ Turns on the heater shaker shaking """
         if shake_time == None:

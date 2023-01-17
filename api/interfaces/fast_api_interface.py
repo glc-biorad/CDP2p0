@@ -734,6 +734,31 @@ class HeaterShaker:
         logger.log('RECEIVED', response_str)
         return float(rpm)
 
+    def get_temp_state(self) -> int:
+        """ Deals with getting the Heater/Shaker temp control (enabled: 1, disabled: 0) """
+        command = 'gts'
+        # Generate the URL.
+        url = FAST_API_URL_BASE + FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['url'] + f'?id={self.ID}&command={command}'
+        logger = Logger(__file__, __name__)
+        logger.log('SEND', url)
+        # Generate the request.
+        request = WebRequest.Create(url)
+        method = FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['method']
+        request.Method = method
+        response = request.GetResponse()
+        status_code = response.StatusCode
+        logger.log('RECEIVED', "Status Code: {0}".format(status_code))
+        if str(status_code) != 'OK':
+            __retry(url, method)
+        # Read the response.
+        encoding = ASCIIEncoding.ASCII
+        reader = StreamReader(response.GetResponseStream(), encoding)
+        response_str = reader.ReadToEnd()
+        response_dict = ast.literal_eval(response_str)
+        val = response_dict['response'].rstrip('\r').rstrip('\n')
+        logger.log('RECEIVED', response_str)
+        return int(val)
+
 class PrepDeck():
     # Public variables.
     axis = Axis()

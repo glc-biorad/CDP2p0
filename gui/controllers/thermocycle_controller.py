@@ -14,6 +14,12 @@ try:
 except:
 	print("Can't import FastAPIInterface for the ThermocycleController")
 
+# Import Meerstetter API
+try:
+	from api.reader.meerstetter.meerstetter import Meerstetter
+except:
+	print("Couldn't import Meerstetter for the ThermocycleController")
+
 # Constants
 INITIAL_PROTOCOL_FILENAME = 'protocol.txt'
 THERMOCYCLERS = ['A', 'B', 'C', 'D']
@@ -103,6 +109,12 @@ class ThermocycleController:
 			self.fast_api_interface = FastAPIInterface()
 		except:
 			print("Couldn't connect to the FastAPI interface with the ThermocyclerController!")
+
+		# Initialize the Meerstetter
+		try:
+			self.meerstetter = Meerstetter()
+		except:
+			print("Coulnd't connect to the Meerstetter with the ThermocycleController!")
 
 	def setup_bindings(self):
 		""" Setup the binding between this controller and its view """
@@ -385,44 +397,60 @@ class ThermocycleController:
 		# Start the first denature step
 		if use['A']:
 			print(f"A goes to {first_denature_temperatures['A']} for {first_denature_times['A']}")
+			self.meerstetter.change_temperature(1, first_denature_temperatures['A'], block=False)
 		if use['B']:
 			print(f"B goes to {first_denature_temperatures['B']} for {first_denature_times['B']}")
+			self.meerstetter.change_temperature(2, first_denature_temperatures['B'], block=False)
 		if use['C']:
 			print(f"C goes to {first_denature_temperatures['C']} for {first_denature_times['C']}")
+			self.meerstetter.change_temperature(3, first_denature_temperatures['C'], block=False)
 		if use['D']:
 			print(f"D goes to {first_denature_temperatures['D']} for {first_denature_times['D']}")
-		#delay(first_denature_times['A'], 'minutes')
+			self.meerstetter.change_temperature(4, first_denature_temperatures['D'], block=False)
+		delay(first_denature_times['A'], 'minutes')
 		# Cycle 
 		for i in range(n_cycles['A']):
 			print(f"Cycles {i+1}/{n_cycles['A']}")
 			if use['A']:
 				print(f"A goes to {second_denature_temperatures['A']} for {second_denature_times['A']}")
+				self.meerstetter.change_temperature(1, second_denature_temperatures['A'], block=False)
 			if use['B']:
 				print(f"B goes to {second_denature_temperatures['B']} for {second_denature_times['B']}")
+				self.meerstetter.change_temperature(2, second_denature_temperatures['B'], block=False)
 			if use['C']:
 				print(f"C goes to {second_denature_temperatures['C']} for {second_denature_times['C']}")
+				self.meerstetter.change_temperature(3, second_denature_temperatures['C'], block=False)
 			if use['D']:
 				print(f"D goes to {second_denature_temperatures['D']} for {second_denature_times['D']}")
-			#delay(second_denature_times['A'], 'seconds')
+				self.meerstetter.change_temperature(4, second_denature_temperatures['D'], block=False)
+			delay(second_denature_times['A'], 'seconds')
 			if use['A']:
 				print(f"A goes to {anneal_temperatures['A']} for {anneal_times['A']}")
+				self.meerstetter.change_temperature(1, anneal_temperatures['A'], block=False)
 			if use['B']:
 				print(f"B goes to {anneal_temperatures['B']} for {anneal_times['B']}")
+				self.meerstetter.change_temperature(2, anneal_temperatures['B'], block=False)
 			if use['C']:
 				print(f"C goes to {anneal_temperatures['C']} for {anneal_times['C']}")
+				self.meerstetter.change_temperature(3, anneal_temperatures['C'], block=False)
 			if use['D']:
 				print(f"D goes to {anneal_temperatures['D']} for {anneal_times['D']}")
-			#delay(anneal_times['A'], 'seconds')
+				self.meerstetter.change_temperature(4, anneal_temperatures['D'], block=False)
+			delay(anneal_times['A'], 'seconds')
 			
 		# Lower the temperature to 30 deg C	
 		if use['A']:
 			print('A goes to 30')
+			self.meerstetter.change_temperature(1, 30, block=False)
 		if use['B']:
 			print('B goes to 30')
+			self.meerstetter.change_temperature(2, 30, block=False)
 		if use['C']:
 			print('C goes to 30')
+			self.meerstetter.change_temperature(3, 30, block=False)
 		if use['D']:
 			print('D goes to 30')
+			self.meerstetter.change_temperature(4, 30, block=False)
 
 	def trace_cycles(self, *args) -> None:
 		""" Deals with the cycles entry changing """
@@ -516,18 +544,19 @@ class ThermocycleController:
 				thermocycler = line[0]
 				# Make sure the first column is a valid unit
 				if thermocycler in THERMOCYCLERS:
-					print(line)
 					# Get the data
-					cycles = line[1]
-					first_denature_temperature = line[2]
-					first_denature_time = line[3]
-					anneal_temperature = line[4]
-					anneal_time = line[5]
-					second_denature_temperature = line[6]
-					second_denature_time = line[7]
+					use = line[1]
+					cycles = line[2]
+					first_denature_temperature = line[3]
+					first_denature_time = line[4]
+					anneal_temperature = line[5]
+					anneal_time = line[6]
+					second_denature_temperature = line[7]
+					second_denature_time = line[8]
 					# Store the data
 					self.model.update(
 						ID = THERMOCYCLER_IDS[thermocycler],
+						use=use,
 						first_denature_temperature=first_denature_temperature,
 						first_denature_time=first_denature_time,
 						anneal_temperature=anneal_temperature,
@@ -535,6 +564,14 @@ class ThermocycleController:
 						second_denature_temperature=second_denature_temperature,
 						second_denature_time=second_denature_time
 					)
+					if thermocycler == 'A':
+						self.view.use_a_iv.set(use)
+					elif thermocycler == 'B':
+						self.view.use_b_iv.set(use)
+					elif thermocycler == 'C':
+						self.view.use_c_iv.set(use)
+					elif thermocycler == 'D':
+						self.view.use_d_iv.set(use)
 			# Update the string vars for current selected thermocyclers entries
 			ID = THERMOCYCLER_IDS[self.view.thermocycler_sv.get()]
 			self.view.entry_cycles.delete(0, tk.END)
@@ -565,7 +602,7 @@ class ThermocycleController:
 		""" Save the checked protocols """
 		# Open a file browser to save the file (creates a file for each checked file_unit.csv)
 		file = browse_files('w', "Save Protocol", INITIAL_PROTOCOL_FILENAME, r'protocols\{0}'.format(self.model.unit.upper()))
-		file.write('unit,cycles,first denature temperature, first denature time, anneal temperature, anneal time, second denature temperature, second denature time,\n')
+		file.write('unit,use,cycles,first denature temperature, first denature time, anneal temperature, anneal time, second denature temperature, second denature time,\n')
 		# Save the protocol for each thermocycler
 		for thermocycler in THERMOCYCLERS:
 			# Get the ID
@@ -579,7 +616,7 @@ class ThermocycleController:
 			anneal_time = self.model.select(ID)['anneal_time']
 			second_denature_temperature = self.model.select(ID)['second_denature_temperature']
 			second_denature_time = self.model.select(ID)['second_denature_time']
-			data = f'{thermocycler},{cycles},{first_denature_temperature},{first_denature_time},{anneal_temperature},{anneal_time},{second_denature_temperature},{second_denature_time},\n'
+			data = f'{thermocycler},{use},{cycles},{first_denature_temperature},{first_denature_time},{anneal_temperature},{anneal_time},{second_denature_temperature},{second_denature_time},\n'
 			file.write(data)
 		# Close the file
 		file.close()
@@ -870,6 +907,7 @@ class ThermocycleController:
 		""" Move Tray AB using a thread """
 		# Get the tray position value
 		val = int(self.tray_ab_sv.get())
+		print(val)
 		# If trying to home go fast then force a home
 		if abs(val) == 0:
 			try:
@@ -883,10 +921,10 @@ class ThermocycleController:
 						self.view.image_thermocycler_tray_ab, 
 						posx,
 						self.view.IMAGE_THERMOCYCLER_TRAY_AB_POSX,
-						use_fast_api=False,
+						steps=0,
 					)
-				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], 0, 200000, True)
-				self.fast_api_interface.reader.axis.home('reader', ADDRESSES['AB'], False)
+				#self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], 0, 200000, True)
+				#self.fast_api_interface.reader.axis.home('reader', ADDRESSES['AB'], False)
 			except Exception as e:
 				pass
 		else:
@@ -907,9 +945,9 @@ class ThermocycleController:
 						self.view.image_thermocycler_tray_ab, 
 						posx,
 						x,
-						use_fast_api=False,
+						steps=val,
 					)
-				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], val, 200000, False)
+				#self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], val, 200000, False)
 			except Exception as e:
 				pass
 

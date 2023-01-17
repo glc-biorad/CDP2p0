@@ -197,6 +197,7 @@ CHIP_TRAY_OPTION_VALUES = ['A', 'B', 'C', 'D',]
 CHIP_COLUMN_OPTION_VALUES = ['NIPT','FF','Quant',]
 OTHER_OPTION_VALUES = [
 	"Home pipettor",
+	"Change Heater/Shaker Temperature",
 	"Move relative left",
 	"Move relative right",
 	"Move relative up",
