@@ -637,6 +637,133 @@ class HeaterShaker:
     def __init__(self, ID: int = 2) -> None:
         """ Initialize the Heater/Shaker """
         self.ID = 2
+
+    def ton(self):
+        """ Turn on temp control """
+        command = 'ton'
+        # Generate the URL.
+        url = FAST_API_URL_BASE + FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['url'] + f'?id={self.ID}&command={command}'
+        logger = Logger(__file__, __name__)
+        logger.log('SEND', url)
+        # Generate the request.
+        request = WebRequest.Create(url)
+        method = FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['method']
+        request.Method = method
+        response = request.GetResponse()
+        status_code = response.StatusCode
+        logger.log('RECEIVED', "Status Code: {0}".format(status_code))
+        if str(status_code) != 'OK':
+            __retry(url, method)
+        # Read the response.
+        encoding = ASCIIEncoding.ASCII
+        reader = StreamReader(response.GetResponseStream(), encoding)
+        response_str = reader.ReadToEnd()
+        print(response_str)
+        logger.log('RECEIVED', response_str)
+
+    def toff(self):
+        """ Turn off temp control """
+        command = 'toff'
+        # Generate the URL.
+        url = FAST_API_URL_BASE + FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['url'] + f'?id={self.ID}&command={command}'
+        logger = Logger(__file__, __name__)
+        logger.log('SEND', url)
+        # Generate the request.
+        request = WebRequest.Create(url)
+        method = FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['method']
+        request.Method = method
+        response = request.GetResponse()
+        status_code = response.StatusCode
+        logger.log('RECEIVED', "Status Code: {0}".format(status_code))
+        if str(status_code) != 'OK':
+            __retry(url, method)
+        # Read the response.
+        encoding = ASCIIEncoding.ASCII
+        reader = StreamReader(response.GetResponseStream(), encoding)
+        response_str = reader.ReadToEnd()
+        print(response_str)
+        logger.log('RECEIVED', response_str)
+
+    def gtt(self):
+        """ Get Target Temp """
+        command = 'gtt'
+        # Generate the URL.
+        url = FAST_API_URL_BASE + FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['url'] + f'?id={self.ID}&command={command}'
+        print(url)
+        logger = Logger(__file__, __name__)
+        logger.log('SEND', url)
+        # Generate the request.
+        request = WebRequest.Create(url)
+        method = FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['method']
+        request.Method = method
+        response = request.GetResponse()
+        status_code = response.StatusCode
+        logger.log('RECEIVED', "Status Code: {0}".format(status_code))
+        if str(status_code) != 'OK':
+            __retry(url, method)
+        # Read the response.
+        encoding = ASCIIEncoding.ASCII
+        reader = StreamReader(response.GetResponseStream(), encoding)
+        response_str = reader.ReadToEnd()
+        response_dict = ast.literal_eval(response_str)
+        temp = response_dict['response'].rstrip('\r').rstrip('\n')
+        logger.log('RECEIVED', response_str)
+        return float(temp)
+
+    def gat(self) -> float:
+        """ Get Actual Temp """
+        command = 'gat'
+        # Generate the URL.
+        url = FAST_API_URL_BASE + FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['url'] + f'?id={self.ID}&command={command}'
+        print(url)
+        logger = Logger(__file__, __name__)
+        logger.log('SEND', url)
+        # Generate the request.
+        request = WebRequest.Create(url)
+        method = FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['method']
+        request.Method = method
+        response = request.GetResponse()
+        status_code = response.StatusCode
+        logger.log('RECEIVED', "Status Code: {0}".format(status_code))
+        if str(status_code) != 'OK':
+            __retry(url, method)
+        # Read the response.
+        encoding = ASCIIEncoding.ASCII
+        reader = StreamReader(response.GetResponseStream(), encoding)
+        response_str = reader.ReadToEnd()
+        response_dict = ast.literal_eval(response_str)
+        temp = response_dict['response'].rstrip('\r').rstrip('\n')
+        logger.log('RECEIVED', response_str)
+        return float(temp)
+
+    def stt(self, temp: float) -> None:
+        """ Set Target Temp """
+        temp = str(round(temp,1))
+        if len(temp) == 2:
+            temp = temp + '0'
+        elif len(temp) == 1:
+            temp = '0' + temp + '0'
+        command = f'stt{temp}'.replace('.','')
+        # Generate the URL.
+        url = FAST_API_URL_BASE + FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['url'] + f'?id={self.ID}&command={command}'
+        print(url)
+        logger = Logger(__file__, __name__)
+        logger.log('SEND', url)
+        # Generate the request.
+        request = WebRequest.Create(url)
+        method = FAST_API_URL_PATHS['prep_deck']['chiller-heater-shaker_raw_command']['']['method']
+        request.Method = method
+        response = request.GetResponse()
+        status_code = response.StatusCode
+        logger.log('RECEIVED', "Status Code: {0}".format(status_code))
+        if str(status_code) != 'OK':
+            __retry(url, method)
+        # Read the response.
+        encoding = ASCIIEncoding.ASCII
+        reader = StreamReader(response.GetResponseStream(), encoding)
+        response_str = reader.ReadToEnd()
+        print(response_str)
+        logger.log('RECEIVED', response_str)
      
     def shake_on(self):
         """ Start shaking with the current mixing speed """
