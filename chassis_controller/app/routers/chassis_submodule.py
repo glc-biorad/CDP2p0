@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Query, HTTPException
+from chassis_controller.app.config.BRADx_config import *
 
 from chassis_controller.app.routers.interfaces.utils import (
     REQUEST_START_FLAG,

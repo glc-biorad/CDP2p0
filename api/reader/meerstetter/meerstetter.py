@@ -33,7 +33,8 @@ class Meerstetter():
     __device_addresses = [1,2,3,4,5,6,7,8,9]
 
     # Private constants.
-    __COM_PORT = 'COM8'
+    __COM_PORT = 'COM8' # Unit A
+    #__COM_PORT = 'COM5' # Unit D
     __BAUD_RATE = 57600
     __DATA_BITS = 8
     __PARITY = None

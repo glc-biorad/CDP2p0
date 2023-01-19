@@ -5,7 +5,9 @@
 # zz - Bug fix
 FASTAPI_VERSION     = "1.1.0"
 
-CHASSIS_COM_PORT    = "COM13"
+CHASSIS_COM_PORT    = "COM13" # Unit A
+#CHASSIS_COM_PORT    = "COM7" # Unit D
+
 # Subsystem ID when accessed through the chassis/bus module
 CHASSIS_SUBSYSTEM_ID = 0x00
 

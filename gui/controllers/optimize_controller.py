@@ -20,8 +20,8 @@ except:
 from gui.util.coordinates_list_to_csv import coordinates_list_to_csv
 
 # Constants
-NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
-NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
+NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller"]
+NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip", "Lid Tray"]
 TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
 NINE_COLUMN_CONSUMABLES = ["Tip Transfer Tray"]
 EIGHT_COLUMN_CONSUMABLES = ["Tip Tray"]
@@ -175,14 +175,16 @@ class OptimizeController:
 		tray = self.view.tray_sv.get()
 		column = self.view.column_sv.get()
 		tip = self.view.tip_sv.get()
+		use_drip_plate=False
+		if (consumable in ["Tip Transfer Tray", "Lid Tray"]) and (tray in ['A','B','C','D']):
+			tip = 1000
+			use_drip_plate=True
 		if tip == '':
 			tip = None
 		else:
 			tip = int(tip)
-			print(tip)
 		use_z = self.view.use_z_iv.get()
 		slow_z = self.view.slow_z_iv.get()
-		use_drip_plate=False
 		coordinate = self.coordinates_model.select(f"Unit {self.unit} Upper Gantry Coordinates", consumable, tray, column)
 		x = coordinate[0][4]
 		y = coordinate[0][5]

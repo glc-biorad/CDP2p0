@@ -2,6 +2,7 @@ from fastapi import APIRouter, Query, HTTPException
 
 from chassis_controller.app.routers.interfaces.utils import BRADxBusPacket, BRADxBusPacketType
 from chassis_controller.app.routers.interfaces.BRADxBus import bradx_bus_timed_exchange
+from chassis_controller.app.config.BRADx_config import *
 
 router = APIRouter(
     prefix="",
