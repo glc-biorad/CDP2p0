@@ -436,6 +436,15 @@ class BuildProtocolController:
 			)
 			file_path = file.name
 			action_message = action_message + f" ({file_path})"
+		elif 'Change' in action_message.split():
+			# Get the temp value
+			temp = self.view.motion_dxdydz_sv.get()
+			try:
+				temp = float(temp)
+				temp = str(round(temp,1))
+			except:
+				temp = '60.0'
+			action_message = action_message + f" to {temp} C"
 		elif 'Thermocycle' in action_message.split():
 			if 'Protocol' in  action_message.split():
 				# Open the file browser to load a file to get the name of the protocol file
@@ -798,8 +807,10 @@ class BuildProtocolController:
 				# Raise the thermocycler
 				self.reader.raise_heater(split[2])
 			elif split[0] == 'Change':
+				# Get the temp
+				temp = float(split[-2])
 				# Change the Heater/Shaker temperature
-				self.upper_gantry.get_heater_shaker_temp_state()
+				self.upper_gantry.change_heater_shaker_temperature(temp)
 			# Update the progress bar
 			progress = (int(i) + 1 ) / n_actions
 			self.view.progressbar.set(progress)

@@ -13,5 +13,5 @@ class Server(multiprocessing.Process):
     def run(self, *args, **kwargs) -> None:
         # Get the current working path 
         path = os.path.abspath(os.getcwd()).split('\\')
-        app_dir = "\\".join(path + ['fastapi','app'])
+        app_dir = "\\".join(path + ['chassis_controller','app'])
         run('main:app', app_dir=app_dir, reload=True)

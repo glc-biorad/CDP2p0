@@ -147,10 +147,10 @@ Pre-Amp Thermocycler,,9,0,0,0,0,1000
 Pre-Amp Thermocycler,,10,0,0,0,0,1000
 Pre-Amp Thermocycler,,11,0,0,0,0,1000
 Pre-Amp Thermocycler,,12,0,0,0,0,1000
-Lid Tray,,1,0,0,0,0,1000
-Lid Tray,,2,0,0,0,0,1000
-Lid Tray,,3,0,0,0,0,1000
-Lid Tray,,4,0,0,0,0,1000
+Lid Tray,A,1,0,0,0,0,1000
+Lid Tray,B,1,0,0,0,0,1000
+Lid Tray,C,1,0,0,0,0,1000
+Lid Tray,D,1,0,0,0,0,1000
 Tip Transfer Tray,,1,-470400,-1402000,-1285000,0,1000
 Tip Transfer Tray,,2,-465200,-1402000,-1300000,0,1000
 Tip Transfer Tray,,3,-460100,-1402000,-1300000,0,1000
@@ -160,6 +160,10 @@ Tip Transfer Tray,,6,-443250,-1402000,-1285000,0,1000
 Tip Transfer Tray,,7,-438550,-1402000,-1286000,0,1000
 Tip Transfer Tray,,8,-433150,-1402000,-1286000,0,1000
 Tip Transfer Tray,,9,0,0,0,0,1000
+Tip Transfer Tray,A,1,0,0,0,0,1000
+Tip Transfer Tray,B,1,0,0,0,0,1000
+Tip Transfer Tray,C,1,0,0,0,0,1000
+Tip Transfer Tray,D,1,0,0,0,0,1000
 Assay Strip,A,1,-475150,-1852000,-700000,0,1000
 Assay Strip,A,2,0,0,0,0,1000
 Assay Strip,B,3,0,0,0,0,1000

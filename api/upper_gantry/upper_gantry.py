@@ -1408,6 +1408,13 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         temp_state = self.get_fast_api_interface().prep_deck.heater.get_temp_state()
         print(temp_state)
 
+    def change_heater_shaker_temperature(self, temp: float) -> None:
+        """ Change the heater/shaker temperature """
+        # Set the Target Temp
+        self.get_fast_api_interface().prep_deck.heater.stt(temp)
+        # Turn on temp control
+        self.get_fast_api_interface().prep_deck.heater.ton()
+
     def turn_on_shake(self, rpm: int, shake_time: int = None, time_units: str = None) -> None:
         """ Turns on the heater shaker shaking """
         if shake_time == None:
