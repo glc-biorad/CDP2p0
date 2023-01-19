@@ -53,6 +53,7 @@ class Controller:
 		self.view.bind('<Control-c>', self.copy)
 		self.view.bind('<Control-v>', self.paste)
 		self.view.bind('<Control-x>', self.cut)
+		self.view.bind('<Control-a>', self.all)
 		self.view.mainloop()
 
 	def backwards(self, event):
@@ -173,3 +174,8 @@ class Controller:
 			return None
 
 
+	def all(self, event) -> None:
+		""" Deals with selecting all rows in the treeview for the actions in the BuildProtocolFrame """
+		# Select all action items in the treeview of the build protocol tab
+		for item in self.build_protocol_controller.view.treeview.get_children():
+			self.build_protocol_controller.view.treeview.selection_add(item)

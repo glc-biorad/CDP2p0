@@ -1,0 +1,8 @@
+0: Pickup tips from A column 5
+1: Move to Mag Separator column 1 with 50 uL tips
+2: Aspirate 45 uLs with 50 uL tips at High pressure 1 time
+3: Move to Reagent Cartridge tray A column 12 with 50 uL tips
+4: Dispense 45 uLs with 50 uL tips at High pressure 1 time
+5: Eject tips in A column 5
+6: Home pipettor
+7: Delay for 5 minutes

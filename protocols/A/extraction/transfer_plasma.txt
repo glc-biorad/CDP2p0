@@ -1,0 +1,25 @@
+0: Pickup tips from A column 1
+1: Move to Sample Rack tray A with 1000 uL tips
+2: Aspirate 1000 uLs with 1000 uL tips at High pressure 1 time
+3: Move to Heater/Shaker column 1 with 1000 uL tips
+4: Dispense 1000 uLs with 1000 uL tips at High pressure 1 time
+5: Delay for 2 seconds
+6: Dispense 50 uLs with 1000 uL tips at High pressure 1 time
+7: Move to Sample Rack tray A with 1000 uL tips
+8: Aspirate 1000 uLs with 1000 uL tips at High pressure 1 time
+9: Move to Heater/Shaker column 1 with 1000 uL tips
+10: Dispense 1000 uLs with 1000 uL tips at High pressure 1 time
+11: Delay for 2 seconds
+12: Dispense 50 uLs with 1000 uL tips at High pressure 1 time
+13: Move to Sample Rack tray A with 1000 uL tips
+14: Aspirate 1000 uLs with 1000 uL tips at High pressure 1 time
+15: Move to Heater/Shaker column 1 with 1000 uL tips
+16: Dispense 1000 uLs with 1000 uL tips at High pressure 1 time
+17: Delay for 2 seconds
+18: Dispense 50 uLs with 1000 uL tips at High pressure 1 time
+19: Move to Sample Rack tray A with 1000 uL tips
+20: Aspirate 1000 uLs with 1000 uL tips at High pressure 1 time
+21: Move to Heater/Shaker column 1 with 1000 uL tips
+22: Dispense 1000 uLs with 1000 uL tips at High pressure 1 time
+23: Delay for 2 seconds
+24: Dispense 50 uLs with 1000 uL tips at High pressure 1 time

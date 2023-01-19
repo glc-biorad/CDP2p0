@@ -175,8 +175,11 @@ LABEL_ANNEAL_TIME_UNIT_POSY = 395
 LABEL_SECOND_DENATURE_TIME_UNIT_POSX = 267
 LABEL_SECOND_DENATURE_TIME_UNIT_POSY = 395
 BUTTON_SETTINGS_WIDTH = 100
-BUTTON_SETTINGS_POSX = 400
+BUTTON_SETTINGS_POSX = 330
 BUTTON_SETTINGS_POSY = 480
+BUTTON_TEC_POSX = 435
+BUTTON_TEC_POSY = 480
+BUTTON_TEC_WIDTH = 100
 
 # Therocyclers
 THERMOCYCLERS = (
@@ -548,6 +551,13 @@ class ThermocycleFrame(ctk.CTkFrame):
 			corner_radius=2,
 			width=BUTTON_SETTINGS_WIDTH,
 		)
+		# Create a TEC control settings button
+		self.button_tec = ctk.CTkButton(
+			master=self,
+			text='TEC',
+			corner_radius=2,
+			width=BUTTON_TEC_WIDTH,
+		)
 
 	def place_ui(self) -> None:
 		"""Deals with generation of the ThermocycleView UI"""
@@ -642,6 +652,9 @@ class ThermocycleFrame(ctk.CTkFrame):
 		# Place the clamp settings button
 		self.button_settings.place(x=BUTTON_SETTINGS_POSX, 
 			y=BUTTON_SETTINGS_POSY)
+		# Place the TEC control settings button
+		self.button_tec.place(x=BUTTON_TEC_POSX,
+			y=BUTTON_TEC_POSY)
 
 	def on_click(self, event):
 		x, y = event.x, event.y
@@ -1150,5 +1163,11 @@ class ThermocycleFrame(ctk.CTkFrame):
 		try:
 			self.button_settings.bind('<Button-1>', callback)
 		except:
-			print('ok')
+			pass
+
+	def bind_button_tec(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Binds the TEC settings button """
+		try:
+			self.button_tec.bind('<Button-1>', callback)
+		except:
 			pass

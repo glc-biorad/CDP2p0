@@ -15,6 +15,8 @@ from gui.views.build_protocol_frame import BuildProtocolFrame
 from gui.views.optimize_frame import OptimizeFrame
 from gui.views.configure_frame import ConfigureFrame
 
+from api.util.server import Server
+
 # Constants
 TITLE = "CDP 2.0 Development GUI"
 WIDTH = 780
@@ -39,6 +41,9 @@ class View(ctk.CTk):
 	configure_frame: ConfigureFrame = None
 	def __init__(self, model: Model) -> None:
 		super().__init__()
+		self.server = Server()
+		self.server.start()
+		self.protocol("WM_DELETE_WINDOW", self.on_closing)
 		print("Pass the model to the views!")
 		self.model = model
 		self.title(TITLE)
@@ -65,3 +70,8 @@ class View(ctk.CTk):
 	def create_ui(self) -> None:
 		# Create the MenuFrame
 		self.menu_frame.place_ui()
+
+	def on_closing(self, event=0) -> None:
+		""" Deals with the GUI window closing """
+		self.server.stop()
+		self.destroy()
