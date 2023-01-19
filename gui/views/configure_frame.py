@@ -1,5 +1,6 @@
 from typing import Any, Callable
 from tkinter import StringVar, IntVar
+import tkinter as tk
 import customtkinter as ctk
 
 # Import the model
@@ -332,3 +333,17 @@ class ConfigureFrame(ctk.CTkFrame):
 		self.optionmenu_10.place(x=OPTIONMENU_10_POSX, y=OPTIONMENU_10_POSY)
 		self.optionmenu_11.place(x=OPTIONMENU_11_POSX, y=OPTIONMENU_11_POSY)
 		self.optionmenu_12.place(x=OPTIONMENU_12_POSX, y=OPTIONMENU_12_POSY)
+
+	def bind_button_tec_read(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Bind the TEC Read Button to the controller """
+		try:
+			self.button_tec_read.bind('<Button-1>', callback)
+		except:
+			pass
+
+	def bind_button_tec_write(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Bind the TEC Write Button to the controller """
+		try:
+			self.button_tec_write.bind('<Button-1>', callback)
+		except:
+			pass

@@ -7,6 +7,7 @@ from gui.models.thermocycle_model import ThermocycleModel
 from gui.models.build_protocol_model import BuildProtocolModel
 from gui.models.optimize_model import OptimizeModel
 from gui.models.coordinates_model import CoordinatesModel
+from gui.models.configure_model import ConfigureModel
 
 DB_NAME = 'AppData/unit_'
 
@@ -27,6 +28,10 @@ class Model:
 		#m = TipUseModel(self.db_name, self.cursor, self.connection)
 		self.setup_state_table()
 		self.setup_coordinates_table(unit)
+
+	def get_configure_model(self) -> ConfigureModel:
+		self.configure_model = ConfigureModel(self.db_name, self.cursor, self.connection)
+		return self.configure_model
 
 	def get_thermocycle_model(self) -> ThermocycleModel:
 		self.thermocycle_model = ThermocycleModel(self.db_name, self.cursor, self.connection)

@@ -537,6 +537,7 @@ class BuildProtocolController:
 					amount = int(split[-1])
 					direction = split[2]
 					self.upper_gantry.move_relative(direction, amount, velocity='fast')
+					continue
 				# Or a chip move
 				elif split[1] == 'chip':
 					a = 1

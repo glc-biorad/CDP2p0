@@ -53,9 +53,6 @@ class OptimizeController:
 			print("No upper gantry control for optimize controller")
 			self.upper_gantry = None
 
-		# Get the unit
-		print("Optimize Frame needs to know what unit we are using! (all set to A hardcoded for now)")
-
 	def setup_bindings(self):
 		# Setup the bindings between the view and the controller
 		self.view.bind_button_print(self.print)

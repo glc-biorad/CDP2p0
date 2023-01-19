@@ -7,6 +7,7 @@ from gui.views.view import View
 from gui.controllers.thermocycle_controller import ThermocycleController
 from gui.controllers.build_protocol_controller import BuildProtocolController
 from gui.controllers.optimize_controller import OptimizeController
+from gui.controllers.configure_controller import ConfigureController
 
 # Import utilities
 from gui.util.insert_at_selected_row import insert_at_selected_row
@@ -33,6 +34,10 @@ class Controller:
 			model=self.model.get_optimize_model(),
 			view=self.view.optimize_frame
 		)
+		self.configure_controller = ConfigureController(
+			model=self.model.get_configure_model(),
+			view=self.view.configure_frame
+		)
 		try:
 			self.upper_gantry = UpperGantry()
 		except:
@@ -42,6 +47,7 @@ class Controller:
 		self.thermocycle_controller.setup_bindings()
 		self.build_protocol_controller.setup_bindings()
 		self.optimize_controller.setup_bindings()
+		self.configure_controller.setup_bindings()
 
 	def run(self) -> None:
 		self.view.bind('<Up>', self.backwards)
