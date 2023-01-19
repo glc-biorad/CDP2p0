@@ -1346,14 +1346,14 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         timer.stop(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.move_chip.__name__))
         logger.log('LOG-END', "Chip {0}/4 has been moved to {1}".format(chip_id, tray_out_location_letter))
 
-    def move_lid_new(self, lid_xyz: list, tray_xyz: list) -> None:
+    def move_lid_new(self, lid: list, tray: list) -> None:
         """ Moves a lid from the lid tray to a tray """
         # Move the pipettor to lid_xyz with the drip tray
-        self.move(x=lid_xyz[0], y=lid_xyz[1], z=lid_xyz[2], drip_plate=-3000000, use_drip_plate=True, tip=1000)
+        self.move(x=lid[0], y=lid[1], z=lid[2], drip_plate=lid[3], use_drip_plate=True, tip=1000)
         # Turn on suction cup
         self.turn_on_suction_cups()
         # Move to tray_xyz with drip plate
-        self.move(x=tray_xyz[0], y=tray_xyz[1], z=tray_xyz[2], drip_plate=-3000000, use_drip_plate=True, tip=1000)
+        self.move(x=tray[0], y=tray[1], z=tray[2], drip_plate=tray[3], use_drip_plate=True, tip=1000)
         # Turn off suction cup
         self.turn_off_suction_cups()
 
