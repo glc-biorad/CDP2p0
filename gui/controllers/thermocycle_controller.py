@@ -489,6 +489,8 @@ class ThermocycleController:
 		if use['D']:
 			print('D goes to 30')
 			self.meerstetter.change_temperature(4, 30, block=False)
+		# Close the Meerstetter connection
+		self.meerstetter.close()
 
 	def trace_cycles(self, *args) -> None:
 		""" Deals with the cycles entry changing """
@@ -1148,6 +1150,8 @@ class ThermocycleController:
 			# Reset the meerstetter board based on the thermocycler's address
 			address = THERMOCYCLER_IDS[thermocycler]
 			self.meerstetter.reset_device(address)
+			# Close the Meerstetter connection
+			self.meerstetter.close()
 
 	def set(self, event=None) -> None:
 		""" Set the temperature for the desired thermocycler """
@@ -1174,6 +1178,8 @@ class ThermocycleController:
 			# Set the temperature 
 			address = THERMOCYCLER_IDS[thermocycler]
 			self.meerstetter.change_temperature(address, temperature, block=False)
+			# Close the Meerstetter connection
+			self.meerstetter.close()
 
 	def get(self, event=None) -> None:
 		""" Get the temperature for the desired thermocycler """
@@ -1193,5 +1199,7 @@ class ThermocycleController:
 				return None
 			# Get the temperature 
 			address = THERMOCYCLER_IDS[thermocycler]
-			temperature = self.meerstetter.get_temperature(address)
-			self.temperature_sv.set(f'{temperature}')
+			temperature = float(self.meerstetter.get_temperature(address))
+			self.temperature_sv.set(f'{str(round(temperature,1))}')
+			# Close the Meerstetter connection
+			self.meerstetter.close()
