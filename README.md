@@ -8,7 +8,8 @@ Version Description cdp2p0.X.Y.Z.py:
 
 To-Do List:
 - use the Tip Use table (tip_use_model) to keep track of what tips are in what column of the tip boxes and what tip is currently where (need config tab)
-- add unit b, c, and d coordinates to a table in the database
-- test coordinate updating with the table
-- add api functionality to the gui 
-- setup protocols directory structure for each unit (test, demo, extraction, pre_amp, enrichment, quant, thermocycling
+- test why reader can't connect for unit C
+- add fastapi code to this repo
+- add heating control to heater/shaker GUI
+- add the pre-amp thermocycler to the thermocycle portion of the gui
+- allow users to start from selected row in action treeview with a yesno messagebox popup on start
