@@ -116,8 +116,8 @@ TOPLEVEL_LABEL_TEMPERATURE_POSY = 45
 TOPLEVEL_ENTRY_TEMPERATURE_POSX = 140
 TOPLEVEL_ENTRY_TEMPERATURE_POSY = 45
 TOPLEVEL_ENTRY_TEMPERATURE_WIDTH = 60
-TOPLEVEL_LABEL_C_POSX = 205
-TOPLEVEL_LABEL_C_POSY = 45
+TOPLEVEL_LABEL_TEC_C_POSX = 205
+TOPLEVEL_LABEL_TEC_C_POSY = 45
 TOPLEVEL_BUTTON_GET_POSX = 225
 TOPLEVEL_BUTTON_GET_POSY = 45
 TOPLEVEL_BUTTON_GET_WIDTH = 60
@@ -383,6 +383,7 @@ class ThermocycleController:
 		except Exception as e:
 			print(e)
 			print("Coulnd't connect to the Meerstetter with the ThermocycleController!")
+		print('here')
 		# Get the thermocycler data
 		n_cycles = {
 			'A': self.get_cycles(1),
@@ -438,7 +439,10 @@ class ThermocycleController:
 			self.meerstetter.change_temperature(1, first_denature_temperatures['A'], block=False)
 		if use['B']:
 			print(f"B goes to {first_denature_temperatures['B']} for {first_denature_times['B']}")
-			self.meerstetter.change_temperature(2, first_denature_temperatures['B'], block=False)
+			try:
+				self.meerstetter.change_temperature(2, first_denature_temperatures['B'], block=False)
+			except Exception as e:
+				print(e)
 		if use['C']:
 			print(f"C goes to {first_denature_temperatures['C']} for {first_denature_times['C']}")
 			self.meerstetter.change_temperature(3, first_denature_temperatures['C'], block=False)
@@ -992,30 +996,31 @@ class ThermocycleController:
 				pass
 
 	def move_tray_cd(self, event=None) -> None:
-		""" Move tray cd """
+		""" Move tray ab """
 		thread = threading.Thread(target=self.thread_move_tray_cd)
 		thread.start()
 	def thread_move_tray_cd(self) -> None:
-		""" Move Tray CD using a thread """
+		""" Move Tray AB using a thread """
 		# Get the tray position value
 		val = int(self.tray_cd_sv.get())
+		print(val)
 		# If trying to home go fast then force a home
 		if abs(val) == 0:
 			try:
 				# Get the current posx
 				posx = int(self.view.image_thermocycler_tray_cd.place_info()['x'])
-				if (posx == self.view.IMAGE_THERMOCYCLER_TRAY_CD_POSX):
-					return None
-				# Make sure the tray is allowed to close
+				#if (posx == self.view.IMAGE_THERMOCYCLER_TRAY_CD_POSX):
+				#	return None
+				# Make sure the tray is allowed to open
 				if True:
 					self.view.move_tray(ADDRESSES['CD'],
 						self.view.image_thermocycler_tray_cd, 
 						posx,
 						self.view.IMAGE_THERMOCYCLER_TRAY_CD_POSX,
-						use_fast_api=False,
+						steps=0,
 					)
-				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['CD'], 0, 200000, True)
-				self.fast_api_interface.reader.axis.home('reader', ADDRESSES['CD'], False)
+				#self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], 0, 200000, True)
+				#self.fast_api_interface.reader.axis.home('reader', ADDRESSES['AB'], False)
 			except Exception as e:
 				print(e)
 				pass
@@ -1037,11 +1042,10 @@ class ThermocycleController:
 						self.view.image_thermocycler_tray_cd, 
 						posx,
 						x,
-						use_fast_api=False,
+						steps=val,
 					)
-				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['CD'], val, 200000, False)
+				#self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], val, 200000, False)
 			except Exception as e:
-				print(e)
 				pass
 
 	def tec(self, event=None) -> None:
@@ -1090,13 +1094,13 @@ class ThermocycleController:
 		)
 		self.toplevel_entry_temperature.place(x=TOPLEVEL_ENTRY_TEMPERATURE_POSX,
 			y=TOPLEVEL_ENTRY_TEMPERATURE_POSY)
-		self.toplevel_label_c = ctk.CTkLabel(
+		self.toplevel_label_tec_c = ctk.CTkLabel(
 			master=self.toplevel_tec,
 			text='C',
 			font=(FONT,-16),
 		)
-		self.toplevel_label_c.place(x=TOPLEVEL_LABEL_C_POSX,
-			y=TOPLEVEL_LABEL_C_POSY)
+		self.toplevel_label_tec_c.place(x=TOPLEVEL_LABEL_TEC_C_POSX,
+			y=TOPLEVEL_LABEL_TEC_C_POSY)
 		self.toplevel_button_get = ctk.CTkButton(
 			master=self.toplevel_tec,
 			text='Get',

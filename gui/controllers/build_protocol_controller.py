@@ -553,27 +553,20 @@ class BuildProtocolController:
 					return None
 				# Or a lid move
 				elif split[1] == 'lid':
-					tray = ''
-					column = split[2]
-					if column == 'A':
-						column = 4
-					elif column == 'B':
-						column = 3
-					elif column == 'C':
-						column = 2
-					elif column == 'D':
-						column = 1
+					tray = split[2]
+					column=1
+					#column = split[2]
 					# Get the coordinates for the lid and tray
 					unit = self.model.db_name[-4]
 					table_name = f"Unit {unit} Upper Gantry Coordinates"
 					coordinate = self.coordinates_model.select(table_name, "Lid Tray", tray, column)
-					lid_xyz = [coordinate[0][4], coordinate[0][5], coordinate[0][6]]
+					lid = [coordinate[0][4], coordinate[0][5], coordinate[0][6], coordinate[0][7]]
 					if column == 1:
-						tray_xyz = [-18500, -1781750, -552000]
+						tray = [-18500, -1781750, -552000, -1198000]
 					else:
 						print("Only Lid D works right now")
 					# Move the lid
-					self.upper_gantry.move_lid_new(lid_xyz, tray_xyz)
+					self.upper_gantry.move_lid_new(lid, tray)
 					continue
 				i0 = 2
 				try:

@@ -1,6 +1,8 @@
 """
 System which passes data from the GUI to the model
 """
+import threading
+
 from gui.models.model import Model
 from gui.views.view import View
 
@@ -17,6 +19,12 @@ try:
 	from api.upper_gantry.upper_gantry import UpperGantry
 except:
 	print("Upper gantry could not be imported for the Controller")
+
+# Import the reader api
+try:
+	from api.reader.reader import Reader
+except:
+	print("Reader could not be imported for the Controller")
 
 class Controller:
 	def __init__(self, model: Model, view: View) -> None:
@@ -60,11 +68,17 @@ class Controller:
 		self.view.bind('<Control-v>', self.paste)
 		self.view.bind('<Control-x>', self.cut)
 		self.view.bind('<Control-a>', self.all)
+		self.view.bind('<Shift H>', self.home_imager)
 		self.view.mainloop()
 
 	def backwards(self, event):
 		""" Deals with moving relative moves
 		"""
+		# Make sure we are on the Image Frame
+		#current_frame = self.view.menu_frame.current_view
+		#from gui.views.image_frame import ImageFrame
+		#from gui.views.optimize_frame import OptimizeFrame
+		#if type(current_frame) == ImageFrame:
 		# Get the x value of labels on the tabs we are interested to check which tab is open relative to the parent
 		x_optimize = self.optimize_controller.view.label_consumable.winfo_x()
 		# Determine which tab we are on based on the position of a single widget
@@ -72,6 +86,9 @@ class Controller:
 			# Get the Y value for the relative move backwards
 			y = int(self.optimize_controller.view.y_sv.get())
 			self.upper_gantry.move_relative('backwards', y, velocity='slow')
+	def thread_backwards_reader(self) -> None:
+		self.reader = Reader()
+		#self.reader.move_imager()
 
 	def forwards(self, event):
 		""" Deals with moving relative moves
@@ -185,3 +202,17 @@ class Controller:
 		# Select all action items in the treeview of the build protocol tab
 		for item in self.build_protocol_controller.view.treeview.get_children():
 			self.build_protocol_controller.view.treeview.selection_add(item)
+
+
+	def home_imager(self, event) -> None:
+		""" Homes the imager if H is pressed not h """
+		# Make sure we are on the Image Frame
+		current_frame = self.view.menu_frame.current_view
+		from gui.views.image_frame import ImageFrame
+		if type(current_frame) == ImageFrame:
+			thread = threading.Thread(target=self.thread_home_imager)
+			thread.start()
+	def thread_home_imager(self) -> None:
+		self.reader = Reader()
+		self.reader.home_imager()
+		self.reader.close()

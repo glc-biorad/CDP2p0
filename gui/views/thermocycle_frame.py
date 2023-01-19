@@ -841,10 +841,15 @@ class ThermocycleFrame(ctk.CTkFrame):
 		# Get the animation steps
 		dx = (x-x0)/n_steps
 		dt = seconds/n_steps
+		print(steps)
+		print('here')
 		if steps != 0:
 			steps = -abs(steps)
 		# Determine the direction to move the tray (open or closed)
 		if use_fast_api:
+			if steps == 0:
+				self.fast_api_interface.reader.axis.move('reader', address, 0, 200000, True, True)
+				self.fast_api_interface.reader.axis.home('reader', address, False, True)
 			try:
 				if dx < 0:
 					# Close the tray (dx is based on position of the tray widget in its parent frame)

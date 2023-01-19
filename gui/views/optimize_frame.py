@@ -182,8 +182,8 @@ CONSUMABLES = (
 	"Chip",
 	"",
 )
-NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
-NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
+NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller"]
+NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip", "Lid Tray"]
 TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
 EIGHT_COLUMN_CONSUMABLES = ["Tip Transfer Tray", "Tip Tray"]
 FOUR_COLUMN_CONSUMABLES = ["Heater/Shaker"]
