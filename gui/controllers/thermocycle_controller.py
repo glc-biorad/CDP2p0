@@ -28,6 +28,11 @@ THERMOCYCLER_IDS = {
 	'B': 2,
 	'C': 3,
 	'D': 4,
+	"Aux Heater A": 5,
+	"Aux Heater B": 6,
+	"Aux Heater C": 7,
+	"Aux Heater D": 8,
+	"Pre-Amp Thermocycler": 9,
 }
 ADDRESSES = {
 	'A': 8,
@@ -37,6 +42,13 @@ ADDRESSES = {
 	'AB': 6,
 	'CD': 7,
 }
+THERMOCYCLER_VALUES = (
+	'A',
+	'B',
+	'C',
+	'D',
+	"Pre-Amp Thermocycler",
+)
 FONT = "Sergio UI"
 TOPLEVEL_SETTINGS_WIDTH = 265
 TOPLEVEL_SETTINGS_HEIGHT = 270
@@ -92,6 +104,31 @@ TOPLEVEL_ENTRY_TRAY_CD_WIDTH = 150
 TOPLEVEL_BUTTON_CD_POSX = 205
 TOPLEVEL_BUTTON_CD_POSY = 230
 TOPLEVEL_BUTTON_CD_WIDTH = 35
+TOPLEVEL_TEC_WIDTH = 370
+TOPLEVEL_TEC_HEIGHT = 120
+TOPLEVEL_LABEL_THERMOCYCLER_POSX = 20
+TOPLEVEL_LABEL_THERMOCYCLER_POSY = 5
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_POSX = 140
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_POSY = 5
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_WIDTH = 210
+TOPLEVEL_LABEL_TEMPERATURE_POSX = 25
+TOPLEVEL_LABEL_TEMPERATURE_POSY = 45
+TOPLEVEL_ENTRY_TEMPERATURE_POSX = 140
+TOPLEVEL_ENTRY_TEMPERATURE_POSY = 45
+TOPLEVEL_ENTRY_TEMPERATURE_WIDTH = 60
+TOPLEVEL_LABEL_C_POSX = 205
+TOPLEVEL_LABEL_C_POSY = 45
+TOPLEVEL_BUTTON_GET_POSX = 225
+TOPLEVEL_BUTTON_GET_POSY = 45
+TOPLEVEL_BUTTON_GET_WIDTH = 60
+TOPLEVEL_BUTTON_SET_POSX = 290
+TOPLEVEL_BUTTON_SET_POSY = 45
+TOPLEVEL_BUTTON_SET_WIDTH = 60
+TOPLEVEL_BUTTON_SET_COLOR = '#10adfe' 
+TOPLEVEL_BUTTON_RESET_POSX = 140
+TOPLEVEL_BUTTON_RESET_POSY = 85
+TOPLEVEL_BUTTON_RESET_WIDTH = 210
+TOPLEVEL_BUTTON_RESET_COLOR = '#fc0303'
 
 class ThermocycleController:
 	"""
@@ -125,6 +162,7 @@ class ThermocycleController:
 		self.view.bind_button_load(self.load)
 		self.view.bind_button_home(self.home)
 		self.view.bind_button_settings(self.settings)
+		self.view.bind_button_tec(self.tec)
 
 	def get_thermocycler_sv(self, id: int = None) -> tk.StringVar:
 		return self.model.thermocycler_sv
@@ -342,7 +380,8 @@ class ThermocycleController:
 		# Initialize the Meerstetter
 		try:
 			self.meerstetter = Meerstetter()
-		except:
+		except Exception as e:
+			print(e)
 			print("Coulnd't connect to the Meerstetter with the ThermocycleController!")
 		# Get the thermocycler data
 		n_cycles = {
@@ -1002,3 +1041,157 @@ class ThermocycleController:
 			except Exception as e:
 				print(e)
 				pass
+
+	def tec(self, event=None) -> None:
+		""" Create a Toplevel window to deal with the TEC """
+		self.create_tec_toplevel()
+	def create_tec_toplevel(self) -> None:
+		""" Create a Toplevel window for the TEC """
+		self.toplevel_tec = ctk.CTkToplevel(self.view.master)
+		self.toplevel_tec.geometry(f'{TOPLEVEL_TEC_WIDTH}x{TOPLEVEL_TEC_HEIGHT}')
+		self.toplevel_tec.title("TEC")
+		# Create and place the Thermocycler label and optionmenu
+		self.toplevel_label_thermocycler = ctk.CTkLabel(
+			master=self.toplevel_tec, 
+			text='Thermocycler:', 
+			font=(FONT,-16),
+		)
+		self.toplevel_label_thermocycler.place(x=TOPLEVEL_LABEL_THERMOCYCLER_POSX, 
+			y=TOPLEVEL_LABEL_THERMOCYCLER_POSY)
+		self.thermocycler_sv = tk.StringVar()
+		self.thermocycler_sv.set('')
+		self.toplevel_optionmenu_thermocycler = ctk.CTkOptionMenu(
+			master=self.toplevel_tec,
+			variable=self.thermocycler_sv,
+			values=THERMOCYCLER_VALUES,
+			font=(FONT,-12),
+			corner_radius=2,
+			width=TOPLEVEL_OPTIONMENU_THERMOCYCLER_WIDTH,
+		)
+		self.toplevel_optionmenu_thermocycler.place(x=TOPLEVEL_OPTIONMENU_THERMOCYCLER_POSX,
+			y=TOPLEVEL_OPTIONMENU_THERMOCYCLER_POSY)
+		# Create and place the temperature label, entry, and buttons
+		self.toplevel_label_temperature = ctk.CTkLabel(
+			master=self.toplevel_tec,
+			text='Temperature:',
+			font=(FONT,-16),
+		)
+		self.toplevel_label_temperature.place(x=TOPLEVEL_LABEL_TEMPERATURE_POSX,
+			y=TOPLEVEL_LABEL_TEMPERATURE_POSY)
+		self.temperature_sv = tk.StringVar()
+		self.temperature_sv.set('')
+		self.toplevel_entry_temperature = ctk.CTkEntry(
+			master=self.toplevel_tec,
+			textvariable=self.temperature_sv,
+			font=(FONT,-16),
+			width=TOPLEVEL_ENTRY_TEMPERATURE_WIDTH,
+		)
+		self.toplevel_entry_temperature.place(x=TOPLEVEL_ENTRY_TEMPERATURE_POSX,
+			y=TOPLEVEL_ENTRY_TEMPERATURE_POSY)
+		self.toplevel_label_c = ctk.CTkLabel(
+			master=self.toplevel_tec,
+			text='C',
+			font=(FONT,-16),
+		)
+		self.toplevel_label_c.place(x=TOPLEVEL_LABEL_C_POSX,
+			y=TOPLEVEL_LABEL_C_POSY)
+		self.toplevel_button_get = ctk.CTkButton(
+			master=self.toplevel_tec,
+			text='Get',
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_BUTTON_GET_WIDTH,
+			command=self.get,
+		)
+		self.toplevel_button_get.place(x=TOPLEVEL_BUTTON_GET_POSX,
+			y=TOPLEVEL_BUTTON_GET_POSY)
+		self.toplevel_button_set = ctk.CTkButton(
+			master=self.toplevel_tec,
+			text='Set',
+			font=(FONT,-16),
+			corner_radius=2,
+			fg_color=TOPLEVEL_BUTTON_SET_COLOR,
+			width=TOPLEVEL_BUTTON_SET_WIDTH,
+			command=self.set,
+		)
+		self.toplevel_button_set.place(x=TOPLEVEL_BUTTON_SET_POSX,
+			y=TOPLEVEL_BUTTON_SET_POSY)
+		# Create and place the Reset button
+		self.toplevel_button_reset = ctk.CTkButton(
+			master=self.toplevel_tec,
+			text='Reset',
+			font=(FONT,-16),
+			corner_radius=2,
+			fg_color=TOPLEVEL_BUTTON_RESET_COLOR,
+			width=TOPLEVEL_BUTTON_RESET_WIDTH,
+			command=self.reset,
+		)
+		self.toplevel_button_reset.place(x=TOPLEVEL_BUTTON_RESET_POSX,
+			y=TOPLEVEL_BUTTON_RESET_POSY)
+
+	def reset(self, event=None) -> None:
+		""" Reset the desired thermocycler """
+		thread = threading.Thread(target=self.thread_reset)
+		thread.start()
+	def thread_reset(self) -> None:
+		""" Function for reseting the Thermocyclers on a Thread """
+		# Get the thermocycler selected on the TEC Toplevel window
+		thermocycler = self.thermocycler_sv.get()
+		if thermocycler != '':
+			# Initialize the Meerstetter object
+			try:
+				self.meerstetter = Meerstetter()
+			except Exception as e:
+				print(e)
+				print("Couldn't initialize Meerstetter for the ThermocycleController")
+				return None
+			# Reset the meerstetter board based on the thermocycler's address
+			address = THERMOCYCLER_IDS[thermocycler]
+			self.meerstetter.reset_device(address)
+
+	def set(self, event=None) -> None:
+		""" Set the temperature for the desired thermocycler """
+		thread = threading.Thread(target=self.thread_set)
+		thread.start()
+	def thread_set(self) -> None:
+		""" Function for setting the temperature of the set Thermocycler on a Thread """
+		# Get the thermocycler selected on the TEC Toplevel window 
+		thermocycler = self.thermocycler_sv.get()
+		if thermocycler != '':
+			try:
+				temperature = int(self.temperature_sv.get())
+			except Exception as e:
+				print(e)
+				print("The temperature entered must be an integer")
+				return None
+			# Initialize the Meerstetter object
+			try:
+				self.meerstetter = Meerstetter()
+			except Exception as e:
+				print(e)
+				print("Couldn't initialize Meerstetter for the ThermocycleController")
+				return None
+			# Set the temperature 
+			address = THERMOCYCLER_IDS[thermocycler]
+			self.meerstetter.change_temperature(address, temperature, block=False)
+
+	def get(self, event=None) -> None:
+		""" Get the temperature for the desired thermocycler """
+		thread = threading.Thread(target=self.thread_get)
+		thread.start()
+	def thread_get(self) -> None:
+		""" Function for getting the temperature of the set Thermocycler on a Thread """
+		# Get the thermocycler selected on the TEC Toplevel window 
+		thermocycler = self.thermocycler_sv.get()
+		if thermocycler != '':
+			# Initialize the Meerstetter object
+			try:
+				self.meerstetter = Meerstetter()
+			except Exception as e:
+				print(e)
+				print("Couldn't initialize Meerstetter for the ThermocycleController")
+				return None
+			# Get the temperature 
+			address = THERMOCYCLER_IDS[thermocycler]
+			temperature = self.meerstetter.get_temperature(address)
+			self.temperature_sv.set(f'{temperature}')

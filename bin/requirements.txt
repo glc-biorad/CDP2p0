@@ -1,6 +1,6 @@
 numpy
 pandas
-pillow
+Pillow
 pyserial
 matplotlib
 clr

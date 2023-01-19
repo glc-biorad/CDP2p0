@@ -77,6 +77,12 @@ FAST_API_URL_PATHS = {
                 },
         },
         'prep_deck': {
+            'chiller-heater-shaker_raw_command' : {
+                '': {
+                    'method': 'GET',
+                    'url': 'prep_deck/chiller-heater-shaker_raw_command/{id,command}'
+                    }
+            },
             'axis': {
                 '': {
                     'method': 'GET',
@@ -124,14 +130,6 @@ FAST_API_URL_PATHS = {
                     }
                 }
         },
-        'prep_deck' : {
-            'chiller-heater-shaker_raw_command' : {
-                '': {
-                    'method': 'GET',
-                    'url': 'prep_deck/chiller-heater-shaker_raw_command/{id,command}'
-                    }
-            }
-        }
     }
 
 def add_fast_api_parameters(url, parameters_dict):

@@ -1,6 +1,5 @@
 import os
 import multiprocessing
-from fastapi import FastAPI
 from uvicorn import Config, Server, run
 
 class Server(multiprocessing.Process):
