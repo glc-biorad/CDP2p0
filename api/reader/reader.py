@@ -89,6 +89,9 @@ class Reader(api.util.motor.Motor):
         self.led = LED(self.controller, self.__ADDRESS_LED)
         self.camcontroller = None #= camera.CamController()
 
+    def get_fast_api_interface(self):
+        return self.__FAST_API_INTERFACE
+
     def get_position(self):
         x = self.__FAST_API_INTERFACE.reader.axis.get_position(self.__MODULE_NAME, self.__ID['X'])
         y = self.__FAST_API_INTERFACE.reader.axis.get_position(self.__MODULE_NAME, self.__ID['Y'])
