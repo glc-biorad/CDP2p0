@@ -87,7 +87,11 @@ class Reader(api.util.motor.Motor):
         self.controller = Controller(com_port=self.__COM_PORT)
         self.__FAST_API_INTERFACE = FastAPIInterface(unit)
         self.led = LED(self.controller, self.__ADDRESS_LED)
-        self.camcontroller = None #= camera.CamController()
+        try:
+            self.camcontroller = camera.CamController()
+        except Exception as e:
+            print(e)
+            self.camcontroller = None
 
     def get_fast_api_interface(self):
         return self.__FAST_API_INTERFACE
