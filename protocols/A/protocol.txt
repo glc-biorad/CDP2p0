@@ -1,4 +1,5 @@
-0: Home pipettor
+0: Comment: Test to check functionality of new GUI updates
 1: Home pipettor
-2: Home pipettor
-3: Home pipettor
+2: Move to Reagent Cartridge tray A column 1 with 1000 uL tips
+3: Pause for user input
+4: Home pipettor fast
