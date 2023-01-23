@@ -26,9 +26,9 @@ TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller",
 NINE_COLUMN_CONSUMABLES = ["Tip Transfer Tray"]
 EIGHT_COLUMN_CONSUMABLES = ["Tip Tray"]
 FOUR_COLUMN_CONSUMABLES = ["Heater/Shaker"]
-THREE_COLUMN_CONSUMABLES = ["DG8"]
+THREE_COLUMN_CONSUMABLES = ["DG8", "Tray"]
 TWO_COLUMN_CONSUMABLES = ["Assay Strip"]
-SPECIAL_CONSUMABLES = ["DG8", "Chip"]
+SPECIAL_CONSUMABLES = ["DG8", "Tray"]
 
 class OptimizeController:
 	"""System for passing data from the view to the model

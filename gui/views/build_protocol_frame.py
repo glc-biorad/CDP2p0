@@ -181,9 +181,9 @@ NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
 TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
 EIGHT_COLUMN_CONSUMABLES = ["Tip Transfer Tray", "Assay Strip", "Tip Tray"]
 FOUR_COLUMN_CONSUMABLES = ["Heater/Shaker"]
-THREE_COLUMN_CONSUMABLES = ["DG8"]
+THREE_COLUMN_CONSUMABLES = ["DG8", "Tray"]
 TWO_COLUMN_CONSUMABLES = ["Assay Strip"]
-SPECIAL_CONSUMABLES = ["DG8", "Chip"]
+SPECIAL_CONSUMABLES = ["DG8", "Tray"]
 
 # Constant Other Option Values
 CONSUMABLES_OPTION_VALUES = [
@@ -198,7 +198,7 @@ CONSUMABLES_OPTION_VALUES = [
 	"Pre-Amp Thermocycler",
 	"Assay Strip",
 	"DG8",
-	"Chip",
+	"Tray",
 	"",
 ]
 DG8_TRAY_OPTION_VALUES = ['1000', '0100', '0010', '0000',]

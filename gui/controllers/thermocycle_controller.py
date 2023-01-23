@@ -383,7 +383,6 @@ class ThermocycleController:
 		except Exception as e:
 			print(e)
 			print("Coulnd't connect to the Meerstetter with the ThermocycleController!")
-		print('here')
 		# Get the thermocycler data
 		n_cycles = {
 			'A': self.get_cycles(1),

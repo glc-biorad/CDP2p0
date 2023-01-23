@@ -1,4 +1,5 @@
 import types
+import tkinter as tk
 import customtkinter as ctk
 
 from gui.controllers.image_controller import ImageController
@@ -6,11 +7,16 @@ from gui.controllers.image_controller import ImageController
 from gui.models.model import Model
 from gui.models.image_model import ImageModel
 
+# Import the Reader API
+from api.reader.reader import Reader
+
 # Constants
 IMAGER_VIEW_POSX = 10
 IMAGER_VIEW_POSY = 20
 IMAGER_VIEW_WIDTH = 400
 IMAGER_VIEW_HEIGHT = 400
+IMAGER_VIEW_SCALED_WIDTH = 803
+IMAGER_VIEW_SCALED_HEIGHT = 803
 LABEL_FILTER_POSX = 490
 LABEL_FILTER_POSY = 10
 OPTIONMENU_FILTER_POSX = 425
@@ -91,13 +97,14 @@ class ImageFrame(ctk.CTkFrame):
 
 	def create_ui(self) -> None:
 		# Place the Imager View
-		self.textbox_imager_view = ctk.CTkTextbox(
-			master=self,
-			width=IMAGER_VIEW_WIDTH,
-			height=IMAGER_VIEW_HEIGHT,
-			font=("Roboto Medium", -12),
-			state='disabled',
-		)
+		#self.textbox_imager_view = ctk.CTkTextbox(
+		#	master=self,
+		#	width=IMAGER_VIEW_WIDTH,
+		#	height=IMAGER_VIEW_HEIGHT,
+		#	font=("Roboto Medium", -12),
+		#	state='disabled',
+		#)
+		self.textbox_imager_view = tk.Canvas(self, width=IMAGER_VIEW_WIDTH, height=IMAGER_VIEW_HEIGHT, bg='red')
 		# Place the Filter Option Menu
 		self.label_filter = ctk.CTkLabel(master=self, text='Filter', font=("Roboto Medium", -16))
 		sv = self.controller.get_filter_sv(1)
@@ -225,6 +232,37 @@ class ImageFrame(ctk.CTkFrame):
 		print("Save View")
 
 	def on_click_load_view(self) -> None:
+		from PIL import Image, ImageTk
+		try:
+			self.reader = Reader()
+			# Get the camera
+			camcontroller = self.reader.camcontroller
+			camera = camcontroller.camera
+			# Snap continuously
+			camcontroller.snap_continuous_prep()
+			#camcontroller.snap_single()
+			camcontroller.setExposureTimeMicroseconds(2000)
+			image = camera.GetNextImage(1000)
+			array = image.GetNDArray()
+			array = array / (2**16-1)
+			array *= 255
+			print(type(array))
+			print(array.shape)
+			array = array.transpose((0,1))
+			_image = Image.fromarray(array)
+			width, height = _image.size
+			#_image = _image.resize((int(0.1468*width),int(0.220105*height)))
+			_image = _image.resize((IMAGER_VIEW_SCALED_WIDTH,IMAGER_VIEW_SCALED_HEIGHT))
+			print(_image.size)
+			self.img = ImageTk.PhotoImage(image=_image)
+			#self.textbox_imager_view.create_image(500,500,anchor='nw', image=img)
+			image.Release()
+			camera.EndAcquisition()
+			self.textbox_imager_view.create_image(0,0, anchor=tk.CENTER, image=self.img)
+		except Exception as e:
+			print(e)
+			tk.messagebox.showwarning(title="Reader Connection Issue", message="Reader could not be initialized")
+			self.reader = None
 		print("Load View")
 
 	def on_click_scan_chip(self) -> None:
