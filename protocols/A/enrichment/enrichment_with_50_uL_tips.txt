@@ -1,0 +1,135 @@
+0: Pickup tips Tray A Column 6
+1: Move to Mag Separator Column 1 with 50 uL tips
+2: Aspirate 40 uL with 50 uL tips at high pressure
+3: Move to Mag Separator Column 2 with 50 uL tips
+4: Dispense 40 uL with 50 uL tips at high pressure
+5: Move to Mag Separator Column 1 with 50 uL tips
+6: Aspirate 40 uL with 50 uL tips at high pressure
+7: Move to Mag Separator Column 2 with 50 uL tips
+8: Dispense 40 uL with 50 uL tips at high pressure
+9: Disengage Magnet
+10: Eject tips Tray A Column 6
+11: Pickup tips Tray A Column 7
+12: Move to Reagent Cartridge Tray A Column 7 with 50 uL tips
+13: Aspirate 48 uL with 50 uL tips at high pressure
+14: Move to Mag Separator Column 2 with 50 uL tips
+15: Dispense 48 uL with 50 uL tips at low pressure
+16: Delay for 3 seconds
+17: Dispense 10 uL with 50 uL tips at low pressure
+18: Mix 40 uL with 50 uL tips at high pressure
+19: Mix 40 uL with 50 uL tips at high pressure
+20: Mix 40 uL with 50 uL tips at high pressure
+21: Mix 40 uL with 50 uL tips at high pressure
+22: Mix 40 uL with 50 uL tips at high pressure
+23: Mix 40 uL with 50 uL tips at high pressure
+24: Mix 40 uL with 50 uL tips at high pressure
+25: Mix 40 uL with 50 uL tips at high pressure
+26: Delay for 3 seconds
+27: Dispense 10 uL with 50 uL tips at high pressure
+28: Delay for 9 minutes
+29: Engage Magnet
+30: Delay for 1 minute
+31: Aspirate 43 uL with 50 uL tips at high pressure
+32: Move to Mag Separator Column 3 with 50 uL tips
+33: Dispense 43 uL with 50 uL tips at high pressure
+34: Move to Mag Separator Column 2 with 50 uL tips
+35: Aspirate 43 uL with 50 uL tips at high pressure
+36: Move to Mag Separator Column 3 with 50 uL tips
+37: Dispense 43 uL with 50 uL tips at high pressure
+38: Move to Mag Separator Column 2 with 50 uL tips
+39: Aspirate 43 uL with 50 uL tips at high pressure
+40: Move to Mag Separator Column 3 with 50 uL tips
+41: Dispense 43 uL with 50 uL tips at high pressure
+42: Disengage Magnet
+43: Move to Reagent Cartridge Tray A Column 7 with 50 uL tips
+44: Aspirate 36 uL with 50 uL tips at high pressure
+45: Move to Mag Separator Column 3 with 50 uL tips
+46: Dispense 36 uL with 50 uL tips at low pressure
+47: Delay for 3 seconds
+48: Dispense 10 uL with 50 uL tips at low pressure
+49: Move to Reagent Cartridge Tray A Column 7 with 50 uL tips
+50: Aspirate 36 uL with 50 uL tips at high pressure
+51: Move to Mag Separator Column 3 with 50 uL tips
+52: Dispense 36 uL with 50 uL tips at low pressure
+53: Delay for 3 seconds
+54: Dispense 10 uL with 50 uL tips at low pressure
+55: Mix 40 uL with 50 uL tips at high pressure
+56: Mix 40 uL with 50 uL tips at high pressure
+57: Mix 40 uL with 50 uL tips at high pressure
+58: Mix 40 uL with 50 uL tips at high pressure
+59: Mix 40 uL with 50 uL tips at high pressure
+60: Mix 40 uL with 50 uL tips at high pressure
+61: Mix 40 uL with 50 uL tips at high pressure
+62: Mix 40 uL with 50 uL tips at high pressure
+63: Delay for 3 seconds
+64: Dispense 10 uL with 50 uL tips at low pressure
+65: Delay for 10 minutes
+66: Engage Magnet
+67: Delay for 1 minute
+68: Aspirate 50 uL with 50 uL tips at high pressure
+69: Move to Reagent Cartridge Tray A Column 2 with 50 uL tips
+70: Dispense 50 uL with 50 uL tips at high pressure
+71: Delay for 3 seconds
+72: Dispense 10 uL with 50 uL tips at high pressure
+73: Move to Mag Separator Column 3 with 50 uL tips
+74: Aspirate 50 uL with 50 uL tips at high pressure
+75: Move to Reagent Cartridge Tray A Column 2 with 50 uL tips
+76: Dispense 50 uL with 50 uL tips at high pressure
+77: 0: Delay for 3 seconds
+78: Dispense 10 uL with 50 uL tips at high pressure
+79: Move to Mag Separator Column 3 with 50 uL tips
+80: Aspirate 50 uL with 50 uL tips at high pressure
+81: Move to Reagent Cartridge Tray A Column 2 with 50 uL tips
+82: Dispense 50 uL with 50 uL tips at high pressure
+83: Delay for 3 seconds
+84: Dispense 10 uL with 50 uL tips at high pressure
+85: Move to Mag Separator Column 3 with 50 uL tips
+86: Aspirate 50 uL with 50 uL tips at high pressure
+87: Move to Reagent Cartridge Tray A Column 2 with 50 uL tips
+88: Dispense 50 uL with 50 uL tips at high pressure
+89: Delay for 3 seconds
+90: Dispense 10 uL with 50 uL tips at high pressure
+91: Eject tips Tray A Column 7
+92: Pickup tips Tray A Column 3
+93: Disengage Magnet
+94: Move to Reagent Cartridge Tray A Column 10 with 1000 uL tips
+95: Aspirate 200 uL with 1000 uL tips at high pressure
+96: Move to Mag Separator Column 3 with 1000 uL tips
+97: Dispense 200 uL with 1000 uL tips at high pressure
+98: Engage Magnet
+99: Delay for 1 minute
+100: Aspirate 200 uL with 1000 uL tips at high pressure
+101: Move to Reagent Cartridge Tray A Column 2 with 1000 uL tips
+102: Dispense 200 uL with 1000 uL tips at high pressure
+103: Disengage Magnet
+104: Move to Reagent Cartridge Tray A Column 10 with 1000 uL tips
+105: Aspirate 200 uL with 1000 uL tips at high pressure
+106: Move to Mag Separator Column 3 with 1000 uL tips
+107: Dispense 200 uL with 1000 uL tips at high pressure
+108: Engage Magnet
+109: Delay for 1 minute
+110: Aspirate 200 uL with 1000 uL tips at high pressure
+111: Move to Reagent Cartridge Tray A Column 2 with 1000 uL tips
+112: Dispense 200 uL with 1000 uL tips at high pressure
+113: Eject tips Tray A Column 3
+114: Pickup tips Tray A Column 5
+115: Move to Mag Separator Column 3 with 50 uL tips
+116: Aspirate 20 uL with 50 uL tips at high pressure
+117: Move to Reagent Cartridge Tray A Column 2 with 50 uL tips
+118: Dispense 20 uL with 50 uL tips at high pressure
+119: Eject tips Tray A Column 5
+120: Delay for 3 minutes
+121: Pickup tips Tray A Column 8
+122: Disengage Magnet
+123: Move to Reagent Cartridge Tray A Column 5 with 50 uL tips
+124: Aspirate 36 uL with 50 uL tips at high pressure
+125: Move to Mag Separator Column 3 with 50 uL tips
+126: Dispense 36 uL with 50 uL tips at high pressure
+127: Mix 20 uL with 50 uL tips at high pressure
+128: Mix 20 uL with 50 uL tips at high pressure
+129: Mix 20 uL with 50 uL tips at high pressure
+130: Mix 20 uL with 50 uL tips at high pressure
+131: Mix 20 uL with 50 uL tips at high pressure
+132: for 1 minute
+133: Magnet
+134: tips Tray A Column 8
