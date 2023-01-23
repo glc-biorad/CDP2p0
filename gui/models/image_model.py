@@ -4,9 +4,9 @@ import tkinter as tk
 
 class ImageModel:
 	def __init__(self):
-		self.connection = sqlite3.connect('cdp2p0_gui.db')
-		self.cursor = self.connection.cursor()
-		self.cursor.execute("create table if not exists image (title text)")
+		#self.connection = sqlite3.connect('cdp2p0_gui.db')
+		#self.cursor = self.connection.cursor()
+		#self.cursor.execute("create table if not exists image (title text)")
 		self.filter_sv = tk.StringVar()
 		self.filter_sv.set(' ')
 		self.led_sv = tk.StringVar()
