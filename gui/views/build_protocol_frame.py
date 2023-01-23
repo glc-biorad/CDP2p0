@@ -1,6 +1,7 @@
+from PIL import Image
 from typing import Any, Callable
 from tkinter import StringVar, IntVar
-from PIL import Image
+from PIL import Image, ImageTk
 import customtkinter as ctk
 import tkinter as tk
 
@@ -104,35 +105,41 @@ BUTTON_PIPETTOR_ADD_POSX = 550
 BUTTON_PIPETTOR_ADD_POSY = 160
 BUTTON_PIPETTOR_ADD_WIDTH = 40
 BUTTON_PIPETTOR_ADD_HEIGHT = 25
+LABEL_OTHER_POSX = 5
+LABEL_OTHER_POSY = 220
+LABEL_OTHER_OPTION_POSX = 210
+LABEL_OTHER_OPTION_POSY = 190
+OPTIONMENU_OTHER_OPTION_POSX = 80
+OPTIONMENU_OTHER_OPTION_POSY = 225
+OPTIONMENU_OTHER_OPTION_WIDTH = 300
+OPTIONMENU_OTHER_OPTION_HEIGHT = 20
+LABEL_OTHER_PARAMETER_POSX = 430
+LABEL_OTHER_PARAMETER_POSY = 190
+ENTRY_OTHER_PARAMETER_POSX = 385
+ENTRY_OTHER_PARAMETER_POSY = 220
+ENTRY_OTHER_PARAMETER_WIDTH = 160
+LABEL_OTHER_ADD_POSX = 557
+LABEL_OTHER_ADD_POSY = 190
+BUTTON_OTHER_ADD_POSX = 550
+BUTTON_OTHER_ADD_POSY = 220
+BUTTON_OTHER_ADD_WIDTH = 40
 LABEL_TIME_POSX = 5
-LABEL_TIME_POSY = 220
+LABEL_TIME_POSY = 280
 LABEL_TIME_DELAY_POSX = 102
-LABEL_TIME_DELAY_POSY = 190
+LABEL_TIME_DELAY_POSY = 250
 ENTRY_TIME_DELAY_POSX = 80
-ENTRY_TIME_DELAY_POSY = 220
+ENTRY_TIME_DELAY_POSY = 280
 ENTRY_TIME_DELAY_WIDTH = 80
 LABEL_TIME_UNITS_POSX = 215
-LABEL_TIME_UNITS_POSY = 190
+LABEL_TIME_UNITS_POSY = 250
 OPTIONMENU_TIME_UNITS_POSX = 165
-OPTIONMENU_TIME_UNITS_POSY = 220
+OPTIONMENU_TIME_UNITS_POSY = 280
 OPTIONMENU_TIME_UNITS_WIDTH = 120
 LABEL_TIME_ADD_POSX = 297
-LABEL_TIME_ADD_POSY = 190
+LABEL_TIME_ADD_POSY = 250
 BUTTON_TIME_ADD_POSX = 290
-BUTTON_TIME_ADD_POSY = 220
+BUTTON_TIME_ADD_POSY = 280
 BUTTON_TIME_ADD_WIDTH = 40
-LABEL_OTHER_POSX = 5
-LABEL_OTHER_POSY = 280
-LABEL_OTHER_OPTION_POSX = 150
-LABEL_OTHER_OPTION_POSY = 250
-OPTIONMENU_OTHER_OPTION_POSX = 80
-OPTIONMENU_OTHER_OPTION_POSY = 280
-OPTIONMENU_OTHER_OPTION_WIDTH = 205
-LABEL_OTHER_ADD_POSX = 297
-LABEL_OTHER_ADD_POSY = 250
-BUTTON_OTHER_ADD_POSX = 290
-BUTTON_OTHER_ADD_POSY = 280
-BUTTON_OTHER_ADD_WIDTH = 40
 TREEVIEW_POSX = 5
 TREEVIEW_POSY = 320
 TREEVIEW_COLUMN_WIDTH = 440
@@ -144,25 +151,29 @@ SCROLLBAR_WIDTH = 440
 LABEL_ESTIMATE_TIME_POSX = 380
 LABEL_ESTIMATE_TIME_POSY = 215
 LABEL_ACTION_PROGRESS_POSX = 380
-LABEL_ACTION_PROGRESS_POSY = 235
+LABEL_ACTION_PROGRESS_POSY = 250
 PROGRESSBAR_POSX = 350
-PROGRESSBAR_POSY = 265
+PROGRESSBAR_POSY = 280
 PROGRESSBAR_WIDTH = 235
 PROGRESSBAR_HEIGHT = 25
 BUTTON_START_POSX = 460
-BUTTON_START_POSY = 350
+BUTTON_START_POSY = 320
 BUTTON_START_WIDTH = 130
 BUTTON_START_COLOR = '#10adfe'
 BUTTON_LOAD_POSX = 460
-BUTTON_LOAD_POSY = 380
+BUTTON_LOAD_POSY = 350
 BUTTON_LOAD_WIDTH = 130
 BUTTON_SAVE_POSX = 460
-BUTTON_SAVE_POSY = 410
+BUTTON_SAVE_POSY = 380
 BUTTON_SAVE_WIDTH = 130
+BUTTON_EXPAND_POSX = 460
+BUTTON_EXPAND_POSY = 410
+BUTTON_EXPAND_WIDTH = 130
 BUTTON_DELETE_POSX = 460
 BUTTON_DELETE_POSY = 440
 BUTTON_DELETE_WIDTH = 130
 BUTTON_DELETE_COLOR = '#fc0303'
+MENU_ICON_IMAGE_SIZE = (25,25)
 
 # Constants Deck Plate 
 NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
@@ -195,60 +206,78 @@ DG8_TRAY_OPTION_VALUES = ['A', 'B', 'C', 'D',]
 DG8_COLUMN_OPTION_VALUES = ['1', '2', '3',]
 CHIP_TRAY_OPTION_VALUES = ['A', 'B', 'C', 'D',]
 CHIP_COLUMN_OPTION_VALUES = ['NIPT','FF','Quant',]
-OTHER_OPTION_VALUES = [
-	"Home pipettor",
-	"Change Heater/Shaker Temperature",
-	"Move relative left",
-	"Move relative right",
-	"Move relative up",
-	"Move relative down",
-	"Move relative forwards",
-	"Move relative backwards",
-	"Generate standard droplets",
-	"Generate pico droplets",
-	"Generate demo droplets",
-	"Extraction",
-	"Transfer plasma",
-	"Binding",
-	"Pooling",
-	"Wash 1",
-	"Wash 2",
-	"Pre-Eultion",
-	"Elution",
-	"Enrichment",
-	"Pre-Amp",
-	"Assay Prep",
-	"Shake on",
-	"Shake off",
-	"Engage magnet",
-	"Disengage magnet",
-	"Open Tray AB",
-	"Open Tray CD",
-	"Close Tray AB",
-	"Close Tray CD",
-	"Lower Thermocycler A",
-	"Lower Thermocycler B",
-	"Lower Thermocycler D",
-	"Lower Thermocycler C",
-	"Raise Thermocycler A",
-	"Raise Thermocycler B",
-	"Raise Thermocycler C",
-	"Raise Thermocycler D",
-	"Thermocycle Protocol",
-	"Thermocycle Pre-Amp",
-	"Move lid A",
-	"Move lid B",
-	"Move lid C",
-	"Move lid D",
-	"Move chip A",
-	"Move chip B",
-	"Move chip C",
-	"Move chip D",
-	"Scan A",
-	"Scan B",
-	"Scan C",
-	"Scan D",
-]
+OTHER_OPTIONS = (
+	('gui/images/home.png', 'Home', "Home pipettor", "Home pipettor fast", "Home pipettor along Z", "Home pipettor along Y", "Home pipettor along X", "Home the pipettor's drip plate"),
+	('gui/images/relative.png', "Move relative", "Move relative left", "Move relative right", "Move relative up", "Move relative down", "Move relative forwards", "Move relative backwards"),
+	('gui/images/droplets.png', 'Droplets', "Generate Standard Droplets", "Generate Pico Droplets", "Generate Demo Droplets"),
+	('gui/images/protocols.png', 'Protocols', 'Extraction', "Transfer Plasma", 'Binding', 'Pooling', 'Pre-Dispense', "Low-Stringent Wash", 'Pre-Elution', 'Elution'),
+	('gui/images/magnet.png', 'Magnet', "Engage magnet", "Disengage magnet"),
+	('gui/images/heater_shaker.png', 'Heater/Shaker', "Change the Heater/Shaker temperature", "Shake on", "Shake off"),
+	('gui/images/thermocycle.png', 'Thermocycling', "Thermocycle Protocol", "Thermocycle Pre-Amp"),
+	('gui/images/tray.png', 'Trays', "Open Tray AB", "Open Tray CD", "Close Tray AB", "Close Tray CD"),
+	('gui/images/clamp.png', 'Clamps', "Lower Thermocycler A", "Lower Thermocycler B", "Lower Thermocycler C", "Lower Thermocycler D", "Raise Thermocycler A", "Raise Thermocycler B", "Raise Thermocycler C", "Raise Thermocycler D"),
+	('gui/images/imager.png', 'Imager', "Scan A", "Scan B", "Scan C", "Scan D", "Light Show"),
+	('gui/images/other.png', 'Other', "Add a comment", "Pause for user input", "Move Lid A", "Move Lid B", "Move Lid C", "Move Lid D", "Move Chip A", "Move Chip B", "Move Chip C", "Move Chip D"),
+)
+#OTHER_OPTION_VALUES = [
+#	"Home pipettor",
+#	"Home pipettor fast",
+#	"Home pipettor along Z",
+#	"Home pipettor along Y",
+#	"Home pipettor along X",
+#	"Home the pipettor's drip plate",
+#	"Change Heater/Shaker Temperature",
+#	"Move relative left",
+#	"Move relative right",
+#	"Move relative up",
+#	"Move relative down",
+#	"Move relative forwards",
+#	"Move relative backwards",
+#	"Generate standard droplets",
+#	"Generate pico droplets",
+#	"Generate demo droplets",
+#	"Extraction",
+#	"Transfer plasma",
+#	"Binding",
+#	"Pooling",
+#	"Wash 1",
+#	"Wash 2",
+#	"Pre-Eultion",
+#	"Elution",
+#	"Enrichment",
+#	"Pre-Amp",
+#	"Assay Prep",
+#	"Shake on",
+#	"Shake off",
+#	"Engage magnet",
+#	"Disengage magnet",
+#	"Open Tray AB",
+#	"Open Tray CD",
+#	"Close Tray AB",
+#	"Close Tray CD",
+#	"Lower Thermocycler A",
+#	"Lower Thermocycler B",
+#	"Lower Thermocycler D",
+#	"Lower Thermocycler C",
+#	"Raise Thermocycler A",
+#	"Raise Thermocycler B",
+#	"Raise Thermocycler C",
+#	"Raise Thermocycler D",
+#	"Thermocycle Protocol",
+#	"Thermocycle Pre-Amp",
+#	"Move lid A",
+#	"Move lid B",
+#	"Move lid C",
+#	"Move lid D",
+#	"Move chip A",
+#	"Move chip B",
+#	"Move chip C",
+#	"Move chip D",
+#	"Scan A",
+#	"Scan B",
+#	"Scan C",
+#	"Scan D",
+#]
 COUNT_OPTION_VALUES = [f'{i}' for i in range(1,11)]
 
 # Image Paths
@@ -339,6 +368,14 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			font=(FONT,-16),
 			width=BUTTON_SAVE_WIDTH
 		)
+		# Create the Expand Button
+		self.button_expand = ctk.CTkButton(
+			master=self, 
+			text='Expand', 
+			corner_radius=2, 
+			font=(FONT,-16),
+			width=BUTTON_EXPAND_WIDTH
+		)
 		# Create the Delete Button
 		self.button_delete = ctk.CTkButton(
 			master=self, 
@@ -370,6 +407,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.button_start.place(x=BUTTON_START_POSX, y=BUTTON_START_POSY)
 		self.button_load.place(x=BUTTON_LOAD_POSX, y=BUTTON_LOAD_POSY)
 		self.button_save.place(x=BUTTON_SAVE_POSX, y=BUTTON_SAVE_POSY)
+		self.button_expand.place(x=BUTTON_EXPAND_POSX, y=BUTTON_EXPAND_POSY)
 		self.button_delete.place(x=BUTTON_DELETE_POSX, y=BUTTON_DELETE_POSY)
 		# Place the protocol action treeview 
 		self.place_treeview_ui()
@@ -729,22 +767,63 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		# Create the other label
 		self.label_other = ctk.CTkLabel(master=self, text='Other', font=(FONT, -16))
 		# Create the option label and optionmenu
-		self.label_other_option = ctk.CTkLabel(master=self, text='Option', font=(FONT, -14))
+		self.label_other_option = ctk.CTkLabel(master=self, text='Option', font=(FONT, -16))
 		self.other_option_sv = StringVar()
 		self.other_option_sv.set("Home pipettor")
-		self.optionmenu_other_option = ctk.CTkOptionMenu(
-			master=self,
-			corner_radius=2,
-			variable=self.other_option_sv,
-			values=OTHER_OPTION_VALUES,
-			width=OPTIONMENU_OTHER_OPTION_WIDTH
+		self.other_option_sv.trace('w', self.callback_other_option)
+		self.optionmenu_other_option = tk.Menubutton(
+			self,
+			textvariable=self.other_option_sv,
+			font=(FONT,-14),
+			indicatoron=False,
+			borderwidth=1,
+			#relief='raised',
+			direction='below',
+			#bg='#2fa572',
 		)
-		self.optionmenu_other_option.configure(width=OPTIONMENU_OTHER_OPTION_WIDTH)
+		self.menu_other_option = tk.Menu(
+			self.optionmenu_other_option,
+			tearoff=False,
+		)
+		self.optionmenu_other_option.config(menu=self.menu_other_option)
+		for options in OTHER_OPTIONS:
+			image = Image.open(options[0])
+			resized_image = image.resize(MENU_ICON_IMAGE_SIZE)
+			menu_image = ImageTk.PhotoImage(resized_image)
+			#menu_image = tk.PhotoImage(file=options[0])
+			menu = tk.Menu(self.menu_other_option, tearoff=False)
+			self.menu_other_option.add_cascade(
+				label=options[1],
+				menu=menu,
+				image=menu_image,
+				compound=tk.LEFT,
+			)
+			for option in options[2:]:
+				menu.add_radiobutton(
+					value=option,
+					label=option,
+					variable=self.other_option_sv,
+					font=(FONT,-14),
+				)
+		# Create the parameters label and entry
+		self.label_other_parameter = ctk.CTkLabel(master=self, text='Parameter', font=(FONT, -16))
+		self.other_parameter_sv = StringVar()
+		self.other_parameter_sv.set('')
+		self.entry_other_parameter = ctk.CTkEntry(
+			master=self,
+			textvariable=self.other_parameter_sv,
+			font=(FONT,-12),
+			corner_radius=2,
+			state='disabled',
+			width=ENTRY_OTHER_PARAMETER_WIDTH,
+		)
+		self.entry_other_parameter.bind('<Button-1>', self.other_parameter_onclick)
+		self.entry_other_parameter.bind('<Key>', self.other_parameter_keys)
 		# Create the add label and button
 		self.label_other_add = ctk.CTkLabel(master=self, text='Add', font=(FONT, -14))
 		self.button_other_add = ctk.CTkButton(
 			master=self,
-			corner_radius=2,
+			corner_radius=5,
 			text='',
 			fg_color=BUTTON_ADD_COLOR,
 			width=BUTTON_OTHER_ADD_WIDTH
@@ -757,16 +836,25 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.label_other.place(x=LABEL_OTHER_POSX, y=LABEL_OTHER_POSY)
 		# Place the option label and optionmenu
 		self.label_other_option.place(x=LABEL_OTHER_OPTION_POSX, y=LABEL_OTHER_OPTION_POSY)
-		self.optionmenu_other_option.place(x=OPTIONMENU_OTHER_OPTION_POSX, y=OPTIONMENU_OTHER_OPTION_POSY)
+		self.optionmenu_other_option.place(
+			x=OPTIONMENU_OTHER_OPTION_POSX, 
+			y=OPTIONMENU_OTHER_OPTION_POSY,
+			width=OPTIONMENU_OTHER_OPTION_WIDTH,
+			height=OPTIONMENU_OTHER_OPTION_HEIGHT
+		)
+		# Place the parameter label and entry
+		self.label_other_parameter.place(x=LABEL_OTHER_PARAMETER_POSX, y=LABEL_OTHER_PARAMETER_POSY)
+		self.entry_other_parameter.place(x=ENTRY_OTHER_PARAMETER_POSX, y=ENTRY_OTHER_PARAMETER_POSY)
+		self.entry_other_parameter.bind('<FocusIn>', self.other_parameter_focus_in)
 		# Place the add label and button
 		self.label_other_add.place(x=LABEL_OTHER_ADD_POSX, y=LABEL_OTHER_ADD_POSY)
-		self.button_other_add.place(x=BUTTON_OTHER_ADD_POSX, y=BUTTON_OTHER_ADD_POSY, width=OPTIONMENU_OTHER_OPTION_WIDTH)
+		self.button_other_add.place(x=BUTTON_OTHER_ADD_POSX, y=BUTTON_OTHER_ADD_POSY)
 
 	def create_progress_ui(self) -> None:
 		"""Creates the UI for the progress portion
 		"""
 		# Create the estimate time label
-		self.label_estimate_time = ctk.CTkLabel(master=self, text="Estimate Time: 00:00:00", font=(FONT,-16))
+		#self.label_estimate_time = ctk.CTkLabel(master=self, text="Estimate Time: 00:00:00", font=(FONT,-16))
 		# Create the action progress label and progressbar
 		self.label_action_progress = ctk.CTkLabel(master=self, text="Action Progress: 0 of 0", font=(FONT, -16))
 		self.progressbar = ctk.CTkProgressBar(
@@ -784,7 +872,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		"""Places the UI for the progress portion
 		"""
 		# Place the estimate time label
-		self.label_estimate_time.place(x=LABEL_ESTIMATE_TIME_POSX, y=LABEL_ESTIMATE_TIME_POSY)
+		#self.label_estimate_time.place(x=LABEL_ESTIMATE_TIME_POSX, y=LABEL_ESTIMATE_TIME_POSY)
 		# Place the action progress label and progressbar
 		self.label_action_progress.place(x=LABEL_ACTION_PROGRESS_POSX, y=LABEL_ACTION_PROGRESS_POSY)
 		self.progressbar.place(x=PROGRESSBAR_POSX, y=PROGRESSBAR_POSY)
@@ -932,6 +1020,70 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		tray = self.motion_tray_sv.get()
 		column = self.motion_column_sv.get()
 		tip = self.motion_tip_sv.get()
+
+	def callback_other_option(self, *args) -> None:
+		""" Deals with the other option changing """
+		# Get the option selected
+		other_option = self.other_option_sv.get()
+		# Change the Parameter hint text based on the other option selected and the entry state
+		if "Move relative" in other_option:
+			self.other_parameter_sv.set("Enter value in usteps")
+			self.entry_other_parameter.configure(state='normal')
+		elif "Change" in other_option:
+			self.other_parameter_sv.set("Enter value in C")
+			self.entry_other_parameter.configure(state='normal')
+		elif "Shake on" in other_option:
+			self.other_parameter_sv.set("Enter the rpm")
+			self.entry_other_parameter.configure(state='normal')
+		elif 'Lower' in other_option:
+			self.other_parameter_sv.set("Enter value in usteps")
+			self.entry_other_parameter.configure(state='normal')
+		elif 'Add' in other_option:
+			self.other_parameter_sv.set("Enter a comment")
+			self.entry_other_parameter.configure(state='normal')
+		else:
+			self.other_parameter_sv.set('')
+			self.entry_other_parameter.configure(state='disabled')
+			
+
+	def other_parameter_focus_in(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with the focus in event to the other parameter entry """
+		if self.other_option_sv.get() == "Add a comment":
+			parameter = self.other_parameter_sv.get()
+			self.other_parameter_sv.set(parameter)
+		else:
+			try:
+				parameter = float(self.other_parameter_sv.get())
+				self.other_parameter_sv.set(parameter)
+			except:
+				self.entry_other_parameter.delete('0', 'end')
+				self.other_parameter_sv.set('')
+
+	def other_parameter_onclick(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with on click events for the entry for the other parameters """
+		if self.other_option_sv.get() == "Add a comment":
+			parameter = self.other_parameter_sv.get()
+			self.other_parameter_sv.set(parameter)
+		else:
+			try:
+				parameter = float(self.other_parameter_sv.get())
+				self.other_parameter_sv.set(parameter)
+			except:
+				self.entry_other_parameter.delete('0', 'end')
+				self.other_parameter_sv.set('')
+
+	def other_parameter_keys(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Deals with on click events for the entry for the other parameters """
+		if self.other_option_sv.get() == "Add a comment":
+			parameter = self.other_parameter_sv.get()
+			self.other_parameter_sv.set(parameter)
+		else:
+			try:
+				parameter = float(self.other_parameter_sv.get())
+				self.other_parameter_sv.set(parameter)
+			except:
+				self.entry_other_parameter.delete('0', 'end')
+				self.other_parameter_sv.set('')
 
 	def bind_button_tips_add(self, c):
 		try:

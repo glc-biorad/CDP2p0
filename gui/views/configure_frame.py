@@ -95,7 +95,7 @@ class ConfigureFrame(ctk.CTkFrame):
 	def __init__(self, master: ctk.CTk, model: Model, width: int, height: int, posx: int, posy: int) -> None:
 		""" Construct the Configure Frame """
 		self.master_model = model
-		#self.model = self.master_model.get_configure_model()
+		self.model = self.master_model.get_configure_model()
 		self.master = master
 		self.width = width
 		self.height = height
@@ -183,7 +183,8 @@ class ConfigureFrame(ctk.CTkFrame):
 		self.label_11 = ctk.CTkLabel(master=self, text='11' , font=(FONT,-16))
 		self.label_12 = ctk.CTkLabel(master=self, text='12' , font=(FONT,-16))
 		self.tip_1_sv = StringVar()
-		self.tip_1_sv.set('1000')
+		self.tip_1_sv.set(self.model.select(name="Tip Box")[0][2])
+		#self.tip_1_sv.trace('w', self.trace_tip_1_sv)
 		self.optionmenu_1 = ctk.CTkOptionMenu(
 			master=self,
 			corner_radius=2,
@@ -192,7 +193,7 @@ class ConfigureFrame(ctk.CTkFrame):
 			width=OPTIONMENU_TIP_WIDTH,
 		)
 		self.tip_2_sv = StringVar()
-		self.tip_2_sv.set('1000')
+		self.tip_2_sv.set(self.model.select(name="Tip Box")[0][3])
 		self.optionmenu_2 = ctk.CTkOptionMenu(
 			master=self,
 			corner_radius=2,
@@ -201,7 +202,7 @@ class ConfigureFrame(ctk.CTkFrame):
 			width=OPTIONMENU_TIP_WIDTH,
 		)
 		self.tip_3_sv = StringVar()
-		self.tip_3_sv.set('1000')
+		self.tip_3_sv.set(self.model.select(name="Tip Box")[0][4])
 		self.optionmenu_3 = ctk.CTkOptionMenu(
 			master=self,
 			corner_radius=2,
@@ -210,7 +211,7 @@ class ConfigureFrame(ctk.CTkFrame):
 			width=OPTIONMENU_TIP_WIDTH,
 		)
 		self.tip_4_sv = StringVar()
-		self.tip_4_sv.set('1000')
+		self.tip_4_sv.set(self.model.select(name="Tip Box")[0][5])
 		self.optionmenu_4 = ctk.CTkOptionMenu(
 			master=self,
 			corner_radius=2,
@@ -219,7 +220,7 @@ class ConfigureFrame(ctk.CTkFrame):
 			width=OPTIONMENU_TIP_WIDTH,
 		)
 		self.tip_5_sv = StringVar()
-		self.tip_5_sv.set('50')
+		self.tip_5_sv.set(self.model.select(name="Tip Box")[0][6])
 		self.optionmenu_5 = ctk.CTkOptionMenu(
 			master=self,
 			corner_radius=2,
@@ -228,7 +229,7 @@ class ConfigureFrame(ctk.CTkFrame):
 			width=OPTIONMENU_TIP_WIDTH,
 		)
 		self.tip_6_sv = StringVar()
-		self.tip_6_sv.set('50')
+		self.tip_6_sv.set(self.model.select(name="Tip Box")[0][7])
 		self.optionmenu_6 = ctk.CTkOptionMenu(
 			master=self,
 			corner_radius=2,
@@ -237,7 +238,7 @@ class ConfigureFrame(ctk.CTkFrame):
 			width=OPTIONMENU_TIP_WIDTH,
 		)
 		self.tip_7_sv = StringVar()
-		self.tip_7_sv.set('50')
+		self.tip_7_sv.set(self.model.select(name="Tip Box")[0][8])
 		self.optionmenu_7 = ctk.CTkOptionMenu(
 			master=self,
 			corner_radius=2,
@@ -246,7 +247,7 @@ class ConfigureFrame(ctk.CTkFrame):
 			width=OPTIONMENU_TIP_WIDTH,
 		)
 		self.tip_8_sv = StringVar()
-		self.tip_8_sv.set('50')
+		self.tip_8_sv.set(self.model.select(name="Tip Box")[0][9])
 		self.optionmenu_8 = ctk.CTkOptionMenu(
 			master=self,
 			corner_radius=2,
@@ -255,7 +256,7 @@ class ConfigureFrame(ctk.CTkFrame):
 			width=OPTIONMENU_TIP_WIDTH,
 		)
 		self.tip_9_sv = StringVar()
-		self.tip_9_sv.set('50')
+		self.tip_9_sv.set(self.model.select(name="Tip Box")[0][10])
 		self.optionmenu_9 = ctk.CTkOptionMenu(
 			master=self,
 			corner_radius=2,
@@ -264,7 +265,7 @@ class ConfigureFrame(ctk.CTkFrame):
 			width=OPTIONMENU_TIP_WIDTH,
 		)
 		self.tip_10_sv = StringVar()
-		self.tip_10_sv.set('50')
+		self.tip_10_sv.set(self.model.select(name="Tip Box")[0][11])
 		self.optionmenu_10 = ctk.CTkOptionMenu(
 			master=self,
 			corner_radius=2,
@@ -273,7 +274,7 @@ class ConfigureFrame(ctk.CTkFrame):
 			width=OPTIONMENU_TIP_WIDTH,
 		)
 		self.tip_11_sv = StringVar()
-		self.tip_11_sv.set('50')
+		self.tip_11_sv.set(self.model.select(name="Tip Box")[0][12])
 		self.optionmenu_11 = ctk.CTkOptionMenu(
 			master=self,
 			corner_radius=2,
@@ -282,7 +283,7 @@ class ConfigureFrame(ctk.CTkFrame):
 			width=OPTIONMENU_TIP_WIDTH,
 		)
 		self.tip_12_sv = StringVar()
-		self.tip_12_sv.set('50')
+		self.tip_12_sv.set(self.model.select(name="Tip Box")[0][13])
 		self.optionmenu_12 = ctk.CTkOptionMenu(
 			master=self,
 			corner_radius=2,
@@ -345,5 +346,77 @@ class ConfigureFrame(ctk.CTkFrame):
 		""" Bind the TEC Write Button to the controller """
 		try:
 			self.button_tec_write.bind('<Button-1>', callback)
+		except:
+			pass
+
+	def trace_tip_1_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		try: 
+			self.tip_1_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_tip_2_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		try: 
+			self.tip_2_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_tip_3_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		try: 
+			self.tip_3_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_tip_4_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		try: 
+			self.tip_4_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_tip_5_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		try: 
+			self.tip_5_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_tip_6_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		try: 
+			self.tip_6_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_tip_7_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		try: 
+			self.tip_7_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_tip_8_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		try: 
+			self.tip_8_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_tip_9_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		try: 
+			self.tip_9_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_tip_10_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		try: 
+			self.tip_10_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_tip_11_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		try: 
+			self.tip_11_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_tip_12_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		try: 
+			self.tip_12_sv.trace('w', callback)
 		except:
 			pass

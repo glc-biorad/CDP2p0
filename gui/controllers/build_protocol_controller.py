@@ -78,9 +78,11 @@ MAIN_ACTION_KEY_WORDS = [
 	'Lower',
 	'Raise',
 	'Change',
+	'Comment:',
+	'Pause',
 ]
 TOPLEVEL_PRE_AMP_WIDTH = 400
-TOPLEVEL_PRE_AMP_HEIGHT = 230
+TOPLEVEL_PRE_AMP_HEIGHT = 270
 TOPLEVEL_LABEL_FIRST_DENATURE_TEMP_POSX = 35
 TOPLEVEL_LABEL_FIRST_DENATURE_TEMP_POSY = 10
 TOPLEVEL_ENTRY_FIRST_DENATURE_TEMP_POSX = 280
@@ -116,7 +118,20 @@ TOPLEVEL_LABEL_SECOND_DENATURE_TIME_POSY = 190
 TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_POSX = 280
 TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_POSY = 190
 TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_WIDTH = 100
+TOPLEVEL_BUTTON_ADD_PRE_AMP_POSX = 280
+TOPLEVEL_BUTTON_ADD_PRE_AMP_POSY = 230
+TOPLEVEL_BUTTON_ADD_PRE_AMP_WIDTH = 100
+BUTTON_ADD_COLOR = '#10adfe'
 FONT = "Sergio UI"
+
+ADDRESSES = {
+	'A': 8,
+	'B': 9,
+	'C': 10,
+	'D': 11,
+	'AB': 6,
+	'CD': 7,
+}
 
 class BuildProtocolController:
 	"""System for passing data from the Build Protocol Frame view to the Build Protocol Model
@@ -219,29 +234,29 @@ class BuildProtocolController:
 				# Determine what tip was put on
 				if tray in ['A', 'B', 'C', 'D']:
 					if column == '1':
-						tip = '1000'
+						tip = self.view.master_model.get_configure_model().select(name="Tip Box")[0][2]
 					elif column == '2':
-						tip = '1000'
+						tip = self.view.master_model.get_configure_model().select(name="Tip Box")[0][3]
 					elif column == '3':
-						tip = '1000'
+						tip = self.view.master_model.get_configure_model().select(name="Tip Box")[0][4]
 					elif column == '4':
-						tip = '1000'
+						tip = self.view.master_model.get_configure_model().select(name="Tip Box")[0][5]
 					elif column == '5':
-						tip = '50'
+						tip = self.view.master_model.get_configure_model().select(name="Tip Box")[0][6]
 					elif column == '6':
-						tip = '50'
+						tip = self.view.master_model.get_configure_model().select(name="Tip Box")[0][7]
 					elif column == '7':
-						tip = '50'
+						tip = self.view.master_model.get_configure_model().select(name="Tip Box")[0][8]
 					elif column == '8':
-						tip = '50'
+						tip = self.view.master_model.get_configure_model().select(name="Tip Box")[0][9]
 					elif column == '9':
-						tip = '50'
+						tip = self.view.master_model.get_configure_model().select(name="Tip Box")[0][10]
 					elif column == '10':
-						tip = '50'
+						tip = self.view.master_model.get_configure_model().select(name="Tip Box")[0][11]
 					elif column == '11':
-						tip = '50'
+						tip = self.view.master_model.get_configure_model().select(name="Tip Box")[0][12]
 					elif column == '12':
-						tip = '50'
+						tip = self.view.master_model.get_configure_model().select(name="Tip Box")[0][13]
 				# Set all tip options to the proper tip
 				self.view.motion_tip_sv.set(tip)
 				self.view.pipettor_tip_sv.set(tip)
@@ -408,14 +423,37 @@ class BuildProtocolController:
 		action_message = other
 		# Check if the action message is a relative move
 		if 'relative' in action_message.split():
-			amounts = self.view.motion_dxdydz_sv.get().split(',')
-			if action_message.split()[2].lower() in ['up', 'down']:
-				amount = abs(int(amounts[2]))
-			elif action_message.split()[2].lower() in ['left', 'right']:
-				amount = abs(int(amounts[0]))
-			elif action_message.split()[2].lower() in ['backwards', 'forwards']:
-				amount = abs(int(amounts[1]))
-			action_message = action_message + f" by {amount}"
+			amount = self.view.other_parameter_sv.get()
+			try:
+				amount = int(amount)
+				action_message = action_message + f" by {amount}"
+			except:
+				tk.messagebox.showwarning(
+					title="Failed to Add Action",
+					message="Move relative actions require a value to move in usteps. Please enter a value in the Parameter entry box."
+				)
+				return None
+		elif 'Lower' in action_message.split():
+			amount = self.view.other_parameter_sv.get()
+			try:
+				amount = int(amount)
+				action_message = action_message + f" to {amount} usteps"
+			except:
+				tk.messagebox.showwarning(
+					title="Failed to Add Action",
+					message="Lower thermocycler actions require a value to move in usteps. Please enter a value in the Parameter entry box."
+				)
+				return None
+		elif 'Add' in action_message.split():
+			comment = self.view.other_parameter_sv.get()
+			if comment == "Enter a comment":
+				tk.messagebox.showwarning(
+					title="Failed to Add Action",
+					message="Add comment actions require a comment. Please enter a comment in the Parameter entry box."
+				)
+				return None
+			else:
+				action_message = f"Comment: {comment}"
 		elif 'Extraction' in action_message.split():
 			# Open the file browser to load the extraction protocol
 			file = browse_files(
@@ -438,17 +476,32 @@ class BuildProtocolController:
 			action_message = action_message + f" ({file_path})"
 		elif 'Change' in action_message.split():
 			# Get the temp value
-			temp = self.view.motion_dxdydz_sv.get()
+			temp = self.view.other_parameter_sv.get()
 			try:
 				temp = float(temp)
 				temp = str(round(temp,1))
+				action_message = action_message + f" to {temp} C"
 			except:
-				temp = '60.0'
-			action_message = action_message + f" to {temp} C"
+				tk.messagebox.showwarning(
+					title="Failed to Add Action",
+					message="Change temperature actions require a value in C. Please enter a value in the Parameter entry box."
+				)
+				return None
+		elif 'Shake' in action_message.split() and 'on' in action_message.split():
+			# Get the rpm value
+			rpm = self.view.other_parameter_sv.get()
+			try:
+				rpm = int(rpm)
+				action_message = action_message + f" with an RPM of {rpm}"
+			except:
+				tk.messagebox.showwarning(
+					title="Failed to Add Action",
+					message="Shake on actions require a RPM value. Please enter a value in the Parameter entry box."
+				)
+				return None
 		elif 'Thermocycle' in action_message.split():
 			if 'Protocol' in  action_message.split():
 				# Open the file browser to load a file to get the name of the protocol file
-				print('load protocol')
 				file = browse_files(
 					'r', 
 					"Load Protocol", 
@@ -458,8 +511,9 @@ class BuildProtocolController:
 				file_path = file.name
 				action_message = action_message + f" ({file_path})"
 			elif 'Pre-Amp' in action_message.split():
-				# 
+				# Open a toplevel window to setup the protocol
 				self.create_toplevel_pre_amp()
+				return None
 		# Determine which if any row of the treeview is selected
 		try:
 			selected_row = self.view.treeview.selection()[0]
@@ -505,7 +559,6 @@ class BuildProtocolController:
 			assert split[0] in MAIN_ACTION_KEY_WORDS
 			# Analyze the action message
 			if split[0] == 'Eject':
-				print(split)
 				# Eject tips
 				if 'column' not in split:
 					self.upper_gantry.tip_eject()
@@ -513,7 +566,6 @@ class BuildProtocolController:
 				else:
 					tray = split[3]
 					column = int(split[5])
-					print(split)
 					# Get the coordinate
 					unit = self.model.db_name[-4]
 					table_name = f"Unit {unit} Upper Gantry Coordinates"
@@ -640,7 +692,6 @@ class BuildProtocolController:
 					relative_moves=[dx,dy,dz,0],
 					ignore_tips=ignore_tips
 				)
-				print(dz)
 			elif split[0] in ['Aspirate', 'Dispense', 'Mix']:
 				# Get the action
 				action = split[0]
@@ -672,8 +723,37 @@ class BuildProtocolController:
 				units = split[3]
 				# Setup the command
 				delay(value, units)
+			elif split[0] == 'Add':
+				# Get the comment
+				continue
+			elif split[0] == 'Pause':
+				# Open a message box for the user 
+				if tk.messagebox.askokcancel(title="Protocol Pause", message="Would you like to continue?"):
+					continue
+				else:
+					if tk.messagebox.askyesno(title="Protocol Pause", message="Canceling the protocol now loses all current progress, are you sure you want to cancel?"):
+						return None
+					else:
+						continue
 			elif split[0] == 'Home':
-				self.upper_gantry.home_pipettor()
+				# Determine the type of homing
+				if split[-1] == 'pipettor':
+					self.upper_gantry.home_pipettor()
+				elif split[-1] == 'fast':
+					self.upper_gantry.move(x=0,y=0,z=0,drip_plate=0)
+					self.upper_gantry.home_pipettor()
+				elif split[-1] == 'Z':
+					self.upper_gantry.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, 0, 800000, True, True)
+					self.upper_gantry.get_fast_api_interface().pipettor_gantry.axis.home('pipettor_gantry', 3)
+				elif split[-1] == 'Y':
+					self.upper_gantry.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 2, 0, 3200000, True, True)
+					self.upper_gantry.get_fast_api_interface().pipettor_gantry.axis.home('pipettor_gantry', 2)
+				elif split[-1] == 'X':
+					self.upper_gantry.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 1, 0, 300000, True, True)
+					self.upper_gantry.get_fast_api_interface().pipettor_gantry.axis.home('pipettor_gantry', 1)
+				elif split[-1] == 'plate':
+					self.upper_gantry.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, 0, 2500000, True, True)
+					self.upper_gantry.get_fast_api_interface().pipettor_gantry.axis.home('pipettor_gantry', 4)
 			elif split[0] == 'Generate':
 				# Get the droplet type
 				droplet_type = split[1]
@@ -685,7 +765,8 @@ class BuildProtocolController:
 				# Get the mode
 				mode = split[1]
 				if mode.lower() == 'on':
-					self.upper_gantry.turn_on_shake(rpm=1300)
+					rpm = split[-1]
+					self.upper_gantry.turn_on_shake(rpm=rpm)
 				elif mode.lower() == 'off':
 					self.upper_gantry.turn_off_shake()
 			elif split[0] == 'Engage':
@@ -703,24 +784,23 @@ class BuildProtocolController:
 				print('Thermocycle')
 				if 'Pre-Amp' in split:
 					address = 9
-					protocol = f"""
-					first denature temp: {self.first_denature_temp_sv.get()},
-					first denature time: {self.first_denature_time_sv.get()},
-					cycles: {self.cycles_sv.get()},
-					anneal temp: {self.anneal_temp_sv.get()},
-					anneal time: {self.anneal_time_sv.get()},
-					second denature temp: {self.second_denature_temp_sv.get()},
-					second denature time: {self.second_denature_time_sv.get()}
-					"""
+					# Get the data
+					fdtemp = split[3]
+					fdtime = split[6]
+					cycles = split[10]
+					atemp = split[19]
+					atime = split[22]
+					sdtemp = split[13]
+					sdtime = split[16]
 					# Start the Pre-Amp Thermocycler Protocol
-					self.meerstetter.change_temperature(address, int(self.first_denature_temp_sv.get()), block=False)
-					delay(int(self.first_denature_time_sv.get()), 'minutes')
-					for i in range(int(self.cycles_sv.get())):
-						print(f"Cycle Progress: {i+1}/{self.cycles_sv.get()}")
-						self.meerstetter.change_temperature(address, int(self.second_denature_temp_sv.get()), block=False)
-						delay(int(self.second_denature_time_sv.get()), 'seconds')
-						self.meerstetter.change_temperature(address, int(self.anneal_temp_sv.get()), block=False)
-						delay(int(self.anneal_time_sv.get()), 'seconds')
+					self.meerstetter.change_temperature(address, int(fdtemp), block=False)
+					delay(int(fdtime), 'minutes')
+					for i in range(int(cycles)):
+						print(f"Cycle Progress: {i+1}/{cycles}")
+						self.meerstetter.change_temperature(address, int(sdtemp), block=False)
+						delay(int(sdtime), 'seconds')
+						self.meerstetter.change_temperature(address, int(atemp), block=False)
+						delay(int(atime), 'seconds')
 					self.meerstetter.change_temperature(address, 30, block=False)
 				elif 'Protocol' == split[1]:
 					# Get the protocol file path
@@ -794,8 +874,11 @@ class BuildProtocolController:
 				# Close the tray
 				self.reader.close_thermocycler_tray(split[2], -780000)
 			elif split[0] == 'Lower':
+				# Get the position to move the heater to
+				amount = -abs(int(split[-2]))
 				# Lower the thermocycler
-				self.reader.lower_heater(split[2])
+				address = ADDRESSES[split[2]]
+				self.reader.get_fast_api_interface().reader.axis.move('reader', address, amount, 100000, True, True)
 			elif split[0] == 'Raise':
 				# Raise the thermocycler
 				self.reader.raise_heater(split[2])
@@ -807,7 +890,6 @@ class BuildProtocolController:
 			# Update the progress bar
 			progress = (int(i) + 1 ) / n_actions
 			self.view.progressbar.set(progress)
-			print(self.state.select())
 
 	def load(self, event=None) -> None:
 		"""Deals with the loading of a protocol into the action treeview
@@ -979,3 +1061,35 @@ class BuildProtocolController:
 		)
 		toplevel_entry_second_denature_time.place(x=TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_POSX,
 			y=TOPLEVEL_ENTRY_SECOND_DENATURE_TIME_POSY)
+		# Create and place the Add button
+		self.toplevel_button_add_pre_amp = ctk.CTkButton(
+			master=toplevel_pre_amp,
+			text='Add',
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_BUTTON_ADD_PRE_AMP_WIDTH,
+			command=self.add_pre_amp,
+		)
+		self.toplevel_button_add_pre_amp.place(x=TOPLEVEL_BUTTON_ADD_PRE_AMP_POSX,
+			y=TOPLEVEL_BUTTON_ADD_PRE_AMP_POSY)
+
+	def add_pre_amp(self) -> None:
+		""" Updates the Pre-Amp Protocol to be added to the action list """
+		# Get the data
+		fdtemp = self.first_denature_temp_sv.get()
+		fdtime = self.first_denature_time_sv.get()
+		cycles = self.cycles_sv.get()
+		atemp = self.anneal_temp_sv.get()
+		atime = self.anneal_time_sv.get()
+		sdtemp = self.second_denature_temp_sv.get()
+		sdtime = self.second_denature_time_sv.get()
+		action_message = f"Thermocycle Pre-Amp at {fdtemp} C for {fdtime} minutes and cycle {cycles} times between {sdtemp} C for {sdtime} seconds and {atemp} C for {atime} seconds"
+		# Determine which if any row of the treeview is selected
+		try:
+			selected_row = self.view.treeview.selection()[0]
+		except:
+			selected_row = None
+		# Insert action into the action list
+		insert_at_selected_row(action_message, selected_row, self.model)
+		# Update the view
+		self.view.update_treeview()

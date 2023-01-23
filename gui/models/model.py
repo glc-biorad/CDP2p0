@@ -25,9 +25,29 @@ class Model:
 		self.cursor = self.connection.cursor()
 		self.setup_thermocycle_table()
 		self.setup_build_protocol_table()
+		self.setup_configure_model()
 		#m = TipUseModel(self.db_name, self.cursor, self.connection)
 		self.setup_state_table()
 		self.setup_coordinates_table(unit)
+
+	def setup_configure_model(self) -> None:
+		""" Sets up the configure table """
+		model = ConfigureModel(self.db_name, self.cursor, self.connection)
+		model.create_table()
+		try:
+            		model.insert(1, "Tip Box", '1000', '1000', '1000', '1000', '50', '50', '50', '50', '50', '50', '50', '50')
+            		model.insert(2, "TEC Address", 'A', '1')
+            		model.insert(3, "TEC Address", 'B', '2')
+            		model.insert(4, "TEC Address", 'C', '3')
+            		model.insert(5, "TEC Address", 'D', '4')
+            		model.insert(6, "TEC Address", "Aux Heater A", '5')
+            		model.insert(7, "TEC Address", "Aux Heater B", '6')
+            		model.insert(8, "TEC Address", "Aux Heater C", '7')
+            		model.insert(9, "TEC Address", "Aux Heater D", '8')
+            		model.insert(10, "TEC Address", "Pre-Amp Thermocycler", '9')
+		except Exception as e:
+			print(f' here {e}')
+			pass
 
 	def get_configure_model(self) -> ConfigureModel:
 		self.configure_model = ConfigureModel(self.db_name, self.cursor, self.connection)
