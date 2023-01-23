@@ -156,14 +156,21 @@ class BuildProtocolController:
 		# Initialize the upper gantry
 		try:
 			self.upper_gantry = UpperGantry()
-		except:
+			# Check if the pipettor connected
+			if self.upper_gantry.get_pipettor() == None:
+				tk.messagebox.showwarning(title="Seyonic Pipettor Connection Issue", message=f"Seyonic pipettor functionality will not be available until the Seyonic pipettor networking connection is fixed and the GUI is relaunched.")
+		except Exception as e:
+			print(e)
+			tk.messagebox.showwarning(title="Upper Gantry Connection Issue", message=f"Warning: {e}")
 			print("No Upper Gantry for BuildProtocolController")
 			self.upper_gantry = None
 
 		# Initialize the reader
 		try:
 			self.reader = Reader()
-		except:
+		except Exception as e:
+			print(e)
+			tk.messagebox.showwarning(title="Reader Connection Issue", message=f"Warning: {e}")
 			print("No Reader for BuildProtocolController")
 			self.reader = None
 	
@@ -436,7 +443,7 @@ class BuildProtocolController:
 		elif 'Lower' in action_message.split():
 			amount = self.view.other_parameter_sv.get()
 			try:
-				amount = int(amount)
+				amount = int(float(amount))
 				action_message = action_message + f" to {amount} usteps"
 			except:
 				tk.messagebox.showwarning(

@@ -387,7 +387,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 		self.button_load = ctk.CTkButton(
 			master=self,
 			text='Load',
-			command=self.on_load,
+			#command=self.on_load,
 			width=BUTTON_LOAD_WIDTH,
 			corner_radius=5,
 		)
@@ -395,7 +395,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 		self.button_save = ctk.CTkButton(
 			master=self,
 			text='Save',
-			command=self.on_save,
+			#command=self.on_save,
 			width=BUTTON_SAVE_WIDTH,
 			corner_radius=5,
 		)
@@ -403,7 +403,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 		self.button_home = ctk.CTkButton(
 			master=self,
 			text='Home',
-			command=self.on_home,
+			#command=self.on_home,
 			width=BUTTON_HOME_WIDTH,
 			corner_radius=5,
 		)
@@ -669,9 +669,11 @@ class ThermocycleFrame(ctk.CTkFrame):
 			if posx == TRAY_CLOSED_POSX:
 				x0 = posx
 				x = IMAGE_THERMOCYCLER_TRAY_AB_POSX
+				steps = 0
 			else:
 				x0 = IMAGE_THERMOCYCLER_TRAY_AB_POSX
 				x = TRAY_CLOSED_POSX
+				steps = -790000
 			# Change the posx
 			thread = threading.Thread(
 				target=self.move_tray, 
@@ -680,6 +682,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 					self.image_thermocycler_tray_ab, 
 					x0,
 					x,
+					steps,
 					#IMAGE_THERMOCYCLER_TRAY_AB_POSX,
 					#TRAY_CLOSED_POSX, 
 				)
@@ -695,9 +698,11 @@ class ThermocycleFrame(ctk.CTkFrame):
 			if posx == TRAY_CLOSED_POSX:
 				x0 = posx
 				x = IMAGE_THERMOCYCLER_TRAY_CD_POSX
+				steps = 0
 			else:
 				x0 = IMAGE_THERMOCYCLER_TRAY_CD_POSX
 				x = TRAY_CLOSED_POSX
+				steps = -790000
 			# Change the posx
 			thread = threading.Thread(
 				target=self.move_tray, 
@@ -706,6 +711,7 @@ class ThermocycleFrame(ctk.CTkFrame):
 					self.image_thermocycler_tray_cd, 
 					x0,
 					x,
+					steps,
 				)
 			)
 			thread.start()
@@ -718,6 +724,8 @@ class ThermocycleFrame(ctk.CTkFrame):
 		if x >= 5 and x <= 106 and y >= 16 and y <= 235:
 			# Make sure tray ab is allowed to open
 			if True:
+				# If clicking the rails we most likely want to open the tray
+				steps = 0
 				# Open the tray (change posx)
 				thread = threading.Thread(
 					target=self.move_tray, 
@@ -726,12 +734,15 @@ class ThermocycleFrame(ctk.CTkFrame):
 						self.image_thermocycler_tray_ab, 
 						TRAY_CLOSED_POSX, 
 						IMAGE_THERMOCYCLER_TRAY_AB_POSX,
+						steps,
 					)
 				)
 				thread.start()
 		elif x >= 5 and x <= 106 and y >= 241 and y <= 463:
 			# Make sure tray cd is allowed to open
 			if True:
+				# If clicking the rails we most likely want to open the tray
+				steps = 0
 				# Open the tray (change posx)
 				thread = threading.Thread(
 					target=self.move_tray, 
@@ -740,22 +751,30 @@ class ThermocycleFrame(ctk.CTkFrame):
 						self.image_thermocycler_tray_cd, 
 						TRAY_CLOSED_POSX, 
 						IMAGE_THERMOCYCLER_TRAY_CD_POSX,
+						steps,
 					)
 				)
 				thread.start()
 
 	def on_click_thermocycler_a(self, event):
 		""" Deals with on_click events for Thermocycler Block A"""
+		# Check if the trays are moving
+		posx = int(self.image_thermocycler_tray_ab.place_info()['x'])
+		if posx not in [IMAGE_THERMOCYCLER_TRAY_AB_POSX, TRAY_CLOSED_POSX]:
+			if tk.messagebox.askyesno(title="Move Thermocycler A Clamp", message="Tray AB is not fully open or closed, this could cause the clamp to hit the Tray, continue anyway?") == False:
+				return None
 		# Get the current state of the thermocycler
 		state = self.controller.get_clamp(1)
 		# Lower of Raise the thermocycler
 		if state:
+			self.fast_api_interface.reader.axis.move('reader', 8, -400000, 100000, False, True)
 			self.photoimage_thermocycler_block_a = ctk.CTkImage(
 				dark_image=Image.open(IMAGE_PATHS['thermocycler_block_lowered']),
 				size=(IMAGE_THERMOCYCLER_BLOCK_A_WIDTH, IMAGE_THERMOCYCLER_BLOCK_A_HEIGHT),
 			)
 			self.controller.set_clamp(1, 0)
 		else:
+			self.fast_api_interface.reader.axis.move('reader', 8, 0, 100000, False, True)
 			self.photoimage_thermocycler_block_a = ctk.CTkImage(
 				dark_image=Image.open(IMAGE_PATHS['thermocycler_block_raised']),
 				size=(IMAGE_THERMOCYCLER_BLOCK_A_WIDTH, IMAGE_THERMOCYCLER_BLOCK_A_HEIGHT),
@@ -765,16 +784,23 @@ class ThermocycleFrame(ctk.CTkFrame):
 
 	def on_click_thermocycler_b(self, event):
 		""" Deals with on_click events for Thermocycler Block B"""
+		# Check if the trays are moving
+		posx = int(self.image_thermocycler_tray_ab.place_info()['x'])
+		if posx not in [IMAGE_THERMOCYCLER_TRAY_AB_POSX, TRAY_CLOSED_POSX]:
+			if tk.messagebox.askyesno(title="Move Thermocycler B Clamp", message="Tray AB is not fully open or closed, this could cause the clamp to hit the Tray, continue anyway?") == False:
+				return None
 		# Get the current state of the thermocycler
 		state = self.controller.get_clamp(2)
 		# Lower of Raise the thermocycler
 		if state:
+			self.fast_api_interface.reader.axis.move('reader', 9, -400000, 100000, False, True)
 			self.photoimage_thermocycler_block_b = ctk.CTkImage(
 				dark_image=Image.open(IMAGE_PATHS['thermocycler_block_lowered']),
 				size=(IMAGE_THERMOCYCLER_BLOCK_B_WIDTH, IMAGE_THERMOCYCLER_BLOCK_B_HEIGHT),
 			)
 			self.controller.set_clamp(2,0)
 		else:
+			self.fast_api_interface.reader.axis.move('reader', 9, 0, 100000, False, True)
 			self.photoimage_thermocycler_block_b = ctk.CTkImage(
 				dark_image=Image.open(IMAGE_PATHS['thermocycler_block_raised']),
 				size=(IMAGE_THERMOCYCLER_BLOCK_B_WIDTH, IMAGE_THERMOCYCLER_BLOCK_B_HEIGHT),
@@ -784,16 +810,23 @@ class ThermocycleFrame(ctk.CTkFrame):
 
 	def on_click_thermocycler_c(self, event):
 		""" Deals with on_click events for Thermocycler Block C"""
+		# Check if the trays are moving
+		posx = int(self.image_thermocycler_tray_cd.place_info()['x'])
+		if posx not in [IMAGE_THERMOCYCLER_TRAY_CD_POSX, TRAY_CLOSED_POSX]:
+			if tk.messagebox.askyesno(title="Move Thermocycler C Clamp", message="Tray CD is not fully open or closed, this could cause the clamp to hit the Tray, continue anyway?") == False:
+				return None
 		# Get the current state of the thermocycler
 		state = self.controller.get_clamp(3)
 		# Lower of Raise the thermocycler
 		if state:
+			self.fast_api_interface.reader.axis.move('reader', 10, -400000, 100000, False, True)
 			self.photoimage_thermocycler_block_c = ctk.CTkImage(
 				dark_image=Image.open(IMAGE_PATHS['thermocycler_block_lowered']),
 				size=(IMAGE_THERMOCYCLER_BLOCK_C_WIDTH, IMAGE_THERMOCYCLER_BLOCK_C_HEIGHT),
 			)
 			self.controller.set_clamp(3,0)
 		else:
+			self.fast_api_interface.reader.axis.move('reader', 10, 0, 100000, False, True)
 			self.photoimage_thermocycler_block_c = ctk.CTkImage(
 				dark_image=Image.open(IMAGE_PATHS['thermocycler_block_raised']),
 				size=(IMAGE_THERMOCYCLER_BLOCK_C_WIDTH, IMAGE_THERMOCYCLER_BLOCK_C_HEIGHT),
@@ -803,16 +836,23 @@ class ThermocycleFrame(ctk.CTkFrame):
 
 	def on_click_thermocycler_d(self, event):
 		""" Deals with on_click events for Thermocycler Block D"""
+		# Check if the trays are moving
+		posx = int(self.image_thermocycler_tray_cd.place_info()['x'])
+		if posx not in [IMAGE_THERMOCYCLER_TRAY_CD_POSX, TRAY_CLOSED_POSX]:
+			if tk.messagebox.askyesno(title="Move Thermocycler D Clamp", message="Tray CD is not fully open or closed, this could cause the clamp to hit the Tray, continue anyway?") == False:
+				return None
 		# Get the current state of the thermocycler
 		state = self.controller.get_clamp(4)
 		# Lower of Raise the thermocycler
 		if state:
+			self.fast_api_interface.reader.axis.move('reader', 11, -400000, 100000, False, True)
 			self.photoimage_thermocycler_block_d = ctk.CTkImage(
 				dark_image=Image.open(IMAGE_PATHS['thermocycler_block_lowered']),
 				size=(IMAGE_THERMOCYCLER_BLOCK_D_WIDTH, IMAGE_THERMOCYCLER_BLOCK_D_HEIGHT),
 			)
 			self.controller.set_clamp(4,0)
 		else:
+			self.fast_api_interface.reader.axis.move('reader', 11, 0, 100000, False, True)
 			self.photoimage_thermocycler_block_d = ctk.CTkImage(
 				dark_image=Image.open(IMAGE_PATHS['thermocycler_block_raised']),
 				size=(IMAGE_THERMOCYCLER_BLOCK_D_WIDTH, IMAGE_THERMOCYCLER_BLOCK_D_HEIGHT),
@@ -841,15 +881,19 @@ class ThermocycleFrame(ctk.CTkFrame):
 		# Get the animation steps
 		dx = (x-x0)/n_steps
 		dt = seconds/n_steps
-		print(steps)
-		print('here')
 		if steps != 0:
 			steps = -abs(steps)
 		# Determine the direction to move the tray (open or closed)
 		if use_fast_api:
 			if steps == 0:
-				self.fast_api_interface.reader.axis.move('reader', address, 0, 200000, True, True)
+				self.fast_api_interface.reader.axis.move('reader', address, 0, 200000, False, True)
+				for i in range(n_steps):
+					image_tray.place(x=x0)
+					x0 = x0 + dx
+					time.sleep(dt)
+				image_tray.place(x=x)
 				self.fast_api_interface.reader.axis.home('reader', address, False, True)
+				return None
 			try:
 				if dx < 0:
 					# Close the tray (dx is based on position of the tray widget in its parent frame)
@@ -867,19 +911,6 @@ class ThermocycleFrame(ctk.CTkFrame):
 			x0 = x0 + dx
 			time.sleep(dt)
 		image_tray.place(x=x)
-			
-
-	def on_start(self) -> None:
-		print('Start')
-
-	def on_load(self) -> None:
-		print('Load')
-
-	def on_save(self) -> None:
-		print('Save')
-
-	def on_home(self) -> None:
-		print('Home')
 
 	def callback_thermocycler(self, *args) -> None:
 		"""Deals with changes to the thermocycler option"""

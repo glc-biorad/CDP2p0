@@ -957,8 +957,8 @@ class ThermocycleController:
 			try:
 				# Get the current posx
 				posx = int(self.view.image_thermocycler_tray_ab.place_info()['x'])
-				if (posx == self.view.IMAGE_THERMOCYCLER_TRAY_AB_POSX):
-					return None
+				#if (posx == self.view.IMAGE_THERMOCYCLER_TRAY_AB_POSX):
+				#	return None
 				# Make sure the tray is allowed to close
 				if True:
 					self.view.move_tray(ADDRESSES['AB'],
@@ -970,6 +970,7 @@ class ThermocycleController:
 				#self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], 0, 200000, True)
 				#self.fast_api_interface.reader.axis.home('reader', ADDRESSES['AB'], False)
 			except Exception as e:
+				print(e)
 				pass
 		else:
 			val = -abs(val)

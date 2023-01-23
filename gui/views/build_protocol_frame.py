@@ -110,9 +110,9 @@ LABEL_OTHER_POSY = 220
 LABEL_OTHER_OPTION_POSX = 210
 LABEL_OTHER_OPTION_POSY = 190
 OPTIONMENU_OTHER_OPTION_POSX = 80
-OPTIONMENU_OTHER_OPTION_POSY = 225
+OPTIONMENU_OTHER_OPTION_POSY = 220
 OPTIONMENU_OTHER_OPTION_WIDTH = 300
-OPTIONMENU_OTHER_OPTION_HEIGHT = 20
+OPTIONMENU_OTHER_OPTION_HEIGHT = 30
 LABEL_OTHER_PARAMETER_POSX = 430
 LABEL_OTHER_PARAMETER_POSY = 190
 ENTRY_OTHER_PARAMETER_POSX = 385
@@ -319,6 +319,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			height=self.height,
 			corner_radius=0,
 		)
+		self.menu_images = {}
 		self.create_ui()
 
 	def create_ui(self) -> None:
@@ -350,6 +351,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			corner_radius=2, 
 			font=(FONT,-16),
 			fg_color=BUTTON_START_COLOR,
+			hover_color='#003399',
 			width=BUTTON_START_WIDTH
 		)
 		# Create the Load Button
@@ -383,6 +385,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			corner_radius=2, 
 			font=(FONT,-16),
 			fg_color=BUTTON_DELETE_COLOR,
+			hover_color='#b10202',
 			width=BUTTON_DELETE_WIDTH
 		)
 
@@ -464,6 +467,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			corner_radius=2,
 			#image=self.photoimage_check,
 			fg_color=BUTTON_ADD_COLOR,
+			hover_color='#003399',
 			width=BUTTON_TIPS_ADD_WIDTH
 		)
 
@@ -575,6 +579,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			text='',
 			#image=self.photoimage_check,
 			fg_color=BUTTON_ADD_COLOR,
+			hover_color='#003399',
 			width=BUTTON_MOTION_ADD_WIDTH
 		)
 
@@ -683,6 +688,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			text='',
 			#image=self.photoimage_check,
 			fg_color=BUTTON_ADD_COLOR,
+			hover_color='#003399',
 			width=BUTTON_PIPETTOR_ADD_WIDTH
 		)
 
@@ -743,6 +749,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			text='',
 			corner_radius=5,
 			fg_color=BUTTON_ADD_COLOR,
+			hover_color='#003399',
 			width=BUTTON_TIME_ADD_WIDTH
 		)
 
@@ -774,28 +781,35 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		self.optionmenu_other_option = tk.Menubutton(
 			self,
 			textvariable=self.other_option_sv,
-			font=(FONT,-14),
+			font=(FONT,-16),
 			indicatoron=False,
 			borderwidth=1,
-			#relief='raised',
+			relief='raised',
 			direction='below',
-			#bg='#2fa572',
+			bg='#2fa572',
+			activebackground='#106a43',
+			fg='white',
+			activeforeground='white',
 		)
 		self.menu_other_option = tk.Menu(
 			self.optionmenu_other_option,
 			tearoff=False,
+			bg='#2b2b2b', 
+			fg='white',
+			activeforeground='white',
+			font=(FONT,-16),
 		)
 		self.optionmenu_other_option.config(menu=self.menu_other_option)
 		for options in OTHER_OPTIONS:
 			image = Image.open(options[0])
 			resized_image = image.resize(MENU_ICON_IMAGE_SIZE)
-			menu_image = ImageTk.PhotoImage(resized_image)
+			self.menu_images[options[0]] = ImageTk.PhotoImage(resized_image)
 			#menu_image = tk.PhotoImage(file=options[0])
-			menu = tk.Menu(self.menu_other_option, tearoff=False)
+			menu = tk.Menu(self.menu_other_option, tearoff=False, bg='#2b2b2b', fg='white', activeforeground='white', borderwidth=1, font=(FONT,-16))
 			self.menu_other_option.add_cascade(
 				label=options[1],
 				menu=menu,
-				image=menu_image,
+				image=self.menu_images[options[0]],
 				compound=tk.LEFT,
 			)
 			for option in options[2:]:
@@ -803,7 +817,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 					value=option,
 					label=option,
 					variable=self.other_option_sv,
-					font=(FONT,-14),
+					font=(FONT,-16),
 				)
 		# Create the parameters label and entry
 		self.label_other_parameter = ctk.CTkLabel(master=self, text='Parameter', font=(FONT, -16))
@@ -826,6 +840,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			corner_radius=5,
 			text='',
 			fg_color=BUTTON_ADD_COLOR,
+			hover_color='#003399',
 			width=BUTTON_OTHER_ADD_WIDTH
 		)
 
@@ -840,7 +855,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			x=OPTIONMENU_OTHER_OPTION_POSX, 
 			y=OPTIONMENU_OTHER_OPTION_POSY,
 			width=OPTIONMENU_OTHER_OPTION_WIDTH,
-			height=OPTIONMENU_OTHER_OPTION_HEIGHT
+			height=OPTIONMENU_OTHER_OPTION_HEIGHT,
 		)
 		# Place the parameter label and entry
 		self.label_other_parameter.place(x=LABEL_OTHER_PARAMETER_POSX, y=LABEL_OTHER_PARAMETER_POSY)
@@ -1051,22 +1066,33 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		if self.other_option_sv.get() == "Add a comment":
 			parameter = self.other_parameter_sv.get()
 			self.other_parameter_sv.set(parameter)
-		else:
+		elif self.other_parameter_sv.get() in ["Enter value in usteps", "Enter value in C", "Enter the rpm"]:
+			self.entry_other_parameter.delete('0', 'end')
+			self.other_parameter_sv.set('')
 			try:
-				parameter = float(self.other_parameter_sv.get())
+				parameter = int(self.other_parameter_sv.get())
 				self.other_parameter_sv.set(parameter)
 			except:
 				self.entry_other_parameter.delete('0', 'end')
 				self.other_parameter_sv.set('')
+		#else:
+		#	try:
+		#		parameter = float(self.other_parameter_sv.get())
+		#		self.other_parameter_sv.set(parameter)
+		#	except:
+		#		self.entry_other_parameter.delete('0', 'end')
+		#		self.other_parameter_sv.set('')
 
 	def other_parameter_onclick(self, callback: Callable[[tk.Event], None]) -> None:
 		""" Deals with on click events for the entry for the other parameters """
 		if self.other_option_sv.get() == "Add a comment":
 			parameter = self.other_parameter_sv.get()
 			self.other_parameter_sv.set(parameter)
-		else:
+		elif self.other_parameter_sv.get() in ["Enter value in usteps", "Enter value in C", "Enter the rpm"]:
+			self.entry_other_parameter.delete('0', 'end')
+			self.other_parameter_sv.set('')
 			try:
-				parameter = float(self.other_parameter_sv.get())
+				parameter = int(self.other_parameter_sv.get())
 				self.other_parameter_sv.set(parameter)
 			except:
 				self.entry_other_parameter.delete('0', 'end')
@@ -1077,9 +1103,11 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		if self.other_option_sv.get() == "Add a comment":
 			parameter = self.other_parameter_sv.get()
 			self.other_parameter_sv.set(parameter)
-		else:
+		elif self.other_parameter_sv.get() in ["Enter value in usteps", "Enter value in C", "Enter the rpm"]:
+			self.entry_other_parameter.delete('0', 'end')
+			self.other_parameter_sv.set('')
 			try:
-				parameter = float(self.other_parameter_sv.get())
+				parameter = int(self.other_parameter_sv.get())
 				self.other_parameter_sv.set(parameter)
 			except:
 				self.entry_other_parameter.delete('0', 'end')

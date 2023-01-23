@@ -167,7 +167,11 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         timer.start(__file__, __name__)
         self.controller = Controller(com_port=self.__COM_PORT)
         self.__FAST_API_INTERFACE = FastAPIInterface(unit)
-        self.__pipettor = Seyonic()
+        try:
+            self.__pipettor = Seyonic()
+        except Exception as e:
+            print(e)
+            self.__pipettor = None
         self.__chassis = Chassis()
         self.__heater_shaker = None #BioShake3000T()
         # Turn on the Relay for the Heater/Shaker nad Chiller.
