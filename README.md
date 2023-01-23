@@ -7,6 +7,7 @@ Version Description cdp2p0.X.Y.Z.py:
  - Z: Patch (bug fixes)
 
 To-Do List:
+- add an entry for other parameter entries
 - use the Tip Use table (tip_use_model) to keep track of what tips are in what column of the tip boxes and what tip is currently where (need config tab)
 - test why reader can't connect for unit C
 - add fastapi code to this repo
