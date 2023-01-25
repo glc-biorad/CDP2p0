@@ -103,6 +103,67 @@ class Reader(api.util.motor.Motor):
         fw = self.__FAST_API_INTERFACE.reader.axis.get_position(self.__MODULE_NAME, self.__ID['Filter Wheel'])
         return x,y,z,fw
 
+    def get_position_from_axis(self, axis: str) -> int:
+        """ Get the position of the reader from the axis """
+        val = self.__FAST_API_INTERFACE.reader.axis.get_position(self.__MODULE_NAME, self.__ID[axis])
+        return val
+
+    def move_imager_relative(self, direction: str, value: int, velocity: str) -> None:
+        """ Move the Reader Imager relative to the current position given a direction, value to move (usteps), and a speed (usteps/sec) """
+        direction = direction.lower()[0]
+        directions = ['left', 'right',' backwards', 'forwards', 'up', 'down', 'l', 'r', 'b', 'f', 'u', 'd']
+        assert direction in directions
+        velocity = velocity.lower()[0]
+        velocities = ['fast', 'slow', 'f', 's']
+        assert velocity in velocities
+        # Set the sign of the value
+        if direction in ['r', 'd', 'f']:
+            value = -abs(value)
+        else:
+            value = abs(value)
+        # Get where we are based on the direction
+        if direction in ['l', 'r']:
+            # Set the ID and speed
+            ID = 'X'
+            if velocity == 'f':
+                speed = self.__LIMIT_MAX_VELOCITY_X
+            else:
+                speed = int(self.__LIMIT_MAX_VELOCITY_X * 0.2)
+        elif direction in ['b', 'f']:
+            # Set the ID and speed
+            ID = 'Y'
+            if velocity == 'f':
+                speed = self.__LIMIT_MAX_VELOCITY_Y
+            else:
+                speed = int(self.__LIMIT_MAX_VELOCITY_Y * 0.2)
+        elif direction in ['u', 'd']:
+            # Set the ID and speed
+            ID = 'Z'
+            if velocity == 'f':
+                speed = self.__LIMIT_MAX_VELOCITY_Z
+            else:
+                speed = int(self.__LIMIT_MAX_VELOCITY_Z * 0.2)
+        # Get the position of the imager for this axis
+        current_pos = self.get_position_from_axis(ID)
+        # Move to a position relative to the current position
+        pos = current_pos + value
+        # Move to the new position
+        self.__FAST_API_INTERFACE.reader.axis.move(self.__MODULE_NAME, self.__ID[ID], pos, speed, False, True)
+
+    def turn_on_led(self, channel: int, intensity: int) -> None:
+        """ Turn on the LED """
+        self.__FAST_API_INTERFACE.reader.led.on(self.__ID['LED'], channel, intensity)
+
+    def turn_off_led(self, channel: int) -> None:
+        """ Turn off the LED """
+        self.__FAST_API_INTERFACE.reader.led.off(self.__ID['LED'], channel)
+
+    def set_filter_wheel_location(self, value: int, block: bool = False) -> None:
+        """ Set the filter wheel location """
+        value = -abs(value)
+        speed = self.__LIMIT_MAX_VELOCITY_FILTER_WHEEL
+        self.__FAST_API_INTERFACE.reader.axis.move(self.__MODULE_NAME, self.__ID['Filter Wheel'], value, speed, block, True)
+
     # Home Reader Method.
     def home_reader(self, use_z=True):
         # Setup the logger.
