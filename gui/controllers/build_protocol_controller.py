@@ -635,7 +635,7 @@ class BuildProtocolController:
 					# Use the column to get where the consumable words end
 					i1 = split.index('column')
 				consumable = " ".join(split[i0:i1])
-				if consumable in ["Tip Box", "DG8"]:
+				if consumable in ["Tip Box"]:#, "DG8"]:
 					ignore_tips = True
 				else:
 					ignore_tips = False

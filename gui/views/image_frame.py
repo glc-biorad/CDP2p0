@@ -1,6 +1,7 @@
 import types
 import tkinter as tk
 import customtkinter as ctk
+from typing import Any, Callable
 
 from gui.controllers.image_controller import ImageController
 
@@ -85,7 +86,7 @@ class ImageFrame(ctk.CTkFrame):
 		self.height = height
 		self.posx = posx
 		self.posy = posy
-		self.controller = ImageController(ImageModel(), self)
+		self.controller = ImageController(model.get_image_model(), self)
 		self.buttons = {}
 		super().__init__(
 			master=self.master,
@@ -107,18 +108,18 @@ class ImageFrame(ctk.CTkFrame):
 		self.textbox_imager_view = tk.Canvas(self, width=IMAGER_VIEW_WIDTH, height=IMAGER_VIEW_HEIGHT, bg='red')
 		# Place the Filter Option Menu
 		self.label_filter = ctk.CTkLabel(master=self, text='Filter', font=("Roboto Medium", -16))
-		sv = self.controller.get_filter_sv(1)
+		self.filter_sv = self.controller.get_filter_sv(1)
 		self.optionmenu_filter = ctk.CTkOptionMenu(
 			master=self,
-			variable=sv,
+			variable=self.filter_sv,
 			values=('HEX', 'FAM', 'ATTO590', 'ALEXA405', 'CY5', 'CY5.5', 'Home'),
 		)
 		# Place the LED Option Menu
 		self.label_led = ctk.CTkLabel(master=self, text='LED', font=("Roboto Medium", -16))
-		led_sv = self.controller.get_led_sv(1)
+		self.led_sv = self.controller.get_led_sv(1)
 		self.optionmenu_led = ctk.CTkOptionMenu(
 			master=self,
-			variable=led_sv,
+			variable=self.led_sv,
 			values=('HEX', 'FAM', 'ATTO590', 'ALEXA405', 'CY5', 'CY5.5', 'Off'),
 		)
 		# Place the Option Buttons
@@ -145,27 +146,30 @@ class ImageFrame(ctk.CTkFrame):
 		self.label_relative_moves = ctk.CTkLabel(master=self, text="Relative Moves", font=("Roboto Medium", -16))
 		# Place the Relative Moves (dx)
 		self.label_dx = ctk.CTkLabel(master=self, text='dx', font=("Roboto Medium", -14))
-		dx_sv = self.controller.get_dx_sv(1)
-		self.entry_dx = ctk.CTkEntry(master=self, textvariable=dx_sv, font=("Roboto Medium", -14), width=ENTRY_DX_WIDTH)
+		self.dx_sv = self.controller.get_dx_sv(1)
+		self.entry_dx = ctk.CTkEntry(master=self, textvariable=self.dx_sv, font=("Roboto Medium", -14), width=ENTRY_DX_WIDTH)
 		# Place the Relative Moves (dy)
 		self.label_dy = ctk.CTkLabel(master=self, text='dy', font=("Roboto Medium", -14))
-		dy_sv = self.controller.get_dy_sv(1)
-		self.entry_dy = ctk.CTkEntry(master=self, textvariable=dy_sv, font=("Roboto Medium", -14), width=ENTRY_DY_WIDTH)
+		self.dy_sv = self.controller.get_dy_sv(1)
+		self.entry_dy = ctk.CTkEntry(master=self, textvariable=self.dy_sv, font=("Roboto Medium", -14), width=ENTRY_DY_WIDTH)
 		# Place the Relative Moves (dz)
 		self.label_dz = ctk.CTkLabel(master=self, text='dz', font=("Roboto Medium", -14))
-		dz_sv = self.controller.get_dz_sv(1)
-		self.entry_dz = ctk.CTkEntry(master=self, textvariable=dz_sv, font=("Roboto Medium", -14), width=ENTRY_DZ_WIDTH)
+		self.dz_sv = self.controller.get_dz_sv(1)
+		self.entry_dz = ctk.CTkEntry(master=self, textvariable=self.dz_sv, font=("Roboto Medium", -14), width=ENTRY_DZ_WIDTH)
 		# Place the LED Intensity slider
 		self.label_led_intensity = ctk.CTkLabel(master=self, text="LED Intensity", font=("Roboto Medium", -16))
+		self.led_intensity_iv = tk.IntVar()
+		self.led_intensity_iv.set(0)
 		self.slider_led_intensity = ctk.CTkSlider(
 			master=self,
 			from_=0,
 			to=100,
+			variable=self.led_intensity_iv,
 			number_of_steps=10,
 			progress_color='green',
 			width=SLIDER_LED_INTENSITY_WIDTH,
 			height=SLIDER_LED_INTENSITY_HEIGHT,
-			command=self.slider_event,
+			#command=self.slider_event,
 		)
 		self.slider_led_intensity.set(0)
 		self.slider_led_intensity.configure(state='disabled')
@@ -273,3 +277,31 @@ class ImageFrame(ctk.CTkFrame):
 
 	def slider_event(self, value):
 		print(value)
+
+	def trace_led_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Adds a trace to the led_sv variable to deal with it changing """
+		try:
+			self.led_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_led_intensity_iv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Adds a trace to the led_intensity_iv to deal with it changing """
+		try:
+			self.led_intensity_iv.trace('w', callback)
+		except:
+			pass
+
+	def trace_filter_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Adds a trace to the filter_sv to deal with it changing """
+		try:
+			self.filter_sv.trace('w', callback)
+		except:
+			pass
+
+	def bind_brightfield(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Binds the brightfield button """
+		try:
+			self.buttons['Brightfield'].bind('<Button-1>', callback)
+		except:
+			pass

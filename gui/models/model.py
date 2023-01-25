@@ -3,6 +3,7 @@ Model represents the data for the GUI
 """
 import sqlite3
 
+from gui.models.image_model import ImageModel
 from gui.models.thermocycle_model import ThermocycleModel
 from gui.models.build_protocol_model import BuildProtocolModel
 from gui.models.optimize_model import OptimizeModel
@@ -29,6 +30,10 @@ class Model:
 		#m = TipUseModel(self.db_name, self.cursor, self.connection)
 		self.setup_state_table()
 		self.setup_coordinates_table(unit)
+
+	def get_image_model(self) -> ImageModel:
+		self.image_model = ImageModel(self.db_name, self.cursor, self.connection)
+		return self.image_model
 
 	def setup_configure_model(self) -> None:
 		""" Sets up the configure table """

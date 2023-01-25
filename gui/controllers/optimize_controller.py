@@ -20,6 +20,7 @@ except:
 from gui.util.coordinates_list_to_csv import coordinates_list_to_csv
 
 # Constants
+Z1_OFFSET = 305000
 NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller"]
 NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip", "Lid Tray"]
 TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
@@ -208,6 +209,15 @@ class OptimizeController:
 		consumable = self.view.consumable_sv.get()
 		tray = self.view.tray_sv.get()
 		column = self.view.column_sv.get()
+		tip = self.view.tip_sv.get()
+		if consumable == '':
+			tk.messagebox.showwarning(title="Coordinate Update", message="No consumable option selected, cannot update without this information.")
+			return None
+		if tip == '':
+			tk.messagebox.showwarning(title="Coordinate Update", message="No tip option selected, cannot update without this information. All coordinates are based on the 1000 uL tip coordinate, updating a coordinate using 50 or 200 uL tips will update the coordinate with respect to the 1000 uL tip using the coordinate height offset.")
+			return None
+		else:
+			tip = int(tip)
 		# Generate a warning message
 		message = ''
 		if self.coordinates_model.check_location_exists(f'Unit {self.unit} Upper Gantry Coordinates', consumable, tray, column):
@@ -223,6 +233,9 @@ class OptimizeController:
 			if tk.messagebox.askokcancel(title="Coordinate Update", message=message):
 				# Get the X, Y, Z, and Drip Plate coordinates from the current position of the pipettor
 				x, y, z1, z2 = self.upper_gantry.get_position()
+				# Use the tip difference offsets to update the coordinate based on the current tip selected
+				if tip in [50, 200]:
+					z1 = z1 + Z1_OFFSET
 				# Get the table name for this unit
 				table_name = f"Unit {self.unit} Upper Gantry Coordinates"
 				# Update the model

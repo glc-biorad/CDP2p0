@@ -1186,7 +1186,6 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		# Update the action progress label
 		self.label_action_progress.configure(text=f"Action Progress: 0 of {n_actions}")
 		actions = self.model.select()
-		print(actions)
 		# Delete all actions so the IDs can be reassigned
 		self.model.delete_all()
 		# Add the actions back to the treeview

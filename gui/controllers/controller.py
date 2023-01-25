@@ -6,10 +6,14 @@ import threading
 from gui.models.model import Model
 from gui.views.view import View
 
+from gui.controllers.image_controller import ImageController
 from gui.controllers.thermocycle_controller import ThermocycleController
 from gui.controllers.build_protocol_controller import BuildProtocolController
 from gui.controllers.optimize_controller import OptimizeController
 from gui.controllers.configure_controller import ConfigureController
+
+from gui.views.image_frame import ImageFrame
+from gui.views.optimize_frame import OptimizeFrame
 
 # Import utilities
 from gui.util.insert_at_selected_row import insert_at_selected_row
@@ -30,6 +34,10 @@ class Controller:
 	def __init__(self, model: Model, view: View) -> None:
 		self.model = model
 		self.view = view
+		self.image_controller = ImageController(
+			model=self.model.get_image_model(),
+			view=self.view.image_frame
+		)
 		self.thermocycle_controller = ThermocycleController(
 			model=self.model.get_thermocycle_model(),
 			view=self.view.thermocycle_frame
@@ -50,8 +58,13 @@ class Controller:
 			self.upper_gantry = UpperGantry()
 		except:
 			self.upper_gantry = None
+		try: 
+			self.reader = Reader()
+		except:
+			self.reader = None
 
 	def setup_bindings(self) -> None:
+		self.image_controller.setup_bindings()
 		self.thermocycle_controller.setup_bindings()
 		self.build_protocol_controller.setup_bindings()
 		self.optimize_controller.setup_bindings()
@@ -71,80 +84,112 @@ class Controller:
 		self.view.bind('<Shift H>', self.home_imager)
 		self.view.mainloop()
 
+	def thread_relative_reader(self, direction: str, value: int, velocity: str) -> None:
+		""" Thread for moving the reader relatively """
+		self.reader = Reader()
+		self.reader.move_imager_relative(direction, value, velocity)
+		self.reader.close()
+	def thread_relative_upper_gantry(self, direction: str, value: int, velocity: str) -> None:
+		""" Thread for moving the upper gantry relatively """
+		self.upper_gantry = UpperGantry()
+		self.upper_gantry.move_relative(direction, value, velocity)
+		self.upper_gantry.close()
+
 	def backwards(self, event):
 		""" Deals with moving relative moves
 		"""
 		# Make sure we are on the Image Frame
-		#current_frame = self.view.menu_frame.current_view
-		#from gui.views.image_frame import ImageFrame
-		#from gui.views.optimize_frame import OptimizeFrame
-		#if type(current_frame) == ImageFrame:
-		# Get the x value of labels on the tabs we are interested to check which tab is open relative to the parent
-		x_optimize = self.optimize_controller.view.label_consumable.winfo_x()
-		# Determine which tab we are on based on the position of a single widget
-		if x_optimize != 0:
-			# Get the Y value for the relative move backwards
+		current_frame = self.view.menu_frame.current_view
+		if type(current_frame) == ImageFrame:
+			y = int(current_frame.dy_sv.get())
+			thread = threading.Thread(target=self.thread_relative_reader, args=('backwards', y, 'slow',))
+			thread.start()
+		elif type(current_frame) == OptimizeFrame:
 			y = int(self.optimize_controller.view.y_sv.get())
-			self.upper_gantry.move_relative('backwards', y, velocity='slow')
-	def thread_backwards_reader(self) -> None:
-		self.reader = Reader()
-		#self.reader.move_imager()
+			thread = threading.Thread(target=self.thread_relative_upper_gantry, args=('backwards', y, 'slow',))
+			thread.start()
+		else:
+			return None
 
 	def forwards(self, event):
 		""" Deals with moving relative moves
 		"""
-		# Get the x value of labels on the tabs we are interested to check which tab is open relative to the parent
-		x_optimize = self.optimize_controller.view.label_consumable.winfo_x()
-		# Determine which tab we are on based on the position of a single widget
-		if x_optimize != 0:
-			# Get the Y value for the relative move backwards
+		# Make sure we are on the Image Frame
+		current_frame = self.view.menu_frame.current_view
+		if type(current_frame) == ImageFrame:
+			y = int(current_frame.dy_sv.get())
+			thread = threading.Thread(target=self.thread_relative_reader, args=('forwards', y, 'slow',))
+			thread.start()
+		elif type(current_frame) == OptimizeFrame:
 			y = int(self.optimize_controller.view.y_sv.get())
-			self.upper_gantry.move_relative('forwards', y, velocity='slow')
+			thread = threading.Thread(target=self.thread_relative_upper_gantry, args=('forwards', y, 'slow',))
+			thread.start()
+		else:
+			return None
 
 	def left(self, event):
 		""" Deals with moving relative moves
 		"""
-		# Get the x value of labels on the tabs we are interested to check which tab is open relative to the parent
-		x_optimize = self.optimize_controller.view.label_consumable.winfo_x()
-		# Determine which tab we are on based on the position of a single widget
-		if x_optimize != 0:
-			# Get the X value for the relative move backwards
+		# Make sure we are on the Image Frame
+		current_frame = self.view.menu_frame.current_view
+		if type(current_frame) == ImageFrame:
+			x = int(current_frame.dx_sv.get())
+			thread = threading.Thread(target=self.thread_relative_reader, args=('left', x, 'slow',))
+			thread.start()
+		elif type(current_frame) == OptimizeFrame:
 			x = int(self.optimize_controller.view.x_sv.get())
-			self.upper_gantry.move_relative('left', x, velocity='slow')
+			thread = threading.Thread(target=self.thread_relative_upper_gantry, args=('left', x, 'slow',))
+			thread.start()
+		else:
+			return None
 
 	def right(self, event):
 		""" Deals with moving relative moves
 		"""
-		# Get the x value of labels on the tabs we are interested to check which tab is open relative to the parent
-		x_optimize = self.optimize_controller.view.label_consumable.winfo_x()
-		# Determine which tab we are on based on the position of a single widget
-		if x_optimize != 0:
-			# Get the X value for the relative move backwards
+		# Make sure we are on the Image Frame
+		current_frame = self.view.menu_frame.current_view
+		if type(current_frame) == ImageFrame:
+			x = int(current_frame.dx_sv.get())
+			thread = threading.Thread(target=self.thread_relative_reader, args=('right', x, 'slow',))
+			thread.start()
+		elif type(current_frame) == OptimizeFrame:
 			x = int(self.optimize_controller.view.x_sv.get())
-			self.upper_gantry.move_relative('right', x, velocity='slow')
+			thread = threading.Thread(target=self.thread_relative_upper_gantry, args=('right', x, 'slow',))
+			thread.start()
+		else:
+			return None
 
 	def up(self, event):
 		""" Deals with moving relative moves
 		"""
-		# Get the x value of labels on the tabs we are interested to check which tab is open relative to the parent
-		x_optimize = self.optimize_controller.view.label_consumable.winfo_x()
-		# Determine which tab we are on based on the position of a single widget
-		if x_optimize != 0:
-			# Get the Z value for the relative move backwards
+		# Make sure we are on the Image Frame
+		current_frame = self.view.menu_frame.current_view
+		if type(current_frame) == ImageFrame:
+			z = int(current_frame.dz_sv.get())
+			thread = threading.Thread(target=self.thread_relative_reader, args=('up', z, 'slow',))
+			thread.start()
+		elif type(current_frame) == OptimizeFrame:
 			z = int(self.optimize_controller.view.z_sv.get())
-			self.upper_gantry.move_relative('up', z, velocity='slow')
+			thread = threading.Thread(target=self.thread_relative_upper_gantry, args=('up', z, 'slow',))
+			thread.start()
+		else:
+			return None
 
 	def down(self, event):
 		""" Deals with moving relative moves
 		"""
-		# Get the x value of labels on the tabs we are interested to check which tab is open relative to the parent
-		x_optimize = self.optimize_controller.view.label_consumable.winfo_x()
-		# Determine which tab we are on based on the position of a single widget
-		if x_optimize != 0:
-			print(x_optimize)
-			# Get the Z value for the relative move backwards
+		# Make sure we are on the Image Frame
+		current_frame = self.view.menu_frame.current_view
+		if type(current_frame) == ImageFrame:
+			z = int(current_frame.dz_sv.get())
+			thread = threading.Thread(target=self.thread_relative_reader, args=('down', z, 'slow',))
+			thread.start()
+		elif type(current_frame) == OptimizeFrame:
 			z = int(self.optimize_controller.view.z_sv.get())
-			self.upper_gantry.move_relative('down', z, velocity='slow')
+			thread = threading.Thread(target=self.thread_relative_upper_gantry, args=('down', z, 'slow',))
+			thread.start()
+		else:
+			return None
 
 	def copy(self, event) -> None:
 		""" Deals with copy functionality """
@@ -208,7 +253,6 @@ class Controller:
 		""" Homes the imager if H is pressed not h """
 		# Make sure we are on the Image Frame
 		current_frame = self.view.menu_frame.current_view
-		from gui.views.image_frame import ImageFrame
 		if type(current_frame) == ImageFrame:
 			thread = threading.Thread(target=self.thread_home_imager)
 			thread.start()
