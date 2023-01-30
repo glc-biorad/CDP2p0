@@ -14,7 +14,7 @@
 13: Delay for 3 seconds
 14: Dispense 30 uLs with 200 uL tips at High pressure 1 time
 15: Home pipettor
-16: Delay for 10 minutes
+16: Delay for 5 minutes
 17: Engage magnet
 18: Delay for 2 minutes
 19: Move to Mag Separator column 2 with 200 uL tips
@@ -32,7 +32,7 @@
 31: Delay for 3 seconds
 32: Dispense 50 uLs with 200 uL tips at High pressure 1 time
 33: Home pipettor
-34: Delay for 10 minutes
+34: Delay for 5 minutes
 35: Engage magnet
 36: Delay for 2 minutes
 37: Move to Mag Separator column 3 with 200 uL tips

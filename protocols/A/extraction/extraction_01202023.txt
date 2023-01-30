@@ -60,13 +60,13 @@
 65: Delay for 3 seconds
 66: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 0: Home pipettor fast
-64: Shake on
+64: Shake on with an RPM of 1000
 67: Delay for 20 minutes
 64: Shake off
 70: Move to Heater/Shaker column 1 with 1000 uL tips
 71: Aspirate 860 uLs with 1000 uL tips at High pressure 1 time
-72: Move to Sample Rack tray A with 1000 uL tips moving up by 270000
-64: Shake on
+72: Move to Sample Rack tray A with 1000 uL tips moving left by 500 up by 270000
+64: Shake on with an RPM of 1000
 73: Delay for 45 seconds
 74: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 75: Delay for 5 seconds
@@ -85,8 +85,8 @@
 87: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
 88: Move to Heater/Shaker column 1 with 1000 uL tips
 89: Aspirate 860 uLs with 1000 uL tips at High pressure 1 time
-90: Move to Sample Rack tray A with 1000 uL tips moving up by 270000
-64: Shake on
+90: Move to Sample Rack tray A with 1000 uL tips moving left by 500 up by 270000
+64: Shake on with an RPM of 1000
 91: Delay for 45 seconds
 92: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 93: Delay for 5 seconds
@@ -105,8 +105,8 @@
 105: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
 106: Move to Heater/Shaker column 1 with 1000 uL tips
 107: Aspirate 860 uLs with 1000 uL tips at High pressure 1 time
-108: Move to Sample Rack tray A with 1000 uL tips moving up by 270000
-64: Shake on
+108: Move to Sample Rack tray A with 1000 uL tips moving left by 500 up by 270000
+64: Shake on with an RPM of 1000
 109: Delay for 45 seconds
 110: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 111: Delay for 5 seconds
@@ -125,8 +125,8 @@
 123: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
 124: Move to Heater/Shaker column 1 with 1000 uL tips
 125: Aspirate 860 uLs with 1000 uL tips at High pressure 1 time
-126: Move to Sample Rack tray A with 1000 uL tips moving up by 270000
-64: Shake on
+126: Move to Sample Rack tray A with 1000 uL tips moving left by 500 up by 270000
+64: Shake on with an RPM of 1000
 127: Delay for 45 seconds
 128: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 129: Delay for 5 seconds
@@ -145,8 +145,8 @@
 141: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
 142: Move to Heater/Shaker column 1 with 1000 uL tips
 143: Aspirate 860 uLs with 1000 uL tips at High pressure 1 time
-144: Move to Sample Rack tray A with 1000 uL tips moving up by 270000
-64: Shake on
+144: Move to Sample Rack tray A with 1000 uL tips moving left by 500 up by 270000
+64: Shake on with an RPM of 1000
 145: Delay for 45 seconds
 146: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 147: Delay for 5 seconds
@@ -166,8 +166,8 @@
 68: Change Heater/Shaker Temperature to 21.0 C
 160: Move to Heater/Shaker column 1 with 1000 uL tips
 161: Aspirate 860 uLs with 1000 uL tips at High pressure 1 time
-162: Move to Sample Rack tray D with 1000 uL tips moving up by 270000
-64: Shake on
+162: Move to Sample Rack tray C with 1000 uL tips moving left by 500 up by 270000
+64: Shake on with an RPM of 1000
 163: Delay for 45 seconds
 164: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 165: Delay for 5 seconds
@@ -186,8 +186,8 @@
 177: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
 178: Move to Heater/Shaker column 1 with 1000 uL tips
 179: Aspirate 860 uLs with 1000 uL tips at High pressure 1 time
-180: Move to Sample Rack tray D with 1000 uL tips moving up by 270000
-64: Shake on
+180: Move to Sample Rack tray C with 1000 uL tips moving left by 500 up by 270000
+64: Shake on with an RPM of 1000
 181: Delay for 45 seconds
 182: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 183: Delay for 5 seconds
@@ -206,8 +206,8 @@
 195: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
 196: Move to Heater/Shaker column 1 with 1000 uL tips
 197: Aspirate 860 uLs with 1000 uL tips at High pressure 1 time
-198: Move to Sample Rack tray D with 1000 uL tips moving up by 270000
-64: Shake on
+198: Move to Sample Rack tray C with 1000 uL tips moving left by 500 up by 270000
+64: Shake on with an RPM of 1000
 199: Delay for 45 seconds
 200: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 201: Delay for 5 seconds
@@ -226,8 +226,8 @@
 213: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
 214: Move to Heater/Shaker column 1 with 1000 uL tips
 215: Aspirate 860 uLs with 1000 uL tips at High pressure 1 time
-216: Move to Sample Rack tray D with 1000 uL tips moving up by 270000
-64: Shake on
+216: Move to Sample Rack tray C with 1000 uL tips moving left by 500 up by 270000
+64: Shake on with an RPM of 1000
 217: Delay for 45 seconds
 218: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 219: Delay for 5 seconds
