@@ -167,7 +167,11 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         timer.start(__file__, __name__)
         self.controller = Controller(com_port=self.__COM_PORT)
         self.__FAST_API_INTERFACE = FastAPIInterface(unit)
-        self.__pipettor = Seyonic()
+        try:
+            self.__pipettor = Seyonic()
+        except Exception as e:
+            print(e)
+            self.__pipettor = None
         self.__chassis = Chassis()
         self.__heater_shaker = None #BioShake3000T()
         # Turn on the Relay for the Heater/Shaker nad Chiller.
@@ -1352,6 +1356,19 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         self.move(x=lid[0], y=lid[1], z=lid[2], drip_plate=lid[3], use_drip_plate=True, tip=1000)
         # Turn on suction cup
         self.turn_on_suction_cups()
+        delay(2, 'seconds')
+        # Move to tray_xyz with drip plate
+        self.move(x=tray[0], y=tray[1], z=tray[2], drip_plate=tray[3], use_drip_plate=True, tip=1000)
+        # Turn off suction cup
+        self.turn_off_suction_cups()
+
+    def move_chip_new(self, chip: list, tray: list) -> None:
+        """ Moves a lid from the lid tray to a tray """
+        # Move the pipettor to lid_xyz with the drip tray
+        self.move(x=chip[0], y=chip[1], z=chip[2], drip_plate=chip[3], use_drip_plate=True, tip=1000)
+        # Turn on suction cup
+        self.turn_on_suction_cups()
+        delay(2, 'seconds')
         # Move to tray_xyz with drip plate
         self.move(x=tray[0], y=tray[1], z=tray[2], drip_plate=tray[3], use_drip_plate=True, tip=1000)
         # Turn off suction cup

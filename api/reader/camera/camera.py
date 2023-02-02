@@ -1,4 +1,7 @@
-import PySpin as pyspin
+try:
+    import PySpin as pyspin
+except:
+    print("Need to pip install PySpin with the whl file, talk to D. Baur or G. Lopez-Candales")
 import numpy
 
 from api.util.logger import Logger

@@ -162,6 +162,7 @@ class LED():
     # Private variables.
     __parameters_dict = {
         'channel': None,
+        'intensity': None,
         }
     # Private constants.
     # Constructor.
@@ -169,10 +170,12 @@ class LED():
         a = 1
 
     # On Method.
-    def on(self, id, channel):
+    def on(self, id:int , channel: int, intensity: int):
         logger = Logger(__file__, __name__)
         # Update the parameters dict.
+        self.__parameters_dict = {}
         self.__parameters_dict['channel'] = channel
+        self.__parameters_dict['intensity'] = intensity
         # Generate the URL.
         url = FAST_API_URL_BASE + FAST_API_URL_PATHS['reader']['led']['']['url']
         url = url.replace('{id}', str(id))
@@ -192,6 +195,7 @@ class LED():
     def off(self, id, channel):
         logger = Logger(__file__, __name__)
         # Update parameters dict.
+        self.__parameters_dict = {}
         self.__parameters_dict['channel'] = channel
         # Generate the URL.
         url = FAST_API_URL_BASE + FAST_API_URL_PATHS['reader']['led']['off']['url']

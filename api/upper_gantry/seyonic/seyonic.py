@@ -106,7 +106,10 @@ class Seyonic(object):
             # equalization
         self.pressure_delay = 1.5 # this should be loaded from config file
         # initialize pipettor connection
-        self.client = DispenserCommunicator.ConnectClient()
+        try:
+            self.client = DispenserCommunicator.ConnectClient()
+        except:
+            print('WOW')
         self.client.EventsAndExceptionsActive = True
         self.client.OpenTcp(ip_address, port)
         self.aspirate_volumes = [0] * 8
