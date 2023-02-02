@@ -1,16 +1,23 @@
 import types
+import tkinter as tk
 import customtkinter as ctk
+from typing import Any, Callable
 
 from gui.controllers.image_controller import ImageController
 
 from gui.models.model import Model
 from gui.models.image_model import ImageModel
 
+# Import the Reader API
+from api.reader.reader import Reader
+
 # Constants
 IMAGER_VIEW_POSX = 10
 IMAGER_VIEW_POSY = 20
 IMAGER_VIEW_WIDTH = 400
 IMAGER_VIEW_HEIGHT = 400
+IMAGER_VIEW_SCALED_WIDTH = 803
+IMAGER_VIEW_SCALED_HEIGHT = 803
 LABEL_FILTER_POSX = 490
 LABEL_FILTER_POSY = 10
 OPTIONMENU_FILTER_POSX = 425
@@ -62,7 +69,7 @@ LABELS_TEXT = [
 # Button Titles (Only for asserting)
 BUTTON_TITLES = [
 	'Brightfield',
-	'Auto-Focus',
+	'Live View',
 	'Save View',
 	'Load View',
 	'Scan Chip',
@@ -79,7 +86,7 @@ class ImageFrame(ctk.CTkFrame):
 		self.height = height
 		self.posx = posx
 		self.posy = posy
-		self.controller = ImageController(ImageModel(), self)
+		self.controller = ImageController(model.get_image_model(), self)
 		self.buttons = {}
 		super().__init__(
 			master=self.master,
@@ -91,27 +98,28 @@ class ImageFrame(ctk.CTkFrame):
 
 	def create_ui(self) -> None:
 		# Place the Imager View
-		self.textbox_imager_view = ctk.CTkTextbox(
-			master=self,
-			width=IMAGER_VIEW_WIDTH,
-			height=IMAGER_VIEW_HEIGHT,
-			font=("Roboto Medium", -12),
-			state='disabled',
-		)
+		#self.textbox_imager_view = ctk.CTkTextbox(
+		#	master=self,
+		#	width=IMAGER_VIEW_WIDTH,
+		#	height=IMAGER_VIEW_HEIGHT,
+		#	font=("Roboto Medium", -12),
+		#	state='disabled',
+		#)
+		self.textbox_imager_view = tk.Canvas(self, width=IMAGER_VIEW_WIDTH, height=IMAGER_VIEW_HEIGHT, bg='red')
 		# Place the Filter Option Menu
 		self.label_filter = ctk.CTkLabel(master=self, text='Filter', font=("Roboto Medium", -16))
-		sv = self.controller.get_filter_sv(1)
+		self.filter_sv = self.controller.get_filter_sv(1)
 		self.optionmenu_filter = ctk.CTkOptionMenu(
 			master=self,
-			variable=sv,
+			variable=self.filter_sv,
 			values=('HEX', 'FAM', 'ATTO590', 'ALEXA405', 'CY5', 'CY5.5', 'Home'),
 		)
 		# Place the LED Option Menu
 		self.label_led = ctk.CTkLabel(master=self, text='LED', font=("Roboto Medium", -16))
-		led_sv = self.controller.get_led_sv(1)
+		self.led_sv = self.controller.get_led_sv(1)
 		self.optionmenu_led = ctk.CTkOptionMenu(
 			master=self,
-			variable=led_sv,
+			variable=self.led_sv,
 			values=('HEX', 'FAM', 'ATTO590', 'ALEXA405', 'CY5', 'CY5.5', 'Off'),
 		)
 		# Place the Option Buttons
@@ -138,27 +146,30 @@ class ImageFrame(ctk.CTkFrame):
 		self.label_relative_moves = ctk.CTkLabel(master=self, text="Relative Moves", font=("Roboto Medium", -16))
 		# Place the Relative Moves (dx)
 		self.label_dx = ctk.CTkLabel(master=self, text='dx', font=("Roboto Medium", -14))
-		dx_sv = self.controller.get_dx_sv(1)
-		self.entry_dx = ctk.CTkEntry(master=self, textvariable=dx_sv, font=("Roboto Medium", -14), width=ENTRY_DX_WIDTH)
+		self.dx_sv = self.controller.get_dx_sv(1)
+		self.entry_dx = ctk.CTkEntry(master=self, textvariable=self.dx_sv, font=("Roboto Medium", -14), width=ENTRY_DX_WIDTH)
 		# Place the Relative Moves (dy)
 		self.label_dy = ctk.CTkLabel(master=self, text='dy', font=("Roboto Medium", -14))
-		dy_sv = self.controller.get_dy_sv(1)
-		self.entry_dy = ctk.CTkEntry(master=self, textvariable=dy_sv, font=("Roboto Medium", -14), width=ENTRY_DY_WIDTH)
+		self.dy_sv = self.controller.get_dy_sv(1)
+		self.entry_dy = ctk.CTkEntry(master=self, textvariable=self.dy_sv, font=("Roboto Medium", -14), width=ENTRY_DY_WIDTH)
 		# Place the Relative Moves (dz)
 		self.label_dz = ctk.CTkLabel(master=self, text='dz', font=("Roboto Medium", -14))
-		dz_sv = self.controller.get_dz_sv(1)
-		self.entry_dz = ctk.CTkEntry(master=self, textvariable=dz_sv, font=("Roboto Medium", -14), width=ENTRY_DZ_WIDTH)
+		self.dz_sv = self.controller.get_dz_sv(1)
+		self.entry_dz = ctk.CTkEntry(master=self, textvariable=self.dz_sv, font=("Roboto Medium", -14), width=ENTRY_DZ_WIDTH)
 		# Place the LED Intensity slider
 		self.label_led_intensity = ctk.CTkLabel(master=self, text="LED Intensity", font=("Roboto Medium", -16))
+		self.led_intensity_iv = tk.IntVar()
+		self.led_intensity_iv.set(0)
 		self.slider_led_intensity = ctk.CTkSlider(
 			master=self,
 			from_=0,
 			to=100,
+			variable=self.led_intensity_iv,
 			number_of_steps=10,
 			progress_color='green',
 			width=SLIDER_LED_INTENSITY_WIDTH,
 			height=SLIDER_LED_INTENSITY_HEIGHT,
-			command=self.slider_event,
+			#command=self.slider_event,
 		)
 		self.slider_led_intensity.set(0)
 		self.slider_led_intensity.configure(state='disabled')
@@ -204,8 +215,8 @@ class ImageFrame(ctk.CTkFrame):
 		# Return the appropriate on click function
 		if button_title == 'Brightfield':
 			return self.on_click_brightfield
-		elif button_title == 'Auto-Focus':
-			return self.on_click_auto_focus
+		elif button_title == "Live View":
+			return self.on_click_live_view
 		elif button_title == "Save View":
 			return self.on_click_save_view
 		elif button_title == "Load View":
@@ -218,13 +229,44 @@ class ImageFrame(ctk.CTkFrame):
 	def on_click_brightfield(self) -> None:
 		print('Brightfield')
 
-	def on_click_auto_focus(self) -> None:
-		print('Auto-Focus')
+	def on_click_live_view(self) -> None:
+		print("Live View")
 
 	def on_click_save_view(self) -> None:
 		print("Save View")
 
 	def on_click_load_view(self) -> None:
+		from PIL import Image, ImageTk
+		try:
+			self.reader = Reader()
+			# Get the camera
+			camcontroller = self.reader.camcontroller
+			camera = camcontroller.camera
+			# Snap continuously
+			camcontroller.snap_continuous_prep()
+			#camcontroller.snap_single()
+			camcontroller.setExposureTimeMicroseconds(2000)
+			image = camera.GetNextImage(1000)
+			array = image.GetNDArray()
+			array = array / (2**16-1)
+			array *= 255
+			print(type(array))
+			print(array.shape)
+			array = array.transpose((0,1))
+			_image = Image.fromarray(array)
+			width, height = _image.size
+			#_image = _image.resize((int(0.1468*width),int(0.220105*height)))
+			_image = _image.resize((IMAGER_VIEW_SCALED_WIDTH,IMAGER_VIEW_SCALED_HEIGHT))
+			print(_image.size)
+			self.img = ImageTk.PhotoImage(image=_image)
+			#self.textbox_imager_view.create_image(500,500,anchor='nw', image=img)
+			image.Release()
+			camera.EndAcquisition()
+			self.textbox_imager_view.create_image(0,0, anchor=tk.CENTER, image=self.img)
+		except Exception as e:
+			print(e)
+			tk.messagebox.showwarning(title="Reader Connection Issue", message="Reader could not be initialized")
+			self.reader = None
 		print("Load View")
 
 	def on_click_scan_chip(self) -> None:
@@ -235,3 +277,38 @@ class ImageFrame(ctk.CTkFrame):
 
 	def slider_event(self, value):
 		print(value)
+
+	def trace_led_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Adds a trace to the led_sv variable to deal with it changing """
+		try:
+			self.led_sv.trace('w', callback)
+		except:
+			pass
+
+	def trace_led_intensity_iv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Adds a trace to the led_intensity_iv to deal with it changing """
+		try:
+			self.led_intensity_iv.trace('w', callback)
+		except:
+			pass
+
+	def trace_filter_sv(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Adds a trace to the filter_sv to deal with it changing """
+		try:
+			self.filter_sv.trace('w', callback)
+		except:
+			pass
+
+	def bind_brightfield(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Binds the brightfield button """
+		try:
+			self.buttons['Brightfield'].bind('<Button-1>', callback)
+		except:
+			pass
+
+	def bind_live_view(self, callback: Callable[[tk.Event], None]) -> None:
+		""" Binds the live view button """
+		try:
+			self.buttons["Live View"].bind('<Button-1>', callback)
+		except:
+			pass

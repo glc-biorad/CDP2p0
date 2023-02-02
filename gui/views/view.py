@@ -19,6 +19,7 @@ from api.util.server import Server
 
 # Constants
 TITLE = "CDP 2.0 Development GUI"
+APP_ICON_PATH = 'gui/images/bio-rad-logo.ico'
 WIDTH = 780
 HEIGHT = 520
 RIGHT_FRAME_WIDTH = 600
@@ -44,10 +45,12 @@ class View(ctk.CTk):
 		self.server = Server()
 		self.server.start()
 		self.protocol("WM_DELETE_WINDOW", self.on_closing)
-		print("Pass the model to the views!")
 		self.model = model
 		self.title(TITLE)
 		self.geometry(f"{WIDTH}x{HEIGHT}")
+		self.maxsize(WIDTH,HEIGHT)
+		self.minsize(WIDTH,HEIGHT)
+		self.iconbitmap(APP_ICON_PATH)
 		# Initialize the Frames
 		self.image_frame = ImageFrame(self, model, RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)
 		self.optimize_frame = OptimizeFrame(self, model,RIGHT_FRAME_WIDTH, RIGHT_FRAME_HEIGHT, MENU_WIDTH, 0)

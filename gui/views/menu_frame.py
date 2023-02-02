@@ -13,7 +13,8 @@ DY = 45
 LABEL_FONT = ("Segoe UI", -16)
 BUTTON_WIDTH = 160
 BUTTON_HEIGHT = 30
-BUTTON_FONT = ("Segoe UI", -13)
+FONT = "Segoe UI"
+BUTTON_FONT = (FONT, -13)
 BUTTON_CORNER_RADIUS = 5
 
 # Button Titles

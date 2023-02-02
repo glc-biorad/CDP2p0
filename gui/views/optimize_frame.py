@@ -179,7 +179,7 @@ CONSUMABLES = (
 	"Tip Transfer Tray",
 	"Assay Strip",
 	"DG8",
-	"Chip",
+	"Tray",
 	"",
 )
 NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller"]
@@ -187,9 +187,9 @@ NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip", "Lid Tray"]
 TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
 EIGHT_COLUMN_CONSUMABLES = ["Tip Transfer Tray", "Tip Tray"]
 FOUR_COLUMN_CONSUMABLES = ["Heater/Shaker"]
-THREE_COLUMN_CONSUMABLES = ["DG8"]
+THREE_COLUMN_CONSUMABLES = ["DG8", "Tray"]
 TWO_COLUMN_CONSUMABLES = ["Assay Strip"]
-SPECIAL_CONSUMABLES = ["DG8", "Chip"]
+SPECIAL_CONSUMABLES = ["DG8", "Tray"]
 
 # Image Paths
 IMAGE_PATHS = {
