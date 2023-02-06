@@ -227,19 +227,19 @@
 226: Delay for 3 seconds
 227: Dispense 25 uLs with 1000 uL tips at High pressure 1 time
 228: Move to Heater/Shaker column 1 with 1000 uL tips
-229: Aspirate 860 uLs with 1000 uL tips at High pressure 1 time
+229: Aspirate 660 uLs with 1000 uL tips at High pressure 1 time
 230: Move to Sample Rack tray C with 1000 uL tips moving left by 500 up by 270000
 231: Shake on with an RPM of 1000
 232: Delay for 45 seconds
 233: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 234: Delay for 5 seconds
-235: Dispense 160 uLs with 1000 uL tips at High pressure 1 time
+235: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 236: Delay for 5 seconds
-237: Dispense 160 uLs with 1000 uL tips at High pressure 1 time
+237: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 238: Delay for 5 seconds
-239: Dispense 160 uLs with 1000 uL tips at High pressure 1 time
+239: Dispense 120 uLs with 1000 uL tips at High pressure 1 time
 240: Delay for 5 seconds
-241: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
+241: Dispense 160 uLs with 1000 uL tips at High pressure 1 time
 242: Move relative right by 3000
 243: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
 244: Shake off
@@ -281,23 +281,23 @@
 280: Engage magnet
 281: Pickup tips from A column 2
 282: Move to Reagent Cartridge tray A column 3 with 1000 uL tips
-283: Aspirate 300 uLs with 1000 uL tips at High pressure 1 time
+283: Aspirate 250 uLs with 1000 uL tips at High pressure 1 time
 284: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
-285: Dispense 300 uLs with 1000 uL tips at High pressure 1 time
-286: Delay for 5 seconds
-287: Aspirate 300 uLs with 1000 uL tips at High pressure 1 time
+285: Dispense 250 uLs with 1000 uL tips at High pressure 1 time
+286: Delay for 10 seconds
+287: Aspirate 250 uLs with 1000 uL tips at High pressure 1 time
 288: Move to Reagent Cartridge tray A column 11 with 1000 uL tips
-289: Dispense 300 uLs with 1000 uL tips at High pressure 1 time
+289: Dispense 250 uLs with 1000 uL tips at High pressure 1 time
 290: Eject tips in A column 2
 291: Pickup tips from A column 3
 292: Move to Reagent Cartridge tray A column 10 with 1000 uL tips
-293: Aspirate 300 uLs with 1000 uL tips at High pressure 1 time
+293: Aspirate 250 uLs with 1000 uL tips at High pressure 1 time
 294: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
-295: Dispense 300 uLs with 1000 uL tips at High pressure 1 time
-296: Delay for 5 seconds
-297: Aspirate 300 uLs with 1000 uL tips at High pressure 1 time
+295: Dispense 250 uLs with 1000 uL tips at High pressure 1 time
+296: Delay for 10 seconds
+297: Aspirate 250 uLs with 1000 uL tips at High pressure 1 time
 298: Move to Reagent Cartridge tray A column 11 with 1000 uL tips
-299: Dispense 300 uLs with 1000 uL tips at High pressure 1 time
+299: Dispense 250 uLs with 1000 uL tips at High pressure 1 time
 300: Eject tips in A column 3
 301: Pickup tips from A column 5
 302: Move to Mag Separator column 1 with 50 uL tips
