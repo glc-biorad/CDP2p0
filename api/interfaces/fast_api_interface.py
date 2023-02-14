@@ -359,7 +359,7 @@ class Axis():
         value = self.get_position(module_name, id)
         if value == position:
             logger.log('MESSAGE', "Already at the {0} along the axis {1}".format(value, id))
-            return
+            #return
         # Generate the URL.
         url = FAST_API_URL_BASE + FAST_API_URL_PATHS[module_name]['axis']['move']['url']
         if module_name.lower() != 'prep_deck':

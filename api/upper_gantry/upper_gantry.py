@@ -168,10 +168,16 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         self.controller = Controller(com_port=self.__COM_PORT)
         self.__FAST_API_INTERFACE = FastAPIInterface(unit)
         try:
-            self.__pipettor = Seyonic()
+            global __pipettor
+            __pipettor = Seyonic()
         except Exception as e:
             print(e)
-            self.__pipettor = None
+            try:
+                __pipettor.close()
+            except Exception as e:
+                print(e)
+                __pipettor = None
+        self.__pipettor = __pipettor
         self.__chassis = Chassis()
         self.__heater_shaker = None #BioShake3000T()
         # Turn on the Relay for the Heater/Shaker nad Chiller.
@@ -1027,7 +1033,7 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         timer.stop(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.dispense.__name__))
 
     def generate_droplets(self, droplet_type='standard'):
-        droplet_types = ['standard', 'pico', 'small', 'standard_universal_oil', 'demo', 'st' , 'sm', 'un', 'de', 'pe']
+        droplet_types = ['standard', 'pico', 'small', 'standard_universal_oil', 'demo', 'st' , 'sm', 'un', 'de', 'pi']
         assert type(droplet_type) == str 
         assert droplet_type.lower()[0:2] in droplet_types
         # Turn on the pump and let it equalize.
@@ -1047,7 +1053,7 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
             max_time = 64
             max_push_out_time = 13.5
             max_flow_rate = 99999
-        elif droplet_type.lower()[0:2] == 'sm' or droplet_type.lower()[0:2] == 'pe':
+        elif droplet_type.lower()[0:2] == 'sm' or droplet_type.lower()[0:2] == 'pi':
             max_time = 166
             max_push_out_time = 23
             max_flow_rate = 99999
@@ -1364,6 +1370,22 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
 
     def move_chip_new(self, chip: list, tray: list) -> None:
         """ Moves a lid from the lid tray to a tray """
+        # Move the pipettor to lid_xyz with the drip tray
+        self.move(x=chip[0], y=chip[1], z=chip[2], drip_plate=chip[3], use_drip_plate=True, tip=1000)
+        # Turn on suction cup
+        self.turn_on_suction_cups()
+        delay(2, 'seconds')
+        # Move to tray_xyz with drip plate
+        self.move(x=tray[0], y=tray[1], z=tray[2], drip_plate=tray[3], use_drip_plate=True, tip=1000)
+        # Turn off suction cup
+        self.turn_off_suction_cups()
+
+    def move_chip_and_lid_temporary(self, chip: list, tray: list) -> None:
+        """ Moves a lid from the lid tray to a tray 
+        
+        Moves the chip on a tray to a different tray for testing transfer of engaged
+        chips and lids
+        """
         # Move the pipettor to lid_xyz with the drip tray
         self.move(x=chip[0], y=chip[1], z=chip[2], drip_plate=chip[3], use_drip_plate=True, tip=1000)
         # Turn on suction cup
