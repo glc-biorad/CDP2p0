@@ -579,6 +579,9 @@ class BuildProtocolController:
 		for i in self.view.treeview.get_children():
 			# Start timing this action
 			t_start = time.time()
+			# Update the progress bar
+			progress = (int(i) + 1 ) / n_actions
+			self.view.progressbar.set(progress)
 			# Select the row
 			self.view.treeview.selection_set(i)
 			# Update the action progress label
@@ -669,7 +672,7 @@ class BuildProtocolController:
 					log.log(action_message, time.time() - t_start)
 					continue
 				# Or a lid move
-				elif split[1] == 'lid':
+				elif split[1] == 'Lid':
 					tray = split[2]
 					column=1
 					#column = split[2]
@@ -678,12 +681,28 @@ class BuildProtocolController:
 					table_name = f"Unit {self.unit} Upper Gantry Coordinates"
 					coordinate = self.coordinates_model.select(table_name, "Lid Tray", tray, column)
 					lid = [coordinate[0][4], coordinate[0][5], coordinate[0][6], coordinate[0][7]]
-					if column == 1:
-						tray = [-18500, -1781750, -552000, -1198000]
-					else:
-						print("Only Lid D works right now")
+					consumable = 'Tray'
+					coordinate = self.coordinates_model.select(table_name, consumable, tray, column=0)
+					tray = [coordinate[0][4], coordinate[0][5], coordinate[0][6], coordinate[0][7]]
 					# Move the lid
 					self.upper_gantry.move_lid_new(lid, tray)
+					# Log
+					log.log(action_message, time.time() - t_start)
+					continue
+				# Or an engaged chip/lid move
+				elif split[1] == 'Engaged':
+					tray = split[-1]
+					column=0
+					# Get the coordinates for the lid and tray
+					unit = self.model.db_name[-4]
+					table_name = f"Unit {self.unit} Upper Gantry Coordinates"
+					coordinate = self.coordinates_model.select(table_name, "Tray", tray, column)
+					chip = [coordinate[0][4], coordinate[0][5], coordinate[0][6], coordinate[0][7]]
+					consumable = 'Tray'
+					coordinate = self.coordinates_model.select(table_name, consumable, 'B', column=0)
+					tray = [coordinate[0][4], coordinate[0][5], coordinate[0][6], coordinate[0][7]]
+					# Move the lid
+					self.upper_gantry.move_chip_and_lid_temporary(chip, tray)
 					# Log
 					log.log(action_message, time.time() - t_start)
 					continue
@@ -989,9 +1008,7 @@ class BuildProtocolController:
 				self.upper_gantry.change_heater_shaker_temperature(temp)
 				# Log
 				log.log(action_message, time.time() - t_start)
-			# Update the progress bar
-			progress = (int(i) + 1 ) / n_actions
-			self.view.progressbar.set(progress)
+			
 
 	def load(self, event=None) -> None:
 		"""Deals with the loading of a protocol into the action treeview

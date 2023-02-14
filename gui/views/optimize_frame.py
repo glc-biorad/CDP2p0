@@ -189,7 +189,7 @@ EIGHT_COLUMN_CONSUMABLES = ["Tip Transfer Tray", "Tip Tray"]
 FOUR_COLUMN_CONSUMABLES = ["Heater/Shaker"]
 THREE_COLUMN_CONSUMABLES = ["DG8", "Tray"]
 TWO_COLUMN_CONSUMABLES = ["Assay Strip"]
-SPECIAL_CONSUMABLES = ["DG8", "Tray"]
+SPECIAL_CONSUMABLES = ["DG8", "Tray", "Tip Transfer Tray"]
 
 # Image Paths
 IMAGE_PATHS = {

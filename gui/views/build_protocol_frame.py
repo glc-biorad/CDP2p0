@@ -176,7 +176,7 @@ BUTTON_DELETE_COLOR = '#fc0303'
 MENU_ICON_IMAGE_SIZE = (25,25)
 
 # Constants Deck Plate 
-NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller", "Tip Transfer Tray"]
+NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller"]
 NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip"]
 TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
 EIGHT_COLUMN_CONSUMABLES = ["Tip Transfer Tray", "Assay Strip", "Tip Tray"]
@@ -218,7 +218,7 @@ OTHER_OPTIONS = (
 	('gui/images/tray.png', 'Trays', "Open Tray AB", "Open Tray CD", "Close Tray AB", "Close Tray CD"),
 	('gui/images/clamp.png', 'Clamps', "Lower Thermocycler A", "Lower Thermocycler B", "Lower Thermocycler C", "Lower Thermocycler D", "Raise Thermocycler A", "Raise Thermocycler B", "Raise Thermocycler C", "Raise Thermocycler D"),
 	('gui/images/imager.png', 'Imager', "Scan A", "Scan B", "Scan C", "Scan D", "Light Show"),
-	('gui/images/other.png', 'Other', "Add a comment", "Pause for user input", "Move Lid A", "Move Lid B", "Move Lid C", "Move Lid D", "Move Chip A", "Move Chip B", "Move Chip C", "Move Chip D", "Suction cups on", "Suction cups off", "Extend drip plate"),
+	('gui/images/other.png', 'Other', "Add a comment", "Pause for user input", "Move Lid A", "Move Lid B", "Move Lid C", "Move Lid D", "Move Chip A", "Move Chip B", "Move Chip C", "Move Chip D", "Move Engaged Chip A", "Suction cups on", "Suction cups off", "Extend drip plate"),
 )
 #OTHER_OPTION_VALUES = [
 #	"Home pipettor",
@@ -1003,6 +1003,8 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			elif consumable in SPECIAL_CONSUMABLES:
 				if consumable == "Tip Transfer Tray":
 					self.optionmenu_motion_column.configure(values=('', '1', '2', '3',))
+				elif consumable == "Tray":
+					self.optionmenu_motion_column.configure(values=('', '1', '2', '3',))
 			else:
 				self.optionmenu_motion_column.configure(values=('',))
 		else:
@@ -1018,6 +1020,16 @@ class BuildProtocolFrame(ctk.CTkFrame):
 					# Allow for the possible chip tray and column options
 					self.optionmenu_motion_tray.configure(values=CHIP_TRAY_OPTION_VALUES)
 					self.optionmenu_motion_column.configure(values=CHIP_COLUMN_OPTION_VALUES)
+				elif consumable == "Tip Transfer Tray":
+					# Allow for possible tray and column combos
+					self.optionmenu_motion_tray.configure(values=('','A','B','C','D'))
+					self.optionmenu_motion_column.configure(values=('','1','2','3','4','5','6','7','8','9'))
+					self.optionmenu_motion_tip.configure(values=('1000', '50', '200', ''))
+				elif consumable == "Tray":
+					# Allow for possible tray and column combos
+					self.optionmenu_motion_tray.configure(values=('A','B','C','D'))
+					self.optionmenu_motion_column.configure(values=('','1','2','3'))
+					self.optionmenu_motion_tip.configure(values=('1000', '50', '200', ''))
 			else:
 				# Allow for tray options
 				self.optionmenu_motion_tray.configure(values=('A', 'B', 'C', 'D',))

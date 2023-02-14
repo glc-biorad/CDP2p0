@@ -950,7 +950,6 @@ class ThermocycleController:
 		""" Move Tray AB using a thread """
 		# Get the tray position value
 		val = int(self.tray_ab_sv.get())
-		print(val)
 		# If trying to home go fast then force a home
 		if abs(val) == 0:
 			try:
