@@ -1,0 +1,44 @@
+0: Move to Reagent Cartridge tray A column 4 with 1000 uL tips
+1: Aspirate 160 uLs with 1000 uL tips at High pressure 1 time
+2: Move to Heater/Shaker column 1 with 1000 uL tips
+3: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
+4: Move to Reagent Cartridge tray A column 1 with 1000 uL tips
+5: Shake off
+6: Mix 935 uLs with 1000 uL tips at High pressure 1 time
+7: Aspirate 935 uLs with 1000 uL tips at High pressure 1 time
+8: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 350000
+9: Dispense 935 uLs with 1000 uL tips at High pressure 1 time
+10: Delay for 3 seconds
+11: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
+12: Shake on
+13: Move to Reagent Cartridge tray A column 2 with 1000 uL tips
+14: Shake off
+15: Mix 935 uLs with 1000 uL tips at High pressure 1 time
+16: Aspirate 935 uLs with 1000 uL tips at High pressure 1 time
+17: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 350000
+18: Dispense 935 uLs with 1000 uL tips at High pressure 1 time
+19: Delay for 3 seconds
+20: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
+21: Shake on
+22: Move to Reagent Cartridge tray A column 11 with 1000 uL tips
+23: Shake off
+24: Mix 935 uLs with 1000 uL tips at High pressure 1 time
+25: Aspirate 935 uLs with 1000 uL tips at High pressure 1 time
+26: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 350000
+27: Dispense 935 uLs with 1000 uL tips at High pressure 1 time
+28: Delay for 3 seconds
+29: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
+30: Shake on
+31: Move to Reagent Cartridge tray A column 12 with 1000 uL tips
+32: Shake off
+33: Mix 935 uLs with 1000 uL tips at High pressure 1 time
+34: Aspirate 935 uLs with 1000 uL tips at High pressure 1 time
+35: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 350000
+36: Dispense 935 uLs with 1000 uL tips at High pressure 1 time
+37: Delay for 3 seconds
+38: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
+39: Shake on
+40: Delay for 3 seconds
+41: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
+42: Delay for 15 minutes
+43: Change Heater/Shaker Temperature
