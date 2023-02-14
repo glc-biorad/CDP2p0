@@ -72,39 +72,14 @@ class BRADxBusRouterInterface:
     @classmethod
     def find_and_connect(cls):
         """Find an attached BRADx chassis controller device and connect to it"""
-
-        if current_os == "Windows": # Send an ask for the device ID
-            bradx_ports = list(serial.tools.list_ports.comports())
-            # req = BRADxBusPacket(COMM_SUBSYSTEM_ID, 0x00, "TEST_STRING", 24, BRADxBusPacketType.REQUEST)
-            for port in bradx_ports:
-                print(port.device, port.name)
-                # try:
-                    # conn = cls(port.device)
-                    # conn.connect()
-                    # resp = conn.exchange(req.raw_packet)
-                    # pkt = BRADxBusPacket.parse(resp)
-                    
-                    # if "BRADx" in pkt.data:
-                        # return conn
-
-                # except:
-                    # pass
-            conn = cls(CHASSIS_COM_PORT)
-            conn.connect()
-            return conn
-            #raise ValueError("No BRADx chassis controller device found")
-
-
-        else:
-        # Find ports with "BRADx" in their description
-            bradx_ports = list(serial.tools.list_ports.grep("BRADx.*"))
-            if len(bradx_ports) > 0:
-                conn = cls(bradx_ports[0].device)
+        bradx_ports = list(serial.tools.list_ports.comports())
+        for port in bradx_ports:
+            if port.pid == 22336:
+                print('Found BRADx Chassis controller on '+str(port.name)+'\n')
+                conn = cls(port.device)
                 conn.connect()
                 return conn
-            else:
-                raise ValueError("No BRADx chassis controller device found")
-
+        raise ValueError("No BRADx chassis controller device found")
 
 async def bradx_bus_timed_exchange(req: BRADxBusPacket) -> tuple:
     print(str(req.raw_packet))

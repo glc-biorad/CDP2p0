@@ -8,6 +8,7 @@ pythonnet
 fastapi
 uvicorn
 tk
+ttkbootstrap
 customtkinter
 tifffile
 aioserial
