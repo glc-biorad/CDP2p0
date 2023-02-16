@@ -214,7 +214,7 @@ OTHER_OPTIONS = (
 	('gui/images/protocols.png', 'Protocols', 'Extraction', "Transfer Plasma", 'Binding', 'Pooling', 'Pre-Dispense', "Low-Stringent Wash", 'Pre-Elution', 'Elution'),
 	('gui/images/magnet.png', 'Magnet', "Engage magnet", "Disengage magnet"),
 	('gui/images/heater_shaker.png', 'Heater/Shaker', "Change the Heater/Shaker temperature", "Shake on", "Shake off"),
-	('gui/images/thermocycle.png', 'Thermocycling', "Thermocycle Protocol", "Thermocycle Pre-Amp"),
+	('gui/images/thermocycle.png', 'Thermocycling', "Thermocycle Hold", "Thermocycle A: Change Temperature", "Thermocycle B: Change Temperature", "Thermocycle C: Change Temperature", "Thermocycle D: Change Temperature", "Thermocycle A: Cycle", "Thermocycle B: Cycle", "Thermocycle C: Cycle", "Thermocycle D: Cycle", "Thermocycle Protocol", "Thermocycle Pre-Amp"),
 	('gui/images/tray.png', 'Trays', "Open Tray AB", "Open Tray CD", "Close Tray AB", "Close Tray CD"),
 	('gui/images/clamp.png', 'Clamps', "Lower Thermocycler A", "Lower Thermocycler B", "Lower Thermocycler C", "Lower Thermocycler D", "Raise Thermocycler A", "Raise Thermocycler B", "Raise Thermocycler C", "Raise Thermocycler D"),
 	('gui/images/imager.png', 'Imager', "Scan A", "Scan B", "Scan C", "Scan D", "Light Show"),
@@ -1062,6 +1062,9 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			self.entry_other_parameter.configure(state='normal')
 		elif "Change" in other_option:
 			self.other_parameter_sv.set("Enter value in C")
+			self.entry_other_parameter.configure(state='normal')
+		elif "Hold" in other_option:
+			self.other_parameter_sv.set("Enter hold as time units")
 			self.entry_other_parameter.configure(state='normal')
 		elif "Shake on" in other_option:
 			self.other_parameter_sv.set("Enter the rpm")

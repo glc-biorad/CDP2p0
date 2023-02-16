@@ -1,10 +1,12 @@
 import os
+import time
 import threading
 import tkinter as tk
 import customtkinter as ctk
 from PIL import Image
 
 # Import utility
+from api.util.log import Log
 from api.util.utils import delay
 from gui.util.browse_files import browse_files
 
@@ -377,6 +379,8 @@ class ThermocycleController:
 
 	def thread_start(self) -> None:
 		""" Starts the thermocyclers with multithreading """
+		# Open a file for logging
+		log = Log()
 		# Initialize the Meerstetter
 		try:
 			self.meerstetter = Meerstetter()
@@ -449,22 +453,12 @@ class ThermocycleController:
 			print(f"D goes to {first_denature_temperatures['D']} for {first_denature_times['D']}")
 			self.meerstetter.change_temperature(4, first_denature_temperatures['D'], block=False)
 		delay(first_denature_times['A'], 'minutes')
+		# Log
+		action_message = "Thermocycling: First denature temperature"
+		log.log(action_message, first_denature_times['A'])
 		# Cycle 
 		for i in range(n_cycles['A']):
 			print(f"Cycles {i+1}/{n_cycles['A']}")
-			if use['A']:
-				print(f"A goes to {second_denature_temperatures['A']} for {second_denature_times['A']}")
-				self.meerstetter.change_temperature(1, second_denature_temperatures['A'], block=False)
-			if use['B']:
-				print(f"B goes to {second_denature_temperatures['B']} for {second_denature_times['B']}")
-				self.meerstetter.change_temperature(2, second_denature_temperatures['B'], block=False)
-			if use['C']:
-				print(f"C goes to {second_denature_temperatures['C']} for {second_denature_times['C']}")
-				self.meerstetter.change_temperature(3, second_denature_temperatures['C'], block=False)
-			if use['D']:
-				print(f"D goes to {second_denature_temperatures['D']} for {second_denature_times['D']}")
-				self.meerstetter.change_temperature(4, second_denature_temperatures['D'], block=False)
-			delay(second_denature_times['A'], 'seconds')
 			if use['A']:
 				print(f"A goes to {anneal_temperatures['A']} for {anneal_times['A']}")
 				self.meerstetter.change_temperature(1, anneal_temperatures['A'], block=False)
@@ -478,8 +472,28 @@ class ThermocycleController:
 				print(f"D goes to {anneal_temperatures['D']} for {anneal_times['D']}")
 				self.meerstetter.change_temperature(4, anneal_temperatures['D'], block=False)
 			delay(anneal_times['A'], 'seconds')
+			# Log
+			action_message = f"Thermocycling: Anneal temperature for cycle {i+1}/{n_cycles['A']}"
+			log.log(action_message, anneal_times['A'])
+			if use['A']:
+				print(f"A goes to {second_denature_temperatures['A']} for {second_denature_times['A']}")
+				self.meerstetter.change_temperature(1, second_denature_temperatures['A'], block=False)
+			if use['B']:
+				print(f"B goes to {second_denature_temperatures['B']} for {second_denature_times['B']}")
+				self.meerstetter.change_temperature(2, second_denature_temperatures['B'], block=False)
+			if use['C']:
+				print(f"C goes to {second_denature_temperatures['C']} for {second_denature_times['C']}")
+				self.meerstetter.change_temperature(3, second_denature_temperatures['C'], block=False)
+			if use['D']:
+				print(f"D goes to {second_denature_temperatures['D']} for {second_denature_times['D']}")
+				self.meerstetter.change_temperature(4, second_denature_temperatures['D'], block=False)
+			delay(second_denature_times['A'], 'seconds')
+			# Log
+			action_message = f"Thermocycling: Second denature temperature for cycle {i+1}/{n_cycles['A']}"
+			log.log(action_message, second_denature_times['A'])
 			
 		# Lower the temperature to 30 deg C	
+		t_start = time.time()
 		if use['A']:
 			print('A goes to 30')
 			self.meerstetter.change_temperature(1, 30, block=False)
@@ -492,6 +506,9 @@ class ThermocycleController:
 		if use['D']:
 			print('D goes to 30')
 			self.meerstetter.change_temperature(4, 30, block=False)
+		# Log
+		action_message = f"Thermocycling: cool to 30 C"
+		log.log(action_message, time.time() - t_start)
 		# Close the Meerstetter connection
 		self.meerstetter.close()
 
@@ -812,6 +829,10 @@ class ThermocycleController:
 		thread.start()
 	def thread_move_a(self) -> None:
 		""" Move clamp A on a thread """
+		# Initialize the log
+		log = Log()
+		# Get the start time
+		t_start = time.time()
 		# Get the value to move to
 		val = int(self.clamp_a_sv.get())
 		# If val is 0 raise the heater
@@ -839,6 +860,9 @@ class ThermocycleController:
 				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['A'], val, 80000, False)
 			except Exception as e:
 				pass
+		# Log
+		action_message = "Move clamp A"
+		log.log(action_message, time.time() - t_start)
 
 	def move_b(self, event=None) -> None:
 		""" Move clamp A from the settings toplevel window """
@@ -846,6 +870,10 @@ class ThermocycleController:
 		thread.start()
 	def thread_move_b(self) -> None:
 		""" Move clamp B on a thread """
+		# Initialize the log
+		log = Log()
+		# Start timing
+		t_start = time.time()
 		# Get the value to move to
 		val = int(self.clamp_b_sv.get())
 		# If val is 0 raise the heater
@@ -873,6 +901,9 @@ class ThermocycleController:
 				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['B'], val, 80000, False)
 			except Exception as e:
 				pass
+		# Log
+		action_message = "Move clamp B"
+		log.log(action_message, time.time() - t_start)
 
 	def move_c(self, event=None) -> None:
 		""" Move clamp C from the settings toplevel window """
@@ -880,6 +911,10 @@ class ThermocycleController:
 		thread.start()
 	def thread_move_c(self) -> None:
 		""" Move clamp C on a thread """
+		# Initialize the log
+		log = Log()
+		# Start timing
+		t_start = time.time()
 		# Get the value to move to
 		val = int(self.clamp_c_sv.get())
 		# If val is 0 raise the heater
@@ -907,6 +942,9 @@ class ThermocycleController:
 				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['C'], val, 80000, False)
 			except Exception as e:
 				pass
+		# Log
+		action_message = "Move clamp C"
+		log.log(action_message, time.time() - t_start)
 
 	def move_d(self, event=None) -> None:
 		""" Move clamp D from the settings toplevel window """
@@ -914,6 +952,10 @@ class ThermocycleController:
 		thread.start()
 	def thread_move_d(self) -> None:
 		""" Move clamp D on a thread """
+		# Initialize the log
+		log = Log()
+		# Start timing
+		t_start = time.time()
 		# Get the value to move to
 		val = int(self.clamp_d_sv.get())
 		# If val is 0 raise the heater
@@ -941,6 +983,9 @@ class ThermocycleController:
 				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['D'], val, 80000, False)
 			except Exception as e:
 				pass
+		# Log
+		action_message = "Move clamp D"
+		log.log(action_message, time.time() - t_start)
 
 	def move_tray_ab(self, event=None) -> None:
 		""" Move tray ab """
@@ -948,6 +993,10 @@ class ThermocycleController:
 		thread.start()
 	def thread_move_tray_ab(self) -> None:
 		""" Move Tray AB using a thread """
+		# Initialize the log
+		log = Log()
+		# Start timing
+		t_start = time.time()
 		# Get the tray position value
 		val = int(self.tray_ab_sv.get())
 		# If trying to home go fast then force a home
@@ -993,6 +1042,9 @@ class ThermocycleController:
 				#self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], val, 200000, False)
 			except Exception as e:
 				pass
+		# Log
+		action_message = "Move tray AB"
+		log.log(action_message, time.time() - t_start)
 
 	def move_tray_cd(self, event=None) -> None:
 		""" Move tray ab """
@@ -1000,6 +1052,10 @@ class ThermocycleController:
 		thread.start()
 	def thread_move_tray_cd(self) -> None:
 		""" Move Tray AB using a thread """
+		# Initialize the log
+		log = Log()
+		# Start timing
+		t_start = time.time()
 		# Get the tray position value
 		val = int(self.tray_cd_sv.get())
 		print(val)
@@ -1046,6 +1102,9 @@ class ThermocycleController:
 				#self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], val, 200000, False)
 			except Exception as e:
 				pass
+		# Log
+		action_message = "Move tray CD"
+		log.log(action_message, time.time() - t_start)
 
 	def tec(self, event=None) -> None:
 		""" Create a Toplevel window to deal with the TEC """

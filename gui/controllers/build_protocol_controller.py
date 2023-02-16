@@ -129,6 +129,14 @@ TOPLEVEL_BUTTON_ADD_PRE_AMP_WIDTH = 100
 BUTTON_ADD_COLOR = '#10adfe'
 FONT = "Sergio UI"
 
+HEATER_ADDRESSES = {
+	'A': 1,
+	'B': 2,
+	'C': 3,
+	'D': 4,
+	'Pre-Amp': 9,
+}
+
 ADDRESSES = {
 	'A': 8,
 	'B': 9,
@@ -510,6 +518,19 @@ class BuildProtocolController:
 					message="Change temperature actions require a value in C. Please enter a value in the Parameter entry box."
 				)
 				return None
+		elif 'Hold' in action_message.split():
+			# Get the hold time with units
+			hold_time = self.view.other_parameter_sv.get().split()
+			try:
+				t = int(hold_time[0])
+				units = str(hold_time[-1])
+				action_message = action_message + f" for {t} {units}"
+			except:
+				tk.messagebox.showwarning(
+					title="Failed to Add Action",
+					message="Thermocycle hold actions require a hold time formated as time units, with time as an integer and units as either second, seconds, minute, or minutes. Please enter a value in the Parameter entry box."
+				)
+				return None
 		elif 'Shake' in action_message.split() and 'on' in action_message.split():
 			# Get the rpm value
 			rpm = self.view.other_parameter_sv.get()
@@ -887,10 +908,7 @@ class BuildProtocolController:
 				try:
 					self.meerstetter = Meerstetter()
 				except Exception as e:
-					print(e)
-					print("No Meerstetter for BuildProtocolController")
-					self.meerstetter = None
-				print('Thermocycle')
+					pass
 				if 'Pre-Amp' in split:
 					address = 9
 					# Get the data
@@ -911,6 +929,31 @@ class BuildProtocolController:
 						self.meerstetter.change_temperature(address, int(atemp), block=False)
 						delay(int(atime), 'seconds')
 					self.meerstetter.change_temperature(address, 30, block=False)
+				elif 'Change' in split:
+					# Get the heater letter designation
+					heater = split[1]
+					# Convert to the address
+					address = HEATER_ADDRESSES[heater.upper().replace(':','')]
+					# Get the temperature 
+					temp = int(float(split[-2]))
+					# Change the temperature 
+					print(address)
+					print(temp)
+					self.meerstetter.change_temperature(address, temp)
+				elif 'Hold' in split:
+					# Get the hold time
+					t = int(split[-2])
+					# Get the units
+					units = split[-1]
+					# Convert to seconds
+					if units[0].lower() == 'm':
+						t = t * 60
+					elif units[0].lower() == 'h':
+						t = t * 60 * 60
+					elif units[0].lower() == 's':
+						t = t
+					# Monitor the TEC boards (addresses 1,2,3,4,9)
+					self.meerstetter.monitor_devices([1,2,3,4,9], t)
 				elif 'Protocol' == split[1]:
 					# Get the protocol file path
 					file_path = split[-1].replace('(','').replace(')','')
