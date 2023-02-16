@@ -388,6 +388,37 @@ class Meerstetter():
                 logger.log('MESSAGE', "Peltier device {0} state is {1} with a temperature of {2}".format(address_2, self.get_device_status(address_2, str), self.get_temperature(address_2)))
         logger.log("LOG-END", "Done monitoring the peltier devices {0} and {1}.".format(address_1, address_2))
 
+    def monitor_devices(self, addresses: list, time_length_seconds: int, check_in_every_N_seconds: int = 0) -> None:
+        """ Monitors the TEC boards for a given time to handle errors to reset the board
+
+        Parameters
+        ----------
+        addresses : list
+            list of addresses to be monitored during the hold
+        time_length_seconds : int
+            how long to hold the monitor for
+        check_in_every_N_seconds (optional) : int
+            How often to print an update
+        """
+        # Setup the logger.
+        logger = Logger(__file__, self.monitor_device.__name__)
+        logger.log("LOG-START", f"Monitor Peltier Devices with addresses {addresses} for a hold time of {time_length_seconds} seconds")
+        if check_in_every_N_seconds == 0:
+            check_in = False
+            check_in_every_N_seconds = 1
+        else:
+            check_in = True
+        time_start = time.time()
+        time_check_in = time_start
+        while time.time() - time_start < time_length_seconds:
+            for address in addresses:
+                self.handle_device_status(address, self.__target_temperatures[address])
+            if check_in and time.time() - time_check_in >= check_in_every_N_seconds:
+                time_check_in = time.time()
+                for address in addresses:
+                    logger.log('MESSAGE', "Peltier device {0} state is {1} with a temperature of {2}".format(address, self.get_device_status(address, str), self.get_temperature(address)))
+        logger.log("LOG-END", "Done monitoring the peltier devices addresses {0}.".format(addresses))
+
     # Calibration Method.
     def calibration(self, heater_label, temp_value, monitor_time):
         check_type(heater_label, str)

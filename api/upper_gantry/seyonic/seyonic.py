@@ -452,6 +452,38 @@ class Seyonic(object):
                 logger.log('MESSAGE', "The action status for the Seyonic Pipettor channel {0} is '{1}'".format(i+1, asval))
                 #print('Channel {0} Action Status: {1}'.format(i, asval))
 
+    def liquid_level_detect(self, debug=True):
+        """ Liquid Level Detect (LLD): operates through measurement of a small pressure transient 
+        when tge dispenser tip touches a liquid surface. The LLD action is terminated with an ABORT_ACTION command.
+        """
+        # Set the action mode to LLD
+        self.client.Set("Action Mode", self.pip_addr, 0, action_modes['LLD'])
+        # Trigger the action
+        self.client.Trigger(self.pip_addr, 0)
+        # Poll the action status
+        action_return = self._poll_until_complete()
+        # Check the return action status
+        for channel in range(8):
+            asval = action_status_lookup[action_return[channel]]
+            if debug == True:
+                print(f"Channel {channel+1} Action Status: {asval}")
+        #logger = Logger(__file__, __name__)
+        #if pressure == None:
+        #    pressure = self.vac_pressure
+        # set action mode
+        #self.client.Set("Action Mode", self.pip_addr,
+        #    0, action_modes['Aspirate'])
+        #self.set_pressure(pressure=pressure)
+        #time.sleep(self.pressure_delay) # delay to equalize pressure
+        #self.client.Trigger(self.pip_addr, 0)
+        #action_return = self._poll_until_complete()
+        #self.set_pressure(pressure=0, direction=2)
+        #if debug:
+        #    for i in range(8):
+        #        asval = action_status_lookup[action_return[i]]
+        #        logger.log('MESSAGE', "The action status for the Seyonic Pipettor channel {0} is '{1}'".format(i+1, asval))
+        #        #print('Channel {0} Action Status: {1}'.format(i, asval))
+
     def get_flow_rate(self):
         return [0,0,0,0,0,0,0,0]
 

@@ -588,8 +588,14 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
             self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, max_drip_plate, 2500000, True, True)
         else:
             self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, 0, 2500000, True, True)
+        # Check if we need to block y
+        _y = self.get_position_from_axis('Y')
+        if _y == y:
+            block_y = True
+        else:
+            block_y = False
         # Move to the Y and X coordiantes
-        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 2, y, 3200000, False, True)
+        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 2, y, 3200000, block_y, True)
         self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 1, x, 300000, True, True)
         # Check if the user wants to use the drip plate
         if use_drip_plate:
