@@ -31,7 +31,14 @@ from api.util.utils import wait, check_limit, check_type, microliters_to_seyonic
 
 import os
 
-class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air class (Air module)
+class UpperGantry(api.util.motor.Motor):
+    """ UpperGantry API for the CDP 2.0 Units
+    
+    Description
+    -----------
+    API for controlling all aspects of the Upper Gantry including the Seyonic Pipettor, Gantry Motion, Air Valves, 
+    Suction Cups, Heater/Shaker, Chiller, and Deck Magnet Motion.
+    """
     # Public variables.
     controller = None
 
@@ -159,7 +166,7 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
     __FAST_API_INTERFACE = None
     __MODULE_NAME = 'pipettor_gantry'
 
-    def __init__(self, unit=None):
+    def __init__(self, unit=None) -> None:
         super(api.util.motor.Motor, self).__init__()
         logger = Logger(os.path.split(__file__)[1], self.__init__.__name__)
         logger.log('LOG-START', "Initializing the Upper Gantry.")
@@ -278,14 +285,41 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
 
     # Tip Pickup Method
     def tip_pickup_new(self, x: int, y: int, z: int, tip: int = None) -> None:
-        """ Picks up tips based on a coordinate (Needed for using the coordinates model datatable)"""
+        """ Picks up tips based on a coordinate (Needed for using the coordinates model datatable)
+        
+        Parameters
+        ----------
+        x (optional): int
+            x coordinate for where to eject the tips
+        y (optional): int
+            y coordinate for where to eject the tips
+        z (optional): int
+            z coordinate for where to eject the tips
+        tip (optional): int
+            tip size being picked up (1000, 50, or 200 uL tips)
+        """
         self.move(x=x, y=y, z=z, drip_plate=0, tip=tip, ignore_tips=True)
         self.move_relative('up', z, velocity='fast')
 
     # Tip Eject Method
-    def tip_eject_new(self, x: int, y: int, z:int) -> None:
-        """ Ejects tips based on a coordinate """
-        self.move(x=x, y=y, z=z, drip_plate=0, relative_moves=[0,0,290000,0], tip=1000)
+    def tip_eject_new(self, x: int = None, y: int = None, z: int = None, eject_at_dz: int = 290000) -> None:
+        """ Ejects tips based on a coordinate 
+        
+        Parameters
+        ----------
+        x (optional): int
+            x coordinate for where to eject the tips
+        y (optional): int
+            y coordinate for where to eject the tips
+        z (optional): int
+            z coordinate for where to eject the tips
+        eject_at_dz (optional): int
+            z offset to eject from the original tip pickup coordinate
+        """
+        if x == None and y == None and z == None:
+            self.__eject_tips_now()
+            return None
+        self.move(x=x, y=y, z=z, drip_plate=0, relative_moves=[0,0,eject_at_dz,0], tip=1000)
         self.__eject_tips_now()
         
     # Tip Pickup Method
@@ -393,7 +427,14 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
             return 'A'
 
     # Turn On Air Valve Method.
-    def turn_on_air_valve(self, number):
+    def turn_on_air_valve(self, number: int) -> None:
+        """ Turns on the specified air valve for the chassis
+        
+        Parameters
+        ----------
+        number : int
+            Valve number to be turned on (1:tip eject,2: aspirate/dispense,3: suction cups)
+        """
         numbers = [1,2,3]
         messages = {
             1: "High Pressure Compressor (Tip Eject)",
@@ -411,7 +452,14 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
 
 
     # Turn Off Air Valve Method.
-    def turn_off_air_valve(self, number):
+    def turn_off_air_valve(self, number: int) -> None:
+         """ Turns off the specified air valve for the chassis
+        
+        Parameters
+        ----------
+        number : int
+            Valve number to be turned off (1:tip eject,2: aspirate/dispense,3: suction cups)
+        """
         numbers = [1,2,3]
         messages = {
             1: "High Pressure Compressor (Tip Eject)",
@@ -434,7 +482,8 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
     def get_chassis(self):
         return self.__chassis
 
-    def __eject_tips_now(self):
+    def __eject_tips_now(self) -> None:
+        """ Eject tips exactly where the pipettor head is currently """
         valve_1_tip_eject = 1
         self.turn_on_air_valve(valve_1_tip_eject)
         self.__chassis.turn_on_control_relay()
@@ -556,13 +605,28 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         Parameters
         ----------
         x: int
+            Where to move the pipettor head along the x-axis
         y: int
+            Where to move the pipettor head along the y-axis
         z: int
+            Where to move the pipettor head along the z-axis
         drip_plate: int
+            Where to move the pipettor head along the z2-axis
         use_z: bool
+            Specifies whether or not to use z motion (i.e. whether or not
+            to stay homed in z (False) or move down to the specified z
+            coordinate (True))
         slow_z: bool
+            Specifies if the move is to use a slow velocity while moving
+            down along the z-axis
         use_drip_plate: bool
+            Specifies whether or not to use the drip plate from the beginning of the move
+            to the end of the move (i.e. lower the drip plate fully, then move the drip
+            plate to the drip plate coordinate of the specified value)
         tip: int
+            Type of tip on the pipettor head at the end of the move (1000, 50, or 200), this
+            allows us to determine if a z offset is needed for getting to the correct height 
+            of the coordinate
         """
         # Modify the coordinate based on the relative moves
         print(f"z: {z} -> {z + relative_moves[2]}")
@@ -589,8 +653,8 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         else:
             self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, 0, 2500000, True, True)
         # Check if we need to block y
-        _y = self.get_position_from_axis('Y')
-        if _y == y:
+        _x = self.get_position_from_axis('X')
+        if _x == x:
             block_y = True
         else:
             block_y = False
@@ -1037,7 +1101,7 @@ class UpperGantry(api.util.motor.Motor): # Also need to inheret from an Air clas
         logger_xlsx = LoggerXLSX()
         logger_xlsx.log("Dispense {0} uL".format(vol), "{0}.{1}(dispense_vol={2}, pressure={3}, turn_off_air_valve={4})".format(__name__, self.dispense.__name__, dispense_vol, pressure, turn_off_air_valve), timer.get_current_elapsed_time())
         timer.stop(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.dispense.__name__))
-
+        
     def generate_droplets(self, droplet_type='standard'):
         droplet_types = ['standard', 'pico', 'small', 'standard_universal_oil', 'demo', 'st' , 'sm', 'un', 'de', 'pi']
         assert type(droplet_type) == str 
