@@ -453,7 +453,7 @@ class UpperGantry(api.util.motor.Motor):
 
     # Turn Off Air Valve Method.
     def turn_off_air_valve(self, number: int) -> None:
-         """ Turns off the specified air valve for the chassis
+        """ Turns off the specified air valve for the chassis
         
         Parameters
         ----------
@@ -1581,7 +1581,10 @@ class UpperGantry(api.util.motor.Motor):
 
     def close(self):
         # Turn off the Relay for the Heater/Shaker nad Chiller.
-        self.__pipettor.close()
+        try:
+            self.__pipettor.close()
+        except:
+            pass
         #relay_8_info = self.__FAST_API_INTERFACE.chassis.relay.get_relay_info(8)
         #self.__FAST_API_INTERFACE.chassis.relay.off(relay_8_info['channel'])
         if self.controller != None:

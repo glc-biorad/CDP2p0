@@ -108,8 +108,8 @@ class Seyonic(object):
         # initialize pipettor connection
         try:
             self.client = DispenserCommunicator.ConnectClient()
-        except:
-            print('WOW')
+        except Exception as e:
+            print(e)
         self.client.EventsAndExceptionsActive = True
         self.client.OpenTcp(ip_address, port)
         self.aspirate_volumes = [0] * 8
@@ -452,10 +452,13 @@ class Seyonic(object):
                 logger.log('MESSAGE', "The action status for the Seyonic Pipettor channel {0} is '{1}'".format(i+1, asval))
                 #print('Channel {0} Action Status: {1}'.format(i, asval))
 
-    def liquid_level_detect(self, debug=True):
+    def liquid_level_detect(self, timeout_seconds=4, debug=True):
         """ Liquid Level Detect (LLD): operates through measurement of a small pressure transient 
         when tge dispenser tip touches a liquid surface. The LLD action is terminated with an ABORT_ACTION command.
         """
+        # Set the pressure to 20 mbar
+        self.set_pressure(pressure=20, direction=1)
+        time.sleep(self.pressure_delay) # delay to equalize pressure
         # Set the action mode to LLD
         self.client.Set("Action Mode", self.pip_addr, 0, action_modes['LLD'])
         # Trigger the action
@@ -463,10 +466,18 @@ class Seyonic(object):
         # Poll the action status
         action_return = self._poll_until_complete()
         # Check the return action status
-        for channel in range(8):
-            asval = action_status_lookup[action_return[channel]]
-            if debug == True:
-                print(f"Channel {channel+1} Action Status: {asval}")
+        action_status_values = [3,3,3,3,3,3,3,3]
+        t_start = time.time()
+        print(action_status_values)
+        while action_status_values != [2,2,2,2,2,2,2,2] and timeout_seconds > time.time() - t_start:
+            #print(action_status_values)
+            for channel in range(8):
+                action_status_values[channel] = action_status_lookup[action_return[channel]]
+                if debug == True:
+                    print(f"Channel {channel+1} Action Status: {action_status_values[channel]}")
+        print(action_status_values)
+        self.set_pressure(pressure=0, direction=1)
+
         #logger = Logger(__file__, __name__)
         #if pressure == None:
         #    pressure = self.vac_pressure
