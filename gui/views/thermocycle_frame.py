@@ -892,16 +892,18 @@ class ThermocycleFrame(ctk.CTkFrame):
 					x0 = x0 + dx
 					time.sleep(dt)
 				image_tray.place(x=x)
-				self.fast_api_interface.reader.axis.home('reader', address, False, True)
+				#self.fast_api_interface.reader.axis.home('reader', address, False, True)
 				return None
 			try:
 				if dx < 0:
 					# Close the tray (dx is based on position of the tray widget in its parent frame)
+					#a = 1
 					self.fast_api_interface.reader.axis.move('reader', address, steps, 200000, False, True)
 					if steps == 0:
 						self.fast_api_interface.reader.axis.home('reader', address, False, True)
 				else:
 					# Open the tray
+					#a = 1
 					self.fast_api_interface.reader.axis.move('reader', address, steps, 200000, False, True)
 			except:
 				pass

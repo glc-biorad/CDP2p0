@@ -85,6 +85,7 @@ MAIN_ACTION_KEY_WORDS = [
 	'Pause',
 	'Suction',
 	'Extend',
+	'LLD',
 ]
 TOPLEVEL_PRE_AMP_WIDTH = 400
 TOPLEVEL_PRE_AMP_HEIGHT = 270
@@ -874,6 +875,8 @@ class BuildProtocolController:
 					self.upper_gantry.get_fast_api_interface().pipettor_gantry.axis.home('pipettor_gantry', 4)
 				# Log
 				log.log(action_message, time.time() - t_start)
+			elif split[0] == 'LLD':
+				self.upper_gantry.get_pipettor().liquid_level_detect()
 			elif split[0] == 'Generate':
 				# Get the droplet type
 				droplet_type = split[1]
@@ -1050,8 +1053,7 @@ class BuildProtocolController:
 				# Change the Heater/Shaker temperature
 				self.upper_gantry.change_heater_shaker_temperature(temp)
 				# Log
-				log.log(action_message, time.time() - t_start)
-			
+				log.log(action_message, time.time() - t_start)			
 
 	def load(self, event=None) -> None:
 		"""Deals with the loading of a protocol into the action treeview

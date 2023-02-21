@@ -1008,6 +1008,7 @@ class ThermocycleController:
 				#	return None
 				# Make sure the tray is allowed to close
 				if True:
+					self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], 0, 200000, False)
 					self.view.move_tray(ADDRESSES['AB'],
 						self.view.image_thermocycler_tray_ab, 
 						posx,
@@ -1022,6 +1023,7 @@ class ThermocycleController:
 		else:
 			val = -abs(val)
 			try:
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], val, 200000, False)
 				# Get the current posx
 				posx = int(self.view.image_thermocycler_tray_ab.place_info()['x'])
 				# Compute the new posx based on the real space value given in the tray entry
@@ -1041,6 +1043,7 @@ class ThermocycleController:
 					)
 				#self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], val, 200000, False)
 			except Exception as e:
+				print(e)
 				pass
 		# Log
 		action_message = "Move tray AB"
@@ -1068,6 +1071,7 @@ class ThermocycleController:
 				#	return None
 				# Make sure the tray is allowed to open
 				if True:
+					self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], 0, 200000, False)
 					self.view.move_tray(ADDRESSES['CD'],
 						self.view.image_thermocycler_tray_cd, 
 						posx,
@@ -1082,6 +1086,7 @@ class ThermocycleController:
 		else:
 			val = -abs(val)
 			try:
+				self.fast_api_interface.reader.axis.move('reader', ADDRESSES['AB'], val, 200000, False)
 				# Get the current posx
 				posx = int(self.view.image_thermocycler_tray_cd.place_info()['x'])
 				# Compute the new posx based on the real space value given in the tray entry
