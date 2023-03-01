@@ -1254,6 +1254,8 @@ class ThermocycleController:
 		thread.start()
 	def thread_get(self) -> None:
 		""" Function for getting the temperature of the set Thermocycler on a Thread """
+		# Clear the entry box
+		self.temperature_sv.set('')
 		# Get the thermocycler selected on the TEC Toplevel window 
 		thermocycler = self.thermocycler_sv.get()
 		if thermocycler != '':

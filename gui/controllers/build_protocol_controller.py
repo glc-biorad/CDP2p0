@@ -2,7 +2,7 @@ import os
 import time
 import sqlite3
 import threading
-from tkinter import StringVar
+from tkinter import IntVar, StringVar
 import tkinter as tk
 import customtkinter as ctk
 
@@ -76,6 +76,7 @@ MAIN_ACTION_KEY_WORDS = [
 	'Engage',
 	'Shake',
 	'Thermocycle',
+	'Thermocycle:',
 	'Close',
 	'Open',
 	'Lower',
@@ -87,6 +88,186 @@ MAIN_ACTION_KEY_WORDS = [
 	'Extend',
 	'LLD',
 ]
+TOPLEVEL_CYCLE_WIDTH = 970
+TOPLEVEL_CYCLE_HEIGHT = 210
+TOPLEVEL_LABEL_CYCLE_POSX = 40
+TOPLEVEL_LABEL_CYCLE_POSY = 10
+TOPLEVEL_LABEL_DENATURE_POSX = 170
+TOPLEVEL_LABEL_DENATURE_POSY = 10
+TOPLEVEL_LABEL_ANNEAL_POSX = 440
+TOPLEVEL_LABEL_ANNEAL_POSY = 10
+TOPLEVEL_LABEL_EXTENSION_POSX = 710
+TOPLEVEL_LABEL_EXTENSION_POSY = 10
+TOPLEVEL_LABEL_USE_POSX = 930
+TOPLEVEL_LABEL_USE_POSY = 10
+TOPLEVEL_LABEL_THERMOCYCLER_A_POSX = 10
+TOPLEVEL_LABEL_THERMOCYCLER_A_POSY = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_A_CYCLES_POSX = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_A_CYCLES_POSY = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_A_CYCLES_WIDTH = 50
+TOPLEVEL_ENTRY_THERMOCYCLER_A_DENATURE_TEMP_POSX = 120
+TOPLEVEL_ENTRY_THERMOCYCLER_A_DENATURE_TEMP_POSY = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_A_DENATURE_TEMP_WIDTH = 50
+TOPLEVEL_LABEL_C_FOR_A_DENATURE_POSX = 175
+TOPLEVEL_LABEL_C_FOR_A_DENATURE_POSY = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_A_DENATURE_TIME_POSX = 220
+TOPLEVEL_ENTRY_THERMOCYCLER_A_DENATURE_TIME_POSY = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_A_DENATURE_TIME_WIDTH = 50
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_DENATURE_TIME_UNITS_POSX = 280
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_DENATURE_TIME_UNITS_POSY = 40
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_DENATURE_TIME_UNITS_WIDTH = 50
+TOPLEVEL_ENTRY_THERMOCYCLER_A_ANNEAL_TEMP_POSX = 390
+TOPLEVEL_ENTRY_THERMOCYCLER_A_ANNEAL_TEMP_POSY = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_A_ANNEAL_TEMP_WIDTH = 50
+TOPLEVEL_LABEL_C_FOR_A_ANNEAL_POSX = 445
+TOPLEVEL_LABEL_C_FOR_A_ANNEAL_POSY = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_A_ANNEAL_TIME_POSX = 490
+TOPLEVEL_ENTRY_THERMOCYCLER_A_ANNEAL_TIME_POSY = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_A_ANNEAL_TIME_WIDTH = 50
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_ANNEAL_TIME_UNITS_POSX = 550
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_ANNEAL_TIME_UNITS_POSY = 40
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_ANNEAL_TIME_UNITS_WIDTH = 50
+TOPLEVEL_ENTRY_THERMOCYCLER_A_EXTENSION_TEMP_POSX = 660
+TOPLEVEL_ENTRY_THERMOCYCLER_A_EXTENSION_TEMP_POSY = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_A_EXTENSION_TEMP_WIDTH = 50
+TOPLEVEL_LABEL_C_FOR_A_EXTENSION_POSX = 715
+TOPLEVEL_LABEL_C_FOR_A_EXTENSION_POSY = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_A_EXTENSION_TIME_POSX = 760
+TOPLEVEL_ENTRY_THERMOCYCLER_A_EXTENSION_TIME_POSY = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_A_EXTENSION_TIME_WIDTH = 50
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_EXTENSION_TIME_UNITS_POSX = 820
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_EXTENSION_TIME_UNITS_POSY = 40
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_EXTENSION_TIME_UNITS_WIDTH = 50
+TOPLEVEL_CHECKBOX_THERMOCYCLER_A_USE_POSX = 935
+TOPLEVEL_CHECKBOX_THERMOCYCLER_A_USE_POSY = 42
+TOPLEVEL_CHECKBOX_THERMOCYCLER_A_USE_WIDTH = 50
+TOPLEVEL_LABEL_THERMOCYCLER_B_POSX = 10
+TOPLEVEL_LABEL_THERMOCYCLER_B_POSY = 70
+TOPLEVEL_ENTRY_THERMOCYCLER_B_CYCLES_POSX = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_B_CYCLES_POSY = 70
+TOPLEVEL_ENTRY_THERMOCYCLER_B_CYCLES_WIDTH = 50
+TOPLEVEL_ENTRY_THERMOCYCLER_B_DENATURE_TEMP_POSX = 120
+TOPLEVEL_ENTRY_THERMOCYCLER_B_DENATURE_TEMP_POSY = 70
+TOPLEVEL_ENTRY_THERMOCYCLER_B_DENATURE_TEMP_WIDTH = 50
+TOPLEVEL_LABEL_C_FOR_B_DENATURE_POSX = 175
+TOPLEVEL_LABEL_C_FOR_B_DENATURE_POSY = 70
+TOPLEVEL_ENTRY_THERMOCYCLER_B_DENATURE_TIME_POSX = 220
+TOPLEVEL_ENTRY_THERMOCYCLER_B_DENATURE_TIME_POSY = 70
+TOPLEVEL_ENTRY_THERMOCYCLER_B_DENATURE_TIME_WIDTH = 50
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_DENATURE_TIME_UNITS_POSX = 280
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_DENATURE_TIME_UNITS_POSY = 70
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_DENATURE_TIME_UNITS_WIDTH = 50
+TOPLEVEL_ENTRY_THERMOCYCLER_B_ANNEAL_TEMP_POSX = 390
+TOPLEVEL_ENTRY_THERMOCYCLER_B_ANNEAL_TEMP_POSY = 70
+TOPLEVEL_ENTRY_THERMOCYCLER_B_ANNEAL_TEMP_WIDTH = 50
+TOPLEVEL_LABEL_C_FOR_B_ANNEAL_POSX = 445
+TOPLEVEL_LABEL_C_FOR_B_ANNEAL_POSY = 70
+TOPLEVEL_ENTRY_THERMOCYCLER_B_ANNEAL_TIME_POSX = 490
+TOPLEVEL_ENTRY_THERMOCYCLER_B_ANNEAL_TIME_POSY = 70
+TOPLEVEL_ENTRY_THERMOCYCLER_B_ANNEAL_TIME_WIDTH = 50
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_ANNEAL_TIME_UNITS_POSX = 550
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_ANNEAL_TIME_UNITS_POSY = 70
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_ANNEAL_TIME_UNITS_WIDTH = 50
+TOPLEVEL_ENTRY_THERMOCYCLER_B_EXTENSION_TEMP_POSX = 660
+TOPLEVEL_ENTRY_THERMOCYCLER_B_EXTENSION_TEMP_POSY = 70
+TOPLEVEL_ENTRY_THERMOCYCLER_B_EXTENSION_TEMP_WIDTH = 50
+TOPLEVEL_LABEL_C_FOR_B_EXTENSION_POSX = 715
+TOPLEVEL_LABEL_C_FOR_B_EXTENSION_POSY = 70
+TOPLEVEL_ENTRY_THERMOCYCLER_B_EXTENSION_TIME_POSX = 760
+TOPLEVEL_ENTRY_THERMOCYCLER_B_EXTENSION_TIME_POSY = 70
+TOPLEVEL_ENTRY_THERMOCYCLER_B_EXTENSION_TIME_WIDTH = 50
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_EXTENSION_TIME_UNITS_POSX = 820
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_EXTENSION_TIME_UNITS_POSY = 70
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_EXTENSION_TIME_UNITS_WIDTH = 50
+TOPLEVEL_CHECKBOX_THERMOCYCLER_B_USE_POSX = 935
+TOPLEVEL_CHECKBOX_THERMOCYCLER_B_USE_POSY = 72
+TOPLEVEL_CHECKBOX_THERMOCYCLER_B_USE_WIDTH = 50
+TOPLEVEL_LABEL_THERMOCYCLER_C_POSX = 10
+TOPLEVEL_LABEL_THERMOCYCLER_C_POSY = 100
+TOPLEVEL_ENTRY_THERMOCYCLER_C_CYCLES_POSX = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_C_CYCLES_POSY = 100
+TOPLEVEL_ENTRY_THERMOCYCLER_C_CYCLES_WIDTH = 50
+TOPLEVEL_ENTRY_THERMOCYCLER_C_DENATURE_TEMP_POSX = 120
+TOPLEVEL_ENTRY_THERMOCYCLER_C_DENATURE_TEMP_POSY = 100
+TOPLEVEL_ENTRY_THERMOCYCLER_C_DENATURE_TEMP_WIDTH = 50
+TOPLEVEL_LABEL_C_FOR_C_DENATURE_POSX = 175
+TOPLEVEL_LABEL_C_FOR_C_DENATURE_POSY = 100
+TOPLEVEL_ENTRY_THERMOCYCLER_C_DENATURE_TIME_POSX = 220
+TOPLEVEL_ENTRY_THERMOCYCLER_C_DENATURE_TIME_POSY = 100
+TOPLEVEL_ENTRY_THERMOCYCLER_C_DENATURE_TIME_WIDTH = 50
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_DENATURE_TIME_UNITS_POSX = 280
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_DENATURE_TIME_UNITS_POSY = 100
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_DENATURE_TIME_UNITS_WIDTH = 50
+TOPLEVEL_ENTRY_THERMOCYCLER_C_ANNEAL_TEMP_POSX = 390
+TOPLEVEL_ENTRY_THERMOCYCLER_C_ANNEAL_TEMP_POSY = 100
+TOPLEVEL_ENTRY_THERMOCYCLER_C_ANNEAL_TEMP_WIDTH = 50
+TOPLEVEL_LABEL_C_FOR_C_ANNEAL_POSX = 445
+TOPLEVEL_LABEL_C_FOR_C_ANNEAL_POSY = 100
+TOPLEVEL_ENTRY_THERMOCYCLER_C_ANNEAL_TIME_POSX = 490
+TOPLEVEL_ENTRY_THERMOCYCLER_C_ANNEAL_TIME_POSY = 100
+TOPLEVEL_ENTRY_THERMOCYCLER_C_ANNEAL_TIME_WIDTH = 50
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_ANNEAL_TIME_UNITS_POSX = 550
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_ANNEAL_TIME_UNITS_POSY = 100
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_ANNEAL_TIME_UNITS_WIDTH = 50
+TOPLEVEL_ENTRY_THERMOCYCLER_C_EXTENSION_TEMP_POSX = 660
+TOPLEVEL_ENTRY_THERMOCYCLER_C_EXTENSION_TEMP_POSY = 100
+TOPLEVEL_ENTRY_THERMOCYCLER_C_EXTENSION_TEMP_WIDTH = 50
+TOPLEVEL_LABEL_C_FOR_C_EXTENSION_POSX = 715
+TOPLEVEL_LABEL_C_FOR_C_EXTENSION_POSY = 100
+TOPLEVEL_ENTRY_THERMOCYCLER_C_EXTENSION_TIME_POSX = 760
+TOPLEVEL_ENTRY_THERMOCYCLER_C_EXTENSION_TIME_POSY = 100
+TOPLEVEL_ENTRY_THERMOCYCLER_C_EXTENSION_TIME_WIDTH = 50
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_EXTENSION_TIME_UNITS_POSX = 820
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_EXTENSION_TIME_UNITS_POSY = 100
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_EXTENSION_TIME_UNITS_WIDTH = 50
+TOPLEVEL_CHECKBOX_THERMOCYCLER_C_USE_POSX = 935
+TOPLEVEL_CHECKBOX_THERMOCYCLER_C_USE_POSY = 102
+TOPLEVEL_CHECKBOX_THERMOCYCLER_C_USE_WIDTH = 50
+TOPLEVEL_LABEL_THERMOCYCLER_D_POSX = 10
+TOPLEVEL_LABEL_THERMOCYCLER_D_POSY = 130
+TOPLEVEL_ENTRY_THERMOCYCLER_D_CYCLES_POSX = 40
+TOPLEVEL_ENTRY_THERMOCYCLER_D_CYCLES_POSY = 130
+TOPLEVEL_ENTRY_THERMOCYCLER_D_CYCLES_WIDTH = 50
+TOPLEVEL_ENTRY_THERMOCYCLER_D_DENATURE_TEMP_POSX = 120
+TOPLEVEL_ENTRY_THERMOCYCLER_D_DENATURE_TEMP_POSY = 130
+TOPLEVEL_ENTRY_THERMOCYCLER_D_DENATURE_TEMP_WIDTH = 50
+TOPLEVEL_LABEL_D_FOR_D_DENATURE_POSX = 175
+TOPLEVEL_LABEL_D_FOR_D_DENATURE_POSY = 130
+TOPLEVEL_ENTRY_THERMOCYCLER_D_DENATURE_TIME_POSX = 220
+TOPLEVEL_ENTRY_THERMOCYCLER_D_DENATURE_TIME_POSY = 130
+TOPLEVEL_ENTRY_THERMOCYCLER_D_DENATURE_TIME_WIDTH = 50
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_DENATURE_TIME_UNITS_POSX = 280
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_DENATURE_TIME_UNITS_POSY = 130
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_DENATURE_TIME_UNITS_WIDTH = 50
+TOPLEVEL_ENTRY_THERMOCYCLER_D_ANNEAL_TEMP_POSX = 390
+TOPLEVEL_ENTRY_THERMOCYCLER_D_ANNEAL_TEMP_POSY = 130
+TOPLEVEL_ENTRY_THERMOCYCLER_D_ANNEAL_TEMP_WIDTH = 50
+TOPLEVEL_LABEL_D_FOR_D_ANNEAL_POSX = 445
+TOPLEVEL_LABEL_D_FOR_D_ANNEAL_POSY = 130
+TOPLEVEL_ENTRY_THERMOCYCLER_D_ANNEAL_TIME_POSX = 490
+TOPLEVEL_ENTRY_THERMOCYCLER_D_ANNEAL_TIME_POSY = 130
+TOPLEVEL_ENTRY_THERMOCYCLER_D_ANNEAL_TIME_WIDTH = 50
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_ANNEAL_TIME_UNITS_POSX = 550
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_ANNEAL_TIME_UNITS_POSY = 130
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_ANNEAL_TIME_UNITS_WIDTH = 50
+TOPLEVEL_ENTRY_THERMOCYCLER_D_EXTENSION_TEMP_POSX = 660
+TOPLEVEL_ENTRY_THERMOCYCLER_D_EXTENSION_TEMP_POSY = 130
+TOPLEVEL_ENTRY_THERMOCYCLER_D_EXTENSION_TEMP_WIDTH = 50
+TOPLEVEL_LABEL_D_FOR_D_EXTENSION_POSX = 715
+TOPLEVEL_LABEL_D_FOR_D_EXTENSION_POSY = 130
+TOPLEVEL_ENTRY_THERMOCYCLER_D_EXTENSION_TIME_POSX = 760
+TOPLEVEL_ENTRY_THERMOCYCLER_D_EXTENSION_TIME_POSY = 130
+TOPLEVEL_ENTRY_THERMOCYCLER_D_EXTENSION_TIME_WIDTH = 50
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_EXTENSION_TIME_UNITS_POSX = 820
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_EXTENSION_TIME_UNITS_POSY = 130
+TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_EXTENSION_TIME_UNITS_WIDTH = 50
+TOPLEVEL_CHECKBOX_THERMOCYCLER_D_USE_POSX = 935
+TOPLEVEL_CHECKBOX_THERMOCYCLER_D_USE_POSY = 132
+TOPLEVEL_CHECKBOX_THERMOCYCLER_D_USE_WIDTH = 50
+TOPLEVEL_BUTTON_CYCLE_ADD_POSX = 840
+TOPLEVEL_BUTTON_CYCLE_ADD_POSY = 160
+TOPLEVEL_BUTTON_CYCLE_ADD_WIDTH = 100
+
 TOPLEVEL_PRE_AMP_WIDTH = 400
 TOPLEVEL_PRE_AMP_HEIGHT = 270
 TOPLEVEL_LABEL_FIRST_DENATURE_TEMP_POSX = 35
@@ -559,6 +740,10 @@ class BuildProtocolController:
 				# Open a toplevel window to setup the protocol
 				self.create_toplevel_pre_amp()
 				return None
+		elif 'Cycle' == action_message.split()[-1]:
+			# Open a toplevel window to setup the cycling protocol
+			self.create_toplevel_cycle()
+			return None
 		# Determine which if any row of the treeview is selected
 		try:
 			selected_row = self.view.treeview.selection()[0]
@@ -906,6 +1091,349 @@ class BuildProtocolController:
 				self.upper_gantry.disengage_magnet()
 				# Log
 				log.log(action_message, time.time() - t_start)
+			elif split[0] == 'Thermocycle:':
+				""" Thermocycle: is different than actions that start with Thermocycle only, this one is for 
+				cycling only
+				"""
+				# Initialize the Meerstetter
+				try:
+					self.meerstetter = Meerstetter()
+				except Exception as e:
+					pass
+				# Determine which thermocyclers are going to be used
+				temp_cutoff = 2 # C
+				protocol_data = {
+					'A': {
+						'use': None,
+						'step': None, # [denature, cycle, done]
+						'denature': [None, None], # denature_temperature_C, denature_time_s
+						'cycle': [None, None, None, None, None], # cycles, extension_temperature_C, extension_time_s, anneal_temperature_C, anneal_time_s
+						'done': None,
+						'clock': 0,
+					},
+					'B': {
+						'use': None,
+						'step': None,
+						'denature': [None, None], # denature_temperature_C, denature_time_s
+						'cycle': [None, None, None, None, None], # cycles, extension_temperature_C, extension_time_s, anneal_temperature_C, anneal_time_s
+						'done': None,
+						'clock': 0,
+					},
+					'C': {
+						'use': None,
+						'step': None,
+						'denature': [None, None], # denature_temperature_C, denature_time_s
+						'cycle': [None, None, None, None, None], # cycles, extension_temperature_C, extension_time_s, anneal_temperature_C, anneal_time_s
+						'done': None,
+						'clock': 0,
+					},
+					'D': {
+						'use': None,
+						'step': None,
+						'denature': [None, None], # denature_temperature_C, denature_time_s
+						'cycle': [None, None, None, None, None], # cycles, extension_temperature_C, extension_time_s, anneal_temperature_C, anneal_time_s
+						'done': None,
+						'clock': 0,
+					},
+				}
+				if '-A-' in split:
+					protocol_data['A']['use'] = True
+					if protocol_data['A']['use']:
+						protocol_data['A']['step'] = 'denature'
+					else:
+						protocol_data['A']['step'] = None
+					protocol_data['A']['done'] = False
+					start_index = split.index('-A-')
+					protocol_data['A']['cycle'][0] = int(split[start_index+9])
+					protocol_data['A']['denature'][0] = int(split[start_index+3])
+					protocol_data['A']['denature'][1] = int(split[start_index+6])
+					units = str(split[start_index+7])
+					if units == 'minutes':
+						protocol_data['A']['denature'][1] = protocol_data['A']['denature'][1] * 60
+					protocol_data['A']['cycle'][3] = int(split[start_index+18])
+					protocol_data['A']['cycle'][4] = int(split[start_index+21])
+					units = str(split[start_index+22])
+					if units == 'minutes':
+						protocol_data['A']['cycle'][4] = protocol_data['A']['cycle'][4] * 60
+					protocol_data['A']['cycle'][1] = int(split[start_index+12])
+					protocol_data['A']['cycle'][2] = int(split[start_index+15])
+					units = str(split[start_index+16])
+					if units == 'minutes':
+						protocol_data['A']['cycle'][2] = protocol_data['A']['cycle'][2] * 60
+				if '-B-' in split:
+					protocol_data['B']['use'] = True
+					if protocol_data['B']['use']:
+						protocol_data['B']['step'] = 'denature'
+					else:
+						protocol_data['B']['step'] = None
+					protocol_data['B']['done'] = False
+					start_index = split.index('-B-')
+					protocol_data['B']['cycle'][0] = int(split[start_index+9])
+					protocol_data['B']['denature'][0] = int(split[start_index+3])
+					protocol_data['B']['denature'][1] = int(split[start_index+6])
+					units = str(split[start_index+7])
+					if units == 'minutes':
+						protocol_data['B']['denature'][1] = protocol_data['B']['denature'][1] * 60
+					protocol_data['B']['cycle'][3] = int(split[start_index+18])
+					protocol_data['B']['cycle'][4] = int(split[start_index+21])
+					units = str(split[start_index+22])
+					if units == 'minutes':
+						protocol_data['B']['cycle'][4] = protocol_data['B']['cycle'][4] * 60
+					protocol_data['B']['cycle'][1] = int(split[start_index+12])
+					protocol_data['B']['cycle'][2] = int(split[start_index+15])
+					units = str(split[start_index+16])
+					if units == 'minutes':
+						protocol_data['B']['cycle'][2] = protocol_data['B']['cycle'][2] * 60
+				if '-C-' in split:
+					protocol_data['C']['use'] = True
+					if protocol_data['C']['use']:
+						protocol_data['C']['step'] = 'denature'
+					else:
+						protocol_data['C']['step'] = None
+					protocol_data['C']['done'] = False
+					start_index = split.index('-C-')
+					protocol_data['C']['cycle'][0] = int(split[start_index+9])
+					protocol_data['C']['denature'][0] = int(split[start_index+3])
+					protocol_data['C']['denature'][1] = int(split[start_index+6])
+					units = str(split[start_index+7])
+					if units == 'minutes':
+						protocol_data['C']['denature'][1] = protocol_data['C']['denature'][1] * 60
+					protocol_data['C']['cycle'][3] = int(split[start_index+18])
+					protocol_data['C']['cycle'][4] = int(split[start_index+21])
+					units = str(split[start_index+22])
+					if units == 'minutes':
+						protocol_data['C']['cycle'][4] = protocol_data['C']['cycle'][4] * 60
+					protocol_data['C']['cycle'][1] = int(split[start_index+12])
+					protocol_data['C']['cycle'][2] = int(split[start_index+15])
+					units = str(split[start_index+16])
+					if units == 'minutes':
+						protocol_data['C']['cycle'][2] = protocol_data['C']['cycle'][2] * 60
+				if '-D-' in split:
+					protocol_data['D']['use'] = True
+					if protocol_data['D']['use']:
+						protocol_data['D']['step'] = 'denature'
+					else:
+						protocol_data['D']['step'] = None
+					protocol_data['D']['done'] = False
+					start_index = split.index('-D-')
+					protocol_data['D']['cycle'][0] = int(split[start_index+9])
+					protocol_data['D']['denature'][0] = int(split[start_index+3])
+					protocol_data['D']['denature'][1] = int(split[start_index+6])
+					units = str(split[start_index+7])
+					if units == 'minutes':
+						protocol_data['D']['denature'][1] = protocol_data['D']['denature'][1] * 60
+					protocol_data['D']['cycle'][3] = int(split[start_index+18])
+					protocol_data['D']['cycle'][4] = int(split[start_index+21])
+					units = str(split[start_index+22])
+					if units == 'minutes':
+						protocol_data['D']['cycle'][4] = protocol_data['D']['cycle'][4] * 60
+					protocol_data['D']['cycle'][1] = int(split[start_index+12])
+					protocol_data['D']['cycle'][2] = int(split[start_index+15])
+					units = str(split[start_index+16])
+					if units == 'minutes':
+						protocol_data['D']['cycle'][2] = protocol_data['D']['cycle'][2] * 60
+				# Start the cycling
+				all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
+				while False in all_done: 
+					# Step for A
+					if protocol_data['A']['use']:
+						ID = 'A'
+						address = 1
+						# Get the step currently on
+						step = protocol_data[ID]['step']
+						# Get the temperature and time for this step
+						if 'cycle' in step:
+							whole_message = step.split('_')
+							step = whole_message[0]
+							cycle = int(whole_message[1])
+							action = whole_message[2]
+							if action == 'anneal':
+								temp_index = 3
+								time_index = 4
+							elif action == 'extension':
+								temp_index = 1
+								time_index = 2
+						elif 'denature' in step:
+							temp_index = 0
+							time_index = 1
+						temp_d = protocol_data[ID][step][temp_index]
+						time_d = protocol_data[ID][step][time_index]
+						# Change the temperature  and start the timer
+						if protocol_data[ID]['clock'] == 0:
+							self.meerstetter.change_temperature(address, temp_d)
+							# Make sure the temperature is reached before starting to time
+							protocol_data[ID]['clock'] = time.time()
+						# Check the timing for this step
+						if time.time() - protocol_data[ID]['clock'] >= time_d:
+							# Update the step
+							if step == 'denature':
+								step = 'cycle_1_extension'
+								protocol_data[ID]['step'] = step
+							if step == 'cycle':
+								cycle = cycle + 1
+								if cycle > protocol_data[ID]['cycle'][0]:
+									protocol_data[ID]['done'] = True
+									# Check if all the units are done
+									all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
+									continue
+								if action == 'extension':
+									step = f'cycle_{cycle}_anneal'
+									protocol_data[ID]['step'] = step
+								else:
+									step = f'cycle_{cycle}_extension'
+									protocol_data[ID]['step'] = step
+							# Restart the clock
+							protocol_data[ID]['clock'] = 0
+					# Step for B
+					if protocol_data['B']['use']:
+						ID = 'B'
+						address = 2
+						# Get the step currently on
+						step = protocol_data[ID]['step']
+						# Get the temperature and time for this step
+						if 'cycle' in step:
+							whole_message = step.split('_')
+							step = whole_message[0]
+							cycle = int(whole_message[1])
+							action = whole_message[2]
+							if action == 'anneal':
+								temp_index = 3
+								time_index = 4
+							elif action == 'extension':
+								temp_index = 1
+								time_index = 2
+						elif 'denature' in step:
+							temp_index = 0
+							time_index = 1
+						temp_d = protocol_data[ID][step][temp_index]
+						time_d = protocol_data[ID][step][time_index]
+						# Change the temperature  and start the timer
+						if protocol_data[ID]['clock'] == 0:
+							self.meerstetter.change_temperature(address, temp_d)
+							# Make sure the temperature is reached before starting to time
+							protocol_data[ID]['clock'] = time.time()
+						# Check the timing for this step
+						if time.time() - protocol_data[ID]['clock'] >= time_d:
+							# Update the step
+							if step == 'denature':
+								step = 'cycle_1_extension'
+								protocol_data[ID]['step'] = step
+							if step == 'cycle':
+								cycle = cycle + 1
+								if cycle > protocol_data[ID]['cycle'][0]:
+									protocol_data[ID]['done'] = True
+									# Check if all the units are done
+									all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
+									continue
+								if action == 'extension':
+									step = f'cycle_{cycle}_anneal'
+									protocol_data[ID]['step'] = step
+								else:
+									step = f'cycle_{cycle}_extension'
+									protocol_data[ID]['step'] = step
+							# Restart the clock
+							protocol_data[ID]['clock'] = 0
+					# Step for C
+					if protocol_data['C']['use']:
+						ID = 'C'
+						address = 3
+						# Get the step currently on
+						step = protocol_data[ID]['step']
+						# Get the temperature and time for this step
+						if 'cycle' in step:
+							whole_message = step.split('_')
+							step = whole_message[0]
+							cycle = int(whole_message[1])
+							action = whole_message[2]
+							if action == 'anneal':
+								temp_index = 3
+								time_index = 4
+							elif action == 'extension':
+								temp_index = 1
+								time_index = 2
+						elif 'denature' in step:
+							temp_index = 0
+							time_index = 1
+						temp_d = protocol_data[ID][step][temp_index]
+						time_d = protocol_data[ID][step][time_index]
+						# Change the temperature  and start the timer
+						if protocol_data[ID]['clock'] == 0:
+							self.meerstetter.change_temperature(address, temp_d)
+							# Make sure the temperature is reached before starting to time
+							protocol_data[ID]['clock'] = time.time()
+						# Check the timing for this step
+						if time.time() - protocol_data[ID]['clock'] >= time_d:
+							# Update the step
+							if step == 'denature':
+								step = 'cycle_1_extension'
+								protocol_data[ID]['step'] = step
+							if step == 'cycle':
+								cycle = cycle + 1
+								if cycle > protocol_data[ID]['cycle'][0]:
+									protocol_data[ID]['done'] = True
+									# Check if all the units are done
+									all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
+									continue
+								if action == 'extension':
+									step = f'cycle_{cycle}_anneal'
+									protocol_data[ID]['step'] = step
+								else:
+									step = f'cycle_{cycle}_extension'
+									protocol_data[ID]['step'] = step
+							# Restart the clock
+							protocol_data[ID]['clock'] = 0
+					# Step for D
+					if protocol_data['D']['use']:
+						ID = 'D'
+						address = 4
+						# Get the step currently on
+						step = protocol_data[ID]['step']
+						# Get the temperature and time for this step
+						if 'cycle' in step:
+							whole_message = step.split('_')
+							step = whole_message[0]
+							cycle = int(whole_message[1])
+							action = whole_message[2]
+							if action == 'anneal':
+								temp_index = 3
+								time_index = 4
+							elif action == 'extension':
+								temp_index = 1
+								time_index = 2
+						elif 'denature' in step:
+							temp_index = 0
+							time_index = 1
+						temp_d = protocol_data[ID][step][temp_index]
+						time_d = protocol_data[ID][step][time_index]
+						# Change the temperature  and start the timer
+						if protocol_data[ID]['clock'] == 0:
+							self.meerstetter.change_temperature(address, temp_d)
+							# Make sure the temperature is reached before starting to time
+							protocol_data[ID]['clock'] = time.time()
+						# Check the timing for this step
+						if time.time() - protocol_data[ID]['clock'] >= time_d:
+							# Update the step
+							if step == 'denature':
+								step = 'cycle_1_extension'
+								protocol_data[ID]['step'] = step
+							if step == 'cycle':
+								cycle = cycle + 1
+								if cycle > protocol_data[ID]['cycle'][0]:
+									protocol_data[ID]['done'] = True
+									# Check if all the units are done
+									all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
+									continue
+								if action == 'extension':
+									step = f'cycle_{cycle}_anneal'
+									protocol_data[ID]['step'] = step
+								else:
+									step = f'cycle_{cycle}_extension'
+									protocol_data[ID]['step'] = step
+							# Restart the clock
+							protocol_data[ID]['clock'] = 0
+					# Check if all the units are done
+					all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
+
 			elif split[0] == 'Thermocycle':
 				# Initialize the Meerstetter
 				try:
@@ -1053,7 +1581,16 @@ class BuildProtocolController:
 				# Change the Heater/Shaker temperature
 				self.upper_gantry.change_heater_shaker_temperature(temp)
 				# Log
-				log.log(action_message, time.time() - t_start)			
+				log.log(action_message, time.time() - t_start)	
+				
+	def __get_protocol_data(self, protocol_data: dict, thermocycler: str, step: str) -> list:
+		""" """
+		if step == 'denature':
+			return protocol_data[thermocycler][step]
+		elif step == 'cycle': 
+			a = 1
+		else:
+			a = 1
 
 	def load(self, event=None) -> None:
 		"""Deals with the loading of a protocol into the action treeview
@@ -1094,6 +1631,659 @@ class BuildProtocolController:
 		for selected_row in self.view.treeview.selection():
 			# Update the model
 			self.model.delete(int(selected_row))
+		# Update the view
+		self.view.update_treeview()
+
+	def create_toplevel_cycle(self):
+		""" Creates a Toplevel for a cycling protocol for the Build Protocol tab """
+		toplevel_cycle = ctk.CTkToplevel(self.view.master)
+		toplevel_cycle.geometry(f'{TOPLEVEL_CYCLE_WIDTH}x{TOPLEVEL_CYCLE_HEIGHT}')
+		# Create and place the title of the toplevel
+		toplevel_cycle.title("Cycle Protocol Builder")
+		# Get the thermocycle model
+		model = self.view.master_model.get_thermocycle_model()
+		# Create and place cycles, denature, anneal, extension, and use labels
+		toplevel_label_cycle = ctk.CTkLabel(master=toplevel_cycle, text='Cycles', font=(FONT, -16))
+		toplevel_label_cycle.place(x=TOPLEVEL_LABEL_CYCLE_POSX, y=TOPLEVEL_LABEL_CYCLE_POSY)
+		toplevel_label_denature = ctk.CTkLabel(master=toplevel_cycle, text="Denature Temperature", font=(FONT, -16))
+		toplevel_label_denature.place(x=TOPLEVEL_LABEL_DENATURE_POSX, y=TOPLEVEL_LABEL_DENATURE_POSY)
+		toplevel_label_anneal = ctk.CTkLabel(master=toplevel_cycle, text="Anneal Temperature", font=(FONT, -16))
+		toplevel_label_anneal.place(x=TOPLEVEL_LABEL_ANNEAL_POSX, y=TOPLEVEL_LABEL_ANNEAL_POSY)
+		toplevel_label_extension = ctk.CTkLabel(master=toplevel_cycle, text="Extension Temperature", font=(FONT, -16))
+		toplevel_label_extension.place(x=TOPLEVEL_LABEL_EXTENSION_POSX, y=TOPLEVEL_LABEL_EXTENSION_POSY)
+		toplevel_label_use = ctk.CTkLabel(master=toplevel_cycle, text='Use', font=(FONT, -16))
+		toplevel_label_use.place(x=TOPLEVEL_LABEL_USE_POSX, y=TOPLEVEL_LABEL_USE_POSY)
+		# Create and place the label for thermocycler A
+		toplevel_label_thermocycler_a = ctk.CTkLabel(
+			master=toplevel_cycle,
+			text='A',
+			font=(FONT,-16)
+		)
+		toplevel_label_thermocycler_a.place(x=TOPLEVEL_LABEL_THERMOCYCLER_A_POSX, y=TOPLEVEL_LABEL_THERMOCYCLER_A_POSY)
+		# Create and place the entry for thermocycler A's cycles
+		self.a_cycles_sv = StringVar()
+		self.a_cycles_sv.set(model.select(1)['cycles'])
+		toplevel_entry_thermocycler_a_cycles = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.a_cycles_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_A_CYCLES_WIDTH,
+		)
+		toplevel_entry_thermocycler_a_cycles.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_A_CYCLES_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_A_CYCLES_POSY)
+		# Create and place the label and entry for thermocycler A's denature temp and time
+		self.a_first_denature_temp_sv = StringVar()
+		self.a_first_denature_temp_sv.set(model.select(1)['first_denature_temperature'])
+		toplevel_entry_thermocycler_a_denature_temp = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.a_first_denature_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_A_DENATURE_TEMP_WIDTH,
+		)
+		toplevel_label_c_for_a = ctk.CTkLabel(master=toplevel_cycle, text="C for", font=(FONT,-16))
+		toplevel_label_c_for_a.place(x=TOPLEVEL_LABEL_C_FOR_A_DENATURE_POSX, y=TOPLEVEL_LABEL_C_FOR_A_DENATURE_POSY)
+		toplevel_entry_thermocycler_a_denature_temp.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_A_DENATURE_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_A_DENATURE_TEMP_POSY)
+		self.a_first_denature_time_sv = StringVar()
+		self.a_first_denature_time_sv.set(model.select(1)['first_denature_time'])
+		toplevel_entry_thermocycler_a_denature_time = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.a_first_denature_time_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_A_DENATURE_TIME_WIDTH,
+		)
+		toplevel_entry_thermocycler_a_denature_time.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_A_DENATURE_TIME_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_A_DENATURE_TIME_POSY)
+		self.a_denature_time_units_sv = StringVar()
+		self.a_denature_time_units_sv.set('minutes')
+		toplevel_optionmenu_thermocycler_a_denature_time_units = ctk.CTkOptionMenu(
+			master=toplevel_cycle,
+			values=['seconds', 'minutes',],
+			variable=self.a_denature_time_units_sv,
+			width=TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_DENATURE_TIME_UNITS_WIDTH,
+		)
+		toplevel_optionmenu_thermocycler_a_denature_time_units.place(x=TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_DENATURE_TIME_UNITS_POSX,
+			y=TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_DENATURE_TIME_UNITS_POSY
+		)
+		# Create and place the label and entry for thermocycler A's anneal temp
+		self.a_anneal_temp_sv = StringVar()
+		self.a_anneal_temp_sv.set(model.select(1)['anneal_temperature'])
+		toplevel_entry_thermocycler_a_anneal_temp = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.a_anneal_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_A_ANNEAL_TEMP_WIDTH,
+		)
+		toplevel_label_c_for_a_anneal = ctk.CTkLabel(master=toplevel_cycle, text="C for", font=(FONT,-16))
+		toplevel_label_c_for_a_anneal.place(x=TOPLEVEL_LABEL_C_FOR_A_ANNEAL_POSX, y=TOPLEVEL_LABEL_C_FOR_A_ANNEAL_POSY)
+		toplevel_entry_thermocycler_a_anneal_temp.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_A_ANNEAL_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_A_ANNEAL_TEMP_POSY)
+		self.a_anneal_time_sv = StringVar()
+		self.a_anneal_time_sv.set(model.select(1)['anneal_time'])
+		toplevel_entry_thermocycler_a_anneal_time = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.a_anneal_time_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_A_ANNEAL_TIME_WIDTH,
+		)
+		toplevel_entry_thermocycler_a_anneal_time.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_A_ANNEAL_TIME_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_A_ANNEAL_TIME_POSY)
+		self.a_anneal_time_units_sv = StringVar()
+		self.a_anneal_time_units_sv.set('seconds')
+		toplevel_optionmenu_thermocycler_a_anneal_time_units = ctk.CTkOptionMenu(
+			master=toplevel_cycle,
+			values=['seconds', 'minutes',],
+			variable=self.a_anneal_time_units_sv,
+			width=TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_ANNEAL_TIME_UNITS_WIDTH,
+		)
+		toplevel_optionmenu_thermocycler_a_anneal_time_units.place(x=TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_ANNEAL_TIME_UNITS_POSX,
+			y=TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_ANNEAL_TIME_UNITS_POSY
+		)
+		# Create and place the label and entry for thermocycler A's extension temp
+		self.a_second_denature_temp_sv = StringVar()
+		self.a_second_denature_temp_sv.set(model.select(1)['second_denature_temperature'])
+		toplevel_entry_thermocycler_a_extension_temp = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.a_second_denature_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_A_EXTENSION_TEMP_WIDTH,
+		)
+		toplevel_label_c_for_a_extension = ctk.CTkLabel(master=toplevel_cycle, text="C for", font=(FONT,-16))
+		toplevel_label_c_for_a_extension.place(x=TOPLEVEL_LABEL_C_FOR_A_EXTENSION_POSX, y=TOPLEVEL_LABEL_C_FOR_A_EXTENSION_POSY)
+		toplevel_entry_thermocycler_a_extension_temp.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_A_EXTENSION_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_A_EXTENSION_TEMP_POSY)
+		self.a_second_denature_time_sv = StringVar()
+		self.a_second_denature_time_sv.set(model.select(1)['second_denature_time'])
+		toplevel_entry_thermocycler_a_extension_time = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.a_second_denature_time_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_A_EXTENSION_TIME_WIDTH,
+		)
+		toplevel_entry_thermocycler_a_extension_time.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_A_EXTENSION_TIME_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_A_EXTENSION_TIME_POSY)
+		self.a_extension_time_units_sv = StringVar()
+		self.a_extension_time_units_sv.set('seconds')
+		toplevel_optionmenu_thermocycler_a_extension_time_units = ctk.CTkOptionMenu(
+			master=toplevel_cycle,
+			values=['seconds', 'minutes',],
+			variable=self.a_extension_time_units_sv,
+			width=TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_EXTENSION_TIME_UNITS_WIDTH,
+		)
+		toplevel_optionmenu_thermocycler_a_extension_time_units.place(x=TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_EXTENSION_TIME_UNITS_POSX,
+			y=TOPLEVEL_OPTIONMENU_THERMOCYCLER_A_EXTENSION_TIME_UNITS_POSY
+		)
+		# Create and place the label and checkbox for thermocycler A's use
+		self.toplevel_checkbox_thermocycler_a_use_iv = IntVar()
+		self.toplevel_checkbox_thermocycler_a_use_iv.set(0)
+		toplevel_checkbox_thermocycler_a_use = ctk.CTkCheckBox(
+			master=toplevel_cycle,
+			text='',
+			variable=self.toplevel_checkbox_thermocycler_a_use_iv,
+			onvalue=1,
+			offvalue=0,
+			width=TOPLEVEL_CHECKBOX_THERMOCYCLER_A_USE_WIDTH,
+		)
+		toplevel_checkbox_thermocycler_a_use.place(x=TOPLEVEL_CHECKBOX_THERMOCYCLER_A_USE_POSX, y=TOPLEVEL_CHECKBOX_THERMOCYCLER_A_USE_POSY)
+		# Create and place the label for thermocycler B
+		toplevel_label_thermocycler_b = ctk.CTkLabel(
+			master=toplevel_cycle,
+			text='B',
+			font=(FONT,-16)
+		)
+		toplevel_label_thermocycler_b.place(x=TOPLEVEL_LABEL_THERMOCYCLER_B_POSX, y=TOPLEVEL_LABEL_THERMOCYCLER_B_POSY)
+		# Create and place the entry for thermocycler B's cycles
+		self.b_cycles_sv = StringVar()
+		self.b_cycles_sv.set(model.select(2)['cycles'])
+		toplevel_entry_thermocycler_b_cycles = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.b_cycles_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_B_CYCLES_WIDTH,
+		)
+		toplevel_entry_thermocycler_b_cycles.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_B_CYCLES_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_B_CYCLES_POSY)
+		# Create and place the label and entry for thermocycler B's denature temp and time
+		self.b_first_denature_temp_sv = StringVar()
+		self.b_first_denature_temp_sv.set(model.select(2)['first_denature_temperature'])
+		toplevel_entry_thermocycler_b_denature_temp = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.b_first_denature_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_B_DENATURE_TEMP_WIDTH,
+		)
+		toplevel_label_c_for_b = ctk.CTkLabel(master=toplevel_cycle, text="C for", font=(FONT,-16))
+		toplevel_label_c_for_b.place(x=TOPLEVEL_LABEL_C_FOR_B_DENATURE_POSX, y=TOPLEVEL_LABEL_C_FOR_B_DENATURE_POSY)
+		toplevel_entry_thermocycler_b_denature_temp.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_B_DENATURE_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_B_DENATURE_TEMP_POSY)
+		self.b_first_denature_time_sv = StringVar()
+		self.b_first_denature_time_sv.set(model.select(2)['first_denature_time'])
+		toplevel_entry_thermocycler_b_denature_time = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.b_first_denature_time_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_B_DENATURE_TIME_WIDTH,
+		)
+		toplevel_entry_thermocycler_b_denature_time.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_B_DENATURE_TIME_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_B_DENATURE_TIME_POSY)
+		self.b_denature_time_units_sv = StringVar()
+		self.b_denature_time_units_sv.set('minutes')
+		toplevel_optionmenu_thermocycler_b_denature_time_units = ctk.CTkOptionMenu(
+			master=toplevel_cycle,
+			values=['seconds', 'minutes',],
+			variable=self.b_denature_time_units_sv,
+			width=TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_DENATURE_TIME_UNITS_WIDTH,
+		)
+		toplevel_optionmenu_thermocycler_b_denature_time_units.place(x=TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_DENATURE_TIME_UNITS_POSX,
+			y=TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_DENATURE_TIME_UNITS_POSY
+		)
+		# Create and place the label and entry for thermocycler B's anneal temp
+		self.b_anneal_temp_sv = StringVar()
+		self.b_anneal_temp_sv.set(model.select(2)['anneal_temperature'])
+		toplevel_entry_thermocycler_b_anneal_temp = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.b_anneal_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_B_ANNEAL_TEMP_WIDTH,
+		)
+		toplevel_label_c_for_b_anneal = ctk.CTkLabel(master=toplevel_cycle, text="C for", font=(FONT,-16))
+		toplevel_label_c_for_b_anneal.place(x=TOPLEVEL_LABEL_C_FOR_B_ANNEAL_POSX, y=TOPLEVEL_LABEL_C_FOR_B_ANNEAL_POSY)
+		toplevel_entry_thermocycler_b_anneal_temp.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_B_ANNEAL_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_B_ANNEAL_TEMP_POSY)
+		self.b_anneal_time_sv = StringVar()
+		self.b_anneal_time_sv.set(model.select(2)['anneal_time'])
+		toplevel_entry_thermocycler_b_anneal_time = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.b_anneal_time_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_B_ANNEAL_TIME_WIDTH,
+		)
+		toplevel_entry_thermocycler_b_anneal_time.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_B_ANNEAL_TIME_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_B_ANNEAL_TIME_POSY)
+		self.b_anneal_time_units_sv = StringVar()
+		self.b_anneal_time_units_sv.set('seconds')
+		toplevel_optionmenu_thermocycler_b_anneal_time_units = ctk.CTkOptionMenu(
+			master=toplevel_cycle,
+			values=['seconds', 'minutes',],
+			variable=self.b_anneal_time_units_sv,
+			width=TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_ANNEAL_TIME_UNITS_WIDTH,
+		)
+		toplevel_optionmenu_thermocycler_b_anneal_time_units.place(x=TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_ANNEAL_TIME_UNITS_POSX,
+			y=TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_ANNEAL_TIME_UNITS_POSY
+		)
+		# Create and place the label and entry for thermocycler B's extension temp
+		self.b_second_denature_temp_sv = StringVar()
+		self.b_second_denature_temp_sv.set(model.select(2)['second_denature_temperature'])
+		toplevel_entry_thermocycler_b_extension_temp = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.b_second_denature_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_B_EXTENSION_TEMP_WIDTH,
+		)
+		toplevel_label_c_for_b_extension = ctk.CTkLabel(master=toplevel_cycle, text="C for", font=(FONT,-16))
+		toplevel_label_c_for_b_extension.place(x=TOPLEVEL_LABEL_C_FOR_B_EXTENSION_POSX, y=TOPLEVEL_LABEL_C_FOR_B_EXTENSION_POSY)
+		toplevel_entry_thermocycler_b_extension_temp.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_B_EXTENSION_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_B_EXTENSION_TEMP_POSY)
+		self.b_second_denature_time_sv = StringVar()
+		self.b_second_denature_time_sv.set(model.select(2)['second_denature_time'])
+		toplevel_entry_thermocycler_b_extension_time = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.b_second_denature_time_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_B_EXTENSION_TIME_WIDTH,
+		)
+		toplevel_entry_thermocycler_b_extension_time.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_B_EXTENSION_TIME_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_B_EXTENSION_TIME_POSY)
+		self.b_extension_time_units_sv = StringVar()
+		self.b_extension_time_units_sv.set('seconds')
+		toplevel_optionmenu_thermocycler_b_extension_time_units = ctk.CTkOptionMenu(
+			master=toplevel_cycle,
+			values=['seconds', 'minutes',],
+			variable=self.b_extension_time_units_sv,
+			width=TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_EXTENSION_TIME_UNITS_WIDTH,
+		)
+		toplevel_optionmenu_thermocycler_b_extension_time_units.place(x=TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_EXTENSION_TIME_UNITS_POSX,
+			y=TOPLEVEL_OPTIONMENU_THERMOCYCLER_B_EXTENSION_TIME_UNITS_POSY
+		)
+		# Create and place the label and checkbox for thermocycler B's use
+		self.toplevel_checkbox_thermocycler_b_use_iv = IntVar()
+		self.toplevel_checkbox_thermocycler_b_use_iv.set(0)
+		toplevel_checkbox_thermocycler_b_use = ctk.CTkCheckBox(
+			master=toplevel_cycle,
+			text='',
+			variable=self.toplevel_checkbox_thermocycler_b_use_iv,
+			onvalue=1,
+			offvalue=0,
+			width=TOPLEVEL_CHECKBOX_THERMOCYCLER_B_USE_WIDTH,
+		)
+		toplevel_checkbox_thermocycler_b_use.place(x=TOPLEVEL_CHECKBOX_THERMOCYCLER_B_USE_POSX, y=TOPLEVEL_CHECKBOX_THERMOCYCLER_B_USE_POSY)
+		# Create and place the label for thermocycler C
+		toplevel_label_thermocycler_c = ctk.CTkLabel(
+			master=toplevel_cycle,
+			text='C',
+			font=(FONT,-16)
+		)
+		toplevel_label_thermocycler_c.place(x=TOPLEVEL_LABEL_THERMOCYCLER_C_POSX, y=TOPLEVEL_LABEL_THERMOCYCLER_C_POSY)
+		# Create and place the entry for thermocycler C's cycles
+		self.c_cycles_sv = StringVar()
+		self.c_cycles_sv.set(model.select(3)['cycles'])
+		toplevel_entry_thermocycler_c_cycles = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.c_cycles_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_C_CYCLES_WIDTH,
+		)
+		toplevel_entry_thermocycler_c_cycles.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_C_CYCLES_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_C_CYCLES_POSY)
+		# Create and place the label and entry for thermocycler C's denature temp and time
+		self.c_first_denature_temp_sv = StringVar()
+		self.c_first_denature_temp_sv.set(model.select(3)['first_denature_temperature'])
+		toplevel_entry_thermocycler_c_denature_temp = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.c_first_denature_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_C_DENATURE_TEMP_WIDTH,
+		)
+		toplevel_label_c_for_c = ctk.CTkLabel(master=toplevel_cycle, text="C for", font=(FONT,-16))
+		toplevel_label_c_for_c.place(x=TOPLEVEL_LABEL_C_FOR_C_DENATURE_POSX, y=TOPLEVEL_LABEL_C_FOR_C_DENATURE_POSY)
+		toplevel_entry_thermocycler_c_denature_temp.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_C_DENATURE_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_C_DENATURE_TEMP_POSY)
+		self.c_first_denature_time_sv = StringVar()
+		self.c_first_denature_time_sv.set(model.select(3)['first_denature_time'])
+		toplevel_entry_thermocycler_c_denature_time = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.c_first_denature_time_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_C_DENATURE_TIME_WIDTH,
+		)
+		toplevel_entry_thermocycler_c_denature_time.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_C_DENATURE_TIME_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_C_DENATURE_TIME_POSY)
+		self.c_denature_time_units_sv = StringVar()
+		self.c_denature_time_units_sv.set('minutes')
+		toplevel_optionmenu_thermocycler_c_denature_time_units = ctk.CTkOptionMenu(
+			master=toplevel_cycle,
+			values=['seconds', 'minutes',],
+			variable=self.c_denature_time_units_sv,
+			width=TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_DENATURE_TIME_UNITS_WIDTH,
+		)
+		toplevel_optionmenu_thermocycler_c_denature_time_units.place(x=TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_DENATURE_TIME_UNITS_POSX,
+			y=TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_DENATURE_TIME_UNITS_POSY
+		)
+		# Create and place the label and entry for thermocycler C's anneal temp
+		self.c_anneal_temp_sv = StringVar()
+		self.c_anneal_temp_sv.set(model.select(3)['anneal_temperature'])
+		toplevel_entry_thermocycler_c_anneal_temp = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.c_anneal_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_C_ANNEAL_TEMP_WIDTH,
+		)
+		toplevel_label_c_for_c_anneal = ctk.CTkLabel(master=toplevel_cycle, text="C for", font=(FONT,-16))
+		toplevel_label_c_for_c_anneal.place(x=TOPLEVEL_LABEL_C_FOR_C_ANNEAL_POSX, y=TOPLEVEL_LABEL_C_FOR_C_ANNEAL_POSY)
+		toplevel_entry_thermocycler_c_anneal_temp.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_C_ANNEAL_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_C_ANNEAL_TEMP_POSY)
+		self.c_anneal_time_sv = StringVar()
+		self.c_anneal_time_sv.set(model.select(3)['anneal_time'])
+		toplevel_entry_thermocycler_c_anneal_time = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.c_anneal_time_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_C_ANNEAL_TIME_WIDTH,
+		)
+		toplevel_entry_thermocycler_c_anneal_time.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_C_ANNEAL_TIME_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_C_ANNEAL_TIME_POSY)
+		self.c_anneal_time_units_sv = StringVar()
+		self.c_anneal_time_units_sv.set('seconds')
+		toplevel_optionmenu_thermocycler_c_anneal_time_units = ctk.CTkOptionMenu(
+			master=toplevel_cycle,
+			values=['seconds', 'minutes',],
+			variable=self.c_anneal_time_units_sv,
+			width=TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_ANNEAL_TIME_UNITS_WIDTH,
+		)
+		toplevel_optionmenu_thermocycler_c_anneal_time_units.place(x=TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_ANNEAL_TIME_UNITS_POSX,
+			y=TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_ANNEAL_TIME_UNITS_POSY
+		)
+		# Create and place the label and entry for thermocycler C's extension temp
+		self.c_second_denature_temp_sv = StringVar()
+		self.c_second_denature_temp_sv.set(model.select(3)['second_denature_temperature'])
+		toplevel_entry_thermocycler_c_extension_temp = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.c_second_denature_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_C_EXTENSION_TEMP_WIDTH,
+		)
+		toplevel_label_c_for_c_extension = ctk.CTkLabel(master=toplevel_cycle, text="C for", font=(FONT,-16))
+		toplevel_label_c_for_c_extension.place(x=TOPLEVEL_LABEL_C_FOR_C_EXTENSION_POSX, y=TOPLEVEL_LABEL_C_FOR_C_EXTENSION_POSY)
+		toplevel_entry_thermocycler_c_extension_temp.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_C_EXTENSION_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_C_EXTENSION_TEMP_POSY)
+		self.c_second_denature_time_sv = StringVar()
+		self.c_second_denature_time_sv.set(model.select(3)['second_denature_time'])
+		toplevel_entry_thermocycler_c_extension_time = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.c_second_denature_time_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_C_EXTENSION_TIME_WIDTH,
+		)
+		toplevel_entry_thermocycler_c_extension_time.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_C_EXTENSION_TIME_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_C_EXTENSION_TIME_POSY)
+		self.c_extension_time_units_sv = StringVar()
+		self.c_extension_time_units_sv.set('seconds')
+		toplevel_optionmenu_thermocycler_c_extension_time_units = ctk.CTkOptionMenu(
+			master=toplevel_cycle,
+			values=['seconds', 'minutes',],
+			variable=self.c_extension_time_units_sv,
+			width=TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_EXTENSION_TIME_UNITS_WIDTH,
+		)
+		toplevel_optionmenu_thermocycler_c_extension_time_units.place(x=TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_EXTENSION_TIME_UNITS_POSX,
+			y=TOPLEVEL_OPTIONMENU_THERMOCYCLER_C_EXTENSION_TIME_UNITS_POSY
+		)
+		# Create and place the label and checkbox for thermocycler C's use
+		self.toplevel_checkbox_thermocycler_c_use_iv = IntVar()
+		self.toplevel_checkbox_thermocycler_c_use_iv.set(0)
+		toplevel_checkbox_thermocycler_c_use = ctk.CTkCheckBox(
+			master=toplevel_cycle,
+			text='',
+			variable=self.toplevel_checkbox_thermocycler_c_use_iv,
+			onvalue=1,
+			offvalue=0,
+			width=TOPLEVEL_CHECKBOX_THERMOCYCLER_C_USE_WIDTH,
+		)
+		toplevel_checkbox_thermocycler_c_use.place(x=TOPLEVEL_CHECKBOX_THERMOCYCLER_C_USE_POSX, y=TOPLEVEL_CHECKBOX_THERMOCYCLER_C_USE_POSY)
+		# Create and place the label for thermocycler D
+		toplevel_label_thermocycler_d = ctk.CTkLabel(
+			master=toplevel_cycle,
+			text='D',
+			font=(FONT,-16)
+		)
+		toplevel_label_thermocycler_d.place(x=TOPLEVEL_LABEL_THERMOCYCLER_D_POSX, y=TOPLEVEL_LABEL_THERMOCYCLER_D_POSY)
+		# Create and place the entry for thermocycler D's cycles
+		self.d_cycles_sv = StringVar()
+		self.d_cycles_sv.set(model.select(4)['cycles'])
+		toplevel_entry_thermocycler_d_cycles = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.d_cycles_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_D_CYCLES_WIDTH,
+		)
+		toplevel_entry_thermocycler_d_cycles.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_D_CYCLES_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_D_CYCLES_POSY)
+		# Create and place the label and entry for thermocycler D's denature temp and time
+		self.d_first_denature_temp_sv = StringVar()
+		self.d_first_denature_temp_sv.set(model.select(4)['first_denature_temperature'])
+		toplevel_entry_thermocycler_d_denature_temp = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.d_first_denature_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_D_DENATURE_TEMP_WIDTH,
+		)
+		toplevel_label_D_for_d = ctk.CTkLabel(master=toplevel_cycle, text="C for", font=(FONT,-16))
+		toplevel_label_D_for_d.place(x=TOPLEVEL_LABEL_D_FOR_D_DENATURE_POSX, y=TOPLEVEL_LABEL_D_FOR_D_DENATURE_POSY)
+		toplevel_entry_thermocycler_d_denature_temp.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_D_DENATURE_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_D_DENATURE_TEMP_POSY)
+		self.d_first_denature_time_sv = StringVar()
+		self.d_first_denature_time_sv.set(model.select(4)['first_denature_time'])
+		toplevel_entry_thermocycler_d_denature_time = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.d_first_denature_time_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_D_DENATURE_TIME_WIDTH,
+		)
+		toplevel_entry_thermocycler_d_denature_time.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_D_DENATURE_TIME_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_D_DENATURE_TIME_POSY)
+		self.d_denature_time_units_sv = StringVar()
+		self.d_denature_time_units_sv.set('minutes')
+		toplevel_optionmenu_thermocycler_d_denature_time_units = ctk.CTkOptionMenu(
+			master=toplevel_cycle,
+			values=['seconds', 'minutes',],
+			variable=self.d_denature_time_units_sv,
+			width=TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_DENATURE_TIME_UNITS_WIDTH,
+		)
+		toplevel_optionmenu_thermocycler_d_denature_time_units.place(x=TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_DENATURE_TIME_UNITS_POSX,
+			y=TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_DENATURE_TIME_UNITS_POSY
+		)
+		# Create and place the label and entry for thermocycler D's anneal temp
+		self.d_anneal_temp_sv = StringVar()
+		self.d_anneal_temp_sv.set(model.select(4)['anneal_temperature'])
+		toplevel_entry_thermocycler_d_anneal_temp = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.d_anneal_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_D_ANNEAL_TEMP_WIDTH,
+		)
+		toplevel_label_D_for_d_anneal = ctk.CTkLabel(master=toplevel_cycle, text="C for", font=(FONT,-16))
+		toplevel_label_D_for_d_anneal.place(x=TOPLEVEL_LABEL_D_FOR_D_ANNEAL_POSX, y=TOPLEVEL_LABEL_D_FOR_D_ANNEAL_POSY)
+		toplevel_entry_thermocycler_d_anneal_temp.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_D_ANNEAL_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_D_ANNEAL_TEMP_POSY)
+		self.d_anneal_time_sv = StringVar()
+		self.d_anneal_time_sv.set(model.select(4)['anneal_time'])
+		toplevel_entry_thermocycler_d_anneal_time = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.d_anneal_time_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_D_ANNEAL_TIME_WIDTH,
+		)
+		toplevel_entry_thermocycler_d_anneal_time.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_D_ANNEAL_TIME_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_D_ANNEAL_TIME_POSY)
+		self.d_anneal_time_units_sv = StringVar()
+		self.d_anneal_time_units_sv.set('seconds')
+		toplevel_optionmenu_thermocycler_d_anneal_time_units = ctk.CTkOptionMenu(
+			master=toplevel_cycle,
+			values=['seconds', 'minutes',],
+			variable=self.d_anneal_time_units_sv,
+			width=TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_ANNEAL_TIME_UNITS_WIDTH,
+		)
+		toplevel_optionmenu_thermocycler_d_anneal_time_units.place(x=TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_ANNEAL_TIME_UNITS_POSX,
+			y=TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_ANNEAL_TIME_UNITS_POSY
+		)
+		# Create and place the label and entry for thermocycler D's extension temp
+		self.d_second_denature_temp_sv = StringVar()
+		self.d_second_denature_temp_sv.set(model.select(4)['second_denature_temperature'])
+		toplevel_entry_thermocycler_d_extension_temp = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.d_second_denature_temp_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_D_EXTENSION_TEMP_WIDTH,
+		)
+		toplevel_label_c_for_d_extension = ctk.CTkLabel(master=toplevel_cycle, text="C for", font=(FONT,-16))
+		toplevel_label_c_for_d_extension.place(x=TOPLEVEL_LABEL_D_FOR_D_EXTENSION_POSX, y=TOPLEVEL_LABEL_D_FOR_D_EXTENSION_POSY)
+		toplevel_entry_thermocycler_d_extension_temp.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_D_EXTENSION_TEMP_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_D_EXTENSION_TEMP_POSY)
+		self.d_second_denature_time_sv = StringVar()
+		self.d_second_denature_time_sv.set(model.select(4)['second_denature_time'])
+		toplevel_entry_thermocycler_d_extension_time = ctk.CTkEntry(
+			master=toplevel_cycle,
+			textvariable=self.d_second_denature_time_sv,
+			font=(FONT, -16),
+			corner_radius=2,
+			width=TOPLEVEL_ENTRY_THERMOCYCLER_D_EXTENSION_TIME_WIDTH,
+		)
+		toplevel_entry_thermocycler_d_extension_time.place(x=TOPLEVEL_ENTRY_THERMOCYCLER_D_EXTENSION_TIME_POSX,
+			y=TOPLEVEL_ENTRY_THERMOCYCLER_D_EXTENSION_TIME_POSY)
+		self.d_extension_time_units_sv = StringVar()
+		self.d_extension_time_units_sv.set('seconds')
+		toplevel_optionmenu_thermocycler_d_extension_time_units = ctk.CTkOptionMenu(
+			master=toplevel_cycle,
+			values=['seconds', 'minutes',],
+			variable=self.d_extension_time_units_sv,
+			width=TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_EXTENSION_TIME_UNITS_WIDTH,
+		)
+		toplevel_optionmenu_thermocycler_d_extension_time_units.place(x=TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_EXTENSION_TIME_UNITS_POSX,
+			y=TOPLEVEL_OPTIONMENU_THERMOCYCLER_D_EXTENSION_TIME_UNITS_POSY
+		)
+		# Create and place the label and checkbox for thermocycler D's use
+		self.toplevel_checkbox_thermocycler_d_use_iv = IntVar()
+		self.toplevel_checkbox_thermocycler_d_use_iv.set(0)
+		toplevel_checkbox_thermocycler_d_use = ctk.CTkCheckBox(
+			master=toplevel_cycle,
+			text='',
+			variable=self.toplevel_checkbox_thermocycler_d_use_iv,
+			onvalue=1,
+			offvalue=0,
+			width=TOPLEVEL_CHECKBOX_THERMOCYCLER_D_USE_WIDTH,
+		)
+		toplevel_checkbox_thermocycler_d_use.place(x=TOPLEVEL_CHECKBOX_THERMOCYCLER_D_USE_POSX, y=TOPLEVEL_CHECKBOX_THERMOCYCLER_D_USE_POSY)
+		# Add the add button
+		toplevel_button_cycle_add = ctk.CTkButton(
+			master=toplevel_cycle,
+			text='Add',
+			font=(FONT,-16),
+			corner_radius=2,
+			width=TOPLEVEL_BUTTON_CYCLE_ADD_WIDTH,
+			command=self.add_cycle,
+		)
+		toplevel_button_cycle_add.place(x=TOPLEVEL_BUTTON_CYCLE_ADD_POSX, y=TOPLEVEL_BUTTON_CYCLE_ADD_POSY)
+	
+	def add_cycle(self):
+		""" Method for add cycle from the toplevel cycle window """
+		if self.toplevel_checkbox_thermocycler_a_use_iv.get() == False and self.toplevel_checkbox_thermocycler_b_use_iv.get() == False and self.toplevel_checkbox_thermocycler_c_use_iv.get() == False and self.toplevel_checkbox_thermocycler_d_use_iv.get() == False:
+			return
+		action_message = "Thermocycle: "
+		# Get the data for A
+		if self.toplevel_checkbox_thermocycler_a_use_iv.get() == True:
+			cycles = self.a_cycles_sv.get()
+			dtemp = self.a_first_denature_temp_sv.get()
+			dtime = self.a_first_denature_time_sv.get()
+			dunits = self.a_denature_time_units_sv.get()
+			atemp = self.a_anneal_temp_sv.get()
+			atime = self.a_anneal_time_sv.get()
+			aunits = self.a_anneal_time_units_sv.get()
+			etemp = self.a_second_denature_temp_sv.get()
+			etime = self.a_second_denature_time_sv.get()
+			eunits = self.a_extension_time_units_sv.get()
+			action_message = action_message + f"-A- Denature at {dtemp} C for {dtime} {dunits} cycling {cycles} times between {etemp} C for {etime} {eunits} and {atemp} C for {atime} {aunits} "
+		# Get the data for B
+		if self.toplevel_checkbox_thermocycler_b_use_iv.get() == True:
+			cycles = self.b_cycles_sv.get()
+			dtemp = self.b_first_denature_temp_sv.get()
+			dtime = self.b_first_denature_time_sv.get()
+			dunits = self.b_denature_time_units_sv.get()
+			atemp = self.b_anneal_temp_sv.get()
+			atime = self.b_anneal_time_sv.get()
+			aunits = self.b_anneal_time_units_sv.get()
+			etemp = self.b_second_denature_temp_sv.get()
+			etime = self.b_second_denature_time_sv.get()
+			eunits = self.b_extension_time_units_sv.get()
+			action_message = action_message + f"-B- Denature at {dtemp} C for {dtime} {dunits} cycling {cycles} times between {etemp} C for {etime} {eunits} and {atemp} C for {atime} {aunits} "
+		# Get the data for C
+		if self.toplevel_checkbox_thermocycler_c_use_iv.get() == True:
+			cycles = self.c_cycles_sv.get()
+			dtemp = self.c_first_denature_temp_sv.get()
+			dtime = self.c_first_denature_time_sv.get()
+			dunits = self.c_denature_time_units_sv.get()
+			atemp = self.c_anneal_temp_sv.get()
+			atime = self.c_anneal_time_sv.get()
+			aunits = self.c_anneal_time_units_sv.get()
+			etemp = self.c_second_denature_temp_sv.get()
+			etime = self.c_second_denature_time_sv.get()
+			eunits = self.c_extension_time_units_sv.get()
+			action_message = action_message + f"-C- Denature at {dtemp} C for {dtime} {dunits} cycling {cycles} times between {etemp} C for {etime} {eunits} and {atemp} C for {atime} {aunits} "
+		# Get the data for D
+		if self.toplevel_checkbox_thermocycler_d_use_iv.get() == True:
+			cycles = self.d_cycles_sv.get()
+			dtemp = self.d_first_denature_temp_sv.get()
+			dtime = self.d_first_denature_time_sv.get()
+			dunits = self.d_denature_time_units_sv.get()
+			atemp = self.d_anneal_temp_sv.get()
+			atime = self.d_anneal_time_sv.get()
+			aunits = self.d_anneal_time_units_sv.get()
+			etemp = self.d_second_denature_temp_sv.get()
+			etime = self.d_second_denature_time_sv.get()
+			eunits = self.d_extension_time_units_sv.get()
+			action_message = action_message + f"-D- Denature at {dtemp} C for {dtime} {dunits} cycling {cycles} times between {etemp} C for {etime} {eunits} and {atemp} C for {atime} {aunits} "
+		# Determine which if any row of the treeview is selected
+		try:
+			selected_row = self.view.treeview.selection()[0]
+		except:
+			selected_row = None
+		# Insert action into the action list
+		insert_at_selected_row(action_message, selected_row, self.model)
 		# Update the view
 		self.view.update_treeview()
 
