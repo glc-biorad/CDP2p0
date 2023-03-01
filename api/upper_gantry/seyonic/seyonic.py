@@ -452,7 +452,7 @@ class Seyonic(object):
                 logger.log('MESSAGE', "The action status for the Seyonic Pipettor channel {0} is '{1}'".format(i+1, asval))
                 #print('Channel {0} Action Status: {1}'.format(i, asval))
 
-    def liquid_level_detect(self, timeout_seconds=4, debug=True):
+    def liquid_level_detect(self, timeout_seconds=4, debug=True) -> bool:
         """ Liquid Level Detect (LLD): operates through measurement of a small pressure transient 
         when tge dispenser tip touches a liquid surface. The LLD action is terminated with an ABORT_ACTION command.
         """
@@ -464,19 +464,36 @@ class Seyonic(object):
         # Trigger the action
         self.client.Trigger(self.pip_addr, 0)
         # Poll the action status
+        print('here b')
         action_return = self._poll_until_complete()
+        print('here a')
         # Check the return action status
-        action_status_values = [3,3,3,3,3,3,3,3]
+        action_status_values = [0,0,0,0,0,0,0,0]
         t_start = time.time()
         print(action_status_values)
-        while action_status_values != [2,2,2,2,2,2,2,2] and timeout_seconds > time.time() - t_start:
-            #print(action_status_values)
+        action_status_values_sum = 0
+        for i in action_status_values:
+            action_status_values_sum = action_status_values_sum + 1 
+        while action_status_values_sum > 2 and timeout_seconds > time.time() - t_start:
+            print(time.time() - t_start)
             for channel in range(8):
                 action_status_values[channel] = action_status_lookup[action_return[channel]]
                 if debug == True:
                     print(f"Channel {channel+1} Action Status: {action_status_values[channel]}")
-        print(action_status_values)
+            action_status_values_sum = 0
+            for i in action_status_values:
+                action_status_values_sum = action_status_values_sum + 1 
+            if action_status_values_sum > 2:
+                print('LLDed')
+                self.set_pressure(pressure=0, direction=1)
+                return True
         self.set_pressure(pressure=0, direction=1)
+        action_status_values_sum = 0
+        for i in action_status_values:
+            action_status_values_sum = action_status_values_sum + 1 
+        if action_status_values_sum > 2:
+            print('nope!')
+            return False
 
         #logger = Logger(__file__, __name__)
         #if pressure == None:

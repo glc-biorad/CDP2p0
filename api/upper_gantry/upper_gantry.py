@@ -4,6 +4,7 @@ from ast import Try
 from cmath import e
 from re import T
 import time
+import threading
 
 import api.util.motor 
 from api.util.commands import commands
@@ -585,6 +586,18 @@ class UpperGantry(api.util.motor.Motor):
             else:
                 location_name = location_name + word + ' '
         return location_name[:-1]
+
+    def jet(
+        self,
+        z: int,
+        v_z: int,
+        volume: int
+    ) -> None:
+        """
+        """
+        thread = threading.Thread(target=self.__pipettor.liquid_level_detect)
+        # Move down until LLD 
+        # Move up by a fixed amount based on volume 
 
     def move(
         self,

@@ -213,7 +213,9 @@ class Meerstetter():
         self.__controller.write(pcom.to_string())
         self.__increase_sequence_number(address)
         # Get the response back.
+        t_start = time.time()
         response = self.__controller.readline()
+        print(f'Timing of getting response from Meerstetter: {time.time() - t_start}')
         # Compare the response.
         pcom.compare_with_response(response)
         if block:
