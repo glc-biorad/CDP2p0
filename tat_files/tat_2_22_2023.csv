@@ -1,4 +1,3 @@
-Aspirate 2 uL,api.upper_gantry.upper_gantry.aspirate(aspirate_vol=20, pressure=-300, pipette_tip_type=50),4.11,
 Wait 3 minutes,delay,180.0,
 Wait 80 seconds,delay,80,
 Wait 40 seconds,delay,40,
