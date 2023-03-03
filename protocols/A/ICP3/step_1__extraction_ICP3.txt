@@ -1,5 +1,6 @@
 0: Change Heater/Shaker Temperature to 60.0 C
 1: Engage magnet
+0: Comment: Tip 1 - Transfer of Plasma - Binding Solution 
 2: Pickup tips from A column 1
 3: Move to Sample Rack tray A with 1000 uL tips
 4: Aspirate 1000 uLs with 1000 uL tips at High pressure 1 time
@@ -61,8 +62,11 @@
 60: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
 61: Home pipettor fast
 62: Shake on with an RPM of 1000
+0: Comment: Tip 1 - Transfer of Plasma - Binding Solution 
 63: Eject tips in A column 1
+0: Comment: Binding
 64: Delay for 20 minutes
+0: Comment: Tip 4 - Pooling - Pre-Dispense
 65: Pickup tips from A column 4
 66: Shake off
 67: Move to Heater/Shaker column 1 with 1000 uL tips
@@ -247,6 +251,7 @@
 246: Delay for 3 seconds
 247: Dispense 25 uLs with 1000 uL tips at High pressure 1 time
 248: Delay for 20 seconds
+0: Comment: Lateral residual wash
 249: Aspirate 600 uLs with 1000 uL tips at High pressure 1 time
 250: Move to Heater/Shaker column 1 with 1000 uL tips moving left by 6000 up by 5000
 251: Dispense 600 uLs with 1000 uL tips at High pressure 1 time
@@ -277,8 +282,10 @@
 276: Dispense 720 uLs with 1000 uL tips at High pressure 1 time
 277: Delay for 3 seconds
 278: Dispense 50 uLs with 1000 uL tips at High pressure 1 time
+0: Comment: Tip 4 - Pooling - Pre-Dispense
 279: Eject tips in A column 4
 280: Engage magnet
+0: Comment: Tip 2 - Wash 1
 281: Pickup tips from A column 2
 282: Move to Reagent Cartridge tray A column 3 with 1000 uL tips
 283: Aspirate 250 uLs with 1000 uL tips at High pressure 1 time
@@ -288,7 +295,9 @@
 287: Aspirate 250 uLs with 1000 uL tips at High pressure 1 time
 288: Move to Reagent Cartridge tray A column 11 with 1000 uL tips
 289: Dispense 250 uLs with 1000 uL tips at High pressure 1 time
+0: Comment: Tip 2 - Wash 1
 290: Eject tips in A column 2
+0: Comment: Tip 2 - Wash 2
 291: Pickup tips from A column 3
 292: Move to Reagent Cartridge tray A column 10 with 200 uL tips
 293: Aspirate 200 uLs with 200 uL tips at Low pressure 1 time
@@ -298,7 +307,9 @@
 297: Aspirate 200 uLs with 200 uL tips at Low pressure 1 time
 298: Move to Reagent Cartridge tray A column 11 with 200 uL tips
 299: Dispense 200 uLs with 200 uL tips at Low pressure 1 time
+0: Comment: Tip 2 - Wash 2
 300: Eject tips in A column 3
+0: Comment: Tip 5 - Residual removal
 301: Pickup tips from A column 5
 302: Move to Mag Separator column 1 with 50 uL tips
 303: Aspirate 30 uLs with 50 uL tips at High pressure 1 time
@@ -308,21 +319,24 @@
 303: Aspirate 30 uLs with 50 uL tips at High pressure 1 time
 304: Move to Reagent Cartridge tray A column 11 with 50 uL tips
 305: Dispense 35 uLs with 50 uL tips at High pressure 1 time
+0: Comment: Tip 5 - Residual removal
 306: Eject tips in A column 5
 307: Home pipettor fast
+0: Comment: Air dry for 5 minutes
 308: Delay for 5 minutes
 309: Disengage magnet
+0: Comment: Tip 9 - Elution
 310: Pickup tips from A column 9
-311: Move to Reagent Cartridge tray A column 5 with 200 uL tips
+311: Move to Reagent Cartridge tray A column 8 with 200 uL tips
 0: Comment: Aspirate 83 rather than 80 uL to avoid underaspiration percent error
 312: Aspirate 83 uLs with 200 uL tips at Low pressure 1 time
 313: Move to Mag Separator column 1 with 200 uL tips
-314: Dispense 80 uLs with 200 uL tips at Low pressure 1 time
+314: Dispense 83 uLs with 200 uL tips at Low pressure 1 time
 315: Mix 50 uLs with 200 uL tips at Low pressure 5 times
 316: Engage magnet
 317: Delay for 5 seconds
-318: Aspirate 50 uLs with 200 uL tips at Low pressure 1 time
-319: Dispense 50 uLs with 200 uL tips at Low pressure 1 time
+318: Aspirate 52 uLs with 200 uL tips at Low pressure 1 time
+319: Dispense 52 uLs with 200 uL tips at Low pressure 1 time
 320: Delay for 3 seconds
 321: Dispense 20 uLs with 200 uL tips at Low pressure 1 time
 322: Disengage magnet
