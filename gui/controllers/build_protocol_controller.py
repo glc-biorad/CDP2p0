@@ -87,6 +87,7 @@ MAIN_ACTION_KEY_WORDS = [
 	'Suction',
 	'Extend',
 	'LLD',
+	'Light',
 ]
 TOPLEVEL_CYCLE_WIDTH = 970
 TOPLEVEL_CYCLE_HEIGHT = 210
@@ -987,6 +988,17 @@ class BuildProtocolController:
 				)
 				# Log
 				log.log(action_message, time.time() - t_start)
+			elif split[0] == 'Open':
+				tray = split[-1]
+				if tray == 'AB':
+					self.reader.get_fast_api_interface().reader.axis.home('reader', 6)
+				elif tray == 'CD':
+					self.reader.get_fast_api_interface().reader.axis.home('reader', 7)
+			elif split[0] == 'Light':
+				for i in range(1,7):
+					self.reader.turn_on_led(i,200)
+					time.sleep(2)
+					self.reader.turn_off_led(i)
 			elif split[0] in ['Aspirate', 'Dispense', 'Mix']:
 				# Get the action
 				action = split[0]
@@ -1256,30 +1268,39 @@ class BuildProtocolController:
 						elif 'denature' in step:
 							temp_index = 0
 							time_index = 1
-						temp_d = protocol_data[ID][step][temp_index]
-						time_d = protocol_data[ID][step][time_index]
+						temp_a = protocol_data[ID][step][temp_index]
+						time_a = protocol_data[ID][step][time_index]
+						# Check the state of the board
+						self.meerstetter.handle_device_status(address, temp_a)
 						# Change the temperature  and start the timer
 						if protocol_data[ID]['clock'] == 0:
-							self.meerstetter.change_temperature(address, temp_d)
+							print(f'starting clock for {protocol_data[ID]["step"]}')
+							self.meerstetter.change_temperature(address, temp_a)
 							# Make sure the temperature is reached before starting to time
-							protocol_data[ID]['clock'] = time.time()
+							actual_temp = self.meerstetter.get_temperature(address)
+							if actual_temp - temp_cutoff <= temp_a <= actual_temp + temp_cutoff:
+								protocol_data[ID]['clock'] = time.time()
 						# Check the timing for this step
-						if time.time() - protocol_data[ID]['clock'] >= time_d:
+						if time.time() - protocol_data[ID]['clock'] >= time_a and protocol_data[ID]['clock'] != 0:
 							# Update the step
 							if step == 'denature':
 								step = 'cycle_1_extension'
 								protocol_data[ID]['step'] = step
 							if step == 'cycle':
-								cycle = cycle + 1
 								if cycle > protocol_data[ID]['cycle'][0]:
-									protocol_data[ID]['done'] = True
-									# Check if all the units are done
-									all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
+									if protocol_data[ID]['done'] == False:
+										print(f'ID {ID} done')
+										self.meerstetter.change_temperature(address, 30)
+										protocol_data[ID]['done'] = True
+										# Check if all the units are done
+										all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
 									continue
 								if action == 'extension':
 									step = f'cycle_{cycle}_anneal'
 									protocol_data[ID]['step'] = step
 								else:
+									# Change cycle number after the annealing step ends
+									cycle = cycle + 1
 									step = f'cycle_{cycle}_extension'
 									protocol_data[ID]['step'] = step
 							# Restart the clock
@@ -1305,30 +1326,39 @@ class BuildProtocolController:
 						elif 'denature' in step:
 							temp_index = 0
 							time_index = 1
-						temp_d = protocol_data[ID][step][temp_index]
-						time_d = protocol_data[ID][step][time_index]
+						temp_b = protocol_data[ID][step][temp_index]
+						time_b = protocol_data[ID][step][time_index]
+						# Check the state of the board
+						self.meerstetter.handle_device_status(address, temp_b)
 						# Change the temperature  and start the timer
 						if protocol_data[ID]['clock'] == 0:
-							self.meerstetter.change_temperature(address, temp_d)
+							print(f'starting clock for {protocol_data[ID]["step"]}')
+							self.meerstetter.change_temperature(address, temp_b)
 							# Make sure the temperature is reached before starting to time
-							protocol_data[ID]['clock'] = time.time()
+							actual_temp = self.meerstetter.get_temperature(address)
+							if actual_temp - temp_cutoff <= temp_b <= actual_temp + temp_cutoff:
+								protocol_data[ID]['clock'] = time.time()
 						# Check the timing for this step
-						if time.time() - protocol_data[ID]['clock'] >= time_d:
+						if time.time() - protocol_data[ID]['clock'] >= time_b and protocol_data[ID]['clock'] != 0:
 							# Update the step
 							if step == 'denature':
 								step = 'cycle_1_extension'
 								protocol_data[ID]['step'] = step
 							if step == 'cycle':
-								cycle = cycle + 1
 								if cycle > protocol_data[ID]['cycle'][0]:
-									protocol_data[ID]['done'] = True
-									# Check if all the units are done
-									all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
+									if protocol_data[ID]['done'] == False:
+										print(f'ID {ID} done')
+										self.meerstetter.change_temperature(address, 30)
+										protocol_data[ID]['done'] = True
+										# Check if all the units are done
+										all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
 									continue
 								if action == 'extension':
 									step = f'cycle_{cycle}_anneal'
 									protocol_data[ID]['step'] = step
 								else:
+									# Change cycle number after the annealing step ends
+									cycle = cycle + 1
 									step = f'cycle_{cycle}_extension'
 									protocol_data[ID]['step'] = step
 							# Restart the clock
@@ -1337,6 +1367,7 @@ class BuildProtocolController:
 					if protocol_data['C']['use']:
 						ID = 'C'
 						address = 3
+						# Get the step currently on
 						# Get the step currently on
 						step = protocol_data[ID]['step']
 						# Get the temperature and time for this step
@@ -1354,30 +1385,39 @@ class BuildProtocolController:
 						elif 'denature' in step:
 							temp_index = 0
 							time_index = 1
-						temp_d = protocol_data[ID][step][temp_index]
-						time_d = protocol_data[ID][step][time_index]
+						temp_c = protocol_data[ID][step][temp_index]
+						time_c = protocol_data[ID][step][time_index]
+						# Check the state of the board
+						self.meerstetter.handle_device_status(address, temp_c)
 						# Change the temperature  and start the timer
 						if protocol_data[ID]['clock'] == 0:
-							self.meerstetter.change_temperature(address, temp_d)
+							print(f'starting clock for {protocol_data[ID]["step"]}')
+							self.meerstetter.change_temperature(address, temp_c)
 							# Make sure the temperature is reached before starting to time
-							protocol_data[ID]['clock'] = time.time()
+							actual_temp = self.meerstetter.get_temperature(address)
+							if actual_temp - temp_cutoff <= temp_c <= actual_temp + temp_cutoff:
+								protocol_data[ID]['clock'] = time.time()
 						# Check the timing for this step
-						if time.time() - protocol_data[ID]['clock'] >= time_d:
+						if time.time() - protocol_data[ID]['clock'] >= time_c and protocol_data[ID]['clock'] != 0:
 							# Update the step
 							if step == 'denature':
 								step = 'cycle_1_extension'
 								protocol_data[ID]['step'] = step
 							if step == 'cycle':
-								cycle = cycle + 1
 								if cycle > protocol_data[ID]['cycle'][0]:
-									protocol_data[ID]['done'] = True
-									# Check if all the units are done
-									all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
+									if protocol_data[ID]['done'] == False:
+										print(f'ID {ID} done')
+										self.meerstetter.change_temperature(address, 30)
+										protocol_data[ID]['done'] = True
+										# Check if all the units are done
+										all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
 									continue
 								if action == 'extension':
 									step = f'cycle_{cycle}_anneal'
 									protocol_data[ID]['step'] = step
 								else:
+									# Change cycle number after the annealing step ends
+									cycle = cycle + 1
 									step = f'cycle_{cycle}_extension'
 									protocol_data[ID]['step'] = step
 							# Restart the clock
@@ -1405,34 +1445,45 @@ class BuildProtocolController:
 							time_index = 1
 						temp_d = protocol_data[ID][step][temp_index]
 						time_d = protocol_data[ID][step][time_index]
+						# Check the state of the board
+						self.meerstetter.handle_device_status(address, temp_d)
 						# Change the temperature  and start the timer
 						if protocol_data[ID]['clock'] == 0:
+							print(f'starting clock for {protocol_data[ID]["step"]}')
 							self.meerstetter.change_temperature(address, temp_d)
 							# Make sure the temperature is reached before starting to time
-							protocol_data[ID]['clock'] = time.time()
+							actual_temp = self.meerstetter.get_temperature(address)
+							if actual_temp - temp_cutoff <= temp_d <= actual_temp + temp_cutoff:
+								print(f" OK NOW START TIMING ON {ID}")
+								protocol_data[ID]['clock'] = time.time()
 						# Check the timing for this step
-						if time.time() - protocol_data[ID]['clock'] >= time_d:
+						if time.time() - protocol_data[ID]['clock'] >= time_d and protocol_data[ID]['clock'] != 0:
 							# Update the step
 							if step == 'denature':
 								step = 'cycle_1_extension'
 								protocol_data[ID]['step'] = step
 							if step == 'cycle':
-								cycle = cycle + 1
 								if cycle > protocol_data[ID]['cycle'][0]:
-									protocol_data[ID]['done'] = True
-									# Check if all the units are done
-									all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
+									if protocol_data[ID]['done'] == False:
+										print(f'ID {ID} done')
+										self.meerstetter.change_temperature(address, 30)
+										protocol_data[ID]['done'] = True
+										# Check if all the units are done
+										all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
 									continue
 								if action == 'extension':
 									step = f'cycle_{cycle}_anneal'
 									protocol_data[ID]['step'] = step
 								else:
+									# Change cycle number after the annealing step ends
+									cycle = cycle + 1
 									step = f'cycle_{cycle}_extension'
 									protocol_data[ID]['step'] = step
 							# Restart the clock
 							protocol_data[ID]['clock'] = 0
 					# Check if all the units are done
 					all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
+				print('ALL DONE')
 
 			elif split[0] == 'Thermocycle':
 				# Initialize the Meerstetter
