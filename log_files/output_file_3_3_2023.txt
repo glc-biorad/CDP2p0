@@ -1,0 +1,3822 @@
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":56744,"message":">b,1bf9,?pos,8102","response":"<b,1bf9,0,0\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=-400000&velocity=100000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31926,"message":">b,408b,?pos,6b31","response":"<b,408b,0,-400000\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=0&velocity=100000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34033,"message":">b,ebd8,?pos,b25b","response":"<b,ebd8,0,0\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=-400000&velocity=100000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":17687,"message":">b,421d,?pos,b7e","response":"<b,421d,0,-400000\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=0&velocity=100000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":27722,"message":">b,9d2b,?pos,aba2","response":"<b,9d2b,0,0\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=-400000&velocity=100000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":15912,"message":">b,c18,?pos,c29a","response":"<b,c18,0,-400000\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=0&velocity=100000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,70cb,0,-780000
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,f36a,0,-779957
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,89c9,0,-19
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,2d2a,0,-790000
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,1483,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/8?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6c8a,0,0
+	- Message: The Heater A axis is at 0 of 0 microsteps
+	- Current Time: 11:24:46
+	- Message: 0 reached in 0.06099081039428711 seconds for reader module along Heater A
+	- Current Time: 11:24:46
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,49e6,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/8
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c47b,0,281
+	- Message: The Heater A axis is at 281 of 0 microsteps
+	- Current Time: 11:24:46
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d000,0,1460
+	- Message: The Heater A axis is at 1460 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,54ee,0,2850
+	- Message: The Heater A axis is at 2850 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,453e,0,4240
+	- Message: The Heater A axis is at 4240 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e1b6,0,5629
+	- Message: The Heater A axis is at 5629 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,fee4,0,7366
+	- Message: The Heater A axis is at 7366 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6f6e,0,9103
+	- Message: The Heater A axis is at 9103 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,bbf8,0,10841
+	- Message: The Heater A axis is at 10841 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e0dc,0,12580
+	- Message: The Heater A axis is at 12580 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,5b6b,0,14317
+	- Message: The Heater A axis is at 14317 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6f6,0,16053
+	- Message: The Heater A axis is at 16053 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,7774,0,17790
+	- Message: The Heater A axis is at 17790 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,ab99,0,19527
+	- Message: The Heater A axis is at 19527 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.05
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,9c43,0,21611
+	- Message: The Heater A axis is at 21611 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.05
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c1b2,0,23695
+	- Message: The Heater A axis is at 23695 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,ef4e,0,25432
+	- Message: The Heater A axis is at 25432 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,7899,0,27168
+	- Message: The Heater A axis is at 27168 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,9505,0,28905
+	- Message: The Heater A axis is at 28905 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,3b6c,0,30295
+	- Message: The Heater A axis is at 30295 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,f8f2,0,32031
+	- Message: The Heater A axis is at 32031 of 0 microsteps
+	- Current Time: 11:24:47
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,f135,0,33421
+	- Message: The Heater A axis is at 33421 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6953,0,35157
+	- Message: The Heater A axis is at 35157 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,df20,0,36546
+	- Message: The Heater A axis is at 36546 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,ee5d,0,37936
+	- Message: The Heater A axis is at 37936 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,da5d,0,39325
+	- Message: The Heater A axis is at 39325 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,36ae,0,40715
+	- Message: The Heater A axis is at 40715 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,a994,0,42104
+	- Message: The Heater A axis is at 42104 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c4fe,0,43492
+	- Message: The Heater A axis is at 43492 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,b71d,0,44787
+	- Message: The Heater A axis is at 44787 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,4f22,0,45944
+	- Message: The Heater A axis is at 45944 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e444,0,46962
+	- Message: The Heater A axis is at 46962 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,b46a,0,48040
+	- Message: The Heater A axis is at 48040 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,ead3,0,48747
+	- Message: The Heater A axis is at 48747 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,fdd,0,49436
+	- Message: The Heater A axis is at 49436 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,b21f,0,49832
+	- Message: The Heater A axis is at 49832 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,f1ef,0,50132
+	- Message: The Heater A axis is at 50132 of 0 microsteps
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.05
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,92c1,0,0
+	- Message: The Heater A axis is at 0 of 0 microsteps
+	- Current Time: 11:24:48
+	- Message: 0 reached in 1.8734300136566162 seconds for reader module along Heater A
+	- Current Time: 11:24:48
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,5ed8,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,85c6,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,cdb,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,e670,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,bfe,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,7881,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:25:54
+	- Message: Device control information not available.
+	- Current Time: 11:25:54
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:25:58
+	- Message: Device control information not available.
+	- Current Time: 11:25:58
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:25:59
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:26:00
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.8699953556060791 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:26:00]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:26:09
+	- Message: Device control information not available.
+	- Current Time: 11:26:09
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:26:09
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:26:09
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.5204942226409912 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:26:09]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:26:09
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:26:10
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.40093064308166504 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:26:10]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:26:10
+	- Message: Device control information not available.
+	- Current Time: 11:26:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.06
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,7db3,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,65f1,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/7
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 7
+			- Command Sent: ?pos
+			- Respone Received: <7,4593,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/7?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/7
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 7
+			- Command Sent: ?pos
+			- Respone Received: <7,e6b7,0,-789999
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/7?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,fc26,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/9?position=-400000&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a9a3,0,-395819
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/9?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,58c5,0,-397637
+	- Message: The Heater B axis is at -397637 of 0 microsteps
+	- Current Time: 11:27:57
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,7579,0,-398353
+	- Message: The Heater B axis is at -398353 of 0 microsteps
+	- Current Time: 11:27:57
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c4a4,0,-398939
+	- Message: The Heater B axis is at -398939 of 0 microsteps
+	- Current Time: 11:27:57
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,402c,0,-399397
+	- Message: The Heater B axis is at -399397 of 0 microsteps
+	- Current Time: 11:27:57
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,17ea,0,-399726
+	- Message: The Heater B axis is at -399726 of 0 microsteps
+	- Current Time: 11:27:57
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d0bc,0,-399926
+	- Message: The Heater B axis is at -399926 of 0 microsteps
+	- Current Time: 11:27:57
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,837f,0,-399998
+	- Message: The Heater B axis is at -399998 of 0 microsteps
+	- Current Time: 11:27:57
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3023,0,-399957
+	- Message: The Heater B axis is at -399957 of 0 microsteps
+	- Current Time: 11:27:57
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c2af,0,-399824
+	- Message: The Heater B axis is at -399824 of 0 microsteps
+	- Current Time: 11:27:57
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3ed1,0,-399599
+	- Message: The Heater B axis is at -399599 of 0 microsteps
+	- Current Time: 11:27:57
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,52a5,0,-399282
+	- Message: The Heater B axis is at -399282 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,33b9,0,-398873
+	- Message: The Heater B axis is at -398873 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1715,0,-398372
+	- Message: The Heater B axis is at -398372 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,83c4,0,-397779
+	- Message: The Heater B axis is at -397779 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,2339,0,-397094
+	- Message: The Heater B axis is at -397094 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1bf4,0,-396317
+	- Message: The Heater B axis is at -396317 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ce90,0,-395448
+	- Message: The Heater B axis is at -395448 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a38b,0,-394487
+	- Message: The Heater B axis is at -394487 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4ad5,0,-393433
+	- Message: The Heater B axis is at -393433 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4fad,0,-392288
+	- Message: The Heater B axis is at -392288 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1f3d,0,-391051
+	- Message: The Heater B axis is at -391051 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4178,0,-389663
+	- Message: The Heater B axis is at -389663 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e918,0,-387632
+	- Message: The Heater B axis is at -387632 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,f23e,0,-385487
+	- Message: The Heater B axis is at -385487 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4e42,0,-383342
+	- Message: The Heater B axis is at -383342 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,babc,0,-381196
+	- Message: The Heater B axis is at -381196 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,2acd,0,-378515
+	- Message: The Heater B axis is at -378515 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.01
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c79f,0,-376906
+	- Message: The Heater B axis is at -376906 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b395,0,-374761
+	- Message: The Heater B axis is at -374761 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,acf3,0,-372615
+	- Message: The Heater B axis is at -372615 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,65db,0,-369933
+	- Message: The Heater B axis is at -369933 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,eef5,0,-367787
+	- Message: The Heater B axis is at -367787 of 0 microsteps
+	- Current Time: 11:27:58
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4c53,0,-365641
+	- Message: The Heater B axis is at -365641 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,69fe,0,-363495
+	- Message: The Heater B axis is at -363495 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e2ad,0,-361886
+	- Message: The Heater B axis is at -361886 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a8cc,0,-359740
+	- Message: The Heater B axis is at -359740 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,cb5b,0,-357595
+	- Message: The Heater B axis is at -357595 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ed70,0,-355450
+	- Message: The Heater B axis is at -355450 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,894e,0,-353304
+	- Message: The Heater B axis is at -353304 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4473,0,-351159
+	- Message: The Heater B axis is at -351159 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1b88,0,-349014
+	- Message: The Heater B axis is at -349014 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,dd79,0,-346868
+	- Message: The Heater B axis is at -346868 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d645,0,-344722
+	- Message: The Heater B axis is at -344722 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e039,0,-342577
+	- Message: The Heater B axis is at -342577 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3b9a,0,-340431
+	- Message: The Heater B axis is at -340431 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ecd7,0,-338286
+	- Message: The Heater B axis is at -338286 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,88c3,0,-336141
+	- Message: The Heater B axis is at -336141 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ec1e,0,-333996
+	- Message: The Heater B axis is at -333996 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a205,0,-331850
+	- Message: The Heater B axis is at -331850 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,305a,0,-329705
+	- Message: The Heater B axis is at -329705 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d752,0,-327559
+	- Message: The Heater B axis is at -327559 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c2ba,0,-325413
+	- Message: The Heater B axis is at -325413 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,57a3,0,-323268
+	- Message: The Heater B axis is at -323268 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,30d1,0,-321123
+	- Message: The Heater B axis is at -321123 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b20a,0,-318440
+	- Message: The Heater B axis is at -318440 of 0 microsteps
+	- Current Time: 11:27:59
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,25a6,0,-316295
+	- Message: The Heater B axis is at -316295 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d371,0,-314149
+	- Message: The Heater B axis is at -314149 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,edde,0,-312003
+	- Message: The Heater B axis is at -312003 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+	- Message: The Heater B axis is at -309857 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1d16,0,-307712
+	- Message: The Heater B axis is at -307712 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,67fc,0,-305566
+	- Message: The Heater B axis is at -305566 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5164,0,-303957
+	- Message: The Heater B axis is at -303957 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c4d4,0,-301812
+	- Message: The Heater B axis is at -301812 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,51bb,0,-299130
+	- Message: The Heater B axis is at -299130 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,17a3,0,-296985
+	- Message: The Heater B axis is at -296985 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,933c,0,-294840
+	- Message: The Heater B axis is at -294840 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5c94,0,-292695
+	- Message: The Heater B axis is at -292695 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8488,0,-290550
+	- Message: The Heater B axis is at -290550 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,bc27,0,-288405
+	- Message: The Heater B axis is at -288405 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e655,0,-286260
+	- Message: The Heater B axis is at -286260 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c19,0,-284115
+	- Message: The Heater B axis is at -284115 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8335,0,-281970
+	- Message: The Heater B axis is at -281970 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d223,0,-279825
+	- Message: The Heater B axis is at -279825 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,bfaa,0,-277142
+	- Message: The Heater B axis is at -277142 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,f9f1,0,-274997
+	- Message: The Heater B axis is at -274997 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,de83,0,-272849
+	- Message: The Heater B axis is at -272849 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6858,0,-270705
+	- Message: The Heater B axis is at -270705 of 0 microsteps
+	- Current Time: 11:28:00
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,9160,0,-268023
+	- Message: The Heater B axis is at -268023 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,9d60,0,-265877
+	- Message: The Heater B axis is at -265877 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ac87,0,-263732
+	- Message: The Heater B axis is at -263732 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,f4a2,0,-261050
+	- Message: The Heater B axis is at -261050 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5da8,0,-258904
+	- Message: The Heater B axis is at -258904 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,bb44,0,-256759
+	- Message: The Heater B axis is at -256759 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,9c58,0,-254077
+	- Message: The Heater B axis is at -254077 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,7841,0,-252467
+	- Message: The Heater B axis is at -252467 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,7831,0,-250321
+	- Message: The Heater B axis is at -250321 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,31e1,0,-248176
+	- Message: The Heater B axis is at -248176 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1265,0,-246030
+	- Message: The Heater B axis is at -246030 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1d57,0,-243884
+	- Message: The Heater B axis is at -243884 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8f1c,0,-241738
+	- Message: The Heater B axis is at -241738 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,cc42,0,-239592
+	- Message: The Heater B axis is at -239592 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d08b,0,-237446
+	- Message: The Heater B axis is at -237446 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1208,0,-235300
+	- Message: The Heater B axis is at -235300 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,2630,0,-233154
+	- Message: The Heater B axis is at -233154 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,35be,0,-231008
+	- Message: The Heater B axis is at -231008 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,bd02,0,-228862
+	- Message: The Heater B axis is at -228862 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,fcbf,0,-226715
+	- Message: The Heater B axis is at -226715 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4fc8,0,-224568
+	- Message: The Heater B axis is at -224568 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,7558,0,-222422
+	- Message: The Heater B axis is at -222422 of 0 microsteps
+	- Current Time: 11:28:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5d48,0,-220276
+	- Message: The Heater B axis is at -220276 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,64e,0,-218130
+	- Message: The Heater B axis is at -218130 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b638,0,-215984
+	- Message: The Heater B axis is at -215984 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3b73,0,-213838
+	- Message: The Heater B axis is at -213838 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a0c8,0,-211693
+	- Message: The Heater B axis is at -211693 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,9872,0,-209547
+	- Message: The Heater B axis is at -209547 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a3da,0,-207401
+	- Message: The Heater B axis is at -207401 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,be90,0,-205255
+	- Message: The Heater B axis is at -205255 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ec17,0,-202573
+	- Message: The Heater B axis is at -202573 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,be59,0,-200427
+	- Message: The Heater B axis is at -200427 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,cd37,0,-198281
+	- Message: The Heater B axis is at -198281 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,606e,0,-196136
+	- Message: The Heater B axis is at -196136 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,521b,0,-193453
+	- Message: The Heater B axis is at -193453 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4cda,0,-191307
+	- Message: The Heater B axis is at -191307 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,2230,0,-188625
+	- Message: The Heater B axis is at -188625 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,9b27,0,-186479
+	- Message: The Heater B axis is at -186479 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6d1f,0,-183796
+	- Message: The Heater B axis is at -183796 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c833,0,-181650
+	- Message: The Heater B axis is at -181650 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6a98,0,-179504
+	- Message: The Heater B axis is at -179504 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,9b1d,0,-177357
+	- Message: The Heater B axis is at -177357 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.05
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,f014,0,-174675
+	- Message: The Heater B axis is at -174675 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,268c,0,-172529
+	- Message: The Heater B axis is at -172529 of 0 microsteps
+	- Current Time: 11:28:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e5bc,0,-169846
+	- Message: The Heater B axis is at -169846 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5b76,0,-167701
+	- Message: The Heater B axis is at -167701 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5735,0,-165555
+	- Message: The Heater B axis is at -165555 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5336,0,-163409
+	- Message: The Heater B axis is at -163409 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ac43,0,-161263
+	- Message: The Heater B axis is at -161263 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,bdd7,0,-158580
+	- Message: The Heater B axis is at -158580 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e6ba,0,-155897
+	- Message: The Heater B axis is at -155897 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,53b1,0,-153214
+	- Message: The Heater B axis is at -153214 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8c0e,0,-151067
+	- Message: The Heater B axis is at -151067 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e8c4,0,-148921
+	- Message: The Heater B axis is at -148921 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1d60,0,-146774
+	- Message: The Heater B axis is at -146774 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6bb1,0,-144628
+	- Message: The Heater B axis is at -144628 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3133,0,-142481
+	- Message: The Heater B axis is at -142481 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,dd4b,0,-140335
+	- Message: The Heater B axis is at -140335 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ce9e,0,-138189
+	- Message: The Heater B axis is at -138189 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ae6f,0,-136043
+	- Message: The Heater B axis is at -136043 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1112,0,-133897
+	- Message: The Heater B axis is at -133897 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1c1,0,-131751
+	- Message: The Heater B axis is at -131751 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,136c,0,-129604
+	- Message: The Heater B axis is at -129604 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,eaa9,0,-127458
+	- Message: The Heater B axis is at -127458 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,694f,0,-125849
+	- Message: The Heater B axis is at -125849 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c1c8,0,-123703
+	- Message: The Heater B axis is at -123703 of 0 microsteps
+	- Current Time: 11:28:03
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,af80,0,-121557
+	- Message: The Heater B axis is at -121557 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,fe0c,0,-119411
+	- Message: The Heater B axis is at -119411 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,f3a,0,-117265
+	- Message: The Heater B axis is at -117265 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8b8a,0,-115119
+	- Message: The Heater B axis is at -115119 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ce9f,0,-112974
+	- Message: The Heater B axis is at -112974 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,f79d,0,-110828
+	- Message: The Heater B axis is at -110828 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c0ed,0,-108682
+	- Message: The Heater B axis is at -108682 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,bde6,0,-106536
+	- Message: The Heater B axis is at -106536 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,44cd,0,-104389
+	- Message: The Heater B axis is at -104389 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b002,0,-101706
+	- Message: The Heater B axis is at -101706 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a766,0,-99560
+	- Message: The Heater B axis is at -99560 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a68f,0,-97414
+	- Message: The Heater B axis is at -97414 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e17d,0,-95268
+	- Message: The Heater B axis is at -95268 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1316,0,-93122
+	- Message: The Heater B axis is at -93122 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a36e,0,-90977
+	- Message: The Heater B axis is at -90977 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,be5d,0,-88831
+	- Message: The Heater B axis is at -88831 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,cf40,0,-86686
+	- Message: The Heater B axis is at -86686 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d879,0,-84540
+	- Message: The Heater B axis is at -84540 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,9fcf,0,-82395
+	- Message: The Heater B axis is at -82395 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d93b,0,-80249
+	- Message: The Heater B axis is at -80249 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d38a,0,-78104
+	- Message: The Heater B axis is at -78104 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,29b7,0,-75959
+	- Message: The Heater B axis is at -75959 of 0 microsteps
+	- Current Time: 11:28:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,9bc3,0,-73814
+	- Message: The Heater B axis is at -73814 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3c24,0,-71668
+	- Message: The Heater B axis is at -71668 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5f3c,0,-69522
+	- Message: The Heater B axis is at -69522 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,286e,0,-67377
+	- Message: The Heater B axis is at -67377 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3b4f,0,-65231
+	- Message: The Heater B axis is at -65231 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,2089,0,-63086
+	- Message: The Heater B axis is at -63086 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a3c7,0,-60940
+	- Message: The Heater B axis is at -60940 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8522,0,-58794
+	- Message: The Heater B axis is at -58794 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6fa,0,-56647
+	- Message: The Heater B axis is at -56647 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d91c,0,-54501
+	- Message: The Heater B axis is at -54501 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,859,0,-52355
+	- Message: The Heater B axis is at -52355 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,55ef,0,-50209
+	- Message: The Heater B axis is at -50209 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b008,0,-48064
+	- Message: The Heater B axis is at -48064 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e845,0,-45918
+	- Message: The Heater B axis is at -45918 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,189e,0,-43772
+	- Message: The Heater B axis is at -43772 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1af1,0,-41626
+	- Message: The Heater B axis is at -41626 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b9b8,0,-39480
+	- Message: The Heater B axis is at -39480 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,947d,0,-37334
+	- Message: The Heater B axis is at -37334 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1bf5,0,-35188
+	- Message: The Heater B axis is at -35188 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,30f6,0,-33043
+	- Message: The Heater B axis is at -33043 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a5f,0,-30897
+	- Message: The Heater B axis is at -30897 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ba09,0,-28751
+	- Message: The Heater B axis is at -28751 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,f105,0,-26606
+	- Message: The Heater B axis is at -26606 of 0 microsteps
+	- Current Time: 11:28:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ece3,0,-23923
+	- Message: The Heater B axis is at -23923 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,86e8,0,-21777
+	- Message: The Heater B axis is at -21777 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,89f6,0,-19094
+	- Message: The Heater B axis is at -19094 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,83d0,0,-16948
+	- Message: The Heater B axis is at -16948 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ef0a,0,-14802
+	- Message: The Heater B axis is at -14802 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4fbc,0,-12656
+	- Message: The Heater B axis is at -12656 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,cfa1,0,-10510
+	- Message: The Heater B axis is at -10510 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d05e,0,-8364
+	- Message: The Heater B axis is at -8364 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,62ab,0,-6556
+	- Message: The Heater B axis is at -6556 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a499,0,-5321
+	- Message: The Heater B axis is at -5321 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,add,0,-4479
+	- Message: The Heater B axis is at -4479 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a964,0,-3469
+	- Message: The Heater B axis is at -3469 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,caee,0,-2588
+	- Message: The Heater B axis is at -2588 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,7cc6,0,-1836
+	- Message: The Heater B axis is at -1836 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a2fd,0,-1213
+	- Message: The Heater B axis is at -1213 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8070,0,-719
+	- Message: The Heater B axis is at -719 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,2bbb,0,-353
+	- Message: The Heater B axis is at -353 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1cfa,0,-164
+	- Message: The Heater B axis is at -164 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,7257,0,-24
+	- Message: The Heater B axis is at -24 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,2d4,0,-2
+	- Message: The Heater B axis is at -2 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5b84,0,-2
+	- Message: The Heater B axis is at -2 of 0 microsteps
+	- Current Time: 11:28:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6aa1,0,-2
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/9
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,16c0,0,0
+	- Message: The Heater B axis is at 0 of 0 microsteps
+	- Current Time: 11:28:07
+	- Message: 0 reached in 0.04495978355407715 seconds for reader module along Heater B
+	- Current Time: 11:28:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,7a9f,0,0
+	- Message: The Heater B axis is at 0 of 0 microsteps
+	- Current Time: 11:28:07
+	- Message: 0 reached in 9.547869443893433 seconds for reader module along Heater B
+	- Current Time: 11:28:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,163,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/9
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8a77,0,0
+	- Message: The Heater B axis is at 0 of 0 microsteps
+	- Current Time: 11:28:07
+	- Message: 0 reached in 0.05853128433227539 seconds for reader module along Heater B
+	- Current Time: 11:28:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.05
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,a443,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,72c3,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,8b53,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:30:17
+	- Message: Device control information not available.
+	- Current Time: 11:30:17
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:30:19
+	- Message: Device control information not available.
+	- Current Time: 11:30:19
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:30:19
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:30:19
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.49620962142944336 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:30:19]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:30:20
+	- Message: Device control information not available.
+	- Current Time: 11:30:20
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:30:20
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:30:20
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.47253942489624023 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:30:20]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:30:20
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:30:21
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.3848886489868164 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:30:21]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:30:21
+	- Message: Device control information not available.
+	- Current Time: 11:30:21
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/7
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:32:48
+	- Message: Device control information not available.
+	- Current Time: 11:32:48
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:32:51
+	- Message: Device control information not available.
+	- Current Time: 11:32:51
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:32:51
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:32:52
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.7599401473999023 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:32:52]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:32:53
+	- Message: Device control information not available.
+	- Current Time: 11:32:53
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:32:53
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:32:53
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.47869396209716797 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:32:53]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:32:53
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:32:54
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.5342738628387451 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:32:54]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:32:55
+	- Message: Device control information not available.
+	- Current Time: 11:32:55
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/7
+		- Message (RECEIVED)
+			- Duration (s): 0.06
+			- Address: 7
+			- Command Sent: ?pos
+			- Respone Received: <7,e10a,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/7?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,acd1,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/7
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 7
+			- Command Sent: ?pos
+			- Respone Received: <7,1eb8,0,-789999
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/7?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,a771,0,-697349
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,79ae,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,2575,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/8?position=-400000&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,3ed8,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/8?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,470,0,0
+	- Message: The Heater A axis is at 0 of 0 microsteps
+	- Current Time: 13:51:04
+	- Message: 0 reached in 0.03558826446533203 seconds for reader module along Heater A
+	- Current Time: 13:51:04
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,2211,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/8
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6f12,0,125
+	- Message: The Heater A axis is at 125 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6821,0,1112
+	- Message: The Heater A axis is at 1112 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,83ee,0,2502
+	- Message: The Heater A axis is at 2502 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,7c01,0,3891
+	- Message: The Heater A axis is at 3891 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,5b37,0,5281
+	- Message: The Heater A axis is at 5281 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c88d,0,7713
+	- Message: The Heater A axis is at 7713 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,f2ea,0,9104
+	- Message: The Heater A axis is at 9104 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d527,0,10494
+	- Message: The Heater A axis is at 10494 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,4cb8,0,11884
+	- Message: The Heater A axis is at 11884 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,109c,0,13274
+	- Message: The Heater A axis is at 13274 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,582d,0,14664
+	- Message: The Heater A axis is at 14664 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d264,0,16054
+	- Message: The Heater A axis is at 16054 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,1fd3,0,17444
+	- Message: The Heater A axis is at 17444 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6a2c,0,18834
+	- Message: The Heater A axis is at 18834 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,7799,0,20225
+	- Message: The Heater A axis is at 20225 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,1583,0,21615
+	- Message: The Heater A axis is at 21615 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6305,0,23005
+	- Message: The Heater A axis is at 23005 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,631d,0,24395
+	- Message: The Heater A axis is at 24395 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e40d,0,25438
+	- Message: The Heater A axis is at 25438 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,a145,0,26827
+	- Message: The Heater A axis is at 26827 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,eadd,0,28217
+	- Message: The Heater A axis is at 28217 of 0 microsteps
+	- Current Time: 13:51:05
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,40b6,0,29607
+	- Message: The Heater A axis is at 29607 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,2650,0,30997
+	- Message: The Heater A axis is at 30997 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,cf73,0,32387
+	- Message: The Heater A axis is at 32387 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,781c,0,33778
+	- Message: The Heater A axis is at 33778 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e6e7,0,34823
+	- Message: The Heater A axis is at 34823 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d15,0,36211
+	- Message: The Heater A axis is at 36211 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,29af,0,37601
+	- Message: The Heater A axis is at 37601 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c28e,0,38992
+	- Message: The Heater A axis is at 38992 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d36d,0,40383
+	- Message: The Heater A axis is at 40383 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,80b4,0,41773
+	- Message: The Heater A axis is at 41773 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e5c7,0,43163
+	- Message: The Heater A axis is at 43163 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,b6df,0,44901
+	- Message: The Heater A axis is at 44901 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6bbd,0,46291
+	- Message: The Heater A axis is at 46291 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c343,0,47334
+	- Message: The Heater A axis is at 47334 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,b0e4,0,48724
+	- Message: The Heater A axis is at 48724 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,eafb,0,50114
+	- Message: The Heater A axis is at 50114 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d161,0,51505
+	- Message: The Heater A axis is at 51505 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,8392,0,52895
+	- Message: The Heater A axis is at 52895 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,2bf3,0,54286
+	- Message: The Heater A axis is at 54286 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,81bb,0,55677
+	- Message: The Heater A axis is at 55677 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,30d4,0,57067
+	- Message: The Heater A axis is at 57067 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,8369,0,58458
+	- Message: The Heater A axis is at 58458 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c418,0,59848
+	- Message: The Heater A axis is at 59848 of 0 microsteps
+	- Current Time: 13:51:06
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,3aa5,0,61239
+	- Message: The Heater A axis is at 61239 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,748b,0,62629
+	- Message: The Heater A axis is at 62629 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,b4e0,0,64019
+	- Message: The Heater A axis is at 64019 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e289,0,65408
+	- Message: The Heater A axis is at 65408 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,f89e,0,66799
+	- Message: The Heater A axis is at 66799 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c872,0,68188
+	- Message: The Heater A axis is at 68188 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,5740,0,69578
+	- Message: The Heater A axis is at 69578 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,ecf9,0,70620
+	- Message: The Heater A axis is at 70620 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,dcf1,0,71665
+	- Message: The Heater A axis is at 71665 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,36e0,0,73052
+	- Message: The Heater A axis is at 73052 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,eebe,0,74443
+	- Message: The Heater A axis is at 74443 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,7c27,0,75833
+	- Message: The Heater A axis is at 75833 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,9acd,0,77223
+	- Message: The Heater A axis is at 77223 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,f9d4,0,78265
+	- Message: The Heater A axis is at 78265 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,cb6b,0,79656
+	- Message: The Heater A axis is at 79656 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,db13,0,81046
+	- Message: The Heater A axis is at 81046 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,2dc2,0,82089
+	- Message: The Heater A axis is at 82089 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,eecd,0,83479
+	- Message: The Heater A axis is at 83479 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,5184,0,84869
+	- Message: The Heater A axis is at 84869 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,f72e,0,86260
+	- Message: The Heater A axis is at 86260 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,ac78,0,87650
+	- Message: The Heater A axis is at 87650 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c7f7,0,89039
+	- Message: The Heater A axis is at 89039 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,83e1,0,90429
+	- Message: The Heater A axis is at 90429 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,63a3,0,91819
+	- Message: The Heater A axis is at 91819 of 0 microsteps
+	- Current Time: 13:51:07
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d245,0,93209
+	- Message: The Heater A axis is at 93209 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,5018,0,94599
+	- Message: The Heater A axis is at 94599 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,892a,0,95989
+	- Message: The Heater A axis is at 95989 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,fe8,0,97378
+	- Message: The Heater A axis is at 97378 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,bdce,0,98768
+	- Message: The Heater A axis is at 98768 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,774,0,100157
+	- Message: The Heater A axis is at 100157 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,bc5d,0,101547
+	- Message: The Heater A axis is at 101547 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d224,0,102937
+	- Message: The Heater A axis is at 102937 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,dd2b,0,104327
+	- Message: The Heater A axis is at 104327 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d1f5,0,105718
+	- Message: The Heater A axis is at 105718 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,fc0c,0,107109
+	- Message: The Heater A axis is at 107109 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,8b91,0,108499
+	- Message: The Heater A axis is at 108499 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,467,0,109889
+	- Message: The Heater A axis is at 109889 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,b2af,0,111279
+	- Message: The Heater A axis is at 111279 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,2070,0,112669
+	- Message: The Heater A axis is at 112669 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,b2e4,0,114059
+	- Message: The Heater A axis is at 114059 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d958,0,115450
+	- Message: The Heater A axis is at 115450 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,f490,0,116841
+	- Message: The Heater A axis is at 116841 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,af32,0,118232
+	- Message: The Heater A axis is at 118232 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,8f62,0,119622
+	- Message: The Heater A axis is at 119622 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,efcc,0,121013
+	- Message: The Heater A axis is at 121013 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e290,0,122404
+	- Message: The Heater A axis is at 122404 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,1d9f,0,123794
+	- Message: The Heater A axis is at 123794 of 0 microsteps
+	- Current Time: 13:51:08
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,dfd6,0,125185
+	- Message: The Heater A axis is at 125185 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e3a0,0,126575
+	- Message: The Heater A axis is at 126575 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,9bb0,0,127966
+	- Message: The Heater A axis is at 127966 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,eba2,0,129356
+	- Message: The Heater A axis is at 129356 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d221,0,130746
+	- Message: The Heater A axis is at 130746 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6999,0,131788
+	- Message: The Heater A axis is at 131788 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,5374,0,133179
+	- Message: The Heater A axis is at 133179 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,20aa,0,134569
+	- Message: The Heater A axis is at 134569 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,eda3,0,135959
+	- Message: The Heater A axis is at 135959 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,2a16,0,137349
+	- Message: The Heater A axis is at 137349 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,54e1,0,138740
+	- Message: The Heater A axis is at 138740 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,cfa5,0,139784
+	- Message: The Heater A axis is at 139784 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,7357,0,141172
+	- Message: The Heater A axis is at 141172 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,f8b8,0,142563
+	- Message: The Heater A axis is at 142563 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,8ab5,0,143953
+	- Message: The Heater A axis is at 143953 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,a22,0,144996
+	- Message: The Heater A axis is at 144996 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,21f2,0,146385
+	- Message: The Heater A axis is at 146385 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,14b,0,147427
+	- Message: The Heater A axis is at 147427 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,825f,0,148470
+	- Message: The Heater A axis is at 148470 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,3c37,0,149861
+	- Message: The Heater A axis is at 149861 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,5cb8,0,151251
+	- Message: The Heater A axis is at 151251 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,cc17,0,152641
+	- Message: The Heater A axis is at 152641 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,8832,0,154031
+	- Message: The Heater A axis is at 154031 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,92cf,0,155420
+	- Message: The Heater A axis is at 155420 of 0 microsteps
+	- Current Time: 13:51:09
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,5ef0,0,156810
+	- Message: The Heater A axis is at 156810 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,27f6,0,158200
+	- Message: The Heater A axis is at 158200 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c9a4,0,159245
+	- Message: The Heater A axis is at 159245 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,3d4f,0,160632
+	- Message: The Heater A axis is at 160632 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,9f59,0,162022
+	- Message: The Heater A axis is at 162022 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,fbe2,0,163412
+	- Message: The Heater A axis is at 163412 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6480,0,164801
+	- Message: The Heater A axis is at 164801 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c4d7,0,166191
+	- Message: The Heater A axis is at 166191 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6045,0,167581
+	- Message: The Heater A axis is at 167581 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,5ff3,0,168971
+	- Message: The Heater A axis is at 168971 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,ffa1,0,170362
+	- Message: The Heater A axis is at 170362 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,880b,0,171404
+	- Message: The Heater A axis is at 171404 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,ce71,0,172794
+	- Message: The Heater A axis is at 172794 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,7c7a,0,174184
+	- Message: The Heater A axis is at 174184 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,16ac,0,175575
+	- Message: The Heater A axis is at 175575 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c716,0,176965
+	- Message: The Heater A axis is at 176965 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,86b7,0,178355
+	- Message: The Heater A axis is at 178355 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,b889,0,179745
+	- Message: The Heater A axis is at 179745 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e7d1,0,181135
+	- Message: The Heater A axis is at 181135 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,5971,0,182525
+	- Message: The Heater A axis is at 182525 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,590c,0,183915
+	- Message: The Heater A axis is at 183915 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,cf53,0,185305
+	- Message: The Heater A axis is at 185305 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6bd6,0,186695
+	- Message: The Heater A axis is at 186695 of 0 microsteps
+	- Current Time: 13:51:10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e9e7,0,188084
+	- Message: The Heater A axis is at 188084 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,5eb8,0,189474
+	- Message: The Heater A axis is at 189474 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,9061,0,190863
+	- Message: The Heater A axis is at 190863 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,8268,0,192253
+	- Message: The Heater A axis is at 192253 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e9d5,0,193643
+	- Message: The Heater A axis is at 193643 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.01
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d631,0,196077
+	- Message: The Heater A axis is at 196077 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.01
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,f381,0,197119
+	- Message: The Heater A axis is at 197119 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,2885,0,198162
+	- Message: The Heater A axis is at 198162 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,5508,0,199552
+	- Message: The Heater A axis is at 199552 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,27b1,0,200942
+	- Message: The Heater A axis is at 200942 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c966,0,202332
+	- Message: The Heater A axis is at 202332 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,33ee,0,203375
+	- Message: The Heater A axis is at 203375 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6157,0,204765
+	- Message: The Heater A axis is at 204765 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,4951,0,205807
+	- Message: The Heater A axis is at 205807 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,1081,0,207197
+	- Message: The Heater A axis is at 207197 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,2a13,0,208587
+	- Message: The Heater A axis is at 208587 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d9d5,0,209898
+	- Message: The Heater A axis is at 209898 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,60fc,0,211072
+	- Message: The Heater A axis is at 211072 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e55c,0,212107
+	- Message: The Heater A axis is at 212107 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,a147,0,213004
+	- Message: The Heater A axis is at 213004 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,b73f,0,213762
+	- Message: The Heater A axis is at 213762 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.01
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,a670,0,214239
+	- Message: The Heater A axis is at 214239 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6808,0,214639
+	- Message: The Heater A axis is at 214639 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,e875,0,214960
+	- Message: The Heater A axis is at 214960 of 0 microsteps
+	- Current Time: 13:51:11
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,c632,0,215268
+	- Message: The Heater A axis is at 215268 of 0 microsteps
+	- Current Time: 13:51:12
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,4baf,0,215408
+	- Message: The Heater A axis is at 215408 of 0 microsteps
+	- Current Time: 13:51:12
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,d040,0,215470
+	- Message: The Heater A axis is at 215470 of 0 microsteps
+	- Current Time: 13:51:12
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,1f37,0,0
+	- Message: The Heater A axis is at 0 of 0 microsteps
+	- Current Time: 13:51:12
+	- Message: 0 reached in 7.115760326385498 seconds for reader module along Heater A
+	- Current Time: 13:51:12
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 13:54:26
+	- Message: Device control information not available.
+	- Current Time: 13:54:26
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 13:54:30
+	- Message: Device control information not available.
+	- Current Time: 13:54:30
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 13:54:30
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 13:54:36
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 6.656582593917847 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 13:54:36]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 13:54:39
+	- Message: Device control information not available.
+	- Current Time: 13:54:39
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 13:54:39
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 13:54:46
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 6.11374568939209 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 13:54:46]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 13:54:46
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 13:54:52
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 6.111122369766235 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 13:54:52]
