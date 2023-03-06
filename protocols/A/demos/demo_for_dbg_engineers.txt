@@ -1,0 +1,24 @@
+0: Move Chip A
+1: Pickup tips from A column 1
+2: Move to Sample Rack tray A with 1000 uL tips
+3: Move to Heater/Shaker column 1 with 1000 uL tips
+4: Move to Reagent Cartridge tray A column 1 with 1000 uL tips
+5: Move to Heater/Shaker column 1 with 1000 uL tips
+6: Home pipettor along Z
+7: Shake on with an RPM of 1100
+8: Delay for 4 seconds
+9: Shake off
+10: Move to Heater/Shaker column 1 with 1000 uL tips
+11: Move to Mag Separator column 1 with 1000 uL tips moving up by 25000
+12: Eject tips in A column 1
+13: Pickup tips from A column 12
+14: Move to Mag Separator column 1 with 200 uL tips
+15: Move to DG8 tray A column 2 with 200 uL tips
+16: Eject tips in A column 12
+17: Move to DG8 tray A column 3 without tips moving down by 677000
+18: Generate Demo Droplets
+22: Move Lid A
+23: Home pipettor along Z
+24: Close Tray AB
+25: Lower Thermocycler A to -50000 usteps
+26: Light Show

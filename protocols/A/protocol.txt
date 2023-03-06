@@ -1,2 +1,5 @@
-0: Mix 15 uLs with 50 uL tips at Low pressure 5 times
-1: Aspirate 15 uLs with 50 uL tips at Low pressure 1 time
+0: Suction cups on
+1: Delay for 3 seconds
+2: Move relative up by 200000
+3: Suction cups off
+4: Move relative down by 200000
