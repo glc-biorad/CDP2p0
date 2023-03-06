@@ -1,0 +1,87 @@
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : BIORADRBN97nL04
+   Primary Dns Suffix  . . . . . . . : Global.Bio-Rad.Com
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : global.bio-rad.com
+                                       bio-rad.com
+                                       app.bio-rad.com
+                                       db.bio-rad.com
+                                       printer.bio-rad.com
+                                       root.ad
+
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Intel(R) Ethernet Connection (13) I219-LM
+   Physical Address. . . . . . . . . : 84-A9-38-2F-F0-17
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Local Area Connection* 1:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter
+   Physical Address. . . . . . . . . : A0-E7-0B-25-D1-B9
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Local Area Connection* 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #2
+   Physical Address. . . . . . . . . : A2-E7-0B-25-D1-B8
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter Ethernet 2:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Realtek USB GbE Family Controller #2
+   Physical Address. . . . . . . . . : 00-E0-4C-68-4F-88
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::269b:5986:bdc4:20f5%16(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 10.0.0.7(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 10.0.0.1
+   DHCPv6 IAID . . . . . . . . . . . : 402710604
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-15-7E-BA-A0-E7-0B-25-D1-B8
+   DNS Servers . . . . . . . . . . . : 10.0.0.1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . : Global.Bio-Rad.Com
+   Description . . . . . . . . . . . : Intel(R) Wi-Fi 6 AX201 160MHz
+   Physical Address. . . . . . . . . : A0-E7-0B-25-D1-B8
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::2719:c43f:cecd:ddfc%13(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 10.16.10.19(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.254.0
+   Lease Obtained. . . . . . . . . . : Wednesday, February 22, 2023 12:22:49 PM
+   Lease Expires . . . . . . . . . . : Friday, March 3, 2023 9:01:46 AM
+   Default Gateway . . . . . . . . . : 10.16.10.1
+   DHCP Server . . . . . . . . . . . : 10.241.201.62
+   DHCPv6 IAID . . . . . . . . . . . : 77653771
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-15-7E-BA-A0-E7-0B-25-D1-B8
+   DNS Servers . . . . . . . . . . . : 10.235.192.11
+                                       10.236.192.11
+                                       10.237.192.11
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Bluetooth Device (Personal Area Network)
+   Physical Address. . . . . . . . . : A0-E7-0B-25-D1-BC
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
