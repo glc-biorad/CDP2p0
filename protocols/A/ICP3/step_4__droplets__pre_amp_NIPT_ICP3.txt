@@ -1,0 +1,34 @@
+0: Aspirate 22 uLs with 50 uL tips at Low pressure 1 time
+1: Move to DG8 tray A column 2 with 50 uL tips
+2: Dispense 22 uLs with 50 uL tips at Low pressure 1 time
+0: Comment: Tip 9: 
+3: Eject tips in A column 7
+0: Comment: Tip 11: New 200 uL tip
+4: Pickup tips from A column 11
+5: Move to Reagent Cartridge tray B column 1 with 200 uL tips
+6: Aspirate 100 uLs with 200 uL tips at Low pressure 1 time
+7: Move to DG8 tray A column 1 with 200 uL tips
+8: Dispense 100 uLs with 200 uL tips at Low pressure 1 time
+0: Comment: Tip 11: New 200 uL tip
+9: Eject tips in A column 11
+10: Comment: Move the pipettor head down further to engage the mandrels with the DG8 chip gaskets
+11: Move to DG8 tray A column 3 without tips moving down by 677000
+12: Comment: Generate droplets
+13: Generate Pico Droplets
+0: Comment: Tip 11: New 200 uL tip
+4: Pickup tips from A column 11
+5: Move to Reagent Cartridge tray B column 1 with 200 uL tips
+6: Aspirate 60 uLs with 200 uL tips at Low pressure 1 time
+11: Move to Tray tray A column 1 with 200 uL tips
+8: Dispense 60 uLs with 200 uL tips at Low pressure 1 time
+11: Move to DG8 tray A column 3 with 200 uL tips
+6: Aspirate 60 uLs with 200 uL tips at Low pressure 1 time
+11: Move to Tray tray A column 1 with 200 uL tips
+8: Dispense 60 uLs with 200 uL tips at Low pressure 1 time
+0: Comment: Go back to the Oil in the DG8 chip to use to push the droplets into a monolayer
+7: Move to DG8 tray A column 1 with 200 uL tips
+6: Aspirate 30 uLs with 200 uL tips at Low pressure 1 time
+11: Move to Tray tray A column 1 with 200 uL tips
+8: Dispense 30 uLs with 200 uL tips at Low pressure 1 time
+0: Comment: Tip 11: New 200 uL tip
+9: Eject tips in A column 11
