@@ -9,6 +9,7 @@ DESCRIPTION:
 #load("coreclr")
 
 import clr
+import time
 
 #clr.AddReference('System.IO.Ports')
 
@@ -55,9 +56,11 @@ class Controller():
         #self.__SERIAL_PORT.write(command.decode())
 
     def readline(self):
-        response = self.__SERIAL_PORT.readlines()
+        t_start = time.time()
+        response = self.__SERIAL_PORT.read(20)
+        #response = self.__SERIAL_PORT.readlines()
         try:
-            response = response[0].decode()
+            response = response.decode()
             if response[-1] == '\r':
                 response = response[:-1]
             return response

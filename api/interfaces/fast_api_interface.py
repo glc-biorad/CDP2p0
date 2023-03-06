@@ -357,8 +357,8 @@ class Axis():
         self.__parameters_dict['velocity'] = velocity
         # Get the current positon to see if a move needs to occur.
         value = self.get_position(module_name, id)
-        if value == position:
-            logger.log('MESSAGE', "Already at the {0} along the axis {1}".format(value, id))
+        #if value == position:
+        #    logger.log('MESSAGE', "Already at the {0} along the axis {1}".format(value, id))
             #return
         # Generate the URL.
         url = FAST_API_URL_BASE + FAST_API_URL_PATHS[module_name]['axis']['move']['url']

@@ -1457,7 +1457,7 @@ class UpperGantry(api.util.motor.Motor):
         self.move(x=chip[0], y=chip[1], z=chip[2], drip_plate=chip[3], use_drip_plate=True, tip=1000)
         # Turn on suction cup
         self.turn_on_suction_cups()
-        delay(2, 'seconds')
+        delay(3, 'seconds')
         # Move to tray_xyz with drip plate
         self.move(x=tray[0], y=tray[1], z=tray[2], drip_plate=tray[3], use_drip_plate=True, tip=1000)
         # Turn off suction cup

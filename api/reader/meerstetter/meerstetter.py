@@ -66,7 +66,7 @@ class Meerstetter():
     def __init__(self):
         # Setup the serial connection.
         # Setup the serial connection.
-        self.__controller = Controller(self.__COM_PORT, self.__BAUD_RATE, dont_use_fast_api=True)
+        self.__controller = Controller(self.__COM_PORT, self.__BAUD_RATE, dont_use_fast_api=True, timeout=1)
         self.__fast_api_interface = FastAPIInterface()
         # Get the device address.
         #self.__device_address = self.get_device_address()
