@@ -278,6 +278,9 @@ class UpperGantry(api.util.motor.Motor):
         # Home the Y and X axis.
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.home(self.__MODULE_NAME, self.__ID['Y'], block=False)
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.home(self.__MODULE_NAME, self.__ID['X'])
+        # Check if y is home
+        while self.__FAST_API_INTERFACE.pipettor_gantry.axis.get_position(self.__MODULE_NAME, self.__ID['Y']) != 0:
+            time.sleep(0.2)
         self.__location_str = 'home'
         logger_xlsx = LoggerXLSX()
         logger_xlsx.log("Home the Seyonic Pipettor", '{0}.{1}()'.format(__name__, self.home_pipettor.__name__), timer.get_current_elapsed_time())
@@ -1031,7 +1034,7 @@ class UpperGantry(api.util.motor.Motor):
             if pressure == 'default':
                 pressure = None
             elif pressure == 'low':
-                pressure = -100
+                pressure = -20
             elif pressure == 'high':
                 pressure = -300
             elif pressure == 'half':
@@ -1081,7 +1084,7 @@ class UpperGantry(api.util.motor.Motor):
         pressures = [None, 'default', 'low', 'high', 'very low']
         if type(pressure) == str:
             if pressure.lower()[0] == 'l':
-                pressure = 100
+                pressure = 20
             elif pressure.lower()[0] == 'h':
                 pressure = None
             elif pressure.lower()[0] == 'v':
