@@ -1024,17 +1024,22 @@ class UpperGantry(api.util.motor.Motor):
     # Aspirate Method.
     def aspirate(self, aspirate_vol, pressure=None, pipette_tip_type=None):
         # Pressures:
-        pressures = [None, 'default', 'low', 'high', 'half']
+        pressures = [None, 'default', 'low', 'high', 'half', 'lowest', 'highest']
         # Check type.
         check_type(aspirate_vol, int)
         if pressure != None:
+            pressure = pressure.lower()
             check_type(pressure, str)
             assert pressure in pressures
             # Get the pressure value.
             if pressure == 'default':
                 pressure = None
             elif pressure == 'low':
+                pressure = -100
+            elif pressure == 'lowest':
                 pressure = -20
+            elif pressure == 'highest':
+                pressure = -300
             elif pressure == 'high':
                 pressure = -300
             elif pressure == 'half':
@@ -1081,14 +1086,16 @@ class UpperGantry(api.util.motor.Motor):
     # Dispense Method.
     def dispense(self, dispense_vol, pressure=None, turn_off_air_valve=True):
         # Pressures:
-        pressures = [None, 'default', 'low', 'high', 'very low']
+        pressures = [None, 'default', 'low', 'high', 'lowest', 'highest', 'very low']
         if type(pressure) == str:
-            if pressure.lower()[0] == 'l':
-                pressure = 20
-            elif pressure.lower()[0] == 'h':
+            if pressure.lower() == 'low':
+                pressure = 100
+            elif pressure.lower() == 'high':
                 pressure = None
-            elif pressure.lower()[0] == 'v':
+            elif pressure.lower() == 'lowest':
                 pressure = 20
+            elif pressure.lower() == 'highest':
+                pressure = None
         # Check the type.
         check_type(dispense_vol, int)
         logger = Logger(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.dispense.__name__))
@@ -1119,6 +1126,8 @@ class UpperGantry(api.util.motor.Motor):
         timer.stop(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.dispense.__name__))
         
     def generate_droplets(self, droplet_type='standard'):
+        # Change the timeout for the seyonic controller
+        self.__pipettor.change_timeout(200)
         droplet_types = ['standard', 'pico', 'small', 'standard_universal_oil', 'demo', 'st' , 'sm', 'un', 'de', 'pi']
         assert type(droplet_type) == str 
         assert droplet_type.lower()[0:2] in droplet_types
@@ -1140,7 +1149,7 @@ class UpperGantry(api.util.motor.Motor):
             max_push_out_time = 13.5
             max_flow_rate = 99999
         elif droplet_type.lower()[0:2] == 'sm' or droplet_type.lower()[0:2] == 'pi':
-            max_time = 166
+            max_time = 166 
             max_push_out_time = 23
             max_flow_rate = 99999
         elif droplet_type.lower()[0:2] == 'de':
@@ -1167,6 +1176,8 @@ class UpperGantry(api.util.motor.Motor):
         self.__pipettor.close_valve()
         # Set pressure.
         self.__pipettor.set_pressure(pressure=0, direction=1)
+        # Change the timeout for the seyonic controller to the default of 65 seconds
+        self.__pipettor.change_timeout()
 
     def mix(self, asp_vol: int, disp_vol: int, tip: int, pressure: str, count: int = 1):
         """ Mixes the solution where it is at with an aspirate then dispense """

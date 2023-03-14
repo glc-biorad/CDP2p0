@@ -265,6 +265,13 @@ class Seyonic(object):
         self.client.Set("Pressure Setpoint", self.cntrl_addr, direction,
             pressure)
 
+    def change_timeout(self, timeout_in_seconds: int = 65) -> None:
+        """ Change the timeout of the Seyonic Controller """
+        self.client.Set("CONTINUOUS_TIMEOUT", self.cntrl_addr, 0, timeout_in_seconds)
+        #print(self.client.Get("CONTINUOUS_TIMEOUT", self.pip_addr, 0))
+        timeout = self.client.Get("CONTINUOUS_TIMEOUT", self.cntrl_addr, 0)
+        if timeout != timeout_in_seconds:
+            print("ERROR: seyonic.change_timeout did not change the timeout for the seyonic controller")
 
     def get_actual_aspirate_volume(self):
         ''' Function that queries the pipettor for measured aspirate volumes in
