@@ -1,62 +1,64 @@
 0: Engage magnet
-0: Comment: Tip 10: IDTE Transfer
-17: Pickup tips from A column 8
-18: Move to Reagent Cartridge tray A column 5 with 50 uL tips
-3: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
-24: Move to Pre-Amp Thermocycler column 1 with 50 uL tips moving up by 10000
-5: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
-0: Comment: Tip 10: IDTE Transfer
-9: Eject tips in A column 10
-0: Comment: Tip 9: Enrichment elution, pre-amp
-17: Pickup tips from A column 7
-2: Move to Mag Separator column 3 with 50 uL tips
-3: Aspirate 7 uLs with 50 uL tips at Low pressure 1 time
-4: Move to Pre-Amp Thermocycler column 1 with 50 uL tips
-5: Dispense 7 uLs with 50 uL tips at Low pressure 1 time
-6: Mix 20 uLs with 50 uL tips at Low pressure 3 times
-7: Delay for 2 seconds
-8: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
-0: Comment: Tip 9: Enrichment elution, pre-amp
-9: Eject tips in A column 7
-0: Comment: Tip 5: Residual ETOH, mineral oil
-10: Pickup tips from A column 5
-11: Move to Reagent Cartridge tray A column 7 with 50 uL tips
-12: Aspirate 25 uLs with 50 uL tips at Low pressure 1 time
+1: Comment: Tip 10: IDTE Transfer
+2: Pickup tips from A column 8
+3: Move to Reagent Cartridge tray A column 5 with 50 uL tips
+4: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+5: Move to Pre-Amp Thermocycler column 1 with 50 uL tips moving up by 10000
+6: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+7: Comment: Tip 10: IDTE Transfer
+8: Eject tips in A column 8
+9: Comment: Tip 9: Enrichment elution, pre-amp
+10: Pickup tips from A column 7
+11: Move to Mag Separator column 3 with 50 uL tips
+12: Aspirate 9 uLs with 50 uL tips at Low pressure 1 time
 13: Move to Pre-Amp Thermocycler column 1 with 50 uL tips
-14: Dispense 25 uLs with 50 uL tips at Low pressure 1 time moving up by 10000
-0: Comment: Tip 5: Residual ETOH, mineral oil
-15: Eject tips in A column 5
-16: Thermocycle Pre-Amp at 82 C for 3 minutes and cycle 6 times between 82 C for 120 seconds and 53 C for 240 seconds
-0: Comment: Tip 10: Dilution
-17: Pickup tips from A column 8
-18: Move to Reagent Cartridge tray A column 5 with 50 uL tips
-19: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
-20: Move to Pre-Amp Thermocycler column 2 with 50 uL tips moving up by 10000
-21: Dispense 30 uLs with 50 uL tips at Low pressure 1 time
-0: Comment: Tip 10: Dilution
-9: Eject tips in A column 8
-0: Comment: Tip 9: Enrichment elution, pre-amp
-17: Pickup tips from A column 7
-22: Move to Pre-Amp Thermocycler column 1 with 50 uL tips
-23: Aspirate 10 uLs with 50 uL tips at Low pressure 1 time
-24: Move to Pre-Amp Thermocycler column 2 with 50 uL tips
-25: Dispense 10 uLs with 50 uL tips at Low pressure 1 time
-26: Mix 25 uLs with 50 uL tips at Low pressure 5 times
-27: Delay for 3 seconds
-28: Dispense 10 uLs with 50 uL tips at Low pressure 1 time
-0: Comment: Tip 9: Enrichment elution, pre-amp
-9: Eject tips in A column 7
-0: Comment: Tip 10: Dilution
-17: Pickup tips from A column 8
-18: Move to Reagent Cartridge tray A column 8 with 50 uL tips
-29: Aspirate 18 uLs with 50 uL tips at Low pressure 1 time
-2: Move to Mag Separator column 10 with 50 uL tips moving up by 10000
-31: Dispense 18 uLs with 50 uL tips at Low pressure 1 time
-0: Comment: Tip 10: Dilution
-9: Eject tips in A column 8
-0: Comment: Tip 9: Enrichment elution, pre-amp
-17: Pickup tips from A column 7
-29: Aspirate 7 uLs with 50 uL tips at Low pressure 1 time
-2: Move to Mag Separator column 10 with 50 uL tips moving up by 80000
-31: Dispense 7 uLs with 50 uL tips at Low pressure 1 time
-32: Mix 15 uLs with 50 uL tips at Low pressure 5 times
+14: Dispense 9 uLs with 50 uL tips at Low pressure 1 time
+15: Mix 20 uLs with 50 uL tips at Low pressure 3 times
+16: Delay for 2 seconds
+17: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+18: Comment: Tip 9: Enrichment elution, pre-amp
+19: Eject tips in A column 7
+20: Comment: Tip 5: Residual ETOH, mineral oil
+21: Pickup tips from A column 5
+22: Move to Reagent Cartridge tray A column 7 with 50 uL tips
+23: Aspirate 27 uLs with 50 uL tips at Low pressure 1 time
+24: Move to Pre-Amp Thermocycler column 1 with 50 uL tips moving up by 10000
+25: Dispense 27 uLs with 50 uL tips at Low pressure 1 time
+26: Comment: Tip 5: Residual ETOH, mineral oil
+27: Eject tips in A column 5
+28: Thermocycle Pre-Amp at 82 C for 3 minutes and cycle 6 times between 82 C for 120 seconds and 53 C for 240 seconds
+29: Comment: Tip 10: Dilution
+30: Pickup tips from A column 8
+31: Move to Reagent Cartridge tray A column 5 with 50 uL tips
+32: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+33: Move to Pre-Amp Thermocycler column 2 with 50 uL tips moving up by 10000
+34: Dispense 30 uLs with 50 uL tips at Low pressure 1 time
+35: Comment: Tip 10: Dilution
+36: Eject tips in A column 8
+37: Comment: Tip 9: Enrichment elution, pre-amp
+38: Pickup tips from A column 7
+39: Move to Pre-Amp Thermocycler column 1 with 50 uL tips
+40: Aspirate 10 uLs with 50 uL tips at Low pressure 1 time
+41: Move to Pre-Amp Thermocycler column 2 with 50 uL tips
+42: Dispense 10 uLs with 50 uL tips at Low pressure 1 time
+43: Mix 25 uLs with 50 uL tips at Low pressure 5 times
+44: Delay for 3 seconds
+45: Dispense 10 uLs with 50 uL tips at Low pressure 1 time
+46: Comment: Tip 9: Enrichment elution, pre-amp
+47: Eject tips in A column 7
+48: Comment: Tip 10: Dilution
+49: Pickup tips from A column 8
+50: Move to Reagent Cartridge tray A column 8 with 50 uL tips
+51: Aspirate 18 uLs with 50 uL tips at Low pressure 1 time
+52: Move to Mag Separator column 10 with 50 uL tips moving up by 78000
+53: Dispense 18 uLs with 50 uL tips at Low pressure 1 time
+54: Comment: Tip 10: Dilution
+55: Eject tips in A column 8
+56: Comment: Tip 9: Enrichment elution, pre-amp
+57: Pickup tips from A column 7
+58: Move to Pre-Amp Thermocycler column 2 with 50 uL tips
+59: Comment: Assay prep for NIPT
+60: Aspirate 9 uLs with 50 uL tips at Low pressure 1 time
+61: Move to Mag Separator column 10 with 50 uL tips moving up by 78000
+62: Dispense 9 uLs with 50 uL tips at Low pressure 1 time
+63: Mix 15 uLs with 50 uL tips at Low pressure 5 times

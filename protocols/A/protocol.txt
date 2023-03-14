@@ -1,5 +1,1 @@
-0: Suction cups on
-1: Delay for 3 seconds
-2: Move relative up by 200000
-3: Suction cups off
-4: Move relative down by 200000
+0: Generate Pico Droplets

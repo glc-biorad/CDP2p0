@@ -1,15 +1,34 @@
+from turtle import delay
+import pythonnet
+from pythonnet import load
+
+try:
+    load("coreclr")
+except:
+    print("Cannot load coreclr")
+
+
+
+
 from api.upper_gantry.upper_gantry import UpperGantry
 from api.upper_gantry.seyonic.seyonic import Seyonic
 from api.reader.meerstetter.meerstetter import Meerstetter
+from api.util.utils import delay
 
 import time
 
 if __name__ == '__main__':
-    #ug = UpperGantry()
-    #ug.get_pipettor().liquid_level_detect()
+    ug = UpperGantry()
+    ug.get_pipettor().change_timeout(100)
 
-    m = Meerstetter()
-    address = 2
+
+
+
+
+
+
+    """
+    address = 9
     cutoff = 3
     
     target_temp = 30
@@ -57,3 +76,4 @@ if __name__ == '__main__':
     target_temp = 30
     print(target_temp)
     m.change_temperature(address, target_temp, True)
+    """

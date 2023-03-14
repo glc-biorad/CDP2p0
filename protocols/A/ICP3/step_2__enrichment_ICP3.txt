@@ -1,8 +1,8 @@
 0: Move to Mag Separator column 1 with 200 uL tips
 0: Comment: Changing volume fro 50 to 52 uL to avoid percent error issues under aspiration
-1: Aspirate 52 uLs with 200 uL tips at Low pressure 1 time
+1: Aspirate 54 uLs with 200 uL tips at Low pressure 1 time
 2: Move to Mag Separator column 2 with 200 uL tips
-3: Dispense 50 uLs with 200 uL tips at Low pressure 1 time
+3: Dispense 54 uLs with 200 uL tips at Low pressure 1 time
 4: Delay for 2 seconds
 5: Dispense 20 uLs with 200 uL tips at Low pressure 1 time
 7: Disengage magnet
@@ -29,10 +29,10 @@
 0: Comment: Tip 6 - Enrichment Step 1 Enrichment beads
 0: Pickup tips from A column 6
 0: Comment: Change z height location just to the top of the liquid
-9: Move to Reagent Cartridge tray A column 9 with 50 uL tips moving up by 
-25: Aspirate 39 uLs with 50 uL tips at Low pressure 1 time
+9: Move to Reagent Cartridge tray A column 9 with 50 uL tips 
+25: Aspirate 44 uLs with 50 uL tips at Low pressure 1 time
 26: Move to Mag Separator column 2 with 50 uL tips moving up by 40000
-27: Dispense 39 uLs with 50 uL tips at Low pressure 1 time
+27: Dispense 44 uLs with 50 uL tips at Low pressure 1 time
 21: Move relative down by 40000
 28: Delay for 10 seconds
 29: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
@@ -71,17 +71,18 @@
 0: Eject tips in A column 9
 0: Comment: Tip 10 - Enrichment Step 2
 0: Pickup tips from A column 10
-40: Delay for 1 minutes
+40: Delay for 2 minutes
 41: Move to Mag Separator column 2 with 200 uL tips
-42: Aspirate 89 uLs with 200 uL tips at Low pressure 1 time
+42: Aspirate 91 uLs with 200 uL tips at Low pressure 1 time
 43: Move to Mag Separator column 3 with 200 uL tips
-44: Dispense 89 uLs with 200 uL tips at Low pressure 1 time
+44: Dispense 91 uLs with 200 uL tips at Low pressure 1 time
 45: Delay for 3 seconds
 46: Dispense 20 uLs with 200 uL tips at Low pressure 1 time
 47: Disengage magnet
-64: Aspirate 78 uLs with 200 uL tips at Low pressure 1 time
+84: Move to Reagent Cartridge tray A column 9 with 200 uL tips
+64: Aspirate 80 uLs with 200 uL tips at Low pressure 1 time
 65: Move to Mag Separator column 3 with 200 uL tips moving up by 40000
-66: Dispense 78 uLs with 200 uL tips at Low pressure 1 time
+66: Dispense 80 uLs with 200 uL tips at Low pressure 1 time
 67: Delay for 10 seconds
 68: Dispense 50 uLs with 200 uL tips at Low pressure 1 time
 69: Delay for 10 seconds
@@ -94,9 +95,9 @@
 76: Delay for 10 seconds
 77: Dispense 50 uLs with 200 uL tips at Low pressure 1 time
 78: Home pipettor fast
-79: Delay for 5 minutes
+79: Delay for 3 minutes
 80: Engage magnet
-81: Delay for 2 minutes
+81: Delay for 5 minutes
 82: Move to Mag Separator column 3 with 200 uL tips
 83: Aspirate 170 uLs with 200 uL tips at Low pressure 1 time
 84: Move to Reagent Cartridge tray A column 12 with 200 uL tips
@@ -142,9 +143,9 @@
 116: Pickup tips from A column 7
 117: Move to Reagent Cartridge tray A column 5 with 50 uL tips
 118: Disengage magnet
-119: Aspirate 50 uLs with 50 uL tips at Low pressure 1 time
+119: Aspirate 52 uLs with 50 uL tips at Low pressure 1 time
 120: Move to Mag Separator column 3 with 50 uL tips
-121: Dispense 50 uLs with 50 uL tips at Low pressure 1 time
+121: Dispense 52 uLs with 50 uL tips at Low pressure 1 time
 122: Mix 30 uLs with 50 uL tips at Low pressure 3 times
 123: Engage magnet
 124: Delay for 10 seconds
