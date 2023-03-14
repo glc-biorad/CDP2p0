@@ -678,7 +678,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
                         master=self,
 			corner_radius=2,
 			variable=self.pipettor_pressure_sv,
-			values=('High', 'Low',),
+			values=('Highest', 'High', 'Low', 'Lowest'),
 			width=OPTIONMENU_PIPETTOR_PRESSURE_WIDTH
 		)
 		# Create the add label and button
