@@ -54,7 +54,7 @@
 52: Move to Reagent Cartridge tray A column 12 with 1000 uL tips
 53: Mix 935 uLs with 1000 uL tips at High pressure 1 time
 54: Aspirate 935 uLs with 1000 uL tips at High pressure 1 time
-55: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 350000
+55: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 450000
 56: Dispense 935 uLs with 1000 uL tips at High pressure 1 time
 57: Delay for 3 seconds
 58: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
