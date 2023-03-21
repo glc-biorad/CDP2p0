@@ -1,0 +1,18 @@
+43: Comment: Tip 13
+44: Pickup tips from A column 12
+0: Comment: Droplet Generation Oil
+45: Move to Reagent Cartridge tray A column 6 with 200 uL tips
+46: Aspirate 60 uLs with 200 uL tips at Low pressure 1 time
+47: Move to Tray tray B column 1 with 200 uL tips
+48: Dispense 60 uLs with 200 uL tips at Low pressure 1 time
+49: Move to DG8 tray B column 3 with 200 uL tips
+50: Aspirate 60 uLs with 200 uL tips at Low pressure 1 time
+51: Move to Tray tray B column 1 with 200 uL tips
+52: Dispense 60 uLs with 200 uL tips at Low pressure 1 time
+53: Comment: Go back to the Oil in the DG8 chip to use to push the droplets into a monolayer
+54: Move to DG8 tray B column 1 with 200 uL tips
+55: Aspirate 30 uLs with 200 uL tips at Low pressure 1 time
+56: Move to Tray tray B column 1 with 200 uL tips
+57: Dispense 30 uLs with 200 uL tips at Low pressure 1 time
+58: Comment: Tip 13
+59: Eject tips in A column 12

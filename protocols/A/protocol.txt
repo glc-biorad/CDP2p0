@@ -1,1 +1,1 @@
-0: Generate Pico Droplets
+0: Thermocycle: -B- Denature at 90 C for 3 minutes cycling 40 times between 93 C for 40 seconds and 55 C for 80 seconds -C- Denature at 90 C for 3 minutes cycling 40 times between 94 C for 40 seconds and 55 C for 80 seconds 
