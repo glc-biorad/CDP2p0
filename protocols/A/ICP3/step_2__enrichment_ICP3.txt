@@ -122,7 +122,7 @@
 0: Comment: Enrichment Solution
 84: Move to Reagent Cartridge tray A column 9 with 200 uL tips
 64: Aspirate 80 uLs with 200 uL tips at Low pressure 1 time
-0: Delay 5 seconds
+0: Delay for 5 seconds
 65: Move to Mag Separator column 3 with 200 uL tips moving up by 40000
 66: Dispense 80 uLs with 200 uL tips at Low pressure 1 time
 67: Delay for 10 seconds
@@ -199,10 +199,15 @@
 0: Comment: Tip 5
 109: Pickup tips from A column 5
 110: Move to Mag Separator column 3 with 50 uL tips
-111: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
-0: Waste removal
+111: Aspirate 50 uLs with 50 uL tips at Low pressure 1 time
+0: Comment: Waste removal
 112: Move to Reagent Cartridge tray A column 12 with 50 uL tips
-113: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+113: Dispense 50 uLs with 50 uL tips at Low pressure 1 time
+110: Move to Mag Separator column 3 with 50 uL tips
+111: Aspirate 50 uLs with 50 uL tips at Low pressure 1 time
+0: Comment: Waste removal
+112: Move to Reagent Cartridge tray A column 12 with 50 uL tips
+113: Dispense 50 uLs with 50 uL tips at Low pressure 1 time
 0: Comment: Tip 5
 114: Eject tips in A column 5
 0: Comment: Air Dry for 3 minutes
@@ -217,7 +222,7 @@
 120: Move to Mag Separator column 3 with 50 uL tips
 121: Dispense 52 uLs with 50 uL tips at Low pressure 1 time
 122: Mix 30 uLs with 50 uL tips at Low pressure 3 times
-0: Delay 30 seconds
+0: Delay for 30 seconds
 123: Engage magnet
 124: Delay for 10 seconds
 125: Dispense 15 uLs with 50 uL tips at Low pressure 1 time
