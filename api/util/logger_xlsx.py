@@ -33,9 +33,12 @@ class LoggerXLSX():
         mode = 'w'
         if os.path.exists(self.__XLSX_FILE_NAME):
             mode = 'a'
-        with open(self.__XLSX_FILE_NAME, mode) as ofile:
-            line = '{0},{1},{2},\n'.format(step_description, command, round(time_in_seconds,time_decimal_places))
-            try:
-                ofile.write(line)
-            except:
-                print(f"Issue writing '{line}' to tat file")
+        try:
+            with open(self.__XLSX_FILE_NAME, mode) as ofile:
+                line = '{0},{1},{2},\n'.format(step_description, command, round(time_in_seconds,time_decimal_places))
+                try:
+                    ofile.write(line)
+                except:
+                    print(f"Issue writing '{line}' to tat file")
+        except:
+            pass

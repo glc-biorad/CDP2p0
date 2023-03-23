@@ -185,7 +185,7 @@ class Seyonic(object):
         else:
             self.pos_pressure = 125 # mbar
 
-    def _poll_until_complete(self):
+    def _poll_until_complete(self, max_poll_timeout: int = None, check_for_sum: int = 8):
         ''' Internal function used to poll the pipettor for action status.
 
         This function polls the pipettor continuously for its status, ending
@@ -193,12 +193,16 @@ class Seyonic(object):
         '''
         start = time.time()
         action_status = [-26] * 8 # -26 is init value
-        while time.time() - start < self.max_poll_timeout:
+        if max_poll_timeout == None:
+            max_poll = self.max_poll_timeout
+        else:
+            max_poll = max_poll_timeout
+        while time.time() - start < max_poll:
             for chan in range(1, 9):
                 action_status[chan-1] = self.client.Get("Action Status",
                                         self.pip_addr, chan)
             completed_chan = [1 for asval in action_status if asval == 0]
-            if sum(completed_chan) == 8:
+            if sum(completed_chan) == check_for_sum:
                 return action_status
         return action_status
 
@@ -267,7 +271,10 @@ class Seyonic(object):
 
     def change_timeout(self, timeout_in_seconds: int = 65) -> None:
         """ Change the timeout of the Seyonic Controller """
-        self.client.Set("CONTINUOUS_TIMEOUT", self.cntrl_addr, 0, timeout_in_seconds)
+        try:
+            self.client.Set("CONTINUOUS_TIMEOUT", self.cntrl_addr, 0, timeout_in_seconds)
+        except Exception as e:
+            print(e)
         #print(self.client.Get("CONTINUOUS_TIMEOUT", self.pip_addr, 0))
         timeout = self.client.Get("CONTINUOUS_TIMEOUT", self.cntrl_addr, 0)
         if timeout != timeout_in_seconds:
@@ -459,7 +466,7 @@ class Seyonic(object):
                 logger.log('MESSAGE', "The action status for the Seyonic Pipettor channel {0} is '{1}'".format(i+1, asval))
                 #print('Channel {0} Action Status: {1}'.format(i, asval))
 
-    def liquid_level_detect(self, timeout_seconds=4, debug=True) -> bool:
+    def liquid_level_detect(self, timeout_seconds=5, debug=True) -> bool:
         """ Liquid Level Detect (LLD): operates through measurement of a small pressure transient 
         when tge dispenser tip touches a liquid surface. The LLD action is terminated with an ABORT_ACTION command.
         """
@@ -471,36 +478,43 @@ class Seyonic(object):
         # Trigger the action
         self.client.Trigger(self.pip_addr, 0)
         # Poll the action status
-        print('here b')
-        action_return = self._poll_until_complete()
-        print('here a')
+        print('here before poll')
+        action_return = self._poll_until_complete(max_poll_timeout=timeout_seconds, check_for_sum=16)
+        print(action_return)
+        if sum(action_return) == 16:
+            self.set_pressure(pressure=0, direction=1)
+            llded = True
+            #return True
+        else:
+            llded = False
+        print('here after poll')
         # Check the return action status
-        action_status_values = [0,0,0,0,0,0,0,0]
-        t_start = time.time()
-        print(action_status_values)
-        action_status_values_sum = 0
-        for i in action_status_values:
-            action_status_values_sum = action_status_values_sum + 1 
-        while action_status_values_sum > 2 and timeout_seconds > time.time() - t_start:
-            print(time.time() - t_start)
-            for channel in range(8):
-                action_status_values[channel] = action_status_lookup[action_return[channel]]
-                if debug == True:
-                    print(f"Channel {channel+1} Action Status: {action_status_values[channel]}")
-            action_status_values_sum = 0
-            for i in action_status_values:
-                action_status_values_sum = action_status_values_sum + 1 
-            if action_status_values_sum > 2:
-                print('LLDed')
-                self.set_pressure(pressure=0, direction=1)
-                return True
+        #action_status_values = [0,0,0,0,0,0,0,0]
+        #t_start = time.time()
+        #action_status_values_sum = 0
+        #for i in action_status_values:
+        #    action_status_values_sum = action_status_values_sum + 1 
+        #while action_status_values_sum > 2 and timeout_seconds > time.time() - t_start:
+        #    print(time.time() - t_start)
+        #    for channel in range(8):
+        #        action_status_values[channel] = action_status_lookup[action_return[channel]]
+        #        if debug == True:
+        #            print(f"Channel {channel+1} Action Status: {action_status_values[channel]}")
+        #    action_status_values_sum = 0
+        #    for i in action_status_values:
+        #        action_status_values_sum = action_status_values_sum + 1 
+        #    if action_status_values_sum > 2:
+        #        print('LLDed')
+        #        self.set_pressure(pressure=0, direction=1)
+        #        return True
         self.set_pressure(pressure=0, direction=1)
-        action_status_values_sum = 0
-        for i in action_status_values:
-            action_status_values_sum = action_status_values_sum + 1 
-        if action_status_values_sum > 2:
-            print('nope!')
-            return False
+        return llded
+        #action_status_values_sum = 0
+        #for i in action_status_values:
+        #    action_status_values_sum = action_status_values_sum + 1 
+        #if action_status_values_sum > 2:
+        #    print('nope!')
+        #    return False
 
         #logger = Logger(__file__, __name__)
         #if pressure == None:

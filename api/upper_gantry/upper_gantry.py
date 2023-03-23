@@ -681,6 +681,12 @@ class UpperGantry(api.util.motor.Motor):
         if use_drip_plate:
             # Move the drip plate
             self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, drip_plate, 2500000, True, True)
+        # Wait till x and y are achieved
+        _x = self.get_position_from_axis('X')
+        _y = self.get_position_from_axis('Y')
+        while _x != x and _y != y:
+            _x = self.get_position_from_axis('X')
+            _y = self.get_position_from_axis('Y')
         # Move to the Z height
         self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, z, 800000, True, True)
 
@@ -1177,6 +1183,7 @@ class UpperGantry(api.util.motor.Motor):
         # Set pressure.
         self.__pipettor.set_pressure(pressure=0, direction=1)
         # Change the timeout for the seyonic controller to the default of 65 seconds
+        time.sleep(3)
         self.__pipettor.change_timeout()
 
     def mix(self, asp_vol: int, disp_vol: int, tip: int, pressure: str, count: int = 1):
