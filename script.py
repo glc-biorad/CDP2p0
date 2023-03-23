@@ -1,4 +1,3 @@
-from turtle import delay
 import pythonnet
 from pythonnet import load
 
@@ -9,7 +8,7 @@ except:
 
 
 
-
+from api.reader.reader import Reader
 from api.upper_gantry.upper_gantry import UpperGantry
 from api.upper_gantry.seyonic.seyonic import Seyonic
 from api.reader.meerstetter.meerstetter import Meerstetter
@@ -18,62 +17,29 @@ from api.util.utils import delay
 import time
 
 if __name__ == '__main__':
-    ug = UpperGantry()
-    ug.get_pipettor().change_timeout(100)
-
-
-
-
-
-
-
-    """
-    address = 9
+    m = Meerstetter()
+    
+    address = 4
     cutoff = 3
-    
+
+    target_temp = 89
+    print(target_temp)
+    m.change_temperature(address, target_temp, True)
+    print(f'180 seconds')
+    time.sleep(180)
+
+    for i in range(40):
+        target_temp = 93
+        print(target_temp)
+        m.change_temperature(address, target_temp, True)
+        print(f'Wait 40 seconds')
+        time.sleep(40)
+        target_temp = 55
+        print(target_temp)
+        m.change_temperature(address, target_temp, True)
+        print(f'Wait 80 seconds')
+        time.sleep(80)
+
     target_temp = 30
     print(target_temp)
     m.change_temperature(address, target_temp, True)
-    temp = m.get_temperature(address) 
-    
-    target_temp = 60
-    print(target_temp)
-    m.change_temperature(address, target_temp, True)
-    print(f'Wait 300 seconds')
-    time.sleep(300)
-
-    target_temp = 40
-    print(target_temp)
-    m.change_temperature(address, target_temp, True)
-    print(f'Wait 400 seconds')
-    time.sleep(400)
-
-    target_temp = 50
-    print(target_temp)
-    m.change_temperature(address, target_temp, True)
-    print(f'Wait 300 seconds')
-    time.sleep(300)
-
-    target_temp = 84
-    print(target_temp)
-    m.change_temperature(address, target_temp, True)
-    print(f'Wait 500 seconds')
-    time.sleep(500)
-    
-    
-    target_temp = 4
-    print(target_temp)
-    m.change_temperature(address, target_temp, True)
-    print(f'Wait 400 seconds')
-    time.sleep(400)
-
-    target_temp = 84
-    print(target_temp)
-    m.change_temperature(address, target_temp, True)
-    print(f'Wait 500 seconds')
-    time.sleep(500)
-    
-    target_temp = 30
-    print(target_temp)
-    m.change_temperature(address, target_temp, True)
-    """
