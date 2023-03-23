@@ -29,7 +29,7 @@ EIGHT_COLUMN_CONSUMABLES = ["Tip Tray"]
 FOUR_COLUMN_CONSUMABLES = ["Heater/Shaker"]
 THREE_COLUMN_CONSUMABLES = ["DG8", "Tray"]
 TWO_COLUMN_CONSUMABLES = ["Assay Strip"]
-SPECIAL_CONSUMABLES = ["DG8", "Tray", "Tip Transfer Tray"]
+SPECIAL_CONSUMABLES = ["DG8", "Tray", "Tip Transfer Tray", "Tip Box"]
 
 class OptimizeController:
 	"""System for passing data from the view to the model
@@ -304,6 +304,9 @@ class OptimizeController:
 			elif consumable == "Tip Transfer Tray":
 				self.view.optionmenu_tray.configure(values=('A','B','C','D','',))
 				self.view.optionmenu_column.configure(values=('1','2','3','4','5','6','7','8','9','',))
+			elif consumable == "Tip Box":
+				self.view.optionmenu_tray.configure(values=('A','B','C','D','X','',))
+				self.view.optionmenu_column.configure(values=('1','2','3','4','5','6','7','8','9','10','11','12','',))
 
 
 	def callback_x(self, *args) -> None:

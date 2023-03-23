@@ -88,6 +88,7 @@ MAIN_ACTION_KEY_WORDS = [
 	'Extend',
 	'LLD',
 	'Light',
+	'Load',
 ]
 TOPLEVEL_CYCLE_WIDTH = 970
 TOPLEVEL_CYCLE_HEIGHT = 210
@@ -636,6 +637,33 @@ class BuildProtocolController:
 					message="Move relative actions require a value to move in usteps. Please enter a value in the Parameter entry box."
 				)
 				return None
+		elif 'Load' in action_message.split():
+			transfers = self.view.other_parameter_sv.get()
+			tips = []
+			try:
+				transfers = transfers.replace(' ','').split(',')
+				data = self.view.master_model.get_configure_model().select(1)
+				_ = ''
+				for transfer in transfers:
+					transfer = transfer.split('-')
+					# Get the column the transfer starts from
+					start_column = int(transfer[0])
+					# Get the column the transfer ends at
+					end_column = int(transfer[-1])
+					# Get the tip that should be at the end 
+					tips.append(data[0][1+end_column])
+					# Create the words to add to the action message for this transfer
+					_ = _ + f" {start_column}-{end_column}, "
+					print(_)
+				_ = _[0:-2]
+				action_message = action_message + f"{_}"
+			except Exception as e:
+				print(e)
+				tk.messagebox.showwarning(
+					title="Failed to Add Action",
+					message="Loading a tip tray requires the columns you wish to load using dashes and commas to separate more than one transfer. An example is as follows, to transfer from tip box X column 4 to Tip Box A column 1 and X column 2 to A column 5 would be 4-1,2-5. Please enter a value in the Parameter entry box."
+				)
+				return None
 		elif 'Extend' in action_message.split():
 			amount = self.view.other_parameter_sv.get()
 			try:
@@ -1022,6 +1050,33 @@ class BuildProtocolController:
 						self.upper_gantry.dispense(volume, pressure=pressure)
 				# Log
 				log.log(action_message, time.time() - t_start)
+			elif split[0] == 'Load':
+				# Get the tray
+				tray = split[3]
+				# Get the number of transfers
+				number_of_transfers = len(split) - 4
+				# Data for getting the coordiantes
+				unit = self.model.db_name[-4]
+				table_name = f"Unit {self.unit} Upper Gantry Coordinates"
+				# Get the transfers
+				for i in range(number_of_transfers):
+					columns = split[4+i].replace(',','').replace(' ','').split('-')
+					# Get the start of the transfer
+					start_column = columns[0]
+					# Get the end of the transfer
+					end_column = columns[1]
+					# Move the pipettor to the start column of Tip Box X
+					coordinate = self.coordinates_model.select(table_name, "Tip Box", 'X', start_column)
+					x = int(coordinate[0][4])
+					y = int(coordinate[0][5])
+					z = int(coordinate[0][6])
+					self.upper_gantry.move(x,y,z,0,tip=1000)
+					# Eject the tips in the end column of Tip Box Tray
+					coordinate = self.coordinates_model.select(table_name, "Tip Box", tray, end_column)
+					x = int(coordinate[0][4])
+					y = int(coordinate[0][5])
+					z = int(coordinate[0][6])
+					self.upper_gantry.tip_eject_new(x, y, z)
 			elif split[0] == 'Delay':
 				# Get the time
 				value = int(split[2])

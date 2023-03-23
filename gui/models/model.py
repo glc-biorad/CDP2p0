@@ -38,6 +38,7 @@ class Model:
 	def setup_configure_model(self) -> None:
 		""" Sets up the configure table """
 		model = ConfigureModel(self.db_name, self.cursor, self.connection)
+		model.drop_table()
 		model.create_table()
 		try:
             		model.insert(1, "Tip Box", '1000', '1000', '1000', '1000', '50', '50', '50', '50', '50', '50', '50', '50')
