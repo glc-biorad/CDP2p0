@@ -89,7 +89,7 @@
 79: Delay for 5 seconds
 80: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
 81: Move relative right by 3000
-82: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+82: Move to Mag Separator column 1 with 1000 uL tips moving up by 15000
 83: Shake off
 84: Dispense 80 uLs with 1000 uL tips at High pressure 1 time
 85: Delay for 3 seconds
@@ -110,7 +110,7 @@
 99: Delay for 5 seconds
 100: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
 101: Move relative right by 3000
-102: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+102: Move to Mag Separator column 1 with 1000 uL tips moving up by 15000
 103: Shake off
 104: Dispense 80 uLs with 1000 uL tips at High pressure 1 time
 105: Delay for 3 seconds
@@ -131,7 +131,7 @@
 119: Delay for 5 seconds
 120: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
 121: Move relative right by 3000
-122: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+122: Move to Mag Separator column 1 with 1000 uL tips moving up by 15000
 123: Shake off
 124: Dispense 80 uLs with 1000 uL tips at High pressure 1 time
 125: Delay for 3 seconds
@@ -152,7 +152,7 @@
 139: Delay for 5 seconds
 140: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
 141: Move relative right by 3000
-142: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+142: Move to Mag Separator column 1 with 1000 uL tips moving up by 15000
 143: Shake off
 144: Dispense 80 uLs with 1000 uL tips at High pressure 1 time
 145: Delay for 3 seconds
@@ -173,7 +173,7 @@
 159: Delay for 5 seconds
 160: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
 161: Move relative right by 3000
-162: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+162: Move to Mag Separator column 1 with 1000 uL tips moving up by 15000
 163: Shake off
 164: Dispense 80 uLs with 1000 uL tips at High pressure 1 time
 165: Delay for 3 seconds
@@ -195,7 +195,7 @@
 180: Delay for 5 seconds
 181: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
 182: Move relative right by 3000
-183: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+183: Move to Mag Separator column 1 with 1000 uL tips moving up by 15000
 184: Shake off
 185: Dispense 80 uLs with 1000 uL tips at High pressure 1 time
 186: Delay for 3 seconds
@@ -216,7 +216,7 @@
 200: Delay for 5 seconds
 201: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
 202: Move relative right by 3000
-203: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+203: Move to Mag Separator column 1 with 1000 uL tips moving up by 15000
 204: Shake off
 205: Dispense 80 uLs with 1000 uL tips at High pressure 1 time
 206: Delay for 3 seconds
@@ -237,7 +237,7 @@
 220: Delay for 5 seconds
 221: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
 222: Move relative right by 3000
-223: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+223: Move to Mag Separator column 1 with 1000 uL tips moving up by 15000
 224: Shake off
 225: Dispense 80 uLs with 1000 uL tips at High pressure 1 time
 226: Delay for 3 seconds
@@ -258,7 +258,7 @@
 240: Delay for 5 seconds
 241: Dispense 160 uLs with 1000 uL tips at High pressure 1 time
 242: Move relative right by 3000
-243: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+243: Move to Mag Separator column 1 with 1000 uL tips moving up by 15000
 244: Shake off
 245: Dispense 80 uLs with 1000 uL tips at High pressure 1 time
 246: Delay for 3 seconds
@@ -281,7 +281,7 @@
 262: Dispense 550 uLs with 1000 uL tips at High pressure 1 time
 263: Move relative left by 5000
 264: Aspirate 550 uLs with 1000 uL tips at High pressure 1 time
-265: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+265: Move to Mag Separator column 1 with 1000 uL tips moving up by 15000
 266: Dispense 600 uLs with 1000 uL tips at High pressure 1 time
 267: Delay for 3 seconds
 268: Dispense 50 uLs with 1000 uL tips at High pressure 1 time
@@ -289,7 +289,7 @@
 270: Dispense 50 uLs with 1000 uL tips at High pressure 1 time
 271: Home pipettor fast
 272: Delay for 2 minutes
-273: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+273: Move to Mag Separator column 1 with 1000 uL tips moving up by 15000
 274: Aspirate 720 uLs with 1000 uL tips at High pressure 1 time
 275: Move to Sample Rack tray C with 1000 uL tips
 276: Dispense 720 uLs with 1000 uL tips at High pressure 1 time
@@ -303,7 +303,7 @@
 0: Comment: Wash 1 Solution
 282: Move to Reagent Cartridge tray A column 3 with 1000 uL tips
 283: Aspirate 250 uLs with 1000 uL tips at High pressure 1 time
-284: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+284: Move to Mag Separator column 1 with 1000 uL tips moving up by 15000
 285: Dispense 250 uLs with 1000 uL tips at High pressure 1 time
 286: Delay for 10 seconds
 287: Aspirate 275 uLs with 1000 uL tips at High pressure 1 time
@@ -316,7 +316,7 @@
 0: Comment: Wash 2 Solution
 292: Move to Reagent Cartridge tray A column 10 with 1000 uL tips
 293: Aspirate 200 uLs with 1000 uL tips at Low pressure 1 time
-294: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+294: Move to Mag Separator column 1 with 1000 uL tips moving up by 15000
 295: Dispense 200 uLs with 1000 uL tips at Low pressure 1 time
 296: Delay for 10 seconds
 297: Aspirate 225 uLs with 1000 uL tips at Low pressure 1 time
@@ -357,6 +357,7 @@
 320: Delay for 3 seconds
 321: Dispense 20 uLs with 200 uL tips at Low pressure 1 time
 0: Move relative down by 100000
+0: Comment: Elution
 322: Disengage magnet
 0: Home pipettor
 323: Delay for 5 minutes

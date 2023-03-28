@@ -36,4 +36,4 @@
 26: Comment: Tip 5
 27: Eject tips in A column 5
 0: Comment: Thermocycling
-28: Thermocycle Pre-Amp at 82 C for 3 minutes and cycle 6 times between 82 C for 120 seconds and 53 C for 240 seconds
+28: Thermocycle Pre-Amp at 95 C for 3 minutes and cycle 6 times between 95 C for 120 seconds and 60 C for 240 seconds

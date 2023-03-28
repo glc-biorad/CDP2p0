@@ -1,8 +1,8 @@
-0: Move to Pre-Amp Thermocycler column 1 with 50 uL tips moving up by 30000
-1: Dispense 27 uLs with 50 uL tips at Low pressure 1 time
-2: Delay 5 seconds
-3: Dispense 10 uLs with 50 uL tips at Low pressure 1 time
-4: Comment: Tip 5
-5: Eject tips in A column 5
-6: Comment: Thermocycling
-7: Thermocycle Pre-Amp at 82 C for 3 minutes and cycle 6 times between 82 C for 120 seconds and 53 C for 240 seconds
+0: Move Chip C
+1: Move Lid C
+2: Move Engaged Chip C
+3: Move Chip D
+4: Move Lid D
+5: Pause for user input
+6: Move Engaged Chip D
+7: Home pipettor along Z
