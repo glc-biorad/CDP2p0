@@ -935,8 +935,9 @@ class BuildProtocolController:
 					coordinate = self.coordinates_model.select(table_name, "Tray", tray, column)
 					chip = [coordinate[0][4], coordinate[0][5], coordinate[0][6], coordinate[0][7]]
 					consumable = 'Tray'
-					coordinate = self.coordinates_model.select(table_name, consumable, 'B', column=0)
-					tray = [coordinate[0][4], coordinate[0][5], coordinate[0][6], coordinate[0][7]]
+					#coordinate = self.coordinates_model.select(table_name, consumable, 'B', column=0)
+					#tray = [coordinate[0][4], coordinate[0][5], coordinate[0][6], coordinate[0][7]]
+					tray = [-291900, -75000, -550000, -1198000]
 					# Move the lid
 					self.upper_gantry.move_chip_and_lid_temporary(chip, tray)
 					# Log
