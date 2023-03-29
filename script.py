@@ -19,27 +19,26 @@ import time
 if __name__ == '__main__':
     m = Meerstetter()
     
-    address = 4
-    cutoff = 3
+    address = 9
 
-    target_temp = 89
-    print(target_temp)
-    m.change_temperature(address, target_temp, True)
-    print(f'180 seconds')
-    time.sleep(180)
+    temp = 95
+    t = 180
+    print(f"Working on temperature set to {temp} C for {t} seconds.")
+    m.change_temperature(address, temp, True)
+    time.sleep(t)
 
-    for i in range(40):
-        target_temp = 93
-        print(target_temp)
-        m.change_temperature(address, target_temp, True)
-        print(f'Wait 40 seconds')
-        time.sleep(40)
-        target_temp = 55
-        print(target_temp)
-        m.change_temperature(address, target_temp, True)
-        print(f'Wait 80 seconds')
-        time.sleep(80)
+    for i in range(6):
+        temp = 95
+        t = 15
+        print(f"Working on step {i} with temperature set to {temp} C for {t} seconds.")
+        m.change_temperature(address, temp, True)
+        time.sleep(t)
+        temp = 60
+        t = 60*4
+        print(f"Working on step {i} with temperature set to {temp} C for {t} seconds.")
+        m.change_temperature(address, temp, True)
+        time.sleep(t)
 
     target_temp = 30
-    print(target_temp)
     m.change_temperature(address, target_temp, True)
+    print('dONe')

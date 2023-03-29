@@ -30,37 +30,19 @@ def lld_thread_func():
 if __name__ == '__main__':
     ug = UpperGantry()
     interface = fapi_interface()
-    #interface.pipettor_gantry.axis.home('pipettor_gantry', 1)
 
-    #coordinate = [-259500,-630000,-947000,0]
-    coordinate = [-259500,-630000,-647000,0]
-    dz = -400000
-    x = coordinate[0]
-    y = coordinate[1]
-    z = coordinate[2]
-    dp = coordinate[3]
-    ug.move(x,y,z,dp,tip=1000)
-    #ug.move_relative('down', dz, 'fast')
-    interface.pipettor_gantry.axis.move('pipettor_gantry', 3, -947000, 50000, False)
-    if ug.get_pipettor().liquid_level_detect():
-        ug.aspirate(935, 'high', 1000)
-        interface.pipettor_gantry.axis.move('pipettor_gantry',3, -647000,190000, False)
-        ug.dispense(1000,'high')
-    #t_start = time.time()
-    #lld = False
-    #print(ug.get_pipettor()._poll_until_complete(check_for_sum=16))
-    #print(ug.get_pipettor().liquid_level_detect())
-    #if ug.get_pipettor().liquid_level_detect() == True:
-        #ug.aspirate(935, 'high', 1000)
-        #interface.pipettor_gantry.axis.move('pipettor_gantry',3, -647000,190000, False)
-        #ug.dispense(1000,'high')
+    #ug.drip()
+    ug.close_valve()
 
-    #while ug.get_pipettor().liquid_level_detect() != True:
-    #    if time.time() - t_start > 5:
-    #        lld = True
-    #        break
-        #interface.pipettor_gantry.axis.move('pipettor_gantry',3, -647000,190000, False)
-    #if lld:
+    #coordinate = [-259500,-630000,-647000,0]
+    #dz = -400000
+    #x = coordinate[0]
+    #y = coordinate[1]
+    #z = coordinate[2]
+    #dp = coordinate[3]
+    #ug.move(x,y,z,dp,tip=1000)
+    #interface.pipettor_gantry.axis.move('pipettor_gantry', 3, -947000, 50000, False)
+    #if ug.get_pipettor().liquid_level_detect():
     #    ug.aspirate(935, 'high', 1000)
-    #interface.pipettor_gantry.axis.move('pipettor_gantry',3, -647000,190000, False)
-    #ug.dispense(1000,'high')
+    #    interface.pipettor_gantry.axis.move('pipettor_gantry',3, -647000,190000, False)
+    #    ug.dispense(1000,'high')
