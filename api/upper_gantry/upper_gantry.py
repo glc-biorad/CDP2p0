@@ -1027,6 +1027,14 @@ class UpperGantry(api.util.motor.Motor):
             logger = Logger(__file__, self.check_for_tipless_contact.__name__)
             logger.log('WARNING', "Unit believes it has {0} microliter tips on currently.".format(self.__pipette_tip.get_type()))
 
+    def drip(self):
+        self.turn_on_air_valve(2)
+        self.__pipettor.open_valve()
+
+    def close_valve(self):
+        self.turn_off_air_valve(2)
+        self.__pipettor.close_valve()
+
     # Aspirate Method.
     def aspirate(self, aspirate_vol, pressure=None, pipette_tip_type=None):
         # Pressures:
@@ -1043,7 +1051,7 @@ class UpperGantry(api.util.motor.Motor):
             elif pressure == 'low':
                 pressure = -100
             elif pressure == 'lowest':
-                pressure = -20
+                pressure = -15
             elif pressure == 'highest':
                 pressure = -300
             elif pressure == 'high':
@@ -1097,11 +1105,11 @@ class UpperGantry(api.util.motor.Motor):
             if pressure.lower() == 'low':
                 pressure = 100
             elif pressure.lower() == 'high':
-                pressure = None
+                pressure = 300
             elif pressure.lower() == 'lowest':
-                pressure = 20
+                pressure = 15
             elif pressure.lower() == 'highest':
-                pressure = None
+                pressure = 500
         # Check the type.
         check_type(dispense_vol, int)
         logger = Logger(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.dispense.__name__))
@@ -1175,11 +1183,11 @@ class UpperGantry(api.util.motor.Motor):
         # Turn the pump back on.
         self.__pipettor.set_pressure(pressure=241, direction=1)
         # Open the valve.
-        self.__pipettor.open_valve()
+        #self.__pipettor.open_valve()
         # Pushout air.
-        delay(max_push_out_time, 'seconds')
+        #delay(max_push_out_time, 'seconds')
         # Close the valve.
-        self.__pipettor.close_valve()
+        #self.__pipettor.close_valve()
         # Set pressure.
         self.__pipettor.set_pressure(pressure=0, direction=1)
         # Change the timeout for the seyonic controller to the default of 65 seconds
