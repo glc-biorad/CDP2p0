@@ -19,22 +19,22 @@ import time
 if __name__ == '__main__':
     m = Meerstetter()
     
-    address = 9
+    address = 1
 
-    temp = 95
+    temp = 90
     t = 180
     print(f"Working on temperature set to {temp} C for {t} seconds.")
     m.change_temperature(address, temp, True)
     time.sleep(t)
 
-    for i in range(6):
-        temp = 95
-        t = 15
+    for i in range(40):
+        temp = 93
+        t = 40
         print(f"Working on step {i} with temperature set to {temp} C for {t} seconds.")
         m.change_temperature(address, temp, True)
         time.sleep(t)
-        temp = 60
-        t = 60*4
+        temp = 55
+        t = 80
         print(f"Working on step {i} with temperature set to {temp} C for {t} seconds.")
         m.change_temperature(address, temp, True)
         time.sleep(t)
