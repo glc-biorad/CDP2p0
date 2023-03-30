@@ -27,35 +27,35 @@
 26: Dispense 10 uLs with 50 uL tips at Low pressure 1 time
 27: Move relative down by 25000
 28: Comment: Rigurous Mixing Protocol
-29: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+29: Aspirate 30 uLs with 50 uL tips at Lowest pressure 1 time
 30: Delay for 2 seconds
-31: Dispense 30 uLs with 50 uL tips at High pressure 1 time
+31: Dispense 30 uLs with 50 uL tips at Lowest pressure 1 time
 32: Delay for 2 seconds
-33: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+33: Aspirate 30 uLs with 50 uL tips at Lowest pressure 1 time
 34: Delay for 2 seconds
-35: Dispense 30 uLs with 50 uL tips at High pressure 1 time
+35: Dispense 30 uLs with 50 uL tips at Lowest pressure 1 time
 36: Delay for 2 seconds
-37: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+37: Aspirate 30 uLs with 50 uL tips at Lowest pressure 1 time
 38: Delay for 2 seconds
-39: Dispense 30 uLs with 50 uL tips at High pressure 1 time
+39: Dispense 30 uLs with 50 uL tips at Lowest pressure 1 time
 40: Delay for 2 seconds
-41: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+41: Aspirate 30 uLs with 50 uL tips at Lowest pressure 1 time
 42: Delay for 2 seconds
-43: Dispense 30 uLs with 50 uL tips at High pressure 1 time
+43: Dispense 30 uLs with 50 uL tips at Lowest pressure 1 time
 44: Delay for 2 seconds
-45: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+45: Aspirate 30 uLs with 50 uL tips at Lowest pressure 1 time
 46: Delay for 2 seconds
-47: Dispense 30 uLs with 50 uL tips at High pressure 1 time
+47: Dispense 30 uLs with 50 uL tips at Lowest pressure 1 time
 48: Delay for 2 seconds
 49: Delay for 3 seconds
-50: Dispense 10 uLs with 50 uL tips at Low pressure 1 time
+50: Dispense 10 uLs with 50 uL tips at Lowest pressure 1 time
 51: Delay for 10 seconds
 52: Comment: Air Bubble Removal
-53: Aspirate 5 uLs with 50 uL tips at Low pressure 1 time
+53: Aspirate 5 uLs with 50 uL tips at LoLowest w pressure 1 time
 54: Move relative up by 100000
-55: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+55: Dispense 5 uLs with 50 uL tips at Lowest pressure 1 time
 56: Delay for 3 seconds
-57: Dispense 2 uLs with 50 uL tips at Low pressure 1 time
+57: Dispense 2 uLs with 50 uL tips at Lowest pressure 1 time
 58: Comment: Dip
 59: Move relative down by 100000
 60: Comment: Tip 9
@@ -91,29 +91,29 @@
 90: Comment: Rigurious Mix
 91: Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time
 92: Delay for 3 seconds
-93: Dispense 20 uLs with 50 uL tips at High pressure 1 time
+93: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
 94: Delay for 3 seconds
 95: Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time
 96: Delay for 3 seconds
-97: Dispense 20 uLs with 50 uL tips at High pressure 1 time
+97: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
 98: Delay for 3 seconds
 99: Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time
 100: Delay for 3 seconds
-101: Dispense 20 uLs with 50 uL tips at High pressure 1 time
+101: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
 102: Delay for 3 seconds
 103: Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time
 104: Delay for 3 seconds
-105: Dispense 20 uLs with 50 uL tips at High pressure 1 time
+105: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
 106: Delay for 3 seconds
 107: Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time
 108: Delay for 3 seconds
-109: Dispense 20 uLs with 50 uL tips at High pressure 1 time
+109: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
 110: Delay for 3 seconds
 111: Comment: Air Bubble Removal
-112: Aspirate 5 uLs with 50 uL tips at Low pressure 1 time
+112: Aspirate 5 uLs with 50 uL tips at Lowest pressure 1 time
 113: Move relative up by 50000
-114: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+114: Dispense 5 uLs with 50 uL tips at Lowest pressure 1 time
 115: Delay for 3 seconds
-116: Dispense 2 uLs with 50 uL tips at Low pressure 1 time
+116: Dispense 2 uLs with 50 uL tips at Lowest pressure 1 time
 117: Comment: Dip
 118: Move relative down by 50000
