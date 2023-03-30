@@ -89,6 +89,7 @@ MAIN_ACTION_KEY_WORDS = [
 	'LLD',
 	'Light',
 	'Load',
+	'Drip',
 ]
 TOPLEVEL_CYCLE_WIDTH = 970
 TOPLEVEL_CYCLE_HEIGHT = 210
@@ -631,6 +632,21 @@ class BuildProtocolController:
 			try:
 				amount = int(amount)
 				action_message = action_message + f" by {amount}"
+			except:
+				tk.messagebox.showwarning(
+					title="Failed to Add Action",
+					message="Move relative actions require a value to move in usteps. Please enter a value in the Parameter entry box."
+				)
+				return None
+		elif 'Drip' in action_message.split():
+			amount = self.view.other_parameter_sv.get()
+			try:
+				amount = int(amount)
+				if amount == 1:
+					units = 'second'
+				else:
+					units = 'seconds'
+				action_message = action_message + f" for {amount} {units}"
 			except:
 				tk.messagebox.showwarning(
 					title="Failed to Add Action",
@@ -1540,7 +1556,16 @@ class BuildProtocolController:
 					# Check if all the units are done
 					all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
 				print('ALL DONE')
-
+			elif split[0] == 'Drip':
+				# Open the valve for a specified time then close the valve (allow gravity to dispense the solution in the tips)
+				time_amount = int(split[-2])
+				time_units = split[-1]
+				# Drip
+				self.upper_gantry.drip()
+				# Delay for the time
+				delay(value=time_amount, unit=time_units)
+				# Close the valve
+				self.upper_gantry.close_valve()
 			elif split[0] == 'Thermocycle':
 				# Initialize the Meerstetter
 				try:

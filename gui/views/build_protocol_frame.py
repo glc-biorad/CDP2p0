@@ -218,7 +218,7 @@ OTHER_OPTIONS = (
 	('gui/images/tray.png', 'Trays', "Open Tray AB", "Open Tray CD", "Close Tray AB", "Close Tray CD"),
 	('gui/images/clamp.png', 'Clamps', "Lower Thermocycler A", "Lower Thermocycler B", "Lower Thermocycler C", "Lower Thermocycler D", "Raise Thermocycler A", "Raise Thermocycler B", "Raise Thermocycler C", "Raise Thermocycler D"),
 	('gui/images/imager.png', 'Imager', "Scan A", "Scan B", "Scan C", "Scan D", "Light Show"),
-	('gui/images/other.png', 'Other', "LLD", "Add a comment", "Pause for user input", "Load Tip Tray A", "Load Tip Tray B", "Move Lid A", "Move Lid B", "Move Lid C", "Move Lid D", "Move Chip A", "Move Chip B", "Move Chip C", "Move Chip D", "Move Engaged Chip A", "Move Engaged Chip B", "Move Engaged Chip C", "Move Engaged Chip D", "Suction cups on", "Suction cups off", "Extend drip plate"),
+	('gui/images/other.png', 'Other', "Drip", "LLD", "Add a comment", "Pause for user input", "Load Tip Tray A", "Load Tip Tray B", "Move Lid A", "Move Lid B", "Move Lid C", "Move Lid D", "Move Chip A", "Move Chip B", "Move Chip C", "Move Chip D", "Move Engaged Chip A", "Move Engaged Chip B", "Move Engaged Chip C", "Move Engaged Chip D", "Suction cups on", "Suction cups off", "Extend drip plate"),
 )
 #OTHER_OPTION_VALUES = [
 #	"Home pipettor",
@@ -1080,6 +1080,9 @@ class BuildProtocolFrame(ctk.CTkFrame):
 			self.entry_other_parameter.configure(state='normal')
 		elif 'Extend' in other_option:
 			self.other_parameter_sv.set("Enter value in usteps")
+			self.entry_other_parameter.configure(state='normal')
+		elif 'Drip' in other_option:
+			self.other_parameter_sv.set("Enter drip time in seconds")
 			self.entry_other_parameter.configure(state='normal')
 		else:
 			self.other_parameter_sv.set('')
