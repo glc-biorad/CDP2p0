@@ -75,8 +75,8 @@ Reagent Cartridge,A,9,-213900,-626000,-756500,0,1000
 Reagent Cartridge,A,10,-208300,-628000,-845000,0,1000
 Reagent Cartridge,A,11,-202300,-630000,-947000,0,1000
 Reagent Cartridge,A,12,-195400,-630000,-947000,0,1000
-Reagent Cartridge,B,1,-259500,-1045000,-950000,-550000,1000
-Reagent Cartridge,B,2,-251500,-1045000,-950000,-550000,1000
+Reagent Cartridge,B,1,-259500,-1045000,-950000,0,1000
+Reagent Cartridge,B,2,-251500,-1045000,-950000,0,1000
 Reagent Cartridge,B,3,0,0,0,0,1000
 Reagent Cartridge,B,4,0,0,0,0,1000
 Reagent Cartridge,B,5,0,0,0,0,1000
@@ -87,8 +87,8 @@ Reagent Cartridge,B,9,0,0,0,0,1000
 Reagent Cartridge,B,10,0,0,0,0,1000
 Reagent Cartridge,B,11,0,0,0,0,1000
 Reagent Cartridge,B,12,0,0,0,0,1000
-Reagent Cartridge,C,1,-258000,-1460000,-950000,-550000,1000
-Reagent Cartridge,C,2,-251500,-1460000,-950000,-550000,1000
+Reagent Cartridge,C,1,-258000,-1460000,-950000,0,1000
+Reagent Cartridge,C,2,-251500,-1460000,-950000,0,1000
 Reagent Cartridge,C,3,-245000,-1460000,-850000,0,1000
 Reagent Cartridge,C,4,-241000,-1460000,-755000,0,1000
 Reagent Cartridge,C,5,-235600,-1460000,-755000,0,1000
@@ -98,7 +98,7 @@ Reagent Cartridge,C,8,-219400,-1460000,-755000,0,1000
 Reagent Cartridge,C,9,-214000,-1460000,-755000,0,1000
 Reagent Cartridge,C,10,-208600,-1460000,-850000,0,1000
 Reagent Cartridge,C,11,0,0,0,0,1000
-Reagent Cartridge,C,12,-195000,-1460000,-950000,-550000,1000
+Reagent Cartridge,C,12,-195000,-1460000,-950000,0,1000
 Reagent Cartridge,D,1,0,0,0,0,1000
 Reagent Cartridge,D,2,0,0,0,0,1000
 Reagent Cartridge,D,3,0,0,0,0,1000
@@ -119,10 +119,10 @@ Aux Heater,A,1,0,0,0,0,1000
 Aux Heater,B,1,0,0,0,0,1000
 Aux Heater,C,1,0,0,0,0,1000
 Aux Heater,D,1,0,0,0,0,1000
-Heater/Shaker,nan,1,-396300,-943000,-621000,-490000,1000
-Heater/Shaker,nan,2,-379300,-943000,-631000,-490000,1000
-Heater/Shaker,nan,3,-360300,-943000,-631000,-490000,1000
-Heater/Shaker,nan,4,-343300,-943000,-631000,-490000,1000
+Heater/Shaker,nan,1,-396300,-943000,-621000,-390000,1000
+Heater/Shaker,nan,2,-379300,-943000,-631000,-390000,1000
+Heater/Shaker,nan,3,-360300,-943000,-631000,-390000,1000
+Heater/Shaker,nan,4,-343300,-943000,-631000,-390000,1000
 Mag Separator,nan,1,-399300,-1422250,-793000,0,1000
 Mag Separator,nan,2,-393900,-1420000,-790000,0,1000
 Mag Separator,nan,3,-388300,-1423000,-792000,0,1000
