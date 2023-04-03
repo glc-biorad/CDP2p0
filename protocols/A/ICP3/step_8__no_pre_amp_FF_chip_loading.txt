@@ -1,18 +1,19 @@
-43: Comment: Tip 13
-44: Pickup tips from A column 12
 0: Comment: Droplet Generation Oil
-45: Move to Reagent Cartridge tray A column 6 with 200 uL tips
-46: Aspirate 60 uLs with 200 uL tips at Low pressure 1 time
-47: Move to Tray tray B column 1 with 200 uL tips
-48: Dispense 60 uLs with 200 uL tips at Low pressure 1 time
-49: Move to DG8 tray B column 3 with 200 uL tips
-50: Aspirate 60 uLs with 200 uL tips at Low pressure 1 time
-51: Move to Tray tray B column 1 with 200 uL tips
-52: Dispense 60 uLs with 200 uL tips at Low pressure 1 time
-53: Comment: Go back to the Oil in the DG8 chip to use to push the droplets into a monolayer
-54: Move to DG8 tray B column 1 with 200 uL tips
-55: Aspirate 30 uLs with 200 uL tips at Low pressure 1 time
-56: Move to Tray tray B column 1 with 200 uL tips
-57: Dispense 30 uLs with 200 uL tips at Low pressure 1 time
-58: Comment: Tip 13
-59: Eject tips in A column 12
+1: Comment: Tip 
+2: Pickup tips from B column 12
+3: Comment: Droplet Generation Oil
+4: Move to Reagent Cartridge tray B column 6 with 200 uL tips
+5: Aspirate 60 uLs with 200 uL tips at Lowest pressure 1 time
+6: Move to Tray tray B column 1 with 200 uL tips
+7: Pause for user input
+8: Drip for 60 seconds
+9: Comment: NIPT Solution
+10: Move to DG8 tray B column 3 with 200 uL tips
+11: Aspirate 85 uLs with 200 uL tips at Lowest pressure 1 time
+12: Delay for 10 seconds
+13: Move to Tray tray B column 1 with 200 uL tips
+14: Pause for user input
+15: Drip for 60 seconds
+16: Delay for 3 seconds
+17: Dispense 5 uLs with 200 uL tips at Lowest pressure 1 time
+18: Comment: Make sure we dont need anymore droplets from DG8

@@ -1,0 +1,77 @@
+0: Comment: Tip 15
+1: Pickup tips from B column 7
+2: Comment: Assay prep for FF
+3: Comment: Resuspension Buffer
+4: Move to Reagent Cartridge tray A column 8 with 50 uL tips
+5: Aspirate 18 uLs with 50 uL tips at Low pressure 1 time
+6: Delay for 5 seconds
+7: Move to Assay Strip tray A column 1 with 50 uL tips
+8: Dispense 18 uLs with 50 uL tips at Low pressure 1 time
+9: Move relative up by 50000
+10: Delay for 3 seconds
+11: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+12: Move relative down by 50000
+13: Delay for 2 minutes
+14: Comment: Tip 15
+15: Eject tips in B column 7
+16: Comment: Tip 12
+17: Pickup tips from B column 5
+18: Move to Mag Separator column 3 with 50 uL tips
+19: Aspirate 8 uLs with 50 uL tips at Low pressure 1 time
+20: Move to Assay Strip tray A column 1 with 50 uL tips
+21: Dispense 8 uLs with 50 uL tips at Low pressure 1 time
+22: Comment: Rigurous Mix Protocol
+23: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+24: Delay for 3 seconds
+25: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+26: Delay for 3 seconds
+27: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+28: Delay for 3 seconds
+29: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+30: Delay for 3 seconds
+31: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+32: Delay for 3 seconds
+33: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+34: Delay for 3 seconds
+35: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+36: Delay for 3 seconds
+37: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+38: Delay for 3 seconds
+39: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+40: Delay for 3 seconds
+41: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+42: Delay for 3 seconds
+43: Move relative up by 50000
+44: Delay for 3 seconds
+45: Dispense 2 uLs with 50 uL tips at Low pressure 1 time
+46: Move relative down by 50000
+47: Comment: Air Bubble Removal
+48: Aspirate 5 uLs with 50 uL tips at Low pressure 1 time
+49: Move relative up by 50000
+50: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+51: Delay for 3 seconds
+52: Dispense 2 uLs with 50 uL tips at Low pressure 1 time
+53: Comment: Dip
+54: Move relative down by 50000
+55: Comment: Generate Droplets without Pre-Amp
+56: Aspirate 24 uLs with 50 uL tips at Lowest pressure 1 time
+57: Move to DG8 tray B column 2 with 50 uL tips
+58: Pause for user input
+59: Dispense 24 uLs with 50 uL tips at Lowest pressure 1 time
+60: Comment: Tip 12
+61: Eject tips in B column 5
+62: Comment: Tip 13
+63: Pickup tips from A column 12
+64: Comment: Droplet Generation Oil
+65: Move to Reagent Cartridge tray A column 6 with 200 uL tips
+66: Aspirate 100 uLs with 200 uL tips at Low pressure 1 time
+67: Move to DG8 tray B column 1 with 200 uL tips
+68: Pause for user input
+69: Dispense 100 uLs with 200 uL tips at Low pressure 1 time
+70: Comment: Tip 13
+71: Eject tips in A column 12
+72: Comment: Move the pipettor head down further to engage the mandrels with the DG8 chip gaskets
+73: Move to DG8 tray B column 3 without tips moving down by 680000
+74: Comment: Generate droplets
+75: Generate Standard Droplets
+76: Home pipettor

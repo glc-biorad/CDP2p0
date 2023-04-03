@@ -3,46 +3,6 @@
 1: Engage magnet
 0: Comment: Tip 1
 2: Pickup tips from A column 1
-3: Move to Sample Rack tray A with 1000 uL tips
-4: Aspirate 800 uLs with 1000 uL tips at High pressure 1 time
-5: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 370000 with the drip plate
-6: Dispense 800 uLs with 1000 uL tips at High pressure 1 time
-7: Delay for 2 seconds
-8: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
-0: Move relative down by 370000
-9: Move to Sample Rack tray A with 1000 uL tips
-10: Aspirate 800 uLs with 1000 uL tips at High pressure 1 time
-11: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 370000 with the drip plate
-12: Dispense 800 uLs with 1000 uL tips at High pressure 1 time
-13: Delay for 2 seconds
-14: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
-0: Move relative down by 370000
-15: Move to Sample Rack tray A with 1000 uL tips
-16: Aspirate 800 uLs with 1000 uL tips at High pressure 1 time
-23: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 370000 with the drip plate
-18: Dispense 800 uLs with 1000 uL tips at High pressure 1 time
-19: Delay for 2 seconds
-20: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
-0: Move relative down by 370000
-21: Move to Sample Rack tray A with 1000 uL tips
-22: Aspirate 800 uLs with 1000 uL tips at High pressure 1 time
-23: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 370000 with the drip plate
-24: Dispense 800 uLs with 1000 uL tips at High pressure 1 time
-25: Delay for 2 seconds
-26: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
-0: Move relative down by 370000
-21: Move to Sample Rack tray A with 1000 uL tips
-22: Aspirate 800 uLs with 1000 uL tips at High pressure 1 time
-23: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 370000 with the drip plate
-24: Dispense 800 uLs with 1000 uL tips at High pressure 1 time
-25: Delay for 2 seconds
-26: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
-0: Move relative down by 370000
-0: Comment: Proteinase K
-27: Move to Reagent Cartridge tray A column 4 with 1000 uL tips
-28: Aspirate 160 uLs with 1000 uL tips at High pressure 1 time
-29: Move to Heater/Shaker column 1 with 1000 uL tips with the drip plate
-30: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
 0: Comment: Binding Solution
 31: Move to Reagent Cartridge tray A column 1 with 1000 uL tips
 32: Mix 935 uLs with 1000 uL tips at High pressure 1 time

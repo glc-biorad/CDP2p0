@@ -20,25 +20,80 @@ if __name__ == '__main__':
     m = Meerstetter()
     
     address = 1
-
-    temp = 90
-    t = 180
+    temp = 38
+    t = 45 * 60
+    print(f"Working on temperature set to {temp} C for {t} seconds.")
+    m.change_temperature(address, temp, True)
+    address = 2
     print(f"Working on temperature set to {temp} C for {t} seconds.")
     m.change_temperature(address, temp, True)
     time.sleep(t)
 
-    for i in range(40):
-        temp = 93
-        t = 40
-        print(f"Working on step {i} with temperature set to {temp} C for {t} seconds.")
+    address = 1
+    temp = 92
+    t = 10 * 60
+    print(f"Working on temperature set to {temp} C for {t} seconds.")
+    m.change_temperature(address, temp, True)
+    address = 2
+    print(f"Working on temperature set to {temp} C for {t} seconds.")
+    m.change_temperature(address, temp, True)
+    time.sleep(t)
+
+    for i in range(44):
+        print(f"Cycle: {i+1}")
+        address = 1
+        temp = 59
+        t = 105
+        print(f"Working on temperature set to {temp} C for {t} seconds.")
+        m.change_temperature(address, temp, True)
+        address = 2
+        print(f"Working on temperature set to {temp} C for {t} seconds.")
         m.change_temperature(address, temp, True)
         time.sleep(t)
-        temp = 55
-        t = 80
-        print(f"Working on step {i} with temperature set to {temp} C for {t} seconds.")
+        # 
+        address = 1
+        temp = 91
+        t = 50
+        print(f"Working on temperature set to {temp} C for {t} seconds.")
+        m.change_temperature(address, temp, True)
+        address = 2
+        print(f"Working on temperature set to {temp} C for {t} seconds.")
         m.change_temperature(address, temp, True)
         time.sleep(t)
 
-    target_temp = 30
+    address = 1
+    temp = 59
+    t = 105
+    print(f"Working on temperature set to {temp} C for {t} seconds.")
+    m.change_temperature(address, temp, True)
+    address = 2
+    print(f"Working on temperature set to {temp} C for {t} seconds.")
+    m.change_temperature(address, temp, True)
+    time.sleep(t)
+
+    address = 1
+    temp = 74
+    t = 15 * 60
+    print(f"Working on temperature set to {temp} C for {t} seconds.")
+    m.change_temperature(address, temp, True)
+    address = 2
+    print(f"Working on temperature set to {temp} C for {t} seconds.")
+    m.change_temperature(address, temp, True)
+    time.sleep(t)
+
+    address = 1
+    temp = 93
+    t = 10 * 60
+    print(f"Working on temperature set to {temp} C for {t} seconds.")
+    m.change_temperature(address, temp, True)
+    address = 2
+    print(f"Working on temperature set to {temp} C for {t} seconds.")
+    m.change_temperature(address, temp, True)
+    time.sleep(t)
+   
+    address = 1
+    target_temp = 20
+    m.change_temperature(address, target_temp, True)
+    address = 2
     m.change_temperature(address, target_temp, True)
     print('dONe')

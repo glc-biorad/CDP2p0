@@ -56,6 +56,7 @@
 25: Comment: Generate Droplets without Pre-Amp
 26: Aspirate 24 uLs with 50 uL tips at Lowest pressure 1 time
 27: Move to DG8 tray B column 2 with 50 uL tips
+0: Pause for user input
 28: Dispense 24 uLs with 50 uL tips at Lowest pressure 1 time
 29: Comment: Tip 12
 30: Eject tips in B column 5
@@ -65,6 +66,7 @@
 33: Move to Reagent Cartridge tray A column 6 with 200 uL tips
 34: Aspirate 100 uLs with 200 uL tips at Low pressure 1 time
 35: Move to DG8 tray B column 1 with 200 uL tips
+0: Pause for user input
 36: Dispense 100 uLs with 200 uL tips at Low pressure 1 time
 37: Comment: Tip 13
 38: Eject tips in A column 12
