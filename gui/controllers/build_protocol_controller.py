@@ -1320,12 +1320,13 @@ class BuildProtocolController:
 				all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
 				while False in all_done: 
 					# Step for A
-					if protocol_data['A']['use']:
+					if protocol_data['A']['use'] and protocol_data['A']['done'] == False:
 						ID = 'A'
 						address = 1
 						# Get the step currently on
 						step = protocol_data[ID]['step']
 						# Get the temperature and time for this step
+						cycle = 0
 						if 'cycle' in step:
 							whole_message = step.split('_')
 							step = whole_message[0]
@@ -1346,8 +1347,9 @@ class BuildProtocolController:
 						self.meerstetter.handle_device_status(address, temp_a)
 						# Change the temperature  and start the timer
 						if protocol_data[ID]['clock'] == 0:
-							print(f'starting clock for {protocol_data[ID]["step"]}')
-							self.meerstetter.change_temperature(address, temp_a)
+							print(f'starting clock for {protocol_data[ID]["step"]} for cycle number {cycle} on Thermocycler {ID}')
+							log.log(f'starting clock for {protocol_data[ID]["step"]} for cycle number {cycle} on Thermocycler {ID}', 0)
+							self.meerstetter.change_temperature(address, temp_a, True)
 							# Make sure the temperature is reached before starting to time
 							actual_temp = self.meerstetter.get_temperature(address)
 							if actual_temp - temp_cutoff <= temp_a <= actual_temp + temp_cutoff:
@@ -1362,10 +1364,12 @@ class BuildProtocolController:
 								if cycle > protocol_data[ID]['cycle'][0]:
 									if protocol_data[ID]['done'] == False:
 										print(f'ID {ID} done')
+										log.log(f"ID {ID} Thermocycling is complete", 0)
 										self.meerstetter.change_temperature(address, 30)
 										protocol_data[ID]['done'] = True
 										# Check if all the units are done
 										all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
+										print(all_done)
 									continue
 								if action == 'extension':
 									step = f'cycle_{cycle}_anneal'
@@ -1378,12 +1382,13 @@ class BuildProtocolController:
 							# Restart the clock
 							protocol_data[ID]['clock'] = 0
 					# Step for B
-					if protocol_data['B']['use']:
+					if protocol_data['B']['use'] and protocol_data['B']['done'] == False:
 						ID = 'B'
 						address = 2
 						# Get the step currently on
 						step = protocol_data[ID]['step']
 						# Get the temperature and time for this step
+						cycle = 0
 						if 'cycle' in step:
 							whole_message = step.split('_')
 							step = whole_message[0]
@@ -1404,8 +1409,9 @@ class BuildProtocolController:
 						self.meerstetter.handle_device_status(address, temp_b)
 						# Change the temperature  and start the timer
 						if protocol_data[ID]['clock'] == 0:
-							print(f'starting clock for {protocol_data[ID]["step"]}')
-							self.meerstetter.change_temperature(address, temp_b)
+							print(f'starting clock for {protocol_data[ID]["step"]} for cycle number {cycle} on Thermocycler {ID}')
+							log.log(f'starting clock for {protocol_data[ID]["step"]} for cycle number {cycle} on Thermocycler {ID}', 0)
+							self.meerstetter.change_temperature(address, temp_b, True)
 							# Make sure the temperature is reached before starting to time
 							actual_temp = self.meerstetter.get_temperature(address)
 							if actual_temp - temp_cutoff <= temp_b <= actual_temp + temp_cutoff:
@@ -1420,6 +1426,7 @@ class BuildProtocolController:
 								if cycle > protocol_data[ID]['cycle'][0]:
 									if protocol_data[ID]['done'] == False:
 										print(f'ID {ID} done')
+										log.log(f"ID {ID} Thermocycling is complete", 0)
 										self.meerstetter.change_temperature(address, 30)
 										protocol_data[ID]['done'] = True
 										# Check if all the units are done
@@ -1436,13 +1443,14 @@ class BuildProtocolController:
 							# Restart the clock
 							protocol_data[ID]['clock'] = 0
 					# Step for C
-					if protocol_data['C']['use']:
+					if protocol_data['C']['use'] and protocol_data['C']['done'] == False:
 						ID = 'C'
 						address = 3
 						# Get the step currently on
 						# Get the step currently on
 						step = protocol_data[ID]['step']
 						# Get the temperature and time for this step
+						cycle =0
 						if 'cycle' in step:
 							whole_message = step.split('_')
 							step = whole_message[0]
@@ -1463,8 +1471,9 @@ class BuildProtocolController:
 						self.meerstetter.handle_device_status(address, temp_c)
 						# Change the temperature  and start the timer
 						if protocol_data[ID]['clock'] == 0:
-							print(f'starting clock for {protocol_data[ID]["step"]}')
-							self.meerstetter.change_temperature(address, temp_c)
+							print(f'starting clock for {protocol_data[ID]["step"]} for cycle number {cycle} on Thermocycler {ID}')
+							log.log(f'starting clock for {protocol_data[ID]["step"]} for cycle number {cycle} on Thermocycler {ID}', 0)
+							self.meerstetter.change_temperature(address, temp_c, True)
 							# Make sure the temperature is reached before starting to time
 							actual_temp = self.meerstetter.get_temperature(address)
 							if actual_temp - temp_cutoff <= temp_c <= actual_temp + temp_cutoff:
@@ -1479,6 +1488,7 @@ class BuildProtocolController:
 								if cycle > protocol_data[ID]['cycle'][0]:
 									if protocol_data[ID]['done'] == False:
 										print(f'ID {ID} done')
+										log.log(f"ID {ID} Thermocycling is complete", 0)
 										self.meerstetter.change_temperature(address, 30)
 										protocol_data[ID]['done'] = True
 										# Check if all the units are done
@@ -1495,12 +1505,13 @@ class BuildProtocolController:
 							# Restart the clock
 							protocol_data[ID]['clock'] = 0
 					# Step for D
-					if protocol_data['D']['use']:
+					if protocol_data['D']['use'] and protocol_data['D']['done'] == False:
 						ID = 'D'
 						address = 4
 						# Get the step currently on
 						step = protocol_data[ID]['step']
 						# Get the temperature and time for this step
+						cycle = 0
 						if 'cycle' in step:
 							whole_message = step.split('_')
 							step = whole_message[0]
@@ -1521,8 +1532,9 @@ class BuildProtocolController:
 						self.meerstetter.handle_device_status(address, temp_d)
 						# Change the temperature  and start the timer
 						if protocol_data[ID]['clock'] == 0:
-							print(f'starting clock for {protocol_data[ID]["step"]}')
-							self.meerstetter.change_temperature(address, temp_d)
+							print(f'starting clock for {protocol_data[ID]["step"]} for cycle number {cycle} on Thermocycler {ID}')
+							log.log(f'starting clock for {protocol_data[ID]["step"]} for cycle number {cycle} on Thermocycler {ID}', 0)
+							self.meerstetter.change_temperature(address, temp_d, True)
 							# Make sure the temperature is reached before starting to time
 							actual_temp = self.meerstetter.get_temperature(address)
 							if actual_temp - temp_cutoff <= temp_d <= actual_temp + temp_cutoff:
@@ -1538,6 +1550,7 @@ class BuildProtocolController:
 								if cycle > protocol_data[ID]['cycle'][0]:
 									if protocol_data[ID]['done'] == False:
 										print(f'ID {ID} done')
+										log.log(f"ID {ID} Thermocycling is complete", 0)
 										self.meerstetter.change_temperature(address, 30)
 										protocol_data[ID]['done'] = True
 										# Check if all the units are done
@@ -1556,6 +1569,8 @@ class BuildProtocolController:
 					# Check if all the units are done
 					all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
 				print('ALL DONE')
+				log.log(f"All Thermocycling is complete", 0)
+				self.meerstetter.close()
 			elif split[0] == 'Drip':
 				# Open the valve for a specified time then close the valve (allow gravity to dispense the solution in the tips)
 				time_amount = int(split[-2])
