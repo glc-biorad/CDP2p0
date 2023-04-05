@@ -1,5 +1,5 @@
 0: Comment: Droplet Generation Oil
-1: Comment: Tip 
+1: Comment: Tip
 2: Pickup tips from B column 12
 3: Comment: Droplet Generation Oil
 4: Move to Reagent Cartridge tray B column 6 with 200 uL tips
@@ -17,3 +17,9 @@
 16: Delay for 3 seconds
 17: Dispense 5 uLs with 200 uL tips at Lowest pressure 1 time
 18: Comment: Make sure we dont need anymore droplets from DG8
+19: Move to Reagent Cartridge tray B column 6 with 200 uL tips
+20: Aspirate 60 uLs with 200 uL tips at Lowest pressure 1 time
+21: Move to Tray tray B column 1 with 200 uL tips
+22: Pause for user input
+23: Drip for 60 seconds
+24: Home pipettor
