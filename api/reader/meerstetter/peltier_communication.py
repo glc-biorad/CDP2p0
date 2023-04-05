@@ -47,21 +47,24 @@ class PeltierCommunication():
         '''
         Expects response to have similar form.
         '''
-        if response[-1] == '\r':
-            response = response[:-1]
-        response_control = str(response[0])
-        response_address = str(response[1:3])
-        response_sequence_number = str(response[3:7])
-        response_checksum = str(response[-4:])
-        # Check control of response is '!'
-        if assert_control:
-            assert response_control == '!'
-        # Compare the addresses.
-        if assert_address:
-            assert response_address == self.__address
-        # Compare the sequence number.
-        if assert_sequence_number:
-            assert response_sequence_number == self.__sequence_number
-        # Compare the checksum.
-        if assert_checksum:
-            assert response_checksum == self.__checksum
+        try:
+            if response[-1] == '\r':
+                response = response[:-1]
+            response_control = str(response[0])
+            response_address = str(response[1:3])
+            response_sequence_number = str(response[3:7])
+            response_checksum = str(response[-4:])
+            # Check control of response is '!'
+            if assert_control:
+                assert response_control == '!'
+            # Compare the addresses.
+            if assert_address:
+                assert response_address == self.__address
+            # Compare the sequence number.
+            if assert_sequence_number:
+                assert response_sequence_number == self.__sequence_number
+            # Compare the checksum.
+            if assert_checksum:
+                assert response_checksum == self.__checksum
+        except Exception as e:
+            print(e)

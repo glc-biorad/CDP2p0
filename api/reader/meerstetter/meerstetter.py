@@ -143,11 +143,14 @@ class Meerstetter():
         # Compare the response.
         pcom.compare_with_response(response, assert_checksum=False)
         # Get the device status from the response.
-        device_status_int = int(response[7:-4])
-        if return_type == int:
-            return device_status_int
-        elif return_type == str:
-            return PELTIER_PARAMETERS[104]["Description"][device_status_int]
+        try:
+            device_status_int = int(response[7:-4])
+            if return_type == int:
+                return device_status_int
+            elif return_type == str:
+                return PELTIER_PARAMETERS[104]["Description"][device_status_int]
+        except:
+            return None
 
     # Handle Device Status Method.
     def handle_device_status(self, address, reset_to_temperature=None):
@@ -157,19 +160,36 @@ class Meerstetter():
             logger.log('LOG-START', "Handling the device status {0} for address {1}".format(device_status_int, address))
         if device_status_int == 3:
             # Restart the device.
-            self.reset_device(address)
-            logger.log("ERROR", "Restarting device with address {0}, this will take about 5 seconds due to {1}".format(address, self.get_device_status(address, str)))
-            for i in range(5):
-                print("\tTime Left (s): {0}".format(4 - i))
-                time.sleep(1)
-            if reset_to_temperature == None:
-                self.__temperatures[address-1] = self.__temperatures[address-1]
-            else:
-                self.__temperatures[address-1] = reset_to_temperature
-            self.change_temperature(address, self.__temperatures[address-1], block=False)
-            logger.log('MESSAGE', "Device has been restarted setting temperature back to {0}".format(self.__temperatures[address-1]))
-        if device_status_int != 2:
-            logger.log('LOG-END', "Device status {0} handled.".format(device_status_int))
+            try:
+                self.reset_device(address)
+                logger.log("ERROR", "Restarting device with address {0}, this will take about 5 seconds due to {1}".format(address, self.get_device_status(address, str)))
+                for i in range(5):
+                    print("\tTime Left (s): {0}".format(4 - i))
+                    time.sleep(1)
+                if reset_to_temperature == None:
+                    self.__temperatures[address-1] = self.__temperatures[address-1]
+                else:
+                    self.__temperatures[address-1] = reset_to_temperature
+                self.change_temperature(address, self.__temperatures[address-1], block=False)
+                logger.log('MESSAGE', "Device has been restarted setting temperature back to {0}".format(self.__temperatures[address-1]))
+                if device_status_int != 2:
+                    logger.log('LOG-END', "Device status {0} handled.".format(device_status_int))
+            except:
+                time.sleep(5)
+                self.reset_device(address)
+                logger.log("ERROR", "Restarting device with address {0}, this will take about 5 seconds due to {1}".format(address, self.get_device_status(address, str)))
+                for i in range(5):
+                    print("\tTime Left (s): {0}".format(4 - i))
+                    time.sleep(1)
+                if reset_to_temperature == None:
+                    self.__temperatures[address-1] = self.__temperatures[address-1]
+                else:
+                    self.__temperatures[address-1] = reset_to_temperature
+                self.change_temperature(address, self.__temperatures[address-1], block=False)
+                logger.log('MESSAGE', "Device has been restarted setting temperature back to {0}".format(self.__temperatures[address-1]))
+                if device_status_int != 2:
+                    logger.log('LOG-END', "Device status {0} handled.".format(device_status_int))
+            
 
     # Get Temperature Method.
     def get_temperature(self, address, log=False):
@@ -187,12 +207,16 @@ class Meerstetter():
         # Compare the response.
         pcom.compare_with_response(response, assert_checksum=False)
         # Get the object temperature from the response.
-        temperature_hexidecimal = response[7:-4]
-        temperature = convert_hexidecimal_to_float32_ieee_754(temperature_hexidecimal)
-        if log:
-            logger.log('LOG-END', "Temperature of the peltier device is {0}.".format(temperature))
-        self.__temperatures[address-1] = temperature
-        return temperature
+        try:
+            temperature_hexidecimal = response[7:-4]
+            temperature = convert_hexidecimal_to_float32_ieee_754(temperature_hexidecimal)
+            if log:
+                logger.log('LOG-END', "Temperature of the peltier device is {0}.".format(temperature))
+            self.__temperatures[address-1] = temperature
+            return temperature
+        except Exception as e:
+            print(e)
+            return -1
 
     # Change Temperature Method.
     def change_temperature(self, address, value, block=False):
@@ -210,25 +234,29 @@ class Meerstetter():
         # Generate the payload (3000: Target Object Temp) and communication.
         payload = PeltierPayload('set', 3000, value=value)
         pcom = PeltierCommunication('#', address, self.__sequence_numbers[address-1], payload)
-        self.__controller.write(pcom.to_string())
-        self.__increase_sequence_number(address)
-        # Get the response back.
-        t_start = time.time()
-        response = self.__controller.readline()
-        print(f'Timing of getting response from Meerstetter: {time.time() - t_start}')
-        # Compare the response.
-        pcom.compare_with_response(response)
-        if block:
-            delta = 2
-            for i in range(0,10*60,10):
-                temperature = self.get_temperature(address)
-                if abs(temperature - value) < delta:
-                    logger.log('LOG-END', "Changed the temperature of the peltier device.")
-                    self.__temperatures[address-1] = value
-                    return
-                time.sleep(10)
-        logger.log('LOG-END', "Changed the temperature of the peltier device.")
-        self.__temperatures[address-1] = value
+        try:
+            self.__controller.write(pcom.to_string())
+            self.__increase_sequence_number(address)
+            # Get the response back.
+            t_start = time.time()
+            response = self.__controller.readline()
+            print(f'Timing of getting response from Meerstetter: {time.time() - t_start}')
+            # Compare the response.
+            pcom.compare_with_response(response)
+            if block:
+                delta = 2
+                for i in range(0,10*60,10):
+                    temperature = self.get_temperature(address)
+                    if abs(temperature - value) < delta:
+                        logger.log('LOG-END', "Changed the temperature of the peltier device.")
+                        self.__temperatures[address-1] = value
+                        return
+                    time.sleep(10)
+            logger.log('LOG-END', "Changed the temperature of the peltier device.")
+            self.__temperatures[address-1] = value
+        except Exception as e:
+            print(e)
+            print(f"Warning issue writing to Meerstetter for address {address} to change temperature to {value} C") 
 
     # Increase Sequence Number Method.
     def __increase_sequence_number(self, address=None):
