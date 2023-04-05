@@ -1,0 +1,48 @@
+Switch Pressure(Positive)
+Generate Data(B1, C255, 1| , 2| , 3| , 4| , 5| , 6| , 7| , 8| , 0, New File)
+Comment Data File(Method: SSDP-0006-03-V0001 - Leak test 8-channel pipetting head)
+Display Message(Put 8 clogged tips)
+Math(positive_p = 200)
+Math(negative_p = -241)
+Set Pressure(10, Wait)
+Toggle Valve(B1, C255, 1| 0, 2| 0, 3| 0, 4| 0, 5| 0, 6| 0, 7| 0, 8| 0,  Open)
+Set Pressure(0, Wait)
+Delay(10)
+Toggle Valve(B1, C255, 1| 0, 2| 0, 3| 0, 4| 0, 5| 0, 6| 0, 7| 0, 8| 0,  Close)
+Comment Data File(Systeme a Zero mbar)
+Generate Data(B1, C255, 1| , 2| , 3| , 4| , 5| , 6| , 7| , 8| , 256)
+Comment Data File()
+Comment Data File()
+Comment Data File()
+Toggle Valve(B1, C255, 1| 0, 2| 0, 3| 0, 4| 0, 5| 0, 6| 0, 7| 0, 8| 0,  Open)
+Switch Pressure(Negative)
+Set Vacuum(negative_p, Wait)
+Delay(10)
+Toggle Valve(B1, C255, 1| 0, 2| 0, 3| 0, 4| 0, 5| 0, 6| 0, 7| 0, 8| 0,  Close)
+Delay(1)
+Set Vacuum(0, Wait)
+Comment Data File(system a {negative_p}mbar T0)
+Generate Data(B1, C255, 1| , 2| , 3| , 4| , 5| , 6| , 7| , 8| , 768)
+Comment Data File()
+Comment Data File()
+Comment Data File()
+Delay(10)
+Comment Data File(system a {negative_p}mbar T10)
+Loop Start(From: 1, to: 3, Step: 1, Index: i)
+Delay(10.000)
+Comment Data File(system a {negative_p}mbar T10 + {i}0)
+Generate Data(B1, C255, 1| , 2| , 3| , 4| , 5| , 6| , 7| , 8| , 768)
+Comment Data File()
+Comment Data File()
+Comment Data File()
+Loop End()
+
+
+
+
+
+
+
+
+
+
