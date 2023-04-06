@@ -1,0 +1,119 @@
+0: Comment: IDTE Dilution
+1: Comment: Tip 10
+2: Pickup tips from A column 8
+3: Comment: IDTE
+4: Move to Reagent Cartridge tray A column 5 with 50 uL tips
+5: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+6: Move to Pre-Amp Thermocycler column 2 with 50 uL tips moving up by 10000
+7: Dispense 30 uLs with 50 uL tips at Low pressure 1 time
+8: Delay for 3 seconds
+9: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+10: Comment: Air Bubble Removal
+11: Move relative down by 10000
+12: Aspirate 5 uLs with 50 uL tips at Low pressure 1 time
+13: Move relative up by 100000
+14: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+15: Delay for 3 seconds
+16: Dispense 2 uLs with 50 uL tips at Low pressure 1 time
+17: Move relative down by 100000
+18: Comment: Tip 10
+19: Eject tips in A column 8
+20: Comment: Pre-Amp Sample Dilution
+21: Comment: Tip 9
+22: Pickup tips from A column 7
+23: Move to Pre-Amp Thermocycler column 1 with 50 uL tips
+24: Aspirate 10 uLs with 50 uL tips at Low pressure 1 time
+25: Move to Pre-Amp Thermocycler column 2 with 50 uL tips moving up by 25000
+26: Dispense 10 uLs with 50 uL tips at Low pressure 1 time
+27: Move relative down by 25000
+28: Comment: Rigurous Mixing Protocol
+29: Aspirate 30 uLs with 50 uL tips at Lowest pressure 1 time
+30: Delay for 2 seconds
+31: Dispense 30 uLs with 50 uL tips at Lowest pressure 1 time
+32: Delay for 2 seconds
+33: Aspirate 30 uLs with 50 uL tips at Lowest pressure 1 time
+34: Delay for 2 seconds
+35: Dispense 30 uLs with 50 uL tips at Lowest pressure 1 time
+36: Delay for 2 seconds
+37: Aspirate 30 uLs with 50 uL tips at Lowest pressure 1 time
+38: Delay for 2 seconds
+39: Dispense 30 uLs with 50 uL tips at Lowest pressure 1 time
+40: Delay for 2 seconds
+41: Aspirate 30 uLs with 50 uL tips at Lowest pressure 1 time
+42: Delay for 2 seconds
+43: Dispense 30 uLs with 50 uL tips at Lowest pressure 1 time
+44: Delay for 2 seconds
+45: Aspirate 30 uLs with 50 uL tips at Lowest pressure 1 time
+46: Delay for 2 seconds
+47: Dispense 30 uLs with 50 uL tips at Lowest pressure 1 time
+48: Delay for 2 seconds
+49: Delay for 3 seconds
+50: Dispense 10 uLs with 50 uL tips at Lowest pressure 1 time
+51: Delay for 10 seconds
+52: Comment: Air Bubble Removal
+53: Aspirate 5 uLs with 50 uL tips at LoLowest w pressure 1 time
+54: Move relative up by 100000
+55: Dispense 5 uLs with 50 uL tips at Lowest pressure 1 time
+56: Delay for 3 seconds
+57: Dispense 2 uLs with 50 uL tips at Lowest pressure 1 time
+58: Comment: Dip
+59: Move relative down by 100000
+60: Comment: Tip 9
+61: Eject tips in A column 7
+62: Comment: Resuspension
+63: Comment: Tip 10
+64: Pickup tips from A column 8
+65: Comment: Resuspension Buffer
+66: Move to Reagent Cartridge tray A column 8 with 50 uL tips
+67: Aspirate 18 uLs with 50 uL tips at Low pressure 1 time
+68: Comment: Jet Dispense
+69: Move to Assay Strip tray A column 1 with 50 uL tips moving up by 50000
+70: Dispense 18 uLs with 50 uL tips at Low pressure 1 time
+71: Delay for 10 seconds
+72: Dispense 10 uLs with 50 uL tips at High pressure 1 time
+73: Comment: Dip
+74: Move relative down by 50000
+75: Comment: Tip 10
+76: Eject tips in A column 8
+77: Delay for 2 minutes
+78: Comment: NIPT Assay
+79: Comment: Tip 9
+80: Pickup tips from A column 7
+81: Move to Pre-Amp Thermocycler column 2 with 50 uL tips
+82: Comment: Assay prep for NIPT
+83: Aspirate 8 uLs with 50 uL tips at Low pressure 1 time
+84: Comment: Jet dispense
+85: Move to Assay Strip tray A column 1 with 50 uL tips moving up by 50000
+86: Dispense 8 uLs with 50 uL tips at Low pressure 1 time
+87: Delay for 3 seconds
+88: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+89: Move relative down by 50000
+90: Comment: Rigurious Mix
+91: Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time
+92: Delay for 3 seconds
+93: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
+94: Delay for 3 seconds
+95: Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time
+96: Delay for 3 seconds
+97: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
+98: Delay for 3 seconds
+99: Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time
+100: Delay for 3 seconds
+101: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
+102: Delay for 3 seconds
+103: Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time
+104: Delay for 3 seconds
+105: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
+106: Delay for 3 seconds
+107: Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time
+108: Delay for 3 seconds
+109: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
+110: Delay for 3 seconds
+111: Comment: Air Bubble Removal
+112: Aspirate 5 uLs with 50 uL tips at Lowest pressure 1 time
+113: Move relative up by 50000
+114: Dispense 5 uLs with 50 uL tips at Lowest pressure 1 time
+115: Delay for 3 seconds
+116: Dispense 2 uLs with 50 uL tips at Lowest pressure 1 time
+117: Comment: Dip
+118: Move relative down by 50000

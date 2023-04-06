@@ -1,0 +1,8 @@
+0: Load Tip Tray A 1-1,  2-2,  3-3,  4-4
+1: Home pipettor along Z
+2: Pause for user input
+3: Load Tip Tray A 5-5,  6-6,  7-7,  8-8
+4: Home pipettor along Z
+5: Pause for user input
+6: Load Tip Tray A 9-9,  10-10,  11-11,  12-12
+7: Home pipettor
