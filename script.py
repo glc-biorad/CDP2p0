@@ -1,3 +1,4 @@
+import time
 import pythonnet
 from pythonnet import load
 
@@ -13,87 +14,32 @@ from api.upper_gantry.upper_gantry import UpperGantry
 from api.upper_gantry.seyonic.seyonic import Seyonic
 from api.reader.meerstetter.meerstetter import Meerstetter
 from api.util.utils import delay
+from api.util.log import Log
 
 import time
 
 if __name__ == '__main__':
     m = Meerstetter()
+    l = Log('unit_a_t4')
     
-    address = 1
-    temp = 38
-    t = 45 * 60
-    print(f"Working on temperature set to {temp} C for {t} seconds.")
-    m.change_temperature(address, temp, True)
-    address = 2
-    print(f"Working on temperature set to {temp} C for {t} seconds.")
-    m.change_temperature(address, temp, True)
-    time.sleep(t)
-
-    address = 1
-    temp = 92
-    t = 10 * 60
-    print(f"Working on temperature set to {temp} C for {t} seconds.")
-    m.change_temperature(address, temp, True)
-    address = 2
-    print(f"Working on temperature set to {temp} C for {t} seconds.")
-    m.change_temperature(address, temp, True)
-    time.sleep(t)
-
-    for i in range(44):
-        print(f"Cycle: {i+1}")
-        address = 1
-        temp = 59
-        t = 105
-        print(f"Working on temperature set to {temp} C for {t} seconds.")
-        m.change_temperature(address, temp, True)
-        address = 2
-        print(f"Working on temperature set to {temp} C for {t} seconds.")
-        m.change_temperature(address, temp, True)
-        time.sleep(t)
-        # 
-        address = 1
-        temp = 91
-        t = 50
-        print(f"Working on temperature set to {temp} C for {t} seconds.")
-        m.change_temperature(address, temp, True)
-        address = 2
-        print(f"Working on temperature set to {temp} C for {t} seconds.")
-        m.change_temperature(address, temp, True)
-        time.sleep(t)
-
-    address = 1
-    temp = 59
-    t = 105
-    print(f"Working on temperature set to {temp} C for {t} seconds.")
-    m.change_temperature(address, temp, True)
-    address = 2
-    print(f"Working on temperature set to {temp} C for {t} seconds.")
-    m.change_temperature(address, temp, True)
-    time.sleep(t)
-
-    address = 1
-    temp = 74
-    t = 15 * 60
-    print(f"Working on temperature set to {temp} C for {t} seconds.")
-    m.change_temperature(address, temp, True)
-    address = 2
-    print(f"Working on temperature set to {temp} C for {t} seconds.")
-    m.change_temperature(address, temp, True)
-    time.sleep(t)
-
-    address = 1
-    temp = 93
-    t = 10 * 60
-    print(f"Working on temperature set to {temp} C for {t} seconds.")
-    m.change_temperature(address, temp, True)
-    address = 2
-    print(f"Working on temperature set to {temp} C for {t} seconds.")
-    m.change_temperature(address, temp, True)
-    time.sleep(t)
-   
-    address = 1
-    target_temp = 20
-    m.change_temperature(address, target_temp, True)
-    address = 2
-    m.change_temperature(address, target_temp, True)
-    print('dONe')
+    t_start = time.time()
+    address = 9
+    temp = 95
+    t = 180
+    l.log(f"Step 1 -- Temp: {temp} C -- Time: {t} s -- Info: Activation/denaturation", time.time() - t_start)
+    m.change_temperature(address, temp)
+    delay(t)
+    for i in range(6):
+        temp = 95
+        t = 60        
+        l.log(f"Step 2 -- Cycle: {i+1} -- Temp: {temp} C -- Time: {t} s -- Info: Denaturation", time.time() - t_start)
+        m.change_temperature(address, temp)
+        delay(t)
+        temp = 60
+        t = 180  
+        l.log(f"Step 3 -- Cycle: {i+1} -- Temp: {temp} C -- Time: {t} s -- Info: Annealing/Extension", time.time() - t_start)
+        m.change_temperature(address, temp)
+        delay(t)
+    temp = 30
+    l.log(f"Step 4 -- Temp: {temp} C -- Time: {t} s -- Info: Final Hold", time.time() - t_start)
+    m.change_temperature(address, temp)
