@@ -51,7 +51,7 @@
 50: Dispense 10 uLs with 50 uL tips at Lowest pressure 1 time
 51: Delay for 10 seconds
 52: Comment: Air Bubble Removal
-53: Aspirate 5 uLs with 50 uL tips at Lowest pressure 1 time
+53: Aspirate 5 uLs with 50 uL tips at LoLowest w pressure 1 time
 54: Move relative up by 100000
 55: Dispense 5 uLs with 50 uL tips at Lowest pressure 1 time
 56: Delay for 3 seconds
