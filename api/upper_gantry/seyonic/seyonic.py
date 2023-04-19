@@ -119,7 +119,9 @@ class Seyonic(object):
         self.pip_addr = pipettor_address
         self.get_aspirate_volumes()
         self.get_dispense_volumes()
-        self.log = Log('seyonic_pipettor')
+        self.log = Log(log_name='calls', log_path='./logs/seyonic/')
+        self.status_log = Log(log_name='status', log_path='./logs/seyonic/')
+        self.log.log(f"Seyonic Pipettor Initializing...")
 
     # temp order things should happen for standard op
         # init,
@@ -465,7 +467,8 @@ class Seyonic(object):
         return self.client.Get("Pressure", self.pip_addr, 0)
 
     def aspirate(self, pressure: int = None, channels: list = [1,2,3,4,5,6,7,8]):
-        self.log.log(f"aspirate(pressure={pressure}; channels={str(channels).replace(',',';')})")
+        self.status_log.seyonic_log_header()
+        #self.log.log(f"aspirate(pressure={pressure}; channels={str(channels).replace(',',';')})")
         logger = Logger(__file__, __name__)
         if pressure == None:
             pressure = self.vac_pressure
@@ -474,8 +477,10 @@ class Seyonic(object):
         # Set the pressure 
         self.set_pressure(pressure=pressure)
         time.sleep(3)
+        aspirate_clock_start = time.time()
         # Trigger the action of aspiration
         self.client.Trigger(self.pip_addr, 0)
+        self.status_log.seyonic_log('Aspirate', "Trigger", pressure, [1, 1, 1, 1, 1, 1, 1, 1], time.time() - aspirate_clock_start)
         # In real time check for pipettor status to stop if an error is found
         completed_actions = [0 for channel in channels]
         current_action_statuses = self.get_current_action_status(channels)
@@ -483,25 +488,54 @@ class Seyonic(object):
             #print(f"Input: {self.get_current_input_pressure(channels)} -- Output: {self.get_current_output_pressure(channels)}")
             #print(f"")
             # Get the status in real time
-            print(self.get_pressure())
+            #print(self.get_pressure())
             current_action_statuses = self.get_current_action_status(channels)
+            current_action_statuses_strings = [action_status_lookup[current_action_statuses[channel-1]] for channel in channels]
+            #self.log.log(f"{str(current_action_statuses_strings).replace(',',';')}")
+            self.status_log.seyonic_log('Aspirate', "In Progress", 
+                                 pressure, 
+                                 [current_action_statuses[0],
+                                 current_action_statuses[1],
+                                 current_action_statuses[2],
+                                 current_action_statuses[3],
+                                 current_action_statuses[4],
+                                 current_action_statuses[5],
+                                 current_action_statuses[6],
+                                 current_action_statuses[7]],
+                                 time.time() - aspirate_clock_start
+            )
+            # Check the status for each channel
             for channel in channels:
                 if current_action_statuses[channel-1] < 0:
                     #print(f"ERROR: Channel {channel} of the pipettor has an error {action_status_lookup[current_action_statuses[channel-1]]}")
-                    logger.log("ERROR", f"Channel {channel} of the pipettor has an error {action_status_lookup[current_action_statuses[channel-1]]}")
-                    self.log.log(f"ERROR: Channel {channel} of the pipettor has an error {action_status_lookup[current_action_statuses[channel-1]]}")
+                    #logger.log("ERROR", f"Channel {channel} of the pipettor has an error {action_status_lookup[current_action_statuses[channel-1]]}")
+                    #self.log.log(f"ERROR: Channel {channel} of the pipettor has an error {action_status_lookup[current_action_statuses[channel-1]]}")
                     # Close this valve
                     self.close_valve(channel)
+                    time.sleep(1)
                     # Stop the pipettor
                     self.set_pressure(pressure=0, direction=2)
+                    # Log the error
+                    self.status_log.seyonic_log('Aspirate', "Error", 
+                                 0, 
+                                 [current_action_statuses[0],
+                                 current_action_statuses[1],
+                                 current_action_statuses[2],
+                                 current_action_statuses[3],
+                                 current_action_statuses[4],
+                                 current_action_statuses[5],
+                                 current_action_statuses[6],
+                                 current_action_statuses[7]],
+                                 time.time() - aspirate_clock_start
+                    )
                     current_action_statuses = [0 for channel in channels]
                 else:
                     #print(f"OK: Channel {channel} of the pipettor has a status of {action_status_lookup[current_action_statuses[channel-1]]}")
-                    logger.log("MESSAGE", f"Channel {channel} of the pipettor has a status of {action_status_lookup[current_action_statuses[channel-1]]}")
-                    self.log.log(f"MESSAGE: Channel {channel} of the pipettor has a status of {action_status_lookup[current_action_statuses[channel-1]]}")
+                    #logger.log("MESSAGE", f"Channel {channel} of the pipettor has a status of {action_status_lookup[current_action_statuses[channel-1]]}")
+                    #self.log.log(f"MESSAGE: Channel {channel} of the pipettor has a status of {action_status_lookup[current_action_statuses[channel-1]]}")
                     # If aspiration complete in one channel stop aspiration in all other channels after a certain time
                     if current_action_statuses[channel-1] == 0:
-                        overtime = 1
+                        overtime = 1.5
                         overtime_start = time.time()
                         while time.time() - overtime_start <= overtime:
                             a = 1
@@ -510,6 +544,19 @@ class Seyonic(object):
                             self.close_valve()
                             time.sleep(1)
                             self.set_pressure(pressure=0, direction=2)
+                            # Log the completion
+                            self.status_log.seyonic_log('Aspirate', "Completed", 
+                                         0, 
+                                         [current_action_statuses[0],
+                                         current_action_statuses[1],
+                                         current_action_statuses[2],
+                                         current_action_statuses[3],
+                                         current_action_statuses[4],
+                                         current_action_statuses[5],
+                                         current_action_statuses[6],
+                                         current_action_statuses[7]],
+                                         time.time() - aspirate_clock_start
+                            )
                             return
 
         self.set_pressure(pressure=0, direction=2)
