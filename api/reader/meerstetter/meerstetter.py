@@ -255,8 +255,11 @@ class Meerstetter():
             logger.log('LOG-END', "Changed the temperature of the peltier device.")
             self.__temperatures[address-1] = value
         except Exception as e:
-            print(e)
-            print(f"Warning issue writing to Meerstetter for address {address} to change temperature to {value} C") 
+            try:
+                logger.log('ERROR', f"Got {e} when talking to address {address}, changing temperature to {value} C")
+            except:
+                print(e)
+                print(f"Warning issue writing to Meerstetter for address {address} to change temperature to {value} C") 
 
     # Increase Sequence Number Method.
     def __increase_sequence_number(self, address=None):

@@ -602,6 +602,54 @@ class UpperGantry(api.util.motor.Motor):
         # Move down until LLD 
         # Move up by a fixed amount based on volume 
 
+    def stop_motion(self) -> None:
+        """
+        Stop motion of pipettor where it currently is
+        """
+        x,y,z,dp = self.get_position()
+        self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=3, position=z, block=False, velocity=self.__LIMIT['Z']['max']['velocity'])
+        self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=4, position=dp, block=False, velocity=self.__LIMIT['Drip Plate']['max']['velocity'])
+        self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=2, position=y, block=False, velocity=self.__LIMIT['Y']['max']['velocity'])
+        self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=1, position=x, block=False, velocity=self.__LIMIT['X']['max']['velocity'])
+
+    def detect_liquid_level(self, max_z_range: int = 350000, z_velocity: int = 30000):
+        """
+        Move down in z (bound by a max downward relative z motion)
+        """
+        # Trigger Liquid Level Detection
+
+        # Move the pipettor down (relative to where the pipettor head is)
+        #self.move_relative('down', value=max_z_range, velocity='slow')
+        # While moving check liquid level detection
+        #llded = self.__pipettor.liquid_level_detect()
+        # Handle the lld status
+
+        # Get current z position
+        initial_z = self.get_position_from_axis('Z')
+        # Set the pressure to 20 mbar
+        self.__pipettor.set_pressure(pressure=20, direction=1)
+        time.sleep(2) # delay to equalize pressure
+        # Set the action mode to LLD
+        self.__pipettor.set_LLD_action_mode()
+        # Trigger LLD
+        self.__pipettor.trigger_LLD()
+        # Start timing
+        t = time.time()
+        while time.time() - t <= 1:
+            print(self.__pipettor.get_status())
+        # Start the move
+        self.move_relative('down', value=max_z_range, velocity=z_velocity, block=False)
+        # Look for LLD success status
+        t = time.time()
+        while self.get_position_from_axis('Z') >= initial_z - max_z_range:
+            action_status = self.__pipettor.get_status()
+            print(action_status)
+            if 2 in action_status:
+                self.stop_motion()
+                break
+        self.__pipettor.set_pressure(pressure=0, direction=1)
+        time.sleep(2)
+
     def move(
         self,
         x: int,
@@ -1248,7 +1296,7 @@ class UpperGantry(api.util.motor.Motor):
         print('[{0},{1},{2},{3}]'.format(x,y,z,dp))
 
     # move_relative method
-    def move_relative(self, direction, value, velocity='slow', use_fast_api=True):
+    def move_relative(self, direction, value, velocity='slow', use_fast_api=True, block=True):
         modules = ['x','y','z','drip plate']
         __directions = ['left', 'right', 'backwards', 'forwards', 'up', 'down']
         directions = ['l', 'r', 'b', 'f', 'u', 'd']
@@ -1320,8 +1368,10 @@ class UpperGantry(api.util.motor.Motor):
                 velocity = self.__LIMIT_MAX_VELOCITY_X
             elif velocity == 'slow':
                 velocity = self.__HVEL_X
+            elif type(velocity) == int:
+                pass
             if use_fast_api:
-                self.__FAST_API_INTERFACE.pipettor_gantry.axis.move(self.__MODULE_NAME, self.__ID['X'], value, velocity)
+                self.__FAST_API_INTERFACE.pipettor_gantry.axis.move(self.__MODULE_NAME, self.__ID['X'], value, velocity, block)
             else:
                 self.mrel(self.__ADDRESS_PIPETTOR_X, value, velocity)
         elif module == 'y':
@@ -1329,8 +1379,10 @@ class UpperGantry(api.util.motor.Motor):
                 velocity = self.__LIMIT_MAX_VELOCITY_Y
             elif velocity == 'slow':
                 velocity = self.__HVEL_Y
+            elif type(velocity) == int:
+                pass
             if use_fast_api:
-                self.__FAST_API_INTERFACE.pipettor_gantry.axis.move(self.__MODULE_NAME, self.__ID['Y'], value, velocity)
+                self.__FAST_API_INTERFACE.pipettor_gantry.axis.move(self.__MODULE_NAME, self.__ID['Y'], value, velocity, block)
             else:
                 self.mrel(self.__ADDRESS_PIPETTOR_Y, value, velocity)
         elif module == 'z':
@@ -1338,8 +1390,10 @@ class UpperGantry(api.util.motor.Motor):
                 velocity = self.__LIMIT_MAX_VELOCITY_Z
             elif velocity == 'slow':
                 velocity = self.__HVEL_Z
+            elif type(velocity) == int:
+                pass
             if use_fast_api:
-                self.__FAST_API_INTERFACE.pipettor_gantry.axis.move(self.__MODULE_NAME, self.__ID['Z'], value, velocity)
+                self.__FAST_API_INTERFACE.pipettor_gantry.axis.move(self.__MODULE_NAME, self.__ID['Z'], value, velocity, block)
             else:
                 self.mrel(self.__ADDRESS_PIPETTOR_Z, value, velocity)
         elif module == 'drip plate':
@@ -1347,8 +1401,10 @@ class UpperGantry(api.util.motor.Motor):
                 velocity = self.__LIMIT_MAX_VELOCITY_DRIP_PLATE
             elif velocity == 'slow':
                 velocity = self.__HVEL_DRIP_PLATE
+            elif type(velocity) == int:
+                pass
             if use_fast_api:
-                self.__FAST_API_INTERFACE.pipettor_gantry.axis.move(self.__MODULE_NAME, self.__ID['Drip Plate'], value, velocity)
+                self.__FAST_API_INTERFACE.pipettor_gantry.axis.move(self.__MODULE_NAME, self.__ID['Drip Plate'], value, velocity, block)
             else:
                 self.mrel(self.__ADDRESS_DRIP_PLATE, value, velocity)
         if self.__location_str != None and type(self.__location_str) == str:

@@ -14,6 +14,7 @@ import pythonnet
 from pythonnet import load
 
 from api.util.logger import Logger
+from api.util.log import Log
 
 #load("coreclr")
 
@@ -118,6 +119,7 @@ class Seyonic(object):
         self.pip_addr = pipettor_address
         self.get_aspirate_volumes()
         self.get_dispense_volumes()
+        self.log = Log('seyonic_pipettor')
 
     # temp order things should happen for standard op
         # init,
@@ -206,6 +208,12 @@ class Seyonic(object):
                 return action_status
         return action_status
 
+    def get_status(self) -> None:
+        action_status = [-26] * 8 # -26 is init value
+        for chan in range(1,9):
+            action_status[chan-1] = self.client.Get("Action Status", self.pip_addr, chan)
+        return action_status
+
     def set_pressure(self, pressure, direction=None, debug=False):
         ''' Function used to change pressure and turn on/off pump.
 
@@ -225,6 +233,7 @@ class Seyonic(object):
         '''
 
         # safety rails
+        self.log.log(f"set_pressure(pressure={pressure}; direction={direction})")
         logger = Logger(__file__, __name__)
         if pressure < self.min_pressure or pressure > self.max_pressure:
             msg = 'WARNING: Specified pressure {0} is outside range {1} to {2}.\
@@ -271,6 +280,7 @@ class Seyonic(object):
 
     def change_timeout(self, timeout_in_seconds: int = 65) -> None:
         """ Change the timeout of the Seyonic Controller """
+        self.log.log(f"change_timeout(timeout_in_seconds={timeout_in_seconds})")
         try:
             self.client.Set("CONTINUOUS_TIMEOUT", self.cntrl_addr, 0, timeout_in_seconds)
         except Exception as e:
@@ -406,7 +416,7 @@ class Seyonic(object):
         return self.dispense_volumes
 
 
-    def aspirate(self, pressure=None, debug=True):
+    def old_aspirate(self, pressure=None, debug=True):
         ''' Function used to aspirate volumes
 
         INPUTS:
@@ -436,6 +446,74 @@ class Seyonic(object):
                 logger.log('MESSAGE', "The action status for the Seyonic Pipettor channel {0} is '{1}'".format(i+1, asval))
                 #print('Channel {0} Action Status: {1}'.format(i, asval))
 
+    def get_current_action_status(self, channels: int):
+        _ = []
+        for channel in channels:
+            _.append(self.client.Get("Action Status", self.pip_addr, channel))
+        return _
+    def get_current_input_pressure(self, channels: list):
+        _ = []
+        for channel in channels:
+            _.append(self.client.Get("Input Pressure", self.pip_addr, channel))
+        return _
+    def get_current_output_pressure(self, channels: list):
+        _ = []
+        for channel in channels:
+            _.append(self.client.Get("Output Pressure", self.pip_addr, channel))
+        return _
+    def get_pressure(self):
+        return self.client.Get("Pressure", self.pip_addr, 0)
+
+    def aspirate(self, pressure: int = None, channels: list = [1,2,3,4,5,6,7,8]):
+        self.log.log(f"aspirate(pressure={pressure}; channels={str(channels).replace(',',';')})")
+        logger = Logger(__file__, __name__)
+        if pressure == None:
+            pressure = self.vac_pressure
+        # Set the action mode to aspirate
+        self.client.Set("Action Mode", self.pip_addr, 0, action_modes['Aspirate'])
+        # Set the pressure 
+        self.set_pressure(pressure=pressure)
+        time.sleep(3)
+        # Trigger the action of aspiration
+        self.client.Trigger(self.pip_addr, 0)
+        # In real time check for pipettor status to stop if an error is found
+        completed_actions = [0 for channel in channels]
+        current_action_statuses = self.get_current_action_status(channels)
+        while current_action_statuses != completed_actions:
+            #print(f"Input: {self.get_current_input_pressure(channels)} -- Output: {self.get_current_output_pressure(channels)}")
+            #print(f"")
+            # Get the status in real time
+            print(self.get_pressure())
+            current_action_statuses = self.get_current_action_status(channels)
+            for channel in channels:
+                if current_action_statuses[channel-1] < 0:
+                    #print(f"ERROR: Channel {channel} of the pipettor has an error {action_status_lookup[current_action_statuses[channel-1]]}")
+                    logger.log("ERROR", f"Channel {channel} of the pipettor has an error {action_status_lookup[current_action_statuses[channel-1]]}")
+                    self.log.log(f"ERROR: Channel {channel} of the pipettor has an error {action_status_lookup[current_action_statuses[channel-1]]}")
+                    # Close this valve
+                    self.close_valve(channel)
+                    # Stop the pipettor
+                    self.set_pressure(pressure=0, direction=2)
+                    current_action_statuses = [0 for channel in channels]
+                else:
+                    #print(f"OK: Channel {channel} of the pipettor has a status of {action_status_lookup[current_action_statuses[channel-1]]}")
+                    logger.log("MESSAGE", f"Channel {channel} of the pipettor has a status of {action_status_lookup[current_action_statuses[channel-1]]}")
+                    self.log.log(f"MESSAGE: Channel {channel} of the pipettor has a status of {action_status_lookup[current_action_statuses[channel-1]]}")
+                    # If aspiration complete in one channel stop aspiration in all other channels after a certain time
+                    if current_action_statuses[channel-1] == 0:
+                        overtime = 1
+                        overtime_start = time.time()
+                        while time.time() - overtime_start <= overtime:
+                            a = 1
+                        if time.time() - overtime_start >= overtime:
+                            # Close all valves and set the pressure to 0
+                            self.close_valve()
+                            time.sleep(1)
+                            self.set_pressure(pressure=0, direction=2)
+                            return
+
+        self.set_pressure(pressure=0, direction=2)
+
     def dispense(self, pressure=None, debug=True):
         ''' Function used to dispense volumes
 
@@ -449,6 +527,7 @@ class Seyonic(object):
         OUTPUTS:
             none.
         '''
+        self.log.log(f"dispense(pressure={pressure})")
         logger = Logger(__file__, __name__)
         if pressure == None:
             pressure = self.pos_pressure
@@ -465,6 +544,18 @@ class Seyonic(object):
                 asval = action_status_lookup[action_return[i]]
                 logger.log('MESSAGE', "The action status for the Seyonic Pipettor channel {0} is '{1}'".format(i+1, asval))
                 #print('Channel {0} Action Status: {1}'.format(i, asval))
+
+    def set_LLD_action_mode(self) -> None:
+        """
+        Set the action mode to LLD to allow LLD triggering
+        """
+        self.client.Set("Action Mode", self.pip_addr, 0, action_modes['LLD'])
+
+    def trigger_LLD(self) -> None:
+        """
+        Trigger LLD action
+        """
+        self.client.Trigger(self.pip_addr, 0)
 
     def liquid_level_detect(self, timeout_seconds=5, debug=True) -> bool:
         """ Liquid Level Detect (LLD): operates through measurement of a small pressure transient 
@@ -539,17 +630,20 @@ class Seyonic(object):
     def open_valve(self):
         ''' For droplet generation and suction cup function
         '''
+        self.log.log(f"open_valve()")
         logger = Logger(__file__, __name__)
         logger.log('MESSAGE', "Opening Seyonic Pipettor valve.")
         self.client.OpenValve(self.pip_addr, 0)
         logger.log('MESSAGE', "Seyonic Pipettor valve should now be open.")
 
-    def close_valve(self):
+    def close_valve(self, channel: int = 0):
         ''' For droplet generation and suction cup function
+        Channel = 0 broadcasts to all channels
         '''
+        self.log.log(f"close_valve(channel={channel})")
         logger = Logger(__file__, __name__)
         logger.log('MESSAGE', "Clsoing Seyonic Pipettor valve.")
-        self.client.CloseValve(self.pip_addr, 0)
+        self.client.CloseValve(self.pip_addr, channel)
         logger.log('MESSAGE', "Seyonic Pipettor valve should now be closed.")
 
 
@@ -567,10 +661,11 @@ if __name__ == "__main__":
         # aspirate/dispense
         # set pressure to 0
     sey = Seyonic()
-    sey.set_dispense_volumes(volumes=5000)
-    sey.set_aspirate_volumes(volumes=5000)
+    #sey.set_dispense_volumes(volumes=5000)
+    #sey.set_aspirate_volumes(volumes=5000)
 
-    print(sey.get_aspirate_volumes())
+    #print(sey.get_aspirate_volumes())
+    print(sey.get_actual_aspirate_volume())
     # sey.aspirate()
     # print(sey.get_actual_aspirate_volume())
     # time.sleep(2)
@@ -578,12 +673,12 @@ if __name__ == "__main__":
     # print(sey.get_actual_aspirate_volume())
 
     # time.sleep(2)
-    print(sey.get_dispense_volumes())
-    sey.dispense()
-    print(sey.get_actual_dispense_volume())
+    #print(sey.get_dispense_volumes())
+    #sey.dispense()
+    #print(sey.get_actual_dispense_volume())
     # time.sleep(10)
-    sey.dispense()
-    print(sey.get_actual_dispense_volume())
+    #sey.dispense()
+    #print(sey.get_actual_dispense_volume())
     # sey.set_pressure(pressure=100, direction=1)
     # time.sleep(2)
     # sey.set_pressure(pressure=0, direction=1)

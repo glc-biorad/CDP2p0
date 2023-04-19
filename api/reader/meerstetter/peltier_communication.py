@@ -1,7 +1,7 @@
 '''
 '''
 
-from api.util.utils import left_pad_to_str
+from api.util.utils import left_pad_to_str, Logger
 
 from api.util.crc import compute_crc16_xmodem
 
@@ -67,4 +67,9 @@ class PeltierCommunication():
             if assert_checksum:
                 assert response_checksum == self.__checksum
         except Exception as e:
-            print(e)
+            try:
+                # Setup the logger.
+                logger = Logger(__file__, self.compare_with_response.__name__)
+                logger.log('ERROR', f"Error returned {e} when comparing the response ({response}) received with the Meerstetter. If the response is None this could mean that the board you are trying to communicate with is not connected, not powered, or in an error state and must be reset.")
+            except Exception as e:
+                print(e)
