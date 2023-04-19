@@ -90,6 +90,7 @@ MAIN_ACTION_KEY_WORDS = [
 	'Light',
 	'Load',
 	'Drip',
+	'Scan',
 ]
 TOPLEVEL_CYCLE_WIDTH = 970
 TOPLEVEL_CYCLE_HEIGHT = 210
@@ -899,6 +900,14 @@ class BuildProtocolController:
 					self.upper_gantry.turn_off_suction_cups()
 				# Log
 				log.log(action_message, time.time() - t_start)
+			elif split[0] == 'Scan':
+				# Get the chip to scan
+				chip = split[-1]
+				# Perform a scan of this chip
+				print("This does not work currently, it is used for moving the reader to chip D for demo purposes")
+				if chip == 'D':
+					self.upper_gantry.get_fast_api_interface().reader.axis.move(module_name='reader', id=2, position=-1000000, velocity=200000, block=True)
+					self.upper_gantry.get_fast_api_interface().reader.axis.move(module_name='reader', id=1, position=-200000, velocity=200000, block=True)
 			elif split[0] == 'Move':
 				# Check if this is just a relative move
 				if split[1] == 'relative':
@@ -1142,6 +1151,11 @@ class BuildProtocolController:
 				elif split[-1] == 'plate':
 					self.upper_gantry.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, 0, 2500000, True, True)
 					self.upper_gantry.get_fast_api_interface().pipettor_gantry.axis.home('pipettor_gantry', 4)
+				elif split[-1] == 'imager':
+					self.upper_gantry.get_fast_api_interface().reader.axis.home('reader', 4, block=False)
+					self.upper_gantry.get_fast_api_interface().reader.axis.home('reader', 3, block=False)
+					self.upper_gantry.get_fast_api_interface().reader.axis.home('reader', 1, block=True)
+					self.upper_gantry.get_fast_api_interface().reader.axis.home('reader', 2, block=True)
 				# Log
 				log.log(action_message, time.time() - t_start)
 			elif split[0] == 'LLD':
