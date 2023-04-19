@@ -21,6 +21,7 @@ from api.upper_gantry.qinstruments.qinstruments import BioShake3000T
 
 from api.util.pipette_tip import PipetteTip
 
+from api.util.log import Log
 from api.util.logger import Logger
 from api.util.timer import Timer
 from api.util.logger_xlsx import LoggerXLSX
@@ -616,14 +617,9 @@ class UpperGantry(api.util.motor.Motor):
         """
         Move down in z (bound by a max downward relative z motion)
         """
-        # Trigger Liquid Level Detection
-
-        # Move the pipettor down (relative to where the pipettor head is)
-        #self.move_relative('down', value=max_z_range, velocity='slow')
-        # While moving check liquid level detection
-        #llded = self.__pipettor.liquid_level_detect()
-        # Handle the lld status
-
+        # Setup the seyonic logger for lld
+        seyonic_log = Log('status', './logs/seyonic/')
+        seyonic_log.seyonic_log_header()
         # Get current z position
         initial_z = self.get_position_from_axis('Z')
         # Set the pressure to 20 mbar
@@ -633,6 +629,8 @@ class UpperGantry(api.util.motor.Motor):
         self.__pipettor.set_LLD_action_mode()
         # Trigger LLD
         self.__pipettor.trigger_LLD()
+        lld_clock_start = time.time()
+        self.status_log.seyonic_log('LLD', "Trigger", 20, [4, 4, 4, 4, 4, 4, 4, 4], time.time() - lld_clock_start)
         # Start timing
         t = time.time()
         while time.time() - t <= 1:
@@ -643,9 +641,33 @@ class UpperGantry(api.util.motor.Motor):
         t = time.time()
         while self.get_position_from_axis('Z') >= initial_z - max_z_range:
             action_status = self.__pipettor.get_status()
-            print(action_status)
+            #print(action_status)
+            self.status_log.seyonic_log('LLD', "In Progress", 
+                                 20, 
+                                 [action_status[0],
+                                 action_status[1],
+                                 action_status[2],
+                                 action_status[3],
+                                 action_status[4],
+                                 action_status[5],
+                                 action_status[6],
+                                 action_status[7]],
+                                 time.time() - lld_clock_start
+            )
             if 2 in action_status:
                 self.stop_motion()
+                self.status_log.seyonic_log('LLD', "Completed", 
+                                 20, 
+                                 [action_status[0],
+                                 action_status[1],
+                                 action_status[2],
+                                 action_status[3],
+                                 action_status[4],
+                                 action_status[5],
+                                 action_status[6],
+                                 action_status[7]],
+                                 time.time() - lld_clock_start
+                )
                 break
         self.__pipettor.set_pressure(pressure=0, direction=1)
         time.sleep(2)
