@@ -535,7 +535,7 @@ class Seyonic(object):
                     #self.log.log(f"MESSAGE: Channel {channel} of the pipettor has a status of {action_status_lookup[current_action_statuses[channel-1]]}")
                     # If aspiration complete in one channel stop aspiration in all other channels after a certain time
                     if current_action_statuses[channel-1] == 0:
-                        overtime = 1.5
+                        overtime = 0.2
                         overtime_start = time.time()
                         while time.time() - overtime_start <= overtime:
                             a = 1
