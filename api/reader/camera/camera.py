@@ -4,7 +4,14 @@ except:
     print("Need to pip install PySpin with the whl file, talk to D. Baur or G. Lopez-Candales")
 import numpy
 
-from api.util.logger import Logger
+try:
+    from api.util.logger import Logger
+except:
+    class Logger:
+        def __init__(self, current_python_file_path, current_function_name_called, output_file_name=None):
+            a = 1
+        def log(self, message_type, message):
+            a = 1
 
 class CamController(object):
     def __init__(self):
@@ -116,7 +123,6 @@ class CamController(object):
         # Set integer value from entry node as new value of enumeration node
         node_bufferhandling_mode.SetIntValue(node_newestonly_mode)
 
-
         try:
             node_acquisition_mode = pyspin.CEnumerationPtr(self.nodemap.GetNode('AcquisitionMode'))
             if not pyspin.IsAvailable(node_acquisition_mode) or not pyspin.IsWritable(node_acquisition_mode):
@@ -149,10 +155,14 @@ class CamController(object):
             #  *** LATER ***
             #  Image acquisition must be ended when no more images are needed.
             self.camera.BeginAcquisition()
+            print('a')
             image_result = self.camera.GetNextImage(6000)
+            print('b')
             img = image_result.GetNDArray()
+            print('c')
             image_result.Release()
             self.camera.EndAcquisition()
+            print('d')
         except pyspin.SpinnakerException as ex:
             #print('Error: %s' % ex)
             logger.log('ERROR', '%s' % ex)
@@ -350,4 +360,6 @@ class CamController(object):
 
 if __name__ == "__main__":
     cc = CamController()
+    img = cc.snap_single()
+    print(img.shape)
     cc.close()

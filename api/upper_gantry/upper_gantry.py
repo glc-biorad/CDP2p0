@@ -613,13 +613,14 @@ class UpperGantry(api.util.motor.Motor):
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=2, position=y, block=False, velocity=self.__LIMIT['Y']['max']['velocity'])
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=1, position=x, block=False, velocity=self.__LIMIT['X']['max']['velocity'])
 
-    def detect_liquid_level(self, max_z_range: int = 350000, z_velocity: int = 30000):
+    def detect_liquid_level(self, max_z_range: int = 200000, z_velocity: int = 30000) -> bool:
         """
         Move down in z (bound by a max downward relative z motion)
         """
+        llded = False
         # Setup the seyonic logger for lld
-        seyonic_log = Log('status', './logs/seyonic/')
-        seyonic_log.seyonic_log_header()
+        status_log = Log('status', './logs/seyonic/')
+        status_log.seyonic_log_header()
         # Get current z position
         initial_z = self.get_position_from_axis('Z')
         # Set the pressure to 20 mbar
@@ -630,7 +631,7 @@ class UpperGantry(api.util.motor.Motor):
         # Trigger LLD
         self.__pipettor.trigger_LLD()
         lld_clock_start = time.time()
-        self.status_log.seyonic_log('LLD', "Trigger", 20, [4, 4, 4, 4, 4, 4, 4, 4], time.time() - lld_clock_start)
+        status_log.seyonic_log('LLD', "Trigger", 20, [4, 4, 4, 4, 4, 4, 4, 4], time.time() - lld_clock_start)
         # Start timing
         t = time.time()
         while time.time() - t <= 1:
@@ -642,21 +643,13 @@ class UpperGantry(api.util.motor.Motor):
         while self.get_position_from_axis('Z') >= initial_z - max_z_range:
             action_status = self.__pipettor.get_status()
             #print(action_status)
-            self.status_log.seyonic_log('LLD', "In Progress", 
-                                 20, 
-                                 [action_status[0],
-                                 action_status[1],
-                                 action_status[2],
-                                 action_status[3],
-                                 action_status[4],
-                                 action_status[5],
-                                 action_status[6],
-                                 action_status[7]],
-                                 time.time() - lld_clock_start
-            )
+            status_log.seyonic_log('LLD', "In Progress", 
+                                   20, 
+                                   [action_status[0],action_status[1],action_status[2],action_status[3],action_status[4],action_status[5],action_status[6],action_status[7]],
+                                   time.time() - lld_clock_start)
             if 2 in action_status:
                 self.stop_motion()
-                self.status_log.seyonic_log('LLD', "Completed", 
+                status_log.seyonic_log('LLD', "Completed", 
                                  20, 
                                  [action_status[0],
                                  action_status[1],
@@ -668,9 +661,11 @@ class UpperGantry(api.util.motor.Motor):
                                  action_status[7]],
                                  time.time() - lld_clock_start
                 )
+                llded = True
                 break
         self.__pipettor.set_pressure(pressure=0, direction=1)
         time.sleep(2)
+        return llded
 
     def move(
         self,
@@ -1123,7 +1118,7 @@ class UpperGantry(api.util.motor.Motor):
             elif pressure == 'lowest':
                 pressure = -15
             elif pressure == 'highest':
-                pressure = -300
+                pressure = -200
             elif pressure == 'high':
                 pressure = -300
             elif pressure == 'half':
@@ -1163,6 +1158,7 @@ class UpperGantry(api.util.motor.Motor):
                 logger.log('WARNING', "Would aspirate too much, skipping...")
                 logger.log('LOG-END', "Aspiration skipped...")
                 #time.sleep(1)
+        #print(self.__pipettor.get_actual_aspirate_volume())
         logger_xlsx = LoggerXLSX()
         logger_xlsx.log("Aspirate {0} uL".format(vol), "{0}.{1}(aspirate_vol={2}, pressure={3}, pipette_tip_type={4})".format(__name__, self.aspirate.__name__, aspirate_vol, pressure, pipette_tip_type), timer.get_current_elapsed_time())
         timer.stop(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.aspirate.__name__))
@@ -1237,7 +1233,7 @@ class UpperGantry(api.util.motor.Motor):
             max_push_out_time = 23
             max_flow_rate = 99999
         elif droplet_type.lower()[0:2] == 'de':
-            max_time = 4
+            max_time = 65
             max_push_out_time = 4
             max_flow_rate = 99999
         while (time.time() - time_start <= max_time) or (flow_rate > max_flow_rate):

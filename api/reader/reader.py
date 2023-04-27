@@ -1,6 +1,8 @@
 '''
 '''
 
+import os
+
 from api.util.logger import Logger
 
 from api.util.commands import commands
@@ -480,7 +482,53 @@ class Reader(api.util.motor.Motor):
         return None
 
     # Capture Image Method.
-    def capture_image(self):
+    def capture_image(self, 
+                      led_id: int,  
+                      experiment_name: str,
+                      filter_wheel_location: int=None,
+                      fov_id: int=None,
+                      unit_id_to_str: dict={
+                          1: {'name': 'atto', 'filter_wheel': -21000, 'exposure': 1000},
+                          2: {'name': 'fam', 'filter_wheel': -37000, 'exposure': 1000},
+                          3: {'name': 'cy55', 'filter_wheel': -4000, 'exposure': 1000},
+                          4: {'name': 'alexa405', 'filter_wheel': -47000, 'exposure': 1000},
+                          5: {'name': 'cy5', 'filter_wheel': -13000, 'exposure': 1000},
+                          6: {'name': 'hex', 'filter_wheel': -30000, 'exposure': 1000},
+                          },
+                      exposure_time_microseconds: int=1000, 
+                      extension: str = '.tif') -> None:
+        # Rotate the filter wheel
+        if filter_wheel_location == None:
+            filter_wheel_location = unit_id_to_str[led_id]['filter_wheel']
+        self.__FAST_API_INTERFACE.reader.axis.move(self.__MODULE_NAME, self.__ID['Filter Wheel'], filter_wheel_location, 80000, block=True)
+        # Turn on the LED
+        self.turn_on_led(channel=led_id, intensity=200)
+        # Capture the image
+        self.camcontroller.close()
+        cc = camera.CamController()
+        self.camcontroller = cc
+        # Set the exposure time
+        self.set_exposure(exposure_time_microseconds)
+        img = cc.snap_single()
+        print(img.shape)
+        # Turn off the LED
+        self.turn_off_led(channel=led_id)
+        # Convert led_id if possible
+        if unit_id_to_str != None:
+            led_id = unit_id_to_str[led_id]['name']
+        # Set the file name
+        if fov_id == None:
+            fname = f"{experiment_name}___{led_id}_{exposure_time_microseconds}{extension}"
+        else:
+            fname = f"fov{fov_id}_{experiment_name}___{led_id}_{exposure_time_microseconds}{extension}"
+        # Set the file path
+        fdir = os.getcwd()
+        fpath = os.path.join(fdir, fname)
+        # Save the image
+        print(f"Saving {fname} in {os.path.join(fdir, experiment_name)}")
+        if not os.path.isdir(os.path.join(fdir, experiment_name)):
+            os.makedirs(os.path.join(fdir, experiment_name))
+        tifffile.imwrite(os.path.join(fdir, experiment_name, fname), img)
         return None
 
     # Set Cartridge Temp Method.
@@ -542,7 +590,7 @@ class Reader(api.util.motor.Motor):
             self.controller.write('>05,0,off,{0},<CR>\n'.format(i+1).encode('utf-8'))
 
      # Capture Image Method.
-    def capture_image(self, color, **kwargs):
+    def capture_image_old(self, color, **kwargs):
         #self.rotate_filter_wheel(color)
         if 'exposure_time_microseconds' in kwargs.keys():
             self.set_exposure(**kwargs)
