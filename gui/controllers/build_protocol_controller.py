@@ -91,6 +91,7 @@ MAIN_ACTION_KEY_WORDS = [
 	'Load',
 	'Drip',
 	'Scan',
+	'Image',
 ]
 TOPLEVEL_CYCLE_WIDTH = 970
 TOPLEVEL_CYCLE_HEIGHT = 210
@@ -639,6 +640,29 @@ class BuildProtocolController:
 					message="Move relative actions require a value to move in usteps. Please enter a value in the Parameter entry box."
 				)
 				return None
+		elif 'Move' in action_message.split():
+			try:
+				coordinate = self.view.other_parameter_sv.get().split(',')
+				x = coordinate[0]
+				y = coordinate[1]
+				z = coordinate[2]
+				action_message = action_message + f" to {x}, {y}, {z}"
+			except Exception as e:
+				tk.messagebox.showwarning(
+					title="Failed to Add Action",
+					message=f"Move imager actions require a x,y,z value to move. Please enter a value in the Parameter entry box. (Actual Error: {e})"
+				)
+				return None
+		elif 'Image' in action_message.split():
+			try:
+				experiment_name = self.view.other_parameter_sv.get()
+				action_message = action_message + f" and saving the experiment {experiment_name}"
+			except Exception as e:
+				tk.messagebox.showwarning(
+					title="Failed to Add Action",
+					message=f"Image actions require an experiment name to save the image. Please enter an experiment name in the Parameter entry box. (Actual Error: {e})"
+				)
+				return None
 		elif 'Drip' in action_message.split():
 			amount = self.view.other_parameter_sv.get()
 			try:
@@ -908,6 +932,19 @@ class BuildProtocolController:
 				if chip == 'D':
 					self.upper_gantry.get_fast_api_interface().reader.axis.move(module_name='reader', id=2, position=-1000000, velocity=200000, block=True)
 					self.upper_gantry.get_fast_api_interface().reader.axis.move(module_name='reader', id=1, position=-200000, velocity=200000, block=True)
+			elif split[0] == 'Image':
+				try:
+					# Image all 6 channels and bf
+					self.reader.capture_image(led_id=6, filter_wheel_location=-37000, experiment_name=split[-1], exposure_time_microseconds=1000, unit_id_to_str=None)
+					self.reader.capture_image(led_id=1, filter_wheel_location=-21000, experiment_name=split[-1], exposure_time_microseconds=1000)
+					self.reader.capture_image(led_id=2, filter_wheel_location=-37000, experiment_name=split[-1], exposure_time_microseconds=1000)
+					self.reader.capture_image(led_id=3, filter_wheel_location=-4000, experiment_name=split[-1], exposure_time_microseconds=1000)
+					self.reader.capture_image(led_id=4, filter_wheel_location=-47000, experiment_name=split[-1], exposure_time_microseconds=1000)
+					self.reader.capture_image(led_id=5, filter_wheel_location=-13000, experiment_name=split[-1], exposure_time_microseconds=1000)
+					self.reader.capture_image(led_id=6, filter_wheel_location=-30000, experiment_name=split[-1], exposure_time_microseconds=1000)
+				except Exception as e:
+					print(e)
+					log.log("ERROR with imaging. {e}", time.time() - t_start)
 			elif split[0] == 'Move':
 				# Check if this is just a relative move
 				if split[1] == 'relative':
@@ -916,6 +953,13 @@ class BuildProtocolController:
 					self.upper_gantry.move_relative(direction, amount, velocity='fast')
 					# Log
 					log.log(action_message, time.time() - t_start)
+					continue
+				elif split[1].lower() == 'imager':
+					x = int(split[-3].replace(',',''))
+					y = int(split[-2].replace(',',''))
+					z = int(split[-1].replace(',',''))
+					# Initialize the imager
+					self.reader.move_imager([x,y,z,0])
 					continue
 				# Or a chip move
 				elif split[1] == 'Chip':
@@ -1159,7 +1203,23 @@ class BuildProtocolController:
 				# Log
 				log.log(action_message, time.time() - t_start)
 			elif split[0] == 'LLD':
-				self.upper_gantry.get_pipettor().liquid_level_detect()
+				#self.upper_gantry.get_pipettor().liquid_level_detect()
+				llded = self.upper_gantry.detect_liquid_level()
+				if llded == False:
+					# Open a message box for the user 
+					if tk.messagebox.askokcancel(title="Protocol Pause", message="Would you like to continue even though the liquid level was not detected?"):
+						# Log
+						log.log(action_message + " -> Ok Pressed", time.time() - t_start)
+						continue
+					else:
+						if tk.messagebox.askyesno(title="Protocol Pause", message="Canceling the protocol now loses all current progress, are you sure you want to cancel?"):
+							# Log
+							log.log(action_message + " -> Cancel Pressed", time.time() - t_start)
+							return None
+						else:
+							# Log
+							log.log(action_message + " -> Cancel Pressed -> Ok Pressed", time.time() - t_start)
+							continue
 			elif split[0] == 'Generate':
 				# Get the droplet type
 				droplet_type = split[1]
