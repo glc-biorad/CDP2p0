@@ -1,0 +1,89 @@
+0: Comment: ------------ ASSAY PREP PRE-AMPED NIPT ------------
+0: Comment: ------------ RESUSPENSION ------------
+63: Comment: --- NOTE: Tip A12-50-new (Resuspension buffer)
+64: Pickup tips from A column 12
+65: Comment: --- REAGENT: Resuspension Buffer ---
+66: Move to Reagent Cartridge tray A column 8 with 50 uL tips
+67: Aspirate 11 uLs with 50 uL tips at Low pressure 1 time
+68: Comment: Jet Dispense
+69: Move to Assay Strip tray A column 1 with 50 uL tips moving up by 50000
+70: Dispense 11 uLs with 50 uL tips at Low pressure 1 time
+63: Comment: --- NOTE: Tip A12-50-reused (Resuspension buffer)
+76: Eject tips in A column 12
+0: Comment: ------------ IDTE DILUTION ------------
+9: Comment: --- NOTE: Tip B1-50-new (Pre-Amp IDTE Transfer, sample dilution, mixing)
+2: Pickup tips from B column 1
+3: Comment: --- REAGENT: IDTE ---
+4: Move to Reagent Cartridge tray A column 5 with 50 uL tips
+5: Aspirate 32 uLs with 50 uL tips at Low pressure 1 time
+6: Move to Pre-Amp Thermocycler column 2 with 50 uL tips moving up by 10000
+7: Dispense 30 uLs with 50 uL tips at Low pressure 1 time
+0: Comment: ------------ PRE-AMP SAMPLE DILUTION ------------
+23: Move to Pre-Amp Thermocycler column 1 with 50 uL tips
+24: Aspirate 15 uLs with 50 uL tips at Low pressure 1 time
+25: Move to Pre-Amp Thermocycler column 2 with 50 uL tips moving up by 25000
+26: Dispense 15 uLs with 50 uL tips at Low pressure 1 time
+27: Move relative down by 25000
+28: Comment: --- STEP: Rigurous Mixing Protocol ---
+29: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+30: Delay for 2 seconds
+31: Dispense 30 uLs with 50 uL tips at Low pressure 1 time
+33: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+34: Delay for 2 seconds
+35: Dispense 30 uLs with 50 uL tips at Low pressure 1 time
+37: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+38: Delay for 2 seconds
+39: Dispense 30 uLs with 50 uL tips at Low pressure 1 time
+41: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+42: Delay for 2 seconds
+43: Dispense 30 uLs with 50 uL tips at Low pressure 1 time
+45: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+46: Delay for 2 seconds
+47: Dispense 30 uLs with 50 uL tips at Low pressure 1 time
+49: Delay for 3 seconds
+50: Dispense 10 uLs with 50 uL tips at Low pressure 1 time
+52: Comment: --- STEP: Air Bubble Removal ---
+53: Aspirate 5 uLs with 50 uL tips at Low pressure 1 time
+54: Move relative up by 100000
+55: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+56: Delay for 3 seconds
+57: Dispense 2 uLs with 50 uL tips at Low pressure 1 time
+58: Comment: Dip
+59: Move relative down by 100000
+0: Comment: ------------ PRE-AMPED NIPT ASSAY TRANSFER ------------
+81: Move to Pre-Amp Thermocycler column 2 with 50 uL tips
+83: Aspirate 17 uLs with 50 uL tips at Low pressure 1 time
+84: Comment: Jet dispense
+85: Move to Assay Strip tray A column 1 with 50 uL tips moving up by 50000
+86: Dispense 17 uLs with 50 uL tips at Low pressure 1 time
+87: Delay for 3 seconds
+88: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+89: Move relative down by 50000
+90: Comment: --- STEP: Rigurious Mix (3 mixes) ---
+91: Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time
+92: Delay for 3 seconds
+93: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
+94: Delay for 3 seconds
+95: Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time
+96: Delay for 3 seconds
+97: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
+98: Delay for 3 seconds
+99: Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time
+100: Delay for 3 seconds
+101: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
+102: Delay for 3 seconds
+111: Comment: --- STEP: Air Bubble Removal ---
+112: Aspirate 5 uLs with 50 uL tips at Lowest pressure 1 time
+113: Move relative up by 50000
+114: Dispense 5 uLs with 50 uL tips at Lowest pressure 1 time
+115: Delay for 3 seconds
+116: Dispense 2 uLs with 50 uL tips at Lowest pressure 1 time
+117: Comment: Dip
+118: Move relative down by 50000
+0: Aspirate 23 uLs with 50 uL tips at Lowest pressure 1 time
+2: Move to DG8 tray A column 2 with 50 uL tips
+1: Pause for user input
+3: Dispense 22 uLs with 50 uL tips at Lowest pressure 1 time
+0: Drip for 10 seconds
+9: Comment: --- NOTE: Tip B1-50-used (Pre-Amp IDTE Transfer, sample dilution, mixing)
+2: Eject tips in B column 1
