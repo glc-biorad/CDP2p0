@@ -3,6 +3,7 @@ pandas
 Pillow
 pyserial
 matplotlib
+clr
 pythonnet
 fastapi
 uvicorn

@@ -11,6 +11,8 @@ DESCRIPTION:
 import clr
 import time
 
+from api.util.log import Log
+
 #clr.AddReference('System.IO.Ports')
 
 #from System.IO.Ports import SerialPort as Ports
@@ -36,20 +38,40 @@ class Controller():
     # Constructor.
     def __init__(self, com_port, baud_rate=115200, timeout=3, dont_use_fast_api=False, open_port=True):
         com_ports = ['COM4', 'COM8', 'COM10']
+        self.com_port = com_port
+        self.baud_rate = baud_rate
+        self.timeout = timeout
+        self.dont_use_fast_api = dont_use_fast_api
         if baud_rate != None:
             self.__BAUD_RATE = baud_rate
         #self.__SERIAL_PORT = Ports.SerialPort(PortName=com_port, BaudRate=self.__BAUD_RATE)
         if dont_use_fast_api:
             if open_port:
-                self.__SERIAL_PORT = Serial(com_port, baud_rate, timeout=timeout)
+                try:
+                    self.__SERIAL_PORT = Serial(com_port, baud_rate, timeout=timeout)
+                except Exception as e:
+                    print(e)
+                    try:
+                        if self.__SERIAL_PORT.is_open == False:
+                            self.__SERIAL_PORT.open()
+
+                    except Exception as e:
+                        print(e)
         #self.__SERIAL_PORT.ReadTimeout = self.__TIMEOUT_READLINE
         #self.__SERIAL_PORT.WriteTimeout = self.__TIMEOUT_WRITELINE
         #self.__SERIAL_PORT.NewLine = self.__NEWLINE
-        if dont_use_fast_api:
-            #self.__SERIAL_PORT.Open()
-            if open_port:
-                if self.__SERIAL_PORT.is_open == False:
-                    self.__SERIAL_PORT.open()
+        #if dont_use_fast_api:
+        #    if open_port:
+        #        if self.__SERIAL_PORT.is_open == False:
+        #            self.__SERIAL_PORT.open()
+
+    def is_open(self):
+        if self.__SERIAL_PORT.is_open:
+            return True
+        return False
+
+    def open(self):
+        self.__SERIAL_PORT.open()
 
     def write(self, command):
         self.__SERIAL_PORT.write(command.encode('utf-8'))

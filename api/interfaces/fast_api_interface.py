@@ -328,7 +328,7 @@ class Axis():
             #    response_value = value_was
             #print("id {0} is at {1} wants {2}".format(id, response_value, value))
             id_str = id_strs[module_name][id]
-            logger.log('MESSAGE', "The {0} axis is at {1} of {2} microsteps".format(id_str, response_value, value))
+            #***#logger.log('MESSAGE', "The {0} axis is at {1} of {2} microsteps".format(id_str, response_value, value))
             if abs(response_value - value) <= cutoff:
                 logger.log("MESSAGE", "{0} reached in {1} seconds for {2} module along {3}".format(value, time.time() - time_start, module_name, id_str))
                 return
@@ -341,6 +341,7 @@ class Axis():
                 else:
                     self.move(module_name, id, value, self.__LIMITS[module_name][id], block=True)
             value_was = response_value
+            #time.sleep(0.1)
         logger.log("ERROR", "{0} not reached within a cutoff of {1} in a max timeout of {2} for the {3} module along the {4} axis".format(value, cutoff, max_timeout, module_name, id_str))
 
     # Move Method.
@@ -356,7 +357,7 @@ class Axis():
         self.__parameters_dict['position'] = position
         self.__parameters_dict['velocity'] = velocity
         # Get the current positon to see if a move needs to occur.
-        value = self.get_position(module_name, id)
+        #value = self.get_position(module_name, id)
         #if value == position:
         #    logger.log('MESSAGE', "Already at the {0} along the axis {1}".format(value, id))
             #return

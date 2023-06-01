@@ -1,5 +1,4 @@
 '''
-
 '''
 from ast import Try
 from cmath import e
@@ -677,7 +676,7 @@ class UpperGantry(api.util.motor.Motor):
         use_z: bool = True,
         slow_z: bool = False,
         use_drip_plate: bool = False,
-        tip: int = None,
+        tip: str = None,
         relative_moves: list = [0,0,0,0],
         max_drip_plate: int = -1198000,
         ignore_tips: bool = False
@@ -711,7 +710,6 @@ class UpperGantry(api.util.motor.Motor):
             of the coordinate
         """
         # Modify the coordinate based on the relative moves
-        print(f"z: {z} -> {z + relative_moves[2]}")
         x = x + relative_moves[0]
         y = y + relative_moves[1]
         z = z + relative_moves[2]
@@ -722,10 +720,17 @@ class UpperGantry(api.util.motor.Motor):
         if ignore_tips == True:
             z = z
         else:
-            if tip == 50 or tip == 200:
-                z = z - 305000
-            elif tip == None:
-                z = 0
+            try:
+                tip = int(tip)
+                if tip == 50 or tip == 200:
+                    z = z - 305000
+                elif tip == None:
+                    z = 0
+            except:
+                if tip == 'nub' or tip == 'Nub':
+                    z = z + 305000 + 286500
+                elif tip == None:
+                    z = 0
         # Home Z and the drip plate
         self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, 0, 800000, True, True)
         # Check if the user wants to use the drip plate
@@ -1117,11 +1122,11 @@ class UpperGantry(api.util.motor.Motor):
             elif pressure == 'low':
                 pressure = -100
             elif pressure == 'lowest':
-                pressure = -15
+                pressure = -13
             elif pressure == 'highest':
-                pressure = -200
+                pressure = -240
             elif pressure == 'high':
-                pressure = -300
+                pressure = -200
             elif pressure == 'half':
                 print(self.__pipettor.max_pressure)
                 pressure = 0.5 * (self.__pipettor.max_pressure - self.__pipettor.min_pressure)
@@ -1172,11 +1177,11 @@ class UpperGantry(api.util.motor.Motor):
             if pressure.lower() == 'low':
                 pressure = 100
             elif pressure.lower() == 'high':
-                pressure = 300
+                pressure = 200
             elif pressure.lower() == 'lowest':
-                pressure = 15
+                pressure = 10
             elif pressure.lower() == 'highest':
-                pressure = 500
+                pressure = 241
         # Check the type.
         check_type(dispense_vol, int)
         logger = Logger(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.dispense.__name__))

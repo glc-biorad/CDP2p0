@@ -45,7 +45,16 @@ class Meerstetter():
     __LIMIT_MAX_TEMPERATURE = 120 #degC
     __LIMIT_MIN_TEMPERATURE = 2 #degC
 
-    # Private constants (Thermocycler Address)
+    # Private Constants (Relay Addresses)
+    __RELAY_ADDR = {
+        1: 2, # A
+        2: 3, # B
+        3: 4, # C
+        4: 5, # D
+        9: 1, # Pre-Amp
+    }
+
+    # Private constants (Thermocycler Address - old needs to be removed after code cleaned)
     __ADDRESSES = {
         1: 'Heater A',
         2: 'Heater B',
@@ -65,12 +74,17 @@ class Meerstetter():
     # Constructor.
     def __init__(self):
         # Setup the serial connection.
-        # Setup the serial connection.
-        self.__controller = Controller(self.__COM_PORT, self.__BAUD_RATE, dont_use_fast_api=True, timeout=1)
+        #self.__controller = Controller(self.__COM_PORT, self.__BAUD_RATE, dont_use_fast_api=True, timeout=1)
+        self.__controller = None
         self.__fast_api_interface = FastAPIInterface()
         # Get the device address.
         #self.__device_address = self.get_device_address()
         # Turn on Relays for Pre-Amp, A, B, C, D, Thermocyclers.
+        #self.turn_on_thermocycler_by_addr(1)
+        #self.turn_on_thermocycler_by_addr(2)
+        #self.turn_on_thermocycler_by_addr(3)
+        #self.turn_on_thermocycler_by_addr(4)
+        #self.turn_on_thermocycler_by_addr(9)
         #self.__fast_api_interface.chassis.relay.on(2)
         #self.__fast_api_interface.chassis.relay.on(3)
         #self.__fast_api_interface.chassis.relay.on(4)
@@ -87,6 +101,11 @@ class Meerstetter():
         #self.enable_temperature_control(7)
         #self.enable_temperature_control(8)
         #self.enable_temperature_control(9)
+
+    def connect_to_opened_port(self, controller: Controller) -> None:
+        self.__controller = controller
+        if not self.__controller.is_open():
+            self.__controller.open()
 
     def __name_to_address(self, name):
         names = {
@@ -199,7 +218,7 @@ class Meerstetter():
             logger.log('LOG-START', "Getting the temperature of the peltier device.")
         # Generate the payload (1000: Object Temperature) and communication.
         payload = PeltierPayload('get', 1000)
-        pcom = PeltierCommunication('#', address, self.__sequence_numbers[address-1], payload)
+        pcom = PeltierCommunication('#', address, self.__sequence_numbers[address-1], payload, log=False)
         self.__controller.write(pcom.to_string())
         self.__increase_sequence_number(address)
         # Get the response back.
@@ -522,212 +541,38 @@ class Meerstetter():
         #pcom.compare_with_response(response)
         logger.log('LOG-END', "The address to the Peltier device has been set to {0}.".format(address))
 
-    def thermocycle_2(self, h1, h2, number_of_cycles, high_T, high_T_time, high_T_time_units, low_T, low_T_time, low_T_time_units, high_T_2, low_T_2):
-        """
-        Thermocycle for a certain number of cycles between a high and low temperature
-        for certain times at each temperature.
-        
-        Inputs:
-        - number_of_cycles (int): number of cycles for thermocycling between the two temperatures.
-        - high_T (int): high temperature of the thermocycling protocol.
-        - high_T_time (int): time to sit at high_T
-        - high_T_time_unit (str): unit of time for high_T_time
-        - low_T (int): low temperature of the thermocycling protocol.
-        - low_T_time (int): time to sit at low_T
-        - low_T_time_unit (str): unit of time for low_T_time
-
-        Notes:
-        - max temperature = 110 degC
-        - min temperature = 3 degC
-        - high_T must be larger than low_T
-        - time units are either 'seconds', 'minutes', 'hours'
-        """
-        logger = Logger(__file__, __name__)
-        T_max = 110
-        T_min = 3
-        check_type(number_of_cycles, int)
-        check_type(high_T, int)
-        check_type(high_T_time, int)
-        check_type(high_T_time_units, str)
-        check_type(low_T, int)
-        check_type(low_T_time, int)
-        check_type(low_T_time_units, str)
-        check_limit(high_T, low_T, '>')
-        check_limit(high_T, T_max, '<=')
-        check_limit(low_T, T_max, '<=')
-        check_limit(low_T, T_min, '>=')
-        check_limit(high_T, T_min, '>=')
-        check_limit(number_of_cycles, 0, '>')
-        logger.log('LOG-START', "Starting a Thermocycling protocol with {0} cycles between {1} degC for {2} {3} and {4} degC for {5} {6} on {7}.".format(number_of_cycles, high_T, high_T_time, high_T_time_units, low_T, low_T_time, low_T_time_units, h1))
-        cycles = [i for i in range(number_of_cycles)]
-        for cycle in cycles:
-            logger.log('MESSAGE', "Thermocycling Cycle Number: {0} of {1}".format(cycle, number_of_cycles))
-            self.change_temperature(h1, high_T, block=False)
-            self.change_temperature(h2, high_T_2, block=False)
-            self.monitor_devices_2(h1, h2, high_T_time, 10)
-            self.change_temperature(h1, low_T, block=False)
-            self.change_temperature(h2, low_T_2, block=False)
-            self.monitor_devices_2(h1, h2, low_T_time, 10)
-        logger.log('WARNING', "During thermocycling on {0}, the meerstetter was reset {1} times.".format(h1, self.__reset_count))
-        logger.log('LOG-END', "Thermocycling is now complete for {0}.".format(h1))
-
-    def thermocycle(self, heater_name, number_of_cycles, high_T, high_T_time, high_T_time_units, low_T, low_T_time, low_T_time_units):
-        """
-        Thermocycle for a certain number of cycles between a high and low temperature
-        for certain times at each temperature.
-        
-        Inputs:
-        - number_of_cycles (int): number of cycles for thermocycling between the two temperatures.
-        - high_T (int): high temperature of the thermocycling protocol.
-        - high_T_time (int): time to sit at high_T
-        - high_T_time_unit (str): unit of time for high_T_time
-        - low_T (int): low temperature of the thermocycling protocol.
-        - low_T_time (int): time to sit at low_T
-        - low_T_time_unit (str): unit of time for low_T_time
-
-        Notes:
-        - max temperature = 110 degC
-        - min temperature = 3 degC
-        - high_T must be larger than low_T
-        - time units are either 'seconds', 'minutes', 'hours'
-        """
-        logger = Logger(__file__, __name__)
-        T_max = 110
-        T_min = 3
-        check_type(number_of_cycles, int)
-        check_type(high_T, int)
-        check_type(high_T_time, int)
-        check_type(high_T_time_units, str)
-        check_type(low_T, int)
-        check_type(low_T_time, int)
-        check_type(low_T_time_units, str)
-        check_limit(high_T, low_T, '>')
-        check_limit(high_T, T_max, '<=')
-        check_limit(low_T, T_max, '<=')
-        check_limit(low_T, T_min, '>=')
-        check_limit(high_T, T_min, '>=')
-        check_limit(number_of_cycles, 0, '>')
-        logger.log('LOG-START', "Starting a Thermocycling protocol with {0} cycles between {1} degC for {2} {3} and {4} degC for {5} {6} on {7}.".format(number_of_cycles, high_T, high_T_time, high_T_time_units, low_T, low_T_time, low_T_time_units, heater_name))
-        cycles = [i for i in range(number_of_cycles)]
-        for cycle in cycles:
-            logger.log('MESSAGE', "Thermocycling Cycle Number: {0}".format(number_of_cycles))
-            self.change_temperature(heater_name, high_T, block=False)
-            self.monitor_device(heater_name, high_T_time, 10)
-            self.change_temperature(heater_name, low_T, block=False)
-            self.monitor_device(heater_name, low_T_time, 10)
-        logger.log('WARNING', "During thermocycling on {0}, the meerstetter was reset {1} times.".format(heater_name, self.__reset_count))
-        logger.log('LOG-END', "Thermocycling is now complete for {0}.".format(heater_name))
-
     def get_checksum(self, value):
         from api.util.crc import compute_crc16_xmodem
         print(compute_crc16_xmodem(value))
 
-    def test1(self, address):
-        # Generate the payload (1000: Object Temperature) and communication.
-        payload = PeltierPayload('get', 1000)
-        pcom = PeltierCommunication('#', address, self.__sequence_numbers[address-1], payload)
-        self.__controller.write(pcom.to_string())
-        self.__increase_sequence_number(address)
-        # Get the response back.
-        response = self.__controller.readline()
-        # Compare the response.
-        pcom.compare_with_response(response, assert_checksum=False)
-        # Get the object temperature from the response.
-        temperature_hexidecimal = response[7:-4]
-        temperature = convert_hexidecimal_to_float32_ieee_754(temperature_hexidecimal)
-        self.__temperatures[address-1] = temperature
-        print(f"Address ({address}) is at {temperature}")
+    # Turn on a relay by it's address
+    def turn_on_thermocycler_by_addr(self, addr: int, max_wait_time: int = 10) -> bool:
+        """Turn on the Thermocycler's relay if applicable and wait till a response is returned"""
+        self.__fast_api_interface.chassis.relay.on(self.__RELAY_ADDR[addr]+1)
+        #self.__fast_api_interface.chassis.relay.get_relay_info(3)
+        wait_time_clock = time.time()
+        meerstetter_response = None
+        while (time.time() - wait_time_clock <= max_wait_time) and (meerstetter_response != None):
+            meerstetter_response = self.get_temperature(addr)
+            time.sleep(2)
+        if meerstetter_response != None:
+            return True
+        else:
+            return False
 
-    def test2(self, address):
-        # Generate the payload (1000: Object Temperature) and communication.
-        payload = PeltierPayload('get', 1000)
-        pcom = PeltierCommunication('#', address, self.__sequence_numbers[address-1], payload)
-        self.__controller.write(pcom.to_string())
-        self.__increase_sequence_number(address)
-        # Get the response back.
-        response = self.__controller.readline()
-        # Compare the response.
-        pcom.compare_with_response(response, assert_checksum=False)
-        # Get the object temperature from the response.
-        temperature_hexidecimal = response[7:-4]
-        temperature = convert_hexidecimal_to_float32_ieee_754(temperature_hexidecimal)
-        self.__temperatures[address-1] = temperature
-        print(f"Address ({address}) is at {temperature}")
-
-    def test3(self):
-        p1 = multiprocessing.Process(target=self.test1)
-        p2 = multiprocessing.Process(target=self.test1)
-        p1.start()
-        p2.start()
-
-    def multiprocessing_thermocycling(self, address: int, n_cycles: int, 
-                                      denature_temperature: int, anneal_temperature: int, extension_temperature: int,
-                                      denature_time: int, anneal_time: int, extension_time: int,
-                                      final_temperature=30) -> None:
-        cycles = [i for i in range(n_cycles)]
-        checkin_time = 10
-        # Denature for the denature time.
-        self.change_temperature(address, denature_temperature)
-        time.sleep(0.3)
-        time_start = time.time()
-        now = datetime.now()
-        time_start = (now.hour * 60 * 60) + (now.minute * 60) + now.second
-        i = 1
-        while (datetime.now().hour * 60 * 60) + (datetime.now().minute * 60) + datetime.now().second - time_start >= denature_time:
-            print(f"\nHeater {address} Denature Time Left: {denature_time - (time.time() - time_start)}\n")
-            if time.time() - time_start() >= checkin_time * i:
-                print(f"\nHeater {address} Denature Time Left: {denature_time - (time.time() - time_start)}\n")
-                i = i + 1
-        # Cycle for n cycles.
-        for cycle in cycles:
-            print(f"Time now: ")
-            print(f"\nHeater {address} Cycle Progress: {cycle+1}/{n_cycles}\n")
-            # High temperature for a time.
-            self.change_temperature(address, extension_temperature)
-            time.sleep(0.3)
-            time_start = time.time()
-            now = datetime.now()
-            time_start = (now.hour * 60 * 60) + (now.minute * 60) + now.second
-            i = 1
-            while (datetime.now().hour * 60 * 60) + (datetime.now().minute * 60) + datetime.now().second - time_start >= extension_time:
-                print(f"\nHeater {address} Extension Time Left: {extension_time - (time.time() - time_start)}\n")
-                if time.time() - time_start() >= checkin_time * i:
-                    print(f"\nHeater {address} Extension Time Left: {extension_time - (time.time() - time_start)}\n")
-                    i = i + 1
-            # Low temperature for a time.
-            self.change_temperature(address, anneal_temperature)
-            time.sleep(0.3)
-            time_start = time.time()
-            now = datetime.now()
-            time_start = (now.hour * 60 * 60) + (now.minute * 60) + now.second
-            i = 1
-            while (datetime.now().hour * 60 * 60) + (datetime.now().minute * 60) + datetime.now().second - time_start >= anneal_time:
-                print(f"\nHeater {address} Anneal Time Left: {anneal_time - (time.time() - time_start)}\n")
-                if time.time() - time_start() >= checkin_time * i:
-                    print(f"\nHeater {address} Anneal Time Left: {anneal_time - (time.time() - time_start)}\n")
-                    i = i + 1
-        # Cool to a low temperature.
-        self.change_temperature(address, final_temperature)
-        time.sleep(0.3)
-
-    def thermocycle_3(self, addresses: list, cycles: list,
-                      denature_temperatures: list, anneal_temperatures: list, extension_temperatures: list,
-                      denature_times: list, anneal_times: list, extension_times: list,
-                      final_temperatures: list = [30, 30, 30]) -> None:
-        # Setup the processes for the three addresses.
-        processes = [
-            multiprocessing.Process(target = self.multiprocessing_thermocycling(addresses[i], cycles[i], 
-                                                                                denature_temperatures[i], 
-                                                                                anneal_temperatures[i], 
-                                                                                extension_temperatures[i], 
-                                                                                denature_times[i], 
-                                                                                anneal_times[i], 
-                                                                                extension_times[i])) for i in range(len(addresses))
-            ]
-        # Start the processes.
-        for process in processes:
-            print(f"\nStarting Process {process}\n")
-            process.start()
+    # Turn off a relay by it's address
+    def turn_off_thermocycler_by_addr(self, addr: int, max_wait_time: int = 10) -> bool:
+        """Turn off the Thermocycler's relay if applicable and wait till a response is returned"""
+        self.__fast_api_interface.chassis.relay.off(self.__RELAY_ADDR[addr]+1)
+        wait_time_clock = time.time()
+        meerstetter_response = 1
+        while (time.time() - wait_time_clock <= max_wait_time) and (meerstetter_response == None):
+            meerstetter_response = self.get_temperature(addr)
+            time.sleep(2)
+        if meerstetter_response != None:
+            return True
+        else:
+            return False
 
     # Close Method.
     def close(self):

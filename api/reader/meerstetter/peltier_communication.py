@@ -20,9 +20,10 @@ class PeltierCommunication():
     # Private constants.
 
     # Constructor.
-    def __init__(self, control, address, sequence_number, payload, checksum=None):
+    def __init__(self, control, address, sequence_number, payload, checksum=None, log:bool=True):
         self.__control = str(control)
         self.__address = left_pad_to_str(hex(address)[2:].upper(), 2)
+        self.log = log
         #self.__address = left_pad_to_str(address, 2)
         try:
             self.__sequence_number = left_pad_to_str(hex(sequence_number)[2:].upper(), 4) # added hex and stuff
@@ -70,6 +71,8 @@ class PeltierCommunication():
             try:
                 # Setup the logger.
                 logger = Logger(__file__, self.compare_with_response.__name__)
-                logger.log('ERROR', f"Error returned {e} when comparing the response ({response}) received with the Meerstetter. If the response is None this could mean that the board you are trying to communicate with is not connected, not powered, or in an error state and must be reset.")
+                if self.log:
+                    logger.log('ERROR', f"Error returned {e} when comparing the response ({response}) received with the Meerstetter. If the response is None this could mean that the board you are trying to communicate with is not connected, not powered, or in an error state and must be reset.")
             except Exception as e:
-                print(e)
+                if self.log:
+                    print(e)

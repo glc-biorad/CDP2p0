@@ -458,15 +458,20 @@ class Seyonic(object):
         for channel in channels:
             _.append(self.client.Get("Input Pressure", self.pip_addr, channel))
         return _
-    def get_current_output_pressure(self, channels: list):
+    def get_current_output_pressure(self, channels: list = [1,2,3,4,5,6,7,8]):
         _ = []
         for channel in channels:
             _.append(self.client.Get("Output Pressure", self.pip_addr, channel))
         return _
-    def get_pressure(self):
-        return self.client.Get("Pressure", self.pip_addr, 0)
+    def get_pressure(self, pressure_type: str = 'vacuum') -> int:
+        if pressure_type.lower() in ['vacuum', 'positive', 'v', 'p']:
+            if pressure_type[0].lower() == 'p':
+                description = 2
+            else:
+                description = 3
+        return int(self.client.Get("Pressure", self.cntrl_addr, description))
 
-    def aspirate(self, pressure: int = None, channels: list = [1,2,3,4,5,6,7,8]):
+    def aspirate(self, pressure: int = None, channels: list = [1,2,3,4,5,6,7,8], pressure_offset: int = 3):
         self.status_log.seyonic_log_header()
         #self.log.log(f"aspirate(pressure={pressure}; channels={str(channels).replace(',',';')})")
         logger = Logger(__file__, __name__)
@@ -476,7 +481,15 @@ class Seyonic(object):
         self.client.Set("Action Mode", self.pip_addr, 0, action_modes['Aspirate'])
         # Set the pressure 
         self.set_pressure(pressure=pressure)
-        time.sleep(3)
+        actual_pressure = self.get_pressure('vacuum')
+        equalize_start_time = time.time()
+        equalize_time = equalize_start_time
+        equalize_max_time = 4
+        while (actual_pressure + pressure_offset <= pressure) or (actual_pressure - pressure_offset >= pressure):
+            print(f"Actual Pressure = {actual_pressure} mbar, target pressure = {pressure} mbar")
+            elapsed_time = time.time() - equalize_start_time
+            self.status_log.seyonic_log('Aspirate', "Actual Pressure (mbar)", actual_pressure, [pressure for i in range(1,9)], elapsed_time)
+            actual_pressure = self.get_pressure('vacuum')
         aspirate_clock_start = time.time()
         # Trigger the action of aspiration
         self.client.Trigger(self.pip_addr, 0)
