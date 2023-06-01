@@ -136,9 +136,14 @@ class ThermocycleController:
 	"""
 	System for passing data from the Thermocycle View to the Thermocycle Model
 	"""
-	def __init__(self, model, view) -> None:
+	def __init__(self, model, view, controller=None) -> None:
 		self.model = model
 		self.view = view
+		self.controller = controller
+		if self.controller != None:
+			self.meerstetter_com_port_controller = self.controller.meerstetter_com_port_controller
+		else:
+			self.meerstetter_com_port_controller = None
 		
 		# Setup the defaults for the loaded view
 		self.model.setup_defaults()
@@ -384,6 +389,7 @@ class ThermocycleController:
 		# Initialize the Meerstetter
 		try:
 			self.meerstetter = Meerstetter()
+			self.meerstetter.connect_to_opened_port(self.meerstetter_com_port_controller)
 		except Exception as e:
 			print(e)
 			print("Coulnd't connect to the Meerstetter with the ThermocycleController!")
@@ -1211,6 +1217,7 @@ class ThermocycleController:
 			# Initialize the Meerstetter object
 			try:
 				self.meerstetter = Meerstetter()
+				self.meerstetter.connect_to_opened_port(self.meerstetter_com_port_controller)
 			except Exception as e:
 				print(e)
 				print("Couldn't initialize Meerstetter for the ThermocycleController")
@@ -1239,6 +1246,7 @@ class ThermocycleController:
 			# Initialize the Meerstetter object
 			try:
 				self.meerstetter = Meerstetter()
+				self.meerstetter.connect_to_opened_port(self.meerstetter_com_port_controller)
 			except Exception as e:
 				print(e)
 				print("Couldn't initialize Meerstetter for the ThermocycleController")
@@ -1263,6 +1271,9 @@ class ThermocycleController:
 			# Initialize the Meerstetter object
 			try:
 				self.meerstetter = Meerstetter()
+				self.meerstetter.connect_to_opened_port(self.meerstetter_com_port_controller)
+				#if not self.meerstetter_com_port_controller.is_open():
+				#	self.meerstetter_com_port_controller.open()
 			except Exception as e:
 				print(e)
 				print("Couldn't initialize Meerstetter for the ThermocycleController")

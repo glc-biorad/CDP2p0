@@ -3,6 +3,8 @@ System which passes data from the GUI to the model
 """
 import threading
 
+from api.util.controller import Controller as ComPortController
+
 from gui.models.model import Model
 from gui.views.view import View
 
@@ -31,20 +33,23 @@ except:
 	print("Reader could not be imported for the Controller")
 
 class Controller:
-	def __init__(self, model: Model, view: View) -> None:
+	def __init__(self, model: Model, view: View, meerstetter_com_port: ComPortController) -> None:
 		self.model = model
 		self.view = view
+		self.meerstetter_com_port_controller = meerstetter_com_port
 		self.image_controller = ImageController(
 			model=self.model.get_image_model(),
 			view=self.view.image_frame
 		)
 		self.thermocycle_controller = ThermocycleController(
 			model=self.model.get_thermocycle_model(),
-			view=self.view.thermocycle_frame
+			view=self.view.thermocycle_frame,
+			controller=self
 		)
 		self.build_protocol_controller = BuildProtocolController(
 			model=self.model.get_build_protocol_model(),
-			view=self.view.build_protocol_frame
+			view=self.view.build_protocol_frame,
+			controller=self
 		)
 		self.optimize_controller = OptimizeController(
 			model=self.model.get_optimize_model(),

@@ -21,6 +21,8 @@ from gui.util.coordinates_list_to_csv import coordinates_list_to_csv
 
 # Constants
 Z1_OFFSET = 305000
+Z1_NUB_OFFSET = 286500
+X_NUB_OFFSET = 200
 NO_TRAY_CONSUMABLES = ["Pre-Amp Thermocycler", "Heater/Shaker", "Mag Separator", "Chiller"]
 NO_COLUMN_CONSUMABLES = ["Aux Heater", "Sample Rack", "Quant Strip", "Lid Tray"]
 TWELVE_COLUMN_CONSUMABLES = ["Pre-Amp Thermocycler", "Mag Separator", "Chiller", "Reagent Cartridge"]
@@ -176,14 +178,14 @@ class OptimizeController:
 		tray = self.view.tray_sv.get()
 		column = self.view.column_sv.get()
 		tip = self.view.tip_sv.get()
+		print(tip)
 		use_drip_plate=False
 		if (consumable in ["Tip Transfer Tray", "Lid Tray"]) and (tray in ['A','B','C','D']):
 			tip = 1000
 			use_drip_plate=True
 		if tip == '':
 			tip = None
-		else:
-			tip = int(tip)
+		print(f"Tip: {tip}")
 		use_z = self.view.use_z_iv.get()
 		slow_z = self.view.slow_z_iv.get()
 		coordinate = self.coordinates_model.select(f"Unit {self.unit} Upper Gantry Coordinates", consumable, tray, column)
@@ -217,7 +219,10 @@ class OptimizeController:
 			tk.messagebox.showwarning(title="Coordinate Update", message="No tip option selected, cannot update without this information. All coordinates are based on the 1000 uL tip coordinate, updating a coordinate using 50 or 200 uL tips will update the coordinate with respect to the 1000 uL tip using the coordinate height offset.")
 			return None
 		else:
-			tip = int(tip)
+			try:
+				tip = int(tip)
+			except:
+				pass
 		# Generate a warning message
 		message = ''
 		if self.coordinates_model.check_location_exists(f'Unit {self.unit} Upper Gantry Coordinates', consumable, tray, column):
@@ -236,6 +241,11 @@ class OptimizeController:
 				# Use the tip difference offsets to update the coordinate based on the current tip selected
 				if tip in [50, 200]:
 					z1 = z1 + Z1_OFFSET
+				elif tip in ['nub']:
+					print(z1)
+					z1 = z1 + Z1_OFFSET + Z1_NUB_OFFSET
+					print(z1)
+					#x = x + X_NUB_OFFSET
 				# Get the table name for this unit
 				table_name = f"Unit {self.unit} Upper Gantry Coordinates"
 				# Update the model

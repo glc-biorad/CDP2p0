@@ -214,71 +214,13 @@ OTHER_OPTIONS = (
 	('gui/images/protocols.png', 'Protocols', 'Extraction', "Transfer Plasma", 'Binding', 'Pooling', 'Pre-Dispense', "Low-Stringent Wash", 'Pre-Elution', 'Elution'),
 	('gui/images/magnet.png', 'Magnet', "Engage magnet", "Disengage magnet"),
 	('gui/images/heater_shaker.png', 'Heater/Shaker', "Change the Heater/Shaker temperature", "Shake on", "Shake off"),
-	('gui/images/thermocycle.png', 'Thermocycling', "Thermocycle Hold", "Thermocycle A: Change Temperature", "Thermocycle B: Change Temperature", "Thermocycle C: Change Temperature", "Thermocycle D: Change Temperature", "Thermocycle: Cycle", "Thermocycle Protocol", "Thermocycle Pre-Amp"),
+	('gui/images/thermocycle.png', 'Thermocycling', "Relay A - On", "Relay A - Off", "Relay B - On", "Relay B - Off", "Relay C - On", "Relay C - Off", "Relay D - On", "Relay D - Off", "Thermocycle Hold", "Thermocycle A: Change Temperature", "Thermocycle B: Change Temperature", "Thermocycle C: Change Temperature", "Thermocycle D: Change Temperature", "Thermocycle: Cycle", "Thermocycle Protocol", "Thermocycle Pre-Amp"),
 	('gui/images/tray.png', 'Trays', "Open Tray AB", "Open Tray CD", "Close Tray AB", "Close Tray CD"),
 	('gui/images/clamp.png', 'Clamps', "Lower Thermocycler A", "Lower Thermocycler B", "Lower Thermocycler C", "Lower Thermocycler D", "Raise Thermocycler A", "Raise Thermocycler B", "Raise Thermocycler C", "Raise Thermocycler D"),
 	('gui/images/imager.png', 'Imager', "Home imager", "Move imager", "Image all channels", "Image", "Scan A", "Scan B", "Scan C", "Scan D", "Light Show"),
 	('gui/images/other.png', 'Other', "Drip", "LLD", "Add a comment", "Pause for user input", "Load Tip Tray A", "Load Tip Tray B", "Move Lid A", "Move Lid B", "Move Lid C", "Move Lid D", "Move Chip A", "Move Chip B", "Move Chip C", "Move Chip D", "Move Engaged Chip A", "Move Engaged Chip B", "Move Engaged Chip C", "Move Engaged Chip D", "Suction cups on", "Suction cups off", "Extend drip plate"),
 )
-#OTHER_OPTION_VALUES = [
-#	"Home pipettor",
-#	"Home pipettor fast",
-#	"Home pipettor along Z",
-#	"Home pipettor along Y",
-#	"Home pipettor along X",
-#	"Home the pipettor's drip plate",
-#	"Change Heater/Shaker Temperature",
-#	"Move relative left",
-#	"Move relative right",
-#	"Move relative up",
-#	"Move relative down",
-#	"Move relative forwards",
-#	"Move relative backwards",
-#	"Generate standard droplets",
-#	"Generate pico droplets",
-#	"Generate demo droplets",
-#	"Extraction",
-#	"Transfer plasma",
-#	"Binding",
-#	"Pooling",
-#	"Wash 1",
-#	"Wash 2",
-#	"Pre-Eultion",
-#	"Elution",
-#	"Enrichment",
-#	"Pre-Amp",
-#	"Assay Prep",
-#	"Shake on",
-#	"Shake off",
-#	"Engage magnet",
-#	"Disengage magnet",
-#	"Open Tray AB",
-#	"Open Tray CD",
-#	"Close Tray AB",
-#	"Close Tray CD",
-#	"Lower Thermocycler A",
-#	"Lower Thermocycler B",
-#	"Lower Thermocycler D",
-#	"Lower Thermocycler C",
-#	"Raise Thermocycler A",
-#	"Raise Thermocycler B",
-#	"Raise Thermocycler C",
-#	"Raise Thermocycler D",
-#	"Thermocycle Protocol",
-#	"Thermocycle Pre-Amp",
-#	"Move lid A",
-#	"Move lid B",
-#	"Move lid C",
-#	"Move lid D",
-#	"Move chip A",
-#	"Move chip B",
-#	"Move chip C",
-#	"Move chip D",
-#	"Scan A",
-#	"Scan B",
-#	"Scan C",
-#	"Scan D",
-#]
+
 COUNT_OPTION_VALUES = [f'{i}' for i in range(1,11)]
 
 # Image Paths
@@ -673,7 +615,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		# Create the pressure label and optionmenu
 		self.label_pipettor_pressure = ctk.CTkLabel(master=self, text='Pressure', font=(FONT, -14))
 		self.pipettor_pressure_sv = StringVar()
-		self.pipettor_pressure_sv.set('High')
+		self.pipettor_pressure_sv.set('Low')
 		self.optionmenu_pipettor_pressure = ctk.CTkOptionMenu(
                         master=self,
 			corner_radius=2,
@@ -932,10 +874,10 @@ class BuildProtocolFrame(ctk.CTkFrame):
 				self.optionmenu_tips_column.configure(values=('1','2','3','4','5','6','7','8','9','10','11','12'))
 			else:
 				# Make sure the current action is valid
-				if self.tips_action_sv.get() not in ['Pickup', 'Eject']:
+				if self.tips_action_sv.get() not in ['Pickup', 'Eject', "Nub Eject"]:
 					self.tips_action_sv.set('Eject')
 				self.optionmenu_tips_column.configure(values=('1','2','3','4','5','6','7','8','9','10','11','12'))
-				self.optionmenu_tips_action.configure(values=('Pickup','Eject',))
+				self.optionmenu_tips_action.configure(values=('Pickup','Eject',"Nub Eject",))
 		elif tray == "Tip Transfer Tray":
 			self.optionmenu_tips_column.configure(values=('1','2','3','4','5','6','7','8',''))
 			if column == '':
@@ -969,9 +911,9 @@ class BuildProtocolFrame(ctk.CTkFrame):
 				self.optionmenu_tips_action.configure(values=('',))
 		else:
 			# Make sure the current action is valid
-			if self.tips_action_sv.get() not in ['Pickup', 'Eject']:
+			if self.tips_action_sv.get() not in ['Pickup', 'Eject', "Nub Eject"]:
 				self.tips_action_sv.set('Pickup')
-			self.optionmenu_tips_action.configure(values=('Pickup','Eject',))
+			self.optionmenu_tips_action.configure(values=('Pickup','Eject', "Nub Eject",))
 			
 	def callback_motion_consumable(self, *args) -> None:
 		"""Deals with changes to the motion consumable optionmenu
@@ -1014,7 +956,7 @@ class BuildProtocolFrame(ctk.CTkFrame):
 					# Allow for the possible DG8 tray and column options
 					self.optionmenu_motion_tray.configure(values=DG8_TRAY_OPTION_VALUES)
 					self.optionmenu_motion_column.configure(values=DG8_COLUMN_OPTION_VALUES)
-					self.optionmenu_motion_tip.configure(values=('1000', '50', '200', ''))
+					self.optionmenu_motion_tip.configure(values=('1000', '50', '200', 'nub', ''))
 					return None
 				elif consumable == 'Chip':
 					# Allow for the possible chip tray and column options

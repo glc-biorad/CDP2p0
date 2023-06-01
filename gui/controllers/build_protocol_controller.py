@@ -26,7 +26,13 @@ from gui.models.coordinates_model import CoordinatesModel
 try:
 	from api.upper_gantry.upper_gantry import UpperGantry
 except:
-	print("Couldn't import upper gantry for BuildProtocolCOntroller")
+	print("Couldn't import upper gantry for BuildProtocolController")
+
+# Import the fastAPI interface
+try:
+	from api.interfaces.fast_api_interface import FastAPIInterface
+except Exception as e:
+	print(e)
 
 # Import the reader api
 try:
@@ -92,6 +98,8 @@ MAIN_ACTION_KEY_WORDS = [
 	'Drip',
 	'Scan',
 	'Image',
+	'Nub',
+	'Relay',
 ]
 TOPLEVEL_CYCLE_WIDTH = 970
 TOPLEVEL_CYCLE_HEIGHT = 210
@@ -339,13 +347,16 @@ class BuildProtocolController:
 	def __init__(
 			self, 
 			model: BuildProtocolModel,
-			view: BuildProtocolFrame
+			view: BuildProtocolFrame,
+			controller
 		) -> None:
 		# Set the model and view for the controller
 		self.model = model
 		self.view = view
 		self.db_name = self.model.db_name
 		self.unit = self.db_name[-4]
+		self.controller = controller
+		self.fast_api_interface = FastAPIInterface()
 
 		# Initialize the Coordinates Model
 		self.coordinates_model = CoordinatesModel(self.model.db_name, self.model.cursor, self.model.connection)
@@ -436,6 +447,10 @@ class BuildProtocolController:
 				# Set all tip options to ''
 				self.view.motion_tip_sv.set('')
 				self.view.pipettor_tip_sv.set('')
+			elif action == 'Nub':
+				action_message = f"{action} tips in {tray} column {column}"
+				#self.view.pipettor_tip_sv.set('Nub')
+				#
 			elif action == 'Pickup':
 				action_message = f"{action} tips from {tray} column {column}"
 				# Determine what tip was put on
@@ -518,7 +533,9 @@ class BuildProtocolController:
 					print(f"Motion consumable ({consumable}) needs a column")
 					return None
 			# Check tip
-			if tip != '':
+			if tip == 'nub':
+				action_message = action_message + f" with {tip} tips"
+			elif tip != '':
 				action_message = action_message + f" with {tip} uL tips"
 			else:
 				action_message = action_message + " without tips"
@@ -887,6 +904,18 @@ class BuildProtocolController:
 					self.upper_gantry.tip_eject_new(x, y, z)
 				# Log
 				log.log(action_message, time.time() - t_start)
+			elif split[0] == 'Nub':
+				tray = split[4]
+				column = int(split[6])
+				# Get the coordinate
+				unit = self.model.db_name[-4]
+				table_name = f"Unit {unit} Upper Gantry Coordinates"
+				coordinate = self.coordinates_model.select(table_name, "Tip Box", tray, column)
+				z_height_nub_compensation = 100000
+				x = int(coordinate[0][4])
+				y = int(coordinate[0][5])
+				z = int(coordinate[0][6]) - z_height_nub_compensation
+				self.upper_gantry.tip_eject_new(x, y, z)
 			elif split[0] == 'Pickup':
 				tray = split[3]
 				column = int(split[5])
@@ -1035,7 +1064,8 @@ class BuildProtocolController:
 				except ValueError:
 					column = ''
 				# Get the tip size
-				tip = int(split[split.index('tips') - 2])
+				tip = split[split.index('tips') - 2]
+				print(f"TIPS: {tip}")
 				# Get the relative moves
 				try:
 					dx = -int(split[split.index('left') + 2])
@@ -1256,6 +1286,7 @@ class BuildProtocolController:
 				# Initialize the Meerstetter
 				try:
 					self.meerstetter = Meerstetter()
+					self.meerstetter.connect_to_opened_port(self.controller.meerstetter_com_port_controller)
 				except Exception as e:
 					pass
 				# Determine which thermocyclers are going to be used
@@ -1644,7 +1675,24 @@ class BuildProtocolController:
 					all_done = [protocol_data[i]['done'] for i in protocol_data.keys()]
 				print('ALL DONE')
 				log.log(f"All Thermocycling is complete", 0)
-				self.meerstetter.close()
+				#self.meerstetter.close()
+			elif split[0] == 'Relay':
+				relay = split[1]
+				state = split[-1]
+				states = ['On', 'Off']
+				relays = {
+					'A': 3,
+					'B': 4,
+					'C': 5,
+					'D': 6,
+					'Pre-Amp': 2,
+				}
+				if state == 'On':
+					self.fast_api_interface.chassis.relay.on(relays[relay])
+					# This needs to be optimized
+					time.sleep(8)
+				else:
+					self.fast_api_interface.chassis.relay.off(relays[relay])
 			elif split[0] == 'Drip':
 				# Open the valve for a specified time then close the valve (allow gravity to dispense the solution in the tips)
 				time_amount = int(split[-2])
@@ -1659,6 +1707,7 @@ class BuildProtocolController:
 				# Initialize the Meerstetter
 				try:
 					self.meerstetter = Meerstetter()
+					self.meerstetter.connect_to_opened_port(self.controller.meerstetter_com_port_controller)
 				except Exception as e:
 					pass
 				if 'Pre-Amp' in split:
@@ -1770,7 +1819,7 @@ class BuildProtocolController:
 								print(f" - D: {protocol['D']['anneal_temperature']} C for {protocol['D']['anneal_time']} sec")
 								self.meerstetter.change_temperature(4, int(protocol['D']['anneal_temperature']), block=False)
 							delay(int(protocol['A']['anneal_time']), 'seconds')
-				self.meerstetter.close()
+				#self.meerstetter.close()
 				# Log
 				log.log(action_message, time.time() - t_start)
 			elif split[0] == 'Open':

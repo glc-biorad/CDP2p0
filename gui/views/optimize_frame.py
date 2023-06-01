@@ -372,7 +372,7 @@ class OptimizeFrame(ctk.CTkFrame):
 		self.optionmenu_tip = ctk.CTkOptionMenu(
 			master=self,
 			variable=self.tip_sv,
-			values=('1000', '50', '200', ''),
+			values=('1000', '50', '200', 'nub', ''),
 			font=(FONT,-14),
 			width=OPTIONMENU_TIP_WIDTH,
 			corner_radius=5,
