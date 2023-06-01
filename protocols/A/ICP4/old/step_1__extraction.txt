@@ -1,0 +1,472 @@
+0: Comment: ------------ EXTRACTION ------------
+1: Comment: Change temperature of Heater/Shaker to 60 C to get solution to 37 C (non thermally conductive 32 deep well plate)
+2: Change Heater/Shaker Temperature to 60.0 C
+3: Engage magnet
+4: Comment: Tip 1
+5: Pickup tips from A column 1
+6: Comment: --- STEP: Pre-wet the tips ---
+7: Move to Heater/Shaker column 1 with 1000 uL tips
+8: Aspirate 500 uLs with 1000 uL tips at Low pressure 1 time
+9: Dispense 500 uLs with 1000 uL tips at Low pressure 1 time
+10: Delay for 5 seconds
+11: Move relative up by 200000
+12: Pause for user input
+13: Delay for 5 seconds
+14: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+15: Move relative down by 100000
+16: Comment: --- REAGENT: Binding Solution ---
+17: Move to Reagent Cartridge tray A column 1 with 1000 uL tips
+18: Aspirate 600 uLs with 1000 uL tips at Low pressure 1 time
+19: Move relative up 217000
+20: Dispense 600 uLs with 1000 uL tips at Low pressure 1 time
+21: Delay for 5 seconds
+22: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+23: Move relative down 217000
+24: Aspirate 700 uLs with 1000 uL tips at Low pressure 1 time
+25: Pause for user input
+26: Aspirate 150 uLs with 1000 uL tips at Low pressure 1 time
+27: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 300000
+28: Dispense 850 uLs with 1000 uL tips at Low pressure 1 time
+29: Delay for 5 seconds
+30: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+31: Delay for 5 seconds
+32: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+33: Comment: --- REAGENT: Binding Solution ---
+34: Move to Reagent Cartridge tray A column 2 with 1000 uL tips
+35: Aspirate 600 uLs with 1000 uL tips at Low pressure 1 time
+36: Move relative up 217000
+37: Dispense 600 uLs with 1000 uL tips at Low pressure 1 time
+38: Delay for 5 seconds
+39: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+40: Move relative down 217000
+41: Aspirate 700 uLs with 1000 uL tips at Low pressure 1 time
+42: Pause for user input
+43: Aspirate 150 uLs with 1000 uL tips at Low pressure 1 time
+44: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 300000
+45: Dispense 850 uLs with 1000 uL tips at Low pressure 1 time
+46: Delay for 5 seconds
+47: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+48: Delay for 5 seconds
+49: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+50: Comment: --- REAGENT: Binding Solution ---
+51: Move to Reagent Cartridge tray A column 11 with 1000 uL tips
+52: Aspirate 600 uLs with 1000 uL tips at Low pressure 1 time
+53: Move relative up 217000
+54: Dispense 600 uLs with 1000 uL tips at Low pressure 1 time
+55: Delay for 5 seconds
+56: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+57: Move relative down 217000
+58: Aspirate 700 uLs with 1000 uL tips at Low pressure 1 time
+59: Pause for user input
+60: Aspirate 150 uLs with 1000 uL tips at Low pressure 1 time
+61: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 300000
+62: Dispense 850 uLs with 1000 uL tips at Low pressure 1 time
+63: Delay for 5 seconds
+64: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+65: Delay for 5 seconds
+66: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+67: Comment: --- REAGENT: Binding Solution ---
+68: Move to Reagent Cartridge tray A column 12 with 1000 uL tips
+69: Aspirate 600 uLs with 1000 uL tips at Low pressure 1 time
+70: Move relative up 217000
+71: Dispense 600 uLs with 1000 uL tips at Low pressure 1 time
+72: Delay for 5 seconds
+73: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+74: Move relative down 217000
+75: Aspirate 700 uLs with 1000 uL tips at Low pressure 1 time
+76: Pause for user input
+77: Aspirate 150 uLs with 1000 uL tips at Low pressure 1 time
+78: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 300000
+79: Dispense 850 uLs with 1000 uL tips at Low pressure 1 time
+80: Delay for 5 seconds
+81: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+82: Delay for 5 seconds
+83: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+84: Comment: Tip 1
+85: Eject tips in A column 1
+86: Shake on with an RPM of 1000
+87: Comment: ------------ BINDING ------------
+88: Delay for 20 minutes
+89: Comment: ------------ POOLING ------------
+90: Comment: Tip 4
+91: Pickup tips from A column 4
+92: Shake off
+93: Comment: ------------ POOLING (PRE-DISPENSE TRANSFER 1) ------------
+94: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 50000
+95: Aspirate 580 uLs with 1000 uL tips at Low pressure 1 time
+96: Pause for user input
+97: Aspirate 300 uLs with 1000 uL tips at Low pressure 1 time
+0: Home pipettor along Z
+97: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+98: Move to Sample Rack tray A with 1000 uL tips moving right by 5100 up by 260000
+110: Move relative left by 6400
+99: Shake on with an RPM of 1000
+100: Delay for 45 seconds
+101: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+104: Delay for 5 seconds
+105: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+106: Delay for 5 seconds
+107: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+110: Move relative right by 6400
+111: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+112: Shake off
+113: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+114: Delay for 3 seconds
+115: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+116: Comment: ------------ POOLING (PRE-DISPENSE TRANSFER 2) ------------
+94: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 50000
+95: Aspirate 580 uLs with 1000 uL tips at Low pressure 1 time
+96: Pause for user input
+97: Aspirate 300 uLs with 1000 uL tips at Low pressure 1 time
+0: Home pipettor along Z
+97: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+98: Move to Sample Rack tray A with 1000 uL tips moving right by 5100 up by 260000
+110: Move relative left by 6400
+99: Shake on with an RPM of 1000
+100: Delay for 45 seconds
+101: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+104: Delay for 5 seconds
+105: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+106: Delay for 5 seconds
+107: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+110: Move relative right by 6400
+111: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+112: Shake off
+113: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+114: Delay for 3 seconds
+115: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+139: Comment: ------------ POOLING (PRE-DISPENSE TRANSFER 3) ------------
+94: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 50000
+95: Aspirate 580 uLs with 1000 uL tips at Low pressure 1 time
+96: Pause for user input
+97: Aspirate 300 uLs with 1000 uL tips at Low pressure 1 time
+0: Home pipettor along Z
+97: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+98: Move to Sample Rack tray A with 1000 uL tips moving right by 5100 up by 260000
+110: Move relative left by 6400
+99: Shake on with an RPM of 1000
+100: Delay for 45 seconds
+101: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+104: Delay for 5 seconds
+105: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+106: Delay for 5 seconds
+107: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+110: Move relative right by 6400
+111: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+112: Shake off
+113: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+114: Delay for 3 seconds
+115: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+162: Comment: ------------ POOLING (PRE-DISPENSE TRANSFER 4) ------------
+94: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 50000
+95: Aspirate 580 uLs with 1000 uL tips at Low pressure 1 time
+96: Pause for user input
+97: Aspirate 300 uLs with 1000 uL tips at Low pressure 1 time
+0: Home pipettor along Z
+97: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+98: Move to Sample Rack tray A with 1000 uL tips moving right by 5100 up by 260000
+110: Move relative left by 6400
+99: Shake on with an RPM of 1000
+100: Delay for 45 seconds
+101: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+104: Delay for 5 seconds
+105: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+106: Delay for 5 seconds
+107: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+110: Move relative right by 6400
+111: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+112: Shake off
+113: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+114: Delay for 3 seconds
+115: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+185: Comment: ------------ POOLING (PRE-DISPENSE TRANSFER 5) ------------
+94: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 50000
+95: Aspirate 580 uLs with 1000 uL tips at Low pressure 1 time
+96: Pause for user input
+97: Aspirate 300 uLs with 1000 uL tips at Low pressure 1 time
+0: Home pipettor along Z
+97: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+98: Move to Sample Rack tray C with 1000 uL tips moving right by 5100 up by 260000
+110: Move relative left by 6400
+99: Shake on with an RPM of 1000
+100: Delay for 45 seconds
+101: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+104: Delay for 5 seconds
+105: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+106: Delay for 5 seconds
+107: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+110: Move relative right by 6400
+111: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+112: Shake off
+113: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+114: Delay for 3 seconds
+115: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+208: Change Heater/Shaker Temperature to 21.0 C
+209: Comment: ------------ POOLING (PRE-DISPENSE TRANSFER 6) ------------
+94: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 20000
+95: Aspirate 580 uLs with 1000 uL tips at Low pressure 1 time
+96: Pause for user input
+97: Aspirate 300 uLs with 1000 uL tips at Low pressure 1 time
+0: Home pipettor along Z
+97: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+98: Move to Sample Rack tray C with 1000 uL tips moving right by 5100 up by 260000
+110: Move relative left by 6400
+99: Shake on with an RPM of 1000
+100: Delay for 45 seconds
+101: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+104: Delay for 5 seconds
+105: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+106: Delay for 5 seconds
+107: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+110: Move relative right by 6400
+111: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+112: Shake off
+113: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+114: Delay for 3 seconds
+115: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+232: Comment: ------------ POOLING (PRE-DISPENSE TRANSFER 7) ------------
+94: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 20000
+95: Aspirate 580 uLs with 1000 uL tips at Low pressure 1 time
+96: Pause for user input
+97: Aspirate 300 uLs with 1000 uL tips at Low pressure 1 time
+0: Home pipettor along Z
+97: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+98: Move to Sample Rack tray C with 1000 uL tips moving right by 5100 up by 260000
+110: Move relative left by 6400
+99: Shake on with an RPM of 1000
+100: Delay for 45 seconds
+101: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+104: Delay for 5 seconds
+105: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+106: Delay for 5 seconds
+107: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+110: Move relative right by 6400
+111: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+112: Shake off
+113: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+114: Delay for 3 seconds
+115: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+255: Comment: ------------ POOLING (PRE-DISPENSE TRANSFER 8) ------------
+94: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 20000
+95: Aspirate 580 uLs with 1000 uL tips at Low pressure 1 time
+96: Pause for user input
+97: Aspirate 300 uLs with 1000 uL tips at Low pressure 1 time
+0: Home pipettor along Z
+97: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+98: Move to Sample Rack tray C with 1000 uL tips moving right by 5100 up by 260000
+110: Move relative left by 6400
+99: Shake on with an RPM of 1000
+100: Delay for 45 seconds
+101: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+104: Delay for 5 seconds
+105: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+106: Delay for 5 seconds
+107: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+110: Move relative right by 6400
+111: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+112: Shake off
+113: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+114: Delay for 3 seconds
+115: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+278: Comment: --- STEP: Volume Adjustment for Pre-Dispense 9 ---
+279: Comment: --- STEP: Allow beads dispensed to bind ---
+280: Comment: ------------ POOLING (PRE-DISPENSE TRANSFER 9) ------------
+94: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 20000
+95: Aspirate 580 uLs with 1000 uL tips at Low pressure 1 time
+96: Pause for user input
+97: Aspirate 300 uLs with 1000 uL tips at Low pressure 1 time
+98: Move to Sample Rack tray C with 1000 uL tips moving right by 5100 up by 260000
+110: Move relative left by 6400
+99: Shake on with an RPM of 1000
+100: Delay for 45 seconds
+101: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+104: Delay for 5 seconds
+105: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+106: Delay for 5 seconds
+107: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+108: Delay for 5 seconds
+109: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+110: Move relative right by 6400
+111: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+112: Shake off
+113: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+114: Delay for 3 seconds
+115: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+295: Delay for 20 seconds
+296: Comment: --- STEP: Lateral Rinse Residual Wash ---
+297: Aspirate 600 uLs with 1000 uL tips at Low pressure 1 time
+298: Move to Heater/Shaker column 1 with 1000 uL tips moving left by 6000 up by 5000
+299: Dispense 600 uLs with 1000 uL tips at Low pressure 1 time
+300: Move relative right by 6000
+301: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+302: Move relative right by 5000
+303: Dispense 550 uLs with 1000 uL tips at Low pressure 1 time
+304: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+305: Move relative left by 11000
+306: Dispense 600 uLs with 1000 uL tips at Low pressure 1 time
+307: Move relative right by 6000
+308: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+309: Move relative right by 5000
+310: Dispense 550 uLs with 1000 uL tips at Low pressure 1 time
+311: Move relative left by 5000
+312: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+313: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+314: Comment: --- NOTE: No residual dispense since we noticed bubbles ---
+315: Dispense 600 uLs with 1000 uL tips at Low pressure 1 time
+316: Home pipettor fast
+317: Delay for 2 minutes
+318: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+319: Aspirate 720 uLs with 1000 uL tips at Low pressure 1 time
+320: Move to Sample Rack tray C with 1000 uL tips
+321: Dispense 720 uLs with 1000 uL tips at Low pressure 1 time
+322: Delay for 3 seconds
+323: Dispense 50 uLs with 1000 uL tips at Low pressure 1 time
+324: Comment: Tip 4 - End Pooling
+325: Eject tips in A column 4
+326: Engage magnet
+327: Comment: ------------ WASH 1 ------------
+328: Comment: Tip 2 - Wash 1
+329: Pickup tips from A column 2
+330: Disengage magnet
+331: Comment: --- REAGENT: Wash 1 Solution ---
+332: Move to Reagent Cartridge tray A column 3 with 1000 uL tips
+333: Aspirate 250 uLs with 1000 uL tips at Low pressure 1 time
+334: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+335: Dispense 250 uLs with 1000 uL tips at Low pressure 1 time
+336: Delay for 10 seconds
+337: Aspirate 200 uLs with 1000 uL tips at Low pressure 1 time
+338: Dispense 200 uLs with 1000 uL tips at Low pressure 1 time
+339: Aspirate 200 uLs with 1000 uL tips at Low pressure 1 time
+340: Dispense 200 uLs with 1000 uL tips at Low pressure 1 time
+341: Aspirate 200 uLs with 1000 uL tips at Low pressure 1 time
+342: Dispense 200 uLs with 1000 uL tips at Low pressure 1 time
+343: Delay for 5 seconds
+344: Engage magnet
+0: Comment: --- STEP: Bind ---
+345: Delay for 20 seconds
+346: Aspirate 100 uLs with 1000 uL tips at Low pressure 1 time
+347: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+348: Delay for 20 seconds
+349: Move relative up by 70000
+350: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+351: Move relative down by 70000
+349: Move relative up by 200000
+343: Delay for 120 seconds
+349: Move relative down by 200000
+346: Aspirate 300 uLs with 1000 uL tips at Low pressure 1 time
+352: Move to Reagent Cartridge tray A column 11 with 1000 uL tips
+350: Dispense 300 uLs with 1000 uL tips at Low pressure 1 time
+0: Delay for 5 seconds
+350: Dispense 50 uLs with 1000 uL tips at Low pressure 1 time
+0: Delay for 5 seconds
+350: Dispense 50 uLs with 1000 uL tips at Low pressure 1 time
+0: Comment: --- REAGENT: Wash 1 Solution ---
+352: Move to Reagent Cartridge tray A column 3 with 1000 uL tips
+353: Aspirate 500 uLs with 1000 uL tips at Low pressure 1 time
+354: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+355: Dispense 500 uLs with 1000 uL tips at Low pressure 1 time
+356: Aspirate 400 uLs with 1000 uL tips at Low pressure 1 time
+357: Dispense 400 uLs with 1000 uL tips at Low pressure 1 time
+358: Delay for 10 seconds
+359: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+360: Comment: --- Waste ---
+361: Move to Reagent Cartridge tray A column 11 with 1000 uL tips
+362: Dispense 550 uLs with 1000 uL tips at Low pressure 1 time
+363: Comment: Tip 2 - Wash 1
+364: Eject tips in A column 2
+365: Comment: ------------ WASH 2 ------------
+366: Comment: Tip 3 - Wash 2
+367: Pickup tips from A column 3
+368: Comment: --- REAGENT: Wash 2 Solution ---
+369: Move to Reagent Cartridge tray A column 10 with 1000 uL tips
+370: Aspirate 450 uLs with 1000 uL tips at Low pressure 1 time
+371: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+372: Dispense 450 uLs with 1000 uL tips at Low pressure 1 time
+373: Delay for 10 seconds
+374: Aspirate 400 uLs with 1000 uL tips at Low pressure 1 time
+375: Dispense 400 uLs with 1000 uL tips at Low pressure 1 time
+376: Delay for 10 seconds
+377: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+378: Comment: --- Waste ---
+379: Move to Reagent Cartridge tray A column 11 with 1000 uL tips
+380: Dispense 550 uLs with 1000 uL tips at Low pressure 1 time
+381: Comment: Tip 3 - Wash 2
+382: Eject tips in A column 3
+383: Comment: ------------ RESIDUAL REMOVAL ------------
+384: Comment: Tip 5 - Residual Removal
+385: Pickup tips from A column 5
+386: Move to Mag Separator column 1 with 50 uL tips
+387: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+388: Comment: --- Waste ---
+389: Move to Reagent Cartridge tray A column 11 with 50 uL tips
+390: Dispense 35 uLs with 50 uL tips at Low pressure 1 time
+391: Move to Mag Separator column 1 with 50 uL tips
+392: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+393: Comment: --- Waste ---
+394: Move to Reagent Cartridge tray A column 11 with 50 uL tips
+395: Dispense 35 uLs with 50 uL tips at Low pressure 1 time
+396: Comment: Tip 5 - Residual removal
+397: Eject tips in A column 5
+398: Home pipettor fast
+399: Comment: ------------ AIR DRY ------------
+400: Comment: Air dry for 5 minutes
+401: Delay for 5 minutes
+402: Disengage magnet
+403: Comment: ------------ ELUTION (EXTRACTION ELUTION) ------------
+404: Comment: Tip 6 - Extraction Elution
+405: Pickup tips from A column 9
+406: Comment: --- REAGENT: Elusion Buffer (Needed for Apostle, BRX uses IDTE) ---
+407: Move to Reagent Cartridge tray A column 4 with 200 uL tips
+0: Comment: Using 83 instead of 80 uL
+409: Aspirate 83 uLs with 200 uL tips at Low pressure 1 time
+410: Move to Mag Separator column 1 with 200 uL tips
+411: Dispense 83 uLs with 200 uL tips at Low pressure 1 time
+412: Mix 50 uLs with 200 uL tips at Low pressure 5 times
+413: Engage magnet
+414: Delay for 30 seconds
+415: Aspirate 52 uLs with 200 uL tips at Low pressure 1 time
+416: Dispense 52 uLs with 200 uL tips at Low pressure 1 time
+417: Move relative up by 100000
+418: Delay for 3 seconds
+419: Dispense 20 uLs with 200 uL tips at Low pressure 1 time
+420: Move relative down by 100000
+421: Comment: Elution
+422: Disengage magnet
+423: Home pipettor
+424: Delay for 5 minutes
+425: Engage magnet
+426: Comment: Leave tip 6 on for enrichment solution mixing

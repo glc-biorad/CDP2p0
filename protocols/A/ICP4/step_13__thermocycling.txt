@@ -1,0 +1,7 @@
+0: Comment: --- STEP: Prep for Thermocycling ---
+0: Raise Thermocycler C
+0: Raise Thermocycler D
+0: Close Tray CD
+0: Lower Thermocycler C to 200000 usteps
+0: Lower Thermocycler D to 200000 usteps
+0: Execute thermocycler_FF_and_NPANIPT.py

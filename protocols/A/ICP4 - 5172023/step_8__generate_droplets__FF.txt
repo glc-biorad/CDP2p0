@@ -1,0 +1,21 @@
+0: Comment: ------------ GENERATE DROPLETS FF ------------
+27: Move to DG8 tray B column 2 with 50 uL tips
+0: Pause for user input
+28: Dispense 22 uLs with 50 uL tips at Lowest pressure 1 time
+29: Comment: Tip 12
+30: Eject tips in B column 5
+31: Comment: Tip 13
+32: Pickup tips from A column 12
+0: Comment: --- REAGENT: Droplet Generation Oil ---
+33: Move to Reagent Cartridge tray B column 6 with 200 uL tips
+34: Aspirate 100 uLs with 200 uL tips at Low pressure 1 time
+35: Move to DG8 tray B column 1 with 200 uL tips
+0: Pause for user input
+36: Dispense 100 uLs with 200 uL tips at Low pressure 1 time
+37: Comment: Tip 13
+38: Eject tips in A column 12
+39: Comment: Move the pipettor head down further to engage the mandrels with the DG8 chip gaskets
+40: Move to DG8 tray B column 3 without tips moving down by 677000
+41: Comment: Generate droplets
+42: Generate Pico Droplets
+0: Home pipettor

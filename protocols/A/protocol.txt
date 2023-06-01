@@ -1,22 +1,47 @@
-67: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 50000
-68: Aspirate 560 uLs with 1000 uL tips at High pressure 1 time
-0: Pause for user input
-68: Aspirate 300 uLs with 1000 uL tips at High pressure 1 time
-69: Move to Sample Rack tray A with 1000 uL tips moving left by 1300 up by 300000
-70: Shake on with an RPM of 1000
-71: Delay for 45 seconds
-72: Dispense 100 uLs with 1000 uL tips at High pressure 1 time
-73: Delay for 5 seconds
-74: Dispense 160 uLs with 1000 uL tips at High pressure 1 time
-75: Delay for 5 seconds
-76: Dispense 160 uLs with 1000 uL tips at High pressure 1 time
-77: Delay for 5 seconds
-78: Dispense 160 uLs with 1000 uL tips at High pressure 1 time
-79: Delay for 5 seconds
-80: Dispense 150 uLs with 1000 uL tips at High pressure 1 time
-81: Move relative right by 3000
-82: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
-83: Shake off
-84: Dispense 180 uLs with 1000 uL tips at High pressure 1 time
-85: Delay for 3 seconds
-86: Dispense 25 uLs with 1000 uL tips at High pressure 1 time
+0: Aspirate 11 uLs with 50 uL tips at Low pressure 1 time
+1: Delay for 5 seconds
+2: Move to Assay Strip tray A column 2 with 50 uL tips
+3: Dispense 11 uLs with 50 uL tips at Low pressure 1 time
+4: Delay for 2 minutes
+5: Comment: --- NOTE: Tip A12-50-reused (Resuspension buffer, ..., FF Resuspension Buffer)
+6: Eject tips in A column 12
+7: Comment: ------------ ENRICHED SAMPLE TRANSFER ------------
+8: Comment: --- NOTE: Tip B3-50-new (SS FF Sample Transfer)
+9: Pickup tips from B column 3
+10: Move to Mag Separator column 3 with 50 uL tips
+11: Aspirate 17 uLs with 50 uL tips at Low pressure 1 time
+12: Move to Assay Strip tray A column 2 with 50 uL tips
+13: Dispense 17 uLs with 50 uL tips at Low pressure 1 time
+14: Comment: --- STEP: Rigurous Mix Protocol ---
+15: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+16: Delay for 3 seconds
+17: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+18: Delay for 3 seconds
+19: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+20: Delay for 3 seconds
+21: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+22: Delay for 3 seconds
+23: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+24: Delay for 3 seconds
+25: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+26: Delay for 3 seconds
+27: Move relative up by 50000
+28: Delay for 3 seconds
+29: Dispense 2 uLs with 50 uL tips at Low pressure 1 time
+30: Move relative down by 50000
+31: Comment: --- STEP: Air Bubble Removal ---
+32: Aspirate 5 uLs with 50 uL tips at Low pressure 1 time
+33: Move relative up by 50000
+34: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+35: Delay for 3 seconds
+36: Dispense 2 uLs with 50 uL tips at Low pressure 1 time
+37: Comment: Dip
+38: Move relative down by 50000
+39: Comment: ------------ SAMPLE TRANSFER TO DG32 ------------
+40: Aspirate 23 uLs with 50 uL tips at Lowest pressure 1 time
+41: Move to DG8 tray D column 2 with 50 uL tips
+42: Pause for user input
+43: Dispense 22 uLs with 50 uL tips at Lowest pressure 1 time
+44: Drip for 10 seconds
+45: Comment: --- NOTE: Tip B3-50-used (SS FF Sample Transfer)
+46: Eject tips in B column 3
