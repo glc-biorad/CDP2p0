@@ -8,7 +8,7 @@ except:
     print("Cannot load coreclr")
 
 
-
+from api.util.controller import Controller
 from api.reader.reader import Reader
 from api.upper_gantry.upper_gantry import UpperGantry
 from api.upper_gantry.seyonic.seyonic import Seyonic
@@ -18,28 +18,72 @@ from api.util.log import Log
 
 import time
 
-if __name__ == '__main__':
+def tc():
+    c = Controller('COM8', 57600, dont_use_fast_api=True, timeout=1)
     m = Meerstetter()
-    l = Log('unit_a_t4')
+    m.connect_to_opened_port(c)
+
+    m.change_temperature(2,37)
+    m.change_temperature(3,37)
+    m.change_temperature(4,37)
+    delay(2700)
+
+    m.change_temperature(2,92)
+    m.change_temperature(3,92)
+    m.change_temperature(4,92)
+    delay(600)
+    print(m.get_temperature(2))
+
+    cycles = 45
+    for cycle in range(cycles):
+        print(f"cycle: {cycle+1}")
+        m.change_temperature(2,92)
+        m.change_temperature(3,92)
+        m.change_temperature(4,92)
+        print(m.get_temperature(2))
+        delay(40)
+        m.change_temperature(2,58)
+        m.change_temperature(3,58)
+        m.change_temperature(4,58)
+        print(m.get_temperature(2))
+        delay(80)
+
+    m.change_temperature(2,72)
+    m.change_temperature(3,72)
+    m.change_temperature(4,72)
+    print(m.get_temperature(2))
+    delay(900)
+
+    m.change_temperature(2,92)
+    m.change_temperature(3,92)
+    m.change_temperature(4,92)
+    print(m.get_temperature(2))
+    delay(600)
+
+    m.change_temperature(2,4)
+    m.change_temperature(3,4)
+    m.change_temperature(4,4)
+    print(m.get_temperature(2))
+    delay(1800)
+
+    m.change_temperature(2,20)
+    m.change_temperature(3,20)
+    m.change_temperature(4,20)
+    print(m.get_temperature(2))
+
+if __name__ == '__main__':
+    c = Controller('COM8', 57600, dont_use_fast_api=True, timeout=1)
+    m = Meerstetter()
+    m.connect_to_opened_port(c)
     
-    t_start = time.time()
-    address = 9
-    temp = 95
-    t = 180
-    l.log(f"Step 1 -- Temp: {temp} C -- Time: {t} s -- Info: Activation/denaturation", time.time() - t_start)
-    m.change_temperature(address, temp)
-    delay(t)
+    addr = 9
+    m.change_temperature(addr, 95, True)
+    delay(3, 'minutes')
     for i in range(6):
-        temp = 95
-        t = 60        
-        l.log(f"Step 2 -- Cycle: {i+1} -- Temp: {temp} C -- Time: {t} s -- Info: Denaturation", time.time() - t_start)
-        m.change_temperature(address, temp)
-        delay(t)
-        temp = 60
-        t = 180  
-        l.log(f"Step 3 -- Cycle: {i+1} -- Temp: {temp} C -- Time: {t} s -- Info: Annealing/Extension", time.time() - t_start)
-        m.change_temperature(address, temp)
-        delay(t)
-    temp = 30
-    l.log(f"Step 4 -- Temp: {temp} C -- Time: {t} s -- Info: Final Hold", time.time() - t_start)
-    m.change_temperature(address, temp)
+        print(f"Cycle: {i+1}")
+        m.change_temperature(addr, 60)
+        delay(240, 'seconds')
+        m.change_temperature(addr, 95)
+        delay(120, 'seconds')
+    m.change_temperature(addr, 30)
+
