@@ -1,0 +1,2299 @@
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 10:24:58
+	- Message: Device control information not available.
+	- Current Time: 10:24:58
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 10:24:59
+	- Message: Device control information not available.
+	- Current Time: 10:24:59
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:24:59
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:25:00
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.6974620819091797 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:25:00]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 10:25:00
+	- Message: Device control information not available.
+	- Current Time: 10:25:00
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:25:00
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:25:01
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.3823375701904297 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:25:01]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 10:25:01
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 10:25:01
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.40294599533081055 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 10:25:01]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 10:25:01
+	- Message: Device control information not available.
+	- Current Time: 10:25:02
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/9?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c79a,0,-399955
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,bdf5,0,-399714
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6e6a,0,-399438
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,487a,0,-399171
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a630,0,-398735
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a566,0,-398207
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1b22,0,-397586
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b8e5,0,-396874
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8a08,0,-396279
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a358,0,-395406
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,7ba,0,-394440
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,cd4c,0,-393383
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c780,0,-392233
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a0da,0,-390991
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4ff0,0,-389584
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a916,0,-387532
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,28f4,0,-385386
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e77d,0,-383241
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,40aa,0,-381097
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,2099,0,-379488
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8fb5,0,-377343
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a2fa,0,-375735
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,9181,0,-373590
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b939,0,-371445
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,52e0,0,-369301
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,cd6d,0,-367157
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,fd8a,0,-365548
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,aaa8,0,-363939
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,33a7,0,-361794
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4cae,0,-359650
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4de7,0,-357505
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e0f0,0,-355361
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,74dc,0,-353216
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1014,0,-351071
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,94bf,0,-348926
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4f0,0,-346781
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3a02,0,-344636
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1cc7,0,-342492
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,144f,0,-340347
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,912f,0,-338203
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,f380,0,-336059
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8160,0,-333914
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c153,0,-331769
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a1c4,0,-329625
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.05
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b60f,0,-327480
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c30e,0,-325335
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d01a,0,-323190
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,445e,0,-321046
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c247,0,-318902
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3eac,0,-316757
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d040,0,-314612
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,7793,0,-312467
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,cf1d,0,-310322
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3f34,0,-308177
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4122,0,-306569
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,bd74,0,-304424
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,589,0,-302280
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.05
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,60,0,-300135
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,61f9,0,-298526
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,229a,0,-296917
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,9b70,0,-294772
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3cc4,0,-293163
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c146,0,-291554
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e678,0,-289946
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,435,0,-287802
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,29a,0,-285657
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,98a1,0,-283513
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8b40,0,-281368
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5291,0,-279759
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,bbda,0,-277614
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,37a9,0,-275469
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3d3d,0,-273324
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,556b,0,-271178
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,f8f9,0,-269033
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.05
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,2c3c,0,-266888
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3946,0,-264743
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d38e,0,-262597
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,bbf3,0,-260452
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6646,0,-258307
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,7c12,0,-256162
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b729,0,-254017
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,f18d,0,-251872
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,cbb5,0,-249727
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e16e,0,-247582
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a178,0,-245437
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c1c2,0,-243292
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e2be,0,-241147
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a4d0,0,-239002
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b554,0,-236857
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8ab1,0,-234711
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,60fe,0,-232566
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e883,0,-230422
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8a1d,0,-228277
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c10,0,-226133
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,177f,0,-223988
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5497,0,-222379
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5522,0,-220233
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,f2ed,0,-218088
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e6fd,0,-215943
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1d9c,0,-213799
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,82b1,0,-211654
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b510,0,-209509
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6db4,0,-207364
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,800c,0,-205220
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4b79,0,-203075
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,47dd,0,-200930
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,628f,0,-198786
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,325,0,-196641
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,9f58,0,-194495
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ddb2,0,-192886
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1ab8,0,-190740
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,748f,0,-188595
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,add7,0,-186450
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6420,0,-184305
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,319a,0,-182159
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4b1c,0,-180014
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3a7,0,-177869
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,7a57,0,-175723
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3d1f,0,-173578
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,70b,0,-171432
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e5fb,0,-169286
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,fef9,0,-167140
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b964,0,-164994
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6453,0,-162849
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4882,0,-160704
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5d65,0,-159094
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,7306,0,-156949
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c310,0,-154804
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,51a,0,-152659
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,aa53,0,-150514
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a1ea,0,-148368
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e02a,0,-146223
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,f054,0,-144077
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3536,0,-141396
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4772,0,-139251
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,cc6f,0,-137105
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,de26,0,-135496
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4295,0,-133887
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5893,0,-131742
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,89af,0,-129597
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3037,0,-127452
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,be7e,0,-125307
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4db5,0,-123698
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,f4ba,0,-121553
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,4290,0,-119408
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6549,0,-117263
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,7133,0,-115117
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,bf29,0,-112972
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1997,0,-110827
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d460,0,-109217
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,962d,0,-107072
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,60f9,0,-104927
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c62a,0,-102782
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1e10,0,-100637
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,ec78,0,-98492
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,abc1,0,-96347
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,58d6,0,-94202
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b25f,0,-92057
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,3b8a,0,-89913
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8e91,0,-87768
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c160,0,-85623
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,587a,0,-83478
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b41f,0,-81334
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,fe08,0,-79189
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e24a,0,-77045
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e3d7,0,-74900
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1591,0,-72756
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,fa0b,0,-70611
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e68a,0,-68467
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,995f,0,-66321
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,970d,0,-64177
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a3f9,0,-62032
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,725c,0,-59887
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,df61,0,-57742
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,57af,0,-55597
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,cbfd,0,-53452
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,b398,0,-51843
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,9eeb,0,-49698
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e1c2,0,-47553
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,93ae,0,-45408
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,34a9,0,-43263
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,d0e9,0,-41118
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c20,0,-38973
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,c129,0,-36828
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,2c20,0,-34683
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.05
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,debb,0,-32537
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,9f16,0,-30392
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,bcb4,0,-28248
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,68dd,0,-26103
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,71b,0,-23958
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,920b,0,-21813
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a2c3,0,-19668
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a301,0,-17524
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.01
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1880,0,-15379
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,2790,0,-13234
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,40cf,0,-11090
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e20d,0,-9631
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,57e6,0,-8450
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a862,0,-7398
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,2ab7,0,-6475
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,97dc,0,-5867
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,e82,0,-5331
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a2b5,0,-4730
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,467d,0,-4257
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,49ad,0,-3987
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6b5a,0,-3740
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,52ef,0,-3622
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,5bb2,0,-3610
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a8d8,0,-3610
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a4d3,0,-3610
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/9
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.07
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,8be8,0,0
+	- Message: 0 reached in 0.08019280433654785 seconds for reader module along Heater B
+	- Current Time: 10:25:35
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,1397,0,0
+	- Message: 0 reached in 9.277575969696045 seconds for reader module along Heater B
+	- Current Time: 10:25:35
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6f83,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/9
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,932b,0,0
+	- Message: 0 reached in 0.05728268623352051 seconds for reader module along Heater B
+	- Current Time: 10:25:35
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/10?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":29550,"message":">a,1757,?pos,d74c","response":"<a,1757,0,-399972\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":43811,"message":">a,1b42,?pos,fba2","response":"<a,1b42,0,-399846\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16330,"message":">a,a310,?pos,5cfd","response":"<a,a310,0,-399685\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33041,"message":">a,b497,?pos,cb3c","response":"<a,b497,0,-399382\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35712,"message":">a,942d,?pos,96a4","response":"<a,942d,0,-398978\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":28735,"message":">a,308,?pos,bba2","response":"<a,308,0,-398472\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":34664,"message":">a,bdfb,?pos,1129","response":"<a,bdfb,0,-397865\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":29643,"message":">a,ea7c,?pos,ecf8","response":"<a,ea7c,0,-397157\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":41924,"message":">a,a994,?pos,7129","response":"<a,a994,0,-396348\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32761,"message":">a,efea,?pos,44f6","response":"<a,efea,0,-395437\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32888,"message":">a,825e,?pos,f295","response":"<a,825e,0,-394425\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32470,"message":">a,5183,?pos,8e59","response":"<a,5183,0,-393312\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":34649,"message":">a,5d8e,?pos,a4c0","response":"<a,5d8e,0,-392097\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":38116,"message":">a,49fb,?pos,8634","response":"<a,49fb,0,-390781\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":44233,"message":">a,209,?pos,5453","response":"<a,209,0,-389197\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35781,"message":">a,d84f,?pos,aa08","response":"<a,d84f,0,-386973\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35913,"message":">a,94a3,?pos,7bdc","response":"<a,94a3,0,-384722\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":28150,"message":">a,f1f5,?pos,bf72","response":"<a,f1f5,0,-382471\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35666,"message":">a,dc2c,?pos,5ba7","response":"<a,dc2c,0,-380221\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":36159,"message":">a,45e2,?pos,21f1","response":"<a,45e2,0,-377972\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":38961,"message":">a,9c62,?pos,ef77","response":"<a,9c62,0,-375159\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35875,"message":">a,8e50,?pos,36de","response":"<a,8e50,0,-372909\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":22618,"message":">a,c5f3,?pos,5bda","response":"<a,c5f3,0,-371221\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":36371,"message":">a,9067,?pos,c7c3","response":"<a,9067,0,-368971\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":29230,"message":">a,d55a,?pos,c346","response":"<a,d55a,0,-366721\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32183,"message":">a,625a,?pos,f0ab","response":"<a,625a,0,-364471\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16779,"message":">a,2e41,?pos,79fd","response":"<a,2e41,0,-362783\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16849,"message":">a,13d8,?pos,96c4","response":"<a,13d8,0,-361096\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33086,"message":">a,fffa,?pos,5a28","response":"<a,fffa,0,-358845\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":27871,"message":">a,e5b8,?pos,9345","response":"<a,e5b8,0,-357157\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32102,"message":">a,4a16,?pos,52a2","response":"<a,4a16,0,-354907\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":28071,"message":">a,eb51,?pos,8096","response":"<a,eb51,0,-352656\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":29560,"message":">a,793f,?pos,1306","response":"<a,793f,0,-350407\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":15794,"message":">a,3b03,?pos,7593","response":"<a,3b03,0,-348719\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":26435,"message":">a,1a92,?pos,89e0","response":"<a,1a92,0,-346469\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":21758,"message":">a,b0a1,?pos,cf6","response":"<a,b0a1,0,-344219\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":42791,"message":">a,549f,?pos,4229","response":"<a,549f,0,-340281\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":48274,"message":">a,a0f8,?pos,ab3c","response":"<a,a0f8,0,-338030\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33924,"message":">a,5a7d,?pos,bd05","response":"<a,5a7d,0,-335780\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33927,"message":">a,1db5,?pos,2ec1","response":"<a,1db5,0,-333531\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":27893,"message":">a,1624,?pos,61b8","response":"<a,1624,0,-331281\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":42965,"message":">a,b14c,?pos,5320","response":"<a,b14c,0,-329030\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":38759,"message":">a,8117,?pos,8561","response":"<a,8117,0,-327343\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":44800,"message":">a,ae12,?pos,563d","response":"<a,ae12,0,-325092\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32073,"message":">a,d5fc,?pos,24a7","response":"<a,d5fc,0,-322842\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":28493,"message":">a,d1e9,?pos,50b","response":"<a,d1e9,0,-320592\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":19213,"message":">a,6d68,?pos,7dc5","response":"<a,6d68,0,-318341\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":31387,"message":">a,2246,?pos,15ca","response":"<a,2246,0,-316653\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":31524,"message":">a,f6d5,?pos,7f87","response":"<a,f6d5,0,-314965\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":15742,"message":">a,29a5,?pos,3b6","response":"<a,29a5,0,-313277\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":31792,"message":">a,fbb,?pos,70ad","response":"<a,fbb,0,-311026\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":36730,"message":">a,6e1b,?pos,4071","response":"<a,6e1b,0,-308775\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":42834,"message":">a,daa9,?pos,d7c1","response":"<a,daa9,0,-306524\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16087,"message":">a,7b99,?pos,7fa7","response":"<a,7b99,0,-304836\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16658,"message":">a,3d09,?pos,bedc","response":"<a,3d09,0,-303148\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33809,"message":">a,4eac,?pos,3c93","response":"<a,4eac,0,-300898\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":22120,"message":">a,6387,?pos,a393","response":"<a,6387,0,-298648\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16391,"message":">a,7852,?pos,6e00","response":"<a,7852,0,-296960\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":20788,"message":">a,6a46,?pos,7298","response":"<a,6a46,0,-294709\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":17900,"message":">a,4daf,?pos,1ca1","response":"<a,4daf,0,-293021\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":22710,"message":">a,42d9,?pos,9a1","response":"<a,42d9,0,-291333\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":34679,"message":">a,ff16,?pos,ea0f","response":"<a,ff16,0,-289082\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=0&velocity=80000
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":177268,"message":">a,94b8,?pos,9379","response":"<a,94b8,0,-287394\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":39087,"message":">a,d97c,?pos,d94","response":"<a,d97c,0,-277828\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":15897,"message":">a,76fb,?pos,6cbb","response":"<a,76fb,0,-276140\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":15847,"message":">a,8226,?pos,ed3e","response":"<a,8226,0,-274451\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":22320,"message":">a,489,?pos,fb62","response":"<a,489,0,-272763\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":26713,"message":">a,d963,?pos,6c37","response":"<a,d963,0,-270511\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":30856,"message":">a,a70f,?pos,3bff","response":"<a,a70f,0,-268260\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32725,"message":">a,81d0,?pos,d10d","response":"<a,81d0,0,-266571\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":28934,"message":">a,40a7,?pos,50cf","response":"<a,40a7,0,-264320\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":10552,"message":">a,7411,?pos,9a59","response":"<a,7411,0,-262632\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":34424,"message":">a,5e3a,?pos,cd18","response":"<a,5e3a,0,-260380\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33257,"message":">a,2e11,?pos,6ccf","response":"<a,2e11,0,-258692\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32671,"message":">a,605c,?pos,b66e","response":"<a,605c,0,-256440\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":31709,"message":">a,c2ed,?pos,5869","response":"<a,c2ed,0,-254189\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":43613,"message":">a,4682,?pos,f6cd","response":"<a,4682,0,-251939\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16433,"message":">a,b57b,?pos,3ebb","response":"<a,b57b,0,-250251\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":26172,"message":">a,46e1,?pos,1c3","response":"<a,46e1,0,-248562\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":20907,"message":">a,acb6,?pos,7e1f","response":"<a,acb6,0,-246874\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35286,"message":">a,eb16,?pos,f62a","response":"<a,eb16,0,-244623\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32994,"message":">a,d52,?pos,689d","response":"<a,d52,0,-242372\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":29875,"message":">a,782d,?pos,167f","response":"<a,782d,0,-240120\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":39530,"message":">a,9911,?pos,5f22","response":"<a,9911,0,-237869\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":30833,"message":">a,1c90,?pos,4082","response":"<a,1c90,0,-235618\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":26420,"message":">a,953e,?pos,398c","response":"<a,953e,0,-233930\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33931,"message":">a,27b6,?pos,699d","response":"<a,27b6,0,-231678\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35899,"message":">a,6425,?pos,535","response":"<a,6425,0,-229427\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35216,"message":">a,a80b,?pos,77fa","response":"<a,a80b,0,-227174\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":43968,"message":">a,fc5a,?pos,beac","response":"<a,fc5a,0,-224923\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35838,"message":">a,9014,?pos,3497","response":"<a,9014,0,-222672\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33585,"message":">a,4670,?pos,8d18","response":"<a,4670,0,-220421\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":36630,"message":">a,7181,?pos,ffd2","response":"<a,7181,0,-218170\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":34693,"message":">a,cfc5,?pos,1cb3","response":"<a,cfc5,0,-215919\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33230,"message":">a,a303,?pos,b675","response":"<a,a303,0,-213667\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":34857,"message":">a,a4c5,?pos,8009","response":"<a,a4c5,0,-211415\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":22645,"message":">a,93f2,?pos,cfe","response":"<a,93f2,0,-209164\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32471,"message":">a,d722,?pos,57ad","response":"<a,d722,0,-206913\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32057,"message":">a,f8ba,?pos,8301","response":"<a,f8ba,0,-204661\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":22557,"message":">a,249,?pos,453b","response":"<a,249,0,-202973\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":28449,"message":">a,2072,?pos,1b62","response":"<a,2072,0,-200723\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":29990,"message":">a,9906,?pos,3cac","response":"<a,9906,0,-198472\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":28296,"message":">a,d199,?pos,188d","response":"<a,d199,0,-196221\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35533,"message":">a,62e9,?pos,3047","response":"<a,62e9,0,-193970\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":18477,"message":">a,271,?pos,4bf8","response":"<a,271,0,-192282\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":28551,"message":">a,8bff,?pos,3a42","response":"<a,8bff,0,-190593\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":39517,"message":">a,f804,?pos,6297","response":"<a,f804,0,-188342\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":31187,"message":">a,d2db,?pos,8386","response":"<a,d2db,0,-186091\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16784,"message":">a,d82b,?pos,3ad2","response":"<a,d82b,0,-184403\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":26884,"message":">a,60b3,?pos,e89b","response":"<a,60b3,0,-182714\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":25843,"message":">a,ae18,?pos,1093","response":"<a,ae18,0,-181026\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35503,"message":">a,5c9f,?pos,4f6b","response":"<a,5c9f,0,-178775\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":22542,"message":">a,4cc5,?pos,673","response":"<a,4cc5,0,-177086\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":28124,"message":">a,2efe,?pos,323a","response":"<a,2efe,0,-174836\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":25572,"message":">a,c00e,?pos,6f7","response":"<a,c00e,0,-173148\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":15826,"message":">a,891f,?pos,8a0e","response":"<a,891f,0,-171459\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33322,"message":">a,e085,?pos,fdd0","response":"<a,e085,0,-169209\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33042,"message":">a,88ac,?pos,f42","response":"<a,88ac,0,-167521\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16356,"message":">a,1e11,?pos,4343","response":"<a,1e11,0,-165833\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":27359,"message":">a,2b88,?pos,a138","response":"<a,2b88,0,-163582\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":15918,"message":">a,5e74,?pos,13d8","response":"<a,5e74,0,-161894\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":23278,"message":">a,ccd,?pos,6e4e","response":"<a,ccd,0,-160206\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":20174,"message":">a,4086,?pos,f22a","response":"<a,4086,0,-158519\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":22189,"message":">a,ca1b,?pos,a7f8","response":"<a,ca1b,0,-156831\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33887,"message":">a,2b9d,?pos,8635","response":"<a,2b9d,0,-154580\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":23165,"message":">a,c16b,?pos,79dc","response":"<a,c16b,0,-152892\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":22967,"message":">a,21f4,?pos,b197","response":"<a,21f4,0,-151205\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32510,"message":">a,a3c5,?pos,4848","response":"<a,a3c5,0,-148954\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":29656,"message":">a,d2f1,?pos,cd9c","response":"<a,d2f1,0,-146704\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":28087,"message":">a,a38e,?pos,b5df","response":"<a,a38e,0,-144453\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":28386,"message":">a,7d01,?pos,d6e1","response":"<a,7d01,0,-142202\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35705,"message":">a,3d4,?pos,76b","response":"<a,3d4,0,-140514\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33900,"message":">a,aaf5,?pos,c44","response":"<a,aaf5,0,-138263\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":26509,"message":">a,e911,?pos,1abe","response":"<a,e911,0,-136575\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":27255,"message":">a,d35a,?pos,4ea7","response":"<a,d35a,0,-134324\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":30066,"message":">a,4a04,?pos,127b","response":"<a,4a04,0,-132073\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":23274,"message":">a,365b,?pos,2ccf","response":"<a,365b,0,-130385\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":45711,"message":">a,e9a6,?pos,5354","response":"<a,e9a6,0,-128134\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35110,"message":">a,e07b,?pos,d2e","response":"<a,e07b,0,-125883\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32576,"message":">a,f1f9,?pos,3459","response":"<a,f1f9,0,-123632\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":39716,"message":">a,544f,?pos,75cb","response":"<a,544f,0,-121382\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33798,"message":">a,7b,?pos,8616","response":"<a,7b,0,-119131\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":19129,"message":">a,8a65,?pos,1fc6","response":"<a,8a65,0,-117443\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":36201,"message":">a,7c53,?pos,c2f0","response":"<a,7c53,0,-115192\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":29132,"message":">a,db32,?pos,5814","response":"<a,db32,0,-112940\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32675,"message":">a,7d35,?pos,5309","response":"<a,7d35,0,-110689\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":42921,"message":">a,d6c5,?pos,4ed5","response":"<a,d6c5,0,-108437\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35128,"message":">a,1d5d,?pos,17e0","response":"<a,1d5d,0,-106185\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":43147,"message":">a,2673,?pos,3cd2","response":"<a,2673,0,-103934\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":27251,"message":">a,b3e4,?pos,f029","response":"<a,b3e4,0,-101684\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":24482,"message":">a,c720,?pos,9aa","response":"<a,c720,0,-99996\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":25585,"message":">a,1d34,?pos,a640","response":"<a,1d34,0,-98308\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":25856,"message":">a,603c,?pos,afb2","response":"<a,603c,0,-96620\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":26356,"message":">a,99bd,?pos,fe6d","response":"<a,99bd,0,-94370\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":19345,"message":">a,4ff2,?pos,a3a9","response":"<a,4ff2,0,-92120\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":31930,"message":">a,cadd,?pos,59c5","response":"<a,cadd,0,-89869\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":29818,"message":">a,d0cc,?pos,6b48","response":"<a,d0cc,0,-87619\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32664,"message":">a,8ef8,?pos,1e97","response":"<a,8ef8,0,-85369\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35909,"message":">a,eed5,?pos,6841","response":"<a,eed5,0,-83119\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":31496,"message":">a,b560,?pos,d61e","response":"<a,b560,0,-80868\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":31125,"message":">a,a194,?pos,7c6b","response":"<a,a194,0,-78618\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":17477,"message":">a,d414,?pos,5826","response":"<a,d414,0,-76930\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":38898,"message":">a,b5a2,?pos,a125","response":"<a,b5a2,0,-75242\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":34518,"message":">a,2fc4,?pos,3dda","response":"<a,2fc4,0,-72992\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":15859,"message":">a,61e9,?pos,fea7","response":"<a,61e9,0,-71304\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":31443,"message":">a,a4d5,?pos,8453","response":"<a,a4d5,0,-69053\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":25997,"message":">a,b0d9,?pos,135d","response":"<a,b0d9,0,-66802\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":34198,"message":">a,1cf0,?pos,595e","response":"<a,1cf0,0,-64551\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":25303,"message":">a,2986,?pos,e5d0","response":"<a,2986,0,-62864\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35148,"message":">a,a52a,?pos,9b5c","response":"<a,a52a,0,-60613\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":18234,"message":">a,57a6,?pos,285b","response":"<a,57a6,0,-58924\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33707,"message":">a,27db,?pos,513b","response":"<a,27db,0,-56673\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":20826,"message":">a,f0ca,?pos,93c5","response":"<a,f0ca,0,-54985\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32266,"message":">a,6ab,?pos,3c15","response":"<a,6ab,0,-52734\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":34513,"message":">a,a5be,?pos,34d0","response":"<a,a5be,0,-50484\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33147,"message":">a,c93e,?pos,42fb","response":"<a,c93e,0,-48233\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":24231,"message":">a,4d5f,?pos,23f7","response":"<a,4d5f,0,-45982\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16733,"message":">a,7811,?pos,91ba","response":"<a,7811,0,-44294\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":30481,"message":">a,940,?pos,2ee5","response":"<a,940,0,-42043\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":27207,"message":">a,7f95,?pos,f22d","response":"<a,7f95,0,-40355\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":23777,"message":">a,34fe,?pos,aebc","response":"<a,34fe,0,-38667\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":21952,"message":">a,89d4,?pos,5549","response":"<a,89d4,0,-36979\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":31689,"message":">a,fb42,?pos,709a","response":"<a,fb42,0,-35291\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":33317,"message":">a,6b6c,?pos,7922","response":"<a,6b6c,0,-33603\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":22584,"message":">a,a35b,?pos,a16a","response":"<a,a35b,0,-31915\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":24520,"message":">a,2018,?pos,4410","response":"<a,2018,0,-30228\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16229,"message":">a,95e,?pos,e517","response":"<a,95e,0,-28540\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":35985,"message":">a,fadc,?pos,dc18","response":"<a,fadc,0,-26290\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":31798,"message":">a,b433,?pos,685e","response":"<a,b433,0,-24039\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":36914,"message":">a,a5eb,?pos,2b5","response":"<a,a5eb,0,-22352\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32468,"message":">a,c83f,?pos,ad0a","response":"<a,c83f,0,-20101\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":37401,"message":">a,dfd0,?pos,213a","response":"<a,dfd0,0,-17851\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":20511,"message":">a,28bc,?pos,ea30","response":"<a,28bc,0,-15600\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16247,"message":">a,2612,?pos,8f5f","response":"<a,2612,0,-13912\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32336,"message":">a,2578,?pos,1ecd","response":"<a,2578,0,-11661\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":15905,"message":">a,d39,?pos,9dbe","response":"<a,d39,0,-9973\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":29805,"message":">a,66fa,?pos,dc6e","response":"<a,66fa,0,-8284\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":10313,"message":">a,d46f,?pos,a95f","response":"<a,d46f,0,-6787\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":17180,"message":">a,311c,?pos,9232","response":"<a,311c,0,-5789\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":22300,"message":">a,c391,?pos,8b64","response":"<a,c391,0,-4870\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16356,"message":">a,2829,?pos,efed","response":"<a,2829,0,-4031\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":15724,"message":">a,11cf,?pos,7e0a","response":"<a,11cf,0,-3272\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":24547,"message":">a,37ea,?pos,ed00","response":"<a,37ea,0,-2593\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":36217,"message":">a,e228,?pos,7d8e","response":"<a,e228,0,-1811\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16337,"message":">a,2778,?pos,958d","response":"<a,2778,0,-1318\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":14995,"message":">a,3793,?pos,58fa","response":"<a,3793,0,-905\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":22915,"message":">a,f45a,?pos,b3ee","response":"<a,f45a,0,-478\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":15808,"message":">a,7808,?pos,3d9c","response":"<a,7808,0,-250\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":25582,"message":">a,9dd9,?pos,6816","response":"<a,9dd9,0,-103\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":17543,"message":">a,2b06,?pos,4c40","response":"<a,2b06,0,-30\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16530,"message":">a,5db8,?pos,65ab","response":"<a,5db8,0,-30\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":32591,"message":">a,d3d0,?pos,2ad9","response":"<a,d3d0,0,-30\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/10
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":15801,"message":">a,7b10,?pos,f50b","response":"<a,7b10,0,0\r"}
+	- Message: 0 reached in 0.03285527229309082 seconds for reader module along Heater C
+	- Current Time: 10:25:45
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":16394,"message":">a,61d2,?pos,1eb6","response":"<a,61d2,0,0\r"}
+	- Message: 0 reached in 8.696100950241089 seconds for reader module along Heater C
+	- Current Time: 10:25:45
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":34247,"message":">a,ef9b,?pos,f321","response":"<a,ef9b,0,0\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/10
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":21925,"message":">a,b5fa,?pos,b63a","response":"<a,b5fa,0,0\r"}
+	- Message: 0 reached in 0.029857397079467773 seconds for reader module along Heater C
+	- Current Time: 10:25:46
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":15983,"message":">b,ae5d,?pos,9acd","response":"<b,ae5d,0,-399976\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31521,"message":">b,b699,?pos,37b5","response":"<b,b699,0,-399870\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31422,"message":">b,a5c4,?pos,d799","response":"<b,a5c4,0,-399679\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31702,"message":">b,41d1,?pos,7d0d","response":"<b,41d1,0,-399402\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31622,"message":">b,816c,?pos,cc79","response":"<b,816c,0,-399041\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31887,"message":">b,d046,?pos,b757","response":"<b,d046,0,-398593\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":25443,"message":">b,3b7d,?pos,1fdc","response":"<b,3b7d,0,-398202\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":9115,"message":">b,3b2f,?pos,4e6d","response":"<b,3b2f,0,-397763\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33697,"message":">b,6ebd,?pos,1ff1","response":"<b,6ebd,0,-397103\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":24720,"message":">b,2c43,?pos,e5f","response":"<b,2c43,0,-396357\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31560,"message":">b,a4f4,?pos,9ed7","response":"<b,a4f4,0,-395526\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":10566,"message":">b,948c,?pos,aef0","response":"<b,948c,0,-394847\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":15830,"message":">b,4f04,?pos,e91b","response":"<b,4f04,0,-394120\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":17261,"message":">b,3d3b,?pos,4ed0","response":"<b,3d3b,0,-393345\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30377,"message":">b,a332,?pos,a8ab","response":"<b,a332,0,-392237\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32502,"message":">b,248a,?pos,98d9","response":"<b,248a,0,-391043\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31623,"message":">b,c128,?pos,3e07","response":"<b,c128,0,-389715\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":15734,"message":">b,ccb4,?pos,dde5","response":"<b,ccb4,0,-388295\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31526,"message":">b,47ed,?pos,7729","response":"<b,47ed,0,-386231\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":37725,"message":">b,a3c1,?pos,792f","response":"<b,a3c1,0,-384166\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":43008,"message":">b,bbb2,?pos,9dbd","response":"<b,bbb2,0,-382101\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16067,"message":">b,fc3e,?pos,9617","response":"<b,fc3e,0,-380553\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31997,"message":">b,4fcf,?pos,365c","response":"<b,4fcf,0,-378488\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16406,"message":">b,b8d0,?pos,e02","response":"<b,b8d0,0,-376940\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":24220,"message":">b,a38b,?pos,2ee9","response":"<b,a38b,0,-375391\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33133,"message":">b,328a,?pos,fbc","response":"<b,328a,0,-373326\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32327,"message":">b,a65d,?pos,978f","response":"<b,a65d,0,-371262\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33470,"message":">b,2464,?pos,6c7d","response":"<b,2464,0,-369197\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":19472,"message":">b,e551,?pos,b854","response":"<b,e551,0,-367649\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":26050,"message":">b,8f6e,?pos,859","response":"<b,8f6e,0,-366100\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":27618,"message":">b,8848,?pos,529","response":"<b,8848,0,-364552\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32138,"message":">b,956c,?pos,d05c","response":"<b,956c,0,-362488\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":19867,"message":">b,4d6b,?pos,1e7e","response":"<b,4d6b,0,-360939\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":37316,"message":">b,4f98,?pos,44ba","response":"<b,4f98,0,-359391\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16397,"message":">b,9031,?pos,a715","response":"<b,9031,0,-357842\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32735,"message":">b,7802,?pos,c353","response":"<b,7802,0,-355778\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32724,"message":">b,2db,?pos,9f53","response":"<b,2db,0,-352681\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33926,"message":">b,9e7b,?pos,7070","response":"<b,9e7b,0,-351132\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32546,"message":">b,aecb,?pos,71c2","response":"<b,aecb,0,-349584\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16302,"message":">b,555a,?pos,af07","response":"<b,555a,0,-348036\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31811,"message":">b,fcb0,?pos,7b6f","response":"<b,fcb0,0,-346487\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":23302,"message":">b,7318,?pos,4205","response":"<b,7318,0,-344939\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":26625,"message":">b,70a0,?pos,a0f6","response":"<b,70a0,0,-342875\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":23759,"message":">b,343d,?pos,cbb7","response":"<b,343d,0,-341326\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":23592,"message":">b,bae7,?pos,ee78","response":"<b,bae7,0,-339778\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16100,"message":">b,9df1,?pos,daee","response":"<b,9df1,0,-338229\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34878,"message":">b,bc87,?pos,7a45","response":"<b,bc87,0,-336165\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":17063,"message":">b,3a93,?pos,aed8","response":"<b,3a93,0,-334617\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":23807,"message":">b,7a0b,?pos,e06f","response":"<b,7a0b,0,-332552\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":29290,"message":">b,784c,?pos,1d93","response":"<b,784c,0,-330488\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":24290,"message":">b,19,?pos,6328","response":"<b,19,0,-328940\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":22032,"message":">b,1d1f,?pos,fa6a","response":"<b,1d1f,0,-327391\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":25061,"message":">b,d343,?pos,5ae0","response":"<b,d343,0,-325843\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":22110,"message":">b,bfc9,?pos,6a65","response":"<b,bfc9,0,-324294\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":23177,"message":">b,9780,?pos,eb3b","response":"<b,9780,0,-322746\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":23065,"message":">b,bb8b,?pos,392f","response":"<b,bb8b,0,-321197\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":22835,"message":">b,a994,?pos,c948","response":"<b,a994,0,-319649\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":20602,"message":">b,435e,?pos,b164","response":"<b,435e,0,-318101\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16233,"message":">b,61e8,?pos,ec97","response":"<b,61e8,0,-316553\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":23348,"message":">b,b859,?pos,84ae","response":"<b,b859,0,-314489\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":15811,"message":">b,5e2a,?pos,7123","response":"<b,5e2a,0,-312940\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":18473,"message":">b,a977,?pos,1c96","response":"<b,a977,0,-311392\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":29078,"message":">b,6aeb,?pos,c1e7","response":"<b,6aeb,0,-309843\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":15876,"message":">b,81f5,?pos,428f","response":"<b,81f5,0,-308294\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32234,"message":">b,e810,?pos,4d2e","response":"<b,e810,0,-306230\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":25083,"message":">b,21aa,?pos,d36c","response":"<b,21aa,0,-304165\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":20008,"message":">b,9a19,?pos,2b8e","response":"<b,9a19,0,-302616\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30984,"message":">b,db81,?pos,2099","response":"<b,db81,0,-300551\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34720,"message":">b,78ae,?pos,621c","response":"<b,78ae,0,-298487\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":25712,"message":">b,3d4a,?pos,f907","response":"<b,3d4a,0,-296938\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30003,"message":">b,5f62,?pos,27c6","response":"<b,5f62,0,-294874\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":20867,"message":">b,ee90,?pos,e21f","response":"<b,ee90,0,-293325\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":17210,"message":">b,96cb,?pos,530c","response":"<b,96cb,0,-291776\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":15945,"message":">b,3d4,?pos,bf0a","response":"<b,3d4,0,-290228\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":24089,"message":">b,4f24,?pos,e1af","response":"<b,4f24,0,-288679\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34891,"message":">b,e8ca,?pos,3c62","response":"<b,e8ca,0,-286613\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":15867,"message":">b,197d,?pos,a194","response":"<b,197d,0,-285064\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16374,"message":">b,bd7b,?pos,8b98","response":"<b,bd7b,0,-283515\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":23071,"message":">b,c678,?pos,e374","response":"<b,c678,0,-281966\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16476,"message":">b,fdff,?pos,4a5e","response":"<b,fdff,0,-280417\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16113,"message":">b,1293,?pos,9692","response":"<b,1293,0,-278869\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":29391,"message":">b,4ad7,?pos,732a","response":"<b,4ad7,0,-277320\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":15735,"message":">b,aa43,?pos,579e","response":"<b,aa43,0,-275771\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":22195,"message":">b,e3de,?pos,729c","response":"<b,e3de,0,-274222\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":35795,"message":">b,b5e0,?pos,4caf","response":"<b,b5e0,0,-272158\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":19187,"message":">b,a0ac,?pos,8f69","response":"<b,a0ac,0,-270610\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16786,"message":">b,5dfe,?pos,127","response":"<b,5dfe,0,-269061\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":13528,"message":">b,e1ab,?pos,c70d","response":"<b,e1ab,0,-267512\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":15915,"message":">b,a65a,?pos,f05b","response":"<b,a65a,0,-265963\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":15862,"message":">b,3970,?pos,b5e6","response":"<b,3970,0,-264414\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16763,"message":">b,17e7,?pos,4113","response":"<b,17e7,0,-262865\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":17954,"message":">b,68ac,?pos,3c1b","response":"<b,68ac,0,-261316\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16879,"message":">b,6397,?pos,1fa8","response":"<b,6397,0,-259768\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":36592,"message":">b,4f64,?pos,f0c7","response":"<b,4f64,0,-257702\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":21400,"message":">b,ac1a,?pos,6731","response":"<b,ac1a,0,-255637\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32059,"message":">b,93d0,?pos,f8a8","response":"<b,93d0,0,-254088\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16778,"message":">b,3239,?pos,cf50","response":"<b,3239,0,-252539\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16890,"message":">b,427e,?pos,fc70","response":"<b,427e,0,-250990\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":17295,"message":">b,d04a,?pos,3c7c","response":"<b,d04a,0,-249442\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16391,"message":">b,7c0e,?pos,4ed9","response":"<b,7c0e,0,-247893\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33462,"message":">b,3b55,?pos,1545","response":"<b,3b55,0,-245827\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":22337,"message":">b,ce96,?pos,1a92","response":"<b,ce96,0,-244279\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32153,"message":">b,e723,?pos,6a11","response":"<b,e723,0,-242214\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":36253,"message":">b,e91f,?pos,6d77","response":"<b,e91f,0,-240149\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":19106,"message":">b,1361,?pos,a8e7","response":"<b,1361,0,-238600\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16766,"message":">b,a132,?pos,23eb","response":"<b,a132,0,-237051\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34894,"message":">b,d9ca,?pos,564e","response":"<b,d9ca,0,-234986\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33501,"message":">b,6613,?pos,f77f","response":"<b,6613,0,-232922\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":15760,"message":">b,5fd7,?pos,2aaf","response":"<b,5fd7,0,-231373\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":24863,"message":">b,b56b,?pos,8280","response":"<b,b56b,0,-229308\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":36092,"message":">b,e535,?pos,288e","response":"<b,e535,0,-227243\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":26372,"message":">b,1608,?pos,5a46","response":"<b,1608,0,-225179\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16208,"message":">b,9d07,?pos,283d","response":"<b,9d07,0,-223630\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32517,"message":">b,549e,?pos,5019","response":"<b,549e,0,-221565\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":27290,"message":">b,9d5e,?pos,9573","response":"<b,9d5e,0,-220016\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":35518,"message":">b,947c,?pos,91a6","response":"<b,947c,0,-217951\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30266,"message":">b,8ca6,?pos,f72c","response":"<b,8ca6,0,-215886\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33634,"message":">b,66ef,?pos,4302","response":"<b,66ef,0,-213821\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33272,"message":">b,124a,?pos,90c","response":"<b,124a,0,-211757\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33134,"message":">b,ce1,?pos,55b0","response":"<b,ce1,0,-209692\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31926,"message":">b,52b6,?pos,d761","response":"<b,52b6,0,-207628\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":26958,"message":">b,5f22,?pos,36ae","response":"<b,5f22,0,-205563\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33007,"message":">b,17f,?pos,f2d1","response":"<b,17f,0,-203498\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":36907,"message":">b,c5ca,?pos,4729","response":"<b,c5ca,0,-201433\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":35845,"message":">b,47ba,?pos,5cf","response":"<b,47ba,0,-199368\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34559,"message":">b,b466,?pos,e65a","response":"<b,b466,0,-197303\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32339,"message":">b,a4b3,?pos,e86b","response":"<b,a4b3,0,-195754\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34149,"message":">b,1048,?pos,c6cf","response":"<b,1048,0,-193691\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":46130,"message":">b,1954,?pos,15c","response":"<b,1954,0,-191626\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30747,"message":">b,4388,?pos,4b03","response":"<b,4388,0,-189562\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":17347,"message":">b,db30,?pos,a4f6","response":"<b,db30,0,-188013\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33111,"message":">b,f1e,?pos,c1ff","response":"<b,f1e,0,-185949\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32085,"message":">b,67a8,?pos,701e","response":"<b,67a8,0,-183883\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33494,"message":">b,5bca,?pos,92e","response":"<b,5bca,0,-181818\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32330,"message":">b,21da,?pos,ceea","response":"<b,21da,0,-179753\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":20605,"message":">b,5f25,?pos,517a","response":"<b,5f25,0,-177689\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32808,"message":">b,2402,?pos,b824","response":"<b,2402,0,-175624\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":29885,"message":">b,efb3,?pos,41d9","response":"<b,efb3,0,-173560\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32156,"message":">b,60b4,?pos,372e","response":"<b,60b4,0,-171495\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":46933,"message":">b,e37,?pos,2497","response":"<b,e37,0,-169430\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32530,"message":">b,3cd0,?pos,dc83","response":"<b,3cd0,0,-167366\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33442,"message":">b,e56d,?pos,3f91","response":"<b,e56d,0,-165301\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":38153,"message":">b,5b60,?pos,65e4","response":"<b,5b60,0,-163236\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31487,"message":">b,9cd4,?pos,b4ad","response":"<b,9cd4,0,-161171\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":23249,"message":">b,3085,?pos,e105","response":"<b,3085,0,-159106\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":16821,"message":">b,5a22,?pos,75af","response":"<b,5a22,0,-157558\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31514,"message":">b,4a56,?pos,fbab","response":"<b,4a56,0,-155493\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":28210,"message":">b,58b1,?pos,36b7","response":"<b,58b1,0,-153429\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33248,"message":">b,9d1,?pos,1a5f","response":"<b,9d1,0,-151364\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":29250,"message":">b,e07a,?pos,1f1e","response":"<b,e07a,0,-149298\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32487,"message":">b,24e,?pos,9a8e","response":"<b,24e,0,-147234\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":27304,"message":">b,17e8,?pos,24ea","response":"<b,17e8,0,-145169\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32361,"message":">b,f652,?pos,82e2","response":"<b,f652,0,-143104\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33730,"message":">b,4f4b,?pos,9d8a","response":"<b,4f4b,0,-141039\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32790,"message":">b,95d9,?pos,dd35","response":"<b,95d9,0,-138975\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":28892,"message":">b,74eb,?pos,5bc0","response":"<b,74eb,0,-136910\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":25508,"message":">b,f2ed,?pos,cf84","response":"<b,f2ed,0,-134845\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30570,"message":">b,bcc6,?pos,c17c","response":"<b,bcc6,0,-132780\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34602,"message":">b,bfc4,?pos,4b1f","response":"<b,bfc4,0,-130715\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33641,"message":">b,95d1,?pos,df18","response":"<b,95d1,0,-128650\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32715,"message":">b,8814,?pos,9b30","response":"<b,8814,0,-126585\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32010,"message":">b,d02d,?pos,4274","response":"<b,d02d,0,-124520\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33396,"message":">b,9510,?pos,46f1","response":"<b,9510,0,-122456\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34492,"message":">b,fed6,?pos,2476","response":"<b,fed6,0,-120391\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30415,"message":">b,fd8c,?pos,b90a","response":"<b,fd8c,0,-118326\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":37239,"message":">b,2221,?pos,d3a3","response":"<b,2221,0,-116261\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":38738,"message":">b,be5d,?pos,8049","response":"<b,be5d,0,-114196\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30334,"message":">b,e85b,?pos,b0b9","response":"<b,e85b,0,-112131\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":28164,"message":">b,e751,?pos,3314","response":"<b,e751,0,-110067\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":35651,"message":">b,215d,?pos,8bee","response":"<b,215d,0,-108001\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32514,"message":">b,8d0b,?pos,b992","response":"<b,8d0b,0,-105936\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":28257,"message":">b,5fb8,?pos,568a","response":"<b,5fb8,0,-103871\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":40968,"message":">b,2fb8,?pos,1316","response":"<b,2fb8,0,-101806\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30336,"message":">b,acec,?pos,95e2","response":"<b,acec,0,-99741\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":20039,"message":">b,4f02,?pos,249e","response":"<b,4f02,0,-98192\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33744,"message":">b,90f3,?pos,d02e","response":"<b,90f3,0,-96127\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31890,"message":">b,6674,?pos,8977","response":"<b,6674,0,-94062\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30418,"message":">b,9f13,?pos,2e21","response":"<b,9f13,0,-91997\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34569,"message":">b,3e20,?pos,6895","response":"<b,3e20,0,-89932\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":41157,"message":">b,eff4,?pos,3765","response":"<b,eff4,0,-87867\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32349,"message":">b,16ad,?pos,5375","response":"<b,16ad,0,-85802\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":35114,"message":">b,53d0,?pos,4698","response":"<b,53d0,0,-83737\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":35613,"message":">b,9eb8,?pos,ad1a","response":"<b,9eb8,0,-81672\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32774,"message":">b,1bcc,?pos,aebb","response":"<b,1bcc,0,-79607\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":29965,"message":">b,e764,?pos,1cad","response":"<b,e764,0,-77542\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":35533,"message":">b,ae02,?pos,ea06","response":"<b,ae02,0,-75478\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33008,"message":">b,ce23,?pos,17fb","response":"<b,ce23,0,-73413\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":29150,"message":">b,f5fc,?pos,a9ce","response":"<b,f5fc,0,-71349\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":35469,"message":">b,f4a,?pos,5dcb","response":"<b,f4a,0,-69284\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32740,"message":">b,14f5,?pos,cf2a","response":"<b,14f5,0,-67220\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30994,"message":">b,2d27,?pos,db25","response":"<b,2d27,0,-65155\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":26523,"message":">b,e739,?pos,28e5","response":"<b,e739,0,-63090\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":35704,"message":">b,92e9,?pos,199a","response":"<b,92e9,0,-61025\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":28625,"message":">b,ece9,?pos,dca5","response":"<b,ece9,0,-58960\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":28004,"message":">b,773,?pos,f41b","response":"<b,773,0,-56895\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":35340,"message":">b,aa16,?pos,61fb","response":"<b,aa16,0,-54830\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30502,"message":">b,270d,?pos,133d","response":"<b,270d,0,-52764\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30148,"message":">b,dab,?pos,47d6","response":"<b,dab,0,-50699\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":38109,"message":">b,2845,?pos,c57b","response":"<b,2845,0,-48634\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30560,"message":">b,5b3e,?pos,bf7e","response":"<b,5b3e,0,-46569\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30131,"message":">b,7677,?pos,7d21","response":"<b,7677,0,-44503\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34496,"message":">b,ad30,?pos,6c8b","response":"<b,ad30,0,-42438\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30453,"message":">b,4e2,?pos,b620","response":"<b,4e2,0,-40373\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30523,"message":">b,28dc,?pos,4b8d","response":"<b,28dc,0,-38307\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33916,"message":">b,1c85,?pos,dfee","response":"<b,1c85,0,-36242\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31025,"message":">b,74e7,?pos,d0eb","response":"<b,74e7,0,-34178\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30495,"message":">b,8f80,?pos,fcfd","response":"<b,8f80,0,-32112\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":28167,"message":">b,21ae,?pos,5a6a","response":"<b,21ae,0,-30047\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34929,"message":">b,43aa,?pos,734","response":"<b,43aa,0,-27981\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33886,"message":">b,6a51,?pos,a977","response":"<b,6a51,0,-25916\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31001,"message":">b,6d21,?pos,7cb0","response":"<b,6d21,0,-23851\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":38885,"message":">b,4de2,?pos,94d2","response":"<b,4de2,0,-21786\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":41275,"message":">b,31a0,?pos,8f46","response":"<b,31a0,0,-19720\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30742,"message":">b,2166,?pos,6bff","response":"<b,2166,0,-17655\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":28331,"message":">b,d4a2,?pos,3fc","response":"<b,d4a2,0,-15590\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":36454,"message":">b,4e33,?pos,c781","response":"<b,4e33,0,-13525\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32644,"message":">b,2c7f,?pos,899a","response":"<b,2c7f,0,-11460\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30337,"message":">b,dcca,?pos,154f","response":"<b,dcca,0,-9394\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34986,"message":">b,6557,?pos,a1f1","response":"<b,6557,0,-7452\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34540,"message":">b,8152,?pos,f3f","response":"<b,8152,0,-6231\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":35328,"message":">b,3695,?pos,68be","response":"<b,3695,0,-5130\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34528,"message":">b,8078,?pos,485","response":"<b,8078,0,-4148\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":33338,"message":">b,3d47,?pos,d87d","response":"<b,3d47,0,-3286\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30052,"message":">b,b58b,?pos,b98c","response":"<b,b58b,0,-2543\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34134,"message":">b,5013,?pos,5512","response":"<b,5013,0,-1919\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":34595,"message":">b,f799,?pos,1805","response":"<b,f799,0,-1414\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30440,"message":">b,3c72,?pos,b264","response":"<b,3c72,0,-1029\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":25585,"message":">b,f0d9,?pos,c12c","response":"<b,f0d9,0,-763\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":40254,"message":">b,77f1,?pos,d7d4","response":"<b,77f1,0,-617\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":28369,"message":">b,a3a2,?pos,8e21","response":"<b,a3a2,0,-585\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":27193,"message":">b,f6,?pos,3ddd","response":"<b,f6,0,-585\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":38352,"message":">b,bef0,?pos,8b57","response":"<b,bef0,0,-585\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/11
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30681,"message":">b,215b,?pos,466b","response":"<b,215b,0,0\r"}
+	- Message: 0 reached in 0.0424807071685791 seconds for reader module along Heater D
+	- Current Time: 10:26:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":17974,"message":">b,608d,?pos,93bc","response":"<b,608d,0,0\r"}
+	- Message: 0 reached in 9.49324655532837 seconds for reader module along Heater D
+	- Current Time: 10:26:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":40542,"message":">b,a9f2,?pos,1d11","response":"<b,a9f2,0,0\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/11
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":30319,"message":">b,a396,?pos,bc9","response":"<b,a396,0,0\r"}
+	- Message: 0 reached in 0.04060053825378418 seconds for reader module along Heater D
+	- Current Time: 10:26:01
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/7?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/7?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,be94,0,-960
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/6
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/7
+		- Message (RECEIVED)
+			- Duration (s): 0.02
+			- Address: 7
+			- Command Sent: ?pos
+			- Respone Received: <7,6930,0,-16
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/7
+		- Message (RECEIVED): Status Code: OK
