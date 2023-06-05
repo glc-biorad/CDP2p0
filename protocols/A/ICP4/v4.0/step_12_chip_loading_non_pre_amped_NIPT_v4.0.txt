@@ -1,0 +1,26 @@
+0: Comment: ------------ CHIP LOADING NPA-NIPT ------------
+0: Comment: --- STATE: No tips ---
+0: Comment: --- STATE: Standard droplets generated in DG32 C-3 (85 uL) ---
+0: Comment: --- CONFIG: Tip Tray B 4-200-droplets---
+0: Comment: --- CONFIG: Reagent Cartridge B 5-DG Oil (250 uL) ---
+0: Comment: --- CONFIG: ddPCR on Tray C ---
+0: Comment: --- STEP: Droplet Transfer ---
+0: Comment: --- NOTE: Tip B6-200-new
+7: Pickup tips from B column 6
+11: Move to DG8 tray C column 3 with 200 uL tips
+10: Aspirate 85 uLs with 200 uL tips at Lowest pressure 1 time
+6: Move to Tray tray C column 1 with 200 uL tips
+0: Comment: --- NOTE: Pause to check tip engagement ---
+0: Pause for user input
+17: Dispense 85 uLs with 200 uL tips at Lowest pressure 1 time
+15: Drip for 5 seconds
+0: Dispense 5 uLs with 200 uL tips at Lowest pressure 1 time
+0: Comment: --- STEP: Transfer Oil ---
+0: Comment: --- Oil ---
+4: Move to Reagent Cartridge tray B column 11 with 200 uL tips
+10: Aspirate 200 uLs with 200 uL tips at Low pressure 1 time
+6: Move to Tray tray C column 1 with 200 uL tips
+0: Comment: --- NOTE: Pause to check tip engagement ---
+0: Pause for user input
+15: Drip for 30 seconds
+7: Eject tips into B column 6
