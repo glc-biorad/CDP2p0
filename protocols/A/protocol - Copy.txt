@@ -1,6 +1,0 @@
-0: Pickup tips from B column 5
-1: Move to DG8 tray A column 1 with 50 uL tips
-2: Move to DG8 tray A column 2 with 50 uL tips
-3: Move to DG8 tray A column 3 with 50 uL tips
-4: Eject tips in B column 5
-5: Move to DG8 tray A column 3 without tips moving down by 677000

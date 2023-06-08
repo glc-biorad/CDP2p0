@@ -28,25 +28,25 @@ def tc():
     #m.change_temperature(4,37)
     #delay(2700)
 
-    m.change_temperature(2,90)
-    m.change_temperature(3,95)
-    m.change_temperature(4,95)
+    m.change_temperature(2,95)
+    m.change_temperature(3,92)
+    m.change_temperature(4,92)
     delay(240)
     print(m.get_temperature(4))
 
-    cycles = 45
+    cycles = 40
     for cycle in range(cycles):
         print(f"cycle: {cycle+1}")
-        m.change_temperature(2,92)
-        m.change_temperature(3,98)
-        m.change_temperature(4,98)
+        m.change_temperature(2,98)
+        m.change_temperature(3,95)
+        m.change_temperature(4,95)
         print(m.get_temperature(4))
-        delay(50)
+        delay(40)
         m.change_temperature(2,58)
         m.change_temperature(3,58)
-        m.change_temperature(4,56)
+        m.change_temperature(4,58)
         print(m.get_temperature(4))
-        delay(100)
+        delay(75)
 
     #m.change_temperature(2,72)
     #m.change_temperature(3,72)
