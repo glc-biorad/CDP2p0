@@ -1,0 +1,4 @@
+0: Move Chip A
+1: Move Lid A
+2: Move Engaged Chip A
+3: Home pipettor fast

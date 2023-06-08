@@ -1,8 +1,0 @@
-0: Comment: Droplet Moving Optimization
-1: Comment: Assumes that droplets have been generated in DG A-D
-2: Comment: Tips A4 (200ul), A5 (200 ul), A6 (200 ul), A7 (200 ul)
-3: Comment: Pipettor starts at home with no tips
-4: Home pipettor
-5: Pause for user input
-6: Comment: Transfer from A
-7: Pickup tips from A column 4
