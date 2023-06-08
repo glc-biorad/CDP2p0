@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< HEAD
     "\\api\\reader\\meerstetter"
   ],
   "SelectedNode": "\\cdp2p0.py",
+=======
+    "\\AppData"
+  ],
+  "SelectedNode": "\\script-tc-ICP4.py",
+>>>>>>> af988c6a98f15a6f6076a0af2df18b385747a925
   "PreviewInSolutionExplorer": false
 }
