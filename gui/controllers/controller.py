@@ -62,10 +62,12 @@ class Controller:
 		try:
 			self.upper_gantry = UpperGantry()
 		except:
+			print("Warning: No upper gantry for the GUI on start-up")
 			self.upper_gantry = None
 		try: 
 			self.reader = Reader()
 		except:
+			print("Warning: No reader for the GUI on start-up")
 			self.reader = None
 
 	def setup_bindings(self) -> None:
