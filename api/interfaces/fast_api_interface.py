@@ -346,6 +346,7 @@ class Axis():
 
     # Move Method.
     def move(self, module_name, id, position, velocity, block=True, use_fast_api=True):
+        clock = time.time()
         logger = Logger(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.move.__name__))
         if position > 0:
             position = -position
@@ -362,6 +363,7 @@ class Axis():
         #    logger.log('MESSAGE', "Already at the {0} along the axis {1}".format(value, id))
             #return
         # Generate the URL.
+        print(f"Time: {time.time() - clock}")
         url = FAST_API_URL_BASE + FAST_API_URL_PATHS[module_name]['axis']['move']['url']
         if module_name.lower() != 'prep_deck':
          url = url.replace('{id}', str(id))
