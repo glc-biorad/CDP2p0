@@ -135,7 +135,7 @@ Chiller,nan,9,0,0,0,0,1000
 Chiller,nan,10,0,0,0,0,1000
 Chiller,nan,11,0,0,0,0,1000
 Chiller,nan,12,0,0,0,0,1000
-Pre-Amp Thermocycler,nan,1,-446150,-340000,-585000,0,1000
+Pre-Amp Thermocycler,nan,1,-445750,-338000,-585000,0,1000
 Pre-Amp Thermocycler,nan,2,-440550,-340000,-585000,0,1000
 Pre-Amp Thermocycler,nan,3,-434950,-340000,-585000,0,1000
 Pre-Amp Thermocycler,nan,4,-429350,-340000,-585000,0,1000
@@ -164,8 +164,8 @@ Tip Transfer Tray,A,1,0,0,0,0,1000
 Tip Transfer Tray,B,1,0,0,0,0,1000
 Tip Transfer Tray,C,1,0,0,0,0,1000
 Tip Transfer Tray,D,1,0,0,0,0,1000
-Assay Strip,A,1,-472750,-1888000,-725000,0,1000
-Assay Strip,A,2,-466350,-1883000,-722000,0,1000
+Assay Strip,A,1,-471950,-1884000,-725000,0,1000
+Assay Strip,A,2,-465950,-1883000,-722000,0,1000
 Assay Strip,B,1,-456250,-1888000,-730000,0,1000
 Assay Strip,B,2,-451250,-1888000,-730000,0,1000
 Assay Strip,C,1,0,0,0,0,1000

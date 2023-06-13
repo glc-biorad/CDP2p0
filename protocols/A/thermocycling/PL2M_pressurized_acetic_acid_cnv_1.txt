@@ -1,5 +1,0 @@
-unit,use,cycles,first denature temperature, first denature time, anneal temperature, anneal time, second denature temperature, second denature time,
-A,0,40,82,3,54,60,84,40,
-B,0,40,84,3,50,60,84,40,
-C,0,40,84,3,50,60,84,40,
-D,1,40,82,3,54,60,84,40,

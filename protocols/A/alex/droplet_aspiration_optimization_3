@@ -1,9 +1,0 @@
-0: Comment: ---------- DROPLET ASPIRATION OPTIMIZATION ---------
-1: Comment: --- CONFIG: Start with 200 uL tips ---
-2: Comment: --- CONFIG: Droplets in DG32 A-3 ---
-3: Move to DG8 tray A column 3 with 200 uL tips moving left by 200 up by 591500
-4: Dispense 80 uLs with 200 uL tips at Low pressure 1 time
-5: Move relative right by 500
-6: Move relative up by 1000
-7: Aspirate 80 uLs with 200 uL tips at Lowest pressure 1 time
-8: Home pipettor along Z

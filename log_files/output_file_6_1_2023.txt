@@ -1087,6 +1087,156 @@ TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_
 END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.home_pipettor - Time (H:M:S): 09:00:06]
 START [Module: camera.py - Function: api.reader.camera.camera]
 	- Message: Getting camera device information.
+<<<<<<< HEAD
+	- Start Time (H:M:S): 12:59:31
+	- Message: Device control information not available.
+	- Current Time: 12:59:31
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:59:32
+	- Message: Device control information not available.
+	- Current Time: 12:59:32
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:59:32
+
+TIMING: Starting the timer for module [C:\CDP2p0-updated\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:59:33
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.49280428886413574 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:59:33]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:59:38
+	- Message: Device control information not available.
+	- Current Time: 12:59:38
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:59:38
+
+TIMING: Starting the timer for module [C:\CDP2p0-updated\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:59:38
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.35674452781677246 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:59:38]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:59:38
+
+TIMING: Starting the timer for module [C:\CDP2p0-updated\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:59:38
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.37384748458862305 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:59:38]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:59:38
+	- Message: Device control information not available.
+	- Current Time: 12:59:38
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:59:59
+	- Message: Device control information not available.
+	- Current Time: 12:59:59
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:59:59
+	- Message: Device control information not available.
+	- Current Time: 12:59:59
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:59:59
+
+TIMING: Starting the timer for module [C:\CDP2p0-updated\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 13:00:00
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.44751834869384766 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 13:00:00]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 13:00:02
+	- Message: Device control information not available.
+	- Current Time: 13:00:02
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 13:00:02
+
+TIMING: Starting the timer for module [C:\CDP2p0-updated\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 13:00:03
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.38073062896728516 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 13:00:03]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 13:00:03
+
+TIMING: Starting the timer for module [C:\CDP2p0-updated\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 13:00:03
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.35877323150634766 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 13:00:03]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 13:00:03
+	- Message: Device control information not available.
+	- Current Time: 13:00:03
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 13:02:11
+	- Message: Device control information not available.
+	- Current Time: 13:02:11
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 13:02:12
+	- Message: Device control information not available.
+	- Current Time: 13:02:12
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 13:02:12
+
+TIMING: Starting the timer for module [C:\CDP2p0-updated\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 13:02:12
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.4236471652984619 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 13:02:12]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 13:02:15
+	- Message: Device control information not available.
+	- Current Time: 13:02:15
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 13:02:15
+
+TIMING: Starting the timer for module [C:\CDP2p0-updated\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 13:02:15
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.3679652214050293 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 13:02:15]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 13:02:15
+
+TIMING: Starting the timer for module [C:\CDP2p0-updated\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 13:02:16
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 0.36486291885375977 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 13:02:16]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 13:02:16
+	- Message: Device control information not available.
+	- Current Time: 13:02:16
+=======
 	- Start Time (H:M:S): 09:25:01
 	- Message: Device control information not available.
 	- Current Time: 09:25:01
@@ -36194,3 +36344,4 @@ TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_
 
 TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.home_pipettor]: 51.19531559944153 seconds.
 END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.home_pipettor - Time (H:M:S): 15:24:36]
+>>>>>>> af988c6a98f15a6f6076a0af2df18b385747a925

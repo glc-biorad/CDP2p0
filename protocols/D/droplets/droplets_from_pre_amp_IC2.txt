@@ -1,0 +1,17 @@
+0: Comment: Droplet Generation Test on DG8 Chip A with Loading on a PL2M Chip on Tray A with Thermocycling
+1: Pickup tips from A column 12
+2: Move to Reagent Cartridge tray A column 6 with 200 uL tips
+3: Move to DG8 tray A column 1 with 200 uL tips
+4: Move to Assay Strip tray A column 1 with 200 uL tips
+5: Move to DG8 tray A column 2 with 200 uL tips
+6: Eject tips in A column 12
+7: Comment: Move the pipettor head down further to engage the mandrels with the DG8 chip gaskets
+8: Move to DG8 tray A column 3 without tips moving down by 677000
+9: Comment: Generate droplets
+10: Pickup tips from A column 12
+11: Move to DG8 tray A column 3 with 200 uL tips
+12: Move to Tray tray A column 3 with 200 uL tips
+13: Home pipettor
+14: Close Tray AB
+15: Lower Thermocycler A to -200000 usteps
+16: Thermocycle Protocol (C:/CDP2p0-development/protocols/A/thermocycling/thermocycle_test_A.txt)

@@ -1,0 +1,15 @@
+0: Pickup tips from A column 1
+1: Move to Reagent Cartridge tray A column 1 with 1000 uL tips
+2: Aspirate 400 uLs with 1000 uL tips at High pressure 1 time
+3: Move to Heater/Shaker column 1 with 1000 uL tips
+4: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
+5: Home pipettor along Z
+6: Shake on with an RPM of 1000
+7: Move to Mag Separator column 1 with 1000 uL tips moving up by 30000
+8: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
+9: Eject tips in A column 1
+10: Move Chip C
+11: Home pipettor along Z
+12: Scan D
+13: Light Show
+14: Shake off
