@@ -1,0 +1,4 @@
+Seyonic Pipettor Initializing...,Thu Jun  8 09:47:25 2023,
+set_pressure(pressure=-100; direction=None),Thu Jun  8 09:47:26 2023,
+close_valve(channel=0),Thu Jun  8 09:47:27 2023,
+set_pressure(pressure=0; direction=2),Thu Jun  8 09:47:28 2023,
