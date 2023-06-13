@@ -17,8 +17,8 @@ from gui.views.view import View
 import multiprocessing
 
 def main() -> None:
-	unit = 'D'
-	meerstetter_com_port = 'COM5'
+	unit = 'A'
+	meerstetter_com_port = 'COM8'
 	meerstetter_com_port_controller = ComPortController(meerstetter_com_port, 57600, dont_use_fast_api=True, timeout=1)
 	print(f"Unit: {unit}")
 	model = Model(unit=unit)
