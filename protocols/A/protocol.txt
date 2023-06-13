@@ -1,0 +1,48 @@
+0: Pickup tips from A column 1
+1: Home pipettor along Z
+2: Eject tips in A column 1
+3: Home pipettor along Z
+4: Pickup tips from A column 2
+5: Home pipettor along Z
+6: Eject tips in A column 2
+7: Home pipettor along Z
+8: Pickup tips from A column 3
+9: Home pipettor along Z
+10: Eject tips in A column 3
+11: Home pipettor along Z
+12: Pickup tips from A column 4
+13: Home pipettor along Z
+14: Eject tips in A column 4
+15: Home pipettor along Z
+16: Pickup tips from A column 5
+17: Home pipettor along Z
+18: Eject tips in A column 5
+19: Home pipettor along Z
+20: Pickup tips from A column 6
+21: Home pipettor along Z
+22: Eject tips in A column 6
+23: Home pipettor along Z
+24: Pickup tips from A column 7
+25: Home pipettor along Z
+26: Eject tips in A column 7
+27: Home pipettor along Z
+28: Pickup tips from A column 8
+29: Home pipettor along Z
+30: Eject tips in A column 8
+31: Home pipettor along Z
+32: Pickup tips from A column 9
+33: Home pipettor along Z
+34: Eject tips in A column 9
+35: Home pipettor along Z
+36: Pickup tips from A column 10
+37: Home pipettor along Z
+38: Eject tips in A column 10
+39: Home pipettor along Z
+40: Pickup tips from A column 11
+41: Home pipettor along Z
+42: Eject tips in A column 11
+43: Home pipettor along Z
+44: Pickup tips from A column 12
+45: Home pipettor along Z
+46: Eject tips in A column 12
+47: Home pipettor along Z
