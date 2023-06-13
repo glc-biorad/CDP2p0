@@ -1,0 +1,9 @@
+0: Move to DG8 tray D column 2 with 200 uL tips
+1: Aspirate 100 uLs with 200 uL tips at Lowest pressure 1 time
+2: Delay for 10 seconds
+3: Dispense 60 uLs with 200 uL tips at Lowest pressure 1 time
+4: Move to Pre-Amp Thermocycler column 2 with 200 uL tips
+5: Dispense 40 uLs with 200 uL tips at Lowest pressure 1 time
+6: Delay for 5 seconds
+7: Dispense 10 uLs with 200 uL tips at Lowest pressure 1 time
+8: Home pipettor

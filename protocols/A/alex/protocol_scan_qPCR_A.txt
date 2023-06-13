@@ -1,0 +1,24 @@
+0: Comment: --- STEP: Image FOV 1 on A ---
+1: Move imager to -270000, -15000, -200000
+2: Image and saving the experiment exp1_fov1
+3: Comment: --- STEP: Image FOV 2 on A ---
+4: Move imager to -270000, -37000, -200000
+5: Image and saving the experiment exp1_fov2
+6: Comment: --- STEP: Image FOV 3 on A ---
+7: Move imager to -270000, -61000, -200000
+8: Image and saving the experiment exp1_fov3
+9: Comment: --- STEP: Image FOV 4 on A ---
+10: Move imager to -270000, -84000, -200000
+11: Image and saving the experiment exp1_fov4
+12: Comment: --- STEP: Image FOV 5 on A ---
+13: Move imager to -270000, -107000, -200000
+14: Image and saving the experiment exp1_fov5
+15: Comment: --- STEP: Image FOV 6 on A ---
+16: Move imager to -270000, -131000, -200000
+17: Image and saving the experiment exp1_fov6
+18: Comment: --- STEP: Image FOV 7 on A ---
+19: Move imager to -270000, -154000, -200000
+20: Image and saving the experiment exp1_fov7
+21: Comment: --- STEP: Image FOV 8 on A ---
+22: Move imager to -270000, -177000, -200000
+23: Image and saving the experiment exp1_fov8
