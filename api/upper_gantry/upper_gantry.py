@@ -2,6 +2,7 @@
 '''
 from ast import Try
 from cmath import e
+from math import ceil
 from re import T
 import time
 import threading
@@ -178,9 +179,10 @@ class UpperGantry(api.util.motor.Motor):
         self.__FAST_API_INTERFACE = FastAPIInterface(unit)
         try:
             #global __pipettor
-            for i in range(2):
+            print("Connect to the pipettor test...")
+            for i in range(1):
                 time.sleep(1)
-                #print(i+1)
+                print(i+1)
             __pipettor = Seyonic()
         except Exception as e:
             print(e)
@@ -617,11 +619,26 @@ class UpperGantry(api.util.motor.Motor):
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=2, position=y, block=False, velocity=self.__LIMIT['Y']['max']['velocity'])
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=1, position=x, block=False, velocity=self.__LIMIT['X']['max']['velocity'])
 
-    def detect_liquid_level(self, max_z_range: int = 300000, z_velocity: int = 30000) -> bool:
+    def detect_liquid_level(self, max_z_range: int = 200000, z_velocity: int = 30000) -> bool:
         """
         Move down in z (bound by a max downward relative z motion)
         """
+        try:
+            #global __pipettor
+            for i in range(2):
+                time.sleep(1)
+            __pipettor = Seyonic()
+        except Exception as e:
+            print(e)
+            try:
+                __pipettor.close()
+                __pipettor = Seyonic()
+            except Exception as e:
+                print(e)
+                __pipettor = None
+        self.__pipettor = __pipettor
         llded = False
+        max_timeout = abs(ceil(max_z_range / z_velocity))
         # Setup the seyonic logger for lld
         status_log = Log('status', './logs/seyonic/')
         status_log.seyonic_log_header()
@@ -633,7 +650,7 @@ class UpperGantry(api.util.motor.Motor):
         # Set the action mode to LLD
         self.__pipettor.set_LLD_action_mode()
         # Trigger LLD
-        self.__pipettor.trigger_LLD()
+        #self.__pipettor.trigger_LLD()
         lld_clock_start = time.time()
         status_log.seyonic_log('LLD', "Trigger", 20, [4, 4, 4, 4, 4, 4, 4, 4], time.time() - lld_clock_start)
         # Start timing
@@ -644,7 +661,7 @@ class UpperGantry(api.util.motor.Motor):
         self.move_relative('down', value=max_z_range, velocity=z_velocity, block=False)
         # Look for LLD success status
         t = time.time()
-        while self.get_position_from_axis('Z') <= initial_z - max_z_range:
+        while self.get_position_from_axis('Z') <= initial_z - max_z_range or (2 not in self.__pipettor.get_status() and time.time() - t <= max_timeout):
             action_status = self.__pipettor.get_status()
             #print(action_status)
             status_log.seyonic_log('LLD', "In Progress", 
@@ -668,8 +685,23 @@ class UpperGantry(api.util.motor.Motor):
                 llded = True
                 break
         self.__pipettor.set_pressure(pressure=0, direction=1)
-        print(llded)
         time.sleep(2)
+        #self.__pipettor.close()
+        #time.sleep(2)
+        #try:
+        #    #global __pipettor
+        #    for i in range(2):
+        #        time.sleep(1)
+        #    __pipettor = Seyonic()
+        #except Exception as e:
+        #    print(e)
+        #    try:
+        #        __pipettor.close()
+        #        __pipettor = Seyonic()
+        #    except Exception as e:
+        #        print(e)
+        #        __pipettor = None
+        #self.__pipettor = __pipettor
         return llded
 
     def move(
