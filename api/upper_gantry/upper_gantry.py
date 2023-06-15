@@ -177,12 +177,16 @@ class UpperGantry(api.util.motor.Motor):
         self.controller = Controller(com_port=self.__COM_PORT)
         self.__FAST_API_INTERFACE = FastAPIInterface(unit)
         try:
-            global __pipettor
+            #global __pipettor
+            for i in range(2):
+                time.sleep(1)
+                #print(i+1)
             __pipettor = Seyonic()
         except Exception as e:
             print(e)
             try:
                 __pipettor.close()
+                __pipettor = Seyonic()
             except Exception as e:
                 print(e)
                 __pipettor = None
@@ -613,7 +617,7 @@ class UpperGantry(api.util.motor.Motor):
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=2, position=y, block=False, velocity=self.__LIMIT['Y']['max']['velocity'])
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=1, position=x, block=False, velocity=self.__LIMIT['X']['max']['velocity'])
 
-    def detect_liquid_level(self, max_z_range: int = 200000, z_velocity: int = 30000) -> bool:
+    def detect_liquid_level(self, max_z_range: int = 300000, z_velocity: int = 30000) -> bool:
         """
         Move down in z (bound by a max downward relative z motion)
         """
@@ -640,7 +644,7 @@ class UpperGantry(api.util.motor.Motor):
         self.move_relative('down', value=max_z_range, velocity=z_velocity, block=False)
         # Look for LLD success status
         t = time.time()
-        while self.get_position_from_axis('Z') >= initial_z - max_z_range:
+        while self.get_position_from_axis('Z') <= initial_z - max_z_range:
             action_status = self.__pipettor.get_status()
             #print(action_status)
             status_log.seyonic_log('LLD', "In Progress", 
@@ -664,6 +668,7 @@ class UpperGantry(api.util.motor.Motor):
                 llded = True
                 break
         self.__pipettor.set_pressure(pressure=0, direction=1)
+        print(llded)
         time.sleep(2)
         return llded
 
@@ -732,7 +737,12 @@ class UpperGantry(api.util.motor.Motor):
                 elif tip == None:
                     z = 0
         # Home Z and the drip plate
+        #self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, 0, 800000, True, True)
+        # If x,y at heater/shaker full home z
         self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, 0, 800000, True, True)
+        # Else go to -282000 to save time
+        time_start = time.time()
+        #self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, -282000, 800000, True, True)
         # Check if the user wants to use the drip plate
         if use_drip_plate:
             # Move the drip plate
@@ -755,12 +765,12 @@ class UpperGantry(api.util.motor.Motor):
         # Wait till x and y are achieved
         _x = self.get_position_from_axis('X')
         _y = self.get_position_from_axis('Y')
-        while _x != x and _y != y:
+        while _x != x or _y != y:
             _x = self.get_position_from_axis('X')
             _y = self.get_position_from_axis('Y')
         # Move to the Z height
         self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, z, 800000, True, True)
-
+        print(f"TIME!!!!!! -> {time.time() - time_start} NEED TO NOT USE 0 FOR HOMIZNG Z!")
 
 
     def move_pipettor_new(self, 

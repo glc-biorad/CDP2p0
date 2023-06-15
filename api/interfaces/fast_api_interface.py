@@ -20,6 +20,7 @@ from System.Text import ASCIIEncoding
 import ast
 import os
 import time
+import asyncio
 
 from api.util.logger import Logger
 
@@ -269,15 +270,16 @@ class Axis():
             print("ERROR (fast_api_interface, __retry): no response, out of attempts with url {0}".format(url))
 
     # Get Status and Position Method.
-    def get_position(self, module_name, id):
+    def get_position(self, module_name, id, verbose=True):
         # Generate the URL.
         url = FAST_API_URL_BASE + FAST_API_URL_PATHS[module_name]['axis']['']['url']
         if module_name.lower() != 'prep_deck':
             url = url.replace('{id}', str(id))
         # Generate the request.
         request = WebRequest.Create(url)
-        logger = Logger(__file__, __name__)
-        logger.log('SEND', url)
+        if verbose:
+            logger = Logger(__file__, __name__)
+            logger.log('SEND', url)
         method = FAST_API_URL_PATHS[module_name]['axis']['']['method']
         request.Method = method
         response = request.GetResponse()
@@ -290,12 +292,13 @@ class Axis():
         response_str = reader.ReadToEnd()
         try:
             value = int(response_str.split(':')[-1].split(',')[-1].replace('\\r"}',''))
-            logger.log('RECEIVED', response_str)
+            if verbose:
+                logger.log('RECEIVED', response_str)
         except ValueError:
             value = None
         return value
 
-    def block_till_value_reached(self, module_name, id, value, cutoff=0.01, max_timeout=35, checkin_time=0.25, verbose=True):
+    def block_till_value_reached(self, module_name, id, value, cutoff=0.01, max_timeout=55, checkin_time=0.25, verbose=True):
         logger = Logger(__file__, self.block_till_value_reached.__name__)
         time_start = time.time()
         value_changed = True
@@ -324,15 +327,13 @@ class Axis():
         #for i in range(max_timeout):
         while time.time() - time_start <= max_timeout:
             response_value = self.get_position(module_name, id)
-            #if response_value == None:
-            #    response_value = value_was
-            #print("id {0} is at {1} wants {2}".format(id, response_value, value))
             id_str = id_strs[module_name][id]
-            #***#logger.log('MESSAGE', "The {0} axis is at {1} of {2} microsteps".format(id_str, response_value, value))
             if abs(response_value - value) <= cutoff:
                 logger.log("MESSAGE", "{0} reached in {1} seconds for {2} module along {3}".format(value, time.time() - time_start, module_name, id_str))
                 return
-            #time.sleep(checkin_time)
+            else:
+                print(time.time() - time_start)
+            time.sleep(checkin_time)
             if value_was - response_value == 0:
                 value_changed = False
             if value_changed == False:
@@ -341,8 +342,58 @@ class Axis():
                 else:
                     self.move(module_name, id, value, self.__LIMITS[module_name][id], block=True)
             value_was = response_value
-            #time.sleep(0.1)
         logger.log("ERROR", "{0} not reached within a cutoff of {1} in a max timeout of {2} for the {3} module along the {4} axis".format(value, cutoff, max_timeout, module_name, id_str))
+
+    def test_block_till_value_reached(self, module_name, id, value, cutoff=0.01, max_timeout=55, checkin_time=0.25, verbose=True):
+        logger = Logger(__file__, self.block_till_value_reached.__name__)
+        time_start = time.time()
+        value_changed = True
+        value_was = 0.19
+        id_strs = {
+            'pipettor_gantry': {
+                1: 'X',
+                2: 'Y',
+                3: 'Z',
+                4: 'Drip Plate'
+                },
+            'reader': {
+                1: 'X',
+                2: 'Y',
+                3: 'Z',
+                4: 'Filter Wheel',
+                6: 'Tray AB',
+                7: 'Tray CD',
+                8: 'Heater A',
+                9: 'Heater B',
+                10: 'Heater C',
+                11: 'Heater D'
+                }
+            }
+        # Create the task for reaching the value for the position
+        #asyncio.run(self.__are_we_there_yet(module_name, id, value))
+        self.__are_we_there_yet(module_name, id, value)
+
+    # Are We There Yet
+    #async def __are_we_there_yet(self, module_name: str, id: int, value: int) -> None:
+    def __are_we_there_yet(self, module_name: str, id: int, value: int) -> None:
+        velocity = {'pipettor_gantry': {1: 300000, 2: 3200000, 3: 800000, 4: 2500000},}
+        time_start = time.time()
+        # Get the current position
+        current_position = self.get_position(module_name, id)
+        # Compare with where we want to be
+        diff = abs(current_position - value)
+        # Estimate a time left
+        time_left = diff / float(velocity[module_name][id])
+        while diff != 0:
+            # Get the current position
+            current_position = self.get_position(module_name, id)
+            # Compare with where we want to be
+            diff = abs(current_position - value)
+            # Estimate a time left
+            time_left = diff / float(velocity[module_name][id])
+            if time_left <= 0.3:
+                return True
+        return True
 
     # Move Method.
     def move(self, module_name, id, position, velocity, block=True, use_fast_api=True):
@@ -379,7 +430,9 @@ class Axis():
         if block and use_fast_api == False:
             self.__block()
         elif block and use_fast_api:
-            self.block_till_value_reached(module_name, id, position)
+            #asyncio.run(self.test_block_till_value_reached(module_name, id, position))
+            self.test_block_till_value_reached(module_name, id, position)
+            #self.block_till_value_reached(module_name, id, position)
 
     # Jog Method.
 
