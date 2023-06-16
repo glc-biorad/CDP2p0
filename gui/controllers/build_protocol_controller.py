@@ -93,6 +93,7 @@ MAIN_ACTION_KEY_WORDS = [
 	'Suction',
 	'Extend',
 	'LLD',
+	'Reset',
 	'Light',
 	'Load',
 	'Drip',
@@ -1142,6 +1143,7 @@ class BuildProtocolController:
 				for i in range(count):
 					if action == 'Aspirate':
 						self.upper_gantry.aspirate(volume, pipette_tip_type=tip, pressure=pressure)
+						self.upper_gantry.aspirate(volume, pipette_tip_type=tip, pressure=pressure)
 					if action == 'Dispense':
 						self.upper_gantry.dispense(volume, pressure=pressure)
 					if action == 'Mix':
@@ -1232,6 +1234,8 @@ class BuildProtocolController:
 					self.upper_gantry.get_fast_api_interface().reader.axis.home('reader', 2, block=True)
 				# Log
 				log.log(action_message, time.time() - t_start)
+			elif split[0] == 'Reset':
+				self.upper_gantry.reset_pipettor_connection()
 			elif split[0] == 'LLD':
 				#self.upper_gantry.get_pipettor().liquid_level_detect()
 				llded = self.upper_gantry.detect_liquid_level()
@@ -1250,6 +1254,8 @@ class BuildProtocolController:
 							# Log
 							log.log(action_message + " -> Cancel Pressed -> Ok Pressed", time.time() - t_start)
 							continue
+				else:
+					print("WOW!")
 			elif split[0] == 'Generate':
 				# Get the droplet type
 				droplet_type = split[1]

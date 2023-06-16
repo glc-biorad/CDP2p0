@@ -218,7 +218,7 @@ OTHER_OPTIONS = (
 	('gui/images/tray.png', 'Trays', "Open Tray AB", "Open Tray CD", "Close Tray AB", "Close Tray CD"),
 	('gui/images/clamp.png', 'Clamps', "Lower Thermocycler A", "Lower Thermocycler B", "Lower Thermocycler C", "Lower Thermocycler D", "Raise Thermocycler A", "Raise Thermocycler B", "Raise Thermocycler C", "Raise Thermocycler D"),
 	('gui/images/imager.png', 'Imager', "Home imager", "Move imager", "Image all channels", "Image", "Scan A", "Scan B", "Scan C", "Scan D", "Light Show"),
-	('gui/images/other.png', 'Other', "Drip", "LLD", "Add a comment", "Pause for user input", "Load Tip Tray A", "Load Tip Tray B", "Move Lid A", "Move Lid B", "Move Lid C", "Move Lid D", "Move Chip A", "Move Chip B", "Move Chip C", "Move Chip D", "Move Engaged Chip A", "Move Engaged Chip B", "Move Engaged Chip C", "Move Engaged Chip D", "Suction cups on", "Suction cups off", "Extend drip plate"),
+	('gui/images/other.png', 'Other', "Drip", "LLD", "Reset Connection to Seyonic Pipettor", "Add a comment", "Pause for user input", "Load Tip Tray A", "Load Tip Tray B", "Move Lid A", "Move Lid B", "Move Lid C", "Move Lid D", "Move Chip A", "Move Chip B", "Move Chip C", "Move Chip D", "Move Engaged Chip A", "Move Engaged Chip B", "Move Engaged Chip C", "Move Engaged Chip D", "Suction cups on", "Suction cups off", "Extend drip plate"),
 )
 
 COUNT_OPTION_VALUES = [f'{i}' for i in range(1,11)]
