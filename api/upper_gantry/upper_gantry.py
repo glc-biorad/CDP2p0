@@ -5,6 +5,7 @@ from cmath import e
 from math import ceil
 from re import T
 import time
+import socket
 import threading
 
 import api.util.motor 
@@ -177,6 +178,7 @@ class UpperGantry(api.util.motor.Motor):
         timer.start(__file__, __name__)
         self.controller = Controller(com_port=self.__COM_PORT)
         self.__FAST_API_INTERFACE = FastAPIInterface(unit)
+        self.PIPETTOR_IP_ADDRESS = '10.0.0.177'
         try:
             #global __pipettor
             print("Connect to the pipettor test...")
@@ -619,24 +621,44 @@ class UpperGantry(api.util.motor.Motor):
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=2, position=y, block=False, velocity=self.__LIMIT['Y']['max']['velocity'])
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=1, position=x, block=False, velocity=self.__LIMIT['X']['max']['velocity'])
 
+    def reset_pipettor_connection(self) -> None:
+        try:
+            self.__pipettor.close()
+        except:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            result = sock.connect_ex((self.PIPETTOR_IP_ADDRESS, 80))
+            #print(f"Checking connection to pipettor, this will take about 10 seconds")
+            #for i in range(10):
+            #    print(f"Time Left: {10-i}")
+            #    time.sleep(1)
+            if result == 0:
+                print("Port open for Seyonic need to close")
+            else:
+                print("Port is closed need to open")
+            sock.close()
+        time.sleep(2)
+        print(f"Reseting connection to the Seyonic Pipettor this will take a few seconds")
+        self.__pipettor = Seyonic()
+        time.sleep(2)
+
     def detect_liquid_level(self, max_z_range: int = 200000, z_velocity: int = 30000) -> bool:
         """
         Move down in z (bound by a max downward relative z motion)
         """
-        try:
-            #global __pipettor
-            for i in range(2):
-                time.sleep(1)
-            __pipettor = Seyonic()
-        except Exception as e:
-            print(e)
-            try:
-                __pipettor.close()
-                __pipettor = Seyonic()
-            except Exception as e:
-                print(e)
-                __pipettor = None
-        self.__pipettor = __pipettor
+        #try:
+        #    #global __pipettor
+        #    for i in range(2):
+        #        time.sleep(1)
+        #    __pipettor = Seyonic()
+        #except Exception as e:
+        #    print(e)
+        #    try:
+        #        __pipettor.close()
+        #        __pipettor = Seyonic()
+        #    except Exception as e:
+        #        print(e)
+        #        __pipettor = None
+        #self.__pipettor = __pipettor
         llded = False
         max_timeout = abs(ceil(max_z_range / z_velocity))
         # Setup the seyonic logger for lld
@@ -650,7 +672,7 @@ class UpperGantry(api.util.motor.Motor):
         # Set the action mode to LLD
         self.__pipettor.set_LLD_action_mode()
         # Trigger LLD
-        #self.__pipettor.trigger_LLD()
+        self.__pipettor.trigger_LLD()
         lld_clock_start = time.time()
         status_log.seyonic_log('LLD', "Trigger", 20, [4, 4, 4, 4, 4, 4, 4, 4], time.time() - lld_clock_start)
         # Start timing
@@ -686,6 +708,9 @@ class UpperGantry(api.util.motor.Motor):
                 break
         self.__pipettor.set_pressure(pressure=0, direction=1)
         time.sleep(2)
+        # Close this valve
+        self.close_valve()
+        time.sleep(1)
         #self.__pipettor.close()
         #time.sleep(2)
         #try:

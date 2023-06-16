@@ -97,6 +97,7 @@ class Seyonic(object):
                         port=port,
                         controller_address=contlr_addr,
                         pipettor_address=pip_addr,):
+        self.IP_ADDRESS = '10.0.0.177'
         # SET/LOAD PARAMETERS
             # set max timeout for polling action status
         self.max_poll_timeout = 10 # sec
