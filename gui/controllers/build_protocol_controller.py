@@ -1143,7 +1143,6 @@ class BuildProtocolController:
 				for i in range(count):
 					if action == 'Aspirate':
 						self.upper_gantry.aspirate(volume, pipette_tip_type=tip, pressure=pressure)
-						self.upper_gantry.aspirate(volume, pipette_tip_type=tip, pressure=pressure)
 					if action == 'Dispense':
 						self.upper_gantry.dispense(volume, pressure=pressure)
 					if action == 'Mix':
@@ -1235,7 +1234,10 @@ class BuildProtocolController:
 				# Log
 				log.log(action_message, time.time() - t_start)
 			elif split[0] == 'Reset':
-				self.upper_gantry.reset_pipettor_connection()
+				status = self.upper_gantry.reset_pipettor_connection()
+				t = time.time()
+				print(status)
+				print(time.time() - t)
 			elif split[0] == 'LLD':
 				#self.upper_gantry.get_pipettor().liquid_level_detect()
 				llded = self.upper_gantry.detect_liquid_level()
