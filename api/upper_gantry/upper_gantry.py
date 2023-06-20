@@ -621,7 +621,7 @@ class UpperGantry(api.util.motor.Motor):
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=2, position=y, block=False, velocity=self.__LIMIT['Y']['max']['velocity'])
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=1, position=x, block=False, velocity=self.__LIMIT['X']['max']['velocity'])
 
-    def reset_pipettor_connection(self) -> None:
+    def reset_pipettor_connection(self) -> int:
         try:
             self.__pipettor.close()
         except:
@@ -640,6 +640,7 @@ class UpperGantry(api.util.motor.Motor):
         print(f"Reseting connection to the Seyonic Pipettor this will take a few seconds")
         self.__pipettor = Seyonic()
         time.sleep(2)
+        return 0
 
     def detect_liquid_level(self, max_z_range: int = 200000, z_velocity: int = 30000) -> bool:
         """
@@ -683,13 +684,16 @@ class UpperGantry(api.util.motor.Motor):
         self.move_relative('down', value=max_z_range, velocity=z_velocity, block=False)
         # Look for LLD success status
         t = time.time()
-        while self.get_position_from_axis('Z') <= initial_z - max_z_range or (2 not in self.__pipettor.get_status() and time.time() - t <= max_timeout):
+        z_pos = self.get_position_from_axis('Z')
+        while z_pos <= initial_z - max_z_range or (2 not in self.__pipettor.get_status() or time.time() - t <= max_timeout):
             action_status = self.__pipettor.get_status()
-            #print(action_status)
             status_log.seyonic_log('LLD', "In Progress", 
                                    20, 
                                    [action_status[0],action_status[1],action_status[2],action_status[3],action_status[4],action_status[5],action_status[6],action_status[7]],
                                    time.time() - lld_clock_start)
+            print(f"Time: {time.time() - t}")
+            print(f"Action: {action_status}")
+            print(f"")
             if 2 in action_status:
                 self.stop_motion()
                 status_log.seyonic_log('LLD', "Completed", 
@@ -706,6 +710,11 @@ class UpperGantry(api.util.motor.Motor):
                 )
                 llded = True
                 break
+            z_pos = self.get_position_from_axis('Z')
+        print(f"z_pos <= initial_z - max_z_range --> {z_pos <= initial_z - max_z_range}")
+        print(f"2 not in self.__pipettor.get_status() --> {2 not in self.__pipettor.get_status()}")
+        print(f"time.time() - t <= max_timeout --> {time.time() - t <= max_timeout}")
+        print(f"(2 not in self.__pipettor.get_status() and time.time() - t <= max_timeout) --> {(2 not in self.__pipettor.get_status() and time.time() - t <= max_timeout)}")
         self.__pipettor.set_pressure(pressure=0, direction=1)
         time.sleep(2)
         # Close this valve
