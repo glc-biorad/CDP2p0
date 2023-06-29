@@ -487,10 +487,11 @@ class Seyonic(object):
         equalize_time = equalize_start_time
         equalize_max_time = 4
         while (actual_pressure + pressure_offset <= pressure) or (actual_pressure - pressure_offset >= pressure):
-            print(f"Actual Pressure = {actual_pressure} mbar, target pressure = {pressure} mbar")
             elapsed_time = time.time() - equalize_start_time
+            print(f"Actual Pressure = {actual_pressure} mbar, target pressure = {pressure} mbar, time = {elapsed_time}")
             self.status_log.seyonic_log('Aspirate', "Actual Pressure (mbar)", actual_pressure, [pressure for i in range(1,9)], elapsed_time)
             actual_pressure = self.get_pressure('vacuum')
+        print(f"PRESSURE STABLE IN = {elapsed_time}")
         aspirate_clock_start = time.time()
         # Trigger the action of aspiration
         self.client.Trigger(self.pip_addr, 0)
@@ -572,7 +573,7 @@ class Seyonic(object):
                                          time.time() - aspirate_clock_start
                             )
                             return
-
+        print(f"WHILE TIME = {time.time() - aspirate_clock_start}")
         self.set_pressure(pressure=0, direction=2)
 
     def dispense(self, pressure=None, debug=True):

@@ -670,6 +670,7 @@ class UpperGantry(api.util.motor.Motor):
         # Set the pressure to 20 mbar
         self.__pipettor.set_pressure(pressure=20, direction=1)
         time.sleep(2) # delay to equalize pressure
+        t = time.time()
         # Set the action mode to LLD
         self.__pipettor.set_LLD_action_mode()
         # Trigger LLD
@@ -736,6 +737,7 @@ class UpperGantry(api.util.motor.Motor):
         #        print(e)
         #        __pipettor = None
         #self.__pipettor = __pipettor
+        print(f"LLD Time: {time.time() - t}")
         return llded
 
     def move(
@@ -805,10 +807,11 @@ class UpperGantry(api.util.motor.Motor):
         # Home Z and the drip plate
         #self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, 0, 800000, True, True)
         # If x,y at heater/shaker full home z
-        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, 0, 800000, True, True)
+        #self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, 0, 800000, True, True)
         # Else go to -282000 to save time
         time_start = time.time()
         #self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, -282000, 800000, True, True)
+        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, -100000, 800000, True, True)
         # Check if the user wants to use the drip plate
         if use_drip_plate:
             # Move the drip plate
@@ -822,21 +825,22 @@ class UpperGantry(api.util.motor.Motor):
         else:
             block_y = False
         # Move to the Y and X coordiantes
-        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 2, y, 3200000, block_y, True)
-        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 1, x, 300000, True, True)
+        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 2, y, 3200000, block=True, use_fast_api=True)
+        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 1, x, 300000, block=True, use_fast_api=True)
+        #print(f"TIME!!!!!! -> {time.time() - time_start}")
         # Check if the user wants to use the drip plate
         if use_drip_plate:
             # Move the drip plate
             self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, drip_plate, 2500000, True, True)
         # Wait till x and y are achieved
-        _x = self.get_position_from_axis('X')
-        _y = self.get_position_from_axis('Y')
-        while _x != x or _y != y:
-            _x = self.get_position_from_axis('X')
-            _y = self.get_position_from_axis('Y')
+        #_x = self.get_position_from_axis('X')
+        #_y = self.get_position_from_axis('Y')
+        #while _x != x or _y != y:
+        #    _x = self.get_position_from_axis('X')
+        #    _y = self.get_position_from_axis('Y')
         # Move to the Z height
         self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, z, 800000, True, True)
-        print(f"TIME!!!!!! -> {time.time() - time_start} NEED TO NOT USE 0 FOR HOMIZNG Z!")
+        print(f"TIME!!!!!! -> {time.time() - time_start}")
 
 
     def move_pipettor_new(self, 
@@ -1231,8 +1235,10 @@ class UpperGantry(api.util.motor.Motor):
                 # Set the pipettor aspirate volume
                 self.__pipettor.set_aspirate_volumes(aspirate_vol)
                 # Trigger pipettor action
+                t_s = time.time()
                 self.__pipettor.aspirate(pressure)
-                time.sleep(1)
+                print(f"ELAPSED ASPIRATE TIME = {time.time() - t_s}")
+                #time.sleep(1)
                 self.turn_off_air_valve(2)
                 #time.sleep(1)
                 logger.log('LOG-END', "Aspiration complete.")

@@ -427,7 +427,9 @@ class Axis():
         logger.log('RECEIVED', "Status Code: {0}".format(status_code))
         if str(status_code) != 'OK':
             self.__retry()  
-        if block and use_fast_api == False:
+        if block == False:
+            return
+        elif block and use_fast_api == False:
             self.__block()
         elif block and use_fast_api:
             #asyncio.run(self.test_block_till_value_reached(module_name, id, position))
