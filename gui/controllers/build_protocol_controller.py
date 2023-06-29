@@ -852,6 +852,7 @@ class BuildProtocolController:
 	def start_protocol(self):
 		"""Process for starting the protocol
 		"""
+		start_time_protocol = time.time()
 		try:
 			self.upper_gantry = UpperGantry()
 		except:
@@ -1202,6 +1203,7 @@ class BuildProtocolController:
 					if tk.messagebox.askyesno(title="Protocol Pause", message="Canceling the protocol now loses all current progress, are you sure you want to cancel?"):
 						# Log
 						log.log(action_message + " -> Cancel Pressed", time.time() - t_start)
+						print(f"ELAPSED PROTOCOL TIME: {time.time() - start_time_protocol}")
 						return None
 					else:
 						# Log
@@ -1251,13 +1253,15 @@ class BuildProtocolController:
 						if tk.messagebox.askyesno(title="Protocol Pause", message="Canceling the protocol now loses all current progress, are you sure you want to cancel?"):
 							# Log
 							log.log(action_message + " -> Cancel Pressed", time.time() - t_start)
+							print(f"ELAPSED PROTOCOL TIME: {time.time() - start_time_protocol}")
 							return None
 						else:
 							# Log
 							log.log(action_message + " -> Cancel Pressed -> Ok Pressed", time.time() - t_start)
 							continue
 				else:
-					print("WOW!")
+					z = self.upper_gantry.get_position_from_axis('Z')
+					print(f"LLD Z position = {z}")
 			elif split[0] == 'Generate':
 				# Get the droplet type
 				droplet_type = split[1]
@@ -1860,6 +1864,7 @@ class BuildProtocolController:
 				self.upper_gantry.change_heater_shaker_temperature(temp)
 				# Log
 				log.log(action_message, time.time() - t_start)	
+		print(f"ELAPSED PROTOCOL TIME: {time.time() - start_time_protocol}")
 				
 	def __get_protocol_data(self, protocol_data: dict, thermocycler: str, step: str) -> list:
 		""" """
