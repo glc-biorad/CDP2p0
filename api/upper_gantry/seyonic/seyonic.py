@@ -293,6 +293,28 @@ class Seyonic(object):
         if timeout != timeout_in_seconds:
             print("ERROR: seyonic.change_timeout did not change the timeout for the seyonic controller")
 
+    def change_aspirate_timeout(self, timeout_in_seconds: int = 5) -> None:
+        """Change the error timeout for the aspiration action"""
+        self.log.log(f"change_aspirate_timeout(timeout_in_seconds={timeout_in_seconds})")
+        try:
+            self.client.Set("Aspirate Timeout", self.pip_addr, 0, timeout_in_seconds)
+        except Exception as e:
+            print(e)
+        #timeout = self.client.Get("Regulation Timeout", self.cntrl_addr, 0)
+        #if timeout != timeout_in_seconds:
+        #    print("ERROR: seyonic.change_aspirate_timeout did not change the timeout for the seyonic controller")
+
+    def change_dispense_timeout(self, timeout_in_seconds: int = 5) -> None:
+        """Change the error timeout for the dispense action"""
+        self.log.log(f"change_dispense_timeout(timeout_in_seconds={timeout_in_seconds})")
+        try:
+            self.client.Set("Dispense Timeout", self.pip_addr, 0, timeout_in_seconds)
+        except Exception as e:
+            print(e)
+        #timeout = self.client.Get("Regulation Timeout", self.cntrl_addr, 0)
+        #if timeout != timeout_in_seconds:
+        #    print("ERROR: seyonic.change_dispense_timeout did not change the timeout for the seyonic controller")
+
     def get_actual_aspirate_volume(self):
         ''' Function that queries the pipettor for measured aspirate volumes in
         last operation.
@@ -526,6 +548,7 @@ class Seyonic(object):
                     #logger.log("ERROR", f"Channel {channel} of the pipettor has an error {action_status_lookup[current_action_statuses[channel-1]]}")
                     #self.log.log(f"ERROR: Channel {channel} of the pipettor has an error {action_status_lookup[current_action_statuses[channel-1]]}")
                     # Close this valve
+                    print(self.client.Get("Aspirate Timeout", self.pip_addr, channel))
                     self.close_valve(channel)
                     time.sleep(1)
                     # Stop the pipettor
