@@ -1,19 +1,28 @@
+0: Pickup tips from A column 6
 0: Comment: --- v5.1 Tests: Reduce mixes, change pressures ---
 0: Comment: ------------ SIZE SELECTION ------------
 0: Comment: --- REAGENT: Enrichment Solution ---
 9: Move to Reagent Cartridge tray A column 9 with 200 uL tips
 0: Comment: --- STEP: Vertical Shuffle Mix ---
-10: Aspirate 100 uLs with 200 uL tips at High pressure 1 time
+10: Aspirate 100 uLs with 200 uL tips at Highest pressure 1 time
 11: Move relative up by 20000
-12: Dispense 100 uLs with 200 uL tips at High pressure 1 time
+12: Dispense 100 uLs with 200 uL tips at Highest pressure 1 time
 13: Move relative down by 20000
-14: Aspirate 100 uLs with 200 uL tips at High pressure 1 time
+14: Aspirate 100 uLs with 200 uL tips at Highest pressure 1 time
 15: Move relative up by 20000
-16: Dispense 100 uLs with 200 uL tips at High pressure 1 time
+16: Dispense 100 uLs with 200 uL tips at Highest pressure 1 time
 17: Move relative down by 20000
-18: Aspirate 100 uLs with 200 uL tips at High pressure 1 time
+18: Aspirate 100 uLs with 200 uL tips at Highest pressure 1 time
 19: Move relative up by 20000
-20: Dispense 100 uLs with 200 uL tips at High pressure 1 time
+20: Dispense 100 uLs with 200 uL tips at Highest pressure 1 time
+21: Move relative down by 20000
+18: Aspirate 100 uLs with 200 uL tips at Highest pressure 1 time
+19: Move relative up by 20000
+20: Dispense 100 uLs with 200 uL tips at Highest pressure 1 time
+21: Move relative down by 20000
+18: Aspirate 100 uLs with 200 uL tips at Highest pressure 1 time
+19: Move relative up by 20000
+20: Dispense 100 uLs with 200 uL tips at Highest pressure 1 time
 21: Move relative down by 20000
 0: Move relative up by 20000
 23: Delay for 10 seconds
@@ -48,17 +57,25 @@
 29: Dispense 20 uLs with 200 uL tips at Low pressure 1 time
 21: Move relative down by 40000
 0: Comment: --- STEP: Rigorous Mixing Protocol ---
-25: Aspirate 150 uLs with 200 uL tips at High pressure 1 time
+25: Aspirate 150 uLs with 200 uL tips at Highest pressure 1 time
 28: Delay for 2 seconds
-29: Dispense 150 uLs with 200 uL tips at High pressure 1 time
+29: Dispense 150 uLs with 200 uL tips at Highest pressure 1 time
 28: Delay for 2 seconds
-25: Aspirate 150 uLs with 200 uL tips at High pressure 1 time
+25: Aspirate 150 uLs with 200 uL tips at Highest pressure 1 time
 28: Delay for 2 seconds
-29: Dispense 150 uLs with 200 uL tips at High pressure 1 time
+29: Dispense 150 uLs with 200 uL tips at Highest pressure 1 time
 28: Delay for 2 seconds
-25: Aspirate 150 uLs with 200 uL tips at High pressure 1 time
+25: Aspirate 150 uLs with 200 uL tips at Highest pressure 1 time
 28: Delay for 2 seconds
-29: Dispense 150 uLs with 200 uL tips at High pressure 1 time
+29: Dispense 150 uLs with 200 uL tips at Highest pressure 1 time
+28: Delay for 2 seconds
+25: Aspirate 150 uLs with 200 uL tips at Highest pressure 1 time
+28: Delay for 2 seconds
+29: Dispense 150 uLs with 200 uL tips at Highest pressure 1 time
+28: Delay for 2 seconds
+25: Aspirate 150 uLs with 200 uL tips at Highest pressure 1 time
+28: Delay for 2 seconds
+29: Dispense 150 uLs with 200 uL tips at Highest pressure 1 time
 28: Delay for 2 seconds
 0: Comment: Dip the tip back in to remove liquid from base of tip
 32: Move relative up by 100000
