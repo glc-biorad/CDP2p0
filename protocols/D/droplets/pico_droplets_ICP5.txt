@@ -1,0 +1,9 @@
+0: Home pipettor
+1: Pickup tips from A column 12
+2: Move to DG8 tray C column 3 with 1000 uL tips
+3: Move to DG8 tray B column 3 with 1000 uL tips
+4: Move to DG8 tray C column 3 with 1000 uL tips
+5: Generate Pico Droplets
+6: Move to DG8 tray B column 3 with 1000 uL tips
+7: Generate Pico Droplets
+8: Home pipettor
