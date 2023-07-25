@@ -1,0 +1,52 @@
+0: Comment: 500 ul of DG-P oil in Reagent Cartidge A1
+1: Comment: 150 ul of sample (1x ctrl buffer) in Reagent Cartidge A4
+2: Comment: Tips: A1 (nubs), A2 (200 ul), A3 (1000 ul), A4 - A7 (200 ul)
+3: Comment: Pipettor homed with no tips
+4: Comment: Moving over Sample
+5: Home pipettor
+6: Comment: Is it all set up right?
+7: Pause for user input
+8: Pickup tips from A column 2
+9: Home pipettor fast
+10: Move to Reagent Cartridge tray A column 4 with 200 uL tips
+11: Aspirate 100 uLs with 200 uL tips at Low pressure 1 time
+12: Move to DG8 tray A column 2 with 200 uL tips
+13: Dispense 25 uLs with 200 uL tips at Low pressure 1 time
+14: Move to DG8 tray B column 2 with 200 uL tips
+15: Dispense 25 uLs with 200 uL tips at Low pressure 1 time
+16: Move to DG8 tray C column 2 with 200 uL tips
+17: Dispense 25 uLs with 200 uL tips at Low pressure 1 time
+18: Move to DG8 tray D column 2 with 200 uL tips
+19: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+20: Move to Reagent Cartridge tray A column 4 with 200 uL tips
+21: Dispense 50 uLs with 1000 uL tips at High pressure 1 time
+22: Eject tips in A column 2
+23: Comment: Moving over DG-P Oil
+24: Pickup tips from A column 3
+25: Move to Reagent Cartridge tray A column 1 with 1000 uL tips
+26: Aspirate 450 uLs with 1000 uL tips at Low pressure 1 time
+27: Move to DG8 tray A column 1 with 1000 uL tips
+28: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+29: Move to DG8 tray B column 1 with 1000 uL tips
+30: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+31: Move to DG8 tray C column 1 with 1000 uL tips
+32: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+33: Move to DG8 tray D column 1 with 1000 uL tips
+34: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+35: Move to Reagent Cartridge tray A column 1 with 1000 uL tips
+36: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
+37: Eject tips in A column 3
+38: Comment: PIck up nubs
+39: Pickup tips from A column 1
+40: Move to DG8 tray A column 3 with 1000 uL tips
+41: Generate Standard Droplets
+42: Move to DG8 tray B column 3 with 1000 uL tips
+43: Generate Standard Droplets
+44: Move to DG8 tray C column 3 with 1000 uL tips
+45: Generate Standard Droplets
+46: Move to DG8 tray D column 3 with 1000 uL tips
+47: Generate Standard Droplets
+48: Home pipettor fast
+49: Comment: Eject tips at home location
+50: Delay for 2 seconds
+51: Eject tips
