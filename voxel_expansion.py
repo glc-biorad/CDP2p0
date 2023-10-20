@@ -4,7 +4,7 @@
 #   generates a voxel database (unit_A_voxels.csv) for A* pathing across that unit.
 # Author(s): G.LC
 # Affiliation(s): Inovation Team (CDG)
-# Version: 0.0
+# Version: Test
 # Note(s): Unit A voxels.csv
 # x, y, z, type, name
 # 0, 0, 0, start, home
