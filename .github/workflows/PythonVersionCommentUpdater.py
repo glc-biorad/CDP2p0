@@ -19,11 +19,12 @@ def update_version_in_py_files(version, path):
     # and update the version in each file.
     import os
     for root, dirs, files in os.walk(path):
-        for file in files:
-            if file.endswith(".py"):
-                filename = os.path.join(root, file)
-                print(filename + '\n' )
-                add_or_update_version_in_file(version, filename)
+        if '.github' not in root:
+            for file in files:
+                if file.endswith(".py"):
+                    filename = os.path.join(root, file)
+                    print(filename + '\n' )
+                    add_or_update_version_in_file(version, filename)
                    
 
 
