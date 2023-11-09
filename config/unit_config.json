@@ -1,0 +1,79 @@
+{
+  "unit": "D",
+  "motor_LED_delay": 1.25,
+  "LED_off_to_move": 0,
+  "motor2mm": {
+    "x": 8157,
+    "y": 2604,
+    "z": 55555
+  },
+  "LEDS": {
+      "0": {
+          "name": "BF",
+          "steps": -47000,
+          "default intensity percent": 1
+          },
+      "4": {
+          "name": "ATTO",
+          "steps": -30000,
+          "default intensity percent": 100
+          },
+      "3": {
+          "name": "FAM",
+          "steps": -47000,
+          "default intensity percent": 100
+          },
+      "6": {
+          "name": "CY55",
+          "steps": -13000,
+          "default intensity percent": 100
+          },
+      "2": {
+          "name": "ALEXA405",
+          "steps": -4000,
+          "default intensity percent": 100
+          },
+      "5": {
+          "name": "CY5",
+          "steps": -21000,
+          "default intensity percent": 100
+          },
+      "1": {
+          "name": "HEX",
+          "steps": -37000,
+          "default intensity percent": 100
+          }
+    },
+    "FilterWheelCoordinates": {
+      "filter_wheel_home": [0,0,0,0],
+      "filter_wheel_alexa405": [0,0,0,-4000],
+      "filter_wheel_cy55": [0,0,0,-13000],
+      "filter_wheel_cy5": [0,0,0,-21000],
+      "filter_wheel_atto": [0,0,0,-30000],
+      "filter_wheel_hex": [0,0,0,-37000],
+      "filter_wheel_fam": [0,0,0,-47000]
+    },
+    "motor1_to_px": {
+      "magnitude": 0.0575,
+      "angle_rad": 0.02476
+    },
+    "motor2_to_px": {
+      "magnitude": 0.165,
+      "angle_rad": 0.0186
+    },
+    "ncol_FOVS": {
+      "Vantiva": 5,
+      "A100K": 8,
+      "Parallel": 13,
+      "Vantiva2x": 12
+    },
+    "default_exposure": {
+      "bf": 3000,
+      "alexa405": 90000,
+      "fam": 500000,
+      "hex": 600000,
+      "atto": 999999,
+      "cy5": 999999,
+      "cy55": 999999
+    }
+}
