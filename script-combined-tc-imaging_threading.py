@@ -110,6 +110,9 @@ def tc_image():
     unit_hw_config = import_config_file(osp.join('config', 'unit_config.json'))
     imaging_period_time_seconds = 15
 
+    # -------------------------------------------------------------------------
+    # --------------------- END OF USER DEFINED PARAMETERS --------------------
+    # -------------------------------------------------------------------------
 
     # TODO FILL THIS OUT LATER MAYBE FROMT HE ACTUAL DICT RETURNED FORMGUI
     selections = {'chip_type': 'Vantiva',
