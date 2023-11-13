@@ -95,7 +95,7 @@ class Reader(api.util.motor.Motor):
         except Exception as e:
             print(e)
             self.camcontroller = None
-        self.config_data = import_config_file(os.path.join('C:', 'CPD2p0', 'config', 'unit_config.json')
+        self.config_data = import_config_file(os.path.join('C:\\', 'CDP2p0', 'config', 'unit_config.json'))
 
     def get_fast_api_interface(self):
         return self.__FAST_API_INTERFACE

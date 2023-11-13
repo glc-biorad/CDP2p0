@@ -1,8 +1,10 @@
 import time
 import os.path as osp
+import numpy as np
 import multiprocessing
 import pythonnet
 from pythonnet import load
+import tifffile
 
 
 try:
@@ -41,7 +43,7 @@ def imaging_thread(connection, scanner, channels_to_image, imaging_period, fdir,
 
         # get temperatures
         connection.send('get_temps')
-        fpath_temp = osp.join(fdir, experiment_name_timelapse, 'temperatures', f'T{timestamp}.npy')
+        fpath_temp = osp.join(fdir, experiment_name, 'temperatures', f'T{timestamp}.npy')
         info = connection.recv()
         if info == 'quit':
             return
