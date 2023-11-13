@@ -3,15 +3,19 @@ instrument to make execution on CDP2.0 independent of implementation
 '''
 
 # pipettor stuff, may want to move this to upper_gantry
-import pythonnet
-from pythonnet import load
-load("coreclr")
+#import pythonnet
+#from pythonnet import load
+#try:
+#    load("coreclr")
+#except RuntimeError:
+#    print('Could not load .net libraries, they were either loaded before, or config is not properly enabled')
 # from logger import Logger
+import os.path as osp
 
 from api.upper_gantry.upper_gantry import UpperGantry
 from api.reader.reader import Reader
 #from peltier import Peltier
-from gui.util.utils import utils
+from gui.util import utils
 
 
 class Connection_Interface(object):
@@ -21,7 +25,7 @@ class Connection_Interface(object):
         # init upper gantry (pipettor, xyz1z2 motion)
         # self.upper_gantry = UpperGantry()
         self.upper_gantry = None
-        self.config_data = utils.import_config_file('unit_config.json')
+        self.config_data = utils.import_config_file(osp.join('config', 'unit_config.json'))
         self.led_colors = [self.config_data['LEDS'][k]['name'] for k in self.config_data['LEDS'].keys()]
         # init prep deck components
         # init thermocyclers
@@ -96,6 +100,7 @@ class Connection_Interface(object):
     def moveImager(self, loc):
         ''' would be great if loc could be a string, numbers in microsteps, or
         numbers in mm'''
+        print(loc, 'loc instrument interface')
         self.reader.move_reader(loc)
 
     def moveImagerXY(self, XYloc: list):

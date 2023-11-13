@@ -274,6 +274,7 @@ class Reader(api.util.motor.Motor):
             elif target.lower() == 'heater_d':
                 target = 'heater_1'
         target_rc = target_to_reader_coordinate(target)
+        print(target_rc, 'reader')
         if use_z:
             self.__FAST_API_INTERFACE.reader.axis.move(self.__MODULE_NAME, self.__ID['Z'], target_rc.z, self.__LIMIT_MAX_VELOCITY_Z)
         # Move along Y and X to the target location.
