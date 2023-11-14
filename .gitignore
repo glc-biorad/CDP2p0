@@ -2,4 +2,5 @@ logs/seyonic/*.csv
 tat_files/*.csv
 logs/*.csv
 log_files/*.txt
-.vs/*
+.vs*
+*.pyc
