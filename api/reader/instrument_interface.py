@@ -100,7 +100,6 @@ class Connection_Interface(object):
     def moveImager(self, loc):
         ''' would be great if loc could be a string, numbers in microsteps, or
         numbers in mm'''
-        print(loc, 'loc instrument interface')
         self.reader.move_reader(loc)
 
     def moveImagerXY(self, XYloc: list):

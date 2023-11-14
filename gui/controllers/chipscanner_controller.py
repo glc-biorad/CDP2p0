@@ -120,7 +120,7 @@ class ChipScanner:
         Keyword arguments:
         - channel : str of channel name to image, from list of channels matching format found in hardware_config.json
         """
-        self.instrument_interface.setExposureTimeMicroseconds(self.hw['default_exposures'][channel])
+        self.instrument_interface.setExposureTimeMicroseconds(self.hw['default_exposure'][channel])
         self.instrument_interface.moveFilterWheel(channel)
         time.sleep(self.hw['motor_LED_delay'])
         self.instrument_interface.turnOnLED(channel)
@@ -196,6 +196,11 @@ class StartScan(ChipScanner):
                                           coords=heater_coords[heater])  # We should check if assuming 8 chambers is always True
 
             self.instrument_interface.moveImagerXY(initial_pos)
+            # if we are using Unit A, we can't turn on the led until we are finished moving
+            # and we must allow for the possibility that the imager is very far from the initial location.
+            # this could be resolved by verifying that blocking whil emoving is working
+            if self.hw['LED_off_to_move']:
+                time.sleep(10) 
             t += 1
 
             for chamber in tqdm(target_map[heater]):

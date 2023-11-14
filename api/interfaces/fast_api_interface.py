@@ -433,8 +433,8 @@ class Axis():
             self.__block()
         elif block and use_fast_api:
             #asyncio.run(self.test_block_till_value_reached(module_name, id, position))
-            self.test_block_till_value_reached(module_name, id, position)
-            #self.block_till_value_reached(module_name, id, position)
+            #self.test_block_till_value_reached(module_name, id, position)
+            self.block_till_value_reached(module_name, id, position)
 
     # Jog Method.
 

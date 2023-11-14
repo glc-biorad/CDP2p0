@@ -3,6 +3,7 @@
 
 import sys
 import time
+import socket
 from ctypes import *
 from struct import pack, unpack
 import serial
@@ -253,6 +254,13 @@ def seyonic_to_microliters(seyonic_value):
 def microliters_to_seyonic(microliters_value):
     conversion = 1 / 0.1 # seyonic / microliters
     return int(microliters_value * conversion)
+
+
+def get_unit_name():
+    hostname = socket.gethostname()
+    with open(osp.join('C:/', 'CDP2p0', 'config', 'unit_hostnames.json'), 'r') as rf:
+        hostname_lookup = json.load(rf)
+    return hostname_lookup[hostname]
 
 def import_config_file(input_pathname: str) -> dict:
     with open(input_pathname, 'r') as rf:
