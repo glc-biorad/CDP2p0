@@ -43,10 +43,10 @@ def imaging_thread(connection, scanner, channels_to_image, imaging_period, fdir,
             fpath = osp.join(fdir, experiment_name, 'timelapse_images', fname)
             img = scanner.acquire_image(channel)
             tifffile.imwrite(fpath, img)
-            
+
 
         # get temperatures
-        connection.send('get_temps')
+        connection.send(['get_temps'])
         fpath_temp = osp.join(fdir, experiment_name, 'temperatures', f'I{index}_T{timestamp}.npy')
         info = connection.recv()
         if info == 'quit':
@@ -55,19 +55,24 @@ def imaging_thread(connection, scanner, channels_to_image, imaging_period, fdir,
         index += 1
         delay(imaging_period - img_related_delay)
 
-def temp_monitor_thread(connection, m):
+def temp_control_thread(connection):
+    c = Controller('COM7', 57600, dont_use_fast_api=True, timeout=1)
+    self.m = Meerstetter()
+    self.m.connect_to_opened_port(c)
     while True:
         request = connection.recv()
-        if request == 'get_temps':
-            info = np.random.randint(0, 95, size=4)
-            #info = [m.get_temperature(h_i) for h_i in range(1, 5)]
+        if request[0] == 'get_temps':
+            # info = np.random.randint(0, 95, size=4)
+            info = [m.get_temperature(h_i) for h_i in range(1, 5)]
             connection.send(info)
-        elif request == 'quit':
+        elif request[0] == 'change_temps':
+            m.change_temperature(request[1], request[2])
+    elif request[0] == 'quit':
             return
 
-class MeerComm(object):
-    def __init__(self, conn):
-        self.pipe_conn = conn
+def change_temperature(connection, heater, temp):
+    connection.send(['change_temps', heater, temp])
+
 
 
 
@@ -84,15 +89,14 @@ def tc_image():
     allowed_channels = ('alexa405', 'fam', 'hex', 'atto', 'cy5', 'cy55', 'bf')
     fdir = osp.join('D:', 'AdvTechImagingData')
 
-    c = Controller('COM7', 57600, dont_use_fast_api=True, timeout=1)
-    m = Meerstetter()
-    # ins = instrument_interface.Connection_Interface()
-    m.connect_to_opened_port(c)
-    mc = MeerComm(m)
+    # c = Controller('COM7', 57600, dont_use_fast_api=True, timeout=1)
+    # m = Meerstetter()
+    # # ins = instrument_interface.Connection_Interface()
+    # m.connect_to_opened_port(c)
 
     # init temp monitoring
     c1, c2 = multiprocessing.Pipe()
-    pMonitoring = multiprocessing.Process(target=temp_monitor_thread, args=(c2, mc))
+    pMonitoring = multiprocessing.Process(target=temp_control_thread, args=(c2))
     pMonitoring.start()
 
     # -------------------------------------------------------------------------
@@ -160,9 +164,9 @@ def tc_image():
     # delay(msre_digest_time)
 
     # hotstart
-    m.change_temperature(heaterB, 93)
-    m.change_temperature(heaterC, 94)
-    m.change_temperature(heaterD, 95)
+    change_temperature(c1, heaterB, 93)
+    change_temperature(c1, heaterC, 94)
+    change_temperature(c1, heaterD, 95)
     delay(hotstart_time)
     #print(m.get_temperature(heaterD))
 
@@ -170,16 +174,16 @@ def tc_image():
     for cycle in range(cycles):
         print(f"cycle: {cycle+1}")
         # annealing extension
-        m.change_temperature(heaterB, 98)
-        m.change_temperature(heaterC, 97)
-        m.change_temperature(heaterD, 99)
+        change_temperature(c1, heaterB, 98)
+        change_temperature(c1, heaterC, 97)
+        change_temperature(c1, heaterD, 99)
         #print(m.get_temperature(heaterD))
         delay(denature_time)
 
         # denaturation
-        m.change_temperature(heaterB, 58)
-        m.change_temperature(heaterC, 58)
-        m.change_temperature(heaterD, 60)
+        change_temperature(c1, heaterB, 58)
+        change_temperature(c1, heaterC, 58)
+        change_temperature(c1, heaterD, 60)
         #print(m.get_temperature(heaterD))
         delay(anneal_extend_time)
 
@@ -199,9 +203,9 @@ def tc_image():
     # delay(signal_augmentation_time)
 
     # enzyme deactivation
-    m.change_temperature(heaterB, 93)
-    m.change_temperature(heaterC, 94)
-    m.change_temperature(heaterD, 95)
+    change_temperature(c1, heaterB, 93)
+    change_temperature(c1, heaterC, 94)
+    change_temperature(c1, heaterD, 95)
     delay(deactivation_time)
     print(m.get_temperature(heaterD))
 
@@ -212,17 +216,17 @@ def tc_image():
     pMonitoring.join()
 
     # 4C hold
-    m.change_temperature(heaterB, 8)
-    m.change_temperature(heaterC, 8)
-    m.change_temperature(heaterD, 8)
+    change_temperature(c1, heaterB, 8)
+    change_temperature(c1, heaterC, 8)
+    change_temperature(c1, heaterD, 8)
     delay(final_4C_hold_time)
-    print(m.get_temperature(heaterD))
+    # print(m.get_temperature(heaterD))
 
     # room temp
-    m.change_temperature(heaterB,18)
-    m.change_temperature(heaterC,18)
-    m.change_temperature(heaterD,18)
-    print(m.get_temperature(heaterD))
+    change_temperature(c1, heaterB,18)
+    change_temperature(c1, heaterC,18)
+    change_temperature(c1, heaterD,18)
+    # print(m.get_temperature(heaterD))
 
     ## post scan
     #scan = StartScan(hw_config=unit_hw_config, fdir=fdir, fname=experiment_name_post)
