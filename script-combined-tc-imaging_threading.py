@@ -24,6 +24,9 @@ from gui.controllers.chipscanner_controller import StartScan
 from gui.util.utils import import_config_file
 
 
+
+
+
 def imaging_thread(connection, scanner, channels_to_image, imaging_period, fdir, experiment_name):
     unit_hw_config = import_config_file(osp.join('config', 'unit_config.json'))
     start = time.time()
@@ -62,6 +65,11 @@ def temp_monitor_thread(connection, m):
         elif request == 'quit':
             return
 
+class MeerComm(object):
+    def __init__(self, conn):
+        self.pipe_conn = conn
+
+
 
 def tc_image():
     # -------------------------------------------------------------------------
@@ -80,10 +88,11 @@ def tc_image():
     m = Meerstetter()
     # ins = instrument_interface.Connection_Interface()
     m.connect_to_opened_port(c)
+    mc = MeerComm(m)
 
     # init temp monitoring
     c1, c2 = multiprocessing.Pipe()
-    pMonitoring = multiprocessing.Process(target=temp_monitor_thread, args=(c2, 1))
+    pMonitoring = multiprocessing.Process(target=temp_monitor_thread, args=(c2, mc))
     pMonitoring.start()
 
     # -------------------------------------------------------------------------
