@@ -1,0 +1,78 @@
+0: Comment: ------------ ASSAY PREP PRE-AMPED NO DILUTION NIPT SET 1 AND 2 ------------
+0: Comment: ------------ RESUSPENSION ------------
+63: Comment: --- NOTE: Tip A12-50-new (Sample transfer set 1)
+64: Pickup tips from A column 12
+0: Comment: ------------ PRE-AMPED NIPT ASSAY TRANSFER ------------
+81: Move to Pre-Amp Thermocycler column 1 with 50 uL tips
+83: Aspirate 19 uLs with 50 uL tips at Low pressure 1 time
+84: Comment: Jet dispense
+85: Move to Assay Strip tray A column 1 with 50 uL tips moving up by 50000
+86: Dispense 19 uLs with 50 uL tips at Low pressure 1 time
+87: Delay for 2 seconds
+88: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+89: Move relative down by 50000
+90: Comment: --- STEP: Mix (3 mixes) ---
+91: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+92: Delay for 2 seconds
+93: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+94: Delay for 2 seconds
+95: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+96: Delay for 2 seconds
+97: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+98: Delay for 2 seconds
+99: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+100: Delay for 2 seconds
+101: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+102: Delay for 2 seconds
+111: Comment: --- STEP: Air Bubble Removal ---
+112: Aspirate 5 uLs with 50 uL tips at Lowest pressure 1 time
+113: Move relative up by 50000
+114: Dispense 5 uLs with 50 uL tips at Lowest pressure 1 time
+115: Delay for 3 seconds
+116: Dispense 2 uLs with 50 uL tips at Lowest pressure 1 time
+117: Comment: Dip
+118: Move relative down by 50000
+0: Aspirate 21 uLs with 50 uL tips at Lowest pressure 1 time
+2: Move to DG8 tray A column 2 with 50 uL tips
+1: Pause for user input
+3: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
+9: Comment: --- NOTE: Tip A12-50-used (Sample transfer set 1)
+2: Eject tips in A column 12
+63: Comment: --- NOTE: Tip B1-50-new (Sample transfer set 2)
+64: Pickup tips from B column 1
+0: Comment: ------------ PRE-AMPED NIPT ASSAY TRANSFER ------------
+81: Move to Pre-Amp Thermocycler column 2 with 50 uL tips
+83: Aspirate 19 uLs with 50 uL tips at Low pressure 1 time
+84: Comment: Jet dispense
+85: Move to Assay Strip tray A column 2 with 50 uL tips moving up by 50000
+86: Dispense 19 uLs with 50 uL tips at Low pressure 1 time
+87: Delay for 2 seconds
+88: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+89: Move relative down by 50000
+90: Comment: --- STEP: Mix (3 mixes) ---
+91: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+92: Delay for 2 seconds
+93: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+94: Delay for 2 seconds
+95: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+96: Delay for 2 seconds
+97: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+98: Delay for 2 seconds
+99: Aspirate 20 uLs with 50 uL tips at Low pressure 1 time
+100: Delay for 2 seconds
+101: Dispense 20 uLs with 50 uL tips at Low pressure 1 time
+102: Delay for 2 seconds
+111: Comment: --- STEP: Air Bubble Removal ---
+112: Aspirate 5 uLs with 50 uL tips at Lowest pressure 1 time
+113: Move relative up by 50000
+114: Dispense 5 uLs with 50 uL tips at Lowest pressure 1 time
+115: Delay for 3 seconds
+116: Dispense 2 uLs with 50 uL tips at Lowest pressure 1 time
+117: Comment: Dip
+118: Move relative down by 50000
+0: Aspirate 21 uLs with 50 uL tips at Lowest pressure 1 time
+2: Move to DG8 tray B column 2 with 50 uL tips
+1: Pause for user input
+3: Dispense 20 uLs with 50 uL tips at Lowest pressure 1 time
+9: Comment: --- NOTE: Tip B1-50-used (Sample transfer set 2)
+2: Eject tips in B column 1

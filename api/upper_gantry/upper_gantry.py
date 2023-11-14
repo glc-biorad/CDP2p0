@@ -1,3 +1,5 @@
+
+# Version: Test
 '''
 '''
 from ast import Try
@@ -197,6 +199,7 @@ class UpperGantry(api.util.motor.Motor):
         self.__pipettor = __pipettor
         self.__chassis = Chassis()
         self.__heater_shaker = None #BioShake3000T()
+        #self.__pipettor.change_timeout(200)
         # Turn on the Relay for the Heater/Shaker nad Chiller.
         #relay_8_info = self.__FAST_API_INTERFACE.chassis.relay.get_relay_info(8)
         #logger.log('MESSAGE', "Turning on Relay 8 - {0}.".format(relay_8_info['description']))
@@ -752,7 +755,9 @@ class UpperGantry(api.util.motor.Motor):
         tip: str = None,
         relative_moves: list = [0,0,0,0],
         max_drip_plate: int = -1198000,
-        ignore_tips: bool = False
+        ignore_tips: bool = False,
+        z_safe_1000_tip: int = -282000,
+        collision_detection_box_corners: list = []
        ) -> None:
         """ Moves the pipettor head based on the coordinates
 
@@ -782,6 +787,10 @@ class UpperGantry(api.util.motor.Motor):
             allows us to determine if a z offset is needed for getting to the correct height 
             of the coordinate
         """
+        # Constants
+        Z_ULTRA_SAFE_1000_TIP = -100000
+        Z_OFFSET_FOR_50_AND_200 = 305000
+        Z_OFFSET_FOR_NUB = Z_OFFSET_FOR_50_AND_200 + 286500
         # Modify the coordinate based on the relative moves
         x = x + relative_moves[0]
         y = y + relative_moves[1]
@@ -796,14 +805,15 @@ class UpperGantry(api.util.motor.Motor):
             try:
                 tip = int(tip)
                 if tip == 50 or tip == 200:
-                    z = z - 305000
+                    z = z - Z_OFFSET_FOR_50_AND_200
                 elif tip == None:
                     z = 0
             except:
                 if tip == 'nub' or tip == 'Nub':
-                    z = z + 305000 + 286500
+                    z = z + Z_OFFSET_FOR_NUB
                 elif tip == None:
                     z = 0
+        # Move the safe z depending on the collision detection box
         # Home Z and the drip plate
         #self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, 0, 800000, True, True)
         # If x,y at heater/shaker full home z
@@ -811,7 +821,15 @@ class UpperGantry(api.util.motor.Motor):
         # Else go to -282000 to save time
         time_start = time.time()
         #self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, -282000, 800000, True, True)
-        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, -100000, 800000, True, True)
+        # Set the safe height for the z axis motion
+        if tip == 1000:
+            z_safe = z_safe_1000_tip
+        elif tip in [50, 200]:
+            z_safe = z_safe_1000_tip - Z_OFFSET_FOR_50_AND_200
+        else:
+            z_safe = 0
+        # Move the z axis to a safe height before the move of x and y
+        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, z_safe, 800000, True, True)
         # Check if the user wants to use the drip plate
         if use_drip_plate:
             # Move the drip plate
@@ -1199,17 +1217,23 @@ class UpperGantry(api.util.motor.Motor):
             # Get the pressure value.
             if pressure == 'default':
                 pressure = None
+                self.__pipettor.change_aspirate_timeout()
             elif pressure == 'low':
                 pressure = -100
+                self.__pipettor.change_aspirate_timeout()
             elif pressure == 'lowest':
+                self.__pipettor.change_aspirate_timeout(45)
                 pressure = -13
             elif pressure == 'highest':
                 pressure = -240
+                self.__pipettor.change_aspirate_timeout()
             elif pressure == 'high':
                 pressure = -200
+                self.__pipettor.change_aspirate_timeout()
             elif pressure == 'half':
                 print(self.__pipettor.max_pressure)
                 pressure = 0.5 * (self.__pipettor.max_pressure - self.__pipettor.min_pressure)
+                self.__pipettor.change_aspirate_timeout()
         # Make sure the pressure is valid.
         # Setup logger.
         logger = Logger(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.aspirate.__name__))
@@ -1258,12 +1282,16 @@ class UpperGantry(api.util.motor.Motor):
         if type(pressure) == str:
             if pressure.lower() == 'low':
                 pressure = 100
+                self.__pipettor.change_dispense_timeout()
             elif pressure.lower() == 'high':
                 pressure = 200
+                self.__pipettor.change_dispense_timeout()
             elif pressure.lower() == 'lowest':
+                self.__pipettor.change_dispense_timeout(45)
                 pressure = 10
             elif pressure.lower() == 'highest':
                 pressure = 241
+                self.__pipettor.change_dispense_timeout()
         # Check the type.
         check_type(dispense_vol, int)
         logger = Logger(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.dispense.__name__))

@@ -1,3 +1,5 @@
+
+# Version: Test
 import os
 import time
 import sqlite3
@@ -1105,6 +1107,18 @@ class BuildProtocolController:
 				y = coordinate[0][5]
 				z1 = coordinate[0][6]
 				z2 = coordinate[0][7]
+				# Get the tallest consumable on the deck that will conflict with the low z movement (Heater/Shaker - 32 deep well plate)
+				unit = self.model.db_name[-4]
+				table_name = f"Unit {unit} Upper Gantry Coordinates"
+				hs_coordinate = self.coordinates_model.select(table_name, "Heater/Shaker", '', 1) # Left coordinate
+				hs = [0,0]
+				hs[0] = int(hs_coordinate[0][4])
+				hs[1] = int(hs_coordinate[0][5])
+				_x, _y, _z, _dp = self.upper_gantry.get_position()
+				if ( (abs(hs[0]) < abs(_x)) or (abs(hs[0]) < abs(x)) ) and ( (abs(hs[1]) < abs(_y)) or (abs(hs[1]) < abs(y)) ):
+					z_safe = -100000
+				else:
+					z_safe = -282000
 				# Setup the command
 				self.upper_gantry.move(
 					x=x,
@@ -1114,7 +1128,8 @@ class BuildProtocolController:
 					use_drip_plate=drip_plate,
 					tip=tip,
 					relative_moves=[dx,dy,dz,0],
-					ignore_tips=ignore_tips
+					ignore_tips=ignore_tips,
+					z_safe_1000_tip = z_safe
 				)
 				# Log
 				log.log(action_message, time.time() - t_start)

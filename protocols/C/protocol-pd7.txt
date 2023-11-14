@@ -1,0 +1,18 @@
+0: Move to Heater/Shaker column 1 with 1000 uL tips
+1: Aspirate 860 uLs with 1000 uL tips at Low pressure 1 time
+2: Home pipettor along Z
+3: Aspirate 50 uLs with 1000 uL tips at Low pressure 1 time
+4: Move to Sample Rack tray C with 1000 uL tips
+5: Pause for user input
+6: Delay for 3 seconds
+7: Move relative down by 400000
+8: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
+9: Delay for 1 second
+10: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
+11: Delay for 1 second
+12: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
+13: Delay for 1 second
+14: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
+15: Delay for 1 second
+16: Dispense 200 uLs with 1000 uL tips at High pressure 1 time
+17: Move to Heater/Shaker column 1 with 1000 uL tips

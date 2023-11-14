@@ -125,3 +125,4 @@ def get_coordinate_by_name(coordinate_name):
         x, y, z, filter_wheel = coordinates['reader']['heater_{0}'.format(i)]
         rc.update(x, y, z, filter_wheel)
         return rc
+

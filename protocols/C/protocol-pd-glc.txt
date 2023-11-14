@@ -1,0 +1,21 @@
+0: Comment: --- NOTE: Pre-Dispense 7
+1: Move to Heater/Shaker column 1 with 1000 uL tips
+2: Aspirate 860 uLs with 1000 uL tips at Low pressure 1 time
+3: Home pipettor along Z
+4: Shake on with an RPM of 1000
+5: Move to Sample Rack tray C with 1000 uL tips moving right by 5400 down by 400000
+6: Move relative left by 5400
+7: Move relative up by 100000
+8: Aspirate 50 uLs with 1000 uL tips at Low pressure 1 time
+9: Delay for 20 seconds
+10: Dispense 200 uLs with 1000 uL tips at Lowest pressure 1 time
+11: Delay for 5 seconds
+12: Dispense 200 uLs with 1000 uL tips at Lowest pressure 1 time
+13: Delay for 5 seconds
+14: Dispense 200 uLs with 1000 uL tips at Lowest pressure 1 time
+15: Delay for 5 seconds
+16: Dispense 200 uLs with 1000 uL tips at Lowest pressure 1 time
+17: Delay for 5 seconds
+18: Dispense 200 uLs with 1000 uL tips at Lowest pressure 1 time
+19: Move relative right by 5400
+20: Shake off
