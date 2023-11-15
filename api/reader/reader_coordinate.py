@@ -1,5 +1,3 @@
-
-# Version: Test
 '''
 DESCIRPITON:
 This module contains the Reader Coordinate object
@@ -93,14 +91,14 @@ def target_to_reader_coordinate(target):
         '''
         Converts a target from a valid type to an upper gantry coordinate object.
         '''
-        dtypes = [list, str, ReaderCoordinate]
+        dtypes = [list, tuple, str, ReaderCoordinate]
         dtype = type(target)
         x, y, z, filter_wheel = [None for i in range(4)]
 
         if dtype in dtypes:
             if dtype == ReaderCoordinate:
                 return target
-            elif dtype == list:
+            elif dtype == list or dtype == tuple:
                 check_array_size(target, 4)
                 x, y, z, filter_wheel = target
                 check_type(x, int)
@@ -127,3 +125,4 @@ def get_coordinate_by_name(coordinate_name):
         x, y, z, filter_wheel = coordinates['reader']['heater_{0}'.format(i)]
         rc.update(x, y, z, filter_wheel)
         return rc
+

@@ -1,9 +1,7 @@
-
-# Version: Test
 try:
     import PySpin as pyspin
 except:
-    print("Need to pip install PySpin with the whl file, talk to D. Baur or G. Lopez-Candales")
+    print("Need to pip install PySpin with the whl file, talk to D. Bauer or G. Lopez-Candales")
 import numpy
 
 try:
@@ -365,3 +363,4 @@ if __name__ == "__main__":
     img = cc.snap_single()
     print(img.shape)
     cc.close()
+
