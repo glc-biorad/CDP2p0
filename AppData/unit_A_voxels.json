@@ -1,0 +1,21 @@
+{
+  "grid_size": [ 10, 10, 10 ],
+  "start": [ 0, 0, 0 ],
+  "goal": [ 9, 9, 9 ],
+  "obstacles": [
+    {
+      "name": "obstacle1",
+      "tip":  0, // 0: No tip, 1: 1000 uL Tip
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    {
+      "name": "obstacle2",
+      "tip": 0, // 0: No tip, 1: 1000 uL Tip
+      "x": 2,
+      "y": 2,
+      "z": 2
+    }
+  ]
+}

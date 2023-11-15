@@ -1,3 +1,5 @@
+
+# Version: Test
 def coordinates_list_to_csv(coordinates_list: list, file_name: str):
     """ Take a list of coordinates from a select query on the coordinates model
     and save them into a csv for backup purposes to avoid loss of coordinates

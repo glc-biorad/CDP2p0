@@ -1,3 +1,5 @@
+
+# Version: Test
 ''' This is a file containing a class that controls the Seyonic Pipettor.
 For documentation, please check the class docstring in this file, as well as the
 README.
@@ -97,6 +99,7 @@ class Seyonic(object):
                         port=port,
                         controller_address=contlr_addr,
                         pipettor_address=pip_addr,):
+        self.IP_ADDRESS = '10.0.0.177'
         # SET/LOAD PARAMETERS
             # set max timeout for polling action status
         self.max_poll_timeout = 10 # sec
@@ -292,6 +295,28 @@ class Seyonic(object):
         if timeout != timeout_in_seconds:
             print("ERROR: seyonic.change_timeout did not change the timeout for the seyonic controller")
 
+    def change_aspirate_timeout(self, timeout_in_seconds: int = 5) -> None:
+        """Change the error timeout for the aspiration action"""
+        self.log.log(f"change_aspirate_timeout(timeout_in_seconds={timeout_in_seconds})")
+        try:
+            self.client.Set("Aspirate Timeout", self.pip_addr, 0, timeout_in_seconds)
+        except Exception as e:
+            print(e)
+        #timeout = self.client.Get("Regulation Timeout", self.cntrl_addr, 0)
+        #if timeout != timeout_in_seconds:
+        #    print("ERROR: seyonic.change_aspirate_timeout did not change the timeout for the seyonic controller")
+
+    def change_dispense_timeout(self, timeout_in_seconds: int = 5) -> None:
+        """Change the error timeout for the dispense action"""
+        self.log.log(f"change_dispense_timeout(timeout_in_seconds={timeout_in_seconds})")
+        try:
+            self.client.Set("Dispense Timeout", self.pip_addr, 0, timeout_in_seconds)
+        except Exception as e:
+            print(e)
+        #timeout = self.client.Get("Regulation Timeout", self.cntrl_addr, 0)
+        #if timeout != timeout_in_seconds:
+        #    print("ERROR: seyonic.change_dispense_timeout did not change the timeout for the seyonic controller")
+
     def get_actual_aspirate_volume(self):
         ''' Function that queries the pipettor for measured aspirate volumes in
         last operation.
@@ -486,10 +511,11 @@ class Seyonic(object):
         equalize_time = equalize_start_time
         equalize_max_time = 4
         while (actual_pressure + pressure_offset <= pressure) or (actual_pressure - pressure_offset >= pressure):
-            print(f"Actual Pressure = {actual_pressure} mbar, target pressure = {pressure} mbar")
             elapsed_time = time.time() - equalize_start_time
+            print(f"Actual Pressure = {actual_pressure} mbar, target pressure = {pressure} mbar, time = {elapsed_time}")
             self.status_log.seyonic_log('Aspirate', "Actual Pressure (mbar)", actual_pressure, [pressure for i in range(1,9)], elapsed_time)
             actual_pressure = self.get_pressure('vacuum')
+        print(f"PRESSURE STABLE IN = {elapsed_time}")
         aspirate_clock_start = time.time()
         # Trigger the action of aspiration
         self.client.Trigger(self.pip_addr, 0)
@@ -524,6 +550,7 @@ class Seyonic(object):
                     #logger.log("ERROR", f"Channel {channel} of the pipettor has an error {action_status_lookup[current_action_statuses[channel-1]]}")
                     #self.log.log(f"ERROR: Channel {channel} of the pipettor has an error {action_status_lookup[current_action_statuses[channel-1]]}")
                     # Close this valve
+                    print(self.client.Get("Aspirate Timeout", self.pip_addr, channel))
                     self.close_valve(channel)
                     time.sleep(1)
                     # Stop the pipettor
@@ -571,7 +598,7 @@ class Seyonic(object):
                                          time.time() - aspirate_clock_start
                             )
                             return
-
+        print(f"WHILE TIME = {time.time() - aspirate_clock_start}")
         self.set_pressure(pressure=0, direction=2)
 
     def dispense(self, pressure=None, debug=True):

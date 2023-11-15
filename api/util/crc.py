@@ -1,3 +1,5 @@
+
+# Version: Test
 POLYNOMIAL = 0x11021 #0x1021
 PRESET = 0
 
