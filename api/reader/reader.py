@@ -12,6 +12,7 @@ from api.util.coordinate import coordinates
 from api.interfaces.fast_api_interface import FastAPIInterface
 
 from api.util.utils import check_type, delay
+from gui.util.utils import import_config_file
 
 from api.reader.reader_coordinate import ReaderCoordinate, target_to_reader_coordinate
 from api.reader.reader_velocity import ReaderVelocity
@@ -94,6 +95,7 @@ class Reader(api.util.motor.Motor):
         except Exception as e:
             print(e)
             self.camcontroller = None
+        self.config_data = import_config_file(os.path.join('C:\\', 'CDP2p0', 'config', 'unit_config.json'))
 
     def get_fast_api_interface(self):
         return self.__FAST_API_INTERFACE
@@ -109,6 +111,22 @@ class Reader(api.util.motor.Motor):
         """ Get the position of the reader from the axis """
         val = self.__FAST_API_INTERFACE.reader.axis.get_position(self.__MODULE_NAME, self.__ID[axis])
         return val
+
+    def get_position_submodule(self, submodule):
+        valid_submodules = ['X', 'Y', 'Z', 'Filter Wheel', 'Heater A',
+            'Heater B', 'Heater C', 'Heater D', 'Tray AB', 'Tray CD']
+
+        # clean this up
+        if submodule in ['A', 'B', 'C', 'D']:
+            submodule = 'Heater {0}'.format(submodule)
+        elif submodule in ['AB', 'CD']:
+            submodule = 'Tray {0}'.format(submodule)
+        else:
+            print(submodule, 'submodule')
+        msg = 'Can only address of the following: {0}\nRequested position of {1}'.format(valid_submodules, submodule)
+        assert submodule in valid_submodules, msg
+        pos = self.__FAST_API_INTERFACE.reader.axis.get_position(self.__MODULE_NAME, self.__ID[submodule])
+        return pos
 
     def move_imager_relative(self, direction: str, value: int, velocity: str) -> None:
         """ Move the Reader Imager relative to the current position given a direction, value to move (usteps), and a speed (usteps/sec) """
@@ -271,25 +289,42 @@ class Reader(api.util.motor.Motor):
         time.sleep(0.2)
         self.mabs(self.__ADDRESS_X_AXIS, target_rc.x, self.__LIMIT_MAX_VELOCITY_X, block=True)
 
+    def illumination_only_on(self, color, intensity_percent, use_fast_api=True):
+        # Convert color to int if it is a str.
+        assert type(color) == str
+        color = led_channel_str_to_int(color)
+        # Check for Bright Field to switch to hex led while keeping the fam filter.
+
+        if color == 0:
+            for colornum in self.config_data['LEDS']:
+                if self.config_data['LEDS'][colornum]['name'] == 'HEX':
+                    color = int(colornum)
+                    break
+        # Set the given LED color to its on intensity level.
+        if use_fast_api:
+            self.__FAST_API_INTERFACE.reader.led.on(self.__ID['LED'], color, intensity=intensity_percent)
+        else:
+            self.led.set(self.__ADDRESS_LED, color, self.led.get_limit_max_level() * intensity_percent / 100)
+
     # Illumination On Method.
     def illumination_on(self, color, intensity_percent=50, use_fast_api=True, rotate_filter_wheel=True):
         # Convert color to int if it is a str.
         assert type(color) == str
         color = led_channel_str_to_int(color)
         # Rotate the filter wheel to the desired color.
-        if rotate_filter_wheel:
-            self.rotate_filter_wheel(color)
+        #if rotate_filter_wheel:
+        #    self.rotate_filter_wheel(color)
         #self.rotate_filter_wheel(color)
         # Use Cy5 light if wanting Cy5.5 for now.
-        if color == 3:
-                color = 5
+        #if color == 3:
+        #        color = 5
         # Check for Bright Field to switch to hex led while keeping the fam filter.
         if color == 0:
                 color = 'hex'
         # Set the given LED color to its on intensity level.
         if use_fast_api:
             self.__FAST_API_INTERFACE.reader.led.on(self.__ID['LED'], color)
-            fw = self.__FAST_API_INTERFACE.reader.axis.get_position(self.__MODULE_NAME, self.__ID['Filter Wheel'])
+            #fw = self.__FAST_API_INTERFACE.reader.axis.get_position(self.__MODULE_NAME, self.__ID['Filter Wheel'])
         else:
             self.led.set(self.__ADDRESS_LED, color, self.led.get_limit_max_level() * intensity_percent / 100)
 
@@ -305,23 +340,29 @@ class Reader(api.util.motor.Motor):
         # Set the given LED color to its on intensity level.
         self.led.set(self.__ADDRESS_LED, color, self.led.get_limit_max_level() * intensity_percent / 100)
 
-    def illumination_off(self, color, use_fast_api=True, go_home=False):
+    def illumination_off(self, color, use_fast_api=True):
         if type(color) == str:
             color = led_channel_str_to_int(color)
-        # Rotate the filter wheel to home.
-        if go_home:
-            self.rotate_filter_wheel('home')
+        if color == 0:
+            for colornum in self.config_data['LEDS']:
+                if self.config_data['LEDS'][colornum]['name'] == 'HEX':
+                    color = int(colornum)
+                    break
         # Set the given LED color to its on intensity level.
         if use_fast_api:
             self.__FAST_API_INTERFACE.reader.led.off(self.__ID['LED'], color)
-            fw = self.__FAST_API_INTERFACE.reader.axis.get_position(self.__MODULE_NAME, self.__ID['Filter Wheel'])
+            # fw = self.__FAST_API_INTERFACE.reader.axis.get_position(self.__MODULE_NAME, self.__ID['Filter Wheel'])
         else:
             self.led.off(self.__ADDRESS_LED, color)
 
     # Illumination Off Method.
     def illumination_offmult(self):
         # Turn all LEDs off.
-        self.led.offmult(self.__ADDRESS_LED, [i for i in range(self.led.get_number_of_channels())])
+        # self.led.offmult(self.__ADDRESS_LED, [i for i in range(self.led.get_number_of_channels())])
+        for colorkey in self.config_data['LEDS'].keys():
+            name = self.config_data['LEDS'][colorkey]['name']
+            color = led_channel_str_to_int(name)
+            self.__FAST_API_INTERFACE.reader.led.off(self.__ID['LED'], color)
 
     # Open Tray Method.
     def open_tray(self, mode):
@@ -544,14 +585,15 @@ class Reader(api.util.motor.Motor):
         return None
 
     # Rotate Filter Wheel Method.
-    def rotate_filter_wheel(self, color, block=True):
+    def rotate_filter_wheel(self, color, blocking=False):
         if type(color) == str:
             if color.lower() == 'home':
                 self.__FAST_API_INTERFACE.reader.axis.home(self.__MODULE_NAME, self.__ID['Filter Wheel'])
                 return
             color = led_channel_str_to_int(color)
         # Rotate the filter wheel based on the color.
-        self.__FAST_API_INTERFACE.reader.axis.move(self.__MODULE_NAME, self.__ID['Filter Wheel'], LEDS[color]['steps'], 10000, block=block)
+        fw_steps = self.config_data['LEDS'][str(color)]['steps']
+        self.__FAST_API_INTERFACE.reader.axis.move(self.__MODULE_NAME, self.__ID['Filter Wheel'], fw_steps, 80000, block=blocking)
 
 
     def rotate_filter_wheel_deprecated(self, color):

@@ -1,9 +1,13 @@
+
+# Version: Test
 '''
 '''
 from ast import Try
 from cmath import e
+from math import ceil
 from re import T
 import time
+import socket
 import threading
 
 import api.util.motor 
@@ -176,19 +180,26 @@ class UpperGantry(api.util.motor.Motor):
         timer.start(__file__, __name__)
         self.controller = Controller(com_port=self.__COM_PORT)
         self.__FAST_API_INTERFACE = FastAPIInterface(unit)
+        self.PIPETTOR_IP_ADDRESS = '10.0.0.177'
         try:
-            global __pipettor
+            #global __pipettor
+            print("Connect to the pipettor test...")
+            for i in range(1):
+                time.sleep(1)
+                print(i+1)
             __pipettor = Seyonic()
         except Exception as e:
             print(e)
             try:
                 __pipettor.close()
+                __pipettor = Seyonic()
             except Exception as e:
                 print(e)
                 __pipettor = None
         self.__pipettor = __pipettor
         self.__chassis = Chassis()
         self.__heater_shaker = None #BioShake3000T()
+        #self.__pipettor.change_timeout(200)
         # Turn on the Relay for the Heater/Shaker nad Chiller.
         #relay_8_info = self.__FAST_API_INTERFACE.chassis.relay.get_relay_info(8)
         #logger.log('MESSAGE', "Turning on Relay 8 - {0}.".format(relay_8_info['description']))
@@ -613,11 +624,47 @@ class UpperGantry(api.util.motor.Motor):
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=2, position=y, block=False, velocity=self.__LIMIT['Y']['max']['velocity'])
         self.__FAST_API_INTERFACE.pipettor_gantry.axis.move('pipettor_gantry', id=1, position=x, block=False, velocity=self.__LIMIT['X']['max']['velocity'])
 
+    def reset_pipettor_connection(self) -> int:
+        try:
+            self.__pipettor.close()
+        except:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            result = sock.connect_ex((self.PIPETTOR_IP_ADDRESS, 80))
+            #print(f"Checking connection to pipettor, this will take about 10 seconds")
+            #for i in range(10):
+            #    print(f"Time Left: {10-i}")
+            #    time.sleep(1)
+            if result == 0:
+                print("Port open for Seyonic need to close")
+            else:
+                print("Port is closed need to open")
+            sock.close()
+        time.sleep(2)
+        print(f"Reseting connection to the Seyonic Pipettor this will take a few seconds")
+        self.__pipettor = Seyonic()
+        time.sleep(2)
+        return 0
+
     def detect_liquid_level(self, max_z_range: int = 200000, z_velocity: int = 30000) -> bool:
         """
         Move down in z (bound by a max downward relative z motion)
         """
+        #try:
+        #    #global __pipettor
+        #    for i in range(2):
+        #        time.sleep(1)
+        #    __pipettor = Seyonic()
+        #except Exception as e:
+        #    print(e)
+        #    try:
+        #        __pipettor.close()
+        #        __pipettor = Seyonic()
+        #    except Exception as e:
+        #        print(e)
+        #        __pipettor = None
+        #self.__pipettor = __pipettor
         llded = False
+        max_timeout = abs(ceil(max_z_range / z_velocity))
         # Setup the seyonic logger for lld
         status_log = Log('status', './logs/seyonic/')
         status_log.seyonic_log_header()
@@ -626,6 +673,7 @@ class UpperGantry(api.util.motor.Motor):
         # Set the pressure to 20 mbar
         self.__pipettor.set_pressure(pressure=20, direction=1)
         time.sleep(2) # delay to equalize pressure
+        t = time.time()
         # Set the action mode to LLD
         self.__pipettor.set_LLD_action_mode()
         # Trigger LLD
@@ -640,13 +688,16 @@ class UpperGantry(api.util.motor.Motor):
         self.move_relative('down', value=max_z_range, velocity=z_velocity, block=False)
         # Look for LLD success status
         t = time.time()
-        while self.get_position_from_axis('Z') >= initial_z - max_z_range:
+        z_pos = self.get_position_from_axis('Z')
+        while z_pos <= initial_z - max_z_range or (2 not in self.__pipettor.get_status() or time.time() - t <= max_timeout):
             action_status = self.__pipettor.get_status()
-            #print(action_status)
             status_log.seyonic_log('LLD', "In Progress", 
                                    20, 
                                    [action_status[0],action_status[1],action_status[2],action_status[3],action_status[4],action_status[5],action_status[6],action_status[7]],
                                    time.time() - lld_clock_start)
+            print(f"Time: {time.time() - t}")
+            print(f"Action: {action_status}")
+            print(f"")
             if 2 in action_status:
                 self.stop_motion()
                 status_log.seyonic_log('LLD', "Completed", 
@@ -663,8 +714,33 @@ class UpperGantry(api.util.motor.Motor):
                 )
                 llded = True
                 break
+            z_pos = self.get_position_from_axis('Z')
+        print(f"z_pos <= initial_z - max_z_range --> {z_pos <= initial_z - max_z_range}")
+        print(f"2 not in self.__pipettor.get_status() --> {2 not in self.__pipettor.get_status()}")
+        print(f"time.time() - t <= max_timeout --> {time.time() - t <= max_timeout}")
+        print(f"(2 not in self.__pipettor.get_status() and time.time() - t <= max_timeout) --> {(2 not in self.__pipettor.get_status() and time.time() - t <= max_timeout)}")
         self.__pipettor.set_pressure(pressure=0, direction=1)
         time.sleep(2)
+        # Close this valve
+        self.close_valve()
+        time.sleep(1)
+        #self.__pipettor.close()
+        #time.sleep(2)
+        #try:
+        #    #global __pipettor
+        #    for i in range(2):
+        #        time.sleep(1)
+        #    __pipettor = Seyonic()
+        #except Exception as e:
+        #    print(e)
+        #    try:
+        #        __pipettor.close()
+        #        __pipettor = Seyonic()
+        #    except Exception as e:
+        #        print(e)
+        #        __pipettor = None
+        #self.__pipettor = __pipettor
+        print(f"LLD Time: {time.time() - t}")
         return llded
 
     def move(
@@ -679,7 +755,9 @@ class UpperGantry(api.util.motor.Motor):
         tip: str = None,
         relative_moves: list = [0,0,0,0],
         max_drip_plate: int = -1198000,
-        ignore_tips: bool = False
+        ignore_tips: bool = False,
+        z_safe_1000_tip: int = -282000,
+        collision_detection_box_corners: list = []
        ) -> None:
         """ Moves the pipettor head based on the coordinates
 
@@ -709,6 +787,10 @@ class UpperGantry(api.util.motor.Motor):
             allows us to determine if a z offset is needed for getting to the correct height 
             of the coordinate
         """
+        # Constants
+        Z_ULTRA_SAFE_1000_TIP = -100000
+        Z_OFFSET_FOR_50_AND_200 = 305000
+        Z_OFFSET_FOR_NUB = Z_OFFSET_FOR_50_AND_200 + 286500
         # Modify the coordinate based on the relative moves
         x = x + relative_moves[0]
         y = y + relative_moves[1]
@@ -723,16 +805,31 @@ class UpperGantry(api.util.motor.Motor):
             try:
                 tip = int(tip)
                 if tip == 50 or tip == 200:
-                    z = z - 305000
+                    z = z - Z_OFFSET_FOR_50_AND_200
                 elif tip == None:
                     z = 0
             except:
                 if tip == 'nub' or tip == 'Nub':
-                    z = z + 305000 + 286500
+                    z = z + Z_OFFSET_FOR_NUB
                 elif tip == None:
                     z = 0
+        # Move the safe z depending on the collision detection box
         # Home Z and the drip plate
-        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, 0, 800000, True, True)
+        #self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, 0, 800000, True, True)
+        # If x,y at heater/shaker full home z
+        #self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, 0, 800000, True, True)
+        # Else go to -282000 to save time
+        time_start = time.time()
+        #self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, -282000, 800000, True, True)
+        # Set the safe height for the z axis motion
+        if tip == 1000:
+            z_safe = z_safe_1000_tip
+        elif tip in [50, 200]:
+            z_safe = z_safe_1000_tip - Z_OFFSET_FOR_50_AND_200
+        else:
+            z_safe = 0
+        # Move the z axis to a safe height before the move of x and y
+        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, z_safe, 800000, True, True)
         # Check if the user wants to use the drip plate
         if use_drip_plate:
             # Move the drip plate
@@ -746,21 +843,22 @@ class UpperGantry(api.util.motor.Motor):
         else:
             block_y = False
         # Move to the Y and X coordiantes
-        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 2, y, 3200000, block_y, True)
-        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 1, x, 300000, True, True)
+        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 2, y, 3200000, block=True, use_fast_api=True)
+        self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 1, x, 300000, block=True, use_fast_api=True)
+        #print(f"TIME!!!!!! -> {time.time() - time_start}")
         # Check if the user wants to use the drip plate
         if use_drip_plate:
             # Move the drip plate
             self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 4, drip_plate, 2500000, True, True)
         # Wait till x and y are achieved
-        _x = self.get_position_from_axis('X')
-        _y = self.get_position_from_axis('Y')
-        while _x != x and _y != y:
-            _x = self.get_position_from_axis('X')
-            _y = self.get_position_from_axis('Y')
+        #_x = self.get_position_from_axis('X')
+        #_y = self.get_position_from_axis('Y')
+        #while _x != x or _y != y:
+        #    _x = self.get_position_from_axis('X')
+        #    _y = self.get_position_from_axis('Y')
         # Move to the Z height
         self.get_fast_api_interface().pipettor_gantry.axis.move('pipettor_gantry', 3, z, 800000, True, True)
-
+        print(f"TIME!!!!!! -> {time.time() - time_start}")
 
 
     def move_pipettor_new(self, 
@@ -1119,17 +1217,23 @@ class UpperGantry(api.util.motor.Motor):
             # Get the pressure value.
             if pressure == 'default':
                 pressure = None
+                self.__pipettor.change_aspirate_timeout()
             elif pressure == 'low':
                 pressure = -100
+                self.__pipettor.change_aspirate_timeout()
             elif pressure == 'lowest':
+                self.__pipettor.change_aspirate_timeout(45)
                 pressure = -13
             elif pressure == 'highest':
                 pressure = -240
+                self.__pipettor.change_aspirate_timeout()
             elif pressure == 'high':
                 pressure = -200
+                self.__pipettor.change_aspirate_timeout()
             elif pressure == 'half':
                 print(self.__pipettor.max_pressure)
                 pressure = 0.5 * (self.__pipettor.max_pressure - self.__pipettor.min_pressure)
+                self.__pipettor.change_aspirate_timeout()
         # Make sure the pressure is valid.
         # Setup logger.
         logger = Logger(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.aspirate.__name__))
@@ -1155,8 +1259,10 @@ class UpperGantry(api.util.motor.Motor):
                 # Set the pipettor aspirate volume
                 self.__pipettor.set_aspirate_volumes(aspirate_vol)
                 # Trigger pipettor action
+                t_s = time.time()
                 self.__pipettor.aspirate(pressure)
-                time.sleep(1)
+                print(f"ELAPSED ASPIRATE TIME = {time.time() - t_s}")
+                #time.sleep(1)
                 self.turn_off_air_valve(2)
                 #time.sleep(1)
                 logger.log('LOG-END', "Aspiration complete.")
@@ -1176,12 +1282,16 @@ class UpperGantry(api.util.motor.Motor):
         if type(pressure) == str:
             if pressure.lower() == 'low':
                 pressure = 100
+                self.__pipettor.change_dispense_timeout()
             elif pressure.lower() == 'high':
                 pressure = 200
+                self.__pipettor.change_dispense_timeout()
             elif pressure.lower() == 'lowest':
+                self.__pipettor.change_dispense_timeout(45)
                 pressure = 10
             elif pressure.lower() == 'highest':
                 pressure = 241
+                self.__pipettor.change_dispense_timeout()
         # Check the type.
         check_type(dispense_vol, int)
         logger = Logger(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.dispense.__name__))

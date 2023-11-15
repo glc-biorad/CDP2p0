@@ -1,0 +1,12 @@
+300: Move relative right by 6000
+301: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+302: Move relative right by 5000
+303: Dispense 550 uLs with 1000 uL tips at Low pressure 1 time
+304: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+305: Move relative left by 11000
+306: Dispense 550 uLs with 1000 uL tips at Low pressure 1 time
+307: Move relative right by 6000
+308: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+309: Move relative right by 5000
+310: Dispense 550 uLs with 1000 uL tips at Low pressure 1 time
+311: Move relative left by 5000

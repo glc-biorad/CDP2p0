@@ -1,0 +1,51 @@
+# Gets the version number from user input and uses that to update version.ini and create a release.
+
+name: Create Release
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      version:
+        description: 'The version number for the release'
+        # Default value if no value is explicitly provided
+        default: 'V1.0'
+        # Input has to be provided for the workflow to run
+        required: true
+        # The data type of the input
+        type: string
+
+jobs:
+  update_ini:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+
+      - name: Update version ini file
+        run: python ./.github/workflows/TextFileUpdater.py ${{ inputs.version }} ${{ vars.VERSION_INI_FILE }}
+      - name: Update .py files
+        run: python ./.github/workflows/PythonVersionCommentUpdater.py ${{ inputs.version }} "./"
+
+      - name: Commit files and push it
+        run: |
+                git config --global user.email  ${{ vars.ACTION_USER_EMAIL }}
+                git config --global user.name ${{ vars.ACTION_USER_ID }}
+                git add .
+                git commit -m "Auto updating ${{ vars.VERSION_INI_FILE }}"
+                git push 
+
+      - name: Create release
+        id: create_release_id
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ inputs.version }}
+          release_name: Release ${{ inputs.version }}
