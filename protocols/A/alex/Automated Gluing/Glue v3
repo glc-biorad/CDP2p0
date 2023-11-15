@@ -1,0 +1,73 @@
+0: Comment: Full script
+1: Open Tray CD
+2: Comment: Pick up glue
+3: Move to Chiller column 1 with 200 uL tips
+4: Aspirate 40 uLs with 200 uL tips at High pressure 1 time
+5: Delay for 1 second
+6: Drip for 1 second
+7: Comment: Dispense glue
+8: Pause for user input
+9: Move to Tray tray D column 3 with 200 uL tips moving up by 5000
+10: Pause for user input
+11: Dispense 5 uLs with 200 uL tips at Low pressure 1 time
+12: Drip for 1 second
+13: Delay for 1 second
+14: Move to Tray tray D column 3 with 200 uL tips moving left by 20000 up by 5000
+15: Pause for user input
+16: Dispense 5 uLs with 200 uL tips at Low pressure 1 time
+17: Drip for 1 second
+18: Delay for 1 second
+19: Home pipettor along Z
+20: Pause for user input
+21: Comment: Use FastAPI to move to Tray CD (7) to -335000
+22: Comment: -335000
+23: Pause for user input
+24: UV light D on
+25: Delay for 3 seconds
+26: UV light D off
+27: Comment: Use FastAPI to move tray to -490000
+28: Pause for user input
+29: UV light D on
+30: Delay for 3 seconds
+31: UV light D off
+32: Comment: Use FastAPI to move Tray CD (7) to -790000
+33: Comment: Note that this command exists becuase Close Tray Command leads to error
+34: Pause for user input
+35: Eject tips in C column 1
+36: Comment: Full script
+37: Open Tray CD
+38: Comment: Pick up glue
+39: Pause for user input
+40: Move to Chiller column 1 with 200 uL tips
+41: Aspirate 40 uLs with 200 uL tips at High pressure 1 time
+42: Delay for 1 second
+43: Drip for 1 second
+44: Comment: Dispense glue
+45: Pause for user input
+46: Move to Tray tray D column 3 with 200 uL tips moving up by 5000
+47: Pause for user input
+48: Dispense 5 uLs with 200 uL tips at Low pressure 1 time
+49: Drip for 1 second
+50: Delay for 1 second
+51: Move to Tray tray D column 3 with 200 uL tips moving left by 20000 up by 5000
+52: Pause for user input
+53: Dispense 5 uLs with 200 uL tips at Low pressure 1 time
+54: Drip for 1 second
+55: Delay for 1 second
+56: Home pipettor along Z
+57: Pause for user input
+58: Comment: Use FastAPI to move to Tray CD (7) to -335000
+59: Comment: -335000
+60: Pause for user input
+61: UV light D on
+62: Delay for 3 seconds
+63: UV light D off
+64: Comment: Use FastAPI to move tray to -490000
+65: Pause for user input
+66: UV light D on
+67: Delay for 3 seconds
+68: UV light D off
+69: Comment: Use FastAPI to move Tray CD (7) to -790000
+70: Comment: Note that this command exists becuase Close Tray Command leads to error
+71: Pause for user input
+72: Eject tips in C column 1

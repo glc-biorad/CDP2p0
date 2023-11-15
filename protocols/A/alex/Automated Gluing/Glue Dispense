@@ -1,0 +1,7 @@
+0: Comment: Start the camera!
+1: Move to Tray tray D column 3 with 200 uL tips moving up by 15000
+2: Dispense 5 uLs with 200 uL tips at Low pressure 1 time
+3: Delay for 1 second
+4: Move to Tray tray D column 3 with 200 uL tips moving left by 20000 up by 15000
+5: Dispense 5 uLs with 200 uL tips at Low pressure 1 time
+6: Delay for 1 second

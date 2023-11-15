@@ -1,0 +1,15 @@
+0: Comment: Get camera man ready
+1: Pause for user input
+2: Open Tray CD
+3: Comment: Use FastAPI to move to Tray CD (7) to -335000
+4: Comment: -335000
+5: Pause for user input
+6: UV light D on
+7: Delay for 3 seconds
+8: UV light D off
+9: Comment: Use FastAPI to move tray to -490000
+10: Pause for user input
+11: UV light D on
+12: Delay for 3 seconds
+13: UV light D off
+14: Close Tray CD

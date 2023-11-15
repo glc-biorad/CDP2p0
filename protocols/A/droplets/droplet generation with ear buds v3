@@ -1,0 +1,16 @@
+0: Home pipettor fast
+1: Move relative left by 40000
+2: Move relative forwards by 200000
+3: Move relative down by 950000
+4: Pause for user input
+5: Comment: Make sure you are aligned well
+6: Move relative down by 115000
+7: Pause for user input
+8: Delay for 1 second
+9: Generate Standard Droplets
+10: Delay for 1 second
+11: Drip for 1 second
+12: Dispense 10 uLs with 200 uL tips at Low pressure 1 time
+13: Pause for user input
+14: Comment: hold down chip
+15: Home pipettor along Z

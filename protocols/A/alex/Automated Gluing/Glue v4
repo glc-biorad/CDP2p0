@@ -1,0 +1,38 @@
+0: Comment: Full script
+1: Pickup tips from A column 1
+2: Open Tray CD
+3: Comment: Pick up glue
+4: Move to Chiller column 1 with 200 uL tips
+5: Aspirate 20 uLs with 200 uL tips at High pressure 1 time
+6: Delay for 1 second
+7: Drip for 1 second
+8: Comment: Dispense glue
+9: Pause for user input
+10: Move to Tray tray D column 3 with 200 uL tips moving up by 5000
+11: Pause for user input
+12: Move relative up by 5000
+13: Dispense 5 uLs with 200 uL tips at Low pressure 1 time
+14: Drip for 1 second
+15: Delay for 1 second
+16: Move to Tray tray D column 3 with 200 uL tips moving left by 20000 up by 5000
+17: Pause for user input
+18: Move relative up by 5000
+19: Dispense 5 uLs with 200 uL tips at Low pressure 1 time
+20: Drip for 1 second
+21: Delay for 1 second
+22: Home pipettor along Z
+23: Pause for user input
+24: Eject tips in C column 1
+25: Comment: Use FastAPI to move to Tray CD (7) to -335000
+26: Comment: -335000
+27: Pause for user input
+28: UV light D on
+29: Delay for 3 seconds
+30: UV light D off
+31: Comment: Use FastAPI to move tray to -490000
+32: Pause for user input
+33: UV light D on
+34: Delay for 3 seconds
+35: UV light D off
+36: Comment: Use FastAPI to move Tray CD (7) to -790000
+37: Comment: Note that this command exists becuase Close Tray Command leads to error

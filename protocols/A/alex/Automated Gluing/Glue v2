@@ -1,0 +1,31 @@
+0: Comment: Full script
+1: Comment: Pick up glue
+2: Pause for user input
+3: Move to Chiller column 1 with 200 uL tips
+4: Aspirate 100 uLs with 200 uL tips at High pressure 1 time
+5: Delay for 1 second
+6: Drip for 1 second
+7: Comment: Dispense glue
+8: Pause for user input
+9: Move to Tray tray D column 3 with 200 uL tips moving up by 5000
+10: Pause for user input
+11: Dispense 5 uLs with 200 uL tips at Low pressure 1 time
+12: Delay for 1 second
+13: Move to Tray tray D column 3 with 200 uL tips moving left by 20000 up by 5000
+14: Pause for user input
+15: Dispense 5 uLs with 200 uL tips at Low pressure 1 time
+16: Delay for 1 second
+17: Home pipettor along Z
+18: Pause for user input
+19: Comment: Use FastAPI to move to Tray CD (7) to -335000
+20: Comment: -335000
+21: Pause for user input
+22: UV light D on
+23: Delay for 3 seconds
+24: UV light D off
+25: Comment: Use FastAPI to move tray to -490000
+26: Pause for user input
+27: UV light D on
+28: Delay for 3 seconds
+29: UV light D off
+30: Close Tray CD

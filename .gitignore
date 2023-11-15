@@ -1,0 +1,6 @@
+*.pyc
+.vs*
+log_files/*.txt
+logs/*.csv
+logs/seyonic/*.csv
+tat_files/*.csv
