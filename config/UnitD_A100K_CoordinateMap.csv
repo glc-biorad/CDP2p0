@@ -1,0 +1,33 @@
+Heater,Location,x-coordinate,y-coordinate,z-coordinate
+A,TopLeft Focus,-199844,-6749,-50000
+A,TopRight Focus,-640322,-6749,-40000
+A,BotLeft Focus,-191686,-179915,-10000
+A,BotRight Focus,-636242,-179915,
+A,Chamber 1 Inlet,-220235,-10177,
+A,Chamber 1 Outlet,-628085,-10177,
+A,Chamber 8 Inlet,-216156,-170323,
+A,Chamber 8 Outlet,-619927,-170323,
+B,TopLeft Focus,-191689,-274722,-50000
+B,TopRight Focus,-636245,-274722,-40000
+B,BotLeft Focus,-191688,-460908,-10000
+B,BotRight Focus,-636244,-460908,
+B,Chamber 1 Inlet,-216158,-289044,
+B,Chamber 1 Outlet,-624008,-289044,
+B,Chamber 8 Inlet,-216158,-450492,
+B,Chamber 8 Outlet,-624008,-450492,
+C,TopLeft Focus,-200000,-727866,-50000
+C,TopRight Focus,-648635,-726564,-40000
+C,BotLeft Focus,-200000,-914052,-10000
+C,BotRight Focus,-648635,-915354,
+C,Chamber 1 Inlet,-224471,-742188,
+C,Chamber 1 Outlet,-673106,-742188,
+C,Chamber 8 Inlet,-224471,-903636,
+C,Chamber 8 Outlet,-673106,-903636,
+D,TopLeft Focus,-200000,-1009098,-50000
+D,TopRight Focus,-648635,-1007796,-40000
+D,BotLeft Focus,-200000,-1195284,-10000
+D,BotRight Focus,-644556,-1195284,
+D,Chamber 1 Inlet,-224470,-1023420,
+D,Chamber 1 Outlet,-673105,-1023420,
+D,Chamber 8 Inlet,-224470,-1184868,
+D,Chamber 8 Outlet,-673105,-1184868,

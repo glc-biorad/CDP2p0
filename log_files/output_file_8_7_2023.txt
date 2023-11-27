@@ -1,0 +1,54 @@
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 15:59:12
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 15:59:14
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3665635585784912 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 15:59:14]
+	- Message: Delay set for 5 seconds
+	- Current Time: 15:59:14
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.tip_eject]
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_on_air_valve]
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_on_air_valve]
+	- Message: Turning on Air Valve 1 - High Pressure Compressor (Tip Eject)
+	- Start Time (H:M:S): 15:59:19
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/air_valve_on/0
+		- Message (RECEIVED): Status Code: OK
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_on_air_valve]: 0.22599291801452637 seconds.
+END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_on_air_valve - Time (H:M:S): 15:59:19]
+		- Message (SEND): http://127.0.0.1:8000/chassis/relay/9?state=True
+		- Message (RECEIVED): Status Code: OK
+		- Message (RECEIVED): {"_sid":0,"_mid":2,"_duration_us":22344,"message":"","response":"9,on"}
+		- Message (SEND): http://127.0.0.1:8000/chassis/GPIO Port E/0?state=True
+		- Message (RECEIVED): Status Code: OK
+		- Message (RECEIVED): {"_sid":0,"_mid":4,"_duration_us":13191,"message":"","response":"0,on"}
+		- Message (SEND): http://127.0.0.1:8000/chassis/GPIO Port E/0?state=False
+		- Message (RECEIVED): {"_sid":0,"_mid":4,"_duration_us":9940,"message":"","response":"0,off"}
+		- Message (SEND): http://127.0.0.1:8000/chassis/relay/9?state=False
+		- Message (RECEIVED): Status Code: OK
+		- Message (RECEIVED): {"_sid":0,"_mid":2,"_duration_us":9851,"message":"","response":"9,off"}
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_off_air_valve]
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_off_air_valve]
+	- Message: Turning off Air Valve 1 - High Pressure Compressor (Tip Eject)
+	- Start Time (H:M:S): 15:59:20
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/air_valve_off/0
+		- Message (RECEIVED): Status Code: OK
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_off_air_valve]: 0.2309114933013916 seconds.
+END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_off_air_valve - Time (H:M:S): 15:59:21]
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.home_pipettor]
+	- Message: Homing the Pipettor.
+	- Start Time (H:M:S): 17:33:06
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.home_pipettor]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/home/3
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3

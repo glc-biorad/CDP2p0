@@ -1,0 +1,56 @@
+0: Comment: ------------ CHIP LOADING PRE-AMPED NIPT ------------
+0: Comment: --- STATE: No tips ---
+0: Comment: --- STATE: Standard droplets generated in DG32 A-3 (85 uL) ---
+0: Comment: --- CONFIG: Tip Tray B 3-200-sample ---
+0: Comment: --- CONFIG: Reagent Cartridge B 4-DG Oil (250 uL) ---
+0: Comment: --- CONFIG: ddPCR on Tray A ---
+0: Comment: --- STEP: Droplet Transfer ---
+0: Comment: --- NOTE: Tip B6-200-new (A22Q Set 1)
+2: Move to DG8 tray A column 3 with 200 uL tips moving left by 200 up by 591500
+0: Delay for 1 second
+3: Move relative right by 1000
+0: Delay for 1 second
+4: Move relative down by 1500
+0: Delay for 1 second
+10: Aspirate 110 uLs with 200 uL tips at Lowest pressure 1 time
+6: Move to Tray tray B column 1 with 200 uL tips
+0: Comment: --- NOTE: Pause to check tip engagement ---
+0: Pause for user input
+17: Dispense 110 uLs with 200 uL tips at Lowest pressure 1 time
+15: Drip for 5 seconds
+0: Dispense 5 uLs with 200 uL tips at Lowest pressure 1 time
+0: Comment: --- STEP: Transfer Oil ---
+0: Comment: --- Oil ---
+4: Move to Reagent Cartridge tray B column 1 with 200 uL tips
+10: Aspirate 200 uLs with 200 uL tips at Low pressure 1 time
+6: Move to Tray tray B column 1 with 200 uL tips
+0: Comment: --- NOTE: Pause to check tip engagement ---
+0: Pause for user input
+15: Drip for 30 seconds
+0: Comment: --- NOTE: Tip B6-200-new
+7: Eject tips into B column 6
+0: Comment: --- NOTE: Tip B7-200-new (FF Set 1)
+7: Pickup tips from B column 7
+2: Move to DG8 tray C column 3 with 200 uL tips moving left by 200 up by 591500
+0: Delay for 1 second
+3: Move relative right by 1000
+0: Delay for 1 second
+4: Move relative down by 1500
+0: Delay for 1 second
+10: Aspirate 110 uLs with 200 uL tips at Lowest pressure 1 time
+6: Move to Tray tray C column 1 with 200 uL tips
+0: Comment: --- NOTE: Pause to check tip engagement ---
+0: Pause for user input
+17: Dispense 110 uLs with 200 uL tips at Lowest pressure 1 time
+15: Drip for 5 seconds
+0: Dispense 5 uLs with 200 uL tips at Lowest pressure 1 time
+0: Comment: --- STEP: Transfer Oil ---
+0: Comment: --- Oil ---
+4: Move to Reagent Cartridge tray B column 1 with 200 uL tips
+10: Aspirate 200 uLs with 200 uL tips at Low pressure 1 time
+6: Move to Tray tray C column 1 with 200 uL tips
+0: Comment: --- NOTE: Pause to check tip engagement ---
+0: Pause for user input
+15: Drip for 30 seconds
+0: Comment: --- NOTE: Tip B7-200-new
+7: Eject tips into B column 7

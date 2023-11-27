@@ -1,0 +1,16 @@
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK

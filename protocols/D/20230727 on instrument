@@ -1,0 +1,697 @@
+0: Comment: ------------------------------------------------------------------------
+1: Comment: --- PROCESS: Extraction
+2: Comment: --- * STATE CONFIG: 4 mL of plasma in 32 Deep Well Plate
+3: Comment: --- * STATE CONFIG: 160 uL of Proteinase K in 32 Deep Well Plate
+4: Comment: --- * STATE CONFIG: 400 uL of Lysis Buffer in 32 Deep Well Plate
+5: Comment: --- * STATE CONFIG: Assume pre-loaded solution was sitting at RT for 30 minutes
+6: Comment: --- * STATE CONFIG: No tips on the pipettor
+7: Comment: --- * TIP CONFIG: A1-1000-new - Adding Sample and Reagents
+8: Comment: --- * TIP CONFIG: A2-1000-new - Pooling
+9: Comment: --- * TIP CONFIG: A3-1000-new - Wash 1
+10: Comment: --- * TIP CONFIG: A4-1000-new - 80% Ethonal Wash
+11: Comment: --- * TIP CONFIG: A5-50-new - Residual Removal
+12: Comment: --- * TIP CONFIG: A6-200-new - Extraction Elution
+13: Comment: --- * REAGENT CONFIG: A1-BindingSolution-1100uL
+14: Comment: --- * REAGENT CONFIG: A2-BindingSolution-1100uL
+15: Comment: --- * REAGENT CONFIG: A11-BindingSolution-1100uL
+16: Comment: --- * REAGENT CONFIG: A12-BindingSolution-1100uL
+17: Comment: --- * REAGENT CONFIG: A3-Wash1Solution-850uL
+18: Comment: --- * REAGENT CONFIG: A10-80%Ethonal-850uL
+19: Comment: --- * REAGENT CONFIG: A4-ElutionBuffer-250uL
+20: Comment: ------------------------------------------------------------------------
+21: Comment: --- **************************************************************** ---
+22: Comment: --- STEP: Start-up
+23: Comment: ------------------------------------------------------------------------
+24: Comment: --- NOTE: Change temperature of the Heater/Shaker to 60C to get the lysed sample to 37C (non-thermally conductive 32 Deep Well Plate)
+25: Change Heater/Shaker Temperature to 60.0 C
+26: Comment: --- NOTE: Engage the magnet to prep for binding
+27: Engage magnet
+28: Comment: --- NOTE: Tip A1-1000-new (for adding binding solution, bead transfer, )
+29: Pickup tips from A column 1
+30: Comment: --- **************************************************************** ---
+31: Comment: --- STEP: Mix
+32: Comment: --- * VISCOSITY: High (High would require a residual dispense, 5 second delay, residual is 20% of mix volume)
+33: Comment: --- * MIX VOLUME: 500
+34: Comment: --- * TIP: 1000
+35: Comment: --- * PRESSURE\RATE: Low (+-100mbar)
+36: Comment: --- * MIXES: 1
+37: Comment: --- * CONSUMABLE: Heater/Shaker (32 Deep Well Plate)
+38: Comment: --- * COLUMN: 1
+39: Comment: --- * MIX TYPE: Standard (Standard mix is up/down, Vertical is up/down with volume displacement, Horizontal is up/down with volume displacement)
+40: Comment:
+41: Comment: --- NOTE: Pre-wet the tips (pre-wetting the tips may help with binding solution liquid handling)
+42: Move to Heater/Shaker column 1 with 1000 uL tips
+43: Aspirate 500 uLs with 1000 uL tips at Low pressure 1 time
+44: Dispense 500 uLs with 1000 uL tips at Low pressure 1 time
+45: Delay for 5 seconds
+46: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+47: Comment: --- **************************************************************** ---
+48: Comment: --- STEP: Mix
+49: Comment: --- * VISCOSITY: High (High would require a residual dispense, 5 second delay, residual is 20% of mix volume)
+50: Comment: --- * MIX VOLUME: 600
+51: Comment: --- * TIP: 1000
+52: Comment: --- * PRESSURE\RATE: Low (+-100mbar)
+53: Comment: --- * MIXES: 1
+54: Comment: --- * CONSUMABLE: Reagent Cartridge A
+55: Comment: --- * COLUMN: 1
+56: Comment: --- * MIX TYPE: Vertical (Standard mix is up/down, Vertical is up/down with volume displacement, Horizontal is up/down with volume displacement)
+57: Comment:
+58: Comment: --- NOTE: Mix the binding solution so that the beads are well dispersed in solution
+59: Move to Reagent Cartridge tray A column 1 with 1000 uL tips
+60: Aspirate 600 uLs with 1000 uL tips at Low pressure 1 time
+61: Move relative up 217000
+62: Dispense 600 uLs with 1000 uL tips at Low pressure 1 time
+63: Delay for 5 seconds
+64: Dispense 120 uLs with 1000 uL tips at Low pressure 1 time
+65: Move relative down 217000
+66: Comment: --- **************************************************************** ---
+67: Comment: --- STEP: Transfer Reagent
+68: Comment: --- * REAGENT: Binding Solution
+69: Comment: --- * REAGENT VOLUME: 850 uL
+70: Comment: --- * TIP: 1000
+71: Comment: --- * LOCATION (FROM): Reagent Cartridge A1
+72: Comment: --- * LOCATION (TO): Heater/Shaker (32 Deep Well Plate) 1
+73: Comment: --- * VERTICAL DISPLACEMENT: Yes (Allow dispense from higher up, could use LLD here)
+74: Comment: --- * REQUIRES NEW TIP: Yes
+75: Comment: --- * VISCOSITY: Very High (Very High would require two residual dispenses, 5 second delay, residual is 20% of mix volume)
+76: Comment: --- * PRESSURE\RATE: Low (+-100mbar)
+77: Comment: --- * INCLUDE MIX: No
+78: Comment:
+79: Comment: --- NOTE: Transfer Binding Solution (1st)
+80: Aspirate 850 uLs with 1000 uL tips at Low pressure 1 time
+81: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 300000
+82: Dispense 850 uLs with 1000 uL tips at Low pressure 1 time
+83: Delay for 5 seconds
+84: Dispense 170 uLs with 1000 uL tips at Low pressure 1 time
+85: Delay for 5 seconds
+86: Dispense 170 uLs with 1000 uL tips at Low pressure 1 time
+87: Comment: --- **************************************************************** ---
+88: Comment: --- STEP: Mix
+89: Comment: --- * VISCOSITY: High (High would require a residual dispense, 5 second delay, residual is 20% of mix volume)
+90: Comment: --- * MIX VOLUME: 600
+91: Comment: --- * TIP: 1000
+92: Comment: --- * PRESSURE\RATE: Low (+-100mbar)
+93: Comment: --- * MIXES: 1
+94: Comment: --- * CONSUMABLE: Reagent Cartridge A
+95: Comment: --- * COLUMN: 2
+96: Comment: --- * MIX TYPE: Vertical (Standard mix is up/down, Vertical is up/down with volume displacement, Horizontal is up/down with volume displacement)
+97: Comment:
+98: Comment: --- NOTE: Mix the binding solution so that the beads are well dispersed in solution
+99: Move to Reagent Cartridge tray A column 2 with 1000 uL tips
+100: Aspirate 600 uLs with 1000 uL tips at Low pressure 1 time
+101: Move relative up 217000
+102: Dispense 600 uLs with 1000 uL tips at Low pressure 1 time
+103: Delay for 5 seconds
+104: Dispense 120 uLs with 1000 uL tips at Low pressure 1 time
+105: Move relative down 217000
+106: Comment: --- **************************************************************** ---
+107: Comment: --- STEP: Transfer Reagent
+108: Comment: --- * REAGENT: Binding Solution
+109: Comment: --- * REAGENT VOLUME: 850 uL
+110: Comment: --- * TIP: 1000
+111: Comment: --- * LOCATION (FROM): Reagent Cartridge A2
+112: Comment: --- * LOCATION (TO): Heater/Shaker (32 Deep Well Plate) 1
+113: Comment: --- * VERTICAL DISPLACEMENT: Yes (Allow dispense from higher up, could use LLD here)
+114: Comment: --- * REQUIRES NEW TIP: Yes
+115: Comment: --- * VISCOSITY: Very High (Very High would require two residual dispenses, 5 second delay, residual is 20% of mix volume)
+116: Comment: --- * PRESSURE\RATE: Low (+-100mbar)
+117: Comment: --- * INCLUDE MIX: No
+118: Comment:
+119: Comment: --- NOTE: Transfer Binding Solution (2nd)
+120: Aspirate 850 uLs with 1000 uL tips at Low pressure 1 time
+121: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 300000
+122: Dispense 850 uLs with 1000 uL tips at Low pressure 1 time
+123: Delay for 5 seconds
+124: Dispense 170 uLs with 1000 uL tips at Low pressure 1 time
+125: Delay for 5 seconds
+126: Dispense 170 uLs with 1000 uL tips at Low pressure 1 time
+127: Comment: --- **************************************************************** ---
+128: Comment: --- STEP: Mix
+129: Comment: --- * VISCOSITY: High (High would require a residual dispense, 5 second delay, residual is 20% of mix volume)
+130: Comment: --- * MIX VOLUME: 600
+131: Comment: --- * TIP: 1000
+132: Comment: --- * PRESSURE\RATE: Low (+-100mbar)
+133: Comment: --- * MIXES: 1
+134: Comment: --- * CONSUMABLE: Reagent Cartridge A
+135: Comment: --- * COLUMN: 11
+136: Comment: --- * MIX TYPE: Vertical (Standard mix is up/down, Vertical is up/down with volume displacement, Horizontal is up/down with volume displacement)
+137: Comment:
+138: Comment: --- NOTE: Mix the binding solution so that the beads are well dispersed in solution
+139: Move to Reagent Cartridge tray A column 11 with 1000 uL tips
+140: Aspirate 600 uLs with 1000 uL tips at Low pressure 1 time
+141: Move relative up 217000
+142: Dispense 600 uLs with 1000 uL tips at Low pressure 1 time
+143: Delay for 5 seconds
+144: Dispense 120 uLs with 1000 uL tips at Low pressure 1 time
+145: Move relative down 217000
+146: Comment: --- **************************************************************** ---
+147: Comment: --- STEP: Transfer Reagent
+148: Comment: --- * REAGENT: Binding Solution
+149: Comment: --- * REAGENT VOLUME: 850 uL
+150: Comment: --- * TIP: 1000
+151: Comment: --- * LOCATION (FROM): Reagent Cartridge A11
+152: Comment: --- * LOCATION (TO): Heater/Shaker (32 Deep Well Plate) 1
+153: Comment: --- * VERTICAL DISPLACEMENT: Yes (Allow dispense from higher up, could use LLD here)
+154: Comment: --- * REQUIRES NEW TIP: Yes
+155: Comment: --- * VISCOSITY: Very High (Very High would require two residual dispenses, 5 second delay, residual is 20% of mix volume)
+156: Comment: --- * PRESSURE\RATE: Low (+-100mbar)
+157: Comment: --- * INCLUDE MIX: No
+158: Comment:
+159: Comment: --- NOTE: Transfer Binding Solution (3rd)
+160: Aspirate 850 uLs with 1000 uL tips at Low pressure 1 time
+161: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 300000
+162: Dispense 850 uLs with 1000 uL tips at Low pressure 1 time
+163: Delay for 5 seconds
+164: Dispense 170 uLs with 1000 uL tips at Low pressure 1 time
+165: Delay for 5 seconds
+166: Dispense 170 uLs with 1000 uL tips at Low pressure 1 time
+167: Comment: --- **************************************************************** ---
+168: Comment: --- STEP: Mix
+169: Comment: --- * VISCOSITY: High (High would require a residual dispense, 5 second delay, residual is 20% of mix volume)
+170: Comment: --- * MIX VOLUME: 600
+171: Comment: --- * TIP: 1000
+172: Comment: --- * PRESSURE\RATE: Low (+-100mbar)
+173: Comment: --- * MIXES: 1
+174: Comment: --- * CONSUMABLE: Reagent Cartridge A
+175: Comment: --- * COLUMN: 12
+176: Comment: --- * MIX TYPE: Vertical (Standard mix is up/down, Vertical is up/down with volume displacement, Horizontal is up/down with volume displacement)
+177: Comment:
+178: Comment: --- NOTE: Mix the binding solution so that the beads are well dispersed in solution
+179: Move to Reagent Cartridge tray A column 12 with 1000 uL tips
+180: Aspirate 600 uLs with 1000 uL tips at Low pressure 1 time
+181: Move relative up 217000
+182: Dispense 600 uLs with 1000 uL tips at Low pressure 1 time
+183: Delay for 5 seconds
+184: Dispense 120 uLs with 1000 uL tips at Low pressure 1 time
+185: Move relative down 217000
+186: Comment: --- **************************************************************** ---
+187: Comment: --- STEP: Transfer Reagent
+188: Comment: --- * REAGENT: Binding Solution
+189: Comment: --- * REAGENT VOLUME: 850 uL
+190: Comment: --- * TIP: 1000
+191: Comment: --- * LOCATION (FROM): Reagent Cartridge A12
+192: Comment: --- * LOCATION (TO): Heater/Shaker (32 Deep Well Plate) 1
+193: Comment: --- * VERTICAL DISPLACEMENT: Yes (Allow dispense from higher up, could use LLD here)
+194: Comment: --- * REQUIRES NEW TIP: Yes
+195: Comment: --- * VISCOSITY: Very High (Very High would require two residual dispenses, 5 second delay, residual is 20% of mix volume)
+196: Comment: --- * PRESSURE\RATE: Low (+-100mbar)
+197: Comment: --- * INCLUDE MIX: No
+198: Comment:
+199: Comment: --- NOTE: Transfer Binding Solution (4th)
+200: Aspirate 850 uLs with 1000 uL tips at Low pressure 1 time
+201: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 300000
+202: Dispense 850 uLs with 1000 uL tips at Low pressure 1 time
+203: Delay for 5 seconds
+204: Dispense 170 uLs with 1000 uL tips at Low pressure 1 time
+205: Delay for 5 seconds
+206: Dispense 170 uLs with 1000 uL tips at Low pressure 1 time
+207: Comment: --- NOTE: Tip A1-1000-new (for adding binding solution, bead transfer, )
+208: Eject tips in A column 1
+209: Comment: --- **************************************************************** ---
+210: Comment: --- STEP: Heating/Shaking (Binding)
+211: Comment: --- * Temperature: 37 C
+212: Comment: --- * RPM: 1000
+213: Comment: --- * DURATION: 20 minutes
+214: Comment:
+215: Change Heater/Shaker Temperature to 37.0 C
+216: Shake on with an RPM of 1000
+217: Delay for 20 minutes
+218: Comment: --- **************************************************************** ---
+219: Comment: --- STEP: Transfer Bound cfDNA (Pooling)
+220: Comment: --- * REQUIRES NEW TIP: Yes
+221: Comment: --- * TRANSFER VOLUME: 880 uL x 9 = 7920 uL
+222: Comment: --- * TRANSFERS: 9
+223: Comment: --- * LOCATION (FROM): Heater/Shaker 1
+224: Comment: --- * LOCATION (TO): Mag Separator 1
+225: Comment: --- * INCLUDE PRE-DISPENSE: Yes
+226: Comment:
+227: Comment: --- NOTE: Tip A2-1000-new (for transfer of bound cfDNA, supernatant waste transfer,)
+228: Pickup tips from A column 2
+229: Comment: --- NOTE: Pause shaking for intermittent shaking during transfer step
+230: Shake off
+231: Comment: --- NOTE: Pre-Dispense 1
+232: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 50000
+233: Aspirate 880 uLs with 1000 uL tips at Low pressure 1 time
+234: Comment: --- NOTE: Include an air-gap to avoid beads near the base of the tip which can be pulled out by the magnet
+235: Home pipettor along Z
+236: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+237: Comment: --- NOTE: Set the path to the pre-dispense magnet such that the base of the tip avoids the magnet
+238: Move to Sample Rack tray A with 1000 uL tips moving right by 5100 up by 260000
+239: Move relative left by 6400
+240: Comment: --- NOTE: Resume shaking for intermittent shaking during transfer step
+241: Shake on with an RPM of 1000
+242: Delay for 45 seconds
+243: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+244: Delay for 5 seconds
+245: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+246: Delay for 5 seconds
+247: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+248: Delay for 5 seconds
+249: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+250: Delay for 5 seconds
+251: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+252: Move relative right by 6400
+253: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+254: Shake off
+255: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+256: Delay for 3 seconds
+257: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+258: Comment: --- NOTE: Pre-Dispense 2
+259: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 50000
+260: Aspirate 880 uLs with 1000 uL tips at Low pressure 1 time
+261: Home pipettor along Z
+262: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+263: Move to Sample Rack tray A with 1000 uL tips moving right by 5100 up by 260000
+264: Move relative left by 6400
+265: Shake on with an RPM of 1000
+266: Delay for 45 seconds
+267: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+268: Delay for 5 seconds
+269: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+270: Delay for 5 seconds
+271: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+272: Delay for 5 seconds
+273: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+274: Delay for 5 seconds
+275: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+276: Move relative right by 6400
+277: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+278: Shake off
+279: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+280: Delay for 3 seconds
+281: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+282: Comment: --- NOTE: Pre-Dispense 3
+283: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 50000
+284: Aspirate 880 uLs with 1000 uL tips at Low pressure 1 time
+285: Home pipettor along Z
+286: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+287: Move to Sample Rack tray A with 1000 uL tips moving right by 5100 up by 260000
+288: Move relative left by 6400
+289: Shake on with an RPM of 1000
+290: Delay for 45 seconds
+291: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+292: Delay for 5 seconds
+293: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+294: Delay for 5 seconds
+295: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+296: Delay for 5 seconds
+297: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+298: Delay for 5 seconds
+299: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+300: Move relative right by 6400
+301: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+302: Shake off
+303: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+304: Delay for 3 seconds
+305: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+306: Comment: --- NOTE: Pre-Dispense 4
+307: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 50000
+308: Aspirate 880 uLs with 1000 uL tips at Low pressure 1 time
+309: Home pipettor along Z
+310: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+311: Move to Sample Rack tray A with 1000 uL tips moving right by 5100 up by 260000
+312: Move relative left by 6400
+313: Shake on with an RPM of 1000
+314: Delay for 45 seconds
+315: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+316: Delay for 5 seconds
+317: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+318: Delay for 5 seconds
+319: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+320: Delay for 5 seconds
+321: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+322: Delay for 5 seconds
+323: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+324: Move relative right by 6400
+325: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+326: Shake off
+327: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+328: Delay for 3 seconds
+329: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+330: Comment: --- NOTE: Pre-Dispense 5
+331: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 50000
+332: Aspirate 880 uLs with 1000 uL tips at Low pressure 1 time
+333: Home pipettor along Z
+334: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+335: Move to Sample Rack tray C with 1000 uL tips moving right by 5100 up by 260000
+336: Move relative left by 6400
+337: Shake on with an RPM of 1000
+338: Delay for 45 seconds
+339: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+340: Delay for 5 seconds
+341: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+342: Delay for 5 seconds
+343: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+344: Delay for 5 seconds
+345: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+346: Delay for 5 seconds
+347: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+348: Move relative right by 6400
+349: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+350: Shake off
+351: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+352: Delay for 3 seconds
+353: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+354: Change Heater/Shaker Temperature to 21.0 C
+355: Comment: --- NOTE: Pre-Dispense 6
+356: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 20000
+357: Aspirate 880 uLs with 1000 uL tips at Low pressure 1 time
+358: Home pipettor along Z
+359: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+360: Move to Sample Rack tray C with 1000 uL tips moving right by 5100 up by 260000
+361: Move relative left by 6400
+362: Shake on with an RPM of 1000
+363: Delay for 45 seconds
+364: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+365: Delay for 5 seconds
+366: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+367: Delay for 5 seconds
+368: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+369: Delay for 5 seconds
+370: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+371: Delay for 5 seconds
+372: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+373: Move relative right by 6400
+374: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+375: Shake off
+376: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+377: Delay for 3 seconds
+378: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+379: Comment: --- NOTE: Pre-Dispense 7
+380: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 20000
+381: Aspirate 880 uLs with 1000 uL tips at Low pressure 1 time
+382: Home pipettor along Z
+383: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+384: Move to Sample Rack tray C with 1000 uL tips moving right by 5100 up by 260000
+385: Move relative left by 6400
+386: Shake on with an RPM of 1000
+387: Delay for 45 seconds
+388: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+389: Delay for 5 seconds
+390: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+391: Delay for 5 seconds
+392: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+393: Delay for 5 seconds
+394: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+395: Delay for 5 seconds
+396: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+397: Move relative right by 6400
+398: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+399: Shake off
+400: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+401: Delay for 3 seconds
+402: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+403: Comment: --- NOTE: Pre-Dispense 8
+404: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 20000
+405: Aspirate 880 uLs with 1000 uL tips at Low pressure 1 time
+406: Home pipettor along Z
+407: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+408: Move to Sample Rack tray C with 1000 uL tips moving right by 5100 up by 260000
+409: Move relative left by 6400
+410: Shake on with an RPM of 1000
+411: Delay for 45 seconds
+412: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+413: Delay for 5 seconds
+414: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+415: Delay for 5 seconds
+416: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+417: Delay for 5 seconds
+418: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+419: Delay for 5 seconds
+420: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+421: Move relative right by 6400
+422: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+423: Shake off
+424: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+425: Delay for 3 seconds
+426: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+427: Comment: --- NOTE: Pre-Dispense 9
+428: Move to Heater/Shaker column 1 with 1000 uL tips moving up by 20000
+429: Aspirate 880 uLs with 1000 uL tips at Low pressure 1 time
+430: Home pipettor along Z
+431: Aspirate 20 uLs with 1000 uL tips at Low pressure 1 time
+432: Move to Sample Rack tray C with 1000 uL tips moving right by 5100 up by 260000
+433: Move relative left by 6400
+434: Shake on with an RPM of 1000
+435: Delay for 45 seconds
+436: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+437: Delay for 5 seconds
+438: Dispense 180 uLs with 1000 uL tips at Low pressure 1 time
+439: Delay for 5 seconds
+440: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+441: Delay for 5 seconds
+442: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+443: Delay for 5 seconds
+444: Dispense 220 uLs with 1000 uL tips at Low pressure 1 time
+445: Move relative right by 6400
+446: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+447: Shake off
+448: Dispense 80 uLs with 1000 uL tips at Low pressure 1 time
+449: Delay for 3 seconds
+450: Dispense 25 uLs with 1000 uL tips at Low pressure 1 time
+451: Comment: --- **************************************************************** ---
+452: Comment: --- STEP: Transfer Solution (For getting potential beads left behind)
+453: Comment: --- * REQUIRES NEW TIP: No
+454: Comment: --- * TRANSFER VOLUME: 600 uL
+455: Comment: --- * TRANSFERS: 1
+456: Comment: --- * LOCATION (FROM): Mag Separator 1
+457: Comment: --- * LOCATION (TO): Heater/Shaker 1
+458: Comment: --- * TIP: 1000 uL
+459: Comment: --- * PRESSURE/RATE: Low (+-100 mbar)
+460: Comment:
+461: Aspirate 600 uLs with 1000 uL tips at Low pressure 1 time
+462: Move to Heater/Shaker column 1 with 1000 uL tips moving left by 6000 up by 5000
+463: Dispense 600 uLs with 1000 uL tips at Low pressure 1 time
+464: Comment: --- **************************************************************** ---
+465: Comment: --- STEP: Mix
+466: Comment: --- * VISCOSITY: Low (Low would require no residual dispense, no delay)
+467: Comment: --- * MIX VOLUME: 550 uL
+468: Comment: --- * TIP: 1000 uL
+469: Comment: --- * PRESSURE\RATE: Low (+-100mbar)
+470: Comment: --- * MIXES: 3
+471: Comment: --- * CONSUMABLE: Heater/Shaker
+472: Comment: --- * COLUMN: 1
+473: Comment: --- * MIX TYPE: Horizontal (Standard mix is up/down, Vertical is up/down with volume displacement, Horizontal is up/down with volume displ.)
+474: Comment:
+475: Comment: --- NOTE: Lateral shuffle mix is to make sure all beads get transferred
+476: Move relative right by 6000
+477: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+478: Move relative right by 5000
+479: Dispense 550 uLs with 1000 uL tips at Low pressure 1 time
+480: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+481: Move relative left by 11000
+482: Dispense 550 uLs with 1000 uL tips at Low pressure 1 time
+483: Move relative right by 6000
+484: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+485: Move relative right by 5000
+486: Dispense 550 uLs with 1000 uL tips at Low pressure 1 time
+487: Move relative left by 5000
+488: Comment: --- **************************************************************** ---
+489: Comment: --- STEP: Transfer Solution (For getting potential beads left behind)
+490: Comment: --- * REQUIRES NEW TIP: No
+491: Comment: --- * TRANSFER VOLUME: 550 uL
+492: Comment: --- * TRANSFERS: 1
+493: Comment: --- * LOCATION (FROM): Heater/Shaker 1
+494: Comment: --- * LOCATION (TO): Mag Separator 1
+495: Comment: --- * TIP: 1000 uL
+496: Comment: --- * PRESSURE/RATE: Low (+-100 mbar)
+497: Comment: --- * VISCOSITY: Low (Low would require no residual dispense, no delay)
+498: Comment:
+499: Aspirate 700 uLs with 1000 uL tips at Low pressure 1 time
+500: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+501: Comment: --- NOTE: No residual dispense since we noticed bubbles ---
+502: Dispense 700 uLs with 1000 uL tips at Low pressure 1 time
+503: Home pipettor fast
+504: Comment: --- **************************************************************** ---
+505: Comment: --- STEP: Delay
+506: Comment: --- * DURATION: 2 minutes
+507: Comment:
+508: Delay for 2 minutes
+509: Comment: --- **************************************************************** ---
+510: Comment: --- STEP: Transfer Solution (transfer supernatant to waste)
+511: Comment: --- * REQUIRES NEW TIP: No
+512: Comment: --- * TRANSFER VOLUME: 720 uL
+513: Comment: --- * TRANSFERS: 1
+514: Comment: --- * LOCATION (FROM): Mag Separator 1
+515: Comment: --- * LOCATION (TO): Reagent Cartridge A1
+516: Comment: --- * TIP: 1000 uL
+517: Comment: --- * PRESSURE/RATE: Low (+-100 mbar)
+518: Comment: --- * VISCOSITY: Low (Low would require no residual dispense, no delay)
+519: Comment:
+520: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+521: Aspirate 720 uLs with 1000 uL tips at Low pressure 1 time
+522: Move to Reagent Cartridge tray A column 1 with 1000 uL tips
+523: Dispense 720 uLs with 1000 uL tips at Low pressure 1 time
+524: Comment: --- **************************************************************** ---
+525: Comment: --- STEP: Wash
+526: Comment: --- * REQUIRES NEW TIP: Yes
+527: Comment: --- * SOLUTION: Wash 1 Solution
+528: Comment: --- * WASH VOLUME: 250 uL
+529: Comment: --- * WASH MIXES: 3
+530: Comment: --- * WASH DURATION: 10 seconds
+531: Comment: --- * BIND DURATION: 20 seconds
+532: Comment: --- * WASTE VOLUME: 300 uL
+533: Comment: --- * TIP: 1000 uL
+534: Comment: --- * PRESSURE/RATE: Low (+-100 mbar)
+535: Comment:
+536: Comment: --- NOTE: Tip A2-1000-new (for transfer of bound cfDNA, supernatant waste transfer,)
+537: Eject tips in A column 2
+538: Engage magnet
+539: Comment: --- NOTE: Tip A3-1000-new (for wash 1)
+540: Pickup tips from A column 3
+541: Disengage magnet
+542: Comment: --- NOTE: Wash 1 Solution
+543: Move to Reagent Cartridge tray A column 3 with 1000 uL tips
+544: Aspirate 250 uLs with 1000 uL tips at Low pressure 1 time
+545: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+546: Dispense 250 uLs with 1000 uL tips at Low pressure 1 time
+547: Comment: --- NOTE: Wash Duration
+548: Delay for 10 seconds
+549: Comment: --- NOTE: Wash Mixes
+550: Aspirate 200 uLs with 1000 uL tips at Low pressure 1 time
+551: Dispense 200 uLs with 1000 uL tips at Low pressure 1 time
+552: Aspirate 200 uLs with 1000 uL tips at Low pressure 1 time
+553: Dispense 200 uLs with 1000 uL tips at Low pressure 1 time
+554: Aspirate 200 uLs with 1000 uL tips at Low pressure 1 time
+555: Dispense 200 uLs with 1000 uL tips at Low pressure 1 time
+556: Comment: --- NOTE: Bind Duration
+557: Engage magnet
+558: Delay for 20 seconds
+559: Aspirate 100 uLs with 1000 uL tips at Low pressure 1 time
+560: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+561: Delay for 20 seconds
+562: Move relative up by 70000
+563: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+564: Move relative down by 70000
+565: Move relative up by 200000
+566: Delay for 120 seconds
+567: Move relative down by 200000
+568: Comment: --- NOTE: Supernatant Waste Removal
+569: Aspirate 300 uLs with 1000 uL tips at Low pressure 1 time
+570: Move to Reagent Cartridge tray A column 11 with 1000 uL tips
+571: Dispense 300 uLs with 1000 uL tips at Low pressure 1 time
+572: Delay for 5 seconds
+573: Dispense 50 uLs with 1000 uL tips at Low pressure 1 time
+574: Delay for 5 seconds
+575: Dispense 50 uLs with 1000 uL tips at Low pressure 1 time
+576: Comment: --- **************************************************************** ---
+577: Comment: --- STEP: Wash
+578: Comment: --- * REQUIRES NEW TIP: No
+579: Comment: --- * SOLUTION: Wash 1 Solution
+580: Comment: --- * WASH VOLUME: 500 uL
+581: Comment: --- * WASH MIXES: 1
+582: Comment: --- * WASH DURATION: 10 seconds
+583: Comment: --- * BIND DURATION: 0 seconds
+584: Comment: --- * WASTE VOLUME: 550 uL
+585: Comment: --- * TIP: 1000 uL
+586: Comment: --- * PRESSURE/RATE: Low (+-100 mbar)
+587: Comment:
+588: Comment: --- NOTE: Wash 1 Solution for second wash in Wash 1
+589: Move to Reagent Cartridge tray A column 3 with 1000 uL tips
+590: Aspirate 500 uLs with 1000 uL tips at Low pressure 1 time
+591: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+592: Dispense 500 uLs with 1000 uL tips at Low pressure 1 time
+593: Comment: --- NOTE: Wash Mix
+594: Aspirate 400 uLs with 1000 uL tips at Low pressure 1 time
+595: Dispense 400 uLs with 1000 uL tips at Low pressure 1 time
+596: Comment: --- NOTE: Wash Duration
+597: Delay for 10 seconds
+598: Comment: --- NOTE: Supernatant Waste Removal
+599: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+600: Move to Reagent Cartridge tray A column 11 with 1000 uL tips
+601: Dispense 550 uLs with 1000 uL tips at Low pressure 1 time
+602: Comment: --- **************************************************************** ---
+603: Comment: --- STEP: Wash
+604: Comment: --- * REQUIRES NEW TIP: Yes
+605: Comment: --- * SOLUTION: Wash 2 Solution
+606: Comment: --- * WASH VOLUME: 450 uL
+607: Comment: --- * WASH MIXES: 1
+608: Comment: --- * WASH DURATION: 10 seconds
+609: Comment: --- * BIND DURATION: 0 seconds
+610: Comment: --- * WASTE VOLUME: 550 uL
+611: Comment: --- * TIP: 1000 uL
+612: Comment: --- * PRESSURE/RATE: Low (+-100 mbar)
+613: Comment:
+614: Comment: --- NOTE: Tip A3-1000-new (for wash 1.a and wash 1.b)
+615: Eject tips in A column 3
+616: Comment: --- NOTE: Tip A4-1000-new (for wash 2 - 80% ethonal)
+617: Pickup tips from A column 4
+618: Comment: --- NOTE: Wash 2 Solution
+619: Move to Reagent Cartridge tray A column 10 with 1000 uL tips
+620: Aspirate 450 uLs with 1000 uL tips at Low pressure 1 time
+621: Move to Mag Separator column 1 with 1000 uL tips moving up by 20000
+622: Dispense 450 uLs with 1000 uL tips at Low pressure 1 time
+623: Comment: --- NOTE: Wash Duration
+624: Delay for 10 seconds
+625: Comment: --- NOTE: Wash Mix
+626: Aspirate 400 uLs with 1000 uL tips at Low pressure 1 time
+627: Dispense 400 uLs with 1000 uL tips at Low pressure 1 time
+628: Delay for 10 seconds
+629: Comment: -- NOTE: Supernatant Waste Removal
+630: Aspirate 550 uLs with 1000 uL tips at Low pressure 1 time
+631: Move to Reagent Cartridge tray A column 11 with 1000 uL tips
+632: Dispense 550 uLs with 1000 uL tips at Low pressure 1 time
+633: Comment: --- **************************************************************** ---
+634: Comment: --- STEP: Transfer Solution (residual removal)
+635: Comment: --- * REQUIRES NEW TIP: Yes
+636: Comment: --- * TRANSFER VOLUME: 30 uL
+637: Comment: --- * TRANSFERS: 2
+638: Comment: --- * LOCATION (FROM): Mag Separator 1
+639: Comment: --- * LOCATION (TO): Reagent Cartridge A11
+640: Comment: --- * TIP: 50 uL
+641: Comment: --- * PRESSURE/RATE: Low (+-100 mbar)
+642: Comment: --- * VISCOSITY: Low (Low would require no residual dispense, no delay)
+643: Comment:
+644: Comment: --- NOTE: Tip A4-1000-new (for wash 2 - 80% ethonal)
+645: Eject tips in A column 4
+646: Comment: --- NOTE: Tip A5-50-new (for residual removal)
+647: Pickup tips from A column 5
+648: Move to Mag Separator column 1 with 50 uL tips
+649: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+650: Move to Reagent Cartridge tray A column 11 with 50 uL tips
+651: Dispense 35 uLs with 50 uL tips at Low pressure 1 time
+652: Move to Mag Separator column 1 with 50 uL tips
+653: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+654: Move to Reagent Cartridge tray A column 11 with 50 uL tips
+655: Dispense 35 uLs with 50 uL tips at Low pressure 1 time
+656: Comment: --- **************************************************************** ---
+657: Comment: --- STEP: Home Pipettor
+658: Comment:
+659: Home pipettor fast
+660: Comment: --- **************************************************************** ---
+661: Comment: --- STEP: Delay (Air Dry)
+662: Comment: --- * DURATION: 5 minutes
+663: Comment:
+664: Delay for 5 minutes
+665: Comment: --- **************************************************************** ---
+666: Comment: --- STEP: Elute (Extraction Elution)
+667: Comment: --- * ELUTE VOLUME: 83 uL
+668: Comment: --- * SOLUTION: Elusion Buffer (for Apostle, IDTE for BRX)
+669: Comment: --- * TIP: 50 uL
+670: Comment: --- * ELUTE MIXES: 5
+671: Comment: --- * UNBOUND DURATION: 5 minutes
+672: Comment:
+673: Comment: --- NOTE: Tip A5-50-new (for residual removal)
+674: Eject tips in A column 5
+675: Comment: --- NOTE: Tip A6-200-new (for extraction elution)
+676: Pickup tips from A column 6
+677: Disengage magnet
+678: Comment: --- REAGENT: Elusion Buffer (Needed for Apostle, BRX uses IDTE) ---
+679: Move to Reagent Cartridge tray A column 4 with 200 uL tips
+680: Comment: Using 83 instead of 80 uL
+681: Aspirate 83 uLs with 200 uL tips at Low pressure 1 time
+682: Move to Mag Separator column 1 with 200 uL tips
+683: Dispense 83 uLs with 200 uL tips at Low pressure 1 time
+684: Mix 50 uLs with 200 uL tips at Low pressure 5 times
+685: Engage magnet
+686: Delay for 30 seconds
+687: Aspirate 52 uLs with 200 uL tips at Low pressure 1 time
+688: Dispense 52 uLs with 200 uL tips at Low pressure 1 time
+689: Move relative up by 100000
+690: Delay for 3 seconds
+691: Dispense 20 uLs with 200 uL tips at Low pressure 1 time
+692: Move relative down by 100000
+693: Disengage magnet
+694: Home pipettor fast
+695: Delay for 5 minutes
+696: Engage magnet

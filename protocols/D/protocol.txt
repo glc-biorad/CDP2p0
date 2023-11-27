@@ -1,56 +1,86 @@
-<<<<<<< HEAD:protocols/A/protocol.txt
-0: Pickup tips from A column 1
-1: Home pipettor along Z
-2: Eject tips in A column 1
-3: Home pipettor along Z
-4: Pickup tips from A column 2
-5: Home pipettor along Z
-6: Eject tips in A column 2
-7: Home pipettor along Z
-8: Pickup tips from A column 3
-9: Home pipettor along Z
-10: Eject tips in A column 3
-11: Home pipettor along Z
-12: Pickup tips from A column 4
-13: Home pipettor along Z
-14: Eject tips in A column 4
-15: Home pipettor along Z
-16: Pickup tips from A column 5
-17: Home pipettor along Z
-18: Eject tips in A column 5
-19: Home pipettor along Z
-20: Pickup tips from A column 6
-21: Home pipettor along Z
-22: Eject tips in A column 6
-23: Home pipettor along Z
-24: Pickup tips from A column 7
-25: Home pipettor along Z
-26: Eject tips in A column 7
-27: Home pipettor along Z
-28: Pickup tips from A column 8
-29: Home pipettor along Z
-30: Eject tips in A column 8
-31: Home pipettor along Z
-32: Pickup tips from A column 9
-33: Home pipettor along Z
-34: Eject tips in A column 9
-35: Home pipettor along Z
-36: Pickup tips from A column 10
-37: Home pipettor along Z
-38: Eject tips in A column 10
-39: Home pipettor along Z
-40: Pickup tips from A column 11
-41: Home pipettor along Z
-42: Eject tips in A column 11
-43: Home pipettor along Z
-44: Pickup tips from A column 12
-45: Home pipettor along Z
-46: Eject tips in A column 12
-47: Home pipettor along Z
-=======
-0: Move to DG8 tray B column 3 with 200 uL tips moving left by 200 up by 591500
-1: Aspirate 80 uLs with 200 uL tips at Lowest pressure 1 time
-2: Delay for 2 seconds
-3: Aspirate 5 uLs with 200 uL tips at Lowest pressure 1 time
-4: Home pipettor along Z
->>>>>>> 58aa03be62629a7e150d12bd2ab85d1a02a2e10d:protocols/D/protocol.txt
+0: Delay for 1 second
+1: Comment --- Mix wash ---
+2: Aspirate 100 uLs with 1000 uL tips at Low pressure 1 time
+3: Delay for 1 second
+4: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+5: Delay for 1 second
+6: Aspirate 100 uLs with 1000 uL tips at Low pressure 1 time
+7: Delay for 1 second
+8: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+9: Delay for 1 second
+10: Comment: --- Wash Time ---
+11: Engage magnet
+12: Delay for 90 seconds
+13: Aspirate 160 uLs with 1000 uL tips at Low pressure 1 time
+14: Comment: --- Waste ---
+15: Move to Reagent Cartridge tray A column 12 with 1000 uL tips moving up by 40000
+16: Dispense 160 uLs with 1000 uL tips at Low pressure 1 time
+17: Delay for 2 seconds
+18: Dispense 50 uLs with 1000 uL tips at Low pressure 1 time
+19: Comment: --- REAGENT: Wash 2 Solution (80% Ethonal) ---
+20: Move to Reagent Cartridge tray A column 10 with 1000 uL tips
+21: Aspirate 150 uLs with 1000 uL tips at Low pressure 1 time
+22: Disengage magnet
+23: Move to Mag Separator column 3 with 1000 uL tips moving up by 8000
+24: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+25: Comment --- Mix wash ---
+26: Aspirate 100 uLs with 1000 uL tips at Low pressure 1 time
+27: Delay for 1 second
+28: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+29: Delay for 1 second
+30: Aspirate 100 uLs with 1000 uL tips at Low pressure 1 time
+31: Delay for 1 second
+32: Dispense 100 uLs with 1000 uL tips at Low pressure 1 time
+33: Delay for 1 second
+34: Comment: --- Wash Time ---
+35: Engage magnet
+36: Delay for 90 seconds
+37: Aspirate 200 uLs with 1000 uL tips at Low pressure 1 time
+38: Comment: --- Waste ---
+39: Move to Reagent Cartridge tray A column 12 with 1000 uL tips moving up by 40000
+40: Dispense 200 uLs with 1000 uL tips at Low pressure 1 time
+41: Comment: --- NOTE: Tip A4-1000-reused (Extraction Wash 2 (80% Ethonal), Elution Wash 2)
+42: Eject tips in A column 4
+43: Comment: ------------ RESIDUAL REMOVAL ------------
+44: Comment: --- NOTE: Tip A5-50-reused (Extraction residual removal, SS residual removal)
+45: Pickup tips from A column 5
+46: Move to Mag Separator column 3 with 50 uL tips
+47: Aspirate 50 uLs with 50 uL tips at Low pressure 1 time
+48: Comment: --- Waste ---
+49: Move to Reagent Cartridge tray A column 12 with 50 uL tips
+50: Dispense 50 uLs with 50 uL tips at Low pressure 1 time
+51: Move to Mag Separator column 3 with 50 uL tips
+52: Aspirate 50 uLs with 50 uL tips at Low pressure 1 time
+53: Comment: --- Waste ---
+54: Move to Reagent Cartridge tray A column 12 with 50 uL tips
+55: Dispense 50 uLs with 50 uL tips at Low pressure 1 time
+56: Comment: --- NOTE: Tip A5-50-reused (Extraction residual removal, SS residual removal)
+57: Eject tips in A column 5
+58: Comment: ------------ AIR DRY ------------
+59: Delay for 3 minutes
+60: Comment: Enrichment Solution
+61: Comment: --- NOTE: Tip A10-200-new (SS Elution)
+62: Pickup tips from A column 10
+63: Comment: ------------ ELUTION ------------
+64: Comment: IDTE
+65: Move to Reagent Cartridge tray A column 5 with 200 uL tips
+66: Disengage magnet
+67: Aspirate 45 uLs with 200 uL tips at Low pressure 1 time
+68: Move to Mag Separator column 3 with 200 uL tips
+69: Dispense 45 uLs with 200 uL tips at Low pressure 1 time
+70: Mix 30 uLs with 200 uL tips at Low pressure 3 times
+71: Comment: --- STEP: Air Bubble Removal ---
+72: Aspirate 5 uLs with 50 uL tips at Lowest pressure 1 time
+73: Move relative up by 50000
+74: Dispense 5 uLs with 50 uL tips at Lowest pressure 1 time
+75: Delay for 3 seconds
+76: Dispense 2 uLs with 50 uL tips at Lowest pressure 1 time
+77: Comment: Dip
+78: Move relative down by 50000
+79: Delay for 1 minute
+80: Engage magnet
+81: Delay for 2 seconds
+82: Dispense 15 uLs with 200 uL tips at Low pressure 1 time
+83: Comment: --- NOTE: Tip A10-200-used (SS Elution)
+84: Eject tips in A column 10
+85: Home pipettor fast

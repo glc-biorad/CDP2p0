@@ -1,0 +1,3752 @@
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.home_pipettor]
+	- Message: Homing the Pipettor.
+	- Start Time (H:M:S): 13:17:25
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.home_pipettor]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.25
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d866,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/home/3
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5699,0,0
+	- Message: 0 reached in 0.23299622535705566 seconds for pipettor_gantry module along Z
+	- Current Time: 13:17:26
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,1986,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/home/4
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,aaf3,0,0
+	- Message: 0 reached in 0.22919797897338867 seconds for pipettor_gantry module along Drip Plate
+	- Current Time: 13:17:26
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,1d99,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/home/2
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,e0e5,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/home/1
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,b300,0,0
+	- Message: 0 reached in 0.25331711769104004 seconds for pipettor_gantry module along X
+	- Current Time: 13:17:27
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,63be,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.home_pipettor]: 2.8705358505249023 seconds.
+END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.home_pipettor - Time (H:M:S): 13:17:28]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 13:18:16
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 13:18:17
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3734188079833984 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 13:18:17]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-100000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b9dc,0,-1467
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f088,0,-5873
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/4?position=0&velocity=2500000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,c299,0,0
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,54e4,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]: 0.22399449348449707 seconds.
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/2?position=-1043000&velocity=3200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,3c41,0,-1620
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,5cb7,0,-6211
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,e4b7,0,-16873
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,b98e,0,-51364
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,f3e6,0,-120242
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/1?position=-137250&velocity=300000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,9bf1,0,-1078
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,da9f,0,-4991
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,483f,0,-12601
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,a594,0,-36252
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,2bd0,0,-80611
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-1536000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,7af0,0,-101343
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,78e9,0,-105135
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b3f7,0,-111935
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3065,0,-136620
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4402,0,-188797
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1a8f,0,-272112
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a11,0,-384198
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,af4c,0,-489639
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f583,0,-616197
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,19e0,0,-732230
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,faf8,0,-842977
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5cd1,0,-953738
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3d92,0,-1059197
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4260,0,-1169927
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,67a7,0,-1280640
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a7bb,0,-1387035
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.move_relative]
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5840,0,-1458477
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]: 0.22620201110839844 seconds.
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-77523&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5012,0,-1528726
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1e11,0,-1534556
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,cca7,0,-1535969
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3ef4,0,-1534395
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e77a,0,-1530130
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,54ec,0,-1522100
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f0d3,0,-1495933
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a743,0,-1435159
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d829,0,-1346857
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,21b3,0,-1247068
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b3dd,0,-1125807
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1288,0,-1004547
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e86d,0,-893786
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f0ac,0,-772492
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4876,0,-656484
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,bccc,0,-545743
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1278,0,-434994
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,faf2,0,-319171
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,88b1,0,-216170
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.move_relative]: 5.066529750823975 seconds.
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-100000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a4ec,0,-103907
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,80ae,0,-83933
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/4?position=0&velocity=2500000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,f474,0,0
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,7490,0,-137250
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]: 0.24668526649475098 seconds.
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/2?position=-194169&velocity=3200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,853a,0,-1041648
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,2331,0,-1037058
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/1?position=-242800&velocity=300000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,a703,0,-138328
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,8a73,0,-142241
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,638a,0,-148675
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,3aa9,0,-170166
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-1298500&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5267,0,-101467
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,c240,0,-105134
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,de2e,0,-111930
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4c91,0,-136607
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d23a,0,-188759
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6598,0,-263668
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,ed93,0,-363113
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a3a2,0,-473874
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a284,0,-595201
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,dc62,0,-700687
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d90e,0,-806171
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,80c2,0,-911645
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3861,0,-1017145
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,69a,0,-1116203
+	- Message: Delay set for 0.5 seconds
+	- Current Time: 13:18:37
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_on_air_valve]
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_on_air_valve]
+	- Message: Turning on Air Valve 2 - Pipettor Vacuum (Aspirate or Dispense)
+	- Start Time (H:M:S): 13:18:38
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/air_valve_on/1
+		- Message (RECEIVED): Status Code: OK
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_on_air_valve]: 0.23297715187072754 seconds.
+END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_on_air_valve - Time (H:M:S): 13:18:38]
+	- Message: Delay set for 0.25 seconds
+	- Current Time: 13:18:38
+	- Message: Opening Seyonic Pipettor valve.
+	- Current Time: 13:18:38
+	- Message: Seyonic Pipettor valve should now be open.
+	- Current Time: 13:18:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:39
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:40
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:41
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:42
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:43
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:44
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:45
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:46
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:47
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:48
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:49
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:51
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:52
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:53
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:54
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:55
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:56
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:57
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:58
+	- Message: Delay set for 1 second
+	- Current Time: 13:18:59
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:00
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:01
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:02
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:03
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:04
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:05
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:06
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:07
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:08
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:09
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:10
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:11
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:12
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:13
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:14
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:15
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:16
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:17
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:18
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:19
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:20
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:21
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:22
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:23
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:24
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:25
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:26
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:27
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:28
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:29
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:30
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:31
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:32
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:33
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:34
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:35
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:36
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:37
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:39
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:40
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:41
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:42
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:43
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:44
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:45
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:46
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:47
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:48
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:49
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:50
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:51
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:52
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:53
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:54
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:55
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:56
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:57
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:58
+	- Message: Delay set for 1 second
+	- Current Time: 13:19:59
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:00
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:01
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:02
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:04
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:05
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:06
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:07
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:08
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:09
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:10
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:11
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:12
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:13
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:14
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:15
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:16
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:17
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:18
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:19
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:20
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:21
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:22
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:23
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:24
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:25
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:26
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:27
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:28
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:29
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:30
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:31
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:32
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:33
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:34
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:35
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:36
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:37
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:39
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:40
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:41
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:42
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:43
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:44
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:45
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:46
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:47
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:48
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:49
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:50
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:51
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:52
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:53
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:54
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:55
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:56
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:57
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:58
+	- Message: Delay set for 1 second
+	- Current Time: 13:20:59
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:00
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:01
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:02
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:03
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:04
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:05
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:06
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:07
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:08
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:09
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:10
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:11
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:12
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:13
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:14
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:15
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:16
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:18
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:19
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:20
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:21
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:22
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:23
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:24
+	- Message: Clsoing Seyonic Pipettor valve.
+	- Current Time: 13:21:25
+	- Message: Seyonic Pipettor valve should now be closed.
+	- Current Time: 13:21:25
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_off_air_valve]
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_off_air_valve]
+	- Message: Turning off Air Valve 2 - Pipettor Vacuum (Aspirate or Dispense)
+	- Start Time (H:M:S): 13:21:25
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/air_valve_off/1
+		- Message (RECEIVED): Status Code: OK
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_off_air_valve]: 0.23819518089294434 seconds.
+END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_off_air_valve - Time (H:M:S): 13:21:25]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-100000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6a08,0,-1297390
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b547,0,-1293362
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,883f,0,-1285253
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,62d5,0,-1258183
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6df7,0,-1209592
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6779,0,-1130422
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a367,0,-1019283
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1510,0,-913783
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,bd21,0,-797728
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,2727,0,-676376
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,ae3c,0,-570846
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d4f4,0,-460037
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1b43,0,-338998
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/4?position=0&velocity=2500000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,fd7e,0,0
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,1f60,0,-242800
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]: 0.2297196388244629 seconds.
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/2?position=-193169&velocity=3200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,7c23,0,-193170
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,e4e6,0,-193169
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/1?position=-225200&velocity=300000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,4099,0,-241723
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,185a,0,-238267
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-1298500&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,9031,0,-101468
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a8f,0,-105625
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a061,0,-112558
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,8657,0,-142181
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,c24f,0,-201229
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a5ed,0,-276493
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d8d,0,-389604
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,14e1,0,-500343
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6104,0,-611055
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,14cd,0,-721778
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1b30,0,-843054
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,badd,0,-964354
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,704d,0,-1074046
+	- Message: Delay set for 0.5 seconds
+	- Current Time: 13:21:37
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_on_air_valve]
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_on_air_valve]
+	- Message: Turning on Air Valve 2 - Pipettor Vacuum (Aspirate or Dispense)
+	- Start Time (H:M:S): 13:21:37
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/air_valve_on/1
+		- Message (RECEIVED): Status Code: OK
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_on_air_valve]: 0.25264906883239746 seconds.
+END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_on_air_valve - Time (H:M:S): 13:21:38]
+	- Message: Delay set for 0.25 seconds
+	- Current Time: 13:21:38
+	- Message: Opening Seyonic Pipettor valve.
+	- Current Time: 13:21:38
+	- Message: Seyonic Pipettor valve should now be open.
+	- Current Time: 13:21:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:39
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:40
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:41
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:42
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:43
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:44
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:45
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:46
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:47
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:48
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:49
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:50
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:51
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:52
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:53
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:54
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:55
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:56
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:57
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:58
+	- Message: Delay set for 1 second
+	- Current Time: 13:21:59
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:00
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:01
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:02
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:03
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:04
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:05
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:06
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:07
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:08
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:09
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:10
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:11
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:12
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:13
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:14
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:15
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:16
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:18
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:19
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:20
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:21
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:22
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:23
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:24
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:25
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:26
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:27
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:28
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:29
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:30
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:31
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:32
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:33
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:34
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:35
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:36
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:37
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:39
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:40
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:41
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:42
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:43
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:44
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:45
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:46
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:47
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:48
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:49
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:50
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:51
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:52
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:53
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:54
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:55
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:56
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:57
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:58
+	- Message: Delay set for 1 second
+	- Current Time: 13:22:59
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:00
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:01
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:02
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:03
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:04
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:05
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:06
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:07
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:08
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:09
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:10
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:11
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:12
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:13
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:14
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:15
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:16
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:17
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:18
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:19
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:20
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:21
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:22
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:24
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:25
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:26
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:27
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:28
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:29
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:30
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:31
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:32
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:33
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:34
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:35
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:36
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:37
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:39
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:40
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:41
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:42
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:43
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:44
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:45
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:46
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:47
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:48
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:49
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:50
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:51
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:52
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:53
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:54
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:55
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:56
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:57
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:58
+	- Message: Delay set for 1 second
+	- Current Time: 13:23:59
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:00
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:01
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:02
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:03
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:04
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:05
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:06
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:07
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:08
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:09
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:10
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:11
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:12
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:13
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:14
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:15
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:16
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:17
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:18
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:19
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:20
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:21
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:22
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:23
+	- Message: Clsoing Seyonic Pipettor valve.
+	- Current Time: 13:24:24
+	- Message: Seyonic Pipettor valve should now be closed.
+	- Current Time: 13:24:24
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_off_air_valve]
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_off_air_valve]
+	- Message: Turning off Air Valve 2 - Pipettor Vacuum (Aspirate or Dispense)
+	- Start Time (H:M:S): 13:24:24
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/air_valve_off/1
+		- Message (RECEIVED): Status Code: OK
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_off_air_valve]: 0.2585604190826416 seconds.
+END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_off_air_valve - Time (H:M:S): 13:24:25]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-100000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3572,0,-1296902
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,fafb,0,-1293126
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5604,0,-1284551
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,22fd,0,-1252421
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,81b7,0,-1197396
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e832,0,-1122225
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e1f4,0,-1009206
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6fc8,0,-887962
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,c31d,0,-782538
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,8c04,0,-661311
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d833,0,-555878
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,fd6d,0,-445167
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,db7d,0,-324927
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/4?position=0&velocity=2500000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,6c23,0,0
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,5b7e,0,-225200
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]: 0.23531818389892578 seconds.
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/2?position=-193669&velocity=3200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,29fb,0,-193668
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,2fdb,0,-193669
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/1?position=-207200&velocity=300000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,87cb,0,-224122
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,370,0,-220439
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-1302500&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,69d2,0,-101466
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5d2d,0,-105622
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3bdd,0,-112543
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,33ea,0,-138355
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,81fc,0,-194747
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4e4,0,-280535
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f53f,0,-378646
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,db5d,0,-494614
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a2e2,0,-605337
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,7aa7,0,-710789
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5c53,0,-832037
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5bec,0,-953243
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f6e1,0,-1063610
+	- Message: Delay set for 0.5 seconds
+	- Current Time: 13:24:37
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_on_air_valve]
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_on_air_valve]
+	- Message: Turning on Air Valve 2 - Pipettor Vacuum (Aspirate or Dispense)
+	- Start Time (H:M:S): 13:24:37
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/air_valve_on/1
+		- Message (RECEIVED): Status Code: OK
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_on_air_valve]: 0.2628450393676758 seconds.
+END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_on_air_valve - Time (H:M:S): 13:24:37]
+	- Message: Delay set for 0.25 seconds
+	- Current Time: 13:24:37
+	- Message: Opening Seyonic Pipettor valve.
+	- Current Time: 13:24:38
+	- Message: Seyonic Pipettor valve should now be open.
+	- Current Time: 13:24:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:39
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:40
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:41
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:42
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:43
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:44
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:45
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:46
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:47
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:48
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:49
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:50
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:51
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:52
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:53
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:54
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:55
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:56
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:57
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:58
+	- Message: Delay set for 1 second
+	- Current Time: 13:24:59
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:00
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:01
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:02
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:03
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:04
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:05
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:06
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:07
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:08
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:09
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:10
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:11
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:12
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:13
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:14
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:15
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:16
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:17
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:18
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:19
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:20
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:21
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:22
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:23
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:24
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:25
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:26
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:27
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:28
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:29
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:30
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:31
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:32
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:33
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:34
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:35
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:36
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:37
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:39
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:40
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:41
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:42
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:44
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:45
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:46
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:47
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:48
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:49
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:50
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:51
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:52
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:53
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:54
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:55
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:56
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:57
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:58
+	- Message: Delay set for 1 second
+	- Current Time: 13:25:59
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:00
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:01
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:02
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:03
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:04
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:05
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:06
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:07
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:08
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:09
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:10
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:11
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:12
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:13
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:14
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:15
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:16
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:17
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:18
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:19
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:20
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:21
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:22
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:23
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:24
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:25
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:26
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:27
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:28
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:29
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:30
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:31
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:32
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:33
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:34
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:35
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:36
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:37
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:39
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:40
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:41
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:42
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:43
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:44
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:45
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:46
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:47
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:48
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:49
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:50
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:51
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:52
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:53
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:54
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:55
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:56
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:57
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:58
+	- Message: Delay set for 1 second
+	- Current Time: 13:26:59
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:00
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:01
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:02
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:03
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:04
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:05
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:07
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:08
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:09
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:10
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:11
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:12
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:13
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:14
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:15
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:16
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:17
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:18
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:19
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:20
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:21
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:22
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:23
+	- Message: Clsoing Seyonic Pipettor valve.
+	- Current Time: 13:27:24
+	- Message: Seyonic Pipettor valve should now be closed.
+	- Current Time: 13:27:24
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_off_air_valve]
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_off_air_valve]
+	- Message: Turning off Air Valve 2 - Pipettor Vacuum (Aspirate or Dispense)
+	- Start Time (H:M:S): 13:27:24
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/air_valve_off/1
+		- Message (RECEIVED): Status Code: OK
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_off_air_valve]: 0.2519536018371582 seconds.
+END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_off_air_valve - Time (H:M:S): 13:27:24]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-100000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5f84,0,-1301390
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f83a,0,-1297830
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,68b8,0,-1292083
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1369,0,-1270877
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,67a8,0,-1227850
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3108,0,-1162572
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3039,0,-1075037
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,cc53,0,-965336
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,dc02,0,-854586
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,cd56,0,-749114
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,fb22,0,-643655
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1b98,0,-532902
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6003,0,-432689
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,512d,0,-323108
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/4?position=0&velocity=2500000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,8982,0,0
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,8e2e,0,-207200
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]: 0.22445940971374512 seconds.
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/2?position=-194669&velocity=3200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,9715,0,-194638
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,4150,0,-194669
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/1?position=-189700&velocity=300000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,33f5,0,-206122
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,1728,0,-202882
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-1304500&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,9b6c,0,-101110
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,341,0,-104444
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,9ca9,0,-110416
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a1b3,0,-130059
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,17de,0,-174641
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1522,0,-239917
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b935,0,-332397
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,da20,0,-437151
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,543a,0,-547927
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4876,0,-653410
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,7ddf,0,-758901
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,aca9,0,-864405
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,eb4e,0,-975181
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,8861,0,-1079665
+	- Message: Delay set for 0.5 seconds
+	- Current Time: 13:27:36
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_on_air_valve]
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_on_air_valve]
+	- Message: Turning on Air Valve 2 - Pipettor Vacuum (Aspirate or Dispense)
+	- Start Time (H:M:S): 13:27:36
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/air_valve_on/1
+		- Message (RECEIVED): Status Code: OK
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_on_air_valve]: 0.22574710845947266 seconds.
+END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_on_air_valve - Time (H:M:S): 13:27:37]
+	- Message: Delay set for 0.25 seconds
+	- Current Time: 13:27:37
+	- Message: Opening Seyonic Pipettor valve.
+	- Current Time: 13:27:37
+	- Message: Seyonic Pipettor valve should now be open.
+	- Current Time: 13:27:37
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:37
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:39
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:40
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:41
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:42
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:43
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:44
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:45
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:46
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:47
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:48
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:49
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:50
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:51
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:52
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:53
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:54
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:55
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:56
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:57
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:58
+	- Message: Delay set for 1 second
+	- Current Time: 13:27:59
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:00
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:01
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:02
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:03
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:04
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:05
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:06
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:07
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:08
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:09
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:10
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:11
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:12
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:13
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:14
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:15
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:16
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:17
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:18
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:19
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:20
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:21
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:22
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:24
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:25
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:26
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:27
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:28
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:29
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:30
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:31
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:32
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:33
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:34
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:35
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:36
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:37
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:39
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:40
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:41
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:42
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:43
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:44
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:45
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:46
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:47
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:48
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:49
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:50
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:51
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:52
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:53
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:54
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:55
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:56
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:57
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:58
+	- Message: Delay set for 1 second
+	- Current Time: 13:28:59
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:00
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:01
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:02
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:03
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:04
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:05
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:06
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:07
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:08
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:09
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:10
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:11
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:12
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:13
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:14
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:15
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:16
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:17
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:18
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:19
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:20
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:21
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:22
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:23
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:24
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:25
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:26
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:27
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:28
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:29
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:30
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:31
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:33
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:34
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:35
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:36
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:37
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:38
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:39
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:40
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:41
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:42
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:43
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:44
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:45
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:46
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:47
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:48
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:49
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:50
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:51
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:52
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:53
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:54
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:55
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:56
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:57
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:58
+	- Message: Delay set for 1 second
+	- Current Time: 13:29:59
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:00
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:01
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:02
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:03
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:04
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:05
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:06
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:07
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:08
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:09
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:10
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:11
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:12
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:13
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:14
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:15
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:16
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:17
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:18
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:19
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:20
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:21
+	- Message: Delay set for 1 second
+	- Current Time: 13:30:22
+	- Message: Clsoing Seyonic Pipettor valve.
+	- Current Time: 13:30:23
+	- Message: Seyonic Pipettor valve should now be closed.
+	- Current Time: 13:30:23
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_off_air_valve]
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_off_air_valve]
+	- Message: Turning off Air Valve 2 - Pipettor Vacuum (Aspirate or Dispense)
+	- Start Time (H:M:S): 13:30:23
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/air_valve_off/1
+		- Message (RECEIVED): Status Code: OK
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.turn_off_air_valve]: 0.2255535125732422 seconds.
+END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.turn_off_air_valve - Time (H:M:S): 13:30:23]
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.home_pipettor]
+	- Message: Homing the Pipettor.
+	- Start Time (H:M:S): 13:30:27
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.home_pipettor]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b9ac,0,-1304500
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/home/3
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5f29,0,-1294855
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a60,0,-1271626
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3da6,0,-1246815
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,da26,0,-1223585
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,7939,0,-1199833
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,ecee,0,-1175560
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,9c1e,0,-1151811
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,ddd1,0,-1128063
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1d2b,0,-1105366
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6941,0,-1081610
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,efa6,0,-1058382
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,16db,0,-1033574
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d5c3,0,-1010354
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f2aa,0,-987131
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e98a,0,-962856
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,74d0,0,-939633
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b815,0,-915354
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,fcf5,0,-891601
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,39a1,0,-866793
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e594,0,-843566
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a816,0,-818764
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,21a4,0,-795545
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,153a,0,-772324
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a13f,0,-749102
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5b60,0,-724822
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,8105,0,-702122
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3785,0,-677839
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d8d6,0,-653557
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,c93a,0,-629281
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1e52,0,-605524
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,9df7,0,-581241
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,bf45,0,-556965
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b04,0,-533744
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,9bf6,0,-509466
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e483,0,-486768
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f260,0,-461963
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,7a6c,0,-438745
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,65df,0,-413939
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,7dc4,0,-391246
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f520,0,-367502
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,62d5,0,-344283
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4745,0,-320541
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f750,0,-296270
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,c959,0,-271999
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,27d0,0,-248250
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e6e3,0,-223983
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,311e,0,-200238
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,7a0,0,-175963
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,119,0,-151689
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e36d,0,-127946
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,79e0,0,-103673
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5466,0,-79929
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,28e2,0,-56190
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d5c1,0,-31916
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f24f,0,-8695
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b976,0,-53
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,27f6,0,0
+	- Message: 0 reached in 28.04159903526306 seconds for pipettor_gantry module along Z
+	- Current Time: 13:30:55
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,bcbc,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/home/4
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,25bf,0,0
+	- Message: 0 reached in 0.2526862621307373 seconds for pipettor_gantry module along Drip Plate
+	- Current Time: 13:30:56
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,989b,0,-194669
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/home/2
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,6ed6,0,-189700
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/home/1
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,cb63,0,-187126
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,fabf,0,-181147
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,2b31,0,-175298
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,f6b3,0,-169320
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,73f4,0,-163606
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,2a1c,0,-157632
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,badb,0,-152048
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,12b6,0,-146203
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,e3d3,0,-140489
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,8a3c,0,-134515
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,c796,0,-128800
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,c722,0,-122825
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,b77b,0,-117108
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,6a7b,0,-111004
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,1b4c,0,-105159
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,7e01,0,-99184
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,7a5f,0,-93468
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,4973,0,-87492
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,c440,0,-81776
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,6033,0,-75931
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,195d,0,-70088
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,7573,0,-64114
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,3b07,0,-58530
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,b0cd,0,-52425
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,5bb0,0,-46450
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,6601,0,-40604
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,2d0,0,-34625
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,47ec,0,-28647
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,2d42,0,-22540
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,cc78,0,-16690
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,9e5c,0,-11101
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,f191,0,-4991
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,a707,0,27
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,f9a5,0,0
+	- Message: 0 reached in 16.68990135192871 seconds for pipettor_gantry module along X
+	- Current Time: 13:31:13
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,52cf,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.home_pipettor]: 47.076988220214844 seconds.
+END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.home_pipettor - Time (H:M:S): 13:31:14]
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=-400000&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/9?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,6cee,0,-119956
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.05
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,34f5,0,-94
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/6
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/9?position=-120000&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 94.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:13:29
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:13:30]
+	- Message: Delay set for 180 seconds
+	- Current Time: 17:13:30
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:16:30
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:16:31]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:16:31
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:17:21
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:17:22]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:17:22
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:19:02
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:19:03]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:19:03
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:19:53
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:19:54]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:19:54
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:21:34
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:21:35]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:21:35
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:22:25
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:22:26]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:22:26
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:24:06
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:24:07]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:24:07
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:24:57
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:24:58]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:24:58
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:26:38
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:26:39]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:26:39
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:27:29
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:27:30]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:27:30
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:29:10
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:29:11]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:29:11
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:30:01
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:30:02]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:30:02
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:31:42
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:31:43]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:31:43
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:32:33
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:32:34]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:32:34
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:34:14
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:34:15]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:34:15
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:35:05
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:35:06]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:35:06
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:36:46
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:36:47]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:36:47
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:37:37
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:37:38]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:37:38
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:39:18
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:39:19]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:39:19
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:40:09
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:40:10]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:40:11
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:41:51
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:41:52]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:41:52
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:42:42
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:42:43]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:42:43
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:44:23
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:44:24]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:44:24
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:45:14
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:45:15]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:45:15
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:46:55
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:46:56]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:46:56
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:47:46
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:47:47]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:47:47
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:49:27
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:49:28]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:49:28
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:50:18
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:50:19]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:50:19
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:51:59
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:52:00]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:52:00
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:52:50
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:52:51]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:52:51
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:54:31
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:54:32]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:54:32
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:55:22
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:55:23]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:55:23
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:57:03
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:57:04]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:57:04
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:57:54
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:57:55]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:57:55
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:59:35
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:59:36]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:59:36
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:00:26
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:00:27]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:00:27
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:02:07
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:02:08]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:02:08
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:02:58
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:02:59]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:02:59
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:04:39
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:04:40]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:04:40
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:05:30
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:05:31]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:05:31
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:07:11
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:07:12]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:07:12
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:08:02
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:08:03]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:08:03
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:09:43
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:09:44]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:09:45
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:10:35
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:10:36]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:10:36
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:12:16
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:12:17]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:12:17
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:13:07
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:13:08]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:13:08
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:14:48
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:14:49]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:14:49
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:15:39
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:15:40]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:15:40
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:17:20
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:17:21]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:17:21
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:18:11
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:18:12]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:18:12
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:19:52
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:19:53]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:19:53
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:20:43
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:20:44]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:20:44
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:22:24
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:22:25]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:22:25
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:23:15
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:23:16]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:23:16
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:24:56
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:24:57]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:24:57
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:25:47
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:25:48]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:25:48
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:27:28
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:27:29]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:27:29
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:28:19
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:28:20]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:28:20
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:30:00
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:30:01]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:30:01
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:30:51
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:30:52]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:30:52
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:32:32
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:32:33]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:32:33
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:33:23
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:33:24]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:33:24
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:35:04
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:35:05]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:35:05
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:35:55
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:35:56]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:35:56
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:37:36
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:37:37]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:37:38
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:38:28
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:38:29]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:38:29
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:40:09
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:40:10]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:40:10
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:41:00
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:41:01]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:41:01
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:42:41
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:42:42]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:42:42
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:43:32
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:43:33]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:43:33
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:45:13
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:45:14]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:45:14
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:46:04
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:46:05]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:46:05
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:47:45
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:47:46]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:47:46
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:48:36
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:48:37]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:48:37
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:50:17
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:50:18]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:50:18
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:51:08
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:51:09]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:51:09
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:52:49
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:52:50]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:52:50
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:53:40
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:53:41]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:53:41
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:55:21
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:55:22]
+	- Message: Delay set for 50 seconds
+	- Current Time: 18:55:22
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:56:12
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:56:13]
+	- Message: Delay set for 100 seconds
+	- Current Time: 18:56:13
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 24.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:57:53
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:57:54]

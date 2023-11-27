@@ -1,0 +1,7 @@
+Move to Sample Rack tray C with 1000 uL tips moving right by 5400,7.57,
+Aspirate 50 uLs with 1000 uL tips at Low pressure 1 time,3.33,
+Move relative left by 5400,0.93,
+Delay for 2 seconds,2.02,
+Dispense 200 uLs with 1000 uL tips at Lowest pressure 5 times,37.96,
+Move relative right by 5400,0.95,
+Home pipettor along Z,4.55,

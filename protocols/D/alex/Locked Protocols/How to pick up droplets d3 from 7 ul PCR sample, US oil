@@ -1,0 +1,21 @@
+0: Home pipettor
+1: Pickup tips from B column 8
+2: Move to DG8 tray D column 1 with 200 uL tips
+3: Aspirate 20 uLs with 200 uL tips at Low pressure 1 time
+4: Move to DG8 tray D column 3 with 200 uL tips moving left by 200 up by 591500
+5: Move relative right by 1000
+6: Move relative down by 1500
+7: Dispense 10 uLs with 200 uL tips at Lowest pressure 1 time
+8: Aspirate 25 uLs with 200 uL tips at Lowest pressure 1 time
+9: Comment: Up from 23 which seemed too small
+10: Move relative right by 500
+11: Move relative down by 800
+12: Delay for 15 seconds
+13: Dispense 8 uLs with 200 uL tips at Lowest pressure 1 time
+14: Aspirate 16 uLs with 200 uL tips at Lowest pressure 1 time
+15: Comment: Down from 20
+16: Delay for 10 seconds
+17: Move relative left by 1500
+18: Move relative up by 150000
+19: Dispense 25 uLs with 200 uL tips at Lowest pressure 1 time
+20: Dispense 2 uLs with 200 uL tips at Lowest pressure 1 time

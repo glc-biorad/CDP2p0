@@ -1,0 +1,16 @@
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":32734,"message":">b,2238,?pos,7f85","response":"<b,2238,0,-399957\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/10?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":24821,"message":">a,ed8b,?pos,7c3b","response":"<a,ed8b,0,0\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":24843,"message":">b,fd80,?pos,3221","response":"<b,fd80,0,-88871\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":26071,"message":">b,79e6,?pos,34f9","response":"<b,79e6,0,-88871\r"}

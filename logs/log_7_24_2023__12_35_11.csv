@@ -1,0 +1,8 @@
+Move to Heater/Shaker column 1 with 1000 uL tips,5.64,
+Aspirate 900 uLs with 1000 uL tips at Low pressure 1 time,6.4,
+Move to Sample Rack tray C with 1000 uL tips moving right by 5400,7.54,
+Aspirate 50 uLs with 1000 uL tips at Low pressure 1 time,3.36,
+Move relative left by 5400,0.97,
+Dispense 200 uLs with 1000 uL tips at Lowest pressure 5 times,38.13,
+Move relative right by 5400,0.96,
+Home pipettor along Z,4.52,

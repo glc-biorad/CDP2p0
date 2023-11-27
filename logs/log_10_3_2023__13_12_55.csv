@@ -1,0 +1,6 @@
+Pickup tips from B column 4,13.01,
+Move to DG8 tray C column 3 with 200 uL tips moving left by 200 up by 591500,5.6,
+Delay for 1 second,1.02,
+Move relative right by 1000,0.9,
+Delay for 1 second,1.02,
+Pause for user input -> Cancel Pressed,51.97,

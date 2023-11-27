@@ -501,7 +501,7 @@ class UpperGantry(api.util.motor.Motor):
         self.turn_on_air_valve(valve_1_tip_eject)
         self.__chassis.turn_on_control_relay()
         self.__chassis.turn_on_pump()
-        time.sleep(1.2)
+        time.sleep(2.2)
         self.__chassis.turn_off_pump()
         self.__chassis.turn_off_control_relay()
         self.turn_off_air_valve(valve_1_tip_eject)
@@ -1318,7 +1318,7 @@ class UpperGantry(api.util.motor.Motor):
             max_flow_rate = 99999
         elif droplet_type.lower()[0:2] == 'sm' or droplet_type.lower()[0:2] == 'pi':
             max_time = 166 
-            max_push_out_time = 23
+            max_push_out_time = 12
             max_flow_rate = 99999
         elif droplet_type.lower()[0:2] == 'de':
             max_time = 65

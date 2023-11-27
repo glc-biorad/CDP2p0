@@ -1,0 +1,6 @@
+0: Pickup tips from B column 1
+1: Move to DG8 tray D column 3 with 1000 uL tips moving down by 2000
+2: Delay for 1 second
+3: Generate Demo Droplets
+4: Delay for 1 second
+5: Home pipettor

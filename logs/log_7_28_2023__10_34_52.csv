@@ -1,0 +1,7 @@
+Move to DG8 tray D column 3 with 50 uL tips moving left by 200 up by 591500,7.85,
+Move relative right by 500,0.96,
+Move relative down by 1500,0.98,
+Delay for 1 second,1.03,
+Aspirate 40 uLs with 200 uL tips at Lowest pressure 1 time,5.65,
+Delay for 1 second,1.03,
+Home pipettor along Z,4.83,

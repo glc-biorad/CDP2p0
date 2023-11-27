@@ -1,0 +1,17 @@
+Heater,Location,x-coordinate,y-coordinate,z-coordinate
+C,TopLeft Focus,-183686,-726326,-50000
+C,TopRight Focus,-632321,-726326,-40000
+C,BotLeft Focus,-183686,-913814,-10000
+C,BotRight Focus,-632321,-913814,
+C,Chamber 1 Inlet,-208157,-741950,
+C,Chamber 1 Outlet,-616007,-741950,
+C,Chamber 8 Inlet,-208157,-903398,
+C,Chamber 8 Outlet,-616007,-903398,
+D,TopLeft Focus,-183686,-1006256,-50000
+D,TopRight Focus,-632321,-1007558,-40000
+D,BotLeft Focus,-183686,-1196348,-10000
+D,BotRight Focus,-632321,-1196348,
+D,Chamber 1 Inlet,-212235,-1023182,
+D,Chamber 1 Outlet,-620085,-1023182,
+D,Chamber 8 Inlet,-212235,-1184630,
+D,Chamber 8 Outlet,-620085,-1184630,

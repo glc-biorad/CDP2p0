@@ -1,0 +1,70 @@
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:29:25
+	- Message: Device control information not available.
+	- Current Time: 11:29:25
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:29:26
+	- Message: Device control information not available.
+	- Current Time: 11:29:26
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:29:26
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:29:28
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.833601713180542 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:29:28]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:29:28
+	- Message: Device control information not available.
+	- Current Time: 11:29:28
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:29:28
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:29:29
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.373227596282959 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:29:29]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:29:29
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:29:31
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3613717555999756 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:29:31]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:29:31
+	- Message: Device control information not available.
+	- Current Time: 11:29:31
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/8?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,6e3d,0,-129933
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/9?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,83fa,0,-129931
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK

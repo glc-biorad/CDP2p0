@@ -1,0 +1,48 @@
+﻿Chip Location,x-coordinate,y-coordinate,z-coordinate,
+Chamber 8 Inlet,-232628,-9391,-150000,*corner
+Chamber 8 Middle,-412082,-9391,-140000,
+Chamber 8 Outlet,-599693,-9391,-140000,*corner
+Chamber 6 Inlet,-232628,-56263,-140000,
+Chamber 6 Middle,-412082,-56263,-140000,
+Chamber 6 Outlet,-599693,-56263,-140000,
+Chamber 3 Inlet,-232628,-126571,-150000,
+Chamber 3 Middle,-412082,-126571,-150000,
+Chamber 3 Outlet,-599693,-126571,-150000,
+Chamber 1 Inlet,-232628,-168235,-150000,*corner
+Chamber 1 Outlet,-599693,-168235,-150000,*corner
+,0,0,0,
+Chamber 8 Inlet,-224471,-291156,-230000,*corner
+Chamber 8 Middle,-403925,-291156,-230000,
+Chamber 8 Outlet,-591536,-291156,-230000,*corner
+Chamber 6 Inlet,-224471,-335424,-230000,
+Chamber 6 Middle,-403925,-335424,-235000,
+Chamber 6 Outlet,-591536,-335424,-235000,
+Chamber 3 Inlet,-224471,-405732,-230000,
+Chamber 3 Middle,-411124,-405732,-240000,
+Chamber 3 Outlet,-598735,-405732,-240000,
+Chamber 1 Inlet,-231670,-452604,-240000,*corner
+Chamber 1 Outlet,-598735,-452604,-240000,*corner
+,0,0,0,
+Chamber 8 Inlet,-224471,-739584,-125000,*corner
+Chamber 8 Middle,-403925,-739584,-125000,
+Chamber 8 Outlet,-591536,-739594,-125000,*corner
+Chamber 6 Inlet,-224471,-786456,-130000,
+Chamber 6 Middle,-403925,-786456,-130000,
+Chamber 6 Outlet,-591536,-786456,-130000,
+Chamber 3 Inlet,-224471,-856764,-145000,
+Chamber 3 Middle,-403925,-856764,-145000,
+Chamber 3 Outlet,-591536,-856764,-145000,
+Chamber 1 Inlet,-224471,-903636,-150000,*corner
+Chamber 1 Outlet,-591536,-903636,-150000,*corner
+,0,0,0,
+Chamber 8 Inlet,-231670,-1021880,-200000,*corner
+Chamber 8 Middle,-411124,-1021880,-205000,
+Chamber 8 Outlet,-598735,-1021880,-220000,*corner
+Chamber 6 Inlet,-231670,-1068752,-220000,
+Chamber 6 Middle,-411124,-1068752,-220000,
+Chamber 6 Outlet,-598735,-1068752,-220000,
+Chamber 3 Inlet,-231670,-1139060,-230000,
+Chamber 3 Middle,-411124,-1139060,-230000,
+Chamber 3 Outlet,-598735,-1139060,-230000,
+Chamber 1 Inlet,-231670,-1185932,-220000,*corner
+Chamber 1 Outlet,-598735,-1185932,-230000,*corner

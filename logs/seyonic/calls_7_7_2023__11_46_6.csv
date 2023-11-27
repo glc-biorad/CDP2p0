@@ -1,0 +1,5 @@
+Seyonic Pipettor Initializing...,Fri Jul  7 11:46:06 2023,
+change_timeout(timeout_in_seconds=200),Fri Jul  7 11:46:06 2023,
+dispense(pressure=100),Fri Jul  7 11:46:07 2023,
+set_pressure(pressure=100; direction=1),Fri Jul  7 11:46:07 2023,
+set_pressure(pressure=0; direction=1),Fri Jul  7 11:46:09 2023,

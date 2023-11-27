@@ -1,0 +1,22 @@
+Action,Type,Pressure (mbar),Ch 1 - Status,Ch 2 - Status,Ch 3 - Status,Ch 4 - Status,Ch 5 - Status,Ch 6 - Status,Ch 7 - Status,Ch 8 - Status,Elapsed Time (s),Time (HH:MM:SS),Date (MM/DD/YYYY)
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.0, 14:49:9, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.015224695205688477, 14:49:9, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.030694961547851562, 14:49:9, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.0463261604309082, 14:49:9, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.0627281665802002, 14:49:9, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.07855510711669922, 14:49:9, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.0934445858001709, 14:49:9, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.10870218276977539, 14:49:9, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.12464189529418945, 14:49:9, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.13947772979736328, 14:49:9, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.15480637550354004, 14:49:9, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.17072463035583496, 14:49:9, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.18632936477661133, 14:49:10, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.20182156562805176, 14:49:10, 8/8/2023
+Aspirate, Actual Pressure (mbar), -3, -8, -8, -8, -8, -8, -8, -8, -8, 0.21671032905578613, 14:49:10, 8/8/2023
+Aspirate, Actual Pressure (mbar), -4, -8, -8, -8, -8, -8, -8, -8, -8, 0.23247742652893066, 14:49:10, 8/8/2023
+Aspirate, Trigger, -8, 1, 1, 1, 1, 1, 1, 1, 1, 0.015796184539794922, 14:49:10, 8/8/2023
+Aspirate, In Progress, -8, 1, 1, 1, 1, 1, 1, 1, 1, 0.2658681869506836, 14:49:10, 8/8/2023
+Aspirate, In Progress, -8, 1, 1, -19, -19, -19, 1, -19, 1, 0.3907508850097656, 14:49:10, 8/8/2023
+Aspirate, Error, 0, 1, 1, -19, -19, -19, 1, -19, 1, 1.4520795345306396, 14:49:11, 8/8/2023
+Aspirate, Completed, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.7168641090393066, 14:49:12, 8/8/2023

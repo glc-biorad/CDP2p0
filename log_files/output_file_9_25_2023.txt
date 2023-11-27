@@ -1,0 +1,998 @@
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 09:07:20
+	- Message: Device control information not available.
+	- Current Time: 09:07:20
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 09:07:21
+	- Message: Device control information not available.
+	- Current Time: 09:07:21
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 09:07:21
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 09:07:23
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.6258704662322998 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 09:07:23]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 09:07:23
+	- Message: Device control information not available.
+	- Current Time: 09:07:23
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 09:07:23
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 09:07:24
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3775911331176758 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 09:07:24]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 09:07:24
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 09:07:26
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.369206428527832 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 09:07:26]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 09:07:26
+	- Message: Device control information not available.
+	- Current Time: 09:07:26
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/8?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,eaac,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/9?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,a7c8,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,8b6e,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/6
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/8?position=-120000&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/8?position=0&velocity=100000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=-790000&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/8?position=-135000&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/9?position=-135000&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 94.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:31:38
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:31:39]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 94.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:31:39
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:31:40]
+	- Message: Delay set for 300 seconds
+	- Current Time: 12:31:40
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:36:40
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:36:41]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:36:41
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:36:42]
+	- Message: Delay set for 100 seconds
+	- Current Time: 12:36:42
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:38:22
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:38:23]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:38:23
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:38:24]
+	- Message: Delay set for 50 seconds
+	- Current Time: 12:38:24
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:39:14
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:39:15]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:39:15
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:39:16]
+	- Message: Delay set for 100 seconds
+	- Current Time: 12:39:16
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:40:56
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:40:57]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:40:57
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:40:59]
+	- Message: Delay set for 50 seconds
+	- Current Time: 12:40:59
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:41:49
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:41:50]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:41:50
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:41:51]
+	- Message: Delay set for 100 seconds
+	- Current Time: 12:41:51
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:43:31
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:43:32]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:43:32
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:43:33]
+	- Message: Delay set for 50 seconds
+	- Current Time: 12:43:33
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:44:23
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:44:24]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:44:24
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:44:25]
+	- Message: Delay set for 100 seconds
+	- Current Time: 12:44:25
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:46:05
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:46:06]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:46:06
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:46:07]
+	- Message: Delay set for 50 seconds
+	- Current Time: 12:46:07
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:46:57
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:46:58]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:46:58
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:46:59]
+	- Message: Delay set for 100 seconds
+	- Current Time: 12:46:59
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:48:39
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:48:40]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:48:40
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:48:41]
+	- Message: Delay set for 50 seconds
+	- Current Time: 12:48:41
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:49:31
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:49:32]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:49:32
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:49:33]
+	- Message: Delay set for 100 seconds
+	- Current Time: 12:49:33
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:51:13
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:51:14]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:51:14
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:51:15]
+	- Message: Delay set for 50 seconds
+	- Current Time: 12:51:15
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:52:05
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:52:06]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:52:06
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:52:07]
+	- Message: Delay set for 100 seconds
+	- Current Time: 12:52:07
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:53:47
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:53:48]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:53:48
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:53:49]
+	- Message: Delay set for 50 seconds
+	- Current Time: 12:53:49
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:54:39
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:54:40]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:54:40
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:54:41]
+	- Message: Delay set for 100 seconds
+	- Current Time: 12:54:41
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:56:21
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:56:22]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:56:22
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:56:23]
+	- Message: Delay set for 50 seconds
+	- Current Time: 12:56:23
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:57:13
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:57:14]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:57:14
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:57:15]
+	- Message: Delay set for 100 seconds
+	- Current Time: 12:57:15
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:58:55
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:58:56]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:58:56
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:58:57]
+	- Message: Delay set for 50 seconds
+	- Current Time: 12:58:57
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:59:47
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:59:48]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:59:48
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:59:49]
+	- Message: Delay set for 100 seconds
+	- Current Time: 12:59:49
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:01:29
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:01:30]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:01:30
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:01:31]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:01:32
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:02:22
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:02:23]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:02:23
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:02:24]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:02:24
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:04:04
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:04:05]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:04:05
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:04:06]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:04:06
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:04:56
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:04:57]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:04:57
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:04:58]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:04:58
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:06:38
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:06:39]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:06:39
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:06:40]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:06:40
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:07:30
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:07:31]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:07:31
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:07:32]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:07:32
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:09:12
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:09:13]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:09:13
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:09:14]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:09:14
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:10:04
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:10:05]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:10:05
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:10:06]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:10:06
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:11:46
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:11:47]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:11:47
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:11:48]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:11:48
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:12:38
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:12:39]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:12:39
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:12:40]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:12:40
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:14:20
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:14:21]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:14:21
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:14:22]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:14:22
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:15:12
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:15:13]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:15:13
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:15:14]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:15:14
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:16:54
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:16:55]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:16:55
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:16:56]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:16:56
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:17:46
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:17:47]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:17:47
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:17:48]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:17:48
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:19:28
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:19:29]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:19:29
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:19:30]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:19:30
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:20:20
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:20:21]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:20:21
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:20:22]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:20:22
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:22:02
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:22:03]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:22:03
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:22:04]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:22:04
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:22:54
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:22:55]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:22:55
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:22:57]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:22:57
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:24:37
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:24:38]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:24:38
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:24:39]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:24:39
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:25:29
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:25:30]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:25:30
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:25:31]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:25:31
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:27:11
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:27:12]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:27:12
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:27:13]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:27:13
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:28:03
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:28:04]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:28:04
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:28:05]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:28:05
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:29:45
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:29:46]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:29:46
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:29:47]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:29:47
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:30:37
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:30:38]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:30:38
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:30:39]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:30:39
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:32:19
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:32:20]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:32:20
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:32:21]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:32:21
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:33:11
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:33:12]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:33:12
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:33:13]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:33:13
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:34:53
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:34:54]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:34:54
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:34:55]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:34:55
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:35:45
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:35:46]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:35:46
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:35:47]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:35:47
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:37:27
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:37:28]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:37:28
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:37:29]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:37:29
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:38:19
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:38:20]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:38:20
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:38:21]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:38:21
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:40:01
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:40:02]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:40:02
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:40:03]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:40:03
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:40:53
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:40:54]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:40:54
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:40:55]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:40:55
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:42:35
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:42:36]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:42:36
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:42:37]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:42:37
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:43:27
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:43:28]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:43:28
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:43:30]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:43:30
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:45:10
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:45:11]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:45:11
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:45:12]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:45:12
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:46:02
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:46:03]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:46:03
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:46:04]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:46:04
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:47:44
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:47:45]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:47:45
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:47:46]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:47:46
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:48:36
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:48:37]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:48:37
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:48:38]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:48:38
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:50:18
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:50:19]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:50:19
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:50:20]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:50:20
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:51:10
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:51:11]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:51:11
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:51:12]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:51:12
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:52:52
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:52:53]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:52:53
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:52:54]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:52:54
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:53:44
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:53:45]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:53:45
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:53:46]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:53:46
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:55:26
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:55:27]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:55:27
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:55:28]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:55:28
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:56:18
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:56:19]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:56:19
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:56:20]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:56:20
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:58:00
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:58:01]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:58:01
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:58:02]
+	- Message: Delay set for 50 seconds
+	- Current Time: 13:58:02
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:58:52
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:58:53]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 13:58:53
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 13:58:54]
+	- Message: Delay set for 100 seconds
+	- Current Time: 13:58:54
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:00:34
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:00:35]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:00:35
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:00:36]
+	- Message: Delay set for 50 seconds
+	- Current Time: 14:00:36
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:01:26
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:01:27]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:01:27
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:01:28]
+	- Message: Delay set for 100 seconds
+	- Current Time: 14:01:28
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:03:08
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:03:09]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:03:09
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:03:10]
+	- Message: Delay set for 50 seconds
+	- Current Time: 14:03:10
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:04:00
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:04:01]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:04:01
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:04:02]
+	- Message: Delay set for 100 seconds
+	- Current Time: 14:04:02
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:05:42
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:05:44]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:05:44
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:05:45]
+	- Message: Delay set for 50 seconds
+	- Current Time: 14:05:45
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:06:35
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:06:36]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:06:36
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:06:37]
+	- Message: Delay set for 100 seconds
+	- Current Time: 14:06:37
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:08:17
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:08:18]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:08:18
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:08:19]
+	- Message: Delay set for 50 seconds
+	- Current Time: 14:08:19
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:09:09
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:09:10]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:09:10
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:09:11]
+	- Message: Delay set for 100 seconds
+	- Current Time: 14:09:11
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:10:51
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:10:52]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:10:52
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:10:53]
+	- Message: Delay set for 50 seconds
+	- Current Time: 14:10:53
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:11:43
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:11:44]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:11:44
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:11:45]
+	- Message: Delay set for 100 seconds
+	- Current Time: 14:11:45
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:13:25
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:13:26]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:13:26
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:13:27]
+	- Message: Delay set for 50 seconds
+	- Current Time: 14:13:27
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:14:17
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:14:18]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:14:18
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:14:19]
+	- Message: Delay set for 100 seconds
+	- Current Time: 14:14:19
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:15:59
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:16:00]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:16:00
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:16:01]
+	- Message: Delay set for 50 seconds
+	- Current Time: 14:16:01
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:16:51
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:16:52]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:16:52
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:16:53]
+	- Message: Delay set for 100 seconds
+	- Current Time: 14:16:53
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 100.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:18:33
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:18:34]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:18:34
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:18:35]
+	- Message: Delay set for 50 seconds
+	- Current Time: 14:18:35
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 64.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:19:25
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:19:26]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 63.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:19:26
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:19:27]
+	- Message: Delay set for 100 seconds
+	- Current Time: 14:19:27
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 24.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:21:07
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:21:08]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 24.0 degC with blocking set to False.
+	- Start Time (H:M:S): 14:21:08
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 14:21:09]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 14:22:14
+	- Message: Device control information not available.
+	- Current Time: 14:22:14
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 14:22:15
+	- Message: Device control information not available.
+	- Current Time: 14:22:15
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 14:22:15
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 14:22:17
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.7654125690460205 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 14:22:17]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 14:22:17
+	- Message: Device control information not available.
+	- Current Time: 14:22:17
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 14:22:17
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 14:22:18
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.392270565032959 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 14:22:18]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 14:22:18
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 14:22:19
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.373481035232544 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 14:22:19]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 14:22:19
+	- Message: Device control information not available.
+	- Current Time: 14:22:19
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/8?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/8
+		- Message (RECEIVED)
+			- Duration (s): 0.05
+			- Address: 8
+			- Command Sent: ?pos
+			- Respone Received: <8,219b,0,-134829
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/9?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/9
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 9
+			- Command Sent: ?pos
+			- Respone Received: <9,499d,0,-134956
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/6?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/6
+		- Message (RECEIVED)
+			- Duration (s): 0.03
+			- Address: 6
+			- Command Sent: ?pos
+			- Respone Received: <6,3a77,0,-185
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/6
+		- Message (RECEIVED): Status Code: OK

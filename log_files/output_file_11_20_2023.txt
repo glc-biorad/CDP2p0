@@ -1,0 +1,2898 @@
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:42:14
+	- Message: Device control information not available.
+	- Current Time: 11:42:14
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:42:16
+	- Message: Device control information not available.
+	- Current Time: 11:42:16
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:42:16
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:42:24
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 7.707308530807495 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:42:24]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:42:26
+	- Message: Device control information not available.
+	- Current Time: 11:42:26
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:42:26
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:42:33
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 7.108065366744995 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:42:33]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:42:33
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:42:40
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 7.131722688674927 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:42:40]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:42:40
+	- Message: Device control information not available.
+	- Current Time: 11:42:40
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:54:31
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:54:32
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.365323781967163 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:54:32]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:56:33
+	- Message: Device control information not available.
+	- Current Time: 11:56:33
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:56:35
+	- Message: Device control information not available.
+	- Current Time: 11:56:35
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:56:35
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:56:42
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 7.5594260692596436 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:56:42]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:56:47
+	- Message: Device control information not available.
+	- Current Time: 11:56:47
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:56:47
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:56:54
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 7.122179985046387 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:56:54]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:56:54
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:57:01
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 7.1295013427734375 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:57:01]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 11:57:01
+	- Message: Device control information not available.
+	- Current Time: 11:57:01
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 11:57:33
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 11:57:40
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 7.149787664413452 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 11:57:40]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 95.0 degC with blocking set to False.
+	- Start Time (H:M:S): 11:57:40
+ERROR
+	- Module: meerstetter.py
+	- Function: change_temperature
+	- Message: Got 'NoneType' object has no attribute 'write' when talking to address 9, changing temperature to 95.0 C
+	- Current Time: 11:57:40
+	- Message: Delay set for 3 minutes
+	- Current Time: 11:57:40
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:00:09
+	- Message: Device control information not available.
+	- Current Time: 12:00:09
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:00:10
+	- Message: Device control information not available.
+	- Current Time: 12:00:10
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:00:10
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:00:11
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.4204752445220947 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:00:11]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:00:11
+	- Message: Device control information not available.
+	- Current Time: 12:00:11
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:00:11
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:00:13
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3923239707946777 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:00:13]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:00:13
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:00:14
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3751716613769531 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:00:14]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:00:14
+	- Message: Device control information not available.
+	- Current Time: 12:00:14
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 26.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:00:22
+ERROR
+	- Module: peltier_communication.py
+	- Function: compare_with_response
+	- Message: Error returned  when comparing the response (!0900022D59!0900034) received with the Meerstetter. If the response is None this could mean that the board you are trying to communicate with is not connected, not powered, or in an error state and must be reset.
+	- Current Time: 12:00:22
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:00:33
+	- Message: Device control information not available.
+	- Current Time: 12:00:33
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:00:34
+	- Message: Device control information not available.
+	- Current Time: 12:00:34
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:00:34
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:00:35
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.4869260787963867 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:00:35]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:00:35
+	- Message: Device control information not available.
+	- Current Time: 12:00:35
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:00:35
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:00:37
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.370168685913086 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:00:37]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:00:37
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:00:38
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3707709312438965 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:00:38]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:00:38
+	- Message: Device control information not available.
+	- Current Time: 12:00:38
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 28.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:00:47
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:00:48]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:01:05
+	- Message: Device control information not available.
+	- Current Time: 12:01:05
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:01:06
+	- Message: Device control information not available.
+	- Current Time: 12:01:06
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:01:06
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:01:08
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.4840834140777588 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:01:08]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:01:08
+	- Message: Device control information not available.
+	- Current Time: 12:01:08
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:01:08
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:01:09
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3715949058532715 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:01:09]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:01:09
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:01:10
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3708558082580566 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:01:10]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 12:01:10
+	- Message: Device control information not available.
+	- Current Time: 12:01:10
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 12:01:43
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 12:01:45
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3888342380523682 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 12:01:45]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 95.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:01:45
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:01:46]
+	- Message: Delay set for 3 minutes
+	- Current Time: 12:01:46
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 95.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:04:46
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:04:47]
+	- Message: Delay set for 60 seconds
+	- Current Time: 12:04:47
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:05:47
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:05:48]
+	- Message: Delay set for 240 seconds
+	- Current Time: 12:05:48
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 95.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:09:48
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:09:49]
+	- Message: Delay set for 60 seconds
+	- Current Time: 12:09:49
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:10:49
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:10:50]
+	- Message: Delay set for 240 seconds
+	- Current Time: 12:10:50
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 95.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:14:50
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:14:51]
+	- Message: Delay set for 60 seconds
+	- Current Time: 12:14:51
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:15:51
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:15:52]
+	- Message: Delay set for 240 seconds
+	- Current Time: 12:15:52
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 95.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:19:52
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:19:53]
+	- Message: Delay set for 60 seconds
+	- Current Time: 12:19:53
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:20:53
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:20:54]
+	- Message: Delay set for 240 seconds
+	- Current Time: 12:20:54
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 95.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:24:54
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:24:55]
+	- Message: Delay set for 60 seconds
+	- Current Time: 12:24:55
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:25:55
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:25:56]
+	- Message: Delay set for 240 seconds
+	- Current Time: 12:25:56
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 9 to 30.0 degC with blocking set to False.
+	- Start Time (H:M:S): 12:29:56
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 12:29:57]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 15:02:58
+	- Message: Device control information not available.
+	- Current Time: 15:02:58
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 15:03:00
+	- Message: Device control information not available.
+	- Current Time: 15:03:00
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 15:03:00
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 15:03:01
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.7721364498138428 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 15:03:01]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 15:03:01
+	- Message: Device control information not available.
+	- Current Time: 15:03:01
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 15:03:01
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 15:03:03
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.374401330947876 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 15:03:03]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 15:03:03
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 15:03:04
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3677937984466553 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 15:03:04]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 15:03:04
+	- Message: Device control information not available.
+	- Current Time: 15:03:04
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 28.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:03:15
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:03:16]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 24.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:03:23
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:03:24]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 95.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:08:32
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:08:33]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 95.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:08:33
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:08:34]
+	- Message: Delay set for 600 seconds
+	- Current Time: 15:08:34
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 15:09:21
+	- Message: Device control information not available.
+	- Current Time: 15:09:21
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 15:09:22
+	- Message: Device control information not available.
+	- Current Time: 15:09:22
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 15:09:22
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 15:09:23
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.6393280029296875 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 15:09:23]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 15:09:23
+	- Message: Device control information not available.
+	- Current Time: 15:09:23
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 15:09:23
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 15:09:25
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3857426643371582 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 15:09:25]
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 15:09:25
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 15:09:26
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3737447261810303 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 15:09:26]
+START [Module: camera.py - Function: api.reader.camera.camera]
+	- Message: Getting camera device information.
+	- Start Time (H:M:S): 15:09:26
+	- Message: Device control information not available.
+	- Current Time: 15:09:26
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 15:09:58
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 15:10:00
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3851826190948486 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 15:10:00]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-100000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,31da,0,-1342
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,da1,0,-5134
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/4?position=0&velocity=2500000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,efb,0,0
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,8516,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]: 0.24424123764038086 seconds.
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/2?position=-196169&velocity=3200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,9a54,0,-1483
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,a678,0,-5412
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/1?position=-243800&velocity=300000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,9a5b,0,-1424
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,ded7,0,-4983
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,ed17,0,-11957
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,f17,0,-39687
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,6080,0,-78537
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,50b2,0,-121436
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,c940,0,-162375
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-1113500&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,2f1c,0,-101342
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,49f4,0,-105375
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4a0c,0,-113223
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5278,0,-142123
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f8dc,0,-191765
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,616d,0,-276375
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,228c,0,-389482
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f538,0,-494969
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,117,0,-610983
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,85f8,0,-727030
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,8e99,0,-832515
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,cc33,0,-931501
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 15:11:01
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 15:11:03
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3829450607299805 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 15:11:03]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-100000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f5ed,0,-1112031
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,bc1d,0,-1107871
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,af2f,0,-1100929
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.36
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,cd5e,0,-1073178
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f146,0,-981036
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,9089,0,-885941
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,ce69,0,-781461
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5ca5,0,-670681
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,c50c,0,-565130
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,fe49,0,-454343
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,ec18,0,-333523
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/4?position=0&velocity=2500000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,6991,0,0
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,aedf,0,-243800
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]: 0.23918724060058594 seconds.
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/2?position=-108500&velocity=3200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,ad19,0,-194548
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,4e74,0,-189676
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/1?position=-9000&velocity=300000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,c435,0,-242610
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,f055,0,-239032
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,421c,0,-233317
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,b026,0,-209165
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,32f8,0,-166988
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,6c10,0,-127990
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,459,0,-85093
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-1070000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,ef6d,0,-101111
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,99d3,0,-104906
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3cff,0,-110885
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f8e1,0,-133297
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,50e9,0,-188961
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,bca5,0,-263983
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a06a,0,-368781
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,2a90,0,-484859
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1d24,0,-590376
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,9c69,0,-711727
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,8e1a,0,-827583
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e42c,0,-919020
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 15:11:21
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 15:11:22
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3750314712524414 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 15:11:22]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-100000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,538,0,-1068657
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a351,0,-1065097
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,69ff,0,-1057429
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,cfd,0,-1031527
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,c08b,0,-978047
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b1ff,0,-897628
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e30d,0,-795957
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1fc0,0,-679904
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,86b3,0,-563812
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a8d9,0,-447745
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4060,0,-327247
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/4?position=0&velocity=2500000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,f398,0,0
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,2118,0,-9000
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]: 0.23936891555786133 seconds.
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/2?position=-100000&velocity=3200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,7f43,0,-107275
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,475,0,-102887
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/1?position=-7000&velocity=300000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,60a4,0,-7922
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,9538,0,-7001
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-1060000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,dea0,0,-101111
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6b15,0,-105141
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1fcc,0,-112578
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,ca7d,0,-136707
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,8f17,0,-191987
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f0ef,0,-268176
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f062,0,-374090
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,ba9d,0,-490150
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1ff4,0,-595692
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,991d,0,-711800
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b4ee,0,-827317
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 15:11:53
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 15:11:54
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3784213066101074 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 15:11:54]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-100000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b3a4,0,-1058532
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,c079,0,-1054864
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,ce64,0,-1048058
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3870,0,-1019712
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,201e,0,-971143
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,7038,0,-892011
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,c051,0,-796727
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1ae6,0,-691269
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,abd6,0,-569981
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e3b4,0,-453938
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6e7c,0,-348501
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d20c,0,-243762
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/4?position=0&velocity=2500000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,3ee,0,0
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,827f,0,-7000
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]: 0.25446105003356934 seconds.
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/2?position=-1784000&velocity=3200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,43e1,0,-101224
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,c3cc,0,-104904
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,f914,0,-112642
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,73a9,0,-142632
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,702e,0,-205764
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,cf94,0,-282416
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,ca98,0,-404872
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,401c,0,-537767
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,f3d6,0,-695214
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,d8ea,0,-906613
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/1?position=-46550&velocity=300000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,3a24,0,-8079
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,1b6,0,-11767
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-1065000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,bd54,0,-101224
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,15ed,0,-104900
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,de13,0,-110867
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e024,0,-136622
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f615,0,-188772
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6255,0,-263654
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,955f,0,-368324
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e395,0,-484304
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,73d2,0,-589761
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a893,0,-711062
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,53da,0,-816468
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e1f2,0,-917270
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 15:12:10
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 15:12:11
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.395348310470581 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 15:12:11]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-100000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f112,0,-1063658
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5c34,0,-1059627
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,2376,0,-1053076
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a5d2,0,-1022896
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5af7,0,-963929
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,92f2,0,-888736
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a370,0,-775707
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e593,0,-670245
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,c3e2,0,-564804
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,be45,0,-443512
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3db0,0,-333306
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/4?position=0&velocity=2500000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,4d5f,0,0
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,dc4c,0,-46550
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.get_position_from_axis]: 0.21718788146972656 seconds.
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/2?position=-100000&velocity=3200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,75be,0,-1782378
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,cad4,0,-1778325
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,7af,0,-1770611
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,30b6,0,-1737057
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,f3ec,0,-1681443
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,ec9d,0,-1591890
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,4b40,0,-1466478
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,a830,0,-1331008
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,5fde,0,-1153600
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,ea4f,0,-946501
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/1?position=-7000&velocity=300000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,98b,0,-45243
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,3bd3,0,-41554
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/move/3?position=-1060000&velocity=800000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,833,0,-101109
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,250a,0,-104668
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,6d32,0,-110863
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,7643,0,-131597
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,177c,0,-174600
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,fa9b,0,-243675
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+START [Module: upper_gantry.py - Function: __init__]
+	- Message: Initializing the Upper Gantry.
+	- Start Time (H:M:S): 15:12:19
+
+TIMING: Starting the timer for module [C:\CDP2p0\api\upper_gantry\upper_gantry.py] and function [api.upper_gantry.upper_gantry]
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a207,0,-347480
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d9d3,0,-452807
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4ef9,0,-563539
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,8837,0,-669026
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,49bc,0,-774489
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3cac,0,-887326
+	- Message: Turning on the Motor Relay, this will take 10 seconds.
+	- Current Time: 15:12:21
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.__init__]: 1.3746087551116943 seconds.
+END [Module: upper_gantry.py - Function: __init__ - Time (H:M:S): 15:12:21]
+START [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.home_pipettor]
+	- Message: Homing the Pipettor.
+	- Start Time (H:M:S): 15:12:21
+
+TIMING: Starting the timer for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.home_pipettor]
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,131,0,-1001535
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/home/3
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1d36,0,-1053822
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4efc,0,-1034024
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,9410,0,-1010294
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1ccb,0,-987097
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,642d,0,-962834
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,65c7,0,-938584
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,5b04,0,-915377
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,30ff,0,-891107
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,2756,0,-866834
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,ddda,0,-843617
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,ab67,0,-819348
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4cdc,0,-795080
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b063,0,-771866
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,8fd0,0,-748126
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,2c69,0,-724917
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b0c2,0,-701181
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,2f8f,0,-676389
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,db32,0,-653177
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,dd4c,0,-629435
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,23be,0,-605173
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e9ee,0,-581956
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e40,0,-558739
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,38a7,0,-534469
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b7d8,0,-510202
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,7cef,0,-486456
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,dd3d,0,-462712
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,4663,0,-439495
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f85,0,-415222
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b277,0,-390952
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,2f64,0,-367736
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f015,0,-342939
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.23
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,9916,0,-318666
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,35fb,0,-294396
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,3822,0,-270125
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,b34f,0,-246377
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,549a,0,-223159
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.24
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,1749,0,-198357
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,f643,0,-175141
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,aab3,0,-150864
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,bb9a,0,-127114
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,a97,0,-103894
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,c5fb,0,-79623
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,93f1,0,-55877
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,2502,0,-32657
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,c8f7,0,-8383
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,e2e2,0,380
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/3
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 3
+			- Command Sent: ?pos
+			- Respone Received: <3,d77f,0,0
+	- Message: 0 reached in 23.06398916244507 seconds for pipettor_gantry module along Z
+	- Current Time: 15:12:44
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,48a3,0,0
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/home/4
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/4
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 4
+			- Command Sent: ?pos
+			- Respone Received: <4,c818,0,0
+	- Message: 0 reached in 0.23297595977783203 seconds for pipettor_gantry module along Drip Plate
+	- Current Time: 15:12:45
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,a37f,0,-100000
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/home/2
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,347f,0,-7000
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/home/1
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,703c,0,-4686
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/1
+		- Message (RECEIVED)
+			- Duration (s): 0.22
+			- Address: 1
+			- Command Sent: ?pos
+			- Respone Received: <1,fdbe,0,0
+	- Message: 0 reached in 0.7303586006164551 seconds for pipettor_gantry module along X
+	- Current Time: 15:12:47
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.2
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,3c43,0,4468
+		- Message (SEND): http://127.0.0.1:8000/pipettor_gantry/axis/position/2
+		- Message (RECEIVED)
+			- Duration (s): 0.21
+			- Address: 2
+			- Command Sent: ?pos
+			- Respone Received: <2,369a,0,0
+
+TIMING: Total Elapsed Time for module [upper_gantry.py] and function [api.upper_gantry.upper_gantry.home_pipettor]: 26.541529178619385 seconds.
+END [Module: upper_gantry.py - Function: api.upper_gantry.upper_gantry.home_pipettor - Time (H:M:S): 15:12:47]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:18:34
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:18:35]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:18:35
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:18:36]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:18:36
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:20:16
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:20:17]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:20:17
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:20:18]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:20:18
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:21:08
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:21:09]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:21:09
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:21:10]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:21:10
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:22:51
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:22:52]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:22:52
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:22:53]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:22:53
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:23:43
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:23:44]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:23:44
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:23:45]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:23:45
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:25:25
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:25:26]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:25:26
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:25:27]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:25:27
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:26:17
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:26:18]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:26:18
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:26:19]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:26:19
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:27:59
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:28:00]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:28:00
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:28:01]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:28:01
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:28:51
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:28:52]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:28:52
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:28:53]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:28:53
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:30:33
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:30:34]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:30:34
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:30:35]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:30:35
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:31:25
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:31:26]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:31:26
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:31:27]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:31:27
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:33:07
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:33:08]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:33:08
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:33:09]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:33:09
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:33:59
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:34:00]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:34:00
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:34:01]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:34:01
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:35:41
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:35:42]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:35:42
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:35:43]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:35:43
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:36:33
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:36:34]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:36:34
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:36:35]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:36:35
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:38:15
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:38:16]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:38:16
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:38:17]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:38:17
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:39:07
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:39:08]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:39:08
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:39:09]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:39:09
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:40:49
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:40:50]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:40:50
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:40:51]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:40:51
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:41:41
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:41:42]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:41:42
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:41:43]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:41:43
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:43:23
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:43:24]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:43:24
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:43:25]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:43:25
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:44:15
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:44:16]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:44:16
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:44:17]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:44:17
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:45:57
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:45:58]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:45:58
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:45:59]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:45:59
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:46:49
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:46:50]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:46:50
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:46:51]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:46:51
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:48:31
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:48:32]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:48:32
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:48:33]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:48:33
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:49:23
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:49:24]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:49:24
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:49:25]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:49:25
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:51:05
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:51:06]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:51:06
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:51:08]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:51:08
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:51:58
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:51:59]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:51:59
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:52:00]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:52:00
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:53:40
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:53:41]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:53:41
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:53:42]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:53:42
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:54:32
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:54:33]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:54:33
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:54:34]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:54:34
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:56:14
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:56:15]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:56:15
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:56:16]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:56:16
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:57:06
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:57:07]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:57:07
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:57:08]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:57:08
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:58:48
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:58:49]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:58:49
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:58:50]
+	- Message: Delay set for 50 seconds
+	- Current Time: 15:58:50
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:59:40
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:59:41]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 15:59:41
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 15:59:42]
+	- Message: Delay set for 100 seconds
+	- Current Time: 15:59:42
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:01:22
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:01:23]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:01:23
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:01:24]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:01:24
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:02:14
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:02:15]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:02:15
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:02:16]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:02:16
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:03:56
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:03:57]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:03:57
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:03:58]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:03:58
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:04:48
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:04:49]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:04:49
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:04:50]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:04:50
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:06:30
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:06:31]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:06:31
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:06:32]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:06:32
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:07:22
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:07:23]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:07:23
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:07:24]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:07:24
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:09:04
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:09:05]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:09:05
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:09:06]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:09:06
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:09:56
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:09:57]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:09:57
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:09:58]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:09:58
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:11:38
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:11:39]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:11:39
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:11:40]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:11:40
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:12:30
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:12:31]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:12:31
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:12:32]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:12:32
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:14:12
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:14:13]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:14:13
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:14:14]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:14:14
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:15:04
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:15:06]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:15:06
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:15:07]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:15:07
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:16:47
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:16:48]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:16:48
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:16:49]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:16:49
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:17:39
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:17:40]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:17:40
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:17:41]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:17:41
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:19:21
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:19:22]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:19:22
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:19:23]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:19:23
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:20:13
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:20:14]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:20:14
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:20:15]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:20:15
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:21:55
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:21:56]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:21:56
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:21:57]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:21:57
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:22:47
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:22:48]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:22:48
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:22:49]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:22:49
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:24:29
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:24:30]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:24:30
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:24:31]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:24:31
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:25:21
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:25:22]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:25:22
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:25:23]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:25:23
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:27:03
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:27:04]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:27:04
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:27:05]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:27:05
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:27:55
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:27:56]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:27:56
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:27:57]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:27:57
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:29:37
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:29:38]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:29:38
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:29:39]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:29:39
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:30:29
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:30:30]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:30:30
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:30:31]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:30:31
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:32:11
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:32:12]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:32:12
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:32:13]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:32:13
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:33:03
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:33:04]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:33:04
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:33:05]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:33:05
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:34:45
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:34:46]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:34:46
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:34:47]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:34:47
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:35:37
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:35:38]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:35:38
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:35:39]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:35:39
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:37:19
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:37:20]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:37:20
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:37:21]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:37:21
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:38:11
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:38:12]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:38:12
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:38:13]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:38:13
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:39:53
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:39:54]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:39:54
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:39:55]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:39:55
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:40:45
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:40:46]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:40:46
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:40:47]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:40:47
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:42:28
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:42:29]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:42:29
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:42:30]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:42:30
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:43:20
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:43:21]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:43:21
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:43:22]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:43:22
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:45:02
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:45:03]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:45:03
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:45:04]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:45:04
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:45:54
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:45:55]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:45:55
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:45:56]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:45:56
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:47:36
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:47:37]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:47:37
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:47:38]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:47:38
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:48:28
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:48:29]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:48:29
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:48:30]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:48:30
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:50:10
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:50:11]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:50:11
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:50:12]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:50:12
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:51:02
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:51:03]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:51:03
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:51:04]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:51:04
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:52:44
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:52:45]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:52:45
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:52:46]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:52:46
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:53:36
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:53:37]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:53:37
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:53:38]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:53:38
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:55:18
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:55:19]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:55:19
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:55:20]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:55:20
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:56:10
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:56:11]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:56:11
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:56:12]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:56:12
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:57:52
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:57:53]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:57:53
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:57:54]
+	- Message: Delay set for 50 seconds
+	- Current Time: 16:57:54
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:58:44
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:58:45]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 16:58:45
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 16:58:46]
+	- Message: Delay set for 100 seconds
+	- Current Time: 16:58:46
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:00:26
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:00:27]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:00:27
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:00:28]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:00:28
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:01:18
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:01:19]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:01:19
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:01:20]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:01:20
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:03:00
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:03:01]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:03:01
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:03:02]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:03:02
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:03:52
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:03:53]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:03:53
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:03:54]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:03:54
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:05:34
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:05:35]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:05:35
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:05:36]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:05:36
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:06:26
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:06:27]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:06:27
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:06:28]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:06:28
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:08:08
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:08:09]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:08:09
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:08:10]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:08:10
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:09:00
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:09:01]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:09:02
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:09:03]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:09:03
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:10:43
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:10:44]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:10:44
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:10:45]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:10:45
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:11:35
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:11:36]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:11:36
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:11:37]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:11:37
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 98.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:13:17
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:13:18]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 99.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:13:18
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:13:19]
+	- Message: Delay set for 50 seconds
+	- Current Time: 17:13:19
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 62.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:14:09
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:14:10]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 60.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:14:10
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:14:11]
+	- Message: Delay set for 100 seconds
+	- Current Time: 17:14:11
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 72.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:15:51
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:15:52]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 72.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:15:52
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:15:53]
+	- Message: Delay set for 900 seconds
+	- Current Time: 17:15:53
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 93.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:30:53
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:30:54]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 95.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:30:54
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:30:55]
+	- Message: Delay set for 600 seconds
+	- Current Time: 17:30:55
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 8.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:40:55
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:40:56]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 8.0 degC with blocking set to False.
+	- Start Time (H:M:S): 17:40:56
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 17:40:57]
+	- Message: Delay set for 1800 seconds
+	- Current Time: 17:40:57
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 1 to 18.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:10:57
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:10:58]
+START [Module: meerstetter.py - Function: change_temperature]
+	- Message: Changing the temperature of the peltier device with address 2 to 18.0 degC with blocking set to False.
+	- Start Time (H:M:S): 18:10:58
+END [Module: meerstetter.py - Function: change_temperature - Time (H:M:S): 18:10:59]

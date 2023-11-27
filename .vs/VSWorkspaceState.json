@@ -1,14 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-<<<<<<< HEAD
-    "\\api\\reader\\meerstetter"
+    "\\api",
+    "\\api\\interfaces",
+    "\\api\\upper_gantry",
+    "\\api\\upper_gantry\\seyonic",
+    "\\gui",
+    "\\gui\\controllers"
   ],
-  "SelectedNode": "\\cdp2p0.py",
-=======
-    "\\AppData"
-  ],
-  "SelectedNode": "\\script-tc-ICP4.py",
->>>>>>> af988c6a98f15a6f6076a0af2df18b385747a925
+  "SelectedNode": "\\script-tc-rerun.py",
   "PreviewInSolutionExplorer": false
 }

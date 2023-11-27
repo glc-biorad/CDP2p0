@@ -1,0 +1,13 @@
+Action,Type,Pressure (mbar),Ch 1 - Status,Ch 2 - Status,Ch 3 - Status,Ch 4 - Status,Ch 5 - Status,Ch 6 - Status,Ch 7 - Status,Ch 8 - Status,Elapsed Time (s),Time (HH:MM:SS),Date (MM/DD/YYYY)
+Aspirate, Trigger, -8, 1, 1, 1, 1, 1, 1, 1, 1, 0.015946388244628906, 10:14:24, 7/28/2023
+Aspirate, In Progress, -8, 1, 1, 1, 1, 1, 1, 1, 1, 0.26773738861083984, 10:14:25, 7/28/2023
+Aspirate, In Progress, -8, 1, 1, 1, 1, 1, 1, 1, 1, 0.39308619499206543, 10:14:25, 7/28/2023
+Aspirate, In Progress, -8, 1, 1, 1, 1, 1, 1, 1, 1, 0.5209672451019287, 10:14:25, 7/28/2023
+Aspirate, In Progress, -8, 1, 1, 1, 1, 1, 1, 1, 1, 0.6531355381011963, 10:14:25, 7/28/2023
+Aspirate, In Progress, -8, 1, 1, 1, 1, 1, 1, 1, 1, 0.7795412540435791, 10:14:25, 7/28/2023
+Aspirate, In Progress, -8, 1, 1, 1, 1, 1, 1, 1, 1, 0.9070756435394287, 10:14:25, 7/28/2023
+Aspirate, In Progress, -8, 1, 1, 1, 1, 1, 1, 1, 1, 1.0347466468811035, 10:14:25, 7/28/2023
+Aspirate, In Progress, -8, 1, 1, 1, 1, 1, 1, 1, 1, 1.1612074375152588, 10:14:25, 7/28/2023
+Aspirate, In Progress, -8, 1, 1, 1, 1, 1, 1, 1, 1, 1.2883265018463135, 10:14:26, 7/28/2023
+Aspirate, In Progress, -8, 1, 1, 1, 1, 1, 0, 1, 1, 1.4150688648223877, 10:14:26, 7/28/2023
+Aspirate, Completed, 0, 1, 1, 1, 1, 1, 0, 1, 1, 2.685053825378418, 10:14:27, 7/28/2023

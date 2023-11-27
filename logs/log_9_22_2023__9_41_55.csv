@@ -1,0 +1,5 @@
+Change the Heater/Shaker temperature to 60.0 C,0.2,
+Delay for 2 seconds,2.01,
+Shake on with an RPM of 1000,0.25,
+Delay for 2 seconds,2.01,
+Shake off,0.15,

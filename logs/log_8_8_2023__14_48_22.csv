@@ -1,0 +1,7 @@
+Move to DG8 tray C column 3 with 200 uL tips moving left by 200 up by 591500,7.02,
+Delay for 1 second,1.03,
+Move relative right by 1000,0.97,
+Delay for 1 second,1.03,
+Move relative down by 1500,0.92,
+Delay for 1 second,1.03,
+Aspirate 20 uLs with 50 uL tips at Lowest pressure 1 time,7.53,

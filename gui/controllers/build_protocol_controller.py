@@ -1181,6 +1181,7 @@ class BuildProtocolController:
 					self.upper_gantry.tip_eject_new(x, y, z)
 			elif split[0] == 'Delay':
 				# Get the time
+				print(split, 'protocol builder debug delay')
 				value = int(split[2])
 				# Get the units
 				units = split[3]

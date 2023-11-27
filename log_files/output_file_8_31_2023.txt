@@ -1,0 +1,32 @@
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":28472,"message":">b,5fd0,?pos,4d7b","response":"<b,5fd0,0,0\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":31800,"message":">b,7a8e,?pos,e1e8","response":"<b,7a8e,0,0\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/10?position=-400000&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/10?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/10
+		- Message (RECEIVED): {"_sid":3,"_mid":10,"_duration_us":20001,"message":">a,8395,?pos,6872","response":"<a,8395,0,-399963\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=-400000&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/11?position=0&velocity=80000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/11
+		- Message (RECEIVED): {"_sid":3,"_mid":11,"_duration_us":25182,"message":">b,13df,?pos,4971","response":"<b,13df,0,-399956\r"}
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/7?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/move/7?position=0&velocity=200000
+		- Message (RECEIVED): Status Code: OK
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/position/7
+		- Message (RECEIVED)
+			- Duration (s): 0.04
+			- Address: 7
+			- Command Sent: ?pos
+			- Respone Received: <7,3ca9,0,0
+		- Message (SEND): http://127.0.0.1:8000/reader/axis/home/7
+		- Message (RECEIVED): Status Code: OK

@@ -1,0 +1,39 @@
+0: Engage magnet
+1: Comment: ------------ PRE-AMP NO DILUTION ------------
+2: Comment: ------------ IDTE TRANSFER ------------
+3: Comment: --- NOTE: Tip A11-50-new (SS sample transfer)
+4: Pickup tips from A column 11
+5: Comment: ------------ SIZE SELECTED cfDNA SAMPLE PRE-AMP TRANSFER SET 1 ------------
+6: Move to Reagent Cartridge tray A column 6 with 50 uL tips
+7: Aspirate 10 uLs with 50 uL tips at Low pressure 1 time
+8: Move to Pre-Amp Thermocycler column 1 with 50 uL tips moving up by 30000
+9: Dispense 6 uLs with 50 uL tips at Low pressure 1 time
+6: Move to Reagent Cartridge tray A column 6 with 50 uL tips
+9: Dispense 5 uLs with 50 uL tips at Low pressure 1 time
+10: Comment: --- NOTE: Tip A11-50-used (SS Sample transfer)
+11: Eject tips in A column 11
+12: Pickup tips from A column 12
+13: Move to Mag Separator column 3 with 50 uL tips
+14: Aspirate 18 uLs with 50 uL tips at Low pressure 1 time
+15: Move to Pre-Amp Thermocycler column 1 with 50 uL tips
+16: Dispense 18 uLs with 50 uL tips at Low pressure 1 time
+17: Mix 18 uLs with 50 uL tips at Low pressure 5 times
+18: Move relative up by 30000
+19: Dispense 3 uLs with 50 uL tips at Low pressure 1 time
+20: Move relative down by 30000
+21: Eject tips in A column 12
+22: Pickup tips from B column 1
+23: Move to Reagent Cartridge tray A column 7 with 50 uL tips
+24: Aspirate 30 uLs with 50 uL tips at Low pressure 1 time
+25: Move to Pre-Amp Thermocycler column 1 with 50 uL tips moving up by 105000
+24: Delay for 1 second
+26: Move relative left by 1000
+27: Dispense 25 uLs with 50 uL tips at Low pressure 1 time
+23: Move to Reagent Cartridge tray A column 7 with 50 uL tips
+27: Dispense 10 uLs with 50 uL tips at Low pressure 1 time
+0: Delay for 2 seconds
+27: Dispense 10 uLs with 50 uL tips at Low pressure 1 time
+28: Eject tips in B column 1
+0: Comment: ------------ PRE-AMP THERMOCYCLING ------------
+0: Pause for user input
+0: Thermocycle Pre-Amp at 95 C for 3 minutes and cycle 5 times between 95 C for 60 seconds and 62 C for 240 seconds

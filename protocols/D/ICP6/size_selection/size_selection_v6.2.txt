@@ -1,0 +1,258 @@
+0: Comment: ------------ SIZE SELECTION ------------
+0: Comment: --- REAGENT: Enrichment Solution ---
+9: Move to Reagent Cartridge tray A column 9 with 200 uL tips
+0: Comment: --- STEP: Vertical Shuffle Mix ---
+10: Aspirate 200 uLs with 200 uL tips at Low pressure 1 time
+11: Move relative up by 20000
+12: Dispense 200 uLs with 200 uL tips at Low pressure 1 time
+13: Move relative down by 20000
+14: Aspirate 200 uLs with 200 uL tips at Low pressure 1 time
+15: Move relative up by 20000
+16: Dispense 200 uLs with 200 uL tips at Low pressure 1 time
+17: Move relative down by 20000
+18: Aspirate 200 uLs with 200 uL tips at Low pressure 1 time
+19: Move relative up by 20000
+20: Dispense 200 uLs with 200 uL tips at Low pressure 1 time
+21: Move relative down by 20000
+18: Aspirate 200 uLs with 200 uL tips at Low pressure 1 time
+19: Move relative up by 20000
+20: Dispense 200 uLs with 200 uL tips at Low pressure 1 time
+21: Move relative down by 20000
+18: Aspirate 200 uLs with 200 uL tips at Low pressure 1 time
+19: Move relative up by 20000
+20: Dispense 200 uLs with 200 uL tips at Low pressure 1 time
+21: Move relative down by 20000
+0: Move relative up by 20000
+23: Delay for 2 seconds
+24: Dispense 25 uLs with 200 uL tips at Low pressure 1 time
+0: Move relative down by 20000
+0: Comment: 0.75 ratio
+0: Comment: --- NOTE: Tip A6-200-used(for extraction elution, mix of ampere beads)
+0: Eject tips in A column 6
+0: Comment: ------------ ENRICHMENT SAMPLE TRANSFER ------------
+0: Comment: --- NOTE: Tip A7-200-new (Enrichment sample transfer)
+0: Pickup tips from A column 7
+9: Move to Reagent Cartridge tray A column 9 with 200 uL tips
+1: Aspirate 200 uLs with 200 uL tips at Low pressure 1 time
+0: Delay for 3 seconds
+0: Move to Mag Separator column 2 with 200 uL tips moving up by 100000
+3: Dispense 90 uLs with 200 uL tips at Low pressure 1 time
+0: Move to Mag Separator column 3 with 200 uL tips moving up by 100000
+3: Dispense 110 uLs with 200 uL tips at Low pressure 1 time
+0: Delay for 2 seconds
+3: Dispense 20 uLs with 200 uL tips at Low pressure 1 time
+0: Delay for 2 seconds
+3: Dispense 20 uLs with 200 uL tips at Low pressure 1 time
+21: Move relative down by 100000
+0: Eject tips in A column 7
+0: Comment: ------------ VOLUME NORMALIZATION ------------
+0: Comment: --- NOTE: Tip A8-200-new(IDTE addition)
+0: Pickup tips from A column 8
+0: Comment: --- REAGENT: IDTE ---
+9: Move to Reagent Cartridge tray A column 5 with 200 uL tips 
+25: Aspirate 40 uLs with 200 uL tips at Low pressure 1 time
+26: Move to Mag Separator column 1 with 200 uL tips
+25: Aspirate 60 uLs with 200 uL tips at Low pressure 1 time
+0: Disengage magnet
+2: Move to Mag Separator column 2 with 200 uL tips moving up by 100000
+27: Dispense 100 uLs with 200 uL tips at Low pressure 1 time
+21: Move relative down by 100000
+0: Comment: --- STEP: Rigorous Mixing Protocol ---
+25: Aspirate 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+29: Dispense 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+25: Aspirate 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+29: Dispense 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+25: Aspirate 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+29: Dispense 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+25: Aspirate 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+29: Dispense 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+25: Aspirate 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+29: Dispense 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+25: Aspirate 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+29: Dispense 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+25: Aspirate 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+29: Dispense 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+25: Aspirate 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+29: Dispense 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+25: Aspirate 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+29: Dispense 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+25: Aspirate 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+29: Dispense 180 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 1 seconds
+0: Engage magnet
+0: Comment: Dip the tip back in to remove liquid from base of tip
+32: Move relative up by 100000
+33: Delay for 2 seconds
+34: Dispense 50 uLs with 200 uL tips at Low pressure 1 time
+35: Delay for 2 seconds
+36: Dispense 50 uLs with 200 uL tips at Low pressure 1 time
+35: Delay for 2 seconds
+36: Dispense 50 uLs with 200 uL tips at Low pressure 1 time
+0: Comment: Dip the tip back in to remove liquid from base of tip
+32: Move relative down by 100000
+0: Comment: --- NOTE: Tip A8-200-used(IDTE addition)
+0: Eject tips in A column 8
+0: Delay for 3 minutes
+0: Pause for user input
+0: Comment: ------------ ENRICHMENT BEAD TRANSFER ------------
+0: Comment: --- NOTE: Tip A9-200-new(First Ampure bead transfer)
+0: Pickup tips from A column 9
+2: Move to Mag Separator column 2 with 200 uL tips
+25: Aspirate 190 uLs with 200 uL tips at Low pressure 1 time
+0: Disengage magnet
+2: Move to Mag Separator column 3 with 200 uL tips moving up by 40000
+27: Dispense 190 uLs with 200 uL tips at Low pressure 1 time
+28: Delay for 2 seconds
+29: Dispense 20 uLs with 200 uL tips at Low pressure 1 time
+21: Move relative down by 40000
+0: Comment: --- STEP: Rigorous Mixing Protocol ---
+25: Aspirate 190 uLs with 200 uL tips at Low pressure 1 time
+21: Move relative up by 40000
+29: Dispense 190 uLs with 200 uL tips at High pressure 1 time
+21: Move relative down by 40000
+25: Aspirate 190 uLs with 200 uL tips at Low pressure 1 time
+21: Move relative up by 40000
+29: Dispense 190 uLs with 200 uL tips at High pressure 1 time
+21: Move relative down by 40000
+25: Aspirate 190 uLs with 200 uL tips at Low pressure 1 time
+21: Move relative up by 40000
+29: Dispense 190 uLs with 200 uL tips at High pressure 1 time
+21: Move relative down by 40000
+25: Aspirate 190 uLs with 200 uL tips at Low pressure 1 time
+21: Move relative up by 40000
+29: Dispense 190 uLs with 200 uL tips at High pressure 1 time
+21: Move relative down by 40000
+25: Aspirate 190 uLs with 200 uL tips at Low pressure 1 time
+21: Move relative up by 40000
+29: Dispense 190 uLs with 200 uL tips at High pressure 1 time
+21: Move relative down by 40000
+25: Aspirate 190 uLs with 200 uL tips at Low pressure 1 time
+21: Move relative up by 40000
+29: Dispense 190 uLs with 200 uL tips at High pressure 1 time
+21: Move relative down by 40000
+0: Comment: Dip the tip back in to remove liquid from base of tip
+32: Move relative up by 100000
+33: Delay for 2 seconds
+34: Dispense 50 uLs with 200 uL tips at High pressure 1 time
+35: Delay for 2 seconds
+36: Dispense 50 uLs with 200 uL tips at High pressure 1 time
+35: Delay for 2 seconds
+36: Dispense 50 uLs with 200 uL tips at High pressure 1 time
+0: Comment: Dip the tip back in to remove liquid from base of tip
+32: Move relative down by 100000
+0: Comment: --- NOTE: Tip A9-200-used(First Ampere bead transfer)
+0: Eject tips in A column 9
+39: Engage magnet
+0: Delay for 6 minutes
+0: Pause for user input
+0: Comment: --- STEP: Remove waste ---
+0: Comment: --- NOTE: Tip A9-200-new(First Ampure bead transfer)
+0: Pickup tips from A column 9
+82: Move to Mag Separator column 3 with 200 uL tips
+83: Aspirate 160 uLs with 200 uL tips at Low pressure 1 time
+0: Comment: --- Waste ---
+84: Move to Reagent Cartridge tray A column 12 with 200 uL tips
+85: Dispense 160 uLs with 200 uL tips at Low pressure 1 time
+86: Delay for 2 seconds
+87: Dispense 50 uLs with 200 uL tips at Low pressure 1 time
+0: Comment: --- STEP: Go back for more waste ---
+82: Move to Mag Separator column 3 with 200 uL tips
+83: Aspirate 160 uLs with 200 uL tips at Low pressure 1 time
+0: Comment: --- Waste ---
+84: Move to Reagent Cartridge tray A column 12 with 200 uL tips
+85: Dispense 160 uLs with 200 uL tips at Low pressure 1 time
+86: Delay for 2 seconds
+87: Dispense 50 uLs with 200 uL tips at Low pressure 1 time
+0: Comment: --- NOTE: Tip A8-200-reused(IDTE addition, Sample transfer, Second Ampure bead transfer, Waste removal)
+0: Eject tips in A column 9
+0: Comment: ------------ ENRICHMENT WASH 1 ------------
+0: Comment: --- NOTE: Tip A4-1000-reused (Extraction Wash 2 (80% Ethonal), Elution Wash 1)
+89: Pickup tips from A column 4
+0: Comment: --- REAGENT: Wash 2 Solution (80% Ethonal) ---
+90: Move to Reagent Cartridge tray A column 10 with 1000 uL tips
+91: Aspirate 150 uLs with 1000 uL tips at Low pressure 1 time
+92: Move to Mag Separator column 3 with 1000 uL tips moving up by 15000
+93: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+0: Comment: --- Wash Time ---
+94: Delay for 20 seconds
+95: Aspirate 160 uLs with 1000 uL tips at Low pressure 1 time
+0: Comment: --- Waste ---
+96: Move to Reagent Cartridge tray A column 12 with 1000 uL tips
+97: Dispense 160 uLs with 1000 uL tips at Low pressure 1 time
+98: Delay for 2 seconds
+99: Dispense 50 uLs with 1000 uL tips at Low pressure 1 time
+0: Comment: --- REAGENT: Wash 2 Solution (80% Ethonal) ---
+100: Move to Reagent Cartridge tray A column 10 with 1000 uL tips
+101: Aspirate 150 uLs with 1000 uL tips at Low pressure 1 time
+102: Move to Mag Separator column 3 with 1000 uL tips moving up by 15000
+103: Dispense 150 uLs with 1000 uL tips at Low pressure 1 time
+0: Comment: --- Wash Time ---
+104: Delay for 20 seconds
+105: Aspirate 200 uLs with 1000 uL tips at Low pressure 1 time
+0: Comment: --- Waste ---
+106: Move to Reagent Cartridge tray A column 12 with 1000 uL tips
+107: Dispense 200 uLs with 1000 uL tips at Low pressure 1 time
+0: Comment: --- NOTE: Tip A4-1000-reused (Extraction Wash 2 (80% Ethonal), Elution Wash 2)
+108: Eject tips in A column 4
+0: Comment: ------------ RESIDUAL REMOVAL ------------
+0: Comment: --- NOTE: Tip A5-50-reused (Extraction residual removal, SS residual removal)
+109: Pickup tips from A column 5
+110: Move to Mag Separator column 3 with 50 uL tips
+111: Aspirate 50 uLs with 50 uL tips at Low pressure 1 time
+0: Comment: --- Waste ---
+112: Move to Reagent Cartridge tray A column 12 with 50 uL tips
+113: Dispense 50 uLs with 50 uL tips at Low pressure 1 time
+110: Move to Mag Separator column 3 with 50 uL tips
+111: Aspirate 50 uLs with 50 uL tips at Low pressure 1 time
+0: Comment: --- Waste ---
+112: Move to Reagent Cartridge tray A column 12 with 50 uL tips
+113: Dispense 50 uLs with 50 uL tips at Low pressure 1 time
+0: Comment: --- NOTE: Tip A5-50-reused (Extraction residual removal, SS residual removal)
+114: Eject tips in A column 5
+0: Comment: ------------ AIR DRY ------------
+115: Delay for 3 minutes
+0: Comment: Enrichment Solution
+0: Comment: --- NOTE: Tip A10-200-new (SS Elution)
+116: Pickup tips from A column 10
+0: Comment: ------------ ELUTION ------------
+0: Comment: IDTE
+117: Move to Reagent Cartridge tray A column 5 with 200 uL tips
+118: Disengage magnet
+119: Aspirate 45 uLs with 200 uL tips at Low pressure 1 time
+120: Move to Mag Separator column 3 with 200 uL tips
+121: Dispense 45 uLs with 200 uL tips at Low pressure 1 time
+122: Mix 30 uLs with 200 uL tips at Low pressure 3 times
+111: Comment: --- STEP: Air Bubble Removal ---
+112: Aspirate 5 uLs with 50 uL tips at Lowest pressure 1 time
+113: Move relative up by 50000
+114: Dispense 5 uLs with 50 uL tips at Lowest pressure 1 time
+115: Delay for 3 seconds
+116: Dispense 2 uLs with 50 uL tips at Lowest pressure 1 time
+117: Comment: Dip
+118: Move relative down by 50000
+0: Delay for 1 minute
+123: Engage magnet
+124: Delay for 2 seconds
+125: Dispense 15 uLs with 200 uL tips at Low pressure 1 time
+0: Comment: --- NOTE: Tip A10-200-used (SS Elution)
+9: Eject tips in A column 10
+126: Home pipettor fast

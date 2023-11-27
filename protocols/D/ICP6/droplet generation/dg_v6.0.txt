@@ -1,0 +1,35 @@
+0: Comment: ------------ GENERATE DROPLETS A22Q and FF (2 sets of each) ------------
+1: Comment: --- STATE: 22 uL of sample already in DG32 A column 2 ---
+2: Comment: --- STATE: No tips ---
+3: Comment: --- CONFIG: Tip Tray B 1-nubs-generation 2-1000-oil 3-200-sample 5-200-glue ---
+4: Comment: --- CONFIG: Reagent Cartridge B 1-DG Oil (1.5 mL) 4-Glue (120 uL) ---
+5: Comment: --- NOTE: Loading DG Oil for NIPT (), FF (), No-Pre-Amp NIPT ()
+6: Comment: --- NOTE: Tip B5-200-new (DG Oil)
+7: Pickup tips from B column 3
+8: Comment: --- REAGENT: Droplet Generation Oil ---
+9: Move to Reagent Cartridge tray B column 1 with 200 uL tips
+10: Aspirate 200 uLs with 200 uL tips at Low pressure 1 time
+11: Comment: --- STEP: A22Q Set 1 (DG32 A-1) ---
+12: Move to DG8 tray C column 1 with 200 uL tips
+13: Comment: --- NOTE: Make sure tips are aligned ---
+14: Pause for user input
+15: Dispense 95 uLs with 200 uL tips at Low pressure 1 time
+16: Comment: --- STEP: A22Q Set 2 (DG32 B-1) ---
+17: Move to DG8 tray D column 1 with 200 uL tips
+18: Comment: --- NOTE: Make sure tips are aligned ---
+19: Pause for user input
+20: Dispense 95 uLs with 200 uL tips at Low pressure 1 time
+21: Comment: --- NOTE: Tip B5-200-new (DG Oil)
+22: Eject tips in B column 3
+23: Comment: --- STEP: Pickup nubs for droplet generation ---
+24: Comment: --- NOTE: Tip B12-nub-new (Droplet Generation)
+25: Pickup tips from B column 12
+26: Move to DG8 tray C column 3 with 1000 uL tips
+27: Comment: --- STEP: Generate Droplets for A22Q Set 1 ---
+28: Generate Pico Droplets
+29: Move to DG8 tray D column 3 with 1000 uL tips
+30: Generate Pico Droplets
+31: Comment: --- NOTE: Tip B12-nub-used (Droplet Generation)
+32: Nub Eject tips in B column 12
+33: Comment: --- NOTE: Look at droplet quality ---
+34: Pause for user input

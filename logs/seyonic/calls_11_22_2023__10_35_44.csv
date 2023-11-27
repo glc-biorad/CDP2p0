@@ -1,0 +1,4 @@
+Seyonic Pipettor Initializing...,Wed Nov 22 10:35:44 2023,
+dispense(pressure=100),Wed Nov 22 10:35:45 2023,
+set_pressure(pressure=100; direction=1),Wed Nov 22 10:35:45 2023,
+set_pressure(pressure=0; direction=1),Wed Nov 22 10:35:47 2023,

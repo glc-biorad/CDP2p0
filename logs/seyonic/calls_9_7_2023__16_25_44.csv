@@ -1,0 +1,4 @@
+Seyonic Pipettor Initializing...,Thu Sep  7 16:25:44 2023,
+change_timeout(timeout_in_seconds=200),Thu Sep  7 16:26:07 2023,
+set_pressure(pressure=-500; direction=2),Thu Sep  7 16:26:07 2023,
+open_valve(),Thu Sep  7 16:26:08 2023,
