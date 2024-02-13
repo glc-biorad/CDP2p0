@@ -504,7 +504,7 @@ class UpperGantry(api.util.motor.Motor):
         self.turn_on_air_valve(valve_1_tip_eject)
         self.__chassis.turn_on_control_relay()
         self.__chassis.turn_on_pump()
-        time.sleep(1.2)
+        time.sleep(2.5)
         self.__chassis.turn_off_pump()
         self.__chassis.turn_off_control_relay()
         self.turn_off_air_valve(valve_1_tip_eject)
@@ -756,7 +756,7 @@ class UpperGantry(api.util.motor.Motor):
         relative_moves: list = [0,0,0,0],
         max_drip_plate: int = -1198000,
         ignore_tips: bool = False,
-        z_safe_1000_tip: int = -282000,
+        z_safe_1000_tip: int = -100000,
         collision_detection_box_corners: list = []
        ) -> None:
         """ Moves the pipettor head based on the coordinates
@@ -1205,9 +1205,9 @@ class UpperGantry(api.util.motor.Motor):
         self.__pipettor.close_valve()
 
     # Aspirate Method.
-    def aspirate(self, aspirate_vol, pressure=None, pipette_tip_type=None):
+    def aspirate(self, aspirate_vol, channels:str='all', pressure=None, pipette_tip_type=None):
         # Pressures:
-        pressures = [None, 'default', 'low', 'high', 'half', 'lowest', 'highest']
+        pressures = [None, 'default', 'low', 'high', 'half', 'lowest', 'highest', 'medium']
         # Check type.
         check_type(aspirate_vol, int)
         if pressure != None:
@@ -1218,7 +1218,7 @@ class UpperGantry(api.util.motor.Motor):
             if pressure == 'default':
                 pressure = None
                 self.__pipettor.change_aspirate_timeout()
-            elif pressure == 'low':
+            elif pressure == 'medium':
                 pressure = -100
                 self.__pipettor.change_aspirate_timeout()
             elif pressure == 'lowest':
@@ -1233,6 +1233,9 @@ class UpperGantry(api.util.motor.Motor):
             elif pressure == 'half':
                 print(self.__pipettor.max_pressure)
                 pressure = 0.5 * (self.__pipettor.max_pressure - self.__pipettor.min_pressure)
+                self.__pipettor.change_aspirate_timeout()
+            elif pressure.lower() == 'low':
+                pressure = -20
                 self.__pipettor.change_aspirate_timeout()
         # Make sure the pressure is valid.
         # Setup logger.
@@ -1257,6 +1260,12 @@ class UpperGantry(api.util.motor.Motor):
                 # Turn on the valve 2.
                 self.turn_on_air_valve(2)
                 # Set the pipettor aspirate volume
+                if channels == 'all':
+                    aspirate_vol = [aspirate_vol for i in range(8)]
+                else:
+                    _ = [1 for i in range(8)]
+                    _[int(channels)-1] = aspirate_vol
+                    aspirate_vol = _
                 self.__pipettor.set_aspirate_volumes(aspirate_vol)
                 # Trigger pipettor action
                 t_s = time.time()
@@ -1276,22 +1285,25 @@ class UpperGantry(api.util.motor.Motor):
         timer.stop(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.aspirate.__name__))
 
     # Dispense Method.
-    def dispense(self, dispense_vol, pressure=None, turn_off_air_valve=True):
+    def dispense(self, dispense_vol, channels: str = 'all', pressure=None, turn_off_air_valve=True):
         # Pressures:
-        pressures = [None, 'default', 'low', 'high', 'lowest', 'highest', 'very low']
+        pressures = [None, 'default', 'low', 'high', 'lowest', 'highest', 'medium']
         if type(pressure) == str:
-            if pressure.lower() == 'low':
+            if pressure.lower() == 'medium':
                 pressure = 100
                 self.__pipettor.change_dispense_timeout()
             elif pressure.lower() == 'high':
                 pressure = 200
                 self.__pipettor.change_dispense_timeout()
-            elif pressure.lower() == 'lowest':
-                self.__pipettor.change_dispense_timeout(45)
-                pressure = 10
+            elif pressure.lower() == 'low':
+                self.__pipettor.change_dispense_timeout()
+                pressure = 20
             elif pressure.lower() == 'highest':
                 pressure = 241
                 self.__pipettor.change_dispense_timeout()
+            elif pressure.lower() == 'lowest':
+                self.__pipettor.change_dispense_timeout(60)
+                pressure = 10
         # Check the type.
         check_type(dispense_vol, int)
         logger = Logger(os.path.split(__file__)[1], '{0}.{1}'.format(__name__, self.dispense.__name__))
@@ -1307,6 +1319,11 @@ class UpperGantry(api.util.motor.Motor):
         # Turn on the valve 2.
         self.turn_on_air_valve(2)
         # Set the pipettor dispense volume
+        if channels != 'all':
+            _ = [1 for i in range(8)]
+            _[int(channels)-1] = dispense_vol
+            dispense_vol = _
+        print(f"HERERERERER: {dispense_vol}")
         self.__pipettor.set_dispense_volumes(dispense_vol)
         # Set the pipettor mode to DISPENSE
         self.__pipettor.dispense(pressure)
@@ -1346,11 +1363,11 @@ class UpperGantry(api.util.motor.Motor):
             max_flow_rate = 99999
         elif droplet_type.lower()[0:2] == 'sm' or droplet_type.lower()[0:2] == 'pi':
             max_time = 166 
-            max_push_out_time = 23
+            max_push_out_time = 21
             max_flow_rate = 99999
         elif droplet_type.lower()[0:2] == 'de':
-            max_time = 65
-            max_push_out_time = 4
+            max_time = 220
+            max_push_out_time = 21
             max_flow_rate = 99999
         while (time.time() - time_start <= max_time) or (flow_rate > max_flow_rate):
             # Get flow rate.

@@ -503,6 +503,7 @@ class Seyonic(object):
         if pressure == None:
             pressure = self.vac_pressure
         # Set the action mode to aspirate
+        #self.set_aspirate_volumes()
         self.client.Set("Action Mode", self.pip_addr, 0, action_modes['Aspirate'])
         # Set the pressure 
         self.set_pressure(pressure=pressure)

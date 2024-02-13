@@ -292,14 +292,28 @@ class Reader(api.util.motor.Motor):
     def illumination_only_on(self, color, intensity_percent, use_fast_api=True):
         # Convert color to int if it is a str.
         assert type(color) == str
+        print(color,intensity_percent, 'pre')
         color = led_channel_str_to_int(color)
+        print(color,intensity_percent, 'postconversion')
+
         # Check for Bright Field to switch to hex led while keeping the fam filter.
 
-        if color == 0:
-            for colornum in self.config_data['LEDS']:
-                if self.config_data['LEDS'][colornum]['name'] == 'HEX':
-                    color = int(colornum)
-                    break
+        #if color == 0:
+        #    for colornum in self.config_data['LEDS']:
+        #        if self.config_data['LEDS'][colornum]['name'] == 'HEX':
+        #            color = int(colornum)
+        #            break
+        print(type(color))
+        if color == 0 or color == '0':
+            print('thisran')
+            color = 'hex'
+            intensity_percent = 50
+            color = led_channel_str_to_int(color)
+        print(color,intensity_percent, 'postpostconversion')
+
+
+
+                
         # Set the given LED color to its on intensity level.
         if use_fast_api:
             self.__FAST_API_INTERFACE.reader.led.on(self.__ID['LED'], color, intensity=intensity_percent)
@@ -343,11 +357,15 @@ class Reader(api.util.motor.Motor):
     def illumination_off(self, color, use_fast_api=True):
         if type(color) == str:
             color = led_channel_str_to_int(color)
-        if color == 0:
-            for colornum in self.config_data['LEDS']:
-                if self.config_data['LEDS'][colornum]['name'] == 'HEX':
-                    color = int(colornum)
-                    break
+        #if color == 0:
+        #    for colornum in self.config_data['LEDS']:
+        #        if self.config_data['LEDS'][colornum]['name'] == 'HEX':
+        #            color = int(colornum)
+        #            break
+        if color == 0 or color == '0':
+            print('thisran')
+            color = 'hex'
+            color = led_channel_str_to_int(color)
         # Set the given LED color to its on intensity level.
         if use_fast_api:
             self.__FAST_API_INTERFACE.reader.led.off(self.__ID['LED'], color)
