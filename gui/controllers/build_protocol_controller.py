@@ -590,6 +590,11 @@ class BuildProtocolController:
 			times = 'time'
 		else:
 			times = 'times'
+		channels = self.view.pipettor_channels_sv.get()
+		if channels == 'all':
+			_ = "for all channels"
+		else:
+			_ = f"for channel {channels}"
 		# Make sure the volume is not greater than the tip size
 		assert volume <= tip
 		action = self.view.pipettor_action_sv.get()
@@ -600,7 +605,7 @@ class BuildProtocolController:
 		except:
 			selected_row = None
 		# Generate the action message
-		action_message = f"{action.title()} {volume} uLs with {tip} uL tips at {pressure} pressure {count} {times}"
+		action_message = f"{action.title()} {volume} uLs with {tip} uL tips at {pressure} pressure {count} {times} {_}"
 		# Check if this action is allowed
 		if next_action_allowed(self.state, action):
 			# Update the state model
@@ -1118,7 +1123,7 @@ class BuildProtocolController:
 				if ( (abs(hs[0]) < abs(_x)) or (abs(hs[0]) < abs(x)) ) and ( (abs(hs[1]) < abs(_y)) or (abs(hs[1]) < abs(y)) ):
 					z_safe = -100000
 				else:
-					z_safe = -282000
+					z_safe = -100000
 				# Setup the command
 				self.upper_gantry.move(
 					x=x,
@@ -1155,16 +1160,23 @@ class BuildProtocolController:
 				pressure = split[8].lower()
 				# Get the action count
 				count = int(split[10])
+				# Get the channels to perform this on
+				try:
+					channel = int(split[-1])
+				except:
+					channel = 'all'
 				# Setup the command and do it count times
 				for i in range(count):
 					if action == 'Aspirate':
-						self.upper_gantry.aspirate(volume, pipette_tip_type=tip, pressure=pressure)
+						self.upper_gantry.aspirate(volume, channels=channel, pipette_tip_type=tip, pressure=pressure)
+						time.sleep(0.5)
 					if action == 'Dispense':
-						self.upper_gantry.dispense(volume, pressure=pressure)
+						self.upper_gantry.dispense(volume, channels=channel, pressure=pressure)
+						time.sleep(0.5)
 					if action == 'Mix':
 						print(f'Mix Count: {i+1}/{count}')
-						self.upper_gantry.aspirate(volume, pipette_tip_type=tip, pressure=pressure)
-						self.upper_gantry.dispense(volume, pressure=pressure)
+						self.upper_gantry.aspirate(volume, channels=channel, pipette_tip_type=tip, pressure=pressure)
+						self.upper_gantry.dispense(volume, channels=channel, pressure=pressure)
 				# Log
 				log.log(action_message, time.time() - t_start)
 			elif split[0] == 'Load':
@@ -1756,7 +1768,7 @@ class BuildProtocolController:
 						delay(int(sdtime), 'seconds')
 						self.meerstetter.change_temperature(address, int(atemp), block=False)
 						delay(int(atime), 'seconds')
-					self.meerstetter.change_temperature(address, 30, block=False)
+					self.meerstetter.change_temperature(address, 25, block=False)
 				elif 'Change' in split:
 					# Get the heater letter designation
 					heater = split[1]

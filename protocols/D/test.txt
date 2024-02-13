@@ -1,0 +1,4 @@
+0: Home pipettor
+1: Eject tips in A column 8
+2: Pickup tips from A column 8
+3: Move to Tray tray B column 1 with 200 uL tips moving right by 1000 backwards by 3000 down by 70000

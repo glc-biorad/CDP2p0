@@ -1,1 +1,1 @@
-0: Thermocycle Pre-Amp at 95 C for 3 minutes and cycle 5 times between 95 C for 120 seconds and 62 C for 240 seconds
+0: Thermocycle Pre-Amp at 95 C for 10 minutes and cycle 40 times between 94 C for 30 seconds and 60 C for 60 seconds

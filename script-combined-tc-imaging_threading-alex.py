@@ -5,6 +5,7 @@ import os
 import numpy as np
 import multiprocessing
 import tifffile
+import cv2
 
 import pythonnet
 from pythonnet import load
@@ -27,15 +28,15 @@ from gui.controllers.chipscanner_controller import StartScan
 from gui.util.utils import import_config_file, get_unit_name
 
 
-
-
-
-def imaging_thread(connection, channels_to_image, imaging_period, fdir, experiment_name):
+def imaging_thread(connection, mp_queue, channels_to_image, which_heater, imaging_period, fdir, experiment_name):
     unit_hw_config = import_config_file(osp.join('config', 'unit_config.json'))
     start = time.time()
     now = start + 0.01
     index = 0
-    scanner = StartScan(unit_hw_config, fdir, experiment_name)
+    cycle_num = 0
+    ins = instrument_interface.Connection_Interface()
+    htr_lookup = {'A': 0, 'B': 1, 'C': 2, 'D': 3}
+    htr_num = htr_lookup[which_heater]
     # create directories if they do not exist
     temperature_dir = osp.join(fdir, experiment_name, 'temperatures')
     timelapseimg_dir = osp.join(fdir, experiment_name, 'timelapse_images')
@@ -46,16 +47,6 @@ def imaging_thread(connection, channels_to_image, imaging_period, fdir, experime
     while True:
         img_related_delay = 0
         now = time.time()
-        for channel in channels_to_image:
-            img_related_delay += unit_hw_config['motor_LED_delay']
-            img_related_delay += int(unit_hw_config['default_exposure'][channel] / 1e6)
-            timestamp = int(round(now-start, 0))
-            fname = f"{channel}_I{index}_T{timestamp}.tif"
-            fpath = osp.join(fdir, experiment_name, 'timelapse_images', fname)
-            img = scanner.acquire_image(channel)
-            tifffile.imwrite(fpath, img)
-
-
         # get temperatures
         connection.send(['get_temps'])
         fpath_temp = osp.join(fdir, experiment_name, 'temperatures', f'Actual_I{index}_T{timestamp}.npy')
@@ -63,6 +54,34 @@ def imaging_thread(connection, channels_to_image, imaging_period, fdir, experime
         if info[0] == 'quit':
             return
         np.save(fpath_temp, np.array(info))
+        current_temp = np.round(info[htr_num], 1)
+
+        for channel in channels_to_image:
+            img_related_delay += unit_hw_config['motor_LED_delay']
+            exposure_time = int(unit_hw_config['default_exposure'][channel])
+            img_related_delay += exposure_time / 1e6
+            timestamp = int(round(now-start, 0))
+            fname = f"{channel}_I{index}.tif"
+            fpath = osp.join(fdir, experiment_name, 'timelapse_images', fname)
+
+            # take image
+            ins.moveFilterWheel(channel)
+            ins.setExposureTimeMicroseconds(exposure_time)
+            ins.turnOnLED(channel)
+            img = ins.captureImage()
+            ins.turnOffLED(channel)
+            
+            # adjust image for info
+            if mp_queue.empty():
+                pass
+            else:
+                cycle_num = mp_queue.get(True, 0.25)
+            img = np.round(img / 65504 * 255).astype(np.uint8)
+            img = cv2.putText(img, f'Cycle: {cycle_num} T: {current_temp}', (100, 400), cv2.FONT_HERSHEY_SIMPLEX, 12, (255, 255, 255), 5)
+            tifffile.imwrite(fpath, img)
+
+
+        
         index += 1
         delay_time = imaging_period - img_related_delay
         if delay_time > 0:
@@ -71,7 +90,7 @@ def imaging_thread(connection, channels_to_image, imaging_period, fdir, experime
             print(f'IMAGE RELTAED DELAYS add up to longer than the imaging period:\nImaging Period:{imaging_period}\nImage Related Delays: {img_related_delay}')
 
 def temp_control_thread(connection):
-    c = Controller('COM4', 57600, dont_use_fast_api=True, timeout=1)
+    c = Controller('COM7', 57600, dont_use_fast_api=True, timeout=1)
     m = Meerstetter()
     m.connect_to_opened_port(c)
     while True:
@@ -99,27 +118,26 @@ def tc_image():
     # define delay times & cycle number
     # later we can define temperatures, but first we nee da strucutre to convert
     # set temperatures to actual temperatures with offsets
-    msre_digest_time = 45 * 60 # seconds
-    hotstart_time = 2 * 60  # seconds
+    msre_digest_time = 45 # seconds
+    hotstart_time = 600  # seconds
     anneal_extend_time = 100 # seconds
     denature_time = 50 # seconds
     final_annealing_time = 100 # seconds
     signal_augmentation_time = 1 * 60 # seconds
-    deactivation_time = 60 # seconds
-    final_4C_hold_time = 18 # seconds
-    cycles = 2
+    deactivation_time = 15 # seconds
+    final_4C_hold_time = 300 # seconds
+    cycles = 40
 
 
     # path and channel information
-    location_to_image = (-232565, -358236, 0, -37000)
-    channels_pre_scan = ('hex',)
-    channels_timelapse = ('fam',)
-    channels_post_scan = ('fam',)
-    experiment_name_pre = 'EXPERIMENT_NAME'
-    experiment_name_post = 'EXPERIMENT_NAME'
+    location_to_image = (-391536, -364560, -117785, -37000)
+    #location_to_image = (-278162, -91831, -53330, -37000)
+    channels_timelapse = ('hex',)
+    experiment_name_timelapse = 'beamr silicon oil'
     chambers_to_image = (2,)
+    which_heater = 'B'
     unit_hw_config = import_config_file(osp.join('config', 'unit_config.json'))
-    imaging_period_time_seconds = 15
+    imaging_period_time_seconds = 45
 
     # -------------------------------------------------------------------------
     # --------------------- END OF USER DEFINED PARAMETERS --------------------
@@ -139,44 +157,34 @@ def tc_image():
     heaterD = 4
 
     allowed_channels = ('alexa405', 'fam', 'hex', 'atto', 'cy5', 'cy55', 'bf')
-    fdir = osp.join('D:/', 'AdvTechImagingData')
-
-    # c = Controller('COM7', 57600, dont_use_fast_api=True, timeout=1)
-    # m = Meerstetter()
-    # # ins = instrument_interface.Connection_Interface()
-    # m.connect_to_opened_port(c)
+    fdir = osp.join('E:/')
 
     # start fastAPI
     #server = Server()
     #server.run()
     #multiprocessing.freeze_support()
 
-    temperature_dir = osp.join(fdir, experiment_name_pre, 'temperatures')
+    # c = Controller('COM7', 57600, dont_use_fast_api=True, timeout=1)
+    # m = Meerstetter()
+    ins = instrument_interface.Connection_Interface()
+    # m.connect_to_opened_port(c)
+
+    
+    temperature_dir = osp.join(fdir, experiment_name_timelapse, 'temperatures')
     if not osp.isdir(temperature_dir):
         os.makedirs(temperature_dir)
 
     # init temp control
     c1, c2 = multiprocessing.Pipe()
+    q = multiprocessing.Queue()
     pMonitoring = multiprocessing.Process(target=temp_control_thread, args=(c2,))
     pMonitoring.start()
 
-    
-    selections = {'chip_type': 'Vantiva',
-    'drop_type': 'pico droplets',
-    'fluor_channels': channels_pre_scan,
-    'chambers_enabled': [chambers_to_image],
-    'chamber_ids': ['test'],
-    'tests': ['A22q'],
-    'proceed_with_imaging': True}
-
-    ## pre scan
-    scan = StartScan(hw_config=unit_hw_config, fdir=fdir, fname=experiment_name_pre)
-    #scan.Scan_chip(selections)
-
+ 
     # move imager to
-    scan.instrument_interface.moveImager(location_to_image)
-    pImaging = multiprocessing.Process(target=imaging_thread, args=(c1,
-        channels_timelapse, imaging_period_time_seconds, fdir, experiment_name_pre + '_timelapse'))
+    ins.moveImager(location_to_image)
+    pImaging = multiprocessing.Process(target=imaging_thread, args=(c1, q, 
+        channels_timelapse, which_heater, imaging_period_time_seconds, fdir, experiment_name_timelapse + '_timelapse'))
     pImaging.start()
     # --------------------------------------------------
     # ------------------BEGIN PROTOCOL------------------
@@ -187,34 +195,35 @@ def tc_image():
     # m.change_temperature(heaterC, 37)
     # m.change_temperature(heaterD, 37)
     # delay(msre_digest_time)
-
+    delay(90)
     # hotstart
-    change_temperature(c1, heaterB, 93)
-    change_temperature(c1, heaterC, 94)
-    change_temperature(c1, heaterD, 95)
+    change_temperature(c1, heaterA, 95)
+    change_temperature(c1, heaterB, 95)
+    #change_temperature(c1, heaterD, 95)
     delay(hotstart_time)
 
     # begin cycling
     for cycle in range(cycles):
         print(f"cycle: {cycle+1}")
-        # annealing extension
-        change_temperature(c1, heaterB, 98)
-        change_temperature(c1, heaterC, 97)
-        change_temperature(c1, heaterD, 99)
-        delay(denature_time)
-
+        q.put(cycle)
         # denaturation
-        change_temperature(c1, heaterB, 58)
-        change_temperature(c1, heaterC, 58)
-        change_temperature(c1, heaterD, 60)
+        change_temperature(c1, heaterA, 62)
+        change_temperature(c1, heaterB, 62)
+        #change_temperature(c1, heaterD, 60)
         delay(anneal_extend_time)
 
+        # annealing extension
+        change_temperature(c1, heaterA, 98)
+        change_temperature(c1, heaterB, 98)
+        #change_temperature(c1, heaterD, 99)
+        delay(denature_time)
 
-    # # final extension
-    # m.change_temperature(heaterB, 58)
-    # m.change_temperature(heaterC, 58)
-    # m.change_temperature(heaterD, 60)
-    # delay(final_annealing_time)
+
+    #final extension
+    change_temperature(c1, heaterA,62)
+    change_temperature(c1, heaterB, 62)
+    #change_temperature(c1,heaterD, 60)
+    delay(anneal_extend_time)
 
     # # molecular beacon signal augmentation
     # m.change_temperature(heaterB, 72)
@@ -223,10 +232,22 @@ def tc_image():
     # delay(signal_augmentation_time)
 
     # enzyme deactivation
-    change_temperature(c1, heaterB, 93)
-    change_temperature(c1, heaterC, 94)
-    change_temperature(c1, heaterD, 95)
-    delay(deactivation_time)
+    #change_temperature(c1, heaterB, 25)
+    #change_temperature(c1, heaterC, 94)
+    #change_temperature(c1, heaterD, 95)
+    #delay(deactivation_time)
+
+        # 4C hold
+    change_temperature(c1, heaterA, 18)
+    change_temperature(c1, heaterB, 18)
+    #change_temperature(c1, heaterD, 18)
+    delay(120)
+
+    # room temp
+    #change_temperature(c1, heaterA,30)
+    #change_temperature(c1, heaterC,18)
+    #change_temperature(c1, heaterD,18)
+    #delay(final_4C_hold_time)
 
     # stop imaging threads
     c1.send(['quit'])
@@ -234,28 +255,11 @@ def tc_image():
     pImaging.join()
     pMonitoring.join()
 
-    # 4C hold
-    change_temperature(c1, heaterB, 8)
-    change_temperature(c1, heaterC, 8)
-    change_temperature(c1, heaterD, 8)
-    delay(final_4C_hold_time)
-
-    # room temp
-    change_temperature(c1, heaterB,18)
-    change_temperature(c1, heaterC,18)
-    change_temperature(c1, heaterD,18)
-
-    ## post scan
-    #scan = StartScan(hw_config=unit_hw_config, fdir=fdir, fname=experiment_name_post)
-    #selections = {'chip_type': 'Vantiva',
-    #'drop_type': 'pico droplets',
-    #'fluor_channels': channels_post_scan,
-    #'chambers_enabled': [chambers_to_image],
-    #'chamber_ids': [chambers_to_image],
-    #'tests': ['A22q'],
-    #'proceed_with_imaging': True}
-
-    #scan.Scan_chip(selections)
+    # make movie
+    imgs_path = osp.join(fdir, experiment_name_timelapse, 'timelapse_images')
+    movie_path = osp.join(fdir, experiment_name_timelapse, 'timelapse_movie.mp4')
+    cmd = f'ffmpeg -f image2 -framerate 25 -r 3 -i {imgs_path}\hex_I%d.tif {movie_path}'
+    os.system(cmd)
 
 if __name__ == '__main__':
     tc_image()

@@ -1,0 +1,46 @@
+0: Pickup tips from B column 3
+1: Move to Reagent Cartridge tray B column 1 with 200 uL tips
+2: Aspirate 110 uLs with 200 uL tips at Low pressure 1 time
+3: Move to DG8 tray D column 1 with 200 uL tips
+4: Pause for user input
+5: Dispense 100 uLs with 200 uL tips at Low pressure 1 time
+6: Eject tips in B column 3
+7: Pickup tips from B column 11
+8: Move to DG8 tray D column 3 with 200 uL tips
+9: Pause for user input
+10: Generate Pico Droplets
+11: Home pipettor along Z
+12: Pause for user input
+0:  Comment: Remove ear buds manually
+13: Comment: Place 96 well plate under channels 6, 7, 8
+14: Dispense 75 uLs with 200 uL tips at Low pressure 1 time for channel 6
+15: Delay for 5 seconds
+16: Dispense 10 uLs with 200 uL tips at Low pressure 1 time for channel 6
+17: Dispense 75 uLs with 200 uL tips at Low pressure 1 time for channel 7
+18: Delay for 5 seconds
+19: Dispense 10 uLs with 200 uL tips at Low pressure 1 time for channel 7
+20: Dispense 75 uLs with 200 uL tips at Low pressure 1 time for channel 8
+21: Delay for 5 seconds
+22: Dispense 10 uLs with 200 uL tips at Low pressure 1 time for channel 8
+23: Pause for user input
+24: Comment: Remove plate to run on CFX
+25: Comment: Manually remove tips 6, 7, 8
+26: Dispense 20 uLs with 200 uL tips at Low pressure 1 time for all channels
+27: Dispense 10 uLs with 200 uL tips at Low pressure 1 time for channel 1
+28: Dispense 5 uLs with 200 uL tips at Low pressure 1 time for channel 1
+29: Dispense 10 uLs with 200 uL tips at Low pressure 1 time for channel 2
+30: Dispense 5 uLs with 200 uL tips at Low pressure 1 time for channel 2
+31: Dispense 10 uLs with 200 uL tips at Low pressure 1 time for channel 3
+32: Dispense 5 uLs with 200 uL tips at Low pressure 1 time for channel 3
+33: Dispense 10 uLs with 200 uL tips at Low pressure 1 time for channel 4
+34: Dispense 5 uLs with 200 uL tips at Low pressure 1 time for channel 4
+35: Dispense 10 uLs with 200 uL tips at Low pressure 1 time for channel 5
+36: Dispense 5 uLs with 200 uL tips at Low pressure 1 time for channel 5
+37: Pause for user input
+38: Move to Tray tray B column 3 with 200 uL tips
+39: Pause for user input
+40: Drip for 5 seconds
+41: Dispense 150 uLs with 200 uL tips at Low pressure 1 time for all channels
+42: Pause for user input
+43: Comment: Check to see how many droplets left in the tip and room in chamber
+45: Eject tips in B column 11

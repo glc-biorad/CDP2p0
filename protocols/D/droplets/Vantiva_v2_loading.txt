@@ -1,0 +1,5 @@
+0: Move to Tray tray B column 3 with 200 uL tips
+1: Pause for user input
+2: Move relative down by 10000
+3: Delay for 1 second
+4: Drip for 5 seconds

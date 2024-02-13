@@ -51,7 +51,9 @@
       "filter_wheel_cy5": [0,0,0,-21000],
       "filter_wheel_atto": [0,0,0,-30000],
       "filter_wheel_hex": [0,0,0,-37000],
-      "filter_wheel_fam": [0,0,0,-47000]
+      "filter_wheel_fam": [ 0,0,0,-47000],
+      "filter_wheel_bf": [0,0,0,-47000]
+
     },
     "motor1_to_px": {
       "magnitude": 0.0575,

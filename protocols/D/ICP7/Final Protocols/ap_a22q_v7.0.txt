@@ -1,0 +1,13 @@
+0: Pickup tips from B column 6
+1: Move to Reagent Cartridge tray A column 5 with 50 uL tips
+2: Aspirate 2 uLs with 50 uL tips at Medium pressure 1 time
+3: Move to Pre-Amp Thermocycler column 1 with 50 uL tips
+4: Aspirate 22 uLs with 50 uL tips at Medium pressure 1 time
+5: Move to Assay Strip tray A column 1 with 50 uL tips
+6: Dispense 24 uLs with 50 uL tips at Medium pressure 1 time
+7: Mix 20 uLs with 50 uL tips at Medium pressure 3 times
+8: Aspirate 16 uLs with 50 uL tips at Medium pressure 1 time
+9: Move to DG8 tray C column 2 with 50 uL tips
+10: Pause for user input
+11: Dispense 12 uLs with 50 uL tips at Medium pressure 1 time
+12: Eject tips in B column 6

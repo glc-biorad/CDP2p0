@@ -15,6 +15,7 @@ CREATED ON:
 '''
 
 import time
+import os.path as osp
 
 from api.util.commands import commands
 
@@ -22,43 +23,47 @@ from api.util.coordinate import coordinates
 
 from api.util.utils import check_type, check_limit, replace_address, replace_word
 
-LEDS = {
-    0: {
-        'name': 'BF',
-        'steps': coordinates['reader']['filter_wheel_fam'][-1],
-        'default intensity percent': 50
-        },
-    1: {
-        'name': 'ATTO',
-        'steps': coordinates['reader']['filter_wheel_atto'][-1],
-        'default intensity percent': 50
-        },
-    2: {
-        'name': 'FAM',
-        'steps': coordinates['reader']['filter_wheel_fam'][-1],
-        'default intensity percent': 50
-        },
-    3: {
-        'name': 'CY55',
-        'steps': coordinates['reader']['filter_wheel_cy55'][-1],
-        'default intensity percent': 50
-        },
-    4: {
-        'name': 'ALEXA405',
-        'steps': coordinates['reader']['filter_wheel_alexa405'][-1],
-        'default intensity percent': 50
-        },
-    5: {
-        'name': 'CY5',
-        'steps': coordinates['reader']['filter_wheel_cy5'][-1],
-        'default intensity percent': 50
-        },
-    6: {
-        'name': 'HEX',
-        'steps': coordinates['reader']['filter_wheel_hex'][-1],
-        'default intensity percent': 50
-        },
-    }
+from gui.util.utils import import_config_file
+
+#LEDS = {
+#    0: {
+#        'name': 'BF',
+#        'steps': coordinates['reader']['filter_wheel_fam'][-1],
+#        'default intensity percent': 50
+#        },
+#    1: {
+#        'name': 'ATTO',
+#        'steps': coordinates['reader']['filter_wheel_atto'][-1],
+#        'default intensity percent': 50
+#        },
+#    2: {
+#        'name': 'FAM',
+#        'steps': coordinates['reader']['filter_wheel_fam'][-1],
+#        'default intensity percent': 50
+#        },
+#    3: {
+#        'name': 'CY55',
+#        'steps': coordinates['reader']['filter_wheel_cy55'][-1],
+#        'default intensity percent': 50
+#        },
+#    4: {
+#        'name': 'ALEXA405',
+#        'steps': coordinates['reader']['filter_wheel_alexa405'][-1],
+#        'default intensity percent': 50
+#        },
+#    5: {
+#        'name': 'CY5',
+#        'steps': coordinates['reader']['filter_wheel_cy5'][-1],
+#        'default intensity percent': 50
+#        },
+#    6: {
+#        'name': 'HEX',
+#        'steps': coordinates['reader']['filter_wheel_hex'][-1],
+#        'default intensity percent': 50
+#        },
+#    }
+config_data = import_config_file(osp.join('config', 'unit_config.json'))
+LEDS = config_data['LEDS']
 
 def led_channel_str_to_int(channel_str):
     check_type(channel_str, str)

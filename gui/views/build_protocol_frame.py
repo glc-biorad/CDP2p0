@@ -86,21 +86,26 @@ LABEL_PIPETTOR_TIP_POSY = 130
 OPTIONMENU_PIPETTOR_TIP_POSX = 180
 OPTIONMENU_PIPETTOR_TIP_POSY = 160
 OPTIONMENU_PIPETTOR_TIP_WIDTH = 70
-LABEL_PIPETTOR_ACTION_POSX = 285
+LABEL_PIPETTOR_ACTION_POSX = 275
 LABEL_PIPETTOR_ACTION_POSY = 130
 OPTIONMENU_PIPETTOR_ACTION_POSX = 255
 OPTIONMENU_PIPETTOR_ACTION_POSY = 160
-OPTIONMENU_PIPETTOR_ACTION_WIDTH = 100
-LABEL_PIPETTOR_PRESSURE_POSX = 455
+OPTIONMENU_PIPETTOR_ACTION_WIDTH = 85
+LABEL_PIPETTOR_PRESSURE_POSX = 415
 LABEL_PIPETTOR_PRESSURE_POSY = 130
-OPTIONMENU_PIPETTOR_PRESSURE_POSX = 420
+OPTIONMENU_PIPETTOR_PRESSURE_POSX = 405
 OPTIONMENU_PIPETTOR_PRESSURE_POSY = 160
-OPTIONMENU_PIPETTOR_PRESSURE_WIDTH = 125
-LABEL_PIPETTOR_COUNT_POSX = 370
+OPTIONMENU_PIPETTOR_PRESSURE_WIDTH = 85
+LABEL_PIPETTOR_COUNT_POSX = 355
 LABEL_PIPETTOR_COUNT_POSY = 130
-OPTIONMENU_PIPETTOR_COUNT_POSX = 360
+OPTIONMENU_PIPETTOR_COUNT_POSX = 345
 OPTIONMENU_PIPETTOR_COUNT_POSY = 160
 OPTIONMENU_PIPETTOR_COUNT_WIDTH = 55
+LABEL_PIPETTOR_CHANNELS_POSX = 485
+LABEL_PIPETTOR_CHANNELS_POSY = 130
+OPTIONMENU_PIPETTOR_CHANNELS_POSX = 495
+OPTIONMENU_PIPETTOR_CHANNELS_POSY = 160
+OPTIONMENU_PIPETTOR_CHANNELS_WIDTH = 50
 LABEL_PIPETTOR_ADD_POSX = 557
 LABEL_PIPETTOR_ADD_POSY = 130
 BUTTON_PIPETTOR_ADD_POSX = 550
@@ -622,8 +627,19 @@ class BuildProtocolFrame(ctk.CTkFrame):
                         master=self,
 			corner_radius=2,
 			variable=self.pipettor_pressure_sv,
-			values=('Highest', 'High', 'Low', 'Lowest'),
+			values=('Highest', 'High', 'Medium', 'Low', 'Lowest'),
 			width=OPTIONMENU_PIPETTOR_PRESSURE_WIDTH
+		)
+		# Create the channels label and optionmenu
+		self.label_pipettor_channels = ctk.CTkLabel(master=self, text='Channels', font=(FONT, -14))
+		self.pipettor_channels_sv = StringVar()
+		self.pipettor_channels_sv.set('all')
+		self.optionmenu_pipettor_channels = ctk.CTkOptionMenu(
+                        master=self,
+			corner_radius=2,
+			variable=self.pipettor_channels_sv,
+			values=('all', '1', '2', '3', '4', '5', '6', '7', '8'),
+			width=OPTIONMENU_PIPETTOR_CHANNELS_WIDTH
 		)
 		# Create the add label and button
 		self.label_pipettor_add = ctk.CTkLabel(master=self, text='Add', font=(FONT, -14))
@@ -657,6 +673,9 @@ class BuildProtocolFrame(ctk.CTkFrame):
 		# Place the pressure label and optionmenu
 		self.label_pipettor_pressure.place(x=LABEL_PIPETTOR_PRESSURE_POSX, y=LABEL_PIPETTOR_PRESSURE_POSY)
 		self.optionmenu_pipettor_pressure.place(x=OPTIONMENU_PIPETTOR_PRESSURE_POSX, y=OPTIONMENU_PIPETTOR_PRESSURE_POSY)
+		# Place the channels label and optionmenu
+		self.label_pipettor_channels.place(x=LABEL_PIPETTOR_CHANNELS_POSX, y=LABEL_PIPETTOR_CHANNELS_POSY)
+		self.optionmenu_pipettor_channels.place(x=OPTIONMENU_PIPETTOR_CHANNELS_POSX, y=OPTIONMENU_PIPETTOR_CHANNELS_POSY)
 		# Place the add label and button
 		self.label_pipettor_add.place(x=LABEL_PIPETTOR_ADD_POSX, y=LABEL_PIPETTOR_ADD_POSY)
 		self.button_pipettor_add.place(x=BUTTON_PIPETTOR_ADD_POSX, y=BUTTON_PIPETTOR_ADD_POSY)
