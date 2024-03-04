@@ -1366,7 +1366,7 @@ class UpperGantry(api.util.motor.Motor):
             max_push_out_time = 21
             max_flow_rate = 99999
         elif droplet_type.lower()[0:2] == 'de':
-            max_time = 220
+            max_time = 250
             max_push_out_time = 21
             max_flow_rate = 99999
         while (time.time() - time_start <= max_time) or (flow_rate > max_flow_rate):

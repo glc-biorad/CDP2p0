@@ -1,0 +1,23 @@
+0: Pickup tips from A column 7
+1: Move to Mag Separator column 2 with 50 uL tips
+2: Aspirate 11 uLs with 50 uL tips at Low pressure 1 time for all channels
+3: Move to Assay Strip tray A column 2 with 50 uL tips
+4: Dispense 11 uLs with 50 uL tips at Low pressure 1 time for all channels
+5: Mix 20 uLs with 50 uL tips at Low pressure 3 times for all channels
+6: Aspirate 22 uLs with 50 uL tips at Low pressure 1 time for all channels
+7: Move to DG8 tray A column 2 with 50 uL tips
+8: Pause for user input
+9: Move relative down by 20000
+10: Dispense 20 uLs with 50 uL tips at Low pressure 1 time for all channels
+11: Eject tips in A column 7
+12: Pickup tips from A column 8
+13: Move to Reagent Cartridge tray A column 5 with 200 uL tips
+14: Aspirate 75 uLs with 200 uL tips at Low pressure 1 time for all channels
+15: Move to DG8 tray A column 1 with 200 uL tips
+16: Pause for user input
+17: Dispense 50 uLs with 200 uL tips at Low pressure 1 time for all channels
+18: Move to DG8 tray A column 2 with 200 uL tips
+19: Pause for user input
+20: Dispense 20 uLs with 200 uL tips at Low pressure 1 time for all channels
+21: Eject tips in A column 8
+22: Comment: Remove DG8 to DG on PPDG

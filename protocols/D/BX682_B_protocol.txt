@@ -12,4 +12,4 @@
 11: Dispense 30 uLs with 200 uL tips at Low pressure 1 time for all channels
 12: Eject tips in A column 10
 13: Home pipettor
-14: Thermocycle Pre-Amp at 95 C for 10 minutes and cycle 40 times between 94 C for 30 seconds and 60 C for 60 seconds
+14: Thermocycle Pre-Amp at 95 C for 10 minutes and cycle 45 times between 94 C for 30 seconds and 60 C for 60 seconds

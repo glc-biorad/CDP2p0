@@ -1,0 +1,6 @@
+Thermocycler: Pre-Amp
+Set: 98 C for 10 minutes
+Cycle: 94 C for 30 seconds and 60 C for 60 seconds 45 times
+Set: 98 C for 10 minutes
+Set: 4 C for 30 minutes
+Set: 25 C for 2 minutes

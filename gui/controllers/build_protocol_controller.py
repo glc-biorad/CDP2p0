@@ -1801,66 +1801,47 @@ class BuildProtocolController:
 					with open(file_path, 'r') as ofile:
 						lines = ofile.readlines()
 						# Read the file line by line
-						protocol = {}
+						protocol = []
 						for line in lines:
-							line = line.split(',')
-							thermocycler = line[0]
-							protocol[thermocycler] = {
-								'use': line[1],
-								'cycles': line[2],
-								'first_denature_temperature': line[3],
-								'first_denature_time': line[4],
-								'anneal_temperature': line[5],
-								'anneal_time': line[6],
-								'second_denature_temperature': line[7],
-								'second_denature_time': line[8],
-							}
-						# Start the protocol
-						print('First Denature Temperature and Time') 
-						if int(protocol['A']['use']) == True:
-							print(f" - A: {protocol['A']['first_denature_temperature']} C for {protocol['A']['first_denature_time']} min")
-							self.meerstetter.change_temperature(1, int(protocol['A']['first_denature_temperature']), block=False)
-						elif int(protocol['B']['use']) == True:
-							print(f" - B: {protocol['B']['first_denature_temperature']} C for {protocol['B']['first_denature_time']} min")
-							self.meerstetter.change_temperature(2, int(protocol['B']['first_denature_temperature']), block=False)
-						elif int(protocol['C']['use']) == True:
-							print(f" - C: {protocol['C']['first_denature_temperature']} C for {protocol['C']['first_denature_time']} min")
-							self.meerstetter.change_temperature(3, int(protocol['C']['first_denature_temperature']), block=False)
-						elif int(protocol['D']['use']) == True:
-							print(f" - D: {protocol['D']['first_denature_temperature']} C for {protocol['D']['first_denature_time']} min")
-							self.meerstetter.change_temperature(4, int(protocol['D']['first_denature_temperature']), block=False)
-						delay(int(protocol['A']['first_denature_time']), 'minutes')
-						print('Cycles')
-						for i in range(int(protocol['A']['cycles'])):
-							if int(protocol['A']['use']) == True:
-								print(f" - A: {protocol['A']['second_denature_temperature']} C for {protocol['A']['second_denature_time']} sec")
-								self.meerstetter.change_temperature(1, int(protocol['A']['second_denature_temperature']), block=False)
-							elif int(protocol['B']['use']) == True:
-								print(f" - B: {protocol['B']['second_denature_temperature']} C for {protocol['B']['second_denature_time']} sec")
-								self.meerstetter.change_temperature(2, int(protocol['B']['second_denature_temperature']), block=False)
-							elif int(protocol['C']['use']) == True:
-								print(f" - C: {protocol['C']['second_denature_temperature']} C for {protocol['C']['second_denature_time']} sec")
-								self.meerstetter.change_temperature(3, int(protocol['C']['second_denature_temperature']), block=False)
-							elif int(protocol['D']['use']) == True:
-								print(f" - D: {protocol['D']['second_denature_temperature']} C for {protocol['D']['second_denature_time']} sec")
-								self.meerstetter.change_temperature(4, int(protocol['D']['second_denature_temperature']), block=False)
-							delay(int(protocol['A']['second_denature_time']), 'seconds')
-							if int(protocol['A']['use']) == True:
-								print(f" - A: {protocol['A']['anneal_temperature']} C for {protocol['A']['anneal_time']} sec")
-								self.meerstetter.change_temperature(1, int(protocol['A']['anneal_temperature']), block=False)
-							elif int(protocol['B']['use']) == True:
-								print(f" - B: {protocol['B']['anneal_temperature']} C for {protocol['B']['anneal_time']} sec")
-								self.meerstetter.change_temperature(2, int(protocol['B']['anneal_temperature']), block=False)
-							elif int(protocol['C']['use']) == True:
-								print(f" - C: {protocol['C']['anneal_temperature']} C for {protocol['C']['anneal_time']} sec")
-								self.meerstetter.change_temperature(3, int(protocol['C']['anneal_temperature']), block=False)
-							elif int(protocol['D']['use']) == True:
-								print(f" - D: {protocol['D']['anneal_temperature']} C for {protocol['D']['anneal_time']} sec")
-								self.meerstetter.change_temperature(4, int(protocol['D']['anneal_temperature']), block=False)
-							delay(int(protocol['A']['anneal_time']), 'seconds')
-				#self.meerstetter.close()
-				# Log
-				log.log(action_message, time.time() - t_start)
+							if line.split()[0].strip(":") == "Thermocycler":
+								thermocycler = line.split()[-1]
+							else:
+								split_line = line.split(":")
+								step_type = split_line[0]
+								step_info = split_line[-1]
+								if step_type.lower() == "set":
+									temperature = int(step_info.split()[0])
+									duration = int(step_info.split()[-2])
+									duration_units = step_info.split()[-1]
+									if duration_units.lower() == "minutes":
+										duration = duration * 60
+									protocol.append([temperature, duration])
+								elif step_type.lower() == "cycle":
+									temperature_1 = int(step_info.split()[0])
+									duration_1 = int(step_info.split()[3])
+									duration_1_units = step_info.split()[4]
+									if duration_1_units.lower() == "minutes":
+										duration_1 = duration_1 * 60
+									temperature_2 = int(step_info.split()[6])
+									duration_2 = int(step_info.split()[9])
+									duration_2_units = step_info.split()[10]
+									if duration_2_units.lower() == "minutes":
+										duration_2 = duration_2 * 60
+									cycles = int(step_info.split()[-2])
+									for i in range(cycles):
+										protocol.append([temperature_1, duration_1])
+										protocol.append([temperature_2, duration_2])
+						# Iterate through the protocol
+						step_idx = 1
+						for step in protocol:
+							temp = step[0]
+							duration = step[-1]
+							print(f"Step: {step_idx} / {len(protocol)}")
+							print(f"\t- Temperature: {temp} C")
+							print(f"\t- Duration: {duration} s")
+							self.meerstetter.change_temperature(9, temp, block=False)
+							time.sleep(duration)
+							step_idx = step_idx + 1
 			elif split[0] == 'Open':
 				# Open the tray
 				self.reader.open_tray(split[2])

@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\api",
+    "\\api\\upper_gantry",
     "\\gui",
     "\\gui\\controllers"
   ],
-  "SelectedNode": "\\gui\\models",
+  "SelectedNode": "\\script-tc-asc-microwell.py",
   "PreviewInSolutionExplorer": false
 }

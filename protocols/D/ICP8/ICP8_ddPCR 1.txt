@@ -1,0 +1,20 @@
+0: Pickup tips from A column 9
+1: Move to DG8 tray A column 3 with 200 uL tips
+2: Move relative down by 22000
+3: Aspirate 75 uLs with 200 uL tips at Low pressure 1 time for all channels
+4: Move to Pre-Amp Thermocycler column 1 with 200 uL tips
+5: Dispense 75 uLs with 200 uL tips at Low pressure 1 time for all channels
+6: Delay for 10 seconds
+7: Dispense 10 uLs with 200 uL tips at Low pressure 1 time for all channels
+8: Move to Reagent Cartridge tray A column 5 with 200 uL tips
+9: Aspirate 50 uLs with 200 uL tips at Low pressure 1 time for all channels
+10: Move to DG8 tray A column 3 with 200 uL tips
+11: Move relative down by 22000
+12: Dispense 50 uLs with 200 uL tips at Low pressure 1 time for all channels
+13: Aspirate 60 uLs with 200 uL tips at Low pressure 1 time for all channels
+14: Move to Pre-Amp Thermocycler column 1 with 200 uL tips
+15: Dispense 60 uLs with 200 uL tips at Low pressure 1 time for all channels
+16: Delay for 10 seconds
+17: Dispense 10 uLs with 200 uL tips at Low pressure 1 time for all channels
+18: Eject tips in A column 9
+19: Home pipettor

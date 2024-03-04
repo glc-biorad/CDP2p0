@@ -20,7 +20,7 @@ from gui.views.configure_frame import ConfigureFrame
 from api.util.server import Server
 
 # Constants
-TITLE = "CDP 2.0 Development GUI - Version 1.6"
+TITLE = "CDP 2.0 Development GUI - Version 1.7"
 APP_ICON_PATH = 'gui/images/bio-rad-logo.ico'
 WIDTH = 780
 HEIGHT = 520
